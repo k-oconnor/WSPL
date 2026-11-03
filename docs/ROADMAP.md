@@ -10,7 +10,7 @@ Implement restricted LTLf-to-DFA compilation and direct-semantics cross-checking
 
 Exit evidence: acceptance equivalence on a declared finite trace suite; negative terminal/ordering cases; actual strategy execution under the abstract model; infeasible requests correctly separated from compilation errors.
 
-Current status: implemented and checked as engineering fixtures. The small-alphabet derivative compiler and finite-model strong planner pass 58 total unit tests, including semantics agreement, bounded timeout/failure recovery, unbounded-retry rejection and construction-limit separation. See M1_ENGINEERING.md. Broad task-translation benchmarks and LLM-generated tasks have not been evaluated.
+Current status: implemented and checked as engineering fixtures. The compiler/planner and hierarchy-summary extension pass 69 total unit tests, including semantics agreement, bounded timeout/failure recovery, unbounded-retry rejection and construction-limit separation. See M1_ENGINEERING.md and HIERARCHICAL_TASKS.md. Broad task-translation benchmarks and LLM-generated tasks have not been evaluated.
 
 ## M2: grounded motor skills
 
@@ -23,6 +23,8 @@ Exit evidence: reliable isolated approach, close and lift on held-out physical c
 Compose the new skills for pickup, then add transport/lower/release/retreat and test pick/place. Begin with gold task formulas, then test the LLM translator. Keep skill weights and observer definitions frozen when assessing new task structures. Explicitly distinguish monitoring, planning, physical control and task-language correctness.
 
 Exit evidence: new temporal compositions succeed physically and satisfy their actual observed trace formulas; failures are attributed; learned skills are not silently retrained per task.
+
+Task families and supplied reusable decompositions are now defined in HIERARCHICAL_TASKS.md. Abstract macro-summary fixtures are checked; primitive hierarchical execution, physical contracts and a matched flat/hierarchical comparison remain unimplemented.
 
 ## M4: local repair and stronger comparisons
 

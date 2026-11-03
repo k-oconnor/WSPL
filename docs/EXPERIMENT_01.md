@@ -61,6 +61,8 @@ Every motor output includes the affine readout and clipping. Report natural-scal
 
 After skills are acquired/admitted, hash and freeze their implementations and observers. Use gold LTLf specifications first to isolate motor composition. Then evaluate LLM-generated specifications with a fixed compiler/planner. Hold out task structures/orderings and perturbation conditions; distinguish new language paraphrases from genuinely new compositions.
 
+Concrete task families and shared hierarchy definitions are in HIERARCHICAL_TASKS.md and examples/hierarchical_tasks.json. They are inspected engineering fixtures; build and seal fresh physical/LLM evaluation instances rather than reporting their existing unit outcomes as held-out performance. Hierarchical primitive execution must be implemented and checked against the macro contracts before physical hierarchy claims.
+
 The first composed task is pickup: approach, establish contact, then lift while maintaining it. Later tasks reuse the enlarged library for pick/place, return and constrained ordering. Include ordering, avoidance and failure/retry requests, plus infeasible requests. Ground truth is actual trace satisfaction and physical completion, not the language model's explanation or a planner's abstract plan.
 
 Compare LLM versus gold specifications, candidate versus reference skills, and a fixed scripted order versus synthesized composition where appropriate. Verify compiled DFA acceptance against the closed-trace reference on exhaustive short traces for small alphabets and sampled/counterexample traces for larger tasks. Do not report monitoring as controller synthesis. Account for planner computation and failures to find a strategy.

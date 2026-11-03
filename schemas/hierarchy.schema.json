@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Supplied hierarchical task fixtures",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "status",
+    "templates",
+    "cases",
+    "hierarchy_scope",
+    "primitive_skill_library"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "kind": {
+      "const": "hierarchical_fixture_suite"
+    },
+    "status": {
+      "const": "engineering_fixtures_not_scientific_benchmark"
+    },
+    "hierarchy_scope": {
+      "type": "string"
+    },
+    "primitive_skill_library": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "templates": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "parameters",
+          "body"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "parameters": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary_event": {
+            "type": "string"
+          },
+          "body": {
+            "$ref": "#/$defs/node"
+          }
+        }
+      }
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case_id",
+          "instruction",
+          "split",
+          "root",
+          "terminal_goals",
+          "world",
+          "expected_realizable"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "instruction": {
+            "type": "string"
+          },
+          "split": {
+            "enum": [
+              "development",
+              "held_out_structure",
+              "held_out_condition",
+              "negative_control"
+            ]
+          },
+          "root": {
+            "$ref": "#/$defs/node"
+          },
+          "terminal_goals": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "world": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "blocked_access": {
+                "type": "boolean"
+              },
+              "movable_blocker": {
+                "type": "boolean"
+              },
+              "failure_budget": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              },
+              "failure_object": {
+                "enum": [
+                  "a",
+                  "b"
+                ]
+              }
+            }
+          },
+          "expected_realizable": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "node": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "children"
+          ],
+          "properties": {
+            "op": {
+              "enum": [
+                "sequence",
+                "all"
+              ]
+            },
+            "children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/node"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "template",
+            "bindings"
+          ],
+          "properties": {
+            "op": {
+              "const": "call"
+            },
+            "template": {
+              "type": "string"
+            },
+            "bindings": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "name",
+            "bindings"
+          ],
+          "properties": {
+            "op": {
+              "const": "skill"
+            },
+            "name": {
+              "type": "string"
+            },
+            "bindings": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

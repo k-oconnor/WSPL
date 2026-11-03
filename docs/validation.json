@@ -1,17 +1,20 @@
 {
   "command": "python -m unittest discover -s tests -v",
-  "tests": 58,
+  "tests": 69,
   "result": "passed",
   "scientific_run": false,
   "source_sha256": {
     "src/skillforge/automata.py": "5d7a374d6f007b7ceda33c3d9e779b5dd422e5f8017704f890b6466727a99251",
+    "src/skillforge/hierarchy.py": "5e689a5a78dfd60f08d8873d1f758b1c2aa116938d3f3c9eb82534fe2e04af76",
     "src/skillforge/ltlf.py": "d8705e5f4937ee98a239f958034480491bce2ba82cb1b15a914f40b7a3467747",
     "src/skillforge/planning.py": "687fe0db4cd2deebacd34d8e9daf3bf4918f07e0a3ed930445543605fc4942bc",
     "src/skillforge/rmv.py": "6c679806037e10d55b2e36ba021bc291295ba6413b92d671ca81cb7ba7adab5c",
+    "src/skillforge/tabletop.py": "a175b11c448e923161b43c08c77ca127ce7890703ef03dcd6a6eac34f3b25701",
     "src/skillforge/__init__.py": "ccb69549c9b3161c3584987b211ec045af8da6678e042b5cc2c9caca626fe2de",
-    "src/skillforge/__main__.py": "322e6d0d2e19ef19c5e2f9391ba3935595e62ff73dad69ccc39d6504e6cf4edb",
+    "src/skillforge/__main__.py": "7eb601885ecb0e433312632fa64ff8a166ce834739e02a546cf85cc6d5df159f",
     "experiments/source_consistency.py": "46ba3b46796fd932c0425d44e4ca586f198293dbbf51f43cd3e227ee34aa6da8",
     "tests/test_automata_planning.py": "5974a7e0df226ee0a1db39ed18e8e8ef1549e0fba0086f5790514958a0d0e085",
+    "tests/test_hierarchy.py": "a588541ae301263a3e548c0d8c30961674e16317debd1b17a33350007a81d064",
     "tests/test_reference.py": "d255793f8b5cd1ede22bfa12fd70292ad956939c9a2a90deb6775ac873a1fdf7",
     "tests/test_source_consistency.py": "39264516e6cc87756c192c56e2e8565f4d3e82082bbe7969b04f41301df8dee0"
   }

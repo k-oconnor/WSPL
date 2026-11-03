@@ -36,6 +36,7 @@ This selects the software stack. Compatible versions, task definitions, observat
 - [First experiment](docs/EXPERIMENT_01.md): LLM/gradient acquisition × MLP/RMV, costs, held-out composition and repair.
 - [Roadmap](docs/ROADMAP.md): implementation stages and evidence required to advance.
 - [M1 engineering notes](docs/M1_ENGINEERING.md): compiler semantics, strong planning, limits and executable discrete example.
+- [Hierarchical task suite](docs/HIERARCHICAL_TASKS.md): reusable pickup/placement/transfer/group routines, prerequisite tasks, repeated calls and recovery fixtures.
 - [Prior evidence](docs/EVIDENCE.md): completed toy-world experiments and their limits.
 - [Related work](docs/RELATED_WORK.md): what is established and where this proposal could contribute.
 - [Task example](examples/pick_place.task.json), [skill contract](examples/lift.skill.json), [RMV graph](examples/lift_gate.rmv.json).
@@ -50,6 +51,7 @@ This selects the software stack. Compatible versions, task definitions, observat
 | Source-identity gate and empty approval registry | Provided; gate tests copied with provenance |
 | Small-alphabet LTLf-to-DFA compiler | Implemented with explicit construction limits |
 | Strong finite-model strategy synthesis and abstract executor | Implemented; all declared outcomes must reach acceptance |
+| Supplied hierarchy expansion and macro-summary task fixtures | Implemented; nested primitive execution remains planned |
 | LLM task translation / weight-authoring harness | Planned |
 | Differentiable MLP/RMV skills and robot adapter | Planned |
 | Robotic acquisition, composition or repair results | Not run |
@@ -73,6 +75,14 @@ python -m skillforge plan examples/discrete_pickup.task.json examples/discrete_p
 ```
 
 The second command deliberately selects the timeout/failure branches. The synthesized strategy recovers under the fixture's explicitly bounded-failure assumptions. These are engineering fixtures, not robotic or learned-skill results. Output files are created exclusively; choose a new path for another run.
+
+For a task with a blocker dependency and reusable subtasks:
+
+```sh
+python -m skillforge hierarchy examples/hierarchical_tasks.json --case clear_then_retrieve --execute --output work/clear_then_retrieve.json
+```
+
+The root leaves its two goals unordered; the supplied effect model forces clearing access before retrieving the target. The hierarchy is given, and its pickup/placement bodies are abstracted by outcome contracts rather than physically executed.
 
 ## Research questions
 

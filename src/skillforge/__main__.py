@@ -6,6 +6,7 @@ import sys
 from .automata import compile_dfa,CompilationLimit
 from .ltlf import parse
 from .planning import FiniteModel,synthesize,execute,PlanningLimit,ContractViolation
+from .tabletop import build_case
 
 
 def task_formula(document):
@@ -22,23 +23,27 @@ def task_formula(document):
 
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__);commands=parser.add_subparsers(dest='command',required=True)
-    for name in ('compile','plan'):
-        p=commands.add_parser(name);p.add_argument('task',type=Path);p.add_argument('--output',type=Path)
+    for name in ('compile','plan','hierarchy'):
+        p=commands.add_parser(name);p.add_argument('suite' if name=='hierarchy' else 'task',type=Path);p.add_argument('--output',type=Path)
         p.add_argument('--max-atoms',type=int,default=8);p.add_argument('--max-states',type=int,default=512)
-        if name=='plan':
-            p.add_argument('model',type=Path);p.add_argument('--initial',required=True)
+        if name=='hierarchy':p.add_argument('--case',required=True)
+        if name!='compile':
+            if name=='plan':p.add_argument('model',type=Path);p.add_argument('--initial',required=True)
             p.add_argument('--max-product-states',type=int,default=10000);p.add_argument('--execute',action='store_true')
             p.add_argument('--outcome-choice',choices=['first','last'],default='first');p.add_argument('--max-actions',type=int,default=100)
     args=parser.parse_args(argv)
     try:
-        task=json.loads(args.task.read_text(encoding='utf-8'));dfa=compile_dfa(task_formula(task),max_atoms=args.max_atoms,max_states=args.max_states)
+        fixture=build_case(json.loads(args.suite.read_text(encoding='utf-8')),args.case) if args.command=='hierarchy' else None
+        task=fixture['task'] if fixture else json.loads(args.task.read_text(encoding='utf-8'))
+        dfa=compile_dfa(task_formula(task),max_atoms=args.max_atoms,max_states=args.max_states)
         if args.command=='compile':result=dfa.to_dict();result['clock']=task['clock'];code=0
         else:
-            model=FiniteModel.from_dict(json.loads(args.model.read_text(encoding='utf-8')))
+            model=FiniteModel.from_dict(fixture['model'] if fixture else json.loads(args.model.read_text(encoding='utf-8')))
             if model.clock!=task['clock']:raise ValueError('Task/model clocks differ')
             if set(task['observable'])-model.observed or set(task['controllable'])-model.controlled:raise ValueError('Task/model proposition roles differ')
-            strategy=synthesize(dfa,model,args.initial,args.max_product_states);result=strategy.to_dict();result['clock']=model.clock
+            strategy=synthesize(dfa,model,fixture['initial'] if fixture else args.initial,args.max_product_states);result=strategy.to_dict();result['clock']=model.clock
             result['assumptions']=list(model.assumptions)
+            if fixture:result.update(hierarchy=fixture['hierarchy'],hierarchy_statistics=fixture['statistics'],fixture_metadata=fixture['metadata'])
             code=0 if strategy.realizable else 3
             if args.execute and strategy.realizable:
                 choose=lambda state,action,outcomes:outcomes[0 if args.outcome_choice=='first' else -1]

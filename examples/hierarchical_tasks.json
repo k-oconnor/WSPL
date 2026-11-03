@@ -1,0 +1,385 @@
+{
+  "schema_version": 1,
+  "kind": "hierarchical_fixture_suite",
+  "status": "engineering_fixtures_not_scientific_benchmark",
+  "templates": {
+    "pickup": {
+      "parameters": [
+        "object"
+      ],
+      "summary_event": "picked_{object}",
+      "body": {
+        "op": "sequence",
+        "children": [
+          {
+            "op": "skill",
+            "name": "approach",
+            "bindings": {
+              "object": "{object}"
+            }
+          },
+          {
+            "op": "skill",
+            "name": "close",
+            "bindings": {
+              "object": "{object}"
+            }
+          },
+          {
+            "op": "skill",
+            "name": "lift",
+            "bindings": {
+              "object": "{object}"
+            }
+          }
+        ]
+      }
+    },
+    "put_down": {
+      "parameters": [
+        "object",
+        "target"
+      ],
+      "summary_event": "placed_{object}_{target}",
+      "body": {
+        "op": "sequence",
+        "children": [
+          {
+            "op": "skill",
+            "name": "transport",
+            "bindings": {
+              "object": "{object}",
+              "target": "{target}"
+            }
+          },
+          {
+            "op": "skill",
+            "name": "lower",
+            "bindings": {
+              "object": "{object}",
+              "target": "{target}"
+            }
+          },
+          {
+            "op": "skill",
+            "name": "release",
+            "bindings": {
+              "object": "{object}",
+              "target": "{target}"
+            }
+          },
+          {
+            "op": "skill",
+            "name": "retreat",
+            "bindings": {
+              "object": "{object}",
+              "target": "{target}"
+            }
+          }
+        ]
+      }
+    },
+    "transfer": {
+      "parameters": [
+        "object",
+        "target"
+      ],
+      "body": {
+        "op": "sequence",
+        "children": [
+          {
+            "op": "call",
+            "template": "pickup",
+            "bindings": {
+              "object": "{object}"
+            }
+          },
+          {
+            "op": "call",
+            "template": "put_down",
+            "bindings": {
+              "object": "{object}",
+              "target": "{target}"
+            }
+          }
+        ]
+      }
+    },
+    "park": {
+      "parameters": [],
+      "summary_event": "home",
+      "body": {
+        "op": "skill",
+        "name": "return_home",
+        "bindings": {}
+      }
+    },
+    "load_pair": {
+      "parameters": [
+        "first",
+        "second",
+        "target"
+      ],
+      "body": {
+        "op": "sequence",
+        "children": [
+          {
+            "op": "call",
+            "template": "transfer",
+            "bindings": {
+              "object": "{first}",
+              "target": "{target}"
+            }
+          },
+          {
+            "op": "call",
+            "template": "transfer",
+            "bindings": {
+              "object": "{second}",
+              "target": "{target}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "transfer_one",
+      "instruction": "Move object a to the tray.",
+      "split": "development",
+      "root": {
+        "op": "call",
+        "template": "transfer",
+        "bindings": {
+          "object": "a",
+          "target": "tray"
+        }
+      },
+      "terminal_goals": [
+        "a_at_tray"
+      ],
+      "world": {},
+      "expected_realizable": true
+    },
+    {
+      "case_id": "transfer_then_park",
+      "instruction": "Move object a to the tray, then return home.",
+      "split": "development",
+      "root": {
+        "op": "sequence",
+        "children": [
+          {
+            "op": "call",
+            "template": "transfer",
+            "bindings": {
+              "object": "a",
+              "target": "tray"
+            }
+          },
+          {
+            "op": "call",
+            "template": "park",
+            "bindings": {}
+          }
+        ]
+      },
+      "terminal_goals": [
+        "a_at_tray",
+        "home"
+      ],
+      "world": {},
+      "expected_realizable": true
+    },
+    {
+      "case_id": "load_two",
+      "instruction": "Move a to the tray, then b to the tray, and return home.",
+      "split": "held_out_structure",
+      "root": {
+        "op": "sequence",
+        "children": [
+          {
+            "op": "call",
+            "template": "load_pair",
+            "bindings": {
+              "first": "a",
+              "second": "b",
+              "target": "tray"
+            }
+          },
+          {
+            "op": "call",
+            "template": "park",
+            "bindings": {}
+          }
+        ]
+      },
+      "terminal_goals": [
+        "a_at_tray",
+        "b_at_tray",
+        "home"
+      ],
+      "world": {},
+      "expected_realizable": true
+    },
+    {
+      "case_id": "clear_then_retrieve",
+      "instruction": "Put blocker a in the buffer and target b in the tray; infer any required ordering.",
+      "split": "held_out_structure",
+      "root": {
+        "op": "all",
+        "children": [
+          {
+            "op": "call",
+            "template": "transfer",
+            "bindings": {
+              "object": "a",
+              "target": "buffer"
+            }
+          },
+          {
+            "op": "call",
+            "template": "transfer",
+            "bindings": {
+              "object": "b",
+              "target": "tray"
+            }
+          }
+        ]
+      },
+      "terminal_goals": [
+        "a_at_buffer",
+        "b_at_tray"
+      ],
+      "world": {
+        "blocked_access": true
+      },
+      "expected_realizable": true
+    },
+    {
+      "case_id": "round_trip",
+      "instruction": "Move a to the tray, then the buffer, then the tray again, and return home.",
+      "split": "held_out_structure",
+      "root": {
+        "op": "sequence",
+        "children": [
+          {
+            "op": "call",
+            "template": "transfer",
+            "bindings": {
+              "object": "a",
+              "target": "tray"
+            }
+          },
+          {
+            "op": "call",
+            "template": "transfer",
+            "bindings": {
+              "object": "a",
+              "target": "buffer"
+            }
+          },
+          {
+            "op": "call",
+            "template": "transfer",
+            "bindings": {
+              "object": "a",
+              "target": "tray"
+            }
+          },
+          {
+            "op": "call",
+            "template": "park",
+            "bindings": {}
+          }
+        ]
+      },
+      "terminal_goals": [
+        "a_at_tray",
+        "home"
+      ],
+      "world": {},
+      "expected_realizable": true
+    },
+    {
+      "case_id": "second_object_recovery",
+      "instruction": "Load a then b and return home; at most one grasp of b may fail.",
+      "split": "held_out_condition",
+      "root": {
+        "op": "sequence",
+        "children": [
+          {
+            "op": "call",
+            "template": "load_pair",
+            "bindings": {
+              "first": "a",
+              "second": "b",
+              "target": "tray"
+            }
+          },
+          {
+            "op": "call",
+            "template": "park",
+            "bindings": {}
+          }
+        ]
+      },
+      "terminal_goals": [
+        "a_at_tray",
+        "b_at_tray",
+        "home"
+      ],
+      "world": {
+        "failure_budget": 1,
+        "failure_object": "b"
+      },
+      "expected_realizable": true
+    },
+    {
+      "case_id": "blocked_forever",
+      "instruction": "Put a in the buffer and b in the tray when a is immovable and blocks access to b.",
+      "split": "negative_control",
+      "root": {
+        "op": "all",
+        "children": [
+          {
+            "op": "call",
+            "template": "transfer",
+            "bindings": {
+              "object": "a",
+              "target": "buffer"
+            }
+          },
+          {
+            "op": "call",
+            "template": "transfer",
+            "bindings": {
+              "object": "b",
+              "target": "tray"
+            }
+          }
+        ]
+      },
+      "terminal_goals": [
+        "a_at_buffer",
+        "b_at_tray"
+      ],
+      "world": {
+        "blocked_access": true,
+        "movable_blocker": false
+      },
+      "expected_realizable": false
+    }
+  ],
+  "hierarchy_scope": "Supplied acyclic templates and parameter bindings; summary-level planning only.",
+  "primitive_skill_library": [
+    "approach",
+    "close",
+    "lift",
+    "transport",
+    "lower",
+    "release",
+    "retreat",
+    "return_home"
+  ]
+}

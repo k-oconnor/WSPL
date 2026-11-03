@@ -15,6 +15,7 @@ Read README.md, docs/CONTEXT.md, docs/SYSTEM_SPEC.md, docs/M1_ENGINEERING.md, do
 - This project does not replace legacy RBL-RMV, TNST/TNTST or robot Model 1. No canonical architecture substitution is authorized by importing a prior artifact.
 - Record negative results. Toy-world modularity/repair results assume supplied wiring, privileged intermediate inputs and known repair localization; monolith repair lacked rehearsal.
 - Finite planning is strong reachability under every declared outcome, with no fairness assumption. Construction limits are errors, not evidence of infeasibility. Declared model/clock/proposition roles must match; never infer physical robustness from a bounded symbolic retry fixture.
+- Read docs/HIERARCHICAL_TASKS.md before interpreting hierarchy results. Current expansion/summary lowering uses supplied acyclic templates and flat macro-level planning; no primitive hierarchical executor or learned hierarchy discovery is implemented. Fixture split labels are design axes, not sealed held-out scientific data. Primitive-reference counts are not measured physical execution costs.
 
 ## Source approval
 
