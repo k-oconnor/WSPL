@@ -1,3 +1,9 @@
+test_adamw_update_projection_and_state_roundtrip (test_approach.ApproachTests.test_adamw_update_projection_and_state_roundtrip) ... ok
+test_arms_have_separate_parameters_and_audit_leaves_weights_unchanged (test_approach.ApproachTests.test_arms_have_separate_parameters_and_audit_leaves_weights_unchanged) ... ok
+test_direct_scientific_runner_is_disabled (test_approach.ApproachTests.test_direct_scientific_runner_is_disabled) ... ok
+test_failed_reset_is_recorded_not_retried (test_approach.ApproachTests.test_failed_reset_is_recorded_not_retried) ... ok
+test_feasibility_rejects_mismatched_or_trivial_controls (test_approach.ApproachTests.test_feasibility_rejects_mismatched_or_trivial_controls) ... ok
+test_reference_vs_zero_and_costed_paired_reset (test_approach.ApproachTests.test_reference_vs_zero_and_costed_paired_reset) ... ok
 test_clock_mismatch_and_vocabulary_rejected (test_automata_planning.CLITests.test_clock_mismatch_and_vocabulary_rejected) ... ok
 test_compile_cli_and_exclusive_output (test_automata_planning.CLITests.test_compile_cli_and_exclusive_output) ... ok
 test_finite_model_schema_and_example (test_automata_planning.CLITests.test_finite_model_schema_and_example) ... ok
@@ -50,6 +56,12 @@ test_new_invocation_resets_baseline_and_pulse (test_motor.MotorTests.test_new_in
 test_no_contact_at_start_cannot_certify_lift (test_motor.MotorTests.test_no_contact_at_start_cannot_certify_lift) ... ok
 test_recontact_does_not_hide_lift_failure (test_motor.MotorTests.test_recontact_does_not_hide_lift_failure) ... ok
 test_unknown_nonfinite_and_malformed_sensors_rejected (test_motor.MotorTests.test_unknown_nonfinite_and_malformed_sensors_rejected) ... ok
+test_analytic_models_match_teacher (test_neural.NeuralTests.test_analytic_models_match_teacher) ... ok
+test_capacity_and_local_initialization_rng (test_neural.NeuralTests.test_capacity_and_local_initialization_rng) ... ok
+test_projection_and_invalid_graph_rejection (test_neural.NeuralTests.test_projection_and_invalid_graph_rejection) ... ok
+test_random_initialization_is_input_sensitive_with_task_gradients (test_neural.NeuralTests.test_random_initialization_is_input_sensitive_with_task_gradients) ... ok
+test_scalar_export_corners_interior_and_boundaries (test_neural.NeuralTests.test_scalar_export_corners_interior_and_boundaries) ... ok
+test_shapes_nonfinite_inputs_and_bounded_commands (test_neural.NeuralTests.test_shapes_nonfinite_inputs_and_bounded_commands) ... ok
 test_provenance_copies_match_recorded_hashes (test_reference.ArtifactTests.test_provenance_copies_match_recorded_hashes) ... ok
 test_registry_entries_require_user_approval_provenance (test_reference.ArtifactTests.test_registry_entries_require_user_approval_provenance) ... ok
 test_schema_definitions_and_example_instances (test_reference.ArtifactTests.test_schema_definitions_and_example_instances) ... ok
@@ -87,6 +99,6 @@ test_verified_constructor_and_receipt (test_source_consistency.SourceConsistency
 test_wrong_callable_source_rejected (test_source_consistency.SourceConsistencyTests.test_wrong_callable_source_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 87 tests in 2.635s
+Ran 99 tests in 5.199s
 
 OK

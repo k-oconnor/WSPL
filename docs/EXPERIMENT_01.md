@@ -2,6 +2,8 @@
 
 Status: proposed protocol, not an approved or runnable scientific experiment. Concrete simulator bindings, learner/LLM configurations and exact source identity must be prepared and approved before execution. No API calls or robot training have been launched.
 
+A narrower runnable engineering pilot is now prepared in APPROACH_V1.md: pregrasp standoff positioning, zero/reference controls, analytic MLP/RMV constructions and AdamW imitation. It is unapproved and unrun. It does not implement the full blinded writer/budget sweep specified below, or certify grasp readiness.
+
 ## Questions and staged scope
 
 Primary: can an LLM write weights for a reliable fixed-architecture closed-loop skill with less interaction or total acquisition time than gradient learning? Secondary: can grounded RMV match useful reliability while giving a faithful explanation of the entire motor output? Then test frozen composition and local repair.

@@ -6,6 +6,8 @@ Read README.md, docs/CONTEXT.md, docs/SYSTEM_SPEC.md, docs/M1_ENGINEERING.md, do
 
 Read docs/SIM_ADAPTER.md for the implemented single-tick LIBERO bridge and sampled physical observers. Its five-tick headless integration check is engineering evidence only. Physical task/primitive-hierarchy execution and skill acquisition remain planned. Do not turn tools/sim_preflight.py into an unapproved scientific runner. Missing motor ticks abort observer invocations; no collision or admitted grasp observer exists yet.
 
+November 3: differentiable MLP/RMV blocks and an approach-only positioning/imitation runner are implemented/prepared; no scientific run is approved or launched. Read docs/APPROACH_V1.md. Its analytic weights encode a known P controller and are unblinded engineering constructions, not a sealed LLM trial. The 12 cm standoff task is not a validated grasp pose. Keep the full four-arm acquisition objective, and distinguish this first positioning screen from physical pickup/hierarchy results.
+
 ## Semantics and evidence
 
 - Action blocks execute controls. LTLf propositions report observed state, commands and externally verified skill outcomes. Do not conflate a neural success prediction with physical success.

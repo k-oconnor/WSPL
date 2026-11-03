@@ -1,6 +1,6 @@
 # System specification
 
-Status: design version 0.1, November 2, 2026. Implemented: JSON schemas, independent closed-trace LTLf semantics, a bounded small-alphabet derivative DFA compiler, strong finite-model planning, scalar RMV semantics, source gate and a single-tick LIBERO adapter with sampled outcome observers. See M1_ENGINEERING.md and SIM_ADAPTER.md. Physical task/hierarchy execution, LLM translation/weight authoring and differentiable skills remain proposed.
+Status: design version 0.1, updated November 3, 2026. Implemented: reference semantics, bounded LTLf compilation, finite-model planning, scalar and differentiable RMV/MLP motor blocks, source gate and a single-tick LIBERO adapter with sampled observers. See M1_ENGINEERING.md, SIM_ADAPTER.md and APPROACH_V1.md. The physical positioning/imitation runner is prepared but unapproved/unrun. Physical hierarchy execution and a blinded LLM translation/weight-authoring harness remain proposed.
 
 ## Objective
 
@@ -78,7 +78,7 @@ u   = clip(A @ h + b, command_lower, command_upper)
 
 W and V are nonnegative. Each clause can independently use either or both rails of each predicate; there is no shared learned polarity setting. A may be signed. Normalization, literal orientation, all logical operations, affine motor readout and final clipping are part of the exported computation. The motor readout is not an unexplained neural bypass. Any shared servo acts after this normalized command and is separately declared infrastructure.
 
-Proposed capacity: twelve fixed calibrated inputs, 24 fixed positive/negative literal rails, 56 clauses, four concept heads and four motor outputs. This has 1,588 parameters: 1,344 AND weights, 224 OR weights, 16 readout weights and four biases. A 12-to-32-to-32-to-4 two-hidden-layer ReLU MLP has 1,604 parameters. Counts are within 1%, without padding. These are design capacities, not implemented/trained models. Report effective clause/literal use, active computation, optimizer state and inference latency separately.
+Implemented capacity: twelve fixed normalized inputs, 24 fixed positive/negative literal rails, 56 clauses, four heads and four motor outputs. This has 1,588 parameters: 1,344 AND weights, 224 OR weights, 16 readout weights and four biases. The two-hidden-layer 12-to-32-to-32-to-4 ReLU MLP has 1,604 parameters. Counts are within 1%, without padding. Numerical/gradient unit checks pass; no scientific fitting has run. Normalization/initialization are in APPROACH_V1.md; physical calibration remains. Report effective clause/literal use, active computation, optimizer state and inference latency separately.
 
 The old local RieszFFN starts lambda at 0.5 with identical clauses, yielding constant initial outputs and zero input gradients. The proposed fixed dual rails avoid that shared-polarity cancellation, but do not by themselves solve clause saturation or symmetry. Before any new training pin, check asymmetric initialization, clause diversity, clipping occupancy, task gradients and actual input sensitivity. If surrogate gradients are used, label their bias and preserve the exact hard forward semantics. No surrogate choice is approved by this spec.
 

@@ -55,7 +55,9 @@ An isolated MuJoCo 3.2.7 / robosuite 1.4.1 environment passed a five-tick headle
 | Supplied hierarchy expansion and macro-summary task fixtures | Implemented; nested primitive execution remains planned |
 | LLM task translation / weight-authoring harness | Planned |
 | Single-tick LIBERO motor adapter and sampled outcome observers | Implemented; headless integration checked |
-| Differentiable MLP/RMV skills and physical task executor | Planned |
+| Differentiable MLP/RMV blocks and scalar export checks | Implemented; optional PyTorch, unit-tested |
+| Approach-only physical comparison and AdamW imitation runner | Prepared, unapproved; see [protocol](docs/APPROACH_V1.md) |
+| Physical primitive hierarchy executor | Planned |
 | Robotic acquisition, composition or repair results | Not run |
 
 ## Reference checks

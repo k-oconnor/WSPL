@@ -122,8 +122,8 @@ candidate selection or skill score. Do not extend it into an unapproved benchmar
 scientific/training runners require their own exact source pin and must record
 dependency fixes and external asset identities as well as project source.
 
-Next: implement differentiable MLP/RMV motor blocks and scalar-export fidelity;
-calibrate nontrivial grasp poses, no-op difficulty and a transparent reference
-controller on development-only layouts; then prepare a source-pinned acquisition
-screen. Physical primitive hierarchy execution, safe outcome contracts and the
-four acquisition arms remain unfinished.
+November 3 update: differentiable motor blocks and scalar-export checks are now
+implemented; the unapproved approach-only positioning/imitation screen is prepared
+in APPROACH_V1.md. Physical feasibility is still unknown. Contact-ready grasp
+calibration, primitive hierarchy execution, safe outcome contracts and the full
+blinded acquisition comparison remain unfinished.
