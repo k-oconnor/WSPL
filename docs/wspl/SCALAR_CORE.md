@@ -51,7 +51,8 @@ range obligations, document snapshot isolation and unsupported profiles. They do
 not establish universal BrakePatch contracts by testing sample points. No solver
 status or proof certificate is produced.
 
-Next implement and cross-check the textual module front end or explicitly freeze
-the JSON surface for a first language profile; then canonical lowering, neural
-weight allocation/serialization and independent scoped verification (G1/G2).
-Do not count the old hand-written weight constructors as this compiler.
+The separate compiler in COMPILER.md now consumes this JSON IR and emits a fresh
+ReLU MLP plus independent rational weight loader and optional Torch module. This
+is actual source lowering, not reuse of the old hand-written weight constructors.
+Text parsing and independent universal verification remain pending; the scalar
+reference itself still performs no neural execution or solver proof.

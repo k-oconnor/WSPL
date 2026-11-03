@@ -1,4 +1,4 @@
-# WSPL ? Weight Space Programming Language
+# WSPL: Weight Space Programming Language
 
 **A typed programming interface for LLM-authored neural programs.**
 
@@ -16,7 +16,7 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | Component | Status |
 | --- | --- |
 | Typed scalar JSON IR and exact rational interpreter | Implemented; engineering examples and negative checks |
-| WSPL-to-neural compiler and serialized weights | In development |
+| Scalar IR to ReLU MLP weights, source map and independent loader | Initial implementation; fresh architecture only |
 | Universal contract verifier / numerical execution proof | Planned |
 | Blinded LLM authoring and counterexample-feedback harness | Planned |
 | Small-alphabet LTLf compiler and strong finite-model planner | Implemented for supplied symbolic effect models |
@@ -25,9 +25,10 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | Pregrasp positioning pilot | Completed; scoped results below |
 | Diverse robot tasks | 16 inspected specifications over 7 audited scene assets; contact/obstacle integration pending |
 
-The public-facing WSPL text syntax in the proposal is not implemented. The scalar
-prototype is a JSON IR; it does not yet compile neural weights, prove universal
-contracts or synthesize controllers. No WSPL CLI is advertised as available.
+The WSPL text syntax in the proposal is not implemented. The scalar JSON IR now
+compiles neural weights, but there is no universal contract verifier or blinded
+controller-synthesis harness. The available compiler command is documented below;
+the proposal's general `wspl` command suite remains planned.
 
 ## Try the exact scalar reference
 
@@ -58,10 +59,24 @@ See [the scalar core](docs/wspl/SCALAR_CORE.md),
 [BrakePatch](examples/wspl/brake_patch.core.json) and
 [ApproachP](examples/wspl/approach_p.core.json).
 
+## Compile neural weights
+
+```sh
+mkdir work
+python -m skillforge.wspl_compile examples/wspl/brake_patch.core.json --output work/brake_weights.json
+```
+
+Create the output directory first and choose a new file. BrakePatch compiles into
+the proposed 3 -> 4 -> 2 -> 1 ReLU network, with 29 parameters. ApproachP compiles
+into a 12 -> 6 -> 6 -> 4 network, with 148 parameters. Generated examples and the
+independent loader are described in [the compiler notes](docs/wspl/COMPILER.md).
+Optional Torch emission checks exact coefficient representation; floating-point
+execution and universal contracts are not certified by compilation.
+
 ## Research program
 
-Three studies?fresh authoring, repair of independently trained artifacts, and
-frozen composition?span discrete causal worlds, low-dimensional dynamics and
+The three studies cover fresh authoring, repair of independently trained artifacts
+and frozen composition. They span discrete causal worlds, low-dimensional dynamics and
 robot manipulation. Each compares direct weights, ordinary PWA code and WSPL,
 with and without verifier feedback. All arms receive final verification.
 
@@ -123,7 +138,7 @@ An existing BDDL scene is not a working Skillforge task.
 python -m unittest discover -s tests -v
 ```
 
-The current local suite has 122 passing checks. Optional neural/adapter checks
+The current local suite has 132 passing checks. Optional neural/adapter checks
 skip when PyTorch or NumPy is absent; full local results used a separate CPU
 research environment. No model download, simulator rollout, scientific training
 run or LLM API call occurs in the unit suite. A single optimizer transaction is

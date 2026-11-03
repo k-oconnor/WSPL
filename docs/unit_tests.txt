@@ -112,6 +112,16 @@ test_stale_bytecode_is_not_executed (test_source_consistency.SourceConsistencyTe
 test_unapproved_registry_identity_fails (test_source_consistency.SourceConsistencyTests.test_unapproved_registry_identity_fails) ... ok
 test_verified_constructor_and_receipt (test_source_consistency.SourceConsistencyTests.test_verified_constructor_and_receipt) ... ok
 test_wrong_callable_source_rejected (test_source_consistency.SourceConsistencyTests.test_wrong_callable_source_rejected) ... ok
+test_approach_independent_exact_weight_execution (test_wspl_compile.WSPLCompilerTests.test_approach_independent_exact_weight_execution) ... ok
+test_brake_exact_independent_weight_execution (test_wspl_compile.WSPLCompilerTests.test_brake_exact_independent_weight_execution) ... ok
+test_brake_reproduces_explicit_two_hidden_layer_weights (test_wspl_compile.WSPLCompilerTests.test_brake_reproduces_explicit_two_hidden_layer_weights) ... ok
+test_cli_emits_non_executable_artifact (test_wspl_compile.WSPLCompilerTests.test_cli_emits_non_executable_artifact) ... ok
+test_fixed_target_and_capacity_limit_not_silent_resize (test_wspl_compile.WSPLCompilerTests.test_fixed_target_and_capacity_limit_not_silent_resize) ... ok
+test_operator_compositions_and_graded_semantics (test_wspl_compile.WSPLCompilerTests.test_operator_compositions_and_graded_semantics) ... ok
+test_serialization_hash_tampering_and_no_overwrite (test_wspl_compile.WSPLCompilerTests.test_serialization_hash_tampering_and_no_overwrite) ... ok
+test_signed_relays_deep_skip_paths_and_dead_code (test_wspl_compile.WSPLCompilerTests.test_signed_relays_deep_skip_paths_and_dead_code) ... ok
+test_nonrepresentable_weights_rejected_instead_of_silently_rounded (test_wspl_compile.WSPLTorchEmissionTests.test_nonrepresentable_weights_rejected_instead_of_silently_rounded) ... ok
+test_ordinary_torch_mlp_fp32_and_fp64_match_canonical_input_probes (test_wspl_compile.WSPLTorchEmissionTests.test_ordinary_torch_mlp_fp32_and_fp64_match_canonical_input_probes) ... ok
 test_approach_demo_matches_exact_clipped_proportional_rule (test_wspl_core.WSPLCoreTests.test_approach_demo_matches_exact_clipped_proportional_rule) ... ok
 test_brake_demo_exact_at_boundaries_and_interior (test_wspl_core.WSPLCoreTests.test_brake_demo_exact_at_boundaries_and_interior) ... ok
 test_exact_constants_ranges_and_zero_normalization (test_wspl_core.WSPLCoreTests.test_exact_constants_ranges_and_zero_normalization) ... ok
@@ -122,6 +132,6 @@ test_unresolved_interval_obligation_is_not_assumed_true (test_wspl_core.WSPLCore
 test_unsupported_profile_and_real_truth_misuse_rejected (test_wspl_core.WSPLCoreTests.test_unsupported_profile_and_real_truth_misuse_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 122 tests in 4.956s
+Ran 132 tests in 5.026s
 
 OK

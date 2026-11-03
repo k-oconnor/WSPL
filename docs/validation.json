@@ -1,6 +1,6 @@
 {
   "command": "external isolated sim Python -m unittest discover -s tests -v",
-  "tests": 122,
+  "tests": 132,
   "result": "passed",
   "scientific_run": false,
   "source_sha256": {
@@ -17,6 +17,8 @@
     "src/skillforge/rmv.py": "6c679806037e10d55b2e36ba021bc291295ba6413b92d671ca81cb7ba7adab5c",
     "src/skillforge/robot_tasks.py": "4a9189bea5e486293dd8eed3e94e4af4ca15bcbd992459709ec310d5406bce2e",
     "src/skillforge/tabletop.py": "a175b11c448e923161b43c08c77ca127ce7890703ef03dcd6a6eac34f3b25701",
+    "src/skillforge/wspl_artifact.py": "902ec74ad5d19069354f941481913ee4e8832991b707fa7925c092b627e9afef",
+    "src/skillforge/wspl_compile.py": "8693c80d6455963338b0d790c0e77cb187dc4418212e34b0ec24fbe779fcdaa6",
     "src/skillforge/wspl_core.py": "0e3e57015f4fca01bf5ee860b1d7c4eb1aaf5608d1d9522222e63a00ec8647ee",
     "experiments/run_approach.py": "7e213d4e14df96044e898e10fc03b498d34cb13902cc3b65ecbdac15a5747017",
     "experiments/source_consistency.py": "46ba3b46796fd932c0425d44e4ca586f198293dbbf51f43cd3e227ee34aa6da8",
@@ -29,6 +31,7 @@
     "tests/test_reference.py": "d255793f8b5cd1ede22bfa12fd70292ad956939c9a2a90deb6775ac873a1fdf7",
     "tests/test_robot_tasks.py": "cd51891dfaa2de0ce9c6d7cd2d37faeb8380b4c35632b3964494b9bbb66ce108",
     "tests/test_source_consistency.py": "39264516e6cc87756c192c56e2e8565f4d3e82082bbe7969b04f41301df8dee0",
+    "tests/test_wspl_compile.py": "07514d80805d83e55db4557404036aaa4cd7506520f561b222c59b3c65e56bfd",
     "tests/test_wspl_core.py": "d69d6a54f03a4ac2ac642495c57fc6cd7ecd833b6cb74b7609473d56e9a1dfab",
     "tools/prepare_approach.py": "dd09631a282d5480457f65737f0c734787de2c356a5490ffe4fd5d5e633ede95",
     "tools/sim_preflight.py": "8c8b7b580128d7f3949e371a8ad48b31d41784036c94817ab04a8746d96bf442"

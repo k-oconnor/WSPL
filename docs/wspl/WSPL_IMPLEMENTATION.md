@@ -4,10 +4,12 @@ November 3, 2026. Planned work, not implemented APIs. See EXPERIMENT_PROGRAM.md
 and the archived supplied proposal. Keep this as a language component within
 Skillforge until there is a concrete reason to split repositories.
 
-Current progress: the scalar JSON IR/type reader and exact reference interpreter
-in SCALAR_CORE.md implement an initial part of G0. Text parsing, the broader type
-system and every subsequent gate remain incomplete. The prototype examples/tests
-are engineering fixtures, not synthesis trials or universal contract proofs.
+Current progress: the scalar JSON IR/type reader and exact reference implement
+an initial part of G0. The fresh dense ReLU compiler/independent artifact loader
+in COMPILER.md implement an initial G1, including optional Torch emission when
+coefficients are exactly representable. Text parsing, broader types, independent
+universal verification and subsequent gates remain incomplete. These are
+engineering fixtures, not synthesis trials or universal contract proofs.
 
 ## G0: typed core and independent interpreter
 

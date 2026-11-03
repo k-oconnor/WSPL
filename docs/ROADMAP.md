@@ -5,9 +5,10 @@
 The user endorsed a typed weight-space programming language and a formal
 authoring/repair/composition program across three domains. See
 wspl/EXPERIMENT_PROGRAM.md and wspl/WSPL_IMPLEMENTATION.md. The scalar JSON IR and
-exact rational reference implement an initial part of G0; 122 total engineering
-unit checks pass. Compiler, universal verifier, learned import/patch transactions
-and blinded six-arm proposer harness are still missing. The proposed first screen
+exact rational reference implement an initial part of G0, and the fresh ReLU MLP
+compiler/independent artifact loader in wspl/COMPILER.md implement an initial G1.
+All 132 engineering unit checks pass. Universal verification, learned import/patch
+transactions and the blinded six-arm proposer harness remain missing. The proposed first screen
 is 36 nonconfirmatory synthesis runs, explicitly unapproved and not launchable;
 model, costs, task split and final thresholds remain unset. These language gates
 do not replace the physical robotics milestones below.

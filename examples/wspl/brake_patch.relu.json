@@ -1,0 +1,267 @@
+{
+  "format": "wspl.relu_mlp.v0",
+  "semantics": "rational_real_graph",
+  "compiler": "wspl.scalar_to_relu.v0",
+  "source_sha256": "8a77c03a20b2c9992afc4365e2c0d0b164920c704b5cc1efb7502d809ef3b10f",
+  "inputs": [
+    {
+      "name": "d",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "0",
+        "upper": "2"
+      }
+    },
+    {
+      "name": "v",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "0",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "a_base",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "a",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      }
+    }
+  ],
+  "layers": [
+    {
+      "activation": "relu",
+      "weights": [
+        [
+          "-5/2",
+          "5/4",
+          "0"
+        ],
+        [
+          "-5/2",
+          "5/4",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "-1"
+        ]
+      ],
+      "bias": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "activation": "relu",
+      "weights": [
+        [
+          "-2",
+          "2",
+          "1",
+          "-1"
+        ],
+        [
+          "-2",
+          "2",
+          "1",
+          "-1"
+        ]
+      ],
+      "bias": [
+        "1",
+        "-1"
+      ]
+    },
+    {
+      "activation": "linear",
+      "weights": [
+        [
+          "1",
+          "-1"
+        ]
+      ],
+      "bias": [
+        "-1"
+      ]
+    }
+  ],
+  "allocation": {
+    "mode": "fresh_mlp",
+    "widths": [
+      3,
+      4,
+      2,
+      1
+    ],
+    "parameters": 29
+  },
+  "source_map": {
+    "expressions": [
+      {
+        "path": "/lets/0/value/value/terms/0/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i1": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/0/value/value/terms/1/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i0": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/0/value/value",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "i0": "-1",
+            "i1": "1/2"
+          },
+          "bias": "2/5"
+        }
+      },
+      {
+        "path": "/lets/0/value",
+        "operator": "margin",
+        "linear": {
+          "terms": {
+            "u0": "1",
+            "u1": "-1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value/value/terms/0/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i2": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value/value/terms/1/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "u0": "1",
+            "u1": "-1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value/value",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "i2": "1",
+            "u0": "-2",
+            "u1": "2"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value",
+        "operator": "clip",
+        "linear": {
+          "terms": {
+            "u2": "1",
+            "u3": "-1"
+          },
+          "bias": "-1"
+        }
+      }
+    ],
+    "relu_units": {
+      "u0": {
+        "layer": 1,
+        "index": 0
+      },
+      "u1": {
+        "layer": 1,
+        "index": 1
+      },
+      "u2": {
+        "layer": 2,
+        "index": 0
+      },
+      "u3": {
+        "layer": 2,
+        "index": 1
+      }
+    },
+    "allocation": [
+      [
+        {
+          "index": 0,
+          "kind": "source_relu",
+          "source": "u0"
+        },
+        {
+          "index": 1,
+          "kind": "source_relu",
+          "source": "u1"
+        },
+        {
+          "index": 2,
+          "kind": "input_positive",
+          "source": "i2"
+        },
+        {
+          "index": 3,
+          "kind": "input_negative",
+          "source": "i2"
+        }
+      ],
+      [
+        {
+          "index": 0,
+          "kind": "source_relu",
+          "source": "u2"
+        },
+        {
+          "index": 1,
+          "kind": "source_relu",
+          "source": "u3"
+        }
+      ]
+    ],
+    "eliminated_relu_units": []
+  }
+}

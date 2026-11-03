@@ -1,0 +1,658 @@
+{
+  "format": "wspl.relu_mlp.v0",
+  "semantics": "rational_real_graph",
+  "compiler": "wspl.scalar_to_relu.v0",
+  "source_sha256": "1f1df5f1664b1b046bf4300297c34cc01162d30911f334ddfe2c4e13e1c80e9f",
+  "inputs": [
+    {
+      "name": "object_dx",
+      "type": {
+        "kind": "Real",
+        "unit": "m",
+        "lower": "-1/2",
+        "upper": "1/2"
+      }
+    },
+    {
+      "name": "object_dy",
+      "type": {
+        "kind": "Real",
+        "unit": "m",
+        "lower": "-1/2",
+        "upper": "1/2"
+      }
+    },
+    {
+      "name": "object_dz",
+      "type": {
+        "kind": "Real",
+        "unit": "m",
+        "lower": "-1/2",
+        "upper": "1/2"
+      }
+    },
+    {
+      "name": "target_dx",
+      "type": {
+        "kind": "Real",
+        "unit": "m",
+        "lower": "-1/2",
+        "upper": "1/2"
+      }
+    },
+    {
+      "name": "target_dy",
+      "type": {
+        "kind": "Real",
+        "unit": "m",
+        "lower": "-1/2",
+        "upper": "1/2"
+      }
+    },
+    {
+      "name": "target_dz",
+      "type": {
+        "kind": "Real",
+        "unit": "m",
+        "lower": "-1/2",
+        "upper": "1/2"
+      }
+    },
+    {
+      "name": "eef_vx",
+      "type": {
+        "kind": "Real",
+        "unit": "m_per_s",
+        "lower": "-1",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "eef_vy",
+      "type": {
+        "kind": "Real",
+        "unit": "m_per_s",
+        "lower": "-1",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "eef_vz",
+      "type": {
+        "kind": "Real",
+        "unit": "m_per_s",
+        "lower": "-1",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "aperture",
+      "type": {
+        "kind": "Real",
+        "unit": "m",
+        "lower": "0",
+        "upper": "2/25"
+      }
+    },
+    {
+      "name": "left_object_contact",
+      "type": {
+        "kind": "Truth",
+        "unit": "1",
+        "lower": "0",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "right_object_contact",
+      "type": {
+        "kind": "Truth",
+        "unit": "1",
+        "lower": "0",
+        "upper": "1"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "dx",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "dy",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "dz",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "gripper",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      }
+    }
+  ],
+  "layers": [
+    {
+      "activation": "relu",
+      "weights": [
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "bias": [
+        "1/2",
+        "-1/2",
+        "1/2",
+        "-1/2",
+        "1/2",
+        "-1/2"
+      ]
+    },
+    {
+      "activation": "relu",
+      "weights": [
+        [
+          "20",
+          "-20",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "20",
+          "-20",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "20",
+          "-20",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "20",
+          "-20",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "20",
+          "-20"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "20",
+          "-20"
+        ]
+      ],
+      "bias": [
+        "-9",
+        "-11",
+        "-9",
+        "-11",
+        "-9",
+        "-11"
+      ]
+    },
+    {
+      "activation": "linear",
+      "weights": [
+        [
+          "1",
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "bias": [
+        "-1",
+        "-1",
+        "-1",
+        "-1"
+      ]
+    }
+  ],
+  "allocation": {
+    "mode": "fresh_mlp",
+    "widths": [
+      12,
+      6,
+      6,
+      4
+    ],
+    "parameters": 148
+  },
+  "source_map": {
+    "expressions": [
+      {
+        "path": "/lets/0/value/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i3": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/0/value",
+        "operator": "margin",
+        "linear": {
+          "terms": {
+            "u0": "1",
+            "u1": "-1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/1/value/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i4": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/1/value",
+        "operator": "margin",
+        "linear": {
+          "terms": {
+            "u2": "1",
+            "u3": "-1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/2/value/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i5": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/2/value",
+        "operator": "margin",
+        "linear": {
+          "terms": {
+            "u4": "1",
+            "u5": "-1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value/value/terms/0/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "u0": "1",
+            "u1": "-1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value/value",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "u0": "20",
+            "u1": "-20"
+          },
+          "bias": "-10"
+        }
+      },
+      {
+        "path": "/outputs/0/value",
+        "operator": "clip",
+        "linear": {
+          "terms": {
+            "u6": "1",
+            "u7": "-1"
+          },
+          "bias": "-1"
+        }
+      },
+      {
+        "path": "/outputs/1/value/value/terms/0/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "u2": "1",
+            "u3": "-1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/1/value/value",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "u2": "20",
+            "u3": "-20"
+          },
+          "bias": "-10"
+        }
+      },
+      {
+        "path": "/outputs/1/value",
+        "operator": "clip",
+        "linear": {
+          "terms": {
+            "u8": "1",
+            "u9": "-1"
+          },
+          "bias": "-1"
+        }
+      },
+      {
+        "path": "/outputs/2/value/value/terms/0/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "u4": "1",
+            "u5": "-1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/2/value/value",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "u4": "20",
+            "u5": "-20"
+          },
+          "bias": "-10"
+        }
+      },
+      {
+        "path": "/outputs/2/value",
+        "operator": "clip",
+        "linear": {
+          "terms": {
+            "u10": "1",
+            "u11": "-1"
+          },
+          "bias": "-1"
+        }
+      },
+      {
+        "path": "/outputs/3/value",
+        "operator": "const",
+        "linear": {
+          "terms": {},
+          "bias": "-1"
+        }
+      }
+    ],
+    "relu_units": {
+      "u0": {
+        "layer": 1,
+        "index": 0
+      },
+      "u1": {
+        "layer": 1,
+        "index": 1
+      },
+      "u2": {
+        "layer": 1,
+        "index": 2
+      },
+      "u3": {
+        "layer": 1,
+        "index": 3
+      },
+      "u4": {
+        "layer": 1,
+        "index": 4
+      },
+      "u5": {
+        "layer": 1,
+        "index": 5
+      },
+      "u6": {
+        "layer": 2,
+        "index": 0
+      },
+      "u7": {
+        "layer": 2,
+        "index": 1
+      },
+      "u8": {
+        "layer": 2,
+        "index": 2
+      },
+      "u9": {
+        "layer": 2,
+        "index": 3
+      },
+      "u10": {
+        "layer": 2,
+        "index": 4
+      },
+      "u11": {
+        "layer": 2,
+        "index": 5
+      }
+    },
+    "allocation": [
+      [
+        {
+          "index": 0,
+          "kind": "source_relu",
+          "source": "u0"
+        },
+        {
+          "index": 1,
+          "kind": "source_relu",
+          "source": "u1"
+        },
+        {
+          "index": 2,
+          "kind": "source_relu",
+          "source": "u2"
+        },
+        {
+          "index": 3,
+          "kind": "source_relu",
+          "source": "u3"
+        },
+        {
+          "index": 4,
+          "kind": "source_relu",
+          "source": "u4"
+        },
+        {
+          "index": 5,
+          "kind": "source_relu",
+          "source": "u5"
+        }
+      ],
+      [
+        {
+          "index": 0,
+          "kind": "source_relu",
+          "source": "u6"
+        },
+        {
+          "index": 1,
+          "kind": "source_relu",
+          "source": "u7"
+        },
+        {
+          "index": 2,
+          "kind": "source_relu",
+          "source": "u8"
+        },
+        {
+          "index": 3,
+          "kind": "source_relu",
+          "source": "u9"
+        },
+        {
+          "index": 4,
+          "kind": "source_relu",
+          "source": "u10"
+        },
+        {
+          "index": 5,
+          "kind": "source_relu",
+          "source": "u11"
+        }
+      ]
+    ],
+    "eliminated_relu_units": []
+  }
+}

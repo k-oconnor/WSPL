@@ -176,14 +176,13 @@
     "second_proposer_model_replication_planned": true
   },
   "unresolved_launch_dependencies": [
-    "G0 typed parser and rational reference",
-    "G1 compiler serialized graph source maps",
-    "G2 independently checked scoped verifier",
+    "G0 freeze supported front end and finish required typing",
+    "G1/G2 independent serialized-graph compiler equivalence and contract checks",
     "G3 learned imports and patch transactions",
     "G4 isolated six-arm proposer/evaluator harness",
     "fresh frozen task generator and final pool",
     "pinned model/API identity and monetary cap",
-    "target capacity and method configs",
+    "matched target capacity and method configs",
     "empirical thresholds and final counts",
     "power/analysis plan for confirmation",
     "concrete runner constructor inventory and exact user source approval"
@@ -196,14 +195,17 @@
   ],
   "current_readiness": {
     "wspl_frontend": false,
-    "wspl_compiler": false,
+    "wspl_compiler": true,
     "wspl_universal_verifier": false,
     "blinded_proposer_harness": false,
     "physical_contact_hierarchy": false,
     "typed_scalar_json_ir": true,
     "exact_scalar_reference": true,
-    "textual_wspl_parser": false
+    "textual_wspl_parser": false,
+    "compiler_scope": "scalar JSON to fresh dense ReLU MLP only",
+    "rational_weight_artifact_loader": true,
+    "exact_coefficient_torch_emission": true
   },
   "scope_note": "Design only. No API calls, training, new scientific runs, models installed, task data sealed or universal results produced.",
-  "implementation_progress": "Initial scalar JSON IR/reference part of G0 only; see docs/wspl/SCALAR_CORE.md. Examples are inspected fixtures, not universal verification or scientific runs."
+  "implementation_progress": "Initial G0 scalar reference and G1 fresh MLP compilation/artifact prototypes; universal equivalence/contracts, fixed allocation, full text front end and blinded harness remain pending."
 }
