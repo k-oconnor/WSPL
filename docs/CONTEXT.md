@@ -1,12 +1,20 @@
 # Working context
 
+Astra selected: Kevin explicitly chose gpt-6-astra for S1. The provider-neutral
+file preparation path stays in place. Standard direct-API planning estimate is
+$20-70 for 36 trials, with a $117.9648 token-only bound at the entire 2,359,296-token
+allowance charged at $50/M output; reasoning tokens are included. Proposed total
+cap $150 includes room for separately budgeted engineering calibration. This is
+an estimate, not approval: monetary_cap stays null; no paid call or source pin
+is authorized. Model pricing/assumptions are saved in the screen plan.
+
 Initial-claim readiness update: merged frozen-tensor import and relational checks
 are G3a engineering support, not a learned S2 baseline. S1 final grading now records
 Mo's source-to-weight equivalence diagnostic for selected code/JSON-WSPL sources,
 separately from the shared finite Boolean task score and never in search feedback.
 FORMAL_EXPERIMENTS_V1.md maps C1 source fidelity, C2 bounded LLM authoring and C3
 representation/feedback effects to their evidence. The 36-trial screen remains
-nonconfirmatory and unlaunched. Model/budget selection and isolated file-based
+nonconfirmatory and unlaunched. Budget/sampling selection and isolated file-based
 collection are still prerequisites; no provider integration was selected.
 
 Kevin explicitly selected provider-neutral file interface first for the S1

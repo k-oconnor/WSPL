@@ -6,7 +6,7 @@
   "date": "2026-11-03",
   "study": "S1 finite supplied-mechanism authoring",
   "protocol": "docs/wspl/FORMAL_EXPERIMENTS_V1.md",
-  "model_id": null,
+  "model_id": "gpt-6-astra",
   "sampling_protocol": null,
   "task_seeds": null,
   "task_access_record": null,
@@ -83,5 +83,31 @@
     "physical safety",
     "causal discovery",
     "commercial savings"
-  ]
+  ],
+  "model_selection_provenance": "User explicitly selected Astra; provider-neutral file interface remains the preparation path.",
+  "budget_estimate": {
+    "status": "proposal_not_spending_authorization",
+    "date": "2026-11-03",
+    "billing_assumption": "direct standard API, short context, no paid hosted tools, no cache savings assumed",
+    "rates_usd_per_million": {
+      "uncached_input": 10,
+      "output_including_reasoning": 50
+    },
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "reasoning_accounting_source": "https://developers.openai.com/api/docs/guides/reasoning",
+    "screen_max_total_tokens": 2359296,
+    "all_output_rate_upper_bound_usd": 117.9648,
+    "working_scenario": {
+      "average_input_tokens_per_trial": 30000,
+      "average_output_tokens_per_trial": 20000,
+      "trials": 36,
+      "estimated_usd": 46.8
+    },
+    "planning_range_usd": [
+      20,
+      70
+    ],
+    "recommended_total_cap_usd": 150,
+    "notes": "Estimate, not measured usage; calibration outside final task set needs its own explicit allocation. Fast/Ultrafast/regional uplifts, taxes and separate extra runs excluded. Count billed reasoning, repeated prompts, failures and retries. Proposed cap remains unapproved."
+  }
 }
