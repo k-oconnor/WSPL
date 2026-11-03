@@ -9,10 +9,16 @@ confirmation or establish commercial savings.
 
 ## Study overview
 
+Kevin endorsed a CSAIL-linked progression: released Breakout replay, native Astra
+replication, a matched WSPL extension, then learned-policy repair. See
+[CSAIL_COMPARISON.md](CSAIL_COMPARISON.md) for product win conditions and the
+tanh/ReLU boundary. The Boolean S1 screen below serves as harness validation;
+the CSAIL progression requires its own concrete runner and resource approval.
+
 | Study | Question | First domain | Primary outcome | Readiness |
 | --- | --- | --- | --- | --- |
 | S1 | Does the interface help implement a supplied mechanism? | Boolean switch and door transition rule | Final fixed-size graph exactly matches every Boolean input | Kernel, request exporter and transcript grader implemented; model, task freeze and live controller pending |
-| S2 | Can a learned policy be repaired while preserving unaffected behavior? | Small PWA dynamical controller | Required repair plus preservation plus empirical rollout thresholds | Frozen import and relational checks implemented; learned baseline, patch composition and transactions needed |
+| S2 | Can a learned policy be repaired while preserving unaffected behavior? | Small PWA dynamical controller | Required repair plus preservation plus empirical rollout thresholds | Frozen import, relational checks and patch transactions implemented; learned baseline and evaluation runner needed |
 | S3 | Do frozen modules support new compositions and reject incompatible ones? | Finite causal mechanisms, then dynamics | Correct frozen composition and incompatible-contract detection | General composition checker and independent task split needed |
 
 Robotics follows successful supported-domain tests. The prior standoff pilot and

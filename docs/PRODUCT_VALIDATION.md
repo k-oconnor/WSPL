@@ -23,8 +23,9 @@ that take?" A retrospective example is more useful than general enthusiasm.
 The proposed value is shorter time from a behavior request to a reviewable,
 qualified change. WSPL may support a fresh compiled controller, a future local
 patch, or empirical investigation of an opaque policy. These are different
-capabilities. The current prototype compiles fresh controllers; it does not yet
-import and locally repair a customer's learned model.
+capabilities. The current prototype compiles fresh controllers, imports supported
+frozen MLPs and composes checked output patches. Customer-model repair has not
+been evaluated.
 
 ## Existing alternatives and the central risk
 
@@ -83,6 +84,14 @@ Activation effects establish computational dependence only. Neither path measure
 customer savings or qualifies a controller for deployment.
 
 ## Customer discovery and decision rules
+
+For the CSAIL-inspired benchmark progression, use the
+[product win conditions](wspl/CSAIL_COMPARISON.md): useful performance, required
+checks and a predeclared workflow benefit. Higher return than CSAIL is optional.
+The initial proposed targets are at least 90% of matched baseline game return
+and half the engineering/review time, subject to absolute usefulness and
+customer-required constraints. Benchmark success and paid customer commitment
+are separate milestones.
 
 Kevin and the collaborator should conduct five initial interviews, using a recent
 change as the unit of discussion. No outreach is authorized or sent by this plan.

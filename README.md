@@ -158,6 +158,7 @@ The WSPL arm accepts Core PWA module text through the text parser; JSON IR remai
 internal. Astra, target capacity and evaluation budgets stay matched across arms.
 
 - [Structured study plan](experiments/plans/wspl_cross_domain_v1.json)
+- [CSAIL comparison and product win conditions](docs/wspl/CSAIL_COMPARISON.md): useful performance, checked changes and less engineering/review effort; outperforming the published game score is optional
 - [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)
 - [Original supplied WSPL proposal](docs/wspl/PROPOSAL_v0_1_2026-11-03.md), archived unchanged with provenance
 - [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents

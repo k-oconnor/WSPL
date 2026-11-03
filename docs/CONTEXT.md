@@ -1,5 +1,17 @@
 # Working context
 
+Kevin endorsed CSAIL replications/extensions and startup win conditions beyond
+beating their scores. docs/wspl/CSAIL_COMPARISON.md specifies artifact replay ->
+native Breakout authoring -> matched WSPL extension -> learned-policy repair;
+the Boolean screen is harness validation. Proposed internal product gates:
+useful absolute performance and >=90% matched baseline game return, all required
+supported checks, <=half active engineering/review time, then a real paid pilot
+for commercial validation. These are prospective targets, not results or spending
+approval. Preserve native compact edit syntax; tanh replication and shared-ReLU
+extensions remain distinct. The $150 Boolean-screen estimate does not cover the
+expanded benchmark. Mo's G3b patch transactions are implemented engineering,
+while a genuinely learned repair experiment remains missing.
+
 Kevin endorsed adding Path to Recursive Twin Improvement (RTI) to the README
 after discussion. Proposed loop: two frontier-model instantiations alternately
 edit each other's weights, admitting changes only after independent domain

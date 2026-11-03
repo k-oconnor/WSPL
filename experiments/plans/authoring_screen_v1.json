@@ -122,5 +122,7 @@
       "COMPILER.md",
       "PARSER.md"
     ]
-  }
+  },
+  "role_in_csail_progression": "harness validation; separate CSAIL replication/extension runner and budget required",
+  "product_win_protocol": "docs/wspl/CSAIL_COMPARISON.md"
 }
