@@ -1,0 +1,42 @@
+// ApproachP: the inspected proportional standoff controller over the motor12
+// input names. Text form of examples/wspl/approach_p.core.json and its
+// contracts in approach.contracts.json; not a newly synthesized skill.
+module ApproachP {
+  input object_dx: Real[-0.5,0.5] m;
+  input object_dy: Real[-0.5,0.5] m;
+  input object_dz: Real[-0.5,0.5] m;
+  input target_dx: Real[-0.5,0.5] m;
+  input target_dy: Real[-0.5,0.5] m;
+  input target_dz: Real[-0.5,0.5] m;
+  input eef_vx: Real[-1,1] m_per_s;
+  input eef_vy: Real[-1,1] m_per_s;
+  input eef_vz: Real[-1,1] m_per_s;
+  input aperture: Real[0,0.08] m;
+  input left_object_contact: Truth;
+  input right_object_contact: Truth;
+
+  output dx: Real[-1,1] normalized_command;
+  output dy: Real[-1,1] normalized_command;
+  output dz: Real[-1,1] normalized_command;
+  output gripper: Real[-1,1] normalized_command;
+
+  // Normalize each target delta from [-0.5, 0.5] m to Truth [0, 1].
+  let p_x: Truth = margin(target_dx, -0.5, 0.5);
+  let p_y: Truth = margin(target_dy, -0.5, 0.5);
+  let p_z: Truth = margin(target_dz, -0.5, 0.5);
+
+  // Gain 10 per metre, saturated to the normalized command range.
+  dx = clip(20*p_x - 10, -1, 1);
+  dy = clip(20*p_y - 10, -1, 1);
+  dz = clip(20*p_z - 10, -1, 1);
+  gripper = -1;
+
+  ensures actuator_bounds_and_open_gripper:
+    forall inputs: dx >= -1 and dx <= 1 and dy >= -1 and dy <= 1
+                   and dz >= -1 and dz <= 1 and gripper == -1;
+
+  ensures command_direction:
+    forall inputs: (target_dx >= 0 implies dx >= 0) and (target_dx <= 0 implies dx <= 0)
+               and (target_dy >= 0 implies dy >= 0) and (target_dy <= 0 implies dy <= 0)
+               and (target_dz >= 0 implies dz >= 0) and (target_dz <= 0 implies dz <= 0);
+}

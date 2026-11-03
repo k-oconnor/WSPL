@@ -1,0 +1,20 @@
+// BrakePatch, copied verbatim from docs/wspl/PROPOSAL_v0_1_2026-11-03.md
+// ("First executable example"). Normalized demonstration values only.
+module BrakePatch {
+  input d: Real[0,2] normalized_distance;
+  input v: Real[0,1] normalized_speed;
+  input a_base: Real[-1,1] normalized_acceleration;
+  output a: Real[-1,1] normalized_acceleration;
+
+  let urgency: Truth = clip((0.4 + 0.5*v - d)/0.4, 0, 1);
+  a = clip(a_base - 2*urgency, -1, 1);
+
+  ensures actuator_bound:
+    forall inputs: -1 <= a and a <= 1;
+
+  ensures emergency_brake:
+    forall inputs: (d <= 0.2 and v >= 0.4) implies a == -1;
+
+  preserves clear_path:
+    forall inputs: (d >= 0.4 + 0.5*v) implies a == a_base;
+}

@@ -6,7 +6,8 @@ deterministic source map. `ReLUArtifact` independently loads/evaluates the store
 matrices without importing the compiler or WSPL source interpreter. Optional
 Torch emission produces an ordinary `nn.Sequential` of Linear/ReLU layers.
 
-This is an initial G1 implementation. Text syntax, fixed-architecture editing,
+This is an initial G1 implementation; PARSER.md now supplies IR from the
+proposal's module text. Broader text syntax, fixed-architecture editing,
 RMV allocation, universal source equivalence, error enclosures,
 learned-model imports and the scientific proposer harness remain incomplete.
 Compilation and finite cross-checks do not establish a solver-backed certificate.

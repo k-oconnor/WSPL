@@ -1,8 +1,9 @@
 # First WSPL scalar reference prototype
 
 Implemented November 3, 2026 in src/skillforge/wspl_core.py. This is a typed JSON
-IR reader and exact rational reference interpreter, an initial part of G0. It is
-not the proposal's textual parser, full type/dimension system, neural compiler,
+IR reader and exact rational reference interpreter, an initial part of G0. The
+separate text front end in PARSER.md lowers the proposal's module form to this IR.
+This reader is not a full type/dimension system, neural compiler,
 contract solver, deployed controller or blinded LLM experiment. No wspl CLI is
 advertised as available.
 
@@ -54,5 +55,5 @@ status or proof certificate is produced.
 The separate compiler in COMPILER.md now consumes this JSON IR and emits a fresh
 ReLU MLP plus independent rational weight loader and optional Torch module. This
 is actual source lowering, not reuse of the old hand-written weight constructors.
-Text parsing and independent universal verification remain pending; the scalar
-reference itself still performs no neural execution or solver proof.
+PARSER.md describes the initial text front end for the proposal's module form.
+The scalar reference itself still performs no neural execution or solver proof.

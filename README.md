@@ -16,6 +16,7 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | Component | Status |
 | --- | --- |
 | Typed scalar JSON IR and exact rational interpreter | Implemented; engineering examples and negative checks |
+| WSPL text front end (proposal module form) | Initial parser to JSON IR and contract suites; Core PWA only |
 | Scalar IR to ReLU MLP weights, source map and independent loader | Initial implementation; fresh architecture only |
 | Small real-graph I/O contract verifier | Initial Z3 prototype; non-vacuity and rational witness replay |
 | Source IR to stored-weight equivalence check | Initial Z3 prototype; compiler-independent encoding, replayed differences |
@@ -28,8 +29,10 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | Pregrasp positioning pilot | Completed; scoped results below |
 | Diverse robot tasks | 16 inspected specifications over 7 audited scene assets; contact/obstacle integration pending |
 
-The WSPL text syntax in the proposal is not implemented. The scalar JSON IR now
-compiles neural weights and supports scoped real-graph contract checks. There is
+The proposal's first module form now parses from text into the scalar JSON IR and
+contract suites ([text front end](docs/wspl/PARSER.md)); other proposed syntax is not
+implemented. The scalar JSON IR compiles neural weights and supports scoped
+real-graph contract checks. There is
 no numerical execution proof or blinded controller-synthesis harness. The available compiler command is documented below;
 the proposal's general `wspl` command suite remains planned.
 
@@ -50,6 +53,16 @@ program = ScalarProgram(json.loads(
     Path("examples/wspl/brake_patch.core.json").read_text(encoding="utf-8")))
 result = program.evaluate({"d": "1/5", "v": "2/5", "a_base": "1"})
 assert str(result["a"]) == "-1"
+```
+
+The same program can be written in the proposal's text form,
+[brake_patch.wspl](examples/wspl/brake_patch.wspl), and parsed into this IR:
+
+```python
+from skillforge.wspl_parse import parse_module
+
+parsed = parse_module(Path("examples/wspl/brake_patch.wspl").read_text(encoding="utf-8"))
+assert str(ScalarProgram(parsed.program).evaluate({"d": "1/5", "v": "2/5", "a_base": "1"})["a"]) == "-1"
 ```
 
 Constants and inputs are exact rational strings or integers; floating-point input
