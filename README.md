@@ -152,6 +152,8 @@ settings remain pending; no model calls or scientific trials have run.
 Initial claims are explicitly mapped to evidence in that protocol. Final selected
 code/WSPL artifacts now receive a separate rational source-equivalence diagnostic;
 Boolean task success alone does not establish source fidelity between test points.
+The WSPL arm accepts Core PWA module text through the text parser; JSON IR remains
+internal. Astra, target capacity and evaluation budgets stay matched across arms.
 
 - [Structured study plan](experiments/plans/wspl_cross_domain_v1.json)
 - [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)

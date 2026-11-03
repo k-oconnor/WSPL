@@ -1,5 +1,14 @@
 # Working context
 
+Kevin selected WSPL text syntax for the initial authoring comparison. Both WSPL
+arms now accept Core PWA module strings through Mo's parser, with JSON IR internal
+only. Candidate contracts are rejected, fixed input order/types remain enforced,
+and final equivalence checks compare parsed IR to selected stored weights.
+Request schema v1 invalidates old request hashes. All arms receive the same text
+grammar documentation. Earlier notes describing a JSON-IR submission arm are
+historical. Astra selection, 541 parameters and all budgets remain unchanged;
+the proposed $150 is still not spending authorization.
+
 Astra selected: Kevin explicitly chose gpt-6-astra for S1. The provider-neutral
 file preparation path stays in place. Standard direct-API planning estimate is
 $20-70 for 36 trials, with a $117.9648 token-only bound at the entire 2,359,296-token
@@ -43,7 +52,7 @@ no outreach or scientific launch is authorized by the plan.
 
 Kevin requested this new repo/spec on November 2, 2026 and accepted Skillforge as a working name to revisit later. The research idea is an LLM authoring small neural/RMV action implementations and temporal task programs, with validation, persistent reuse, frozen composition and local repair.
 
-Current organizing direction: Kevin endorsed WSPL, a typed neural weight-space programming language for LLM-authored executable modules, and a formal cross-domain experimental program. The three studies are fresh authoring, repair of independently trained artifacts and frozen composition; domains are discrete causal worlds, low-dimensional dynamics and robot manipulation. All use direct weights/ordinary code/WSPL with and without verifier feedback, with shared final verification. The structured plan is an unregistered design draft, not launchable or approved for model expenditure. The scalar JSON IR/exact interpreter implement partial G0, and fresh dense ReLU compilation with independent rational artifact loading implements an initial G1. All 225 engineering checks pass. Initial Z3 real-graph I/O verification, rational source-to-artifact equivalence, a text front end for the proposal's module form and empirical opaque-NN activation intervention logging now exist. General WSPL syntax, fixed allocation, IEEE/closed-loop proof and blinded harness remain pending. The private archive is https://github.com/k-oconnor/WSPL; local Skillforge is its robotics testbed. See docs/wspl/EXPERIMENT_PROGRAM.md and SCALAR_CORE.md. Earlier positioning evidence remains scoped as below.
+Current organizing direction: Kevin endorsed WSPL, a typed neural weight-space programming language for LLM-authored executable modules, and a formal cross-domain experimental program. The three studies are fresh authoring, repair of independently trained artifacts and frozen composition; domains are discrete causal worlds, low-dimensional dynamics and robot manipulation. All use direct weights/ordinary code/WSPL with and without verifier feedback, with shared final verification. The structured plan is an unregistered design draft, not launchable or approved for model expenditure. The scalar JSON IR/exact interpreter implement partial G0, and fresh dense ReLU compilation with independent rational artifact loading implements an initial G1. All 227 engineering checks pass. Initial Z3 real-graph I/O verification, rational source-to-artifact equivalence, a text front end for the proposal's module form and empirical opaque-NN activation intervention logging now exist. General WSPL syntax, fixed allocation, IEEE/closed-loop proof and blinded harness remain pending. The private archive is https://github.com/k-oconnor/WSPL; local Skillforge is its robotics testbed. See docs/wspl/EXPERIMENT_PROGRAM.md and SCALAR_CORE.md. Earlier positioning evidence remains scoped as below.
 
 The task is broader than the preceding Gravemind toy-world program tests. Those were fixed compositions of Boolean state-transition predictors; they did not control a robot, synthesize a plan or evaluate blinded LLM weight generation. Their summaries/plot are copied with provenance, not relabelled as this project's results.
 

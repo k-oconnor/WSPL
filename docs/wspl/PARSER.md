@@ -96,6 +96,7 @@ must equal the report's `ir_sha256`. Outputs are created exclusively; the CLI ex
 The front end is a hand-written recursive-descent parser with a 1 MB source limit.
 It executes no Python from the source text. It does not implement tensors, shapes,
 functions, stateful modules, baseline/edited `preserves`, `requires` domains or
-numerical deployment profiles. The S1 authoring screen in FORMAL_EXPERIMENTS_V1.md
-uses the typed scalar JSON IR for its WSPL arm; this text front end does not change
-that study's design.
+numerical deployment profiles. Kevin selected Core PWA module text for the S1
+WSPL arm before scientific collection; see FORMAL_EXPERIMENTS_V1.md. The study
+checks the supplied interface after lowering and rejects candidate-defined
+contracts. Final task requirements remain external to candidate text.

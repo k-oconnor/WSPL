@@ -30,10 +30,12 @@ in these studies. No grasp, obstacle or physical hierarchy capability is assumed
 These claims are distinct. C1 is a mathematical per-instance result under a
 trusted encoder/solver; C2 and C3 require actual independently collected proposer
 trials. Engineering fixtures and this assistant's inspected constructions cannot
-stand in for those trials. The text parser is available, but this version's
-WSPL arm remains scalar JSON IR: it does not measure the text language's usability.
-Introduce a text arm as a separately versioned comparison before collecting data
-if the desired claim concerns that syntax.
+stand in for those trials. Kevin selected text syntax before data collection:
+the WSPL arm now takes Core PWA module text through Mo's parser. JSON IR is an
+internal representation, not an accepted submission in this arm. Request schema
+v1 binds the revised prompts; old request hashes cannot be replayed unchanged.
+C1 checks lowered IR against stored weights; parsing itself remains trusted,
+not a proved text-to-IR equivalence transformation.
 
 S2 repair of a genuinely learned parent and S3 composition remain subsequent
 claims. Mo's import fixtures establish lossless tensor import and scoped
@@ -52,7 +54,7 @@ code equality or superiority is a meaningful result.
 | --- | --- | --- |
 | Sparse direct weights | weights_off | weights_on |
 | Restricted ordinary PWA expression | code_off | code_on |
-| Typed scalar JSON WSPL | wspl_off | wspl_on |
+| Typed WSPL Core PWA module text | wspl_off | wspl_on |
 
 Every arm receives the same supplied mechanism, input names and domains, output
 requirement, fixed target architecture, allowed development inputs, operator
@@ -88,7 +90,13 @@ All arms emit **4 -> 12 -> 12 -> 12 -> 12 -> 1**, four ReLU hidden layers and
 linear output: **541 stored parameters**. Zero weights still count. Code and
 WSPL use the same compiler followed by zero padding and nonnegative hidden-state
 identity relays; excess allocation is rejected. Direct weights use the same
-matrix dimensions. Stored coefficients have absolute value at most 64 and
+matrix dimensions. WSPL modules must declare the supplied inputs in their given
+order as Real[0,1] normalized_value and one output next_open of that type. Typed
+lets are allowed. Candidate ensures/preserves declarations are rejected: the
+evaluator owns the task requirements. Raw module text is stored as a string in
+the JSON transport, with no Markdown fences. Every arm receives the same
+SCALAR_CORE.md, COMPILER.md and PARSER.md snapshots and pays their prompt tokens.
+Stored coefficients have absolute value at most 64 and
 denominator at most 1024. Candidate payloads are at most 24,000 canonical JSON
 bytes. Larger or unsupported candidates are INVALID, not silently expanded.
 
@@ -106,7 +114,7 @@ generalization to a hidden Boolean distribution. No claim covers real-valued
 interpolations, IEEE arithmetic, closed-loop behavior or semantic sensor grounding.
 The finite-domain PROVED status is explicitly distinct from Z3 real-graph proof.
 
-For the selected code/WSPL source, final grading now also runs the independent
+For the selected code source or parsed WSPL module IR, final grading runs the independent
 source-to-stored-weight equivalence checker over the whole declared real input
 box, with a five-second query budget. It is final-only and absent from proposer
 feedback. Direct weights report NOT_APPLICABLE because there is no submitted

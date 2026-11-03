@@ -22,6 +22,8 @@ test_invalid_candidates_are_charged_and_cannot_change_contract (test_authoring_s
 test_malformed_json_shapes_are_logged_as_invalid_not_silently_skipped (test_authoring_study.AuthoringStudyTests.test_malformed_json_shapes_are_logged_as_invalid_not_silently_skipped) ... ok
 test_mutations_and_empty_domains_are_not_qualified (test_authoring_study.AuthoringStudyTests.test_mutations_and_empty_domains_are_not_qualified) ... ok
 test_proposal_code_is_parsed_without_execution (test_authoring_study.AuthoringStudyTests.test_proposal_code_is_parsed_without_execution) ... ok
+test_text_arm_rejects_json_ir_and_candidate_contracts (test_authoring_study.AuthoringStudyTests.test_text_arm_rejects_json_ir_and_candidate_contracts) ... ok
+test_text_typed_let_and_input_order_are_checked (test_authoring_study.AuthoringStudyTests.test_text_typed_let_and_input_order_are_checked) ... ok
 test_token_and_candidate_exhaustion_keep_failures_in_denominator (test_authoring_study.AuthoringStudyTests.test_token_and_candidate_exhaustion_keep_failures_in_denominator) ... ok
 test_clock_mismatch_and_vocabulary_rejected (test_automata_planning.CLITests.test_clock_mismatch_and_vocabulary_rejected) ... ok
 test_compile_cli_and_exclusive_output (test_automata_planning.CLITests.test_compile_cli_and_exclusive_output) ... ok
@@ -225,6 +227,6 @@ test_vacuity_and_stale_hash_are_invalid_not_proved (test_wspl_verify.VerifierTes
 test_wrong_input_column_order_refutes_actual_weights (test_wspl_verify.VerifierTests.test_wrong_input_column_order_refutes_actual_weights) ... ok
 
 ----------------------------------------------------------------------
-Ran 225 tests in 11.665s
+Ran 227 tests in 12.533s
 
 OK
