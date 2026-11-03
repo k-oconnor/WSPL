@@ -12,6 +12,8 @@ learned-model imports and the scientific proposer harness remain incomplete.
 Compilation and finite cross-checks do not establish a solver-backed certificate.
 The separate initial I/O verifier in VERIFICATION.md now checks selected contracts
 on these serialized graphs; it does not prove source equivalence or IEEE execution.
+The separate equivalence check there compares a source with its stored rational
+weights over the declared box; it does not prove IEEE execution either.
 
 ## What the compiler does
 
@@ -120,7 +122,8 @@ agreement. Global Torch RNG is preserved when emitting the deterministic network
 These are engineering checks, not a scientific benchmark or universal proof.
 
 Initial G2 contract checking is now in VERIFICATION.md: serialized graph encoding,
-non-vacuity, validated counterexamples and scoped real-graph statuses. Independent
-source equivalence and numerical execution proofs remain pending, followed by
+non-vacuity, validated counterexamples and scoped real-graph statuses. An initial
+compiler-independent source equivalence check over the declared rational domain is
+also described there. Numerical execution proofs remain pending, followed by
 learned-controller imports and the blinded cross-domain harness. Empirical opaque
 network interventions are a separate evidence path, not a compiler proof.

@@ -7,9 +7,10 @@ authoring/repair/composition program across three domains. See
 wspl/EXPERIMENT_PROGRAM.md and wspl/WSPL_IMPLEMENTATION.md. The scalar JSON IR and
 exact rational reference implement an initial part of G0, and the fresh ReLU MLP
 compiler/independent artifact loader in wspl/COMPILER.md implement an initial G1.
-All 155 engineering checks pass. Initial real-graph I/O verification and empirical
-opaque-network intervention logging are implemented; see wspl/VERIFICATION.md and
-wspl/INTERVENTION_EVIDENCE.md. Source equivalence, IEEE/closed-loop proofs, learned
+All 169 engineering checks pass. Initial real-graph I/O verification, rational
+source-to-artifact equivalence (issue #1) and empirical opaque-network
+intervention logging are implemented; see wspl/VERIFICATION.md and
+wspl/INTERVENTION_EVIDENCE.md. IEEE/closed-loop proofs, learned
 import/patch transactions and the blinded proposer harness remain missing. The proposed first screen
 is 36 nonconfirmatory synthesis runs, explicitly unapproved and not launchable;
 model, costs, task split and final thresholds remain unset. These language gates

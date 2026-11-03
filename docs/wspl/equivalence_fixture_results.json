@@ -1,0 +1,61 @@
+{
+  "scope": "engineering known-program source/artifact equivalence; not scientific synthesis, IEEE execution or robot proof",
+  "reports": {
+    "brake_patch": {
+      "status": "EQUIVALENT",
+      "scope": "source_ir_vs_stored_weight_rational_real_graph",
+      "quantifier": "forall inputs in declared domain: every source output equals the artifact output",
+      "numerical_execution": "not_established",
+      "physical_trajectory": "not_established",
+      "independently_checked_proof_trace": false,
+      "trust": [
+        "scalar IR validator",
+        "source encoder",
+        "artifact graph encoder",
+        "Z3",
+        "rational replay through both interpreters"
+      ],
+      "timeout_ms": 5000,
+      "logic": "QF_LRA",
+      "checker_source_sha256": "51f230f0c376b412187c6d1c6c273e3d2679530727a8a3b99def3c489ee3eb1b",
+      "source_interpreter_sha256": "0e3e57015f4fca01bf5ee860b1d7c4eb1aaf5608d1d9522222e63a00ec8647ee",
+      "artifact_evaluator_sha256": "902ec74ad5d19069354f941481913ee4e8832991b707fa7925c092b627e9afef",
+      "source_sha256": "8a77c03a20b2c9992afc4365e2c0d0b164920c704b5cc1efb7502d809ef3b10f",
+      "artifact_sha256": "9533ee778e62050359c77d55a418d7d15716ae2e3bfce6ae83896f55fa2020c1",
+      "backend": "Z3",
+      "backend_version": "5.3.3",
+      "difference_query_sha256": "f7a0a1c51dc768b0806b29022ae68f30ec4115573b4ffc30e805b445a6946122",
+      "difference_query": "unsat",
+      "reason": "difference query UNSAT under declared rational real semantics",
+      "wall_seconds": 0.02546095200000309
+    },
+    "approach_p": {
+      "status": "EQUIVALENT",
+      "scope": "source_ir_vs_stored_weight_rational_real_graph",
+      "quantifier": "forall inputs in declared domain: every source output equals the artifact output",
+      "numerical_execution": "not_established",
+      "physical_trajectory": "not_established",
+      "independently_checked_proof_trace": false,
+      "trust": [
+        "scalar IR validator",
+        "source encoder",
+        "artifact graph encoder",
+        "Z3",
+        "rational replay through both interpreters"
+      ],
+      "timeout_ms": 5000,
+      "logic": "QF_LRA",
+      "checker_source_sha256": "51f230f0c376b412187c6d1c6c273e3d2679530727a8a3b99def3c489ee3eb1b",
+      "source_interpreter_sha256": "0e3e57015f4fca01bf5ee860b1d7c4eb1aaf5608d1d9522222e63a00ec8647ee",
+      "artifact_evaluator_sha256": "902ec74ad5d19069354f941481913ee4e8832991b707fa7925c092b627e9afef",
+      "source_sha256": "1f1df5f1664b1b046bf4300297c34cc01162d30911f334ddfe2c4e13e1c80e9f",
+      "artifact_sha256": "9242d9f40e6a055bfaa40af38674f3fa5c7b71096cc2b789cc88ed1e63b5d122",
+      "backend": "Z3",
+      "backend_version": "5.3.3",
+      "difference_query_sha256": "a3981f6ed82fab7ad2f1bc81fc7c0d1217d4987073535539c0641a6ac7171567",
+      "difference_query": "unsat",
+      "reason": "difference query UNSAT under declared rational real semantics",
+      "wall_seconds": 0.007029001000091739
+    }
+  }
+}
