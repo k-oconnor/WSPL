@@ -1,0 +1,52 @@
+{
+  "format": "skillforge.rmv.v1",
+  "inputs": {
+    "names": [
+      "height_error_m",
+      "contact"
+    ],
+    "lower": [
+      0,
+      0
+    ],
+    "upper": [
+      0.1,
+      1
+    ]
+  },
+  "and_weights": [
+    [
+      1,
+      1
+    ]
+  ],
+  "or_weights": [
+    [
+      1
+    ]
+  ],
+  "readout_weights": [
+    [
+      0.2
+    ]
+  ],
+  "readout_bias": [
+    0
+  ],
+  "output_lower": [
+    -1
+  ],
+  "output_upper": [
+    1
+  ],
+  "literal_sources": [
+    {
+      "input": 0,
+      "negated": false
+    },
+    {
+      "input": 1,
+      "negated": false
+    }
+  ]
+}

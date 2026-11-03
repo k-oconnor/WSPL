@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "kind": "task",
+  "task_id": "pick_place_001",
+  "instruction": "Complete a grasp and subsequently a placement; release only at the target and avoid collision.",
+  "observable": [
+    "grasp_done",
+    "place_done",
+    "at_target",
+    "collision"
+  ],
+  "controllable": [
+    "invoke_release"
+  ],
+  "bindings": {
+    "object": "object_0",
+    "target": "zone_0"
+  },
+  "formula": {
+    "op": "and",
+    "args": [
+      {
+        "op": "F",
+        "args": [
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "ap",
+                "name": "grasp_done"
+              },
+              {
+                "op": "X",
+                "args": [
+                  {
+                    "op": "F",
+                    "args": [
+                      {
+                        "op": "ap",
+                        "name": "place_done"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "G",
+        "args": [
+          {
+            "op": "implies",
+            "args": [
+              {
+                "op": "ap",
+                "name": "invoke_release"
+              },
+              {
+                "op": "ap",
+                "name": "at_target"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "G",
+        "args": [
+          {
+            "op": "not",
+            "args": [
+              {
+                "op": "ap",
+                "name": "collision"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "clock": "motor_tick",
+  "stop_requires_acceptance": true,
+  "status": "example_not_executed"
+}

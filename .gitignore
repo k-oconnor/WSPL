@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv*/
+build/
+dist/
+data/
+results/
+work/
+checkpoints/
+*.pt
+*.pth
+*.safetensors
+.env
+.env.*
+artifacts/local_paths.json

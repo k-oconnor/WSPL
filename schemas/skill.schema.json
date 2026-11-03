@@ -1,0 +1,412 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skillforge proposed motor-skill contract",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "kind": {
+      "const": "skill"
+    },
+    "skill_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "interface_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "const": "unvalidated_example"
+    },
+    "input_channels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lower": {
+            "type": "number"
+          },
+          "upper": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "name",
+          "unit",
+          "lower",
+          "upper"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 12,
+      "maxItems": 12
+    },
+    "command_channels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lower": {
+            "type": "number"
+          },
+          "upper": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "name",
+          "unit",
+          "lower",
+          "upper"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "architecture": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "const": "mlp"
+            },
+            "input_dim": {
+              "const": 12
+            },
+            "hidden": {
+              "const": [
+                32,
+                32
+              ]
+            },
+            "output_dim": {
+              "const": 4
+            }
+          },
+          "required": [
+            "family",
+            "input_dim",
+            "hidden",
+            "output_dim"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "const": "rmv"
+            },
+            "input_dim": {
+              "const": 12
+            },
+            "clauses": {
+              "const": 56
+            },
+            "heads": {
+              "const": 4
+            },
+            "output_dim": {
+              "const": 4
+            },
+            "literal_mode": {
+              "const": "dual_rail"
+            }
+          },
+          "required": [
+            "family",
+            "input_dim",
+            "clauses",
+            "heads",
+            "output_dim",
+            "literal_mode"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "predicate_vocabulary": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "applicability": {
+      "$ref": "#/$defs/expr"
+    },
+    "success": {
+      "type": "object",
+      "properties": {
+        "observer_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "proposition": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "producer": {
+          "const": "physical_observer"
+        },
+        "stable_ticks": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "observer_id",
+        "proposition",
+        "producer",
+        "stable_ticks"
+      ],
+      "additionalProperties": false
+    },
+    "failure": {
+      "type": "object",
+      "properties": {
+        "observer_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "proposition": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "producer": {
+          "const": "physical_observer"
+        },
+        "stable_ticks": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "observer_id",
+        "proposition",
+        "producer",
+        "stable_ticks"
+      ],
+      "additionalProperties": false
+    },
+    "timeout_ticks": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "control_period_s": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "effects_on_verified_success": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      },
+      "minItems": 1
+    },
+    "memory": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "none"
+        },
+        "reset": {
+          "const": "on_invocation"
+        }
+      },
+      "required": [
+        "kind",
+        "reset"
+      ],
+      "additionalProperties": false
+    },
+    "artifact": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "not_implemented"
+        },
+        "format": {
+          "const": "tensor-json-v1"
+        },
+        "weights_sha256": {
+          "type": "null"
+        },
+        "rmv_graph_sha256": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "status",
+        "format",
+        "weights_sha256",
+        "rmv_graph_sha256"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "skill_id",
+    "interface_version",
+    "status",
+    "input_channels",
+    "command_channels",
+    "architecture",
+    "predicate_vocabulary",
+    "applicability",
+    "success",
+    "failure",
+    "timeout_ticks",
+    "control_period_s",
+    "assumptions",
+    "effects_on_verified_success",
+    "memory",
+    "artifact"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "expr": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "ap"
+            },
+            "name": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]*$"
+            }
+          },
+          "required": [
+            "op",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          },
+          "required": [
+            "op"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "enum": [
+                "not",
+                "X",
+                "Xw",
+                "F",
+                "G"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expr"
+              },
+              "minItems": 1,
+              "maxItems": 1
+            }
+          },
+          "required": [
+            "op",
+            "args"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "enum": [
+                "U",
+                "implies"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expr"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "op",
+            "args"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "enum": [
+                "and",
+                "or"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expr"
+              },
+              "minItems": 2
+            }
+          },
+          "required": [
+            "op",
+            "args"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

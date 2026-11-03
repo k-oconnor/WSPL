@@ -1,0 +1,14 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "tests": 35,
+  "result": "passed",
+  "scientific_run": false,
+  "source_sha256": {
+    "src/skillforge/ltlf.py": "d8705e5f4937ee98a239f958034480491bce2ba82cb1b15a914f40b7a3467747",
+    "src/skillforge/rmv.py": "6c679806037e10d55b2e36ba021bc291295ba6413b92d671ca81cb7ba7adab5c",
+    "src/skillforge/__init__.py": "a9fb7e0d9c6704403d0e1c91132f0182f95e10160c5e418165cf3e89e24ba747",
+    "experiments/source_consistency.py": "46ba3b46796fd932c0425d44e4ca586f198293dbbf51f43cd3e227ee34aa6da8",
+    "tests/test_reference.py": "d255793f8b5cd1ede22bfa12fd70292ad956939c9a2a90deb6775ac873a1fdf7",
+    "tests/test_source_consistency.py": "39264516e6cc87756c192c56e2e8565f4d3e82082bbe7969b04f41301df8dee0"
+  }
+}

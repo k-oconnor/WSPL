@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "source_sibling_path": "Gravemind-programs/studies/neural_program_blocks_v1/results.json",
+      "destination": "provenance/toy_world/program_blocks.json",
+      "sha256": "8b39fec2c9ec4ad297c25744fc5db2f76cdb2542cca9cdad6946e55b89a90826",
+      "copied_unchanged": true
+    },
+    {
+      "source_sibling_path": "Gravemind-programs-adamw/studies/neural_programs_adamw_v1/results.json",
+      "destination": "provenance/toy_world/adamw_comparison.json",
+      "sha256": "583553bffd8e0552a973f30508fcad4295349ac4b1e5df515840a90aab1be996",
+      "copied_unchanged": true
+    },
+    {
+      "source_sibling_path": "Gravemind-programs-adamw/studies/neural_programs_adamw_v1/comparison.png",
+      "destination": "provenance/toy_world/adamw_comparison.png",
+      "sha256": "dc8149e5b1788c4cb0099ea439ca498a17073f59c0833f7048c3652c3d12e9fa",
+      "copied_unchanged": true
+    },
+    {
+      "source_sibling_path": "Gravemind/experiments/source_consistency.py",
+      "destination": "experiments/source_consistency.py",
+      "sha256": "46ba3b46796fd932c0425d44e4ca586f198293dbbf51f43cd3e227ee34aa6da8",
+      "copied_unchanged": true
+    },
+    {
+      "source_sibling_path": "Gravemind/tests/test_source_consistency.py",
+      "destination": "tests/test_source_consistency.py",
+      "sha256": "39264516e6cc87756c192c56e2e8565f4d3e82082bbe7969b04f41301df8dee0",
+      "copied_unchanged": false,
+      "source_sha256": "50fa8d53ea4981b0a5ba4b966e1ce969b5d5dd1d15e06eacf7cd161d5221e65b",
+      "modification": "Direct-entry unit test invokes the guard API instead of missing run_gravemind.py; no gate implementation changes."
+    }
+  ],
+  "training_approval_transferred": false
+}

@@ -1,0 +1,30 @@
+# Skillforge research contract
+
+Kevin authorized a new repository and specification for LLM-programmed neural/RMV action blocks composed by LTLf programs. Skillforge is a user-accepted working name. Coordinate this work with sibling `thesis_master` and the ambition of accumulating compact, executable, experimentally validated knowledge toward a causal neuro-symbolic world model.
+
+Read README.md, docs/CONTEXT.md, docs/SYSTEM_SPEC.md, docs/EXPERIMENT_01.md and docs/EVIDENCE.md before implementation or scientific claims. The current state is spec plus reference semantics; do not describe planned compiler, planner, LLM harness, skill learners or robot execution as implemented.
+
+## Semantics and evidence
+
+- Action blocks execute controls. LTLf propositions report observed state, commands and externally verified skill outcomes. Do not conflate a neural success prediction with physical success.
+- Boolean LTLf on nonempty finite traces and fuzzy RMV arithmetic are distinct. Every bridge needs explicit, versioned thresholds/observer semantics. The direct closed-trace evaluator is not a DFA compiler or online definitive monitor.
+- LTLf automata monitor specifications. Strategy synthesis additionally needs action models, environmental assumptions and realizability analysis. State guarantees conditionally; a successful abstract synthesis is not a physical guarantee.
+- Ground RMV inputs in named channels. Fidelity covers normalization, literals, conjunction/disjunction, affine motor readout and clipping. Report explanation size and empirical usefulness separately from exact arithmetic.
+- Keep the two-by-two acquisition experiment: LLM/gradient × MLP/RMV. Count calls, tokens, failed proposals, feedback, data collection, revisions, compilation and validation. Interaction efficiency and wall-time efficiency are separate claims.
+- Preserve held-out physical layouts, disturbances and task structures; seal choices before final evaluation. Do not use hidden evaluator state in a controller. Supplied structured perception and low-level control adapters must be explicit and matched.
+- This project does not replace legacy RBL-RMV, TNST/TNTST or robot Model 1. No canonical architecture substitution is authorized by importing a prior artifact.
+- Record negative results. Toy-world modularity/repair results assume supplied wiring, privileged intermediate inputs and known repair localization; monolith repair lacked rehearsal.
+
+## Source approval
+
+Every new training or scientific benchmark run must use experiments/source_consistency.py with an exact source-manifest SHA-256 approved by the user and separately registered in experiments/source_pins/approved.json. Unit tests and read-only audits are exempt.
+
+Prepare a concrete constructor, runner, configuration and complete Python inventory before requesting approval. Do not self-approve, transfer old approvals, weaken the gate, or alter an approved historical manifest. The checked runner must instantiate the supplied constructor and save source identity in checkpoints. Source identity does not establish fairness or correctness.
+
+While a source-pinned run is active, do not edit/add/remove inventoried Python in that checkout. Use a separate worktree. Preserve one rolling resumable checkpoint per arm every 1,800 seconds plus final/clean-stop; no accumulating best/initial/per-improvement weight copies unless Kevin changes that policy.
+
+The initial registry is empty. No experiment is approved or queued. Creating this repository/spec does not authorize API expenditure, new training, robot deployment or hardware control. Prepare such work concretely before obtaining any approval explicitly required by this contract. Do not request approval for routine reversible development or unit checks.
+
+## Repo hygiene
+
+Keep data, credentials, model binaries, simulator outputs and machine-specific bindings out of Git. Use artifacts/local_paths.json for local external paths. Do not commit legacy checkpoints or bulk datasets. Do not push or create a public remote unless requested. Keep source provenance for any copied code. No project license has yet been chosen.

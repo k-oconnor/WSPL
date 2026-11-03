@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skillforge complete grounded RMV computation",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "skillforge.rmv.v1"
+    },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "lower": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1
+        },
+        "upper": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "names",
+        "lower",
+        "upper"
+      ],
+      "additionalProperties": false
+    },
+    "and_weights": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "number",
+          "minimum": 0
+        },
+        "minItems": 1
+      },
+      "minItems": 1
+    },
+    "or_weights": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "number",
+          "minimum": 0
+        },
+        "minItems": 1
+      },
+      "minItems": 1
+    },
+    "readout_weights": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "minItems": 1
+      },
+      "minItems": 1
+    },
+    "readout_bias": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 1
+    },
+    "output_lower": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 1
+    },
+    "output_upper": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 1
+    },
+    "literal_sources": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "negated": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "input",
+          "negated"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "format",
+    "inputs",
+    "and_weights",
+    "or_weights",
+    "readout_weights",
+    "readout_bias",
+    "output_lower",
+    "output_upper",
+    "literal_sources"
+  ],
+  "additionalProperties": false
+}

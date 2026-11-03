@@ -1,0 +1,30 @@
+[
+  {
+    "grasp_done": false,
+    "place_done": false,
+    "at_target": false,
+    "invoke_release": false,
+    "collision": false
+  },
+  {
+    "grasp_done": true,
+    "place_done": false,
+    "at_target": false,
+    "invoke_release": false,
+    "collision": false
+  },
+  {
+    "grasp_done": false,
+    "place_done": false,
+    "at_target": true,
+    "invoke_release": true,
+    "collision": false
+  },
+  {
+    "grasp_done": false,
+    "place_done": true,
+    "at_target": true,
+    "invoke_release": false,
+    "collision": false
+  }
+]

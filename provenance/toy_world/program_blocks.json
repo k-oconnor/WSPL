@@ -1,0 +1,126 @@
+{
+  "status": "complete",
+  "receipt_verified": true,
+  "checkpoint_sha256": "cb80f5ef7852ab69c712df3a57d5b4e700809dcf59d8bae57880f0f0fb6fad64",
+  "manifest_sha256": "3fb5492082f2e46ce6c80239b84e563705b86ead1a0cd477f8341d482fc5d55b",
+  "progress": {
+    "task": 27,
+    "step": 0,
+    "updates": 54000,
+    "active_seconds": 43.811999999918044
+  },
+  "arms": {
+    "authored": {
+      "all_contracts_admitted": true,
+      "contracts_verified": 137,
+      "minimum_whole_rollout_accuracy": 1.0,
+      "minimum_goal_accuracy": 1.0,
+      "long_regimes": {
+        "nominal": 1.0,
+        "reverse_0": 1.0,
+        "swap": 1.0
+      },
+      "stale_door_long": {
+        "reverse_0": 0.16796875,
+        "swap": 0.109375
+      },
+      "weights_unchanged_during_evaluation": true
+    },
+    "random_17": {
+      "all_contracts_admitted": false,
+      "contracts_verified": 137,
+      "minimum_whole_rollout_accuracy": 0.0,
+      "minimum_goal_accuracy": 0.73046875,
+      "long_regimes": {
+        "nominal": 0.0,
+        "reverse_0": 0.0,
+        "swap": 0.0
+      },
+      "stale_door_long": {
+        "reverse_0": 0.0,
+        "swap": 0.0
+      },
+      "weights_unchanged_during_evaluation": true
+    },
+    "trained_17": {
+      "all_contracts_admitted": true,
+      "contracts_verified": 137,
+      "minimum_whole_rollout_accuracy": 1.0,
+      "minimum_goal_accuracy": 1.0,
+      "long_regimes": {
+        "nominal": 1.0,
+        "reverse_0": 1.0,
+        "swap": 1.0
+      },
+      "stale_door_long": {
+        "reverse_0": 0.16796875,
+        "swap": 0.109375
+      },
+      "weights_unchanged_during_evaluation": true
+    },
+    "random_29": {
+      "all_contracts_admitted": false,
+      "contracts_verified": 137,
+      "minimum_whole_rollout_accuracy": 0.0,
+      "minimum_goal_accuracy": 0.73046875,
+      "long_regimes": {
+        "nominal": 0.0,
+        "reverse_0": 0.0,
+        "swap": 0.0
+      },
+      "stale_door_long": {
+        "reverse_0": 0.0,
+        "swap": 0.0
+      },
+      "weights_unchanged_during_evaluation": true
+    },
+    "trained_29": {
+      "all_contracts_admitted": true,
+      "contracts_verified": 137,
+      "minimum_whole_rollout_accuracy": 1.0,
+      "minimum_goal_accuracy": 1.0,
+      "long_regimes": {
+        "nominal": 1.0,
+        "reverse_0": 1.0,
+        "swap": 1.0
+      },
+      "stale_door_long": {
+        "reverse_0": 0.16796875,
+        "swap": 0.109375
+      },
+      "weights_unchanged_during_evaluation": true
+    },
+    "random_43": {
+      "all_contracts_admitted": false,
+      "contracts_verified": 137,
+      "minimum_whole_rollout_accuracy": 0.0,
+      "minimum_goal_accuracy": 0.73046875,
+      "long_regimes": {
+        "nominal": 0.0,
+        "reverse_0": 0.0,
+        "swap": 0.0
+      },
+      "stale_door_long": {
+        "reverse_0": 0.0,
+        "swap": 0.0
+      },
+      "weights_unchanged_during_evaluation": true
+    },
+    "trained_43": {
+      "all_contracts_admitted": true,
+      "contracts_verified": 137,
+      "minimum_whole_rollout_accuracy": 1.0,
+      "minimum_goal_accuracy": 1.0,
+      "long_regimes": {
+        "nominal": 1.0,
+        "reverse_0": 1.0,
+        "swap": 1.0
+      },
+      "stale_door_long": {
+        "reverse_0": 0.16796875,
+        "swap": 0.109375
+      },
+      "weights_unchanged_during_evaluation": true
+    }
+  }
+}
