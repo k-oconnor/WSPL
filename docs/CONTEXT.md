@@ -1,5 +1,20 @@
 # Working context
 
+Kevin explicitly selected provider-neutral file interface first for the S1
+authoring screen. Keep public request export and transcript grading independent
+of a provider; choose model and budget before launch. This selects a preparation
+path, not a model, expenditure or scientific source approval.
+
+November 3 formal-experiment preparation: FORMAL_EXPERIMENTS_V1.md separates S1
+supplied-mechanism authoring, S2 independently learned controller repair and S3
+frozen composition. S1 now has a six-arm finite Boolean kernel, public request
+export and source-gated offline transcript grader, all at fixed 541 parameters.
+The first screen is 2 fresh tasks x 3 draws x 6 arms = 36 synthesis trials.
+No scientific proposer calls ran; task/model/cost freeze, isolated collection and
+pre-call accounting remain pending. Sparse weights and one parsed PWA expression
+are the pilot front ends; full scripted construction is not implemented. S2/S3
+are specified, not runnable. See experiments/plans/authoring_screen_v1.json.
+
 November 3 product validation: Kevin endorsed testing a narrow customer problem
 after the PI's startup assessment. Proposed first workflow is controller change
 review and repair, with discovery/paired-cost gates in PRODUCT_VALIDATION.md.

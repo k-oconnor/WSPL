@@ -25,6 +25,7 @@
   "monetary_cap": null,
   "wall_guard_seconds": null,
   "execution": "provider-neutral public request export plus source-gated offline transcript grading",
+  "user_selected_preparation": "provider-neutral file interface first; choose model and budget before launch",
   "front_end_limit": "direct-weight sparse matrices, restricted parsed PWA code and scalar JSON WSPL; arbitrary construction scripts unsupported",
   "verification": "exact finite Boolean enumeration, not continuous graph or deployment proof",
   "cost_provenance": "external reports until provider receipts and execution controller are integrated",
