@@ -24,4 +24,4 @@ Do not infer that the local old source is the successful workstation architectur
 
 ## Current Skillforge evidence
 
-Schema validation and reference-semantics unit checks are engineering evidence only. There is no Skillforge physical run, admitted robot skill, learned task translator, DFA compiler or demonstrated robot synthesis yet. Keep this distinction current as implementation advances.
+Fifty-eight engineering unit checks cover schemas, direct/reference and DFA trace semantics, RMV arithmetic, strong planning, abstract execution and source gating. A supplied finite pickup fixture executes a synthesized timeout/failure recovery strategy. There is no Skillforge physical run, admitted robot skill, LLM task translator or physical robot synthesis yet. Abstract guarantees depend on all declared effect-model outcomes and assumptions; the unit fixture is not a scientific learned-skill benchmark.

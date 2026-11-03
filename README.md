@@ -18,7 +18,7 @@ flowchart LR
     V --> K
 ```
 
-The diagram describes the proposed system. This repository currently contains the **specification, schemas, examples and reference semantics**, not a robot system or a completed LTLf compiler.
+The diagram describes the proposed robot system. This repository currently implements **reference semantics, a small-alphabet LTLf compiler, and strong strategy synthesis/execution in supplied finite skill-effect models**. Robot integration and neural skill acquisition remain planned.
 
 ## Simulation stack
 
@@ -35,6 +35,7 @@ This selects the software stack. Compatible versions, task definitions, observat
 - [System specification](docs/SYSTEM_SPEC.md): interfaces, temporal semantics, execution, RMV fidelity and guarantees.
 - [First experiment](docs/EXPERIMENT_01.md): LLM/gradient acquisition × MLP/RMV, costs, held-out composition and repair.
 - [Roadmap](docs/ROADMAP.md): implementation stages and evidence required to advance.
+- [M1 engineering notes](docs/M1_ENGINEERING.md): compiler semantics, strong planning, limits and executable discrete example.
 - [Prior evidence](docs/EVIDENCE.md): completed toy-world experiments and their limits.
 - [Related work](docs/RELATED_WORK.md): what is established and where this proposal could contribute.
 - [Task example](examples/pick_place.task.json), [skill contract](examples/lift.skill.json), [RMV graph](examples/lift_gate.rmv.json).
@@ -47,8 +48,9 @@ This selects the software stack. Compatible versions, task definitions, observat
 | Direct LTLf semantics on completed finite traces | Implemented reference; unit-tested |
 | Scalar grounded RMV evaluation including affine motor readout | Implemented reference; unit-tested |
 | Source-identity gate and empty approval registry | Provided; gate tests copied with provenance |
+| Small-alphabet LTLf-to-DFA compiler | Implemented with explicit construction limits |
+| Strong finite-model strategy synthesis and abstract executor | Implemented; all declared outcomes must reach acceptance |
 | LLM task translation / weight-authoring harness | Planned |
-| DFA compiler, realizability check and planner | Planned |
 | Differentiable MLP/RMV skills and robot adapter | Planned |
 | Robotic acquisition, composition or repair results | Not run |
 
@@ -62,6 +64,15 @@ python -m unittest discover -s tests -v
 ```
 
 No simulator, model download, training, LLM API call or hardware control occurs in those tests. LTLf evaluation applies to a **closed, nonempty trace**; a false unfinished prefix is not a failure verdict. Logical propositions describe observed state, commands or verified skill outcomes; action blocks themselves are executable policies.
+
+After installation, compile a task or synthesize/execute the supplied discrete pickup fixture:
+
+```sh
+python -m skillforge compile examples/pick_place.task.json --output work/pick_place.dfa.json
+python -m skillforge plan examples/discrete_pickup.task.json examples/discrete_pickup.model.json --initial start --execute --outcome-choice last --output work/discrete_pickup.plan.json
+```
+
+The second command deliberately selects the timeout/failure branches. The synthesized strategy recovers under the fixture's explicitly bounded-failure assumptions. These are engineering fixtures, not robotic or learned-skill results. Output files are created exclusively; choose a new path for another run.
 
 ## Research questions
 

@@ -1,6 +1,6 @@
 # System specification
 
-Status: design version 0.1, November 2, 2026. Only the JSON schemas, closed-trace LTLf reference evaluator, scalar RMV reference and source gate are implemented. Other modules below are proposed contracts for implementation.
+Status: design version 0.1, November 2, 2026. Implemented: JSON schemas, independent closed-trace LTLf semantics, a bounded small-alphabet derivative DFA compiler, strong strategy synthesis/execution for supplied finite models, scalar RMV semantics and the source gate. See M1_ENGINEERING.md. Physical execution, LLM translation/weight authoring and differentiable skills remain proposed.
 
 ## Objective
 
@@ -42,7 +42,7 @@ Selected robot stack, confirmed by Kevin: [MuJoCo](https://github.com/google-dee
 
 Examples of observed propositions: holding, aligned, at_target, object_supported, pickup_done, place_done, contact_lost, collision. Invocation propositions such as invoke_release are controllable commands. Each symbol has a declared producer, physical meaning, thresholds, debounce/stability rule, scope and version. Completion events are one-tick pulses scoped to a skill invocation, rather than permanently true flags that can accidentally satisfy later tasks.
 
-The first specification clock is a motor tick. At tick t, the observer labels the current physical state and outcomes of earlier commands. The executor chooses the current invocation/command; the combined observed and controllable valuation is checked, then the simulator advances. The terminal valuation records the final observation with no new skill invocation. Exactly one terminal valuation is appended; STOP does not manufacture an extra successful action. A later skill-boundary clock is a different interface version and must not silently drop constraints inside a skill.
+The physical specification clock is a motor tick. At tick t, the observer labels the current physical state and outcomes of earlier commands. The executor chooses the current invocation/command; the combined observed and controllable valuation is checked, then the simulator advances. The terminal valuation records the final observation with no new skill invocation. Exactly one terminal valuation is appended; STOP does not manufacture an extra successful action. Engineering finite-model examples use an explicitly declared abstract_tick clock. Task and model clocks must match; abstract transitions do not establish constraints inside real skills. A later skill-boundary interface must not silently drop those constraints.
 
 Unknown/missing sensor values are not false. The observer reports an explicit unresolved status and the executor pauses/aborts under a declared policy. The Boolean reference evaluator rejects missing/non-Boolean propositions. Runtime monitor design must handle incomplete knowledge explicitly before claiming physical guarantees.
 
@@ -52,7 +52,7 @@ Example finite task:
 
 This requires a grasp completion with a strictly later placement completion, release commands only at the target, and no collision over the completed trace. It does not itself define motor actions, prove applicability, or forbid every other unrequested event. Additional task restrictions belong in the formula or skill contracts, not in an undocumented interpreter.
 
-Strong next X is false at the final position; weak next Xw is true there. U is strong until and requires a witness within the trace. The reference API uses nonempty, closed traces. A false value of F(goal) on an unfinished prefix is not a definitive failure. Online acceptance/violation and realizability require a proper automaton implementation; the reference evaluator does not provide them.
+Strong next X is false at the final position; weak next Xw is true there. U is strong until and requires a witness within the trace. The reference API uses nonempty, closed traces. A false value of F(goal) on an unfinished prefix is not a definitive failure. The DFA provides closed-prefix acceptance and possible logical completion; acceptance now does not imply all future extensions remain valid. Finite-model realizability is handled by the separate strong planner, not the reference evaluator.
 
 ## Compilation and planning
 

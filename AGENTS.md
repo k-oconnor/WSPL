@@ -2,18 +2,19 @@
 
 Kevin authorized a new repository and specification for LLM-programmed neural/RMV action blocks composed by LTLf programs. Skillforge is a user-accepted working name. Coordinate this work with sibling `thesis_master` and the ambition of accumulating compact, executable, experimentally validated knowledge toward a causal neuro-symbolic world model.
 
-Read README.md, docs/CONTEXT.md, docs/SYSTEM_SPEC.md, docs/EXPERIMENT_01.md and docs/EVIDENCE.md before implementation or scientific claims. The current state is spec plus reference semantics; do not describe planned compiler, planner, LLM harness, skill learners or robot execution as implemented.
+Read README.md, docs/CONTEXT.md, docs/SYSTEM_SPEC.md, docs/M1_ENGINEERING.md, docs/EXPERIMENT_01.md and docs/EVIDENCE.md before implementation or scientific claims. Implemented: reference semantics, small-alphabet LTLf DFA compilation and strong planning/execution in supplied finite models. LLM harness, skill learners and robot execution remain planned; do not describe them as implemented.
 
 ## Semantics and evidence
 
 - Action blocks execute controls. LTLf propositions report observed state, commands and externally verified skill outcomes. Do not conflate a neural success prediction with physical success.
-- Boolean LTLf on nonempty finite traces and fuzzy RMV arithmetic are distinct. Every bridge needs explicit, versioned thresholds/observer semantics. The direct closed-trace evaluator is not a DFA compiler or online definitive monitor.
+- Boolean LTLf on nonempty finite traces and fuzzy RMV arithmetic are distinct. Every bridge needs explicit, versioned thresholds/observer semantics. The direct evaluator is independent of the derivative compiler. A currently accepting DFA state need not remain accepting after further observations.
 - LTLf automata monitor specifications. Strategy synthesis additionally needs action models, environmental assumptions and realizability analysis. State guarantees conditionally; a successful abstract synthesis is not a physical guarantee.
 - Ground RMV inputs in named channels. Fidelity covers normalization, literals, conjunction/disjunction, affine motor readout and clipping. Report explanation size and empirical usefulness separately from exact arithmetic.
 - Keep the two-by-two acquisition experiment: LLM/gradient × MLP/RMV. Count calls, tokens, failed proposals, feedback, data collection, revisions, compilation and validation. Interaction efficiency and wall-time efficiency are separate claims.
 - Preserve held-out physical layouts, disturbances and task structures; seal choices before final evaluation. Do not use hidden evaluator state in a controller. Supplied structured perception and low-level control adapters must be explicit and matched.
 - This project does not replace legacy RBL-RMV, TNST/TNTST or robot Model 1. No canonical architecture substitution is authorized by importing a prior artifact.
 - Record negative results. Toy-world modularity/repair results assume supplied wiring, privileged intermediate inputs and known repair localization; monolith repair lacked rehearsal.
+- Finite planning is strong reachability under every declared outcome, with no fairness assumption. Construction limits are errors, not evidence of infeasibility. Declared model/clock/proposition roles must match; never infer physical robustness from a bounded symbolic retry fixture.
 
 ## Source approval
 

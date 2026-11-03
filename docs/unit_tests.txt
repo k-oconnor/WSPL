@@ -1,6 +1,63 @@
-Command: python -m unittest discover -s tests -v
-Result: OK
-Tests: 35
-Reported elapsed time: 1.692 seconds
-Scope: reference LTLf, grounded RMV scalar arithmetic, schemas/examples/provenance and source-gate fixtures.
-No training, simulator execution, LLM API call or hardware control.
+test_clock_mismatch_and_vocabulary_rejected (test_automata_planning.CLITests.test_clock_mismatch_and_vocabulary_rejected) ... ok
+test_compile_cli_and_exclusive_output (test_automata_planning.CLITests.test_compile_cli_and_exclusive_output) ... ok
+test_finite_model_schema_and_example (test_automata_planning.CLITests.test_finite_model_schema_and_example) ... ok
+test_limit_and_unrealizable_exit_codes_differ (test_automata_planning.CLITests.test_limit_and_unrealizable_exit_codes_differ) ... ok
+test_plan_execute_cli_worst_declared_outcomes (test_automata_planning.CLITests.test_plan_execute_cli_worst_declared_outcomes) ... ok
+test_compilation_limits_are_explicit (test_automata_planning.CompilerTests.test_compilation_limits_are_explicit) ... ok
+test_deterministic_serialization_and_complete_transition_table (test_automata_planning.CompilerTests.test_deterministic_serialization_and_complete_transition_table) ... ok
+test_exhaustive_short_trace_agreement_with_independent_semantics (test_automata_planning.CompilerTests.test_exhaustive_short_trace_agreement_with_independent_semantics) ... ok
+test_existing_motor_task_example_acceptance_matches_reference (test_automata_planning.CompilerTests.test_existing_motor_task_example_acceptance_matches_reference) ... ok
+test_nonempty_trace_contract_and_boolean_values (test_automata_planning.CompilerTests.test_nonempty_trace_contract_and_boolean_values) ... ok
+test_pending_eventual_is_completable_but_collision_is_irreversible (test_automata_planning.CompilerTests.test_pending_eventual_is_completable_but_collision_is_irreversible) ... ok
+test_seeded_mixed_formula_agreement (test_automata_planning.CompilerTests.test_seeded_mixed_formula_agreement) ... ok
+test_command_guard_prevents_an_unsafe_shortcut (test_automata_planning.PlanningTests.test_command_guard_prevents_an_unsafe_shortcut) ... ok
+test_execution_budget_and_out_of_contract_outcomes_are_distinct (test_automata_planning.PlanningTests.test_execution_budget_and_out_of_contract_outcomes_are_distinct) ... ok
+test_impossible_collision_constraint_is_not_reported_as_success (test_automata_planning.PlanningTests.test_impossible_collision_constraint_is_not_reported_as_success) ... ok
+test_model_changes_and_undeclared_atoms_are_rejected (test_automata_planning.PlanningTests.test_model_changes_and_undeclared_atoms_are_rejected) ... ok
+test_model_is_snapshot_and_rejects_invalid_structure (test_automata_planning.PlanningTests.test_model_is_snapshot_and_rejects_invalid_structure) ... ok
+test_planning_limit_is_not_unrealizability (test_automata_planning.PlanningTests.test_planning_limit_is_not_unrealizability) ... ok
+test_stop_has_one_terminal_observation_and_no_fake_action (test_automata_planning.PlanningTests.test_stop_has_one_terminal_observation_and_no_fake_action) ... ok
+test_success_and_bounded_timeout_failure_recovery (test_automata_planning.PlanningTests.test_success_and_bounded_timeout_failure_recovery) ... ok
+test_unavoidable_permanent_failure_is_unrealizable (test_automata_planning.PlanningTests.test_unavoidable_permanent_failure_is_unrealizable) ... ok
+test_unbounded_adversarial_retry_is_not_assumed_to_succeed (test_automata_planning.PlanningTests.test_unbounded_adversarial_retry_is_not_assumed_to_succeed) ... ok
+test_winning_rank_decreases_for_every_declared_outcome (test_automata_planning.PlanningTests.test_winning_rank_decreases_for_every_declared_outcome) ... ok
+test_provenance_copies_match_recorded_hashes (test_reference.ArtifactTests.test_provenance_copies_match_recorded_hashes) ... ok
+test_registry_entries_require_user_approval_provenance (test_reference.ArtifactTests.test_registry_entries_require_user_approval_provenance) ... ok
+test_schema_definitions_and_example_instances (test_reference.ArtifactTests.test_schema_definitions_and_example_instances) ... ok
+test_task_vocabulary_and_skill_normalization_are_consistent (test_reference.ArtifactTests.test_task_vocabulary_and_skill_normalization_are_consistent) ... ok
+test_eventual_false_prefix_is_not_a_definitive_failure (test_reference.FiniteTraceTests.test_eventual_false_prefix_is_not_a_definitive_failure) ... ok
+test_global_and_boolean_connectives (test_reference.FiniteTraceTests.test_global_and_boolean_connectives) ... ok
+test_invalid_ast_fields_arity_and_operator_rejected (test_reference.FiniteTraceTests.test_invalid_ast_fields_arity_and_operator_rejected) ... ok
+test_missing_or_fuzzy_propositions_are_rejected (test_reference.FiniteTraceTests.test_missing_or_fuzzy_propositions_are_rejected) ... ok
+test_next_and_weak_next_at_terminal_position (test_reference.FiniteTraceTests.test_next_and_weak_next_at_terminal_position) ... ok
+test_next_observes_the_following_position (test_reference.FiniteTraceTests.test_next_observes_the_following_position) ... ok
+test_order_requires_a_later_witness (test_reference.FiniteTraceTests.test_order_requires_a_later_witness) ... ok
+test_roundtrip_atoms_and_limits (test_reference.FiniteTraceTests.test_roundtrip_atoms_and_limits) ... ok
+test_strong_until_requires_a_witness (test_reference.FiniteTraceTests.test_strong_until_requires_a_witness) ... ok
+test_task_example_and_independent_counterexamples (test_reference.FiniteTraceTests.test_task_example_and_independent_counterexamples) ... ok
+test_temporal_dual_on_small_closed_traces (test_reference.FiniteTraceTests.test_temporal_dual_on_small_closed_traces) ... ok
+test_until_can_be_satisfied_immediately (test_reference.FiniteTraceTests.test_until_can_be_satisfied_immediately) ... ok
+test_bad_shapes_and_logical_signs_rejected (test_reference.RMVTests.test_bad_shapes_and_logical_signs_rejected) ... ok
+test_contact_gate_changes_output (test_reference.RMVTests.test_contact_gate_changes_output) ... ok
+test_invalid_ranges_duplicate_channels_and_nonfinite_weights_rejected (test_reference.RMVTests.test_invalid_ranges_duplicate_channels_and_nonfinite_weights_rejected) ... ok
+test_known_grounded_calculation (test_reference.RMVTests.test_known_grounded_calculation) ... ok
+test_normalization_and_final_readout_clipping_included (test_reference.RMVTests.test_normalization_and_final_readout_clipping_included) ... ok
+test_observation_names_and_numeric_types_are_strict (test_reference.RMVTests.test_observation_names_and_numeric_types_are_strict) ... ok
+test_positive_and_negative_literals_of_one_channel_can_coexist (test_reference.RMVTests.test_positive_and_negative_literals_of_one_channel_can_coexist) ... ok
+test_added_or_missing_source_rejected (test_source_consistency.SourceConsistencyTests.test_added_or_missing_source_rejected) ... ok
+test_changed_source_fails_before_runner (test_source_consistency.SourceConsistencyTests.test_changed_source_fails_before_runner) ... ok
+test_dependency_shadowing_is_rejected (test_source_consistency.SourceConsistencyTests.test_dependency_shadowing_is_rejected) ... ok
+test_direct_training_guard_rejects_unregistered_entry (test_source_consistency.SourceConsistencyTests.test_direct_training_guard_rejects_unregistered_entry) ... ok
+test_existing_run_is_untouched (test_source_consistency.SourceConsistencyTests.test_existing_run_is_untouched) ... ok
+test_manifest_rehash_cannot_self_approve (test_source_consistency.SourceConsistencyTests.test_manifest_rehash_cannot_self_approve) ... ok
+test_postrun_mutation_fails (test_source_consistency.SourceConsistencyTests.test_postrun_mutation_fails) ... ok
+test_runner_must_use_constructor (test_source_consistency.SourceConsistencyTests.test_runner_must_use_constructor) ... ok
+test_stale_bytecode_is_not_executed (test_source_consistency.SourceConsistencyTests.test_stale_bytecode_is_not_executed) ... ok
+test_unapproved_registry_identity_fails (test_source_consistency.SourceConsistencyTests.test_unapproved_registry_identity_fails) ... ok
+test_verified_constructor_and_receipt (test_source_consistency.SourceConsistencyTests.test_verified_constructor_and_receipt) ... ok
+test_wrong_callable_source_rejected (test_source_consistency.SourceConsistencyTests.test_wrong_callable_source_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 58 tests in 2.051s
+
+OK

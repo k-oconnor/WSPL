@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "kind": "finite_model_strategy",
+  "realizable": true,
+  "initial": [
+    "start",
+    0
+  ],
+  "model_sha256": "4f73575732440bdaadbf43680fc1bce6bbe638091535b4d2310bdd588b30bce5",
+  "explored_states": 6,
+  "guarantee": "Strong finite reachability under all supplied outcomes; no fairness assumption",
+  "policy": [
+    {
+      "world": "aligned",
+      "automaton": 1,
+      "action": "grasp",
+      "rank": 3
+    },
+    {
+      "world": "approach_timeout",
+      "automaton": 1,
+      "action": "retry_approach",
+      "rank": 4
+    },
+    {
+      "world": "grasp_failed",
+      "automaton": 1,
+      "action": "retry_grasp",
+      "rank": 2
+    },
+    {
+      "world": "holding",
+      "automaton": 1,
+      "action": "lift",
+      "rank": 1
+    },
+    {
+      "world": "raised",
+      "automaton": 3,
+      "action": null,
+      "rank": 0
+    },
+    {
+      "world": "start",
+      "automaton": 0,
+      "action": "approach",
+      "rank": 5
+    }
+  ],
+  "clock": "abstract_tick",
+  "assumptions": [
+    "Supplied finite symbolic effect model, not learned physical behavior.",
+    "At most one approach timeout and one grasp failure; explicit recovery transitions then succeed.",
+    "Each transition is one abstract tick; no physical duration or robot controller is modeled."
+  ],
+  "execution": {
+    "status": "accepted",
+    "trace": [
+      {
+        "aligned": false,
+        "holding": false,
+        "grasp_done": false,
+        "pickup_done": false,
+        "grasp_failed": false,
+        "timeout": false,
+        "collision": false,
+        "invoke_lift": false,
+        "invoke_grasp": false,
+        "invoke_approach": true
+      },
+      {
+        "aligned": false,
+        "holding": false,
+        "grasp_done": false,
+        "pickup_done": false,
+        "grasp_failed": false,
+        "timeout": true,
+        "collision": false,
+        "invoke_lift": false,
+        "invoke_grasp": false,
+        "invoke_approach": true
+      },
+      {
+        "aligned": true,
+        "holding": false,
+        "grasp_done": false,
+        "pickup_done": false,
+        "grasp_failed": false,
+        "timeout": false,
+        "collision": false,
+        "invoke_lift": false,
+        "invoke_grasp": true,
+        "invoke_approach": false
+      },
+      {
+        "aligned": true,
+        "holding": false,
+        "grasp_done": false,
+        "pickup_done": false,
+        "grasp_failed": true,
+        "timeout": false,
+        "collision": false,
+        "invoke_lift": false,
+        "invoke_grasp": true,
+        "invoke_approach": false
+      },
+      {
+        "aligned": true,
+        "holding": true,
+        "grasp_done": true,
+        "pickup_done": false,
+        "grasp_failed": false,
+        "timeout": false,
+        "collision": false,
+        "invoke_lift": true,
+        "invoke_grasp": false,
+        "invoke_approach": false
+      },
+      {
+        "aligned": false,
+        "holding": true,
+        "grasp_done": false,
+        "pickup_done": true,
+        "grasp_failed": false,
+        "timeout": false,
+        "collision": false,
+        "invoke_lift": false,
+        "invoke_grasp": false,
+        "invoke_approach": false
+      }
+    ],
+    "actions": [
+      "approach",
+      "retry_approach",
+      "grasp",
+      "retry_grasp",
+      "lift"
+    ],
+    "states": [
+      "start",
+      "approach_timeout",
+      "aligned",
+      "grasp_failed",
+      "holding",
+      "raised"
+    ],
+    "accepted": true,
+    "terminal_valuations": 1
+  }
+}

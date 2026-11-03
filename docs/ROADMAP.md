@@ -2,13 +2,15 @@
 
 ## M0: reference interfaces and reproducibility
 
-Current deliverables: schemas/examples, closed finite-trace semantics, scalar RMV arithmetic, source gate, provenance and experiment design. Complete when unit checks pass, examples validate, implementation status is explicit and the new Git repo has a clean initial commit. No physical capability is claimed.
+Completed engineering scaffold: schemas/examples, closed finite-trace semantics, scalar RMV arithmetic, source gate, provenance and experiment design. Unit checks pass and the initial repo is committed. No physical capability is claimed.
 
 ## M1: task compilation before robot control
 
 Implement restricted LTLf-to-DFA compilation and direct-semantics cross-checking. Define controllable versus observable propositions and a finite skill-effect model. Demonstrate a synthesized strategy on a small discrete world, including failure/timeout and infeasible requests. The old toy-world fixed sequence is not this result. Seal a task-translation development/final split before evaluating an LLM translator.
 
 Exit evidence: acceptance equivalence on a declared finite trace suite; negative terminal/ordering cases; actual strategy execution under the abstract model; infeasible requests correctly separated from compilation errors.
+
+Current status: implemented and checked as engineering fixtures. The small-alphabet derivative compiler and finite-model strong planner pass 58 total unit tests, including semantics agreement, bounded timeout/failure recovery, unbounded-retry rejection and construction-limit separation. See M1_ENGINEERING.md. Broad task-translation benchmarks and LLM-generated tasks have not been evaluated.
 
 ## M2: grounded motor skills
 

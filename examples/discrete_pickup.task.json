@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "kind": "task",
+  "task_id": "discrete_pickup_001",
+  "instruction": "Observe a grasp before a later completed pickup; lift only while holding and avoid collision.",
+  "observable": [
+    "aligned",
+    "holding",
+    "grasp_done",
+    "pickup_done",
+    "grasp_failed",
+    "timeout",
+    "collision"
+  ],
+  "controllable": [
+    "invoke_approach",
+    "invoke_grasp",
+    "invoke_lift"
+  ],
+  "bindings": {
+    "object": "toy_object"
+  },
+  "formula": {
+    "op": "and",
+    "args": [
+      {
+        "op": "F",
+        "args": [
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "ap",
+                "name": "grasp_done"
+              },
+              {
+                "op": "X",
+                "args": [
+                  {
+                    "op": "F",
+                    "args": [
+                      {
+                        "op": "ap",
+                        "name": "pickup_done"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "G",
+        "args": [
+          {
+            "op": "implies",
+            "args": [
+              {
+                "op": "ap",
+                "name": "invoke_lift"
+              },
+              {
+                "op": "ap",
+                "name": "holding"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "G",
+        "args": [
+          {
+            "op": "not",
+            "args": [
+              {
+                "op": "ap",
+                "name": "collision"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "clock": "abstract_tick",
+  "stop_requires_acceptance": true,
+  "status": "example_not_executed"
+}

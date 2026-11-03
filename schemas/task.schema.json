@@ -45,7 +45,10 @@
       "$ref": "#/$defs/expr"
     },
     "clock": {
-      "const": "motor_tick"
+      "enum": [
+        "motor_tick",
+        "abstract_tick"
+      ]
     },
     "stop_requires_acceptance": {
       "const": true

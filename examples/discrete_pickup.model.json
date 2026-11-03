@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "kind": "finite_skill_model",
+  "clock": "abstract_tick",
+  "states": {
+    "start": {
+      "aligned": false,
+      "holding": false,
+      "grasp_done": false,
+      "pickup_done": false,
+      "grasp_failed": false,
+      "timeout": false,
+      "collision": false
+    },
+    "aligned": {
+      "aligned": true,
+      "holding": false,
+      "grasp_done": false,
+      "pickup_done": false,
+      "grasp_failed": false,
+      "timeout": false,
+      "collision": false
+    },
+    "holding": {
+      "aligned": true,
+      "holding": true,
+      "grasp_done": true,
+      "pickup_done": false,
+      "grasp_failed": false,
+      "timeout": false,
+      "collision": false
+    },
+    "raised": {
+      "aligned": false,
+      "holding": true,
+      "grasp_done": false,
+      "pickup_done": true,
+      "grasp_failed": false,
+      "timeout": false,
+      "collision": false
+    },
+    "approach_timeout": {
+      "aligned": false,
+      "holding": false,
+      "grasp_done": false,
+      "pickup_done": false,
+      "grasp_failed": false,
+      "timeout": true,
+      "collision": false
+    },
+    "grasp_failed": {
+      "aligned": true,
+      "holding": false,
+      "grasp_done": false,
+      "pickup_done": false,
+      "grasp_failed": true,
+      "timeout": false,
+      "collision": false
+    },
+    "collision": {
+      "aligned": false,
+      "holding": false,
+      "grasp_done": false,
+      "pickup_done": false,
+      "grasp_failed": false,
+      "timeout": false,
+      "collision": true
+    }
+  },
+  "transitions": {
+    "start": {
+      "approach": [
+        "aligned",
+        "approach_timeout"
+      ]
+    },
+    "approach_timeout": {
+      "retry_approach": [
+        "aligned"
+      ]
+    },
+    "aligned": {
+      "grasp": [
+        "holding",
+        "grasp_failed"
+      ]
+    },
+    "grasp_failed": {
+      "retry_grasp": [
+        "holding"
+      ]
+    },
+    "holding": {
+      "lift": [
+        "raised"
+      ]
+    },
+    "raised": {},
+    "collision": {}
+  },
+  "commands": {
+    "approach": [
+      "invoke_approach"
+    ],
+    "retry_approach": [
+      "invoke_approach"
+    ],
+    "grasp": [
+      "invoke_grasp"
+    ],
+    "retry_grasp": [
+      "invoke_grasp"
+    ],
+    "lift": [
+      "invoke_lift"
+    ]
+  },
+  "assumptions": [
+    "Supplied finite symbolic effect model, not learned physical behavior.",
+    "At most one approach timeout and one grasp failure; explicit recovery transitions then succeed.",
+    "Each transition is one abstract tick; no physical duration or robot controller is modeled."
+  ]
+}
