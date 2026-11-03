@@ -15,6 +15,7 @@ import time
 from .wspl_artifact import ReLUArtifact, canonical_bytes
 from .wspl_compile import compile_scalar
 from .wspl_core import rational
+from .wspl_parse import parse_module
 
 ARMS = ('weights_off', 'weights_on', 'code_off', 'code_on', 'wspl_off', 'wspl_on')
 INPUTS = ('switch_a', 'switch_b', 'power', 'lock')
@@ -163,14 +164,28 @@ def sparse_artifact(candidate):
                              allocation=dict(mode='fresh_mlp', widths=list(WIDTHS), parameters=PARAMETERS), source_map={}))
 
 
+def candidate_program(representation, candidate):
+    """Lower submitted source; study requirements are never candidate-owned."""
+    if representation == 'code':
+        return parse_code(candidate)
+    if representation == 'wspl':
+        if not isinstance(candidate, str):
+            raise ValueError('WSPL arm requires module text, not JSON IR')
+        parsed = parse_module(candidate)
+        if parsed.contracts:
+            raise ValueError('study requirements are fixed externally; omit ensures/preserves declarations')
+        return parsed.program
+    raise ValueError('representation has no scalar source')
+
+
 def build_candidate(representation, candidate):
     if len(canonical_bytes(candidate)) > 24000:
         raise ValueError('candidate exceeds 24000 byte limit')
     if representation == 'weights':
         artifact = sparse_artifact(candidate)
     elif representation in ('code', 'wspl'):
-        p = parse_code(candidate) if representation == 'code' else candidate
-        if not isinstance(p, dict) or p.get('inputs') != {k: dict(TYPE) for k in INPUTS} or len(p.get('outputs', [])) != 1 or p['outputs'][0]['name'] != 'next_open' or p['outputs'][0]['type'] != TYPE:
+        p = candidate_program(representation, candidate)
+        if not isinstance(p, dict) or p.get('inputs') != {k: dict(TYPE) for k in INPUTS} or tuple(p['inputs']) != INPUTS or len(p.get('outputs', [])) != 1 or p['outputs'][0]['name'] != 'next_open' or p['outputs'][0]['type'] != TYPE:
             raise ValueError('candidate cannot alter task ports, units or declared bounds')
         artifact = fixed_artifact(compile_scalar(p))
     else:
@@ -218,9 +233,9 @@ class AuthoringTrial:
         syntax = {
             'weights': 'JSON {format: wspl.sparse_weights.v0, layers: [five layers]}; each layer has rows (one dict per output neuron mapping zero-based input-index strings to exact rational coefficient strings) and bias (one rational string per output neuron). Omitted matrix entries are zero. Four ReLU hidden layers, linear output. No code/scripts execute.',
             'code': 'One Python-style expression in the four named inputs. Use integer constants or constant fractions, +, -, multiplication/division by constants, min(a,b), max(a,b), clip(value,lower,upper). No imports, attributes, indexing, loops, conditionals or variable products. Expression is parsed, not executed.',
-            'wspl': 'JSON wspl.scalar_ir.v0 with exact task inputs/types, lets and one output next_open of Real/unit 1/bounds 0..1. Operators: ref, const, affine, relu, clip, margin, min, max and explicitly typed graded logic. See the versioned SCALAR_CORE.md grammar supplied with requests.',
+            'wspl': 'One WSPL Core PWA module as a text string, not JSON IR. Declare inputs in the supplied order as Real[0,1] normalized_value; declare output next_open: Real[0,1] normalized_value; then assign next_open. Typed lets are allowed. Omit ensures/preserves: study requirements are fixed externally. See PARSER.md and SCALAR_CORE.md. Text is parsed, never executed.',
         }[representation]
-        return copy.deepcopy(dict(format='wspl.authoring_request.v0', trial_id=self.trial_id,
+        return copy.deepcopy(dict(format='wspl.authoring_request.v1', trial_id=self.trial_id,
                                   model_id=self.model_id, arm=self.arm, task=self.task,
                                   widths=list(WIDTHS), parameters=PARAMETERS,
                                   development_inputs=self.development,
@@ -295,7 +310,7 @@ class AuthoringTrial:
                 # Graph task correctness remains the common primary endpoint.
                 from .wspl_equiv import check_equivalence
                 candidate = self.ledger[candidate_id]['candidate']
-                source = parse_code(candidate) if self.arm.startswith('code_') else candidate
+                source = candidate_program(self.arm.split('_')[0], candidate)
                 result['source_equivalence'] = check_equivalence(source, artifact, timeout_ms=5000)
         result['evaluation_seconds_before_final'] = sum(e['evaluator_seconds'] for e in self.ledger)
         return result

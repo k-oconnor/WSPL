@@ -1,5 +1,23 @@
 # Working context
 
+Kevin endorsed adding Path to Recursive Twin Improvement (RTI) to the README
+after discussion. Proposed loop: two frontier-model instantiations alternately
+edit each other's weights, admitting changes only after independent domain
+improvement and required contract/preservation checks. Outcomes become proposed
+training signals for better editing. Distinguish target-domain gains from editor
+competence, formal proofs from empirical scores, and accessible-small-target
+precursors from genuine editable frontier twins. RTI/training/recursive gains are
+future research, not implemented results or authorization to run a new study.
+
+Kevin selected WSPL text syntax for the initial authoring comparison. Both WSPL
+arms now accept Core PWA module strings through Mo's parser, with JSON IR internal
+only. Candidate contracts are rejected, fixed input order/types remain enforced,
+and final equivalence checks compare parsed IR to selected stored weights.
+Request schema v1 invalidates old request hashes. All arms receive the same text
+grammar documentation. Earlier notes describing a JSON-IR submission arm are
+historical. Astra selection, 541 parameters and all budgets remain unchanged;
+the proposed $150 is still not spending authorization.
+
 Astra selected: Kevin explicitly chose gpt-6-astra for S1. The provider-neutral
 file preparation path stays in place. Standard direct-API planning estimate is
 $20-70 for 36 trials, with a $117.9648 token-only bound at the entire 2,359,296-token

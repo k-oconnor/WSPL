@@ -67,3 +67,18 @@ sparse-matrix/single-expression front ends do not establish superiority over
 unrestricted scripts/code. Model/sampling/money/task freeze and isolated live
 collection with provider receipts/pre-call accounting remain pending. No new
 manifest is approved, no source registry entry added, no experiment launched.
+
+
+## Text syntax selected for the authoring screen (November 3)
+
+Kevin selected Core PWA text for both WSPL arms before scientific collection.
+Candidate strings now lower through Mo's parse_module; JSON IR submissions and
+candidate ensures/preserves clauses are rejected. Study I/O types/order are fixed;
+all arms still produce 541 parameters and use the same primary evaluation and
+budgets. Request schema v1 changes request hashes. The shared public documentation
+bundle now includes PARSER.md. Submitted text remains in the candidate ledger;
+final source equivalence checks the lowered IR against actual selected weights,
+with the parser trusted separately. Updated matched-arm tests and two new
+regressions cover text-only/contract rejection, typed lets and fixed input order.
+All227 engineering tests pass. No proposer calls, paid execution, source approval
+or scientific launch; Astra and proposed150USD budget remain as previously scoped.

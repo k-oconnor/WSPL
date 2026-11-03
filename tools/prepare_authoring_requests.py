@@ -22,7 +22,7 @@ def prepare(study, output):
         (output/f'{trial_id}.json').write_text(json.dumps(trial.request(),indent=2)+'\n',encoding='utf-8',newline='\n')
     # Same portable operator documentation available to every arm. It contains
     # grammar and inspected examples, not these generated tasks' reference answers.
-    for name in ('SCALAR_CORE.md','COMPILER.md'):
+    for name in ('SCALAR_CORE.md','COMPILER.md','PARSER.md'):
         (output/name).write_bytes((ROOT/'docs/wspl'/name).read_bytes())
     inventory = {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(output.iterdir())}
     (output/'inventory.json').write_text(json.dumps(dict(files=inventory,

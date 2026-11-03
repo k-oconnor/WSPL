@@ -1,13 +1,13 @@
 {
   "command": "external isolated CPU Python with optional Z3 -m unittest discover -s tests -v",
-  "tests": 225,
+  "tests": 227,
   "result": "passed",
   "scientific_run": false,
   "source_sha256": {
     "src/skillforge/__init__.py": "ccb69549c9b3161c3584987b211ec045af8da6678e042b5cc2c9caca626fe2de",
     "src/skillforge/__main__.py": "7eb601885ecb0e433312632fa64ff8a166ce834739e02a546cf85cc6d5df159f",
     "src/skillforge/approach.py": "4a903ecbcce33f044dcdd72483f8c917ad4df515e138d44fb98e6e12407fdd46",
-    "src/skillforge/authoring_study.py": "2c2438489117708283a61713e16656399126edac115ccfd86f08557e5b41df49",
+    "src/skillforge/authoring_study.py": "e2617cc69193778cfdf053719e60c5376a96c25c4f6d6fe67d04099a1918bb06",
     "src/skillforge/automata.py": "5d7a374d6f007b7ceda33c3d9e779b5dd422e5f8017704f890b6466727a99251",
     "src/skillforge/hierarchy.py": "5e689a5a78dfd60f08d8873d1f758b1c2aa116938d3f3c9eb82534fe2e04af76",
     "src/skillforge/interventions.py": "64326c7246cb9462da282f094c82ed2350c5717624acfb30f87c64024e89c01c",
@@ -31,8 +31,8 @@
     "experiments/run_authoring_screen.py": "820b2ea5f12cc5331e0a662f694f728ad5e08eb618296c03e651e2f804807431",
     "experiments/source_consistency.py": "46ba3b46796fd932c0425d44e4ca586f198293dbbf51f43cd3e227ee34aa6da8",
     "tests/test_approach.py": "85095f029ec296c1d095e54cfbc0ea1ffe0317000d86a26b292c5be02eb5f39c",
-    "tests/test_authoring_screen.py": "3760224de557f9b42de7432361b14a3df73881e63e64fffd23bd8cc25d25e5b1",
-    "tests/test_authoring_study.py": "0ae235af89b49b6624e748ee5ff2f9f6715735c53ff90c80b6dc1928fb527f20",
+    "tests/test_authoring_screen.py": "9ac23e501778866758a628be956ef7d0eb927b09e7b582e4514f5c320aa7763b",
+    "tests/test_authoring_study.py": "98e47e06fd8719c0b06f48033a6d508cfb0d85c20e3b1c43084bea496f3e8044",
     "tests/test_automata_planning.py": "5974a7e0df226ee0a1db39ed18e8e8ef1549e0fba0086f5790514958a0d0e085",
     "tests/test_controller_review_demo.py": "0d71320f42cdcb34b43c2cecc353732ec40bb8c4a4a164e8d8ffbea46a668ccc",
     "tests/test_hierarchy.py": "a588541ae301263a3e548c0d8c30961674e16317debd1b17a33350007a81d064",
@@ -52,7 +52,7 @@
     "tests/test_wspl_verify.py": "aa198d37032e139148170173065a4979b717c8020fa76ffb1d6039f18e16f196",
     "tools/demo_controller_review.py": "1a95da9944903ed6da87bbb1b69ff7c8692f5eda9846947f21df91a1ffe6ebe4",
     "tools/prepare_approach.py": "dd09631a282d5480457f65737f0c734787de2c356a5490ffe4fd5d5e633ede95",
-    "tools/prepare_authoring_requests.py": "e485d595f95c644b95e04e3797378fad55c15a7ab6a60941e720ea77cef8efd8",
+    "tools/prepare_authoring_requests.py": "88ff8747ca57d4ef7e7d5bb5190f89562856f5c404fa3a623c80f235b91e45d3",
     "tools/sim_preflight.py": "8c8b7b580128d7f3949e371a8ad48b31d41784036c94817ab04a8746d96bf442"
   }
 }

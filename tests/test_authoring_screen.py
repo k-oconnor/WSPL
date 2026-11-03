@@ -11,6 +11,7 @@ sys.path[:0]=[str(ROOT/'src'),str(ROOT/'experiments'),str(ROOT/'tools')]
 from skillforge.authoring_study import ARMS,AuthoringTrial,digest,reference_program
 from run_authoring_screen import AuthoringScreen,trial_specs,run
 from prepare_authoring_requests import prepare
+from test_authoring_study import text
 
 
 def study():
@@ -61,9 +62,14 @@ class AuthoringScreenTests(unittest.TestCase):
     def test_request_export_contains_no_reference_artifacts_or_final_labels(self):
         with tempfile.TemporaryDirectory() as tmp:
             output=Path(tmp)/'requests';inventory=prepare(study(),output)
-            self.assertEqual(len(inventory),38)
+            self.assertEqual(len(inventory),39)
+            self.assertTrue((output/'PARSER.md').exists())
             for trial_id,_,_ in trial_specs(study()):
                 request=json.loads((output/f'{trial_id}.json').read_text())
+                self.assertEqual(request['format'],'wspl.authoring_request.v1')
+                if request['arm'].startswith('wspl_'):
+                    self.assertIn('module',request['syntax'])
+                    self.assertIn('not JSON IR',request['syntax'])
                 self.assertNotIn('reference_program',request)
                 self.assertNotIn('artifact',request)
                 self.assertNotIn('withheld_inputs',request)
@@ -77,7 +83,7 @@ class AuthoringScreenTests(unittest.TestCase):
         config=study();bundle=transcripts(config)
         for trial_id,task,arm in trial_specs(config):
             if arm=='wspl_on':
-                bundle[trial_id]['turns']=[dict(candidate=reference_program(task),
+                bundle[trial_id]['turns']=[dict(candidate=text(task),
                     usage=dict(input_tokens=1,output_tokens=1,elapsed_seconds=0.,cost=0.),previous_feedback_sha256=None)]
         with tempfile.TemporaryDirectory() as tmp:
             result=AuthoringScreen().replay(config,bundle,Path(tmp))

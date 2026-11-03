@@ -24,6 +24,17 @@ def expression(task):
     return 'clip('+'+'.join(clauses)+',0,1)'
 
 
+def module_text(value):
+    return ('module Mechanism {\n' +
+            ''.join(f'input {key}: Real[0,1] normalized_value;\n' for key in INPUTS) +
+            'output next_open: Real[0,1] normalized_value;\n' +
+            f'next_open = {value};\n' + '}')
+
+
+def text(task):
+    return module_text(expression(task))
+
+
 def sparse(artifact):
     return dict(format='wspl.sparse_weights.v0', layers=[
         dict(rows=[{str(i):v for i,v in enumerate(row) if Q(v)} for row in layer['weights']], bias=layer['bias'])
@@ -38,8 +49,8 @@ class AuthoringStudyTests(unittest.TestCase):
         for seed in range(1,9):
             task = mechanism(seed)
             source = reference_program(task)
-            a = build_candidate('wspl', source)
-            for representation,candidate in [('wspl',source), ('code',expression(task)), ('weights',sparse(a))]:
+            a = build_candidate('wspl', text(task))
+            for representation,candidate in [('wspl',text(task)), ('code',expression(task)), ('weights',sparse(a))]:
                 graph=build_candidate(representation,candidate)
                 self.assertEqual(graph.to_dict()['allocation']['widths'],list(WIDTHS))
                 self.assertEqual(graph.to_dict()['allocation']['parameters'],PARAMETERS)
@@ -52,7 +63,7 @@ class AuthoringStudyTests(unittest.TestCase):
     def test_feedback_off_cannot_see_verification_or_withheld_rows(self):
         for arm in ('wspl_off','wspl_on'):
             trial=self.trial(arm)
-            feedback=trial.submit(reference_program(trial.task),USAGE)
+            feedback=trial.submit(text(trial.task),USAGE)
             self.assertEqual(feedback['development']['evaluated'],4)
             self.assertEqual('verification' in feedback,arm.endswith('_on'))
             self.assertNotIn('withheld_inputs',json.dumps(feedback))
@@ -64,13 +75,31 @@ class AuthoringStudyTests(unittest.TestCase):
 
     def test_invalid_candidates_are_charged_and_cannot_change_contract(self):
         trial=self.trial()
-        source=reference_program(trial.task)
-        source['inputs']['power']['upper']='2'
+        source=text(trial.task).replace('power: Real[0,1]','power: Real[0,2]')
         self.assertEqual(trial.submit(source,USAGE)['status'],'INVALID')
         final=trial.finalize()
         self.assertFalse(final['qualification'])
         self.assertEqual(final['total_tokens'],20)
         self.assertEqual(final['candidates'],1)
+
+    def test_text_arm_rejects_json_ir_and_candidate_contracts(self):
+        trial=self.trial()
+        self.assertEqual(trial.submit(reference_program(trial.task),USAGE)['status'],'INVALID')
+        proposed=text(trial.task).rsplit('}',1)[0]+'ensures invented: forall inputs: true;\n}'
+        feedback=trial.submit(proposed,USAGE)
+        self.assertEqual(feedback['status'],'INVALID')
+        self.assertIn('fixed externally',feedback['reason'])
+        self.assertEqual(trial.finalize()['total_tokens'],40)
+
+    def test_text_typed_let_and_input_order_are_checked(self):
+        value=expression(mechanism(1))
+        source=module_text('answer').replace('next_open = answer;',
+            f'let answer: Real[0,1] = {value};\nnext_open = answer;')
+        graph=build_candidate('wspl',source)
+        self.assertEqual(grade(mechanism(1),graph,cases())['correct'],16)
+        source=source.replace('input switch_a:','input temporary:').replace('input switch_b:','input switch_a:').replace('input temporary:','input switch_b:')
+        with self.assertRaisesRegex(ValueError,'ports'):
+            build_candidate('wspl',source)
 
     def test_malformed_json_shapes_are_logged_as_invalid_not_silently_skipped(self):
         for arm,candidate in [('wspl_off',[]),('weights_on',None),('code_on',{}),
@@ -81,19 +110,19 @@ class AuthoringStudyTests(unittest.TestCase):
 
     def test_fallback_uses_last_valid_never_best_final_score(self):
         trial=self.trial()
-        trial.submit(reference_program(trial.task),USAGE)
-        trial.submit(program(ref('power')),USAGE)
+        trial.submit(text(trial.task),USAGE)
+        trial.submit(module_text('power'),USAGE)
         final=trial.finalize()
         self.assertEqual(final['selected_candidate'],1)
         self.assertFalse(final['qualification'])
         other=self.trial()
-        other.submit(reference_program(other.task),USAGE)
+        other.submit(text(other.task),USAGE)
         other.submit({},USAGE)
         self.assertFalse(other.finalize(1)['qualification'])
 
     def test_token_and_candidate_exhaustion_keep_failures_in_denominator(self):
         trial=self.trial(max_tokens=10)
-        self.assertEqual(trial.submit(reference_program(trial.task),USAGE)['status'],'BUDGET_EXCEEDED')
+        self.assertEqual(trial.submit(text(trial.task),USAGE)['status'],'BUDGET_EXCEEDED')
         self.assertFalse(trial.finalize()['qualification'])
         trial=self.trial(max_candidates=1)
         trial.submit({},USAGE)
@@ -108,7 +137,7 @@ class AuthoringStudyTests(unittest.TestCase):
 
     def test_mutations_and_empty_domains_are_not_qualified(self):
         task=mechanism(1)
-        a=build_candidate('wspl',reference_program(task))
+        a=build_candidate('wspl',text(task))
         self.assertEqual(grade(task,a,cases())['correct'],16)
         with self.assertRaises(ValueError):grade(task,a,[])
         d=sparse(a);d['layers'][-1]['bias']=['1']
@@ -120,21 +149,21 @@ class AuthoringStudyTests(unittest.TestCase):
     def test_final_equivalence_is_separate_from_search_feedback_and_task_score(self):
         for arm in ('wspl_off','code_on'):
             trial=self.trial(arm)
-            candidate=expression(trial.task) if arm.startswith('code_') else reference_program(trial.task)
+            candidate=expression(trial.task) if arm.startswith('code_') else text(trial.task)
             feedback=trial.submit(candidate,USAGE)
             self.assertNotIn('source_equivalence',feedback)
             result=trial.finalize()
             self.assertTrue(result['qualification'])
             self.assertEqual(result['source_equivalence']['status'],'EQUIVALENT')
         trial=self.trial('weights_off')
-        a=build_candidate('wspl',reference_program(trial.task))
+        a=build_candidate('wspl',text(trial.task))
         trial.submit(sparse(a),USAGE)
         self.assertEqual(trial.finalize()['source_equivalence']['status'],'NOT_APPLICABLE')
 
     @unittest.skipUnless(importlib.util.find_spec('z3'), 'optional Z3 unavailable')
     def test_final_equivalence_checks_actual_selected_weights(self):
         trial=self.trial()
-        trial.submit(reference_program(trial.task),USAGE)
+        trial.submit(text(trial.task),USAGE)
         changed=trial.artifacts[0].to_dict()
         changed['layers'][-1]['bias']=['1/2']
         trial.artifacts[0]=ReLUArtifact(changed)
@@ -145,7 +174,7 @@ class AuthoringStudyTests(unittest.TestCase):
     @unittest.skipUnless(importlib.util.find_spec('z3'), 'optional Z3 unavailable')
     def test_boolean_task_success_does_not_establish_continuous_source_equivalence(self):
         trial=self.trial()
-        trial.submit(reference_program(trial.task),USAGE)
+        trial.submit(text(trial.task),USAGE)
         changed=trial.artifacts[0].to_dict()
         # Inject a tent in unused channels: ReLU(2p)-2ReLU(2p-1)+ReLU(2p-2).
         # It vanishes at every Boolean power value but is positive at p=1/2.

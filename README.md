@@ -141,7 +141,8 @@ with and without verifier feedback. All arms receive final verification.
 The [experimental program](docs/wspl/EXPERIMENT_PROGRAM.md) separates mathematical
 contracts, deployment numerics and physical outcomes. The proposed first screen
 has 36 synthesis runs, but is not registered, funded, approved or launchable yet.
-Model identity, monetary cap, frozen tasks and final thresholds remain unset.
+Astra is selected; spending authorization, sampling, fresh task freeze and isolated
+collection controls remain pending.
 
 The [formal experiment protocols](docs/wspl/FORMAL_EXPERIMENTS_V1.md) now specify
 the first finite-domain authoring screen and subsequent learned repair/composition
@@ -153,11 +154,53 @@ settings remain pending; no model calls or scientific trials have run.
 Initial claims are explicitly mapped to evidence in that protocol. Final selected
 code/WSPL artifacts now receive a separate rational source-equivalence diagnostic;
 Boolean task success alone does not establish source fidelity between test points.
+The WSPL arm accepts Core PWA module text through the text parser; JSON IR remains
+internal. Astra, target capacity and evaluation budgets stay matched across arms.
 
 - [Structured study plan](experiments/plans/wspl_cross_domain_v1.json)
 - [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)
 - [Original supplied WSPL proposal](docs/wspl/PROPOSAL_v0_1_2026-11-03.md), archived unchanged with provenance
 - [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents
+
+## Path to Recursive Twin Improvement
+
+**Recursive Twin Improvement (RTI)** is a proposed learning loop in which two
+frontier-model instantiations take turns editing each other's weights. Each edit
+must demonstrate independently evaluated improvement in the target domain while
+satisfying required contracts and preservation criteria before it is accepted.
+
+WSPL is intended to make these edits explicit, executable and checkable. Accepted
+and rejected proposals, counterexamples, artifact identities and evaluation
+outcomes would form training data and rewards for models to become better weight
+editors. This couples two objectives: improving the target's domain capability
+and improving the editor's ability to produce useful weight changes.
+
+The proposed twin cycle is:
+
+1. Model A proposes a weight edit to model B.
+2. An independent evaluator checks the edited artifact, domain improvement and
+   preservation of required behavior. Accept the edit only if those criteria pass;
+   otherwise retain the previous target version and record the failed proposal.
+3. Model B proposes an edit to model A under the same evaluation rules.
+4. Alternate roles, retaining the edit histories and using their outcomes to
+   train and test subsequent editing ability.
+
+The evaluator, requirements and protected evaluation data remain outside the
+twins' editable state. Mathematical contract results and empirical domain scores
+are recorded separately: a measured improvement is not a universal guarantee,
+and opaque-network intervention logs are not proofs. The current verifier covers
+small supported graphs, not arbitrary frontier-model edits.
+
+An accessible precursor uses frontier models as editors of smaller networks with
+editable weights. Genuine frontier twins additionally require editable frontier
+weights. The planned authoring and learned-repair studies would test prerequisites;
+RTI, reward-based editor training and recursive capability gains are not implemented
+or demonstrated here.
+
+The decisive experiment must show that later versions become better **editors**,
+as well as better domain models. Compare the alternating loop with a fixed editor,
+self-editing and independent training at matched compute, using fresh evaluation
+tasks. Successful alternating edits alone do not establish recursive improvement.
 
 ## Existing robot evidence
 

@@ -1,5 +1,5 @@
 {
-  "format": "wspl.authoring_screen_plan.v0",
+  "format": "wspl.authoring_screen_plan.v1",
   "status": "draft",
   "launchable": false,
   "scientific_run_approved": false,
@@ -44,7 +44,7 @@
   "wall_guard_seconds": null,
   "execution": "provider-neutral public request export plus source-gated offline transcript grading",
   "user_selected_preparation": "provider-neutral file interface first; choose model and budget before launch",
-  "front_end_limit": "direct-weight sparse matrices, restricted parsed PWA code and scalar JSON WSPL; arbitrary construction scripts unsupported",
+  "front_end_limit": "direct-weight sparse matrices, restricted parsed PWA code and WSPL Core PWA module text; arbitrary construction scripts unsupported",
   "verification": "exact finite Boolean enumeration, not continuous graph or deployment proof",
   "cost_provenance": "external reports until provider receipts and execution controller are integrated",
   "pending": [
@@ -58,7 +58,7 @@
     "C1": {
       "claim": "per-instance scalar source to stored-weight rational-real equivalence",
       "endpoint": "final source_equivalence.status == EQUIVALENT",
-      "scope": "code and scalar JSON WSPL; direct weights NOT_APPLICABLE; no text-parser or IEEE equivalence"
+      "scope": "code source / parsed WSPL module IR to weights; direct weights NOT_APPLICABLE; text-to-IR parsing trusted, no IEEE equivalence"
     },
     "C2": {
       "claim": "bounded independent LLM authoring feasibility",
@@ -77,12 +77,12 @@
   },
   "excluded_initial_claims": [
     "compiler correct for all programs",
-    "text WSPL usability advantage",
     "general superiority over unrestricted code or scripted weights",
     "learned-parent repair",
     "physical safety",
     "causal discovery",
-    "commercial savings"
+    "commercial savings",
+    "general text-language usability advantage from two task instances"
   ],
   "model_selection_provenance": "User explicitly selected Astra; provider-neutral file interface remains the preparation path.",
   "budget_estimate": {
@@ -109,5 +109,18 @@
     ],
     "recommended_total_cap_usd": 150,
     "notes": "Estimate, not measured usage; calibration outside final task set needs its own explicit allocation. Fast/Ultrafast/regional uplifts, taxes and separate extra runs excluded. Count billed reasoning, repeated prompts, failures and retries. Proposed cap remains unapproved."
+  },
+  "request_format": "wspl.authoring_request.v1",
+  "wspl_front_end": {
+    "submission": "Core PWA module text string",
+    "parser": "skillforge.wspl_parse.parse_module",
+    "json_ir": "internal only; not accepted as candidate",
+    "candidate_contracts": "rejected; requirements fixed externally",
+    "selection": "user selected before scientific collection",
+    "shared_documentation": [
+      "SCALAR_CORE.md",
+      "COMPILER.md",
+      "PARSER.md"
+    ]
   }
 }
