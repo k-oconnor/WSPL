@@ -56,11 +56,15 @@ class MotorRMV(NormalizedBlock):
         self.readout_bias = nn.Parameter(torch.zeros(4))
 
     def internals(self, x):
-        p = self.predicates(x)
+        # Preserve FP32 parameters/optimizer, but evaluate the exported logical
+        # arithmetic in FP64. Trained dense sums amplified FP32 rounding beyond
+        # the declared 2e-6 scalar-fidelity tolerance. Casts remain differentiable;
+        # this does not introduce surrogate gradients or change the hard graph.
+        p = self.predicates(x.double())
         literals = torch.stack((p, 1-p), dim=-1).flatten(-2)
-        clauses = (1-(1-literals) @ self.and_weights.T).clamp(0, 1)
-        heads = (clauses @ self.or_weights.T).clamp(0, 1)
-        commands = (heads @ self.readout_weights.T+self.readout_bias).clamp(-1, 1)
+        clauses = (1-(1-literals) @ self.and_weights.double().T).clamp(0, 1)
+        heads = (clauses @ self.or_weights.double().T).clamp(0, 1)
+        commands = (heads @ self.readout_weights.double().T+self.readout_bias.double()).clamp(-1, 1).to(x.dtype)
         return dict(predicates=p, literals=literals, clauses=clauses, heads=heads, commands=commands)
 
     def forward(self, x):

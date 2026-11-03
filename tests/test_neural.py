@@ -65,6 +65,23 @@ class NeuralTests(unittest.TestCase):
         with torch.no_grad(): m.readout_bias[0] = float('nan')
         with self.assertRaises(ValueError): m.project_()
 
+    def test_dense_high_gain_scalar_fidelity_and_fp32_parameter_gradients(self):
+        m = MotorRMV()
+        midpoint = ((m.lower+m.upper)/2).unsqueeze(0)
+        with torch.no_grad():
+            heads = m.internals(midpoint)['heads'][0]
+            m.readout_weights.copy_(80*torch.eye(4))
+            m.readout_bias.copy_(-80*heads)
+        g = torch.Generator().manual_seed(23)
+        x = midpoint + .001*torch.randn(64, 12, generator=g)
+        ref = RMVReference(m.export()); ys = m(x)
+        error = max(abs(a-b) for row,y in zip(x.tolist(),ys.detach().tolist())
+                    for a,b in zip(y,ref.evaluate(dict(zip(CHANNELS,row)))['commands']))
+        self.assertLess(error,2e-6)
+        ys.square().sum().backward()
+        self.assertTrue(all(p.dtype==torch.float32 and p.grad.dtype==torch.float32 and torch.isfinite(p.grad).all()
+                            for p in m.parameters()))
+
     def test_shapes_nonfinite_inputs_and_bounded_commands(self):
         for cls in (MotorMLP, MotorRMV):
             m = cls()

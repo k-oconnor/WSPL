@@ -1,10 +1,13 @@
 # Approach v1: unblinded positioning and imitation screen
 
 Prepared November 3, 2026. The original source was approved and launched, then
-failed on a native-horizon bookkeeping bug before fitting. The reference passed
-one physical positioning trial. A replacement horizon-fix source is prepared but
-unapproved; see APPROACH_V1_LAUNCH.md for all evidence and its digest. This remains
-a small engineering screen, not the full blinded acquisition study.
+failed on a native-horizon bookkeeping bug before fitting. The approved horizon
+repair passed feasibility and fitting, then stopped on a scalar input-type bug.
+See APPROACH_V1_LAUNCH.md and APPROACH_V1_FIDELITY_REPAIR.md. The new fidelity-fix
+candidate is unapproved. This remains an engineering screen, not the full blinded
+acquisition study. The fidelity repair explicitly uses FP64 RMV arithmetic with
+FP32 parameters/optimizer and shared FP32 input/output ports; original arithmetic
+was FP32. Architecture, budgets and the 2e-6 tolerance are unchanged.
 
 ## Question and scope
 
@@ -93,7 +96,8 @@ no physical safety/admission claim.
    they already encode the teacher. Both gradient arms see every source row.
 3. Fit: 2,000 full-batch AdamW updates per learned model, LR 0.003, default betas
    (0.9,0.999), epsilon 1e-8, zero decay, clip global gradient norm to 1.0.
-   Fixed final endpoint, CPU FP32, two Torch threads. No best-checkpoint selection,
+   Fixed final endpoint, CPU, FP32 parameters/state (FP64 RMV arithmetic in the
+   fidelity repair), two Torch threads. No best-checkpoint selection,
    curriculum, extra seeds, LR search or automatic retry.
 4. Evaluation: seeds 1001-1008, all six methods, paired exact start hashes. Use
    all eight attempted starts in reported denominators. Retain all trajectories,
@@ -152,7 +156,7 @@ After exact user approval and registration, launch only through:
 
 ```powershell
 $simPython = (Get-Content artifacts/local_paths.json | ConvertFrom-Json).sim_python
-& $simPython experiments/source_consistency.py run --model-id approach-v1-horizonfix --output results/approach_v1_horizonfix
+& $simPython experiments/source_consistency.py run --model-id approach-v1-fidelityfix --output results/approach_v1_fidelityfix
 ```
 
 Expected runtime is several minutes, with a 20-minute wall guard checked between

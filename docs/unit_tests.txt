@@ -3,6 +3,7 @@ test_arms_have_separate_parameters_and_audit_leaves_weights_unchanged (test_appr
 test_direct_scientific_runner_is_disabled (test_approach.ApproachTests.test_direct_scientific_runner_is_disabled) ... ok
 test_failed_reset_is_recorded_not_retried (test_approach.ApproachTests.test_failed_reset_is_recorded_not_retried) ... ok
 test_feasibility_rejects_mismatched_or_trivial_controls (test_approach.ApproachTests.test_feasibility_rejects_mismatched_or_trivial_controls) ... ok
+test_fidelity_accepts_real_adapter_numpy_scalar_input_ports (test_approach.ApproachTests.test_fidelity_accepts_real_adapter_numpy_scalar_input_ports) ... ok
 test_native_horizon_includes_preparation_and_full_skill_budget (test_approach.ApproachTests.test_native_horizon_includes_preparation_and_full_skill_budget) ... ok
 test_reference_vs_zero_and_costed_paired_reset (test_approach.ApproachTests.test_reference_vs_zero_and_costed_paired_reset) ... ok
 test_clock_mismatch_and_vocabulary_rejected (test_automata_planning.CLITests.test_clock_mismatch_and_vocabulary_rejected) ... ok
@@ -59,6 +60,7 @@ test_recontact_does_not_hide_lift_failure (test_motor.MotorTests.test_recontact_
 test_unknown_nonfinite_and_malformed_sensors_rejected (test_motor.MotorTests.test_unknown_nonfinite_and_malformed_sensors_rejected) ... ok
 test_analytic_models_match_teacher (test_neural.NeuralTests.test_analytic_models_match_teacher) ... ok
 test_capacity_and_local_initialization_rng (test_neural.NeuralTests.test_capacity_and_local_initialization_rng) ... ok
+test_dense_high_gain_scalar_fidelity_and_fp32_parameter_gradients (test_neural.NeuralTests.test_dense_high_gain_scalar_fidelity_and_fp32_parameter_gradients) ... ok
 test_projection_and_invalid_graph_rejection (test_neural.NeuralTests.test_projection_and_invalid_graph_rejection) ... ok
 test_random_initialization_is_input_sensitive_with_task_gradients (test_neural.NeuralTests.test_random_initialization_is_input_sensitive_with_task_gradients) ... ok
 test_scalar_export_corners_interior_and_boundaries (test_neural.NeuralTests.test_scalar_export_corners_interior_and_boundaries) ... ok
@@ -100,6 +102,6 @@ test_verified_constructor_and_receipt (test_source_consistency.SourceConsistency
 test_wrong_callable_source_rejected (test_source_consistency.SourceConsistencyTests.test_wrong_callable_source_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 100 tests in 5.192s
+Ran 102 tests in 4.931s
 
 OK

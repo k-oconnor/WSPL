@@ -10,9 +10,11 @@ try:
 except ImportError:
     torch = None
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'src'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'experiments'))
 if torch is not None:
     from skillforge.approach import ApproachStudy, rollout, check_feasibility, audit_initialization, native_horizon
     from test_libero_adapter import fake_env
+    from run_approach import fidelity
 
 
 def fixture(reset_error=False, horizon=None):
@@ -72,6 +74,14 @@ class ApproachTests(unittest.TestCase):
         self.assertEqual(fixed['motor_calls'], 120)
         self.assertEqual(fixed['preparation_calls'], 20)
         self.assertEqual(env.native_calls, 140)
+
+    def test_fidelity_accepts_real_adapter_numpy_scalar_input_ports(self):
+        env,obs=fake_env()
+        from skillforge.libero_adapter import LiberoMotorAdapter
+        f=LiberoMotorAdapter(env,'test',(0,0,0)).observe(obs)
+        self.assertIsInstance(f.channels[9],np.floating)
+        result=fidelity(ApproachStudy().models['rmv_authored'],[f.channels])
+        self.assertLess(result,2e-6)
 
     def test_feasibility_rejects_mismatched_or_trivial_controls(self):
         a = dict(start_sha256='a', success=True)

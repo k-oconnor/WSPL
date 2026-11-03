@@ -44,8 +44,11 @@ def external_inventory(checkout):
 def fidelity(model, channels):
     if not isinstance(model, MotorRMV): return None
     reference = RMVReference(model.export())
-    with torch.no_grad(): actual = model(torch.tensor(channels, dtype=torch.float32)).tolist()
-    error = max(abs(a-b) for row, out in zip(channels, actual)
+    x = torch.tensor(channels, dtype=torch.float32)
+    with torch.no_grad(): actual = model(x).tolist()
+    # Both controllers consume FP32 input ports. Compare the scalar graph on the
+    # exact same port values, also canonicalizing NumPy scalars to Python floats.
+    error = max(abs(a-b) for row, out in zip(x.tolist(), actual)
                 for a, b in zip(out, reference.evaluate(dict(zip(CHANNELS, row)))['commands']))
     if error > 2e-6: raise ValueError(f'RMV scalar export fidelity failure: {error}')
     return error

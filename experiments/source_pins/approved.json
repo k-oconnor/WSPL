@@ -6,6 +6,12 @@
       "sha256": "e05119fd34b2c77973773f5abcebb50858f45bc523287ea8eeddbcac3659bba9",
       "approval": "User explicitly selected Approve this manifest and launch the approach pilot on 2026-11-03",
       "approved_by": "user"
+    },
+    "approach-v1-horizonfix": {
+      "manifest": "experiments/source_pins/approach_v1_horizonfix.manifest.json",
+      "sha256": "75e33ff7d7d55a1500cfd9521a95f26dc1443f5a6354c3cde595749b87f6931b",
+      "approved_by": "user",
+      "approval": "User explicitly selected Approve this manifest and launch the repaired approach pilot on 2026-11-03"
     }
   }
 }
