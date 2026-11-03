@@ -30,6 +30,12 @@ inputs without importing the compiler or neural runtime. Include dimensional
 and shape failures, duplicate bindings, algebraic cycles and non-idempotent
 graded conjunction counterexamples in engineering tests.
 
+Text front end (issue #3): PARSER.md parses the proposal's BrakePatch module form
+and Core PWA expressions into this JSON IR and contract suites. The proposal text
+compiles to its stated weights and its contracts prove on the compiled artifact.
+The `normalized_*` unit reading is open for review; tensors, functions, stateful
+modules and baseline/edited `preserves` remain unimplemented.
+
 ## G1: compiler and artifact
 
 Compile BrakePatch and ApproachP (the inspected proportional standoff controller)
