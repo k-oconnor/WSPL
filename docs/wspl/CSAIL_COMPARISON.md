@@ -91,7 +91,10 @@ product can be tested separately if that is where users find value.
 RTI remains a later hypothesis; domain improvement alone does not show better
 editing ability. These product gates do not establish recursive improvement.
 
-No CSAIL runner, trained reference baseline or scientific source pin is supplied
-by this protocol. The $150 estimate covers the Boolean screen, not PPO rebuilding
-or this expanded benchmark. Freeze a separate resource plan, task variants,
-sampling and exact source approval before execution. No outreach is sent here.
+The first fixed-artifact replay runner is now prepared in
+[BREAKOUT_REPLAY_V1.md](BREAKOUT_REPLAY_V1.md), with pinned reference files, a uniform
+control and isolated CPU dependencies. It needs its own exact-source approval.
+Fresh Astra/WSPL authoring and trained PPO references remain unprepared. The $150
+estimate covers the Boolean screen, not PPO rebuilding or the expanded benchmark.
+Freeze separate resource plans, task variants, sampling and source approvals
+before subsequent execution. No outreach is sent here.

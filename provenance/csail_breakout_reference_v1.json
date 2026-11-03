@@ -1,0 +1,67 @@
+{
+  "format": "wspl.csail_breakout_preparation.v0",
+  "status": "complete",
+  "reference_commit": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+  "source_repository": "https://github.com/RikiyaT/lm_understand-logs",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1819,
+      "git_blob_sha1": "5137aa7a114872294fa20195ef84a89dfd0e1b67",
+      "sha256": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e"
+    },
+    {
+      "path": "exp5_write_from_scratch/README.md",
+      "bytes": 6305,
+      "git_blob_sha1": "d51cb4cd4d2abcdd401c3dbb36ef418bdca96629",
+      "sha256": "e74367e0e4eb32d93685441332aceae4b47b1751a07caead42b1630d5547bb16"
+    },
+    {
+      "path": "exp5_write_from_scratch/LICENSE-MinAtar",
+      "bytes": 35147,
+      "git_blob_sha1": "94a9ed024d3859793618152ea559a168bbcbb5e2",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "exp5_write_from_scratch/networks/breakout/hand.npz",
+      "bytes": 83574,
+      "git_blob_sha1": "5748e7a1cf34cc41a8b85c0a2cf118f79748593f",
+      "sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a"
+    },
+    {
+      "path": "exp5_write_from_scratch/eval/minatar_eval.json",
+      "bytes": 4693,
+      "git_blob_sha1": "33ba76f125777818471aa1ffb9312c9e781f7fb4",
+      "sha256": "bc10c6f957af95cdd52ee4be085acd249046f6117dbdb8c735fd5ddb2195c47c"
+    },
+    {
+      "path": "exp5_write_from_scratch/runs/breakout/message.txt",
+      "bytes": 9973,
+      "git_blob_sha1": "e02b11f42c298dc70575754f6fe71e63addde295",
+      "sha256": "766ee251d59a7893ed86d5eaea99ddb847529ab2092afc69f90f55fb0a22e876"
+    },
+    {
+      "path": "exp5_write_from_scratch/runs/breakout/reply/answer.md",
+      "bytes": 5668,
+      "git_blob_sha1": "d3a168fec325f2294e837cf90ac49a4e81d2e046",
+      "sha256": "a30bdda1acef79b507498edcef7e48d4fff16aa85783741925da9d5d4f42faf0"
+    },
+    {
+      "path": "exp5_write_from_scratch/runs/breakout/reply/run.json",
+      "bytes": 1144,
+      "git_blob_sha1": "0164ccbde8df78bd4e59272b69d085269c5899ac",
+      "sha256": "f3e1c5aefcf73d063349a3c3b23ef84201b39aa1b46dc8dc35b2c54b551b690d"
+    },
+    {
+      "path": "exp5_write_from_scratch/runs/breakout/apply.json",
+      "bytes": 678,
+      "git_blob_sha1": "8c308cdf2f1d0c6686dfe253576651559cf324dd",
+      "sha256": "007682a3be7f7eb4055118d09489c56c369d9566854df1ea919ecec8b6f1f2f7"
+    }
+  ],
+  "preparation_source_sha256": "51b40b0cf93c4376287d81aa07f88d6b1d83bc3137a7dae7c015a3b95bb445ba",
+  "scope": "Download and identity checks only; no policy evaluation, model calls or training.",
+  "license_note": "Upstream logs/networks CC BY 4.0; scripts MIT; MinAtar source in prompt GPL-3.0. Preserve downloaded notices.",
+  "minatar_wheel_sha256": "f40450e133c552b97222702bb7b1c5254b47758390f4bd25e411399af0b21d42",
+  "installed_breakout_matches_supplied_prompt": true
+}

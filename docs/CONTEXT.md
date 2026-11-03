@@ -1,5 +1,14 @@
 # Working context
 
+Kevin requested proceeding with the CSAIL-linked plan. First fixed-artifact
+Breakout replay is prepared: native 20,486-parameter tanh policy, uniform
+zero-weight control, 1,000 episodes each, horizon 10,000, explicit fresh-episode
+seeds and sampled actions. Reference resources are hash-pinned; isolated MinAtar
+1.0.15/NumPy 1.26.4 CPU runtime is outside checkout. Twelve focused engineering
+checks and frozen-weight synthetic audit pass; no released-policy game scoring,
+Astra calls or training ran. See docs/wspl/BREAKOUT_REPLAY_V1.md. Exact source
+approval is still required; this does not approve the proposed $150 authoring cap.
+
 Kevin endorsed CSAIL replications/extensions and startup win conditions beyond
 beating their scores. docs/wspl/CSAIL_COMPARISON.md specifies artifact replay ->
 native Breakout authoring -> matched WSPL extension -> learned-policy repair;

@@ -159,6 +159,7 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 
 - [Structured study plan](experiments/plans/wspl_cross_domain_v1.json)
 - [CSAIL comparison and product win conditions](docs/wspl/CSAIL_COMPARISON.md): useful performance, checked changes and less engineering/review effort; outperforming the published game score is optional
+- [Prepared Breakout artifact replay](docs/wspl/BREAKOUT_REPLAY_V1.md): pinned released tanh policy and uniform control; CPU-only, no model calls, exact-source approval pending
 - [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)
 - [Original supplied WSPL proposal](docs/wspl/PROPOSAL_v0_1_2026-11-03.md), archived unchanged with provenance
 - [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents
@@ -251,8 +252,9 @@ An existing BDDL scene is not a working Skillforge task.
 python -m unittest discover -s tests -v
 ```
 
-The current local suite has 247 checks; all pass
-with Z3 installed, with 37 skipped when PyTorch/NumPy are absent. Optional neural/adapter checks
+The suite now contains 261 checks: 260 pass in the primary research environment,
+with the native MinAtar fixture skipped there. All 12 replay-specific checks pass
+in the separate MinAtar CPU environment, including that fixture. Optional neural/adapter checks
 skip when PyTorch or NumPy is absent, and solver checks skip without Z3; full local results used a separate CPU
 research environment. No model download, simulator rollout, scientific training
 run or LLM API call occurs in the unit suite. A single optimizer transaction is

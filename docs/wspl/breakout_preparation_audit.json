@@ -1,0 +1,49 @@
+{
+  "scope": "32 synthetic binary vectors; not physical/game behavior or universal numerical equivalence",
+  "artifact_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+  "tensor_sha256": "1fe35af60126a5b37f6dc278b760a53e330c137b272fcaf24b27affa970bde04",
+  "parameters": 20486,
+  "shapes": {
+    "actor/dense1/kernel": [
+      600,
+      32
+    ],
+    "actor/dense1/bias": [
+      32
+    ],
+    "actor/dense2/kernel": [
+      32,
+      32
+    ],
+    "actor/dense2/bias": [
+      32
+    ],
+    "actor/logits/kernel": [
+      32,
+      6
+    ],
+    "actor/logits/bias": [
+      6
+    ]
+  },
+  "max_abs_logit_difference": 1.4861711292724067e-05,
+  "comparison": "NumPy FP32 forward versus independent scalar math.fsum/tanh double reference",
+  "tolerance": 0.0001,
+  "synthetic_inferences_per_second": 62500.00066938811,
+  "environment_steps": 0,
+  "api_calls": 0,
+  "training_updates": 0,
+  "validation_scope": "engineering preparation only; no released-policy game episodes scored",
+  "full_suite": {
+    "tests": 261,
+    "passed": 260,
+    "skipped": 1
+  },
+  "isolated_replay_checks": {
+    "tests": 12,
+    "passed": 12,
+    "skipped": 0
+  },
+  "dependency_check": "pip check passed",
+  "reference_provenance": "provenance/csail_breakout_reference_v1.json"
+}

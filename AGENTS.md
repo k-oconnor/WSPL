@@ -82,3 +82,21 @@ with the parser trusted separately. Updated matched-arm tests and two new
 regressions cover text-only/contract rejection, typed lets and fixed input order.
 All227 engineering tests pass. No proposer calls, paid execution, source approval
 or scientific launch; Astra and proposed150USD budget remain as previously scoped.
+
+
+## Breakout replay preparation (November 3)
+
+Kevin requested proceeding with the CSAIL progression. Prepared native tanh
+fixed-artifact replay and uniform zero-weight control, 1000 episodes each,
+10000-step horizon, explicit per-episode environment/action seeds, CPU/one thread,
+zero API calls/training, two-hour guard and controlled stop. Upstream commit,
+reference files, MinAtar wheel, core runtime files and installed package versions
+are pinned; source resources and NPZ remain ignored, notices/provenance retained.
+Twelve focused checks pass in a fresh outside-repo MinAtar environment. Primary
+suite:261 tests,260 pass and one native wiring skip covered in the isolated suite.
+A read-only 32-synthetic-input frozen-weight audit differs from scalar math
+reference by at most1.4862e-5; no released-policy episodes scored. Original
+RNG/evaluator not released, so comparison is statistical and scope is explicit.
+Protocol docs/wspl/BREAKOUT_REPLAY_V1.md. Source manifest is prepared unapproved;
+registry unchanged. This does not approve fresh Astra, PPO training, WSPL
+comparison or the proposed150USD authoring budget.

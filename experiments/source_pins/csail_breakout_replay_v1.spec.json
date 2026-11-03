@@ -1,0 +1,39 @@
+{
+  "constructor": {
+    "module": "skillforge.csail_breakout",
+    "source": "src/skillforge/csail_breakout.py",
+    "symbol": "BreakoutPolicy"
+  },
+  "constructor_kwargs": {
+    "expected_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+    "weights_path": "data/csail_breakout_reference_v1/exp5_write_from_scratch/networks/breakout/hand.npz"
+  },
+  "model_id": "csail-breakout-replay-v1",
+  "runner": {
+    "module": "run_csail_breakout",
+    "source": "experiments/run_csail_breakout.py",
+    "symbol": "run"
+  },
+  "runner_config": {
+    "action_seed_base": 410000,
+    "auxiliary_files": {
+      "docs/wspl/BREAKOUT_REPLAY_V1.md": "88ef3d9e2ae13cc22197ef1533695ad34d2fcc15cb0a8164a3fde3d4d10eb1ab",
+      "requirements/csail-breakout-replay.txt": "fc0675d8b98b6d0351d0b0556dda8f9c6f9a22d7363d33baa2991ea66315f4cf",
+      "tools/prepare_csail_breakout.ps1": "51b40b0cf93c4376287d81aa07f88d6b1d83bc3137a7dae7c015a3b95bb445ba"
+    },
+    "bundle": "data/csail_breakout_reference_v1",
+    "bundle_sha256": "98dd544f38913f78ef4281b79b2e8769292ccd95e2eefc8de6704cbecb05ce61",
+    "dependencies_sha256": "8451e58ac3fb1757cc2ee5285cd84685f7a6dfff3d802f85df0b836795b73ade",
+    "env_seed_base": 310000,
+    "episodes_per_arm": 1000,
+    "max_steps": 10000,
+    "wall_guard_seconds": 7200
+  },
+  "schema": 1,
+  "source_roots": [
+    "src",
+    "experiments",
+    "tests",
+    "tools"
+  ]
+}

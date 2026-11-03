@@ -1,0 +1,17 @@
+test_clean_stop_never_promotes_partial_episode_to_summary (test_csail_breakout.BreakoutReplayTests.test_clean_stop_never_promotes_partial_episode_to_summary) ... ok
+test_dependency_mismatch_blocks_before_any_constructor_call (test_csail_breakout.BreakoutReplayTests.test_dependency_mismatch_blocks_before_any_constructor_call) ... ok
+test_hash_shape_dtype_and_nan_fail_before_policy_use (test_csail_breakout.BreakoutReplayTests.test_hash_shape_dtype_and_nan_fail_before_policy_use) ... ok
+test_known_tanh_forward_and_frozen_tensor_identity (test_csail_breakout.BreakoutReplayTests.test_known_tanh_forward_and_frozen_tensor_identity) ... ok
+test_layout_conversion_names_every_channel_and_uses_row_major_order (test_csail_breakout.BreakoutReplayTests.test_layout_conversion_names_every_channel_and_uses_row_major_order) ... ok
+test_native_environment_three_tick_wiring_fixture (test_csail_breakout.BreakoutReplayTests.test_native_environment_three_tick_wiring_fixture) ... ok
+test_runner_clean_stop_is_paused_not_a_complete_replay (test_csail_breakout.BreakoutReplayTests.test_runner_clean_stop_is_paused_not_a_complete_replay) ... ok
+test_runner_mock_environment_records_both_arms_and_completed_denominators (test_csail_breakout.BreakoutReplayTests.test_runner_mock_environment_records_both_arms_and_completed_denominators) ... ok
+test_sampling_seed_replay_and_terminal_vs_horizon (test_csail_breakout.BreakoutReplayTests.test_sampling_seed_replay_and_terminal_vs_horizon) ... ok
+test_scientific_runner_requires_source_gate_receipt (test_csail_breakout.BreakoutReplayTests.test_scientific_runner_requires_source_gate_receipt) ... ok
+test_stable_softmax_and_sampling_retain_all_six_actions (test_csail_breakout.BreakoutReplayTests.test_stable_softmax_and_sampling_retain_all_six_actions) ... ok
+test_summary_keeps_truncated_complete_trials_and_sample_se (test_csail_breakout.BreakoutReplayTests.test_summary_keeps_truncated_complete_trials_and_sample_se) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.646s
+
+OK
