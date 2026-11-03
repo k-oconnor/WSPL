@@ -85,6 +85,71 @@ Z3 mathematical Reals are distinct from machine floats
 ([official arithmetic guide](https://microsoft.github.io/z3guide/docs/theories/Arithmetic/));
 the [Z3Py guide](https://ericpony.github.io/z3py-tutorial/guide-examples.htm) describes
 exact rational constants, models and solver outcomes. Exact stored coefficients
-in Torch do not remove arithmetic rounding. Numerical enclosures, independent
-source equivalence, relational baseline/patch queries and closed-loop dynamics
-are separate future work.
+in Torch do not remove arithmetic rounding. Numerical enclosures, relational
+baseline/patch queries and closed-loop dynamics are separate future work. Initial
+source equivalence is described below.
+
+## Source-to-artifact equivalence
+
+Added November 3, 2026 (issue #1). `skillforge.wspl_equiv` asks whether a
+serialized ReLU artifact computes **exactly** the outputs of its scalar IR source
+for every input in the declared box, under rational real semantics. The contract
+verifier above checks what the weights do; this check addresses whether the
+program is an accurate explanation of those weights.
+
+| Source | Artifact | Result |
+| --- | --- | --- |
+| BrakePatch | committed `brake_patch.relu.json` | EQUIVALENT |
+| ApproachP | committed `approach_p.relu.json` | EQUIVALENT |
+
+See the [fixture results](equivalence_fixture_results.json). Reduced braking
+gain, swapped input columns, a 1/10^6 readout bias change, and artifacts compiled
+from programs with swapped min/max or and/or connectives all return DIFFERENT
+with replayed counterexamples. Of 29 single-coefficient BrakePatch mutations
+(+1 each), 26 are DIFFERENT. The other three are EQUIVALENT, and a finite grid
+probe agrees with that: these units do not affect the output on the declared domain.
+
+### Query
+
+1. The source is validated by `ScalarProgram`. Its canonical SHA-256 must equal
+   the artifact's `source_sha256`, and the artifact's ordered input/output names,
+   kinds, units and rational bounds must equal the source declarations. Otherwise
+   the result is INVALID. Swapped weight columns under correct port names are not
+   an interface error; the query finds them.
+2. The source expression tree is encoded into Z3 terms directly from the scalar
+   IR semantics (affine sums; `If` terms for relu/clip/margin/min/max and the
+   Lukasiewicz connectives). The checker does not import `wspl_compile`; a
+   compiler lowering error therefore cannot be reproduced on both sides.
+3. The stored layers are encoded exactly as in the contract verifier, over the
+   same input variables.
+4. One QF_LRA query asks for an input in the box where any source output differs
+   from the corresponding artifact output.
+
+- Difference query UNSAT: EQUIVALENT under the recorded trust model.
+- SAT with a rational witness on which `ScalarProgram.evaluate` and
+  `ReLUArtifact.evaluate` produce different outputs: DIFFERENT, reporting both
+  output records and the differing ports.
+- Solver/budget/capacity/backend uncertainty or a witness that fails replay: UNKNOWN.
+- Malformed source, broken identity binding or interface mismatch: INVALID.
+
+### Scope and trust
+
+Trusted components are the scalar IR validator, both Z3 encoders, Z3 itself and
+the two rational interpreters used for replay. There is no independently checked
+UNSAT proof trace. The source encoder is a second implementation of the IR
+semantics, cross-checked against `ScalarProgram.evaluate` on a grid of a program
+using every operator; it is not derived from a formal semantics. Equivalence
+covers only the declared input box and the stored rational coefficients. It does
+not establish FP32/FP64 execution, correctness of the source map, preprocessing,
+contract adequacy or physical behaviour. The contract verifier's
+`source_equivalence` field still reports `not_checked`; run this check separately
+and keep both reports.
+
+```sh
+mkdir work
+python -m skillforge.wspl_equiv examples/wspl/brake_patch.core.json examples/wspl/brake_patch.relu.json --output work/brake_equivalence.json
+```
+
+Exit codes: 0 EQUIVALENT, 2 DIFFERENT, 3 UNKNOWN, 1 INVALID/error. Outputs are
+created exclusively. The Python API is
+`check_equivalence(source_document, artifact, timeout_ms=..., max_parameters=...)`.

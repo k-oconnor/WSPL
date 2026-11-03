@@ -7,10 +7,12 @@ Skillforge until there is a concrete reason to split repositories.
 Current progress: the scalar JSON IR/type reader and exact reference implement
 an initial part of G0. The fresh dense ReLU compiler/independent artifact loader
 in COMPILER.md implement an initial G1, including optional Torch emission when
-coefficients are exactly representable. Text parsing, broader types, independent
-source equivalence and subsequent gates remain incomplete. VERIFICATION.md now
+coefficients are exactly representable. Text parsing, broader types and
+subsequent gates remain incomplete. VERIFICATION.md now
 describes initial G2 numeric I/O contract checks for serialized real graphs, with
-non-vacuity and exact counterexample replay. INTERVENTION_EVIDENCE.md separately
+non-vacuity and exact counterexample replay, and an initial compiler-independent
+source-to-artifact equivalence check over the declared input box (real
+arithmetic only; no IEEE execution or proof-carrying certificate). INTERVENTION_EVIDENCE.md separately
 implements empirical opaque-network activation probes; these never become proof
 statuses. The known-program solver checks are not scientific synthesis trials,
 IEEE execution proofs or physical guarantees.

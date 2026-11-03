@@ -18,7 +18,8 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | Typed scalar JSON IR and exact rational interpreter | Implemented; engineering examples and negative checks |
 | Scalar IR to ReLU MLP weights, source map and independent loader | Initial implementation; fresh architecture only |
 | Small real-graph I/O contract verifier | Initial Z3 prototype; non-vacuity and rational witness replay |
-| Numerical execution proof / source equivalence verifier | Planned |
+| Source IR to stored-weight equivalence check | Initial Z3 prototype; compiler-independent encoding, replayed differences |
+| Numerical (IEEE) execution proof | Planned |
 | Opaque-network intervention evidence | Paired activation probes, controls, replay and hash-chained empirical logs |
 | Blinded LLM authoring and counterexample-feedback harness | Planned |
 | Small-alphabet LTLf compiler and strong finite-model planner | Implemented for supplied symbolic effect models |
@@ -83,6 +84,18 @@ contracts and the approach bounds/direction contracts are solver-backed PROVED;
 broken gain/input-order fixtures produce independently replayed counterexamples.
 This does not establish source equivalence, IEEE execution or physical safety.
 See [verification scope and examples](docs/wspl/VERIFICATION.md).
+
+A separate check asks whether a compiled artifact computes exactly its scalar IR
+source over the declared input box. Both committed examples are EQUIVALENT under
+rational real semantics, and weight regressions return counterexamples replayed
+through both interpreters:
+
+```sh
+mkdir -p work
+python -m skillforge.wspl_equiv examples/wspl/brake_patch.core.json examples/wspl/brake_patch.relu.json --output work/brake_equivalence.json
+```
+
+This is not an IEEE execution proof or a proof-carrying certificate.
 
 For networks outside that verifier, [intervention logging](docs/wspl/INTERVENTION_EVIDENCE.md)
 records controlled activation replacements with baseline, no-op and repeat checks.
@@ -175,7 +188,8 @@ An existing BDDL scene is not a working Skillforge task.
 python -m unittest discover -s tests -v
 ```
 
-The current local suite has 152 passing checks. Optional neural/adapter checks
+The current local suite has 183 checks (14 added for source equivalence); all pass
+with Z3 installed, with 37 skipped when PyTorch/NumPy are absent. Optional neural/adapter checks
 skip when PyTorch or NumPy is absent, and solver checks skip without Z3; full local results used a separate CPU
 research environment. No model download, simulator rollout, scientific training
 run or LLM API call occurs in the unit suite. A single optimizer transaction is
