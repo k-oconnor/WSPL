@@ -1,0 +1,97 @@
+{
+  "format": "wspl.scalar_ir.v0",
+  "inputs": {
+    "d": {
+      "kind": "Real",
+      "unit": "1",
+      "lower": "0",
+      "upper": "2"
+    },
+    "v": {
+      "kind": "Real",
+      "unit": "1",
+      "lower": "0",
+      "upper": "1"
+    },
+    "a_base": {
+      "kind": "Real",
+      "unit": "1",
+      "lower": "-1",
+      "upper": "1"
+    }
+  },
+  "lets": [
+    {
+      "name": "urgency",
+      "type": {
+        "kind": "Truth",
+        "unit": "1",
+        "lower": "0",
+        "upper": "1"
+      },
+      "value": {
+        "op": "margin",
+        "value": {
+          "op": "affine",
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "value": {
+                "op": "ref",
+                "name": "v"
+              }
+            },
+            {
+              "coefficient": "-1",
+              "value": {
+                "op": "ref",
+                "name": "d"
+              }
+            }
+          ],
+          "bias": "2/5",
+          "unit": "1"
+        },
+        "lower": "0",
+        "upper": "2/5"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "a",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      },
+      "value": {
+        "op": "clip",
+        "value": {
+          "op": "affine",
+          "terms": [
+            {
+              "coefficient": "1",
+              "value": {
+                "op": "ref",
+                "name": "a_base"
+              }
+            },
+            {
+              "coefficient": "-2",
+              "value": {
+                "op": "ref",
+                "name": "urgency"
+              }
+            }
+          ],
+          "bias": "0",
+          "unit": "1"
+        },
+        "lower": "-1",
+        "upper": "1"
+      }
+    }
+  ]
+}

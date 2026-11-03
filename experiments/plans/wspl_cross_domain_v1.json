@@ -1,0 +1,209 @@
+{
+  "format": "skillforge.wspl_research_program.v1",
+  "date": "2026-11-03",
+  "status": "design_draft",
+  "design_authorized": true,
+  "launchable": false,
+  "scientific_run_approved": false,
+  "source_proposal": {
+    "path": "docs/wspl/PROPOSAL_v0_1_2026-11-03.md",
+    "sha256": "0fa503ce2ec8a57ef4c0a89679881b1bc66221d40e3477f4f2cd8ef76de66f5d",
+    "evidence_corrections": "Inspected analytic controller construction is not a blinded LLM synthesis result."
+  },
+  "protocol": "docs/wspl/EXPERIMENT_PROGRAM.md",
+  "implementation_gates": "docs/wspl/WSPL_IMPLEMENTATION.md",
+  "hypotheses": {
+    "H1": "representation improves useful artifact construction",
+    "H2": "counterexample feedback effect and representation interaction",
+    "H3": "repair of independently learned artifacts with preservation",
+    "H4": "valid composition and incompatible-assumption detection"
+  },
+  "domains": [
+    {
+      "id": "discrete_causal_worlds",
+      "families": [
+        "interlocked_switches_doors",
+        "resource_relay_dependencies",
+        "transition_mechanism_replacement"
+      ],
+      "module_kind": "state_transition_predictor",
+      "proof_scope": "enumerated finite Boolean inputs when small enough",
+      "status": "needs_new_frozen_task_generator"
+    },
+    {
+      "id": "low_dimensional_dynamics",
+      "families": [
+        "braking_patch",
+        "saturated_waypoint_regulator",
+        "bounded_outflow_tank_or_inventory"
+      ],
+      "module_kind": "controller",
+      "proof_scope": "I/O; finite-horizon closed loop only under pinned affine/PWA plant and uncertainty",
+      "status": "needs_formal_dynamics_and_adapter"
+    },
+    {
+      "id": "robot_manipulation",
+      "families": [
+        "transfer_and_ordered_loading",
+        "blocker_and_obstacle_routes",
+        "local_fault_recovery"
+      ],
+      "module_kind": "controller_and_task_program",
+      "proof_scope": "real-graph module contracts plus separately empirical physical traces",
+      "status": "needs_contact_skills_observers_interfaces_executor"
+    }
+  ],
+  "studies": [
+    {
+      "id": "S1",
+      "question": "fresh authoring",
+      "target_track": "same fixed neural target across controlled representations",
+      "held_out_axis": "new task instances and permitted environmental conditions"
+    },
+    {
+      "id": "S2",
+      "question": "repair learned artifacts with preservation",
+      "target_track": "matched output-patch augmentation first; in-place fixed architecture separately",
+      "held_out_axis": "independent baseline training and new failure/unchanged conditions"
+    },
+    {
+      "id": "S3",
+      "question": "composition",
+      "target_track": "frozen blocks and supplied decomposition first",
+      "held_out_axis": "new compositions and incompatible assumptions"
+    }
+  ],
+  "arms": [
+    {
+      "id": "weights_off",
+      "representation": "weights",
+      "verifier_feedback": false,
+      "final_verification": true,
+      "same_development_access": true
+    },
+    {
+      "id": "weights_on",
+      "representation": "weights",
+      "verifier_feedback": true,
+      "final_verification": true,
+      "same_development_access": true
+    },
+    {
+      "id": "code_off",
+      "representation": "code",
+      "verifier_feedback": false,
+      "final_verification": true,
+      "same_development_access": true
+    },
+    {
+      "id": "code_on",
+      "representation": "code",
+      "verifier_feedback": true,
+      "final_verification": true,
+      "same_development_access": true
+    },
+    {
+      "id": "wspl_off",
+      "representation": "wspl",
+      "verifier_feedback": false,
+      "final_verification": true,
+      "same_development_access": true
+    },
+    {
+      "id": "wspl_on",
+      "representation": "wspl",
+      "verifier_feedback": true,
+      "final_verification": true,
+      "same_development_access": true
+    }
+  ],
+  "scientific_controls": {
+    "same_serialized_artifact_class": true,
+    "same_counterexample_policy_when_feedback_on": true,
+    "off_withholds_search_verification_not_final_grading": true,
+    "ordinary_code_supported_pwa_subset": true,
+    "direct_weights_may_use_logged_tensor_construction": true,
+    "hidden_optimizer_in_authoring_arm": false,
+    "mlp_rmv_backend_replication_separate": true,
+    "fixed_and_augmented_tracks_separate": true,
+    "preserve_gradient_and_rehearsal_diagnostics": true,
+    "final_selection": "explicit proposer submission; last structurally valid fallback; never best final score"
+  },
+  "evidence_fields": [
+    "source_artifact_fidelity",
+    "stored_weight_real_contract_status",
+    "numerical_deployment_evidence",
+    "model_relative_closed_loop_status",
+    "empirical_task_outcome",
+    "preservation_status",
+    "domain_nonvacuity"
+  ],
+  "proposed_first_screen": {
+    "status": "nonconfirmatory_not_launchable",
+    "study": "S1",
+    "domain": "discrete_causal_worlds",
+    "task_families": 1,
+    "fresh_instances": 2,
+    "proposer_draws_per_instance": 3,
+    "arms": 6,
+    "synthesis_runs": 36,
+    "caps_per_run": {
+      "proposer_calls": 8,
+      "candidates": 8,
+      "total_input_plus_output_tokens": 65536,
+      "development_episodes": 64,
+      "feedback_verifier_queries_on": 8,
+      "seconds_per_feedback_query": 60
+    },
+    "total_max_proposer_calls": 288,
+    "total_max_proposer_tokens": 2359296,
+    "proposer_model": null,
+    "provider_sampling_protocol": null,
+    "monetary_cap": null,
+    "wall_guard_seconds": null,
+    "final_evaluation_count": null,
+    "empirical_threshold": null,
+    "target_architecture": null,
+    "frozen_task_generator_hash": null
+  },
+  "confirmation": {
+    "repetition_count": null,
+    "proposer_runs_per_principal_condition_floor": 10,
+    "status": "awaits_feasibility_and_paired_power_analysis",
+    "analysis": "paired rate differences; task/baseline clustered intervals; declared domain weights; Holm for two principal contrasts per study, six if jointly confirmatory",
+    "final_task_store_sealed": false,
+    "task_access_log_required": true,
+    "second_proposer_model_replication_planned": true
+  },
+  "unresolved_launch_dependencies": [
+    "G0 typed parser and rational reference",
+    "G1 compiler serialized graph source maps",
+    "G2 independently checked scoped verifier",
+    "G3 learned imports and patch transactions",
+    "G4 isolated six-arm proposer/evaluator harness",
+    "fresh frozen task generator and final pool",
+    "pinned model/API identity and monetary cap",
+    "target capacity and method configs",
+    "empirical thresholds and final counts",
+    "power/analysis plan for confirmation",
+    "concrete runner constructor inventory and exact user source approval"
+  ],
+  "known_inspected_fixtures_not_final_data": [
+    "BrakePatch",
+    "ApproachP",
+    "three-room toy-world examples",
+    "sixteen robot task catalog entries"
+  ],
+  "current_readiness": {
+    "wspl_frontend": false,
+    "wspl_compiler": false,
+    "wspl_universal_verifier": false,
+    "blinded_proposer_harness": false,
+    "physical_contact_hierarchy": false,
+    "typed_scalar_json_ir": true,
+    "exact_scalar_reference": true,
+    "textual_wspl_parser": false
+  },
+  "scope_note": "Design only. No API calls, training, new scientific runs, models installed, task data sealed or universal results produced.",
+  "implementation_progress": "Initial scalar JSON IR/reference part of G0 only; see docs/wspl/SCALAR_CORE.md. Examples are inspected fixtures, not universal verification or scientific runs."
+}

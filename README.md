@@ -41,6 +41,8 @@ An isolated MuJoCo 3.2.7 / robosuite 1.4.1 environment passed a five-tick headle
 - [Physical adapter](docs/SIM_ADAPTER.md): measured input channels, motor scaling, independent observer events and the headless integration receipt.
 - [Prior evidence](docs/EVIDENCE.md): completed toy-world experiments and their limits.
 - [Related work](docs/RELATED_WORK.md): what is established and where this proposal could contribute.
+- [WSPL experimental program](docs/wspl/EXPERIMENT_PROGRAM.md): authoring, repair and composition across discrete causal worlds, low-dimensional control and manipulation, with six matched representation/feedback arms.
+- [First WSPL scalar reference](docs/wspl/SCALAR_CORE.md): typed JSON IR and exact rational interpretation; compiler, solver and blinded harness remain future work.
 - [Task example](examples/pick_place.task.json), [skill contract](examples/lift.skill.json), [RMV graph](examples/lift_gate.rmv.json).
 
 ## What exists
@@ -50,6 +52,7 @@ An isolated MuJoCo 3.2.7 / robosuite 1.4.1 environment passed a five-tick headle
 | Typed JSON task/skill/RMV schemas | Provided |
 | Direct LTLf semantics on completed finite traces | Implemented reference; unit-tested |
 | Scalar grounded RMV evaluation including affine motor readout | Implemented reference; unit-tested |
+| WSPL typed scalar JSON IR and exact rational reference | Initial prototype; not the textual language, compiler or universal verifier |
 | Source-identity gate and explicit user approval registry | Implemented; prior attempts and approvals retained |
 | Small-alphabet LTLf-to-DFA compiler | Implemented with explicit construction limits |
 | Strong finite-model strategy synthesis and abstract executor | Implemented; all declared outcomes must reach acceptance |
@@ -91,6 +94,13 @@ python -m skillforge hierarchy examples/hierarchical_tasks.json --case clear_the
 The root leaves its two goals unordered; the supplied effect model forces clearing access before retrieving the target. The hierarchy is given, and its pickup/placement bodies are abstracted by outcome contracts rather than physically executed.
 
 ## Research questions
+
+The WSPL direction treats neural weights as compiled executable artifacts of a
+typed program. The [cross-domain protocol](docs/wspl/EXPERIMENT_PROGRAM.md) tests
+whether that interface helps beyond direct weight authoring and ordinary code,
+separately from verifier feedback. Its structured plan is a design draft, not a
+registered study or runnable source pin. The original robotics acquisition and
+MLP/RMV questions below remain part of the application program.
 
 1. Can LLM-authored weights acquire reliable skills using fewer interactions or less total time than gradient learning?
 2. Can grounded RMV implementations retain useful performance while providing exact computational explanations of motor outputs?

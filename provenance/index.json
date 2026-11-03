@@ -32,6 +32,13 @@
       "copied_unchanged": false,
       "source_sha256": "50fa8d53ea4981b0a5ba4b966e1ce969b5d5dd1d15e06eacf7cd161d5221e65b",
       "modification": "Direct-entry unit test invokes the guard API instead of missing run_gravemind.py; no gate implementation changes."
+    },
+    {
+      "source_user_attachment_name": "WSPL specification for verifiable neural controller programming.md",
+      "destination": "docs/wspl/PROPOSAL_v0_1_2026-11-03.md",
+      "sha256": "0fa503ce2ec8a57ef4c0a89679881b1bc66221d40e3477f4f2cd8ef76de66f5d",
+      "copied_unchanged": true,
+      "status": "user-supplied proposal, not execution authorization"
     }
   ],
   "training_approval_transferred": false

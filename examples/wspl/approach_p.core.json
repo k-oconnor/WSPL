@@ -1,0 +1,233 @@
+{
+  "format": "wspl.scalar_ir.v0",
+  "inputs": {
+    "object_dx": {
+      "kind": "Real",
+      "unit": "m",
+      "lower": "-1/2",
+      "upper": "1/2"
+    },
+    "object_dy": {
+      "kind": "Real",
+      "unit": "m",
+      "lower": "-1/2",
+      "upper": "1/2"
+    },
+    "object_dz": {
+      "kind": "Real",
+      "unit": "m",
+      "lower": "-1/2",
+      "upper": "1/2"
+    },
+    "target_dx": {
+      "kind": "Real",
+      "unit": "m",
+      "lower": "-1/2",
+      "upper": "1/2"
+    },
+    "target_dy": {
+      "kind": "Real",
+      "unit": "m",
+      "lower": "-1/2",
+      "upper": "1/2"
+    },
+    "target_dz": {
+      "kind": "Real",
+      "unit": "m",
+      "lower": "-1/2",
+      "upper": "1/2"
+    },
+    "eef_vx": {
+      "kind": "Real",
+      "unit": "m_per_s",
+      "lower": "-1",
+      "upper": "1"
+    },
+    "eef_vy": {
+      "kind": "Real",
+      "unit": "m_per_s",
+      "lower": "-1",
+      "upper": "1"
+    },
+    "eef_vz": {
+      "kind": "Real",
+      "unit": "m_per_s",
+      "lower": "-1",
+      "upper": "1"
+    },
+    "aperture": {
+      "kind": "Real",
+      "unit": "m",
+      "lower": "0",
+      "upper": "2/25"
+    },
+    "left_object_contact": {
+      "kind": "Truth",
+      "unit": "1",
+      "lower": "0",
+      "upper": "1"
+    },
+    "right_object_contact": {
+      "kind": "Truth",
+      "unit": "1",
+      "lower": "0",
+      "upper": "1"
+    }
+  },
+  "lets": [
+    {
+      "name": "p_x",
+      "type": {
+        "kind": "Truth",
+        "unit": "1",
+        "lower": "0",
+        "upper": "1"
+      },
+      "value": {
+        "op": "margin",
+        "value": {
+          "op": "ref",
+          "name": "target_dx"
+        },
+        "lower": "-1/2",
+        "upper": "1/2"
+      }
+    },
+    {
+      "name": "p_y",
+      "type": {
+        "kind": "Truth",
+        "unit": "1",
+        "lower": "0",
+        "upper": "1"
+      },
+      "value": {
+        "op": "margin",
+        "value": {
+          "op": "ref",
+          "name": "target_dy"
+        },
+        "lower": "-1/2",
+        "upper": "1/2"
+      }
+    },
+    {
+      "name": "p_z",
+      "type": {
+        "kind": "Truth",
+        "unit": "1",
+        "lower": "0",
+        "upper": "1"
+      },
+      "value": {
+        "op": "margin",
+        "value": {
+          "op": "ref",
+          "name": "target_dz"
+        },
+        "lower": "-1/2",
+        "upper": "1/2"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "dx",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      },
+      "value": {
+        "op": "clip",
+        "value": {
+          "op": "affine",
+          "terms": [
+            {
+              "coefficient": "20",
+              "value": {
+                "op": "ref",
+                "name": "p_x"
+              }
+            }
+          ],
+          "bias": "-10",
+          "unit": "1"
+        },
+        "lower": "-1",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "dy",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      },
+      "value": {
+        "op": "clip",
+        "value": {
+          "op": "affine",
+          "terms": [
+            {
+              "coefficient": "20",
+              "value": {
+                "op": "ref",
+                "name": "p_y"
+              }
+            }
+          ],
+          "bias": "-10",
+          "unit": "1"
+        },
+        "lower": "-1",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "dz",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      },
+      "value": {
+        "op": "clip",
+        "value": {
+          "op": "affine",
+          "terms": [
+            {
+              "coefficient": "20",
+              "value": {
+                "op": "ref",
+                "name": "p_z"
+              }
+            }
+          ],
+          "bias": "-10",
+          "unit": "1"
+        },
+        "lower": "-1",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "gripper",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      },
+      "value": {
+        "op": "const",
+        "value": "-1",
+        "unit": "1"
+      }
+    }
+  ]
+}

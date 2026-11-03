@@ -1,0 +1,115 @@
+# WSPL implementation gates
+
+November 3, 2026. Planned work, not implemented APIs. See EXPERIMENT_PROGRAM.md
+and the archived supplied proposal. Keep this as a language component within
+Skillforge until there is a concrete reason to split repositories.
+
+Current progress: the scalar JSON IR/type reader and exact reference interpreter
+in SCALAR_CORE.md implement an initial part of G0. Text parsing, the broader type
+system and every subsequent gate remain incomplete. The prototype examples/tests
+are engineering fixtures, not synthesis trials or universal contract proofs.
+
+## G0: typed core and independent interpreter
+
+Implement named bounded inputs, units/normalization, shapes, exact rational
+constants, acyclic expressions and affine/ReLU/clip/min/max/static wiring.
+Truth is not probability; Boolean contracts and executable graded expressions
+remain distinct. Weighted Lukasiewicz blocks can be expressed by supported
+affine/clamp operations. Reject unsupported discontinuous branches, variable
+multiplication/division and dynamic loops rather than tracing them accidentally.
+
+Start with one explicit module form from the proposal, not every proposed
+extension. An independent Fraction-based reference evaluates exact rational
+inputs without importing the compiler or neural runtime. Include dimensional
+and shape failures, duplicate bindings, algebraic cycles and non-idempotent
+graded conjunction counterexamples in engineering tests.
+
+## G1: compiler and artifact
+
+Compile BrakePatch and ApproachP (the inspected proportional standoff controller)
+into small ReLU graphs with deterministic source maps. Emit/read non-executable
+weights and immutable graph/I/O metadata. Fresh graph and fixed-architecture
+allocation are separate modes; no silent width/depth expansion. Preserve a
+canonical DAG so repeated subexpressions and signed relays are explicit.
+
+Targets are rational mathematical IR and a separately named deployed numerical
+artifact. Verify against the actual serialized stored coefficients, interpreted
+as exact dyadic rationals where appropriate. Arbitrary rational source constants
+may not be exactly representable as floating-point weights. Exact-only compilation
+must prove equality after lowering/serialization or reject/request an explicitly
+supported approximation mode; ordinary float casting is not an equivalence proof.
+
+Boundary probes and mutation tests catch engineering errors but remain empirical.
+Keep semantic lowering lemmas and serialized-graph equivalence separate. The
+current RMV export/reference is useful antecedent code, not a WSPL compiler.
+RMV fixed-capacity compilation begins with the representable subset only.
+
+## G2: independent verifier spike
+
+First evaluate exact rational enumeration for bounded Boolean inputs and an SMT
+QF_LRA encoding for small real PWA graphs. Z3 is a candidate, not a selected or
+validated dependency; its mathematical real sort is distinct from IEEE floats
+([official arithmetic guide](https://microsoft.github.io/z3guide/docs/theories/Arithmetic/)).
+Do not infer deployed FP32/FP64 guarantees from real-arithmetic UNSAT.
+
+Check domain feasibility before universal implication claims. Query the negation
+of each contract over the serialized graph: UNSAT supports PROVED under the
+recorded solver/encoding trust model; SAT needs exact reference witness replay;
+timeouts/unsupported encodings are UNKNOWN, malformed inputs INVALID. Report
+these statuses per contract, not one vague safe flag. Trusted-solver results are
+not independently proof-carrying certificates unless proof validation is built.
+
+Required regressions: all three BrakePatch contracts, actuator/sign/linear-region
+contracts for ApproachP, deliberately reduced braking gain, wrong input order,
+stale artifact hash, vacuous domain, conflicting assumptions, unsupported operator
+and resource exhaustion. Failed random search is never a proof. No physical
+collision-avoidance theorem is implied by a braking command property.
+
+## G3: independently trained imports and transactional patches
+
+Import a small supported learned MLP with full tensor orientation, activations,
+named preprocessing/postprocessing, dtype/operator profile and baseline hash.
+Support a matched output-patch capacity first; verify the whole composed graph
+and explicit preservation domain. Report augmentation as augmentation. In-place
+mask-limited edits are a separate supported target and later experiment track.
+
+Artifact bundles bind source/IR, graph, weights, I/O and preprocessing, contracts,
+verification semantics, parent hashes and source maps. Changing any bound item
+invalidates affected claims. Keep original artifacts accessible and record
+failures. Original learned networks must not be replaced with convenient
+compiler-generated equivalents without separate evidence.
+
+## G4: fair proposer/evaluator harness
+
+Implement the six arms, immutable trial configuration, construction-code isolation,
+independent proposer state, feedback-on/off firewall, shared candidate verifier,
+bounded logging and final-data access restrictions. Audit actual billed tokens,
+tool/candidate/verifier calls, environment steps and all feedback contents.
+The existing scientific source gate pins code identity; it does not implement
+this sandbox, blind data or make LLM calls. Those are real missing components.
+
+Engineering release criteria include simulated proposer faults and attempts to
+change contracts, leak final data, import evaluators or omit failed candidates.
+Do not evaluate a new scientific method on engineering fixtures inspected while
+developing that method.
+
+## G5: discrete screen, then broaden
+
+Only after G0-G4 can the 36-run discrete screen be concretely budgeted/pinned.
+Its independent task generator, fresh instances, model/API identity, monetary
+and wall caps, final evaluation counts, outcome thresholds and analysis manifest
+remain to be set before approval. First use pilot results to diagnose feasibility
+and cost; determine confirmation repetitions without promoting that pilot.
+
+Next add pinned affine/PWA plant dynamics and finite-horizon uncertainty models.
+Robot task families require their missing physical skills, observation interfaces,
+independent observers and executor. Do not describe the sixteen catalog entries
+as runnable or MuJoCo rollouts as universal closed-loop proofs. Transformer and
+learned symbolic recovery profiles follow useful controller results.
+
+## Immediate next implementation slice
+
+G0 through G2 on BrakePatch and ApproachP: parser/type rules, exact reference,
+serialized ReLU graph and independently checked scoped contracts. G3 then grounds
+the work in one genuinely learned controller; G4/G5 test the scientific hypothesis.
+None of these WSPL gates is complete merely because the earlier robot pilot ran.

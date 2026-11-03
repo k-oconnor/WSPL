@@ -1,5 +1,17 @@
 # Roadmap and evidence milestones
 
+## WSPL language and cross-domain studies
+
+The user endorsed a typed weight-space programming language and a formal
+authoring/repair/composition program across three domains. See
+wspl/EXPERIMENT_PROGRAM.md and wspl/WSPL_IMPLEMENTATION.md. The scalar JSON IR and
+exact rational reference implement an initial part of G0; 122 total engineering
+unit checks pass. Compiler, universal verifier, learned import/patch transactions
+and blinded six-arm proposer harness are still missing. The proposed first screen
+is 36 nonconfirmatory synthesis runs, explicitly unapproved and not launchable;
+model, costs, task split and final thresholds remain unset. These language gates
+do not replace the physical robotics milestones below.
+
 ## M0: reference interfaces and reproducibility
 
 Completed engineering scaffold: schemas/examples, closed finite-trace semantics, scalar RMV arithmetic, source gate, provenance and experiment design. Unit checks pass and the initial repo is committed. No physical capability is claimed.

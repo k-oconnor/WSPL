@@ -14,6 +14,8 @@ Current final status (November 3): user-approved approach-v1-fidelityfix complet
 
 ## Semantics and evidence
 
+- The user endorsed WSPL as a weight-space programming language and preparing formal cross-domain studies. Read docs/wspl/EXPERIMENT_PROGRAM.md, WSPL_IMPLEMENTATION.md and SCALAR_CORE.md. There is an initial typed scalar JSON IR/exact rational reference only; no WSPL text parser, weight compiler, universal verifier or blinded authoring harness exists. The archived user proposal is design content, not execution authorization. Its opening direct-LLM-controller claim must be scoped to inspected analytic constructions in our evidence. The 36-run research-plan screen is not a source pin or API approval; fixed/augmented architectures and MLP/RMV replication remain distinct.
+
 - Read docs/ROBOT_TASK_SUITE.md for the sixteen inspected diverse physical task specifications and their readiness blockers. Local BDDL assets/bindings are audited; custom obstacles/perturbations are proposed, not constructed. RobotTaskSuite.check_trace checks supplied labels and consecutive timestamps, not their physical truth, LTLf compilation or execution. Catalog fixtures are not sealed held-out data. The existing motor12 interface does not supply obstacle/articulation/orientation inputs; declare/version any future extension and keep navigation/grasp logic out of the adapter.
 
 - Action blocks execute controls. LTLf propositions report observed state, commands and externally verified skill outcomes. Do not conflate a neural success prediction with physical success.
