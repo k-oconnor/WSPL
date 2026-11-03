@@ -1,6 +1,6 @@
 {
   "command": "external isolated CPU Python with optional Z3 -m unittest discover -s tests -v",
-  "tests": 152,
+  "tests": 155,
   "result": "passed",
   "scientific_run": false,
   "source_sha256": {
@@ -26,6 +26,7 @@
     "experiments/source_consistency.py": "46ba3b46796fd932c0425d44e4ca586f198293dbbf51f43cd3e227ee34aa6da8",
     "tests/test_approach.py": "85095f029ec296c1d095e54cfbc0ea1ffe0317000d86a26b292c5be02eb5f39c",
     "tests/test_automata_planning.py": "5974a7e0df226ee0a1db39ed18e8e8ef1549e0fba0086f5790514958a0d0e085",
+    "tests/test_controller_review_demo.py": "0d71320f42cdcb34b43c2cecc353732ec40bb8c4a4a164e8d8ffbea46a668ccc",
     "tests/test_hierarchy.py": "a588541ae301263a3e548c0d8c30961674e16317debd1b17a33350007a81d064",
     "tests/test_interventions.py": "7dfbe274c44eeb25eab13674fc6d78561733943c398dee4cddf0c206ba0b578c",
     "tests/test_libero_adapter.py": "b577d05f274e0487ac3c77616138ada0211c7507428d21eaae5d2493947fe225",
@@ -37,6 +38,7 @@
     "tests/test_wspl_compile.py": "07514d80805d83e55db4557404036aaa4cd7506520f561b222c59b3c65e56bfd",
     "tests/test_wspl_core.py": "d69d6a54f03a4ac2ac642495c57fc6cd7ecd833b6cb74b7609473d56e9a1dfab",
     "tests/test_wspl_verify.py": "aa198d37032e139148170173065a4979b717c8020fa76ffb1d6039f18e16f196",
+    "tools/demo_controller_review.py": "1a95da9944903ed6da87bbb1b69ff7c8692f5eda9846947f21df91a1ffe6ebe4",
     "tools/prepare_approach.py": "dd09631a282d5480457f65737f0c734787de2c356a5490ffe4fd5d5e633ede95",
     "tools/sim_preflight.py": "8c8b7b580128d7f3949e371a8ad48b31d41784036c94817ab04a8746d96bf442"
   }

@@ -92,6 +92,19 @@ effects are not semantic concepts, real-world causes or universal guarantees.
 
 ## Research program
 
+The first proposed product workflow is **controller change review and repair**.
+See the [customer validation plan and collaborator handoff](docs/PRODUCT_VALIDATION.md).
+An inspected engineering demo compiles a controller, exposes a deliberate gain
+regression with a replayed counterexample, and checks an operator correction:
+
+```sh
+python tools/demo_controller_review.py --output work/controller_review
+```
+
+Add `--include-opaque` in the tested Torch/NumPy environment to include paired
+activation probes. This is a known-answer demonstration, not automatic repair,
+customer validation or a scientific performance comparison.
+
 The three studies cover fresh authoring, repair of independently trained artifacts
 and frozen composition. They span discrete causal worlds, low-dimensional dynamics and
 robot manipulation. Each compares direct weights, ordinary PWA code and WSPL,

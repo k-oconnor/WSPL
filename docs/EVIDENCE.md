@@ -56,3 +56,17 @@ Kevin requested GitHub/README archival and continued work. Created private https
 ## Scoped verification and pseudo-causal execution evidence (November 3)
 
 At Kevin's request, added a separate empirical computational intervention path for opaque networks alongside initial formal checks. wspl_verify.py uses optional Z3 5.3.3.0/QF_LRA against serialized rational-coefficient real graphs. All three BrakePatch I/O contracts and ApproachP bounds/open-gripper/direction contracts are solver-backed PROVED with non-vacuity witnesses; reduced gain and wrong input columns are REFUTED with independent Fraction replay. Hash/domain/unit/schema failures are INVALID; unsupported numerical profiles/capacity/budget are UNKNOWN. Results bind artifact/contract, verifier/evaluator source and solver/query hashes, with no independently checked proof trace. No source-equivalence, IEEE execution or robot guarantee is claimed. interventions.py logs one-input tensor-site zero/scale/replace probes on declared stateless/eval PyTorch models: baseline/no-op/intervention/repeat with matched global Python/NumPy/Torch RNG, registered-state integrity (including nonpersistent buffers), module/config/source/input/instrumentation fingerprints, invocation indices, selected features and output metrics. Replay checks identities/output digests; JSONL hash chains need an external trusted head and do not authenticate a malicious writer. Empirical statuses cannot be PROVED; no semantic/world-causal/universal interpretation is established. Stateful/tuple/non-PyTorch adapters and weight-edit lineage remain future work; unexpected registered-state mutation is detected, not automatically rolled back. Known-answer Tanh fixture effect/no-effect logs and replay are tracked; no trained model/large-model sweep/robot/API trial ran. All 151 tests pass (19 new). Docs: Skillforge/docs/wspl/VERIFICATION.md and INTERVENTION_EVIDENCE.md. Private k-oconnor/WSPL archive continues; scientific 36-run design remains not launchable and unapproved.
+
+
+## Controller change review demo and customer validation (November 3)
+
+Kevin endorsed progressing toward a narrow customer workflow. Added
+PRODUCT_VALIDATION.md with a proposed controls/robotics change-review use case,
+five discovery interviews, artifact/access/commitment gates and a proposed 2x
+active-engineering-time hurdle conditional on matched quality. These are planning
+criteria, not measured savings, customer commitments or an outreach authorization.
+The known-answer tools/demo_controller_review.py compiles BrakePatch, deliberately
+weakens gain, persists a replayed counterexample and checks a supplied correction;
+optional opaque Tanh probes remain empirical. Full suite: 155 tests pass. Standalone
+CPU demo: PROVED / REFUTED / PROVED plus effect/no-effect controls and exact replay.
+No model calls, training or robot execution; no scientific run approved.
