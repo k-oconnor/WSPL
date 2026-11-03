@@ -1,0 +1,119 @@
+{
+  "format": "wspl.mlp_import.v0",
+  "dtype": "float32",
+  "tensor_layout": "out_by_in",
+  "inputs": [
+    {
+      "name": "d",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "0",
+        "upper": "2"
+      }
+    },
+    {
+      "name": "v",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "0",
+        "upper": "1"
+      }
+    },
+    {
+      "name": "a_base",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "a",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-1",
+        "upper": "1"
+      }
+    }
+  ],
+  "layers": [
+    {
+      "activation": "relu",
+      "weight": [
+        [
+          "-0x1.4000000000000p+1",
+          "0x1.4000000000000p+0",
+          "0x0.0p+0"
+        ],
+        [
+          "-0x1.4000000000000p+1",
+          "0x1.4000000000000p+0",
+          "0x0.0p+0"
+        ],
+        [
+          "0x0.0p+0",
+          "0x0.0p+0",
+          "0x1.0000000000000p+0"
+        ],
+        [
+          "0x0.0p+0",
+          "0x0.0p+0",
+          "-0x1.0000000000000p+0"
+        ]
+      ],
+      "bias": [
+        "0x1.0000000000000p+0",
+        "0x0.0p+0",
+        "0x0.0p+0",
+        "0x0.0p+0"
+      ]
+    },
+    {
+      "activation": "relu",
+      "weight": [
+        [
+          "-0x1.0000000000000p+1",
+          "0x1.0000000000000p+1",
+          "0x1.0000000000000p+0",
+          "-0x1.0000000000000p+0"
+        ],
+        [
+          "-0x1.0000000000000p+1",
+          "0x1.0000000000000p+1",
+          "0x1.0000000000000p+0",
+          "-0x1.0000000000000p+0"
+        ]
+      ],
+      "bias": [
+        "0x1.0000000000000p+0",
+        "-0x1.0000000000000p+0"
+      ]
+    },
+    {
+      "activation": "linear",
+      "weight": [
+        [
+          "0x1.0000000000000p+0",
+          "-0x1.0000000000000p+0"
+        ]
+      ],
+      "bias": [
+        "-0x1.0000000000000p+0"
+      ]
+    }
+  ],
+  "preprocessing": [],
+  "postprocessing": [],
+  "provenance": {
+    "kind": "compiled_weights_reexpressed",
+    "source_artifact": "examples/wspl/brake_patch.relu.json",
+    "source_artifact_sha256": "9533ee778e62050359c77d55a418d7d15716ae2e3bfce6ae83896f55fa2020c1",
+    "note": "Import-fidelity fixture: WSPL-compiled weights re-expressed as float32 tensors. Not a learned network; never an S2 baseline."
+  }
+}
