@@ -1,8 +1,10 @@
 # Approach v1: unblinded positioning and imitation screen
 
-Prepared November 3, 2026. **Unapproved; no scientific fitting or physical
-comparison has launched.** This is a deliberately small first physical motor
-screen, not the full blinded LLM/gradient acquisition study in EXPERIMENT_01.md.
+Prepared November 3, 2026. The original source was approved and launched, then
+failed on a native-horizon bookkeeping bug before fitting. The reference passed
+one physical positioning trial. A replacement horizon-fix source is prepared but
+unapproved; see APPROACH_V1_LAUNCH.md for all evidence and its digest. This remains
+a small engineering screen, not the full blinded acquisition study.
 
 ## Question and scope
 
@@ -19,8 +21,10 @@ supplied infrastructure shared by all arms. No planner, LTLf hierarchy, grasp
 policy, collision observer or hidden approach routine completes this task.
 
 This narrower task establishes positioning before contact/grasp calibration.
-No physical feasibility or learning result is known yet. The initial source gate
-will stop before fitting if the reference fails or zero translation succeeds.
+The first reference development start succeeded; the control then hit the native
+horizon bug, so the full feasibility panel and learning remain unmeasured. The
+replacement will stop before fitting if the reference fails or zero translation
+succeeds on any required development start.
 
 ## Methods
 
@@ -133,7 +137,9 @@ this runner does not automatically resume an interrupted episode or study.
 The prepared spec and manifest are under experiments/source_pins/approach_v1.*.
 Candidate manifest SHA-256:
 `e05119fd34b2c77973773f5abcebb50858f45bc523287ea8eeddbcac3659bba9`.
-The registry remains empty until Kevin approves the exact manifest SHA-256.
+That original approval is registered and its failed output is preserved. The
+replacement horizon-fix digest in APPROACH_V1_LAUNCH.md is not approved. Its only
+runtime change adds the settling calls and one spare tick to the native horizon.
 Project inventory covers src, experiments, tests and tools. The configuration
 also pins Python/platform, installed distribution versions and content hashes
 for all 12,805 inventoried files in LIBERO, MuJoCo, robosuite and Torch, including
@@ -145,10 +151,12 @@ bindings are ignored Git config and do not change the expected content.
 After exact user approval and registration, launch only through:
 
 ```powershell
-./.venv-sim/Scripts/python.exe experiments/source_consistency.py run --model-id approach-v1 --output results/approach_v1
+$simPython = (Get-Content artifacts/local_paths.json | ConvertFrom-Json).sim_python
+& $simPython experiments/source_consistency.py run --model-id approach-v1-horizonfix --output results/approach_v1_horizonfix
 ```
 
 Expected runtime is several minutes, with a 20-minute wall guard checked between
 episodes/updates. That guard cannot interrupt a hung native simulator call. The
-existing five-tick integration check and synthetic rollout unit fixtures are not
-this experiment's physical feasibility results. Nothing launches automatically.
+existing five-tick integration check and synthetic rollout fixtures do not replace
+the required physical feasibility panel. The simulator environment must be outside
+the repository for the unchanged source gate. Nothing launches automatically.

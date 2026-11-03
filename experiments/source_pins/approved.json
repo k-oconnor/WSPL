@@ -1,1 +1,11 @@
-{"schema": 1, "models": {}}
+{
+  "schema": 1,
+  "models": {
+    "approach-v1": {
+      "manifest": "experiments/source_pins/approach_v1.manifest.json",
+      "sha256": "e05119fd34b2c77973773f5abcebb50858f45bc523287ea8eeddbcac3659bba9",
+      "approval": "User explicitly selected Approve this manifest and launch the approach pilot on 2026-11-03",
+      "approved_by": "user"
+    }
+  }
+}

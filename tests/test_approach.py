@@ -11,24 +11,28 @@ except ImportError:
     torch = None
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'src'))
 if torch is not None:
-    from skillforge.approach import ApproachStudy, rollout, check_feasibility, audit_initialization
+    from skillforge.approach import ApproachStudy, rollout, check_feasibility, audit_initialization, native_horizon
     from test_libero_adapter import fake_env
 
 
-def fixture(reset_error=False):
+def fixture(reset_error=False, horizon=None):
     env, old = fake_env()
     obs = {'robot0_eef_pos': np.array([0., 0., .3]), 'cream_cheese_1_pos': np.zeros(3)}
     data = env.env.sim.data
     velocity = np.zeros(3)
     env.sim = env.env.sim
     env.seed = lambda seed: None
+    env.native_calls = 0
     def reset():
         if reset_error: raise ValueError('bad layout')
-        data.time = 0.; obs['robot0_eef_pos'][:] = (0, 0, .3)
+        data.time = 0.; env.native_calls = 0; obs['robot0_eef_pos'][:] = (0, 0, .3)
         return obs
     env.env.reset = reset
     data.get_site_xvelp = lambda name: velocity
     def step(action):
+        if horizon is not None and env.native_calls >= horizon:
+            raise ValueError('executing action in terminated episode')
+        env.native_calls += 1
         movement = np.asarray(action[:3])*.05
         obs['robot0_eef_pos'] += movement
         velocity[:] = movement/.05
@@ -56,6 +60,18 @@ class ApproachTests(unittest.TestCase):
         self.assertEqual(result['status'], 'error')
         self.assertEqual(result['reset_calls'], 1)
         self.assertEqual(result['motor_calls'], 0)
+
+    def test_native_horizon_includes_preparation_and_full_skill_budget(self):
+        study = ApproachStudy()
+        old = rollout(fixture(horizon=120), study, 'zero', 1)
+        self.assertEqual(old['status'], 'error')
+        self.assertEqual(old['motor_calls'], 101)  # includes rejected call
+        env = fixture(horizon=native_horizon(120, 20))
+        fixed = rollout(env, study, 'zero', 1)
+        self.assertEqual(fixed['status'], 'timeout')
+        self.assertEqual(fixed['motor_calls'], 120)
+        self.assertEqual(fixed['preparation_calls'], 20)
+        self.assertEqual(env.native_calls, 140)
 
     def test_feasibility_rejects_mismatched_or_trivial_controls(self):
         a = dict(start_sha256='a', success=True)

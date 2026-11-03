@@ -11,7 +11,7 @@ from pathlib import Path
 import sys
 import time
 import torch
-from skillforge.approach import rollout, check_feasibility, audit_initialization
+from skillforge.approach import rollout, check_feasibility, audit_initialization, native_horizon
 from skillforge.motor import CHANNELS
 from skillforge.neural import MotorRMV
 from skillforge.rmv import RMVReference
@@ -88,7 +88,8 @@ def run(constructor, output_dir, config):
     from libero.libero.envs.env_wrapper import ControlEnv
     env = ControlEnv(bddl_file_name=str(base/'bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl'),
                      use_camera_obs=False, has_renderer=False, has_offscreen_renderer=False,
-                     control_freq=20, horizon=config['max_steps'], ignore_done=False, hard_reset=False)
+                     control_freq=20, horizon=native_horizon(config['max_steps'], config['settling_steps']),
+                     ignore_done=False, hard_reset=False)
     started = run_started
     results = dict(status='running', manifest_sha256=identity, scope='unblinded pregrasp positioning engineering screen',
                    episodes=[], training={}, parameters={n: sum(p.numel() for p in m.parameters())

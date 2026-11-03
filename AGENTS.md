@@ -8,6 +8,8 @@ Read docs/SIM_ADAPTER.md for the implemented single-tick LIBERO bridge and sampl
 
 November 3: differentiable MLP/RMV blocks and an approach-only positioning/imitation runner are implemented/prepared; no scientific run is approved or launched. Read docs/APPROACH_V1.md. Its analytic weights encode a known P controller and are unblinded engineering constructions, not a sealed LLM trial. The 12 cm standoff task is not a validated grasp pose. Keep the full four-arm acquisition objective, and distinguish this first positioning screen from physical pickup/hierarchy results.
 
+Current November 3 launch status supersedes that preparation note: approach-v1 was explicitly user-approved and ran, then failed on native horizon accounting before any fitting. One reference positioning trial succeeded. See docs/APPROACH_V1_LAUNCH.md. The horizon-fix replacement is prepared but unapproved; do not reuse the original digest approval. Run the isolated simulator interpreter outside this checkout to satisfy the unchanged source gate. All 100 unit checks pass; no process is active and no learned physical result exists yet.
+
 ## Semantics and evidence
 
 - Action blocks execute controls. LTLf propositions report observed state, commands and externally verified skill outcomes. Do not conflate a neural success prediction with physical success.
@@ -29,7 +31,7 @@ Prepare a concrete constructor, runner, configuration and complete Python invent
 
 While a source-pinned run is active, do not edit/add/remove inventoried Python in that checkout. Use a separate worktree. Preserve one rolling resumable checkpoint per arm every 1,800 seconds plus final/clean-stop; no accumulating best/initial/per-improvement weight copies unless Kevin changes that policy.
 
-The initial registry is empty. No experiment is approved or queued. Creating this repository/spec does not authorize API expenditure, new training, robot deployment or hardware control. Prepare such work concretely before obtaining any approval explicitly required by this contract. Do not request approval for routine reversible development or unit checks.
+The registry was initially empty; it now records Kevin's exact original approach-v1 approval and its failed run. The horizon-fix replacement is not approved or queued. Creating this repository/spec does not authorize API expenditure, new training, robot deployment or hardware control. Prepare work concretely before obtaining any approval explicitly required by this contract. Do not request approval for routine reversible development or unit checks.
 
 ## Repo hygiene
 

@@ -8,6 +8,18 @@ from .motor import SkillObserver
 from .libero_adapter import LiberoMotorAdapter
 
 
+def native_horizon(max_steps, settling_steps):
+    """Allow preparation plus the complete skill budget before native expiry.
+
+    LIBERO masks the returned horizon done flag, but robosuite retains its
+    internal termination state and rejects the next action. One spare tick
+    keeps native expiry distinct from the adapter's explicit skill timeout.
+    """
+    if type(max_steps) is not int or max_steps < 1 or type(settling_steps) is not int or settling_steps < 0:
+        raise ValueError('positive skill budget and nonnegative settling budget required')
+    return max_steps + settling_steps + 1
+
+
 class ApproachStudy:
     def __init__(self, seed=7, gain=20.):
         self.gain = gain
