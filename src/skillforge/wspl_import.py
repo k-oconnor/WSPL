@@ -2,10 +2,13 @@
 
 Reads a framework-neutral `wspl.mlp_import.v0` bundle whose numbers are hex float
 strings, checks dtype representability and explicit tensor orientation, and
-stores exactly those tensors in an ordinary ReLUArtifact (allocation mode
-`imported`). For imported artifacts `source_sha256` is the canonical bundle hash,
-not a scalar-IR hash. Pre/postprocessing composition, output patches and
-transactions are not implemented. No training or IEEE execution claim is made.
+stores those tensors in an ordinary ReLUArtifact (allocation mode `imported`).
+For imported artifacts `source_sha256` is the canonical bundle hash, not a
+scalar-IR hash. Optional per-port affine pre/postprocessing
+(net_input = scale * raw + offset, published = scale * net_output + offset) is
+added as signed relay layers, so each tensor stays an exact slice (W and -W)
+rather than being folded into the processing. No training or IEEE execution
+claim is made.
 """
 import argparse
 import copy
@@ -61,8 +64,6 @@ def import_bundle(bundle):
         raise ValueError(f'dtype must be one of {DTYPES}')
     if b['tensor_layout'] not in LAYOUTS:
         raise ValueError(f'tensor_layout must be one of {LAYOUTS}; orientation is never guessed')
-    if b['preprocessing'] != [] or b['postprocessing'] != []:
-        raise ValueError('non-identity pre/postprocessing composition is not implemented (G3b)')
     if not isinstance(b['provenance'], dict) or not b['provenance']:
         raise ValueError('nonempty provenance record required')
     if not isinstance(b['layers'], list) or not 1 <= len(b['layers']) <= 65:
@@ -93,6 +94,18 @@ def import_bundle(bundle):
                        'bias': [str(_exact(v, b['dtype'], f'{where} bias')) for v in bias]})
         hashes.append({'weight': _tensor_sha(weight), 'bias': _tensor_sha(bias)})
         width = len(rows)
+    pre, pre_record = _processing(b['preprocessing'], b['inputs'], b['dtype'], 'preprocessing')
+    post, post_record = _processing(b['postprocessing'], b['outputs'], b['dtype'], 'postprocessing')
+    tensor_layers = list(range(len(layers)))
+    if pre_record:
+        layers = _with_preprocessing(layers, pre)
+        tensor_layers = [i + 1 for i in tensor_layers]
+    if post_record:
+        layers = _with_postprocessing(layers, post)
+    stored = 'exact imported tensors' + (', transposed from in_by_out' if b['tensor_layout'] == 'in_by_out' else '')
+    if pre_record or post_record:
+        stored = ('exact imported tensor slices (W and -W where a processing relay precedes) plus processing relay layers'
+                  + (', transposed from in_by_out' if b['tensor_layout'] == 'in_by_out' else ''))
     widths = [len(b['inputs'])] + [len(l['bias']) for l in layers]
     parameters = sum(o * (i + 1) for i, o in zip(widths, widths[1:]))
     ports = {key: [{'name': p.get('name') if isinstance(p, dict) else None,
@@ -103,11 +116,66 @@ def import_bundle(bundle):
                 'allocation': {'mode': 'imported', 'widths': widths, 'parameters': parameters},
                 'source_map': {'import': {'bundle_format': FORMAT, 'dtype': b['dtype'],
                                           'tensor_layout': b['tensor_layout'],
-                                          'stored_layers': 'exact imported tensors' + (
-                                              ', transposed from in_by_out' if b['tensor_layout'] == 'in_by_out' else ''),
-                                          'tensor_sha256': hashes, 'preprocessing': [], 'postprocessing': [],
+                                          'stored_layers': stored,
+                                          'tensor_layers': tensor_layers,
+                                          'preprocessing_layer': 0 if pre_record else None,
+                                          'postprocessing_boundary_layer': len(layers) - 2 if post_record else None,
+                                          'tensor_sha256': hashes, 'preprocessing': pre_record, 'postprocessing': post_record,
                                           'provenance': b['provenance']}}}
     return ReLUArtifact(artifact)
+
+
+def _processing(entries, ports, dtype, what):
+    """Per-port (scale, offset) list, identity for unlisted ports, plus a canonical record."""
+    if not isinstance(entries, list):
+        raise ValueError(f'{what} must be a list')
+    names = [p.get('name') if isinstance(p, dict) else None for p in ports]
+    maps, record = {}, []
+    for entry in entries:
+        if not isinstance(entry, dict) or set(entry) != {'port', 'scale', 'offset'}:
+            raise ValueError(f'{what} entries need exactly port, scale and offset')
+        if entry['port'] not in names:
+            raise ValueError(f'{what}: unknown port {entry["port"]!r}')
+        if entry['port'] in maps:
+            raise ValueError(f'{what}: port {entry["port"]!r} listed twice')
+        scale = _exact(entry['scale'], dtype, f'{what} scale')
+        offset = _exact(entry['offset'], dtype, f'{what} offset')
+        if scale == 0:
+            raise ValueError(f'{what}: scale must be nonzero')
+        maps[entry['port']] = (scale, offset)
+        record.append({'port': entry['port'], 'scale': str(scale), 'offset': str(offset)})
+    return [maps.get(n, (Fraction(1), Fraction(0))) for n in names], sorted(record, key=lambda r: names.index(r['port']))
+
+
+def _with_preprocessing(layers, maps):
+    """Prepend relu(+-(scale*x + offset)) rows and make the first tensor read [W, -W]."""
+    n = len(maps)
+    first = {'activation': 'relu', 'weights': [], 'bias': []}
+    for j, (scale, offset) in enumerate(maps):
+        for sign in (1, -1):
+            first['weights'].append([str(sign * scale if k == j else 0) for k in range(n)])
+            first['bias'].append(str(sign * offset))
+    head = layers[0]
+    reading = {'activation': head['activation'],
+               'weights': [[str(sign * Fraction(w)) for w in row for sign in (1, -1)] for row in head['weights']],
+               'bias': list(head['bias'])}
+    return [first, reading] + layers[1:]
+
+
+def _with_postprocessing(layers, maps):
+    """Turn the final linear tensor into relu(+-(Wh+b)) rows, then publish scale*(pos-neg)+offset."""
+    final = layers[-1]
+    boundary = {'activation': 'relu', 'weights': [], 'bias': []}
+    for row, bias in zip(final['weights'], final['bias']):
+        for sign in (1, -1):
+            boundary['weights'].append([str(sign * Fraction(w)) for w in row])
+            boundary['bias'].append(str(sign * Fraction(bias)))
+    m = len(maps)
+    publish = {'activation': 'linear', 'weights': [], 'bias': []}
+    for r, (scale, offset) in enumerate(maps):
+        publish['weights'].append([str(scale if c == 2 * r else -scale if c == 2 * r + 1 else 0) for c in range(2 * m)])
+        publish['bias'].append(str(offset))
+    return layers[:-1] + [boundary, publish]
 
 
 def _port_type(port):
