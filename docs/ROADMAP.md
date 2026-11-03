@@ -7,12 +7,13 @@ authoring/repair/composition program across three domains. See
 wspl/EXPERIMENT_PROGRAM.md and wspl/WSPL_IMPLEMENTATION.md. The scalar JSON IR and
 exact rational reference implement an initial part of G0, and the fresh ReLU MLP
 compiler/independent artifact loader in wspl/COMPILER.md implement an initial G1.
-All 225 engineering checks pass. Initial real-graph I/O verification, rational
+All 247 engineering checks pass. Initial real-graph I/O verification, rational
 source-to-artifact equivalence (issue #1), a text front end for the proposal's
-module form (issue #3) and empirical opaque-network intervention logging are
-implemented; see wspl/PARSER.md, wspl/VERIFICATION.md and
-wspl/INTERVENTION_EVIDENCE.md. IEEE/closed-loop proofs, learned
-import/patch transactions and the blinded proposer harness remain missing. The proposed first screen
+module form (issue #3), frozen-tensor import with relational contracts (issue #6),
+output-patch transactions (issue #8) and empirical opaque-network intervention
+logging are implemented; see wspl/PARSER.md, wspl/VERIFICATION.md, wspl/IMPORT.md,
+wspl/PATCHES.md and wspl/INTERVENTION_EVIDENCE.md. IEEE/closed-loop proofs, a learned
+S2 parent, in-place edits and the blinded proposer harness remain missing. The proposed first screen
 is 36 nonconfirmatory synthesis runs, explicitly unapproved and not launchable;
 model, costs, task split and final thresholds remain unset. These language gates
 do not replace the physical robotics milestones below.

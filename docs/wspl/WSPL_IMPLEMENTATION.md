@@ -98,8 +98,13 @@ G3a progress (issue #6, IMPORT.md): frozen hidden-ReLU/final-linear tensors impo
 losslessly from a hex-float bundle into an `imported` ReLUArtifact whose layers are
 exactly the tensors, and relational parent/edited contracts (preservation regions,
 tolerances, relative repair bounds) are checked in QF_LRA with replayed witnesses.
-Pre/postprocessing composition, output-patch composition and transaction
-manifests/rollback (G3b) and any learned parent remain missing.
+G3b progress (issue #8, PATCHES.md): import pre/postprocessing as signed relay layers
+keeping tensors as exact slices; `compose_output` augmentation with verified slice
+placement and generated interface obligations; transactions that COMMIT only when
+every obligation and contract is PROVED, otherwise REJECT (refuted/invalid) or leave
+UNRESOLVED (unknown), returning the unchanged parent, with replayable manifests.
+`replace_module`, `add_residual`, in-place mask-limited edits, gradient repair and any
+learned parent remain missing.
 
 ## G4: fair proposer/evaluator harness
 

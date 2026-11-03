@@ -2,7 +2,7 @@
   "scope": "engineering import-fidelity fixtures: WSPL-compiled weights re-expressed as float32 import bundles; not learned networks, S2 baselines, IEEE execution or robot proof",
   "reports": {
     "brake_patch": {
-      "imported_artifact_sha256": "088c6ead4c15c41560b45899b67ebf87fe6aa7e7e4fd6af438706cf2c6df3110",
+      "imported_artifact_sha256": "791f3acf13380f95f6dc53fa8612be104bcb317109a43a79fe206dd617387e43",
       "stored_layers_identical": true,
       "preservation": {
         "status": "PROVED",
@@ -20,11 +20,11 @@
         "timeout_ms": 5000,
         "logic": "QF_LRA",
         "checker_source_sha256": "f108ba9916236a4e2cdcee3b841bd5379cc6d03658992cc5339d88298474e734",
-        "evaluator_source_sha256": "14f0f677b693de77bda7ed13709c3c208e9b600c88c3fb0ae25c96fac43c7369",
+        "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
         "parent_sha256": "9533ee778e62050359c77d55a418d7d15716ae2e3bfce6ae83896f55fa2020c1",
-        "edited_sha256": "088c6ead4c15c41560b45899b67ebf87fe6aa7e7e4fd6af438706cf2c6df3110",
+        "edited_sha256": "791f3acf13380f95f6dc53fa8612be104bcb317109a43a79fe206dd617387e43",
         "name": "compiled_equals_imported",
-        "contract_sha256": "004717ea0f4ef8dde4be1d6931fbd95b664fd14b0f32d6841a9995f7aff4333d",
+        "contract_sha256": "d7af3924c15d081977aecaf61815ac5362ca75720d578c60b0b569f171e62923",
         "backend": "Z3",
         "backend_version": "5.3.3",
         "domain_query": "sat",
@@ -38,11 +38,11 @@
         "violation_query": "unsat",
         "violation_query_sha256": "58df5fb5ecb6c316d06c85d82c7b0b6286c67f94a46017084e8546e986d76b3f",
         "reason": "violation query UNSAT under declared paired real-graph semantics",
-        "wall_seconds": 0.027913914000237128
+        "wall_seconds": 0.02072669599965593
       }
     },
     "approach_p": {
-      "imported_artifact_sha256": "6366910613813b72faf480641c7670501f1baefde398ba1822379ad767790273",
+      "imported_artifact_sha256": "cdae5b6d86753d8cc6e65bbea081c1a30174d6bfe787573a77fd51069645d116",
       "stored_layers_identical": true,
       "preservation": {
         "status": "PROVED",
@@ -60,11 +60,11 @@
         "timeout_ms": 5000,
         "logic": "QF_LRA",
         "checker_source_sha256": "f108ba9916236a4e2cdcee3b841bd5379cc6d03658992cc5339d88298474e734",
-        "evaluator_source_sha256": "14f0f677b693de77bda7ed13709c3c208e9b600c88c3fb0ae25c96fac43c7369",
+        "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
         "parent_sha256": "9242d9f40e6a055bfaa40af38674f3fa5c7b71096cc2b789cc88ed1e63b5d122",
-        "edited_sha256": "6366910613813b72faf480641c7670501f1baefde398ba1822379ad767790273",
+        "edited_sha256": "cdae5b6d86753d8cc6e65bbea081c1a30174d6bfe787573a77fd51069645d116",
         "name": "compiled_equals_imported",
-        "contract_sha256": "187e0406031d638f1ee631b252d11c3e29896dfe9c2cdaddd8f2b1ffafb01d57",
+        "contract_sha256": "1036e9ab4a0a1d3fea61172447c691345bb5a1b9ad2d8068968ac788ed403e18",
         "backend": "Z3",
         "backend_version": "5.3.3",
         "domain_query": "sat",
@@ -87,7 +87,7 @@
         "violation_query": "unsat",
         "violation_query_sha256": "98fb02cf6647ec004a477f57e428591830ff58f730a0bbf11421d9d6456da943",
         "reason": "violation query UNSAT under declared paired real-graph semantics",
-        "wall_seconds": 0.017897742999593902
+        "wall_seconds": 0.013984961000460316
       }
     }
   }

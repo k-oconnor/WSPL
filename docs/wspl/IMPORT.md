@@ -2,9 +2,9 @@
 
 Added November 3, 2026 (issue #6). This is the first slice of G3 and of the S2
 prerequisites in FORMAL_EXPERIMENTS_V1.md: **import** of frozen MLP tensors and
-**relational queries** between a parent and an edited network. Output-patch
-composition, pre/postprocessing composition and transaction manifests/rollback are
-G3b. No network was trained; parent training requires its own approved source identity.
+**relational queries** between a parent and an edited network. Pre/postprocessing
+(below), output-patch composition and transactions (PATCHES.md) were added in G3b.
+No network was trained; parent training requires its own approved source identity.
 
 ## Current engineering results
 
@@ -26,7 +26,7 @@ weights, not learned networks, and never S2 baselines. Their `provenance.note` s
 | `tensor_layout` | `out_by_in` (PyTorch `nn.Linear.weight`) or `in_by_out` (transposed). Required; orientation is never guessed |
 | `inputs`, `outputs` | Named ports with kind, unit and exact rational domain bounds (strings) |
 | `layers` | `{activation, weight, bias}`; hidden `relu` and a final `linear` only |
-| `preprocessing`, `postprocessing` | Required; only `[]` (identity) is accepted in G3a |
+| `preprocessing`, `postprocessing` | Required lists of `{port, scale, offset}`; `[]` is identity (see below) |
 | `provenance` | Nonempty free-form record: training seed, data hash, notes |
 
 Every tensor value is a `0x`-prefixed hex float string as produced by `float(x).hex()`
@@ -41,18 +41,32 @@ NaN, infinity and values that overflow the declared dtype are rejected.
 - **`source_sha256` is the canonical bundle hash, not a scalar-IR hash.** `wspl_equiv`
   therefore returns INVALID and `ParsedModule.contract_suite` raises `ValueError` on
   imported artifacts, which is correct: they have no WSPL source.
-- The stored layers are exactly the imported tensors (transposed for `in_by_out`).
-  The source map records dtype, layout, per-tensor SHA-256 of the original values and
-  the provenance record.
+- Without processing, the stored layers are exactly the imported tensors (transposed
+  for `in_by_out`). The source map records dtype, layout, per-tensor SHA-256 of the
+  original values, the tensor and processing layer positions and the provenance record.
+
+### Pre/postprocessing (G3b)
+
+Entries are `{port, scale, offset}` with hex-float values in the bundle dtype and a
+nonzero scale; unlisted ports are identity. Directions are fixed:
+`net_input = scale * raw + offset` and `published = scale * net_output + offset`. Port
+domains are declared in raw and published units. Processing is added as signed relay
+layers rather than folded into the tensors: preprocessing prepends
+`relu(+-(scale * x + offset))` rows and the first tensor reads `[W, -W]`;
+postprocessing turns the final tensor into `relu(+-(Wh + b))` rows followed by a
+publishing linear layer. Every tensor therefore remains an exact slice (W and -W),
+and `stored_layers` says "exact imported tensor slices ... plus processing relay
+layers" when processing is present.
 
 Because the result is a `ReLUArtifact`, `wspl_verify` contracts run on imported
-networks unchanged. The one change to `wspl_artifact.py` is accepting allocation mode
-`imported` alongside `fresh_mlp`; other modes are still rejected. That change alters
-the file's hash, which earlier records store as `evaluator_source_sha256`
+networks unchanged. `wspl_artifact.py` accepts allocation modes `fresh_mlp`, `imported`
+and (since G3b) `augmented`; other modes are still rejected. Each change altered the
+file's hash, which earlier records store as `evaluator_source_sha256`
 (contract_fixture_results.json), `artifact_evaluator_sha256`
 (equivalence_fixture_results.json) and the `src/skillforge/wspl_artifact.py` entry of
-validation.json's `source_sha256` map. Those records describe the previous version of
-the file; import_fixture_results.json records the new one.
+validation.json's `source_sha256` map. Those records describe earlier versions of the
+file; import_fixture_results.json and patch_fixture_results.json were regenerated with
+the current one.
 
 `bundle_from_artifact(artifact, provenance=...)` re-expresses an existing artifact's
 stored weights as a bundle; it is how the fidelity fixtures were made.
@@ -98,5 +112,4 @@ trace. They are not IEEE/FP32 execution guarantees: the float runtime's rounding
 evaluation order are not modelled. A wrong `tensor_layout` is detected only when
 layer shapes are not square. Only hidden-ReLU/final-linear MLPs are supported; the
 relational checker caps the combined graphs at 20,000 parameters by default. No
-patch composition, preprocessing composition, transaction rollback or learned
-baseline exists yet.
+learned baseline exists yet; patch composition and transactions are in PATCHES.md.
