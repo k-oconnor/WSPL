@@ -30,6 +30,12 @@
       "sha256": "07eeeeda72b5bfc91ecb07ba94c4ee0593fcc3caee50577dde2542f2c87f9f33",
       "approved_by": "user",
       "approval": "User explicitly selected Approve this manifest and launch the three-draw screen on 2026-11-03; three ChatGPT-backed Codex Astra/xhigh invocations, paired native evaluation, protocol guards and limits as presented."
+    },
+    "astra-breakout-native-v2": {
+      "manifest": "experiments/source_pins/astra_breakout_native_v2.manifest.json",
+      "sha256": "73bf70a24e92b978831aeca4998c44d049b6b2f39b4dda9544c5409b02b7fc46",
+      "approved_by": "user",
+      "approval": "User explicitly selected Approve this replacement manifest and launch on 2026-11-03; three fresh Astra/xhigh invocations additional to the preserved aborted v1 attempt, under the presented protocol and limits."
     }
   }
 }

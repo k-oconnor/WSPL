@@ -1,0 +1,45 @@
+{
+  "scope": "startup evidence only, not a completed study",
+  "launch": {
+    "pid": 19852,
+    "launched_utc": "2026-11-03T21:23:11.9741605Z",
+    "manifest_sha256": "73bf70a24e92b978831aeca4998c44d049b6b2f39b4dda9544c5409b02b7fc46",
+    "cwd": "C:/Users/kevin/OneDrive/Desktop/Skillforge-astra-breakout-v2",
+    "output": "results/astra_breakout_native_v2",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "max_invocations": 3
+  },
+  "source_gate_status": "verified",
+  "constructor_calls": 1,
+  "startup_status": {
+    "status": "running",
+    "trials": [
+      {
+        "draw": 0,
+        "status": "collecting",
+        "summary": null
+      },
+      {
+        "draw": 1,
+        "status": "not_attempted",
+        "summary": null
+      },
+      {
+        "draw": 2,
+        "status": "not_attempted",
+        "summary": null
+      }
+    ],
+    "source_manifest_sha256": "73bf70a24e92b978831aeca4998c44d049b6b2f39b4dda9544c5409b02b7fc46",
+    "active_seconds": 0.2970000000204891
+  },
+  "event_types": [
+    "thread.started",
+    "turn.started"
+  ],
+  "model_argument": "gpt-6-astra",
+  "command_sha256": "c5aa8620c60713df3dfeb5032b9f2d759c9d91b71187536a808386bac5351bed",
+  "cli_warning": "unknown gpt-5.6-luna auxiliary metadata warning remains; explicit proposer model argument is Astra; no startup error item",
+  "live_status": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-astra-breakout-v2\\results\\astra_breakout_native_v2\\status.json"
+}
