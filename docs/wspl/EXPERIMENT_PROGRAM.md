@@ -5,6 +5,13 @@ reviewing the WSPL proposal. This is not a registered study, runnable experiment
 sealed evaluation set, API-spending authorization or source-pin approval. Concrete
 implementation, budgets and source identities must precede any scientific run.
 
+The operational first screen and S2/S3 prerequisites are now specified in
+[FORMAL_EXPERIMENTS_V1.md](FORMAL_EXPERIMENTS_V1.md). S1 has a data-only finite
+Boolean kernel, matched fixed-size artifacts, request export and source-gated
+offline transcript grading. Live isolated collection/model/cost/task freeze are
+pending. Its sparse-matrix and single-expression front ends are explicitly
+narrower than the broader scripted construction comparison below.
+
 WSPL is the proposed source language; weights are executable artifacts. Skillforge
 remains the application/testbed repository. No repository rename is implied.
 The supplied proposal is archived unchanged alongside this file; its instructions

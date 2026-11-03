@@ -6,6 +6,20 @@ test_feasibility_rejects_mismatched_or_trivial_controls (test_approach.ApproachT
 test_fidelity_accepts_real_adapter_numpy_scalar_input_ports (test_approach.ApproachTests.test_fidelity_accepts_real_adapter_numpy_scalar_input_ports) ... ok
 test_native_horizon_includes_preparation_and_full_skill_budget (test_approach.ApproachTests.test_native_horizon_includes_preparation_and_full_skill_budget) ... ok
 test_reference_vs_zero_and_costed_paired_reset (test_approach.ApproachTests.test_reference_vs_zero_and_costed_paired_reset) ... ok
+test_direct_scientific_runner_requires_existing_gate_receipt (test_authoring_screen.AuthoringScreenTests.test_direct_scientific_runner_requires_existing_gate_receipt) ... ok
+test_draft_budget_and_incomplete_pairing_block_screen (test_authoring_screen.AuthoringScreenTests.test_draft_budget_and_incomplete_pairing_block_screen) ... ok
+test_feedback_chain_cannot_be_forged_or_task_substituted (test_authoring_screen.AuthoringScreenTests.test_feedback_chain_cannot_be_forged_or_task_substituted) ... ok
+test_missing_proposals_remain_failures_in_all_six_denominators (test_authoring_screen.AuthoringScreenTests.test_missing_proposals_remain_failures_in_all_six_denominators) ... ok
+test_principal_contrasts_pair_by_task_draw_and_cap_failures_are_preserved (test_authoring_screen.AuthoringScreenTests.test_principal_contrasts_pair_by_task_draw_and_cap_failures_are_preserved) ... ok
+test_request_export_contains_no_reference_artifacts_or_final_labels (test_authoring_screen.AuthoringScreenTests.test_request_export_contains_no_reference_artifacts_or_final_labels) ... ok
+test_all_three_representations_have_same_capacity_and_boolean_behavior (test_authoring_study.AuthoringStudyTests.test_all_three_representations_have_same_capacity_and_boolean_behavior) ... ok
+test_fallback_uses_last_valid_never_best_final_score (test_authoring_study.AuthoringStudyTests.test_fallback_uses_last_valid_never_best_final_score) ... ok
+test_feedback_off_cannot_see_verification_or_withheld_rows (test_authoring_study.AuthoringStudyTests.test_feedback_off_cannot_see_verification_or_withheld_rows) ... ok
+test_invalid_candidates_are_charged_and_cannot_change_contract (test_authoring_study.AuthoringStudyTests.test_invalid_candidates_are_charged_and_cannot_change_contract) ... ok
+test_malformed_json_shapes_are_logged_as_invalid_not_silently_skipped (test_authoring_study.AuthoringStudyTests.test_malformed_json_shapes_are_logged_as_invalid_not_silently_skipped) ... ok
+test_mutations_and_empty_domains_are_not_qualified (test_authoring_study.AuthoringStudyTests.test_mutations_and_empty_domains_are_not_qualified) ... ok
+test_proposal_code_is_parsed_without_execution (test_authoring_study.AuthoringStudyTests.test_proposal_code_is_parsed_without_execution) ... ok
+test_token_and_candidate_exhaustion_keep_failures_in_denominator (test_authoring_study.AuthoringStudyTests.test_token_and_candidate_exhaustion_keep_failures_in_denominator) ... ok
 test_clock_mismatch_and_vocabulary_rejected (test_automata_planning.CLITests.test_clock_mismatch_and_vocabulary_rejected) ... ok
 test_compile_cli_and_exclusive_output (test_automata_planning.CLITests.test_compile_cli_and_exclusive_output) ... ok
 test_finite_model_schema_and_example (test_automata_planning.CLITests.test_finite_model_schema_and_example) ... ok
@@ -155,6 +169,6 @@ test_vacuity_and_stale_hash_are_invalid_not_proved (test_wspl_verify.VerifierTes
 test_wrong_input_column_order_refutes_actual_weights (test_wspl_verify.VerifierTests.test_wrong_input_column_order_refutes_actual_weights) ... ok
 
 ----------------------------------------------------------------------
-Ran 155 tests in 6.235s
+Ran 169 tests in 6.998s
 
 OK

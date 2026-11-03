@@ -234,5 +234,17 @@
       "counts_as_universal_proof": false,
       "scientific_extension_status": "not_preregistered_or_runnable_comparison"
     }
-  ]
+  ],
+  "operational_protocol": "docs/wspl/FORMAL_EXPERIMENTS_V1.md",
+  "operational_screen": "experiments/plans/authoring_screen_v1.json",
+  "operational_progress": {
+    "six_arm_finite_kernel": true,
+    "common_target_parameters": 541,
+    "public_request_export": true,
+    "offline_transcript_grader": true,
+    "isolated_live_collection": false,
+    "model_tasks_cost_frozen": false,
+    "scientific_trials_run": 0,
+    "pilot_front_ends": "sparse matrices / single parsed PWA expression / scalar JSON WSPL; broader scripts still pending"
+  }
 }

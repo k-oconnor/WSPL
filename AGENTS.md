@@ -49,3 +49,21 @@ On November 3 Kevin explicitly requested a GitHub repository/README and continue
 
 
 November 3 horizon-fix update: user approved75e33ff7d7d55a1500cfd9521a95f26dc1443f5a6354c3cde595749b87f6931b; registered and launched PID18736. All4 reference development trials succeeded, all4 zero controls timed out correctly. Collected4 teacher trajectories/154rows; MLP and RMV each completed2000AdamW updates (final training MSE0.000213251/0.003921668). First evaluation seed1001: zero timeout, reference+analyticMLP+analyticRMV success43calls/~5.918mm. Run then failed on NumPy aperture scalar rejected by strict scalar reference; no learned-model physical evaluation or remaining7seeds ran. Environment unchanged, artifacts/checkpoint saved; no active process. Read-only audit additionally found FP32/scalar error up3.48e-6 (2.19e-6 with matching input ports), above2e-6 tolerance. Prepared explicit repair canonicalizingFP32 checker inputs and usingFP64 RMV arithmetic withFP32 parameters/optimizer, unchanged architecture/budgets/tolerance. Frozen saved-input audit now <=2.99e-8 with no new simulator/training calls;102unit checks pass. Candidate d770313a57ec51094e3147e6876c975835e5ccd55950e057d7bde2c3e247aaa4 unapproved, not queued. See Skillforge/docs/APPROACH_V1_FIDELITY_REPAIR.md. Evaluation seed1001 is now partly inspected; this is an engineering panel, not sealed transfer evidence.
+
+
+## Formal experiment preparation (November 3)
+
+Implemented S1 finite supplied-mechanism authoring kernel, six arms at a fixed
+541-parameter target, data-only sparse-weight/PWA-expression/WSPL front ends,
+finite rational verification, development/verification feedback separation,
+usage budgets, final selection, request export and source-gated offline transcript
+grading. Preserves all 36 trial denominators and descriptive task/draw-paired
+contrasts; 14 new engineering checks bring the full suite to 169 passing tests.
+No scientific proposer calls or training ran. FORMAL_EXPERIMENTS_V1.md specifies
+S1 authoring, S2 independently learned repair and S3 frozen composition with their
+separate missing capabilities. The first screen is explicitly nonconfirmatory;
+finite Boolean proofs are not continuous/deployment/robot guarantees. Narrow
+sparse-matrix/single-expression front ends do not establish superiority over
+unrestricted scripts/code. Model/sampling/money/task freeze and isolated live
+collection with provider receipts/pre-call accounting remain pending. No new
+manifest is approved, no source registry entry added, no experiment launched.
