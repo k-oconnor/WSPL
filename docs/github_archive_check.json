@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/k-oconnor/WSPL",
+  "visibility": "private",
+  "validated_commit": "259b30b682ed038bde32e49ca502f0894718ae55",
+  "scope": "fresh GitHub clone full unit suite using existing external CPU dependencies",
+  "tests": 132,
+  "result": "passed",
+  "scientific_run": false,
+  "training": false,
+  "api_model_calls": 0,
+  "notes": [
+    "No simulator bindings, datasets or training checkpoints were copied into the clone.",
+    "Dependencies already installed outside the repository; this is not a fresh dependency-install audit."
+  ]
+}

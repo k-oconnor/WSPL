@@ -150,6 +150,9 @@ manifest through [the source gate](experiments/source_pins/README.md). Historica
 pins are preserved, not refreshed to match later development. Model weights,
 datasets, credentials and machine-specific bindings are excluded from Git.
 
+The [archive check](docs/github_archive_check.json) also records 132 passing tests
+from a fresh GitHub clone, using the existing external CPU dependencies.
+
 Install simulator environments **outside this checkout** for source-gated runs;
 the local-source gate rejects unpinned package code inside the repository. Use
 ignored `artifacts/local_paths.json` for machine bindings.
