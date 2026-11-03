@@ -1,0 +1,25 @@
+{
+  "scope": "startup record, not completion or comparative result",
+  "launch": {
+    "pid": 48424,
+    "launched_utc": "2026-11-03T20:17:52.4314886Z",
+    "manifest_sha256": "46379f57b9ebd29f36390be998f89352249246f917263afecb2c4b5e2d2d963c",
+    "api_calls_authorized": 0,
+    "training_authorized": false,
+    "cwd": "C:/Users/kevin/OneDrive/Desktop/Skillforge-breakout-replay-v1",
+    "output": "results/csail_breakout_replay_v1",
+    "worker_pid": 37792
+  },
+  "source_gate_status": "verified",
+  "constructor_calls": 1,
+  "startup_status": {
+    "status": "running",
+    "completed": {
+      "released": 321
+    },
+    "arm": "released",
+    "next_episode": 321,
+    "active_seconds": 60.140000000130385
+  },
+  "live_status": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-breakout-replay-v1\\results\\csail_breakout_replay_v1\\status.json"
+}

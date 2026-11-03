@@ -18,6 +18,12 @@
       "sha256": "d770313a57ec51094e3147e6876c975835e5ccd55950e057d7bde2c3e247aaa4",
       "approved_by": "user",
       "approval": "User explicitly selected Approve this manifest and launch the fidelity-repaired pilot on 2026-11-03"
+    },
+    "csail-breakout-replay-v1": {
+      "manifest": "experiments/source_pins/csail_breakout_replay_v1.manifest.json",
+      "sha256": "46379f57b9ebd29f36390be998f89352249246f917263afecb2c4b5e2d2d963c",
+      "approved_by": "user",
+      "approval": "User explicitly selected Approve this manifest and launch the CPU replay on 2026-11-03; fixed released artifact and uniform control only; no paid API calls or training."
     }
   }
 }

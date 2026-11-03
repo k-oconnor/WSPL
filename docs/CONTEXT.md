@@ -1,5 +1,16 @@
 # Working context
 
+Breakout replay launched with explicit user approval of manifest
+46379f57b9ebd29f36390be998f89352249246f917263afecb2c4b5e2d2d963c.
+Runtime is isolated in Skillforge-breakout-replay-v1 at commit8488733, parent
+PID48424 / worker37792, launched2026-11-03T20:17:52Z. Source-gate startup passed;
+first progress156/1000 released-policy episodes at30active seconds, no stderr.
+Output results/csail_breakout_replay_v1 in that checkout. Main can develop freely;
+do not edit inventoried source or bound auxiliary files in the isolated checkout.
+No fresh Astra/PPO/WSPL comparison or150USD authoring spend was authorized.
+Inspect live results before claiming completion; startup record is not a final result.
+
+
 Kevin requested proceeding with the CSAIL-linked plan. First fixed-artifact
 Breakout replay is prepared: native 20,486-parameter tanh policy, uniform
 zero-weight control, 1,000 episodes each, horizon 10,000, explicit fresh-episode

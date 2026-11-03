@@ -100,3 +100,17 @@ RNG/evaluator not released, so comparison is statistical and scope is explicit.
 Protocol docs/wspl/BREAKOUT_REPLAY_V1.md. Source manifest is prepared unapproved;
 registry unchanged. This does not approve fresh Astra, PPO training, WSPL
 comparison or the proposed150USD authoring budget.
+
+
+## Approved Breakout replay launch
+
+
+Breakout replay launched with explicit user approval of manifest
+46379f57b9ebd29f36390be998f89352249246f917263afecb2c4b5e2d2d963c.
+Runtime is isolated in Skillforge-breakout-replay-v1 at commit8488733, parent
+PID48424 / worker37792, launched2026-11-03T20:17:52Z. Source-gate startup passed;
+first progress156/1000 released-policy episodes at30active seconds, no stderr.
+Output results/csail_breakout_replay_v1 in that checkout. Main can develop freely;
+do not edit inventoried source or bound auxiliary files in the isolated checkout.
+No fresh Astra/PPO/WSPL comparison or150USD authoring spend was authorized.
+Inspect live results before claiming completion; startup record is not a final result.
