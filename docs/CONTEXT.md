@@ -148,3 +148,22 @@ Mohammad Askari took G3a (issue #6, branch feature/wspl-mlp-import), the import 
 ## Output-patch composition and transactions (November 3)
 
 Mohammad Askari took G3b (issue #8, branch feature/wspl-patch-transactions). skillforge.wspl_compose.compose_output builds an augmented ReLU artifact in which parent hidden layers are copied verbatim, the parent's final layer becomes a signed boundary layer and patch layers read reconstructed values, so every tensor is an exact slice (verify_placement). interface_obligations states parent-output bounds a patch assumes. skillforge.wspl_transaction COMMITS only when every interface obligation, I/O and relational contract is PROVED; any REFUTED/INVALID result REJECTS and remaining UNKNOWN leaves it UNRESOLVED, both returning the unchanged parent with a replayable manifest. Import pre/postprocessing now uses signed relay layers, keeping tensors as exact slices. BrakePatch composed onto a compiled stand-in Cruise baseline is solver-EQUIVALENT to one WSPL module and its transaction COMMITS; an untrained parent with an unestablished output bound is REJECTED. wspl_artifact.py also accepts mode augmented; import/patch fixture records were regenerated. 22 new engineering checks; 247 total pass with the S1 equivalence-diagnostic checks. replace_module/add_residual, in-place edits, gradient repair and any learned parent remain; no training, simulator, API call or source-gated run.
+
+
+## Fresh Astra native screen preparation (November 3)
+
+Prepared three independent one-shot Astra/xhigh native Breakout authors using the
+existing ChatGPT Codex login, original prompt/edit DSL and 20,486-parameter tanh
+architecture. Data-only parser exactly reconstructs the released six tensors
+(92 statements, 815 nonzero values); that answer is never supplied to the writer.
+Fake collection/environment checks cover usage, rejection, failures and planned
+denominators. Primary suite273 checks (272 pass, one native fixture skip);
+24 focused checks pass in the isolated MinAtar runtime, covering that fixture.
+Offline actual-prompt rendering passes with neutral instructions, CLI boilerplate
+and only the residual request_user_input tool; any tool event invalidates the
+draw. This restricted CLI configuration is not a literally tool-free API call.
+Three invocation maximum;1200s each/7200s study guards; no harness retries, API
+key fallback or approved dollar/output-token cap. CLI transport retries may
+occur. Source/executable/dependencies/prompt/config bindings are pinned.
+Read docs/wspl/ASTRA_BREAKOUT_NATIVE_V1.md. No model request, source registration
+or scientific launch has occurred. Exact manifest approval remains required.

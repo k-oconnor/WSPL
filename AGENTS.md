@@ -130,3 +130,22 @@ isolatedcheckout8488733. Docs/wspl/BREAKOUT_REPLAY_RESULTS.md and compact
 breakout_replay_results.json archive result/audit/raw-file identities. This is
 fixed released-artifact replay, no fresh Astra authorship, WSPL advantage,
 formal tanh proof, PPO reproduction or product win. No next run authorized.
+
+
+## Fresh Astra native screen preparation (November 3)
+
+Prepared three independent one-shot Astra/xhigh native Breakout authors using the
+existing ChatGPT Codex login, original prompt/edit DSL and 20,486-parameter tanh
+architecture. Data-only parser exactly reconstructs the released six tensors
+(92 statements, 815 nonzero values); that answer is never supplied to the writer.
+Fake collection/environment checks cover usage, rejection, failures and planned
+denominators. Primary suite273 checks (272 pass, one native fixture skip);
+24 focused checks pass in the isolated MinAtar runtime, covering that fixture.
+Offline actual-prompt rendering passes with neutral instructions, CLI boilerplate
+and only the residual request_user_input tool; any tool event invalidates the
+draw. This restricted CLI configuration is not a literally tool-free API call.
+Three invocation maximum;1200s each/7200s study guards; no harness retries, API
+key fallback or approved dollar/output-token cap. CLI transport retries may
+occur. Source/executable/dependencies/prompt/config bindings are pinned.
+Read docs/wspl/ASTRA_BREAKOUT_NATIVE_V1.md. No model request, source registration
+or scientific launch has occurred. Exact manifest approval remains required.

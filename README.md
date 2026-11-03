@@ -160,6 +160,7 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 - [Structured study plan](experiments/plans/wspl_cross_domain_v1.json)
 - [CSAIL comparison and product win conditions](docs/wspl/CSAIL_COMPARISON.md): useful performance, checked changes and less engineering/review effort; outperforming the published game score is optional
 - [Completed Breakout artifact replay](docs/wspl/BREAKOUT_REPLAY_RESULTS.md): 511.828 mean return versus upstream 517.411; uniform control 0.551; 1,000 episodes each, CPU only, no model calls
+- [Fresh Astra native authoring screen](docs/wspl/ASTRA_BREAKOUT_NATIVE_V1.md): prepared three-draw one-shot study; original compact edits and tanh architecture; exact-source approval pending
 - [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)
 - [Original supplied WSPL proposal](docs/wspl/PROPOSAL_v0_1_2026-11-03.md), archived unchanged with provenance
 - [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents
