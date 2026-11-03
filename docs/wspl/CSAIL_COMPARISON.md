@@ -91,9 +91,11 @@ product can be tested separately if that is where users find value.
 RTI remains a later hypothesis; domain improvement alone does not show better
 editing ability. These product gates do not establish recursive improvement.
 
-The first fixed-artifact replay runner is now prepared in
-[BREAKOUT_REPLAY_V1.md](BREAKOUT_REPLAY_V1.md), with pinned reference files, a uniform
-control and isolated CPU dependencies. It needs its own exact-source approval.
+The first fixed-artifact replay is now
+[complete](BREAKOUT_REPLAY_RESULTS.md): released-policy mean 511.828 versus
+upstream 517.411 and uniform control 0.551, with 1,000 episodes per arm. The
+[approved protocol](BREAKOUT_REPLAY_V1.md) used pinned resources and isolated CPU
+dependencies. This is artifact replay, not fresh Astra authoring.
 Fresh Astra/WSPL authoring and trained PPO references remain unprepared. The $150
 estimate covers the Boolean screen, not PPO rebuilding or the expanded benchmark.
 Freeze separate resource plans, task variants, sampling and source approvals

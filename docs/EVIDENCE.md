@@ -139,3 +139,19 @@ RNG/evaluator not released, so comparison is statistical and scope is explicit.
 Protocol docs/wspl/BREAKOUT_REPLAY_V1.md. Source manifest is prepared unapproved;
 registry unchanged. This does not approve fresh Astra, PPO training, WSPL
 comparison or the proposed150USD authoring budget.
+
+
+## Completed CSAIL Breakout artifact replay (November 3)
+
+Run and source receipt complete; released and uniform arms each1000episodes,
+2checkedconstructor calls, no stderr, workers exited. Released mean511.828
+SE7.60482 vs upstream517.411 SE7.41695; uniform0.551 SE0.02478. Difference-5.583,
+about0.526 combinedSE, descriptive agreement only. All2000 episode/seed/action/
+termination/horizon accounting and recomputed statistics passed an independent
+read-only audit. Source59Python files and pinned reference/auxiliary resources
+unchanged. Active183.969s,CPUonly,0APIcalls/updates/GPU.497 released episodes
+horizon-truncated and retained. Exactsourcepin46379f57b9ebd29f36390be998f89352249246f917263afecb2c4b5e2d2d963c,
+isolatedcheckout8488733. Docs/wspl/BREAKOUT_REPLAY_RESULTS.md and compact
+breakout_replay_results.json archive result/audit/raw-file identities. This is
+fixed released-artifact replay, no fresh Astra authorship, WSPL advantage,
+formal tanh proof, PPO reproduction or product win. No next run authorized.

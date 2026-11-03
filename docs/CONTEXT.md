@@ -1,5 +1,15 @@
 # Working context
 
+Breakout replay COMPLETE: both arms1000episodes and source gate complete,
+two constructor calls, empty stderr, processes exited. Released policy mean511.828
+SE7.60482 versus upstream517.411 SE7.41695; uniform mean0.551 SE0.02478.
+All2000 episode indices/seeds/actions/termination accounting and recomputed
+statistics passed read-only audit; source/resources unchanged. Active183.969s CPU,
+zero APIs/training/GPU. See BREAKOUT_REPLAY_RESULTS.md and compact results/audit.
+This closes artifact replay only; fresh Astra/native-edit collection, matched
+WSPL extension and any paid authoring still require their own preparation/approval.
+Earlier launch/running notes below are historical; do not relaunch automatically.
+
 Breakout replay launched with explicit user approval of manifest
 46379f57b9ebd29f36390be998f89352249246f917263afecb2c4b5e2d2d963c.
 Runtime is isolated in Skillforge-breakout-replay-v1 at commit8488733, parent

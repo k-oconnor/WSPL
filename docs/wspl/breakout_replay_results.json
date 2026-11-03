@@ -1,0 +1,80 @@
+{
+  "results": {
+    "status": "complete",
+    "stop_reason": null,
+    "settings": {
+      "episodes_per_arm": 1000,
+      "max_steps": 10000,
+      "env_seed_base": 310000,
+      "action_seed_base": 410000,
+      "wall_guard_seconds": 7200
+    },
+    "arms": {
+      "released": {
+        "summary": {
+          "episodes": 1000,
+          "mean": 511.828,
+          "se": 7.604821610513144,
+          "min": 0.0,
+          "max": 822.0,
+          "mean_length": 7271.53,
+          "truncations": 497
+        },
+        "tensor_sha256": "1fe35af60126a5b37f6dc278b760a53e330c137b272fcaf24b27affa970bde04",
+        "policy_mode": "released",
+        "complete": true
+      },
+      "uniform": {
+        "summary": {
+          "episodes": 1000,
+          "mean": 0.551,
+          "se": 0.024779285966569194,
+          "min": 0.0,
+          "max": 5.0,
+          "mean_length": 11.634,
+          "truncations": 0
+        },
+        "tensor_sha256": "e6fdf476d629c1a3c5db6062accafd307d7779da9789bacce5c90fbd6b2c8251",
+        "policy_mode": "uniform_zero_weights",
+        "complete": true
+      }
+    },
+    "comparison": {
+      "published": {
+        "mean": 517.411,
+        "se": 7.416952829044303,
+        "episodes": 1000,
+        "max": 800.0,
+        "mean_length": 7417.202
+      },
+      "mean_difference": -5.58299999999997,
+      "difference_over_combined_se": -0.5255662004445127,
+      "inference": "descriptive agreement check; original seeds/evaluator not released, not bitwise replication"
+    },
+    "active_seconds": 183.96900000004098,
+    "source_manifest_sha256": "46379f57b9ebd29f36390be998f89352249246f917263afecb2c4b5e2d2d963c",
+    "dependencies_sha256": "8451e58ac3fb1757cc2ee5285cd84685f7a6dfff3d802f85df0b836795b73ade",
+    "scope": "empirical native tanh artifact replay, not new Astra authoring, WSPL advantage or formal proof",
+    "numerical_profile": "NumPy float32 tanh/matmul, float64 softmax, PCG64 action RNG; fresh seeded environment per episode",
+    "api_calls": 0,
+    "training_updates": 0,
+    "gpu_used": false
+  },
+  "audit": {
+    "status": "passed",
+    "scope": "read-only post-completion accounting/source/resource audit; no extra game episodes",
+    "source_manifest_sha256": "46379f57b9ebd29f36390be998f89352249246f917263afecb2c4b5e2d2d963c",
+    "constructor_calls": 2,
+    "episodes": 2000,
+    "episode_accounting": true,
+    "seed_and_action_accounting": true,
+    "summary_recomputation": true,
+    "frozen_resources_unchanged": true,
+    "stderr_empty": true,
+    "files": {
+      "results.json": "f9be79642f55396ba7ad8ee8995c6d5bf2499ba8024367bd09a7ba068f1491b0",
+      "episodes.jsonl": "c0ff4b4f78fa82cce3f6216437ace99f3d7ec8b8ff1a9a470650862ad3dd7c5c",
+      "source_receipt.json": "659e9b49477490a1dfa34cfc4bbd61fb36c566090b3f2b59ed0b6dec732555a0"
+    }
+  }
+}
