@@ -1,0 +1,238 @@
+{
+  "scope": "engineering integration unit check",
+  "scientific_run": false,
+  "training": false,
+  "skill_policy": null,
+  "simulator_steps": 5,
+  "status": "passed",
+  "versions": {
+    "mujoco": "3.2.7",
+    "robosuite": "1.4.1",
+    "numpy": "1.26.4",
+    "gym": "0.25.2",
+    "bddl": "1.0.1"
+  },
+  "libero_commit": "8f1084e3132a39270c3a13ebe37270a43ece2a01",
+  "libero_dirty": false,
+  "task_sha256": "478bd5726ad7d9bde05e8f26f6a9984d503dc4a91c27d0565f5f0beea1ed3bb1",
+  "source_sha256": {
+    "tools/sim_preflight.py": "8c8b7b580128d7f3949e371a8ad48b31d41784036c94817ab04a8746d96bf442",
+    "src/skillforge/motor.py": "a775450418fe547288a5c26499ebced64448c09af1250ceefb218b1c3391943a",
+    "src/skillforge/libero_adapter.py": "08a4818f41ac45002f28d7008a637bd22f4d04879666471a791524b426ff963f"
+  },
+  "windows_fix": {
+    "package_file": "robosuite/utils/binding_utils.py",
+    "before_sha256": "074e4580e28d56bdcfde6e17dfc6b10fe0a1cd3778b0aa1897811b237e0939fd",
+    "after_sha256": "074e4580e28d56bdcfde6e17dfc6b10fe0a1cd3778b0aa1897811b237e0939fd",
+    "legacy_knowledge": "experiments/libero_control/patch_runtime.py"
+  },
+  "interface": "skillforge.tabletop12.osc4.v1",
+  "channels": [
+    "object_dx",
+    "object_dy",
+    "object_dz",
+    "target_dx",
+    "target_dy",
+    "target_dz",
+    "eef_vx",
+    "eef_vy",
+    "eef_vz",
+    "aperture",
+    "left_object_contact",
+    "right_object_contact"
+  ],
+  "frames": [
+    {
+      "time": 0.0,
+      "channels": [
+        0.16714513413154425,
+        0.13809097126792916,
+        -0.23827947572964048,
+        0.16714513413154425,
+        0.13809097126792916,
+        -0.23827947572964048,
+        0.0,
+        0.0,
+        0.0,
+        0.04066599999999985,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time": 0.05000000000000003,
+      "channels": [
+        0.1671451341315443,
+        0.1380909712679851,
+        -0.25002056955401386,
+        0.1671451341315443,
+        0.1380909712679851,
+        -0.23827947572964026,
+        5.524439466810735e-17,
+        -7.099197919671241e-14,
+        -1.3082353008517043e-16,
+        0.04061058766676597,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time": 0.10000000000000007,
+      "channels": [
+        0.1671451341315443,
+        0.13809097126798284,
+        -0.2666724508262366,
+        0.1671451341315443,
+        0.13809097126798284,
+        -0.23827947572964026,
+        -3.399767077373277e-17,
+        7.994309329939376e-14,
+        4.562207685010812e-17,
+        0.0405416419215906,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time": 0.1500000000000001,
+      "channels": [
+        0.16714513413154433,
+        0.138090971267979,
+        -0.26497884671855476,
+        0.16714513413154433,
+        0.138090971267979,
+        -0.23827947572964026,
+        -2.6178413995503627e-17,
+        7.622534893965746e-14,
+        5.155635802389367e-17,
+        0.04047552105853966,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time": 0.20000000000000015,
+      "channels": [
+        0.16714513413154425,
+        0.1380909712679751,
+        -0.26453612188541487,
+        0.16714513413154425,
+        0.1380909712679751,
+        -0.23827947572964048,
+        -3.6597973178080707e-17,
+        7.165679193824926e-14,
+        2.820534398433541e-17,
+        0.04041223505479691,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time": 0.25000000000000017,
+      "channels": [
+        0.16714513413154447,
+        0.13809097126797162,
+        -0.26441696305645446,
+        0.16714513413154447,
+        0.13809097126797162,
+        -0.23827947572964026,
+        -6.954149535691488e-18,
+        6.74314515075326e-14,
+        4.092167640640132e-17,
+        0.0403516634122247,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "native_reward": 0.0,
+      "native_done": false,
+      "native_info": {},
+      "native_command": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_calls": 1,
+      "budget_exhausted": false
+    },
+    {
+      "native_reward": 0.0,
+      "native_done": false,
+      "native_info": {},
+      "native_command": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_calls": 2,
+      "budget_exhausted": false
+    },
+    {
+      "native_reward": 0.0,
+      "native_done": false,
+      "native_info": {},
+      "native_command": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_calls": 3,
+      "budget_exhausted": false
+    },
+    {
+      "native_reward": 0.0,
+      "native_done": false,
+      "native_info": {},
+      "native_command": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_calls": 4,
+      "budget_exhausted": false
+    },
+    {
+      "native_reward": 0.0,
+      "native_done": false,
+      "native_info": {},
+      "native_command": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_calls": 5,
+      "budget_exhausted": false
+    }
+  ],
+  "control_hz": 20,
+  "policy": "five zero setpoint increments, gripper internal-command hold",
+  "limitations": [
+    "No physical skill reliability or no-op difficulty result",
+    "No collision observer or physical planner/executor integration",
+    "Bound target is object origin for sensor wiring only, not a grasp pose"
+  ],
+  "wall_seconds": 1.8120000001508743
+}

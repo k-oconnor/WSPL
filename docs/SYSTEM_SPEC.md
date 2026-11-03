@@ -1,6 +1,6 @@
 # System specification
 
-Status: design version 0.1, November 2, 2026. Implemented: JSON schemas, independent closed-trace LTLf semantics, a bounded small-alphabet derivative DFA compiler, strong strategy synthesis/execution for supplied finite models, scalar RMV semantics and the source gate. See M1_ENGINEERING.md. Physical execution, LLM translation/weight authoring and differentiable skills remain proposed.
+Status: design version 0.1, November 2, 2026. Implemented: JSON schemas, independent closed-trace LTLf semantics, a bounded small-alphabet derivative DFA compiler, strong finite-model planning, scalar RMV semantics, source gate and a single-tick LIBERO adapter with sampled outcome observers. See M1_ENGINEERING.md and SIM_ADAPTER.md. Physical task/hierarchy execution, LLM translation/weight authoring and differentiable skills remain proposed.
 
 ## Objective
 
@@ -32,11 +32,11 @@ Proposed tabletop observation vector, fixed in order before any run:
 4. Gripper aperture in meters.
 5. Left/right finger contact indicators in [0,1].
 
-These are twelve structured channels, not learned visual perception. Goal/object bindings are supplied consistently to every arm. Simulator availability and exact definitions of velocity, aperture and contact must be audited before freezing an adapter; substitute channels require a new interface version, not an undocumented proxy.
+These are twelve structured channels, not learned visual perception. Goal/object bindings are supplied consistently to every arm. The engineering adapter now defines velocity, aperture and object-specific contacts explicitly in SIM_ADAPTER.md and has passed a headless wiring check. Calibration and scientific source pinning remain; substitute channels require a new interface version, not an undocumented proxy.
 
 Output is four normalized commands: dx, dy, dz, gripper. A shared, declared low-level adapter scales xyz increments, holds orientation and maps the gripper command into the simulator. It may use the simulator's ordinary servo/IK controller; it must not run an approach/grasp/place routine on behalf of the neural block. Frequency, clipping, workspace limits and hold/abort behavior are matched infrastructure and included in execution logs. Proposed initial control rate is 20 Hz, subject to simulator preflight and source pinning.
 
-Selected robot stack, confirmed by Kevin: [MuJoCo](https://github.com/google-deepmind/mujoco) for physics; [robosuite](https://github.com/ARISE-Initiative/robosuite) for robots, controllers, cameras and manipulation environments; [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) for tasks/datasets and learning/transfer evaluation. Use a fresh, isolated integration, drawing on prior LIBERO work for installation knowledge. Compatible package versions/commits, task assets, observation definitions and controller configuration remain to be audited and pinned. Stack selection does not establish that a working robot adapter exists. Do not import legacy task-completing primitives as if their behavior were newly learned by a skill.
+Selected robot stack, confirmed by Kevin: [MuJoCo](https://github.com/google-deepmind/mujoco) for physics; [robosuite](https://github.com/ARISE-Initiative/robosuite) for robots, controllers, cameras and manipulation environments; [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) for tasks/datasets and learning/transfer evaluation. The fresh isolated integration now passes engineering preflight; versions, fixes, channel definitions and limitations are in SIM_ADAPTER.md. The first scientific experiment must additionally pin its complete environment, assets and calibrated contracts. No legacy task-completing primitives are imported as learned skills.
 
 ## Logical interface and clock
 

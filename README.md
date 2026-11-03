@@ -18,7 +18,7 @@ flowchart LR
     V --> K
 ```
 
-The diagram describes the proposed robot system. This repository currently implements **reference semantics, a small-alphabet LTLf compiler, and strong strategy synthesis/execution in supplied finite skill-effect models**. Robot integration and neural skill acquisition remain planned.
+The diagram describes the proposed robot system. This repository implements reference semantics, a small-alphabet LTLf compiler, strong finite-model planning and supplied hierarchy fixtures. A single-tick robot adapter and independent sampled outcome observers now pass a headless integration check. Neural skill acquisition and physical task execution remain planned.
 
 ## Simulation stack
 
@@ -28,7 +28,7 @@ We use the following open-source research software as the selected simulation st
 - **[robosuite](https://github.com/ARISE-Initiative/robosuite):** robot models, controllers, cameras and manipulation environments built on MuJoCo.
 - **[LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO):** tasks and datasets organized to evaluate learning and transfer, using robosuite environments.
 
-This selects the software stack. Compatible versions, task definitions, observations and controller settings will be audited and pinned before the first robot experiment; installation and execution are not yet implemented here.
+An isolated MuJoCo 3.2.7 / robosuite 1.4.1 environment passed a five-tick headless LIBERO sensor/command integration check. See [adapter definitions, versions and limitations](docs/SIM_ADAPTER.md). This is engineering preflight; a source-pinned robot-skill experiment remains to be prepared.
 
 ## Start here
 
@@ -37,6 +37,7 @@ This selects the software stack. Compatible versions, task definitions, observat
 - [Roadmap](docs/ROADMAP.md): implementation stages and evidence required to advance.
 - [M1 engineering notes](docs/M1_ENGINEERING.md): compiler semantics, strong planning, limits and executable discrete example.
 - [Hierarchical task suite](docs/HIERARCHICAL_TASKS.md): reusable pickup/placement/transfer/group routines, prerequisite tasks, repeated calls and recovery fixtures.
+- [Physical adapter](docs/SIM_ADAPTER.md): measured input channels, motor scaling, independent observer events and the headless integration receipt.
 - [Prior evidence](docs/EVIDENCE.md): completed toy-world experiments and their limits.
 - [Related work](docs/RELATED_WORK.md): what is established and where this proposal could contribute.
 - [Task example](examples/pick_place.task.json), [skill contract](examples/lift.skill.json), [RMV graph](examples/lift_gate.rmv.json).
@@ -53,7 +54,8 @@ This selects the software stack. Compatible versions, task definitions, observat
 | Strong finite-model strategy synthesis and abstract executor | Implemented; all declared outcomes must reach acceptance |
 | Supplied hierarchy expansion and macro-summary task fixtures | Implemented; nested primitive execution remains planned |
 | LLM task translation / weight-authoring harness | Planned |
-| Differentiable MLP/RMV skills and robot adapter | Planned |
+| Single-tick LIBERO motor adapter and sampled outcome observers | Implemented; headless integration checked |
+| Differentiable MLP/RMV skills and physical task executor | Planned |
 | Robotic acquisition, composition or repair results | Not run |
 
 ## Reference checks

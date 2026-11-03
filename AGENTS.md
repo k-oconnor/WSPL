@@ -4,6 +4,8 @@ Kevin authorized a new repository and specification for LLM-programmed neural/RM
 
 Read README.md, docs/CONTEXT.md, docs/SYSTEM_SPEC.md, docs/M1_ENGINEERING.md, docs/EXPERIMENT_01.md and docs/EVIDENCE.md before implementation or scientific claims. Implemented: reference semantics, small-alphabet LTLf DFA compilation and strong planning/execution in supplied finite models. LLM harness, skill learners and robot execution remain planned; do not describe them as implemented.
 
+Read docs/SIM_ADAPTER.md for the implemented single-tick LIBERO bridge and sampled physical observers. Its five-tick headless integration check is engineering evidence only. Physical task/primitive-hierarchy execution and skill acquisition remain planned. Do not turn tools/sim_preflight.py into an unapproved scientific runner. Missing motor ticks abort observer invocations; no collision or admitted grasp observer exists yet.
+
 ## Semantics and evidence
 
 - Action blocks execute controls. LTLf propositions report observed state, commands and externally verified skill outcomes. Do not conflate a neural success prediction with physical success.

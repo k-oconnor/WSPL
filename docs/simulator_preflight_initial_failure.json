@@ -1,0 +1,31 @@
+{
+  "scope": "engineering integration unit check",
+  "scientific_run": false,
+  "training": false,
+  "skill_policy": null,
+  "simulator_steps": 0,
+  "status": "failed",
+  "versions": {
+    "mujoco": "3.2.7",
+    "robosuite": "1.4.1",
+    "numpy": "1.26.4",
+    "gym": "0.25.2",
+    "bddl": "1.0.1"
+  },
+  "libero_commit": "8f1084e3132a39270c3a13ebe37270a43ece2a01",
+  "libero_dirty": false,
+  "task_sha256": "478bd5726ad7d9bde05e8f26f6a9984d503dc4a91c27d0565f5f0beea1ed3bb1",
+  "source_sha256": {
+    "tools/sim_preflight.py": "8c8b7b580128d7f3949e371a8ad48b31d41784036c94817ab04a8746d96bf442",
+    "src/skillforge/motor.py": "bbf7ac9fb2f6529d89cdc2eb519d4ce2afd2083427c24669dc12962bcb14afc2",
+    "src/skillforge/libero_adapter.py": "4886818cccb3421997128dde935d99363a79e89719abaade8f2cb0d620aac8c2"
+  },
+  "windows_fix": {
+    "package_file": "robosuite/utils/binding_utils.py",
+    "before_sha256": "5ac3c9da0cb9f85d694c6147103268df65151f751612a6c575ae0da4eb4988e4",
+    "after_sha256": "074e4580e28d56bdcfde6e17dfc6b10fe0a1cd3778b0aa1897811b237e0939fd",
+    "legacy_knowledge": "experiments/libero_control/patch_runtime.py"
+  },
+  "error": "ModuleNotFoundError: No module named 'future'",
+  "wall_seconds": 3.703999999910593
+}

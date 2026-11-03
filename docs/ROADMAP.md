@@ -16,6 +16,8 @@ Current status: implemented and checked as engineering fixtures. The compiler/pl
 
 Implement a fresh adapter for the selected MuJoCo/robosuite/LIBERO stack, independent outcome observers and differentiable MLP/RMV blocks with exported semantics. Pin compatible versions and task/controller settings after preflight. Check physical channels, no-op difficulty, reference feasibility, controller input sensitivity and RMV fidelity. Prepare the first experiment's exact source identity before new training or benchmark execution.
 
+Current status: single-tick adapter and sampled approach/close/lift observers implemented; fresh isolated headless LIBERO preflight passed. See SIM_ADAPTER.md. Differentiable blocks, task calibration, collision observation, feasibility and acquisition remain pending. This does not meet M2 exit criteria.
+
 Exit evidence: reliable isolated approach, close and lift on held-out physical conditions, acquisition cost curves for all four arms and a faithful complete RMV motor output. A successful symbolic interpreter over old supplied motors does not satisfy this milestone.
 
 ## M3: frozen temporal composition

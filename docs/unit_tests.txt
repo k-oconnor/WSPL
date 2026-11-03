@@ -32,6 +32,24 @@ test_schema_and_case_ids (test_hierarchy.HierarchyTests.test_schema_and_case_ids
 test_terminal_state_matters_after_milestone_witnesses (test_hierarchy.HierarchyTests.test_terminal_state_matters_after_milestone_witnesses) ... ok
 test_unsupported_nested_unordered_sequence_is_rejected (test_hierarchy.HierarchyTests.test_unsupported_nested_unordered_sequence_is_rejected) ... ok
 test_world_dynamics_do_not_depend_on_requested_task (test_hierarchy.HierarchyTests.test_world_dynamics_do_not_depend_on_requested_task) ... ok
+test_command_is_exactly_one_native_step_and_terminal_is_guarded (test_libero_adapter.LiberoAdapterTests.test_command_is_exactly_one_native_step_and_terminal_is_guarded) ... ok
+test_failed_sensor_read_disarms_motion (test_libero_adapter.LiberoAdapterTests.test_failed_sensor_read_disarms_motion) ... ok
+test_independent_contacts_are_object_specific_and_symmetric (test_libero_adapter.LiberoAdapterTests.test_independent_contacts_are_object_specific_and_symmetric) ... ok
+test_mismatched_controller_rejected_before_motion (test_libero_adapter.LiberoAdapterTests.test_mismatched_controller_rejected_before_motion) ... ok
+test_motor_budget_does_not_trust_native_horizon (test_libero_adapter.LiberoAdapterTests.test_motor_budget_does_not_trust_native_horizon) ... ok
+test_nonfinite_physical_geometry_not_silently_zero (test_libero_adapter.LiberoAdapterTests.test_nonfinite_physical_geometry_not_silently_zero) ... ok
+test_approach_requires_stability_and_low_speed (test_motor.MotorTests.test_approach_requires_stability_and_low_speed) ... ok
+test_channel_units_and_order (test_motor.MotorTests.test_channel_units_and_order) ... ok
+test_close_never_claims_pickup (test_motor.MotorTests.test_close_never_claims_pickup) ... ok
+test_fresh_frame_and_fixed_binding_required (test_motor.MotorTests.test_fresh_frame_and_fixed_binding_required) ... ok
+test_invalid_thresholds (test_motor.MotorTests.test_invalid_thresholds) ... ok
+test_lift_requires_elevation_and_uninterrupted_contact (test_motor.MotorTests.test_lift_requires_elevation_and_uninterrupted_contact) ... ok
+test_missing_tick_aborts_instead_of_preserving_stability (test_motor.MotorTests.test_missing_tick_aborts_instead_of_preserving_stability) ... ok
+test_native_scaling_orientation_and_gripper (test_motor.MotorTests.test_native_scaling_orientation_and_gripper) ... ok
+test_new_invocation_resets_baseline_and_pulse (test_motor.MotorTests.test_new_invocation_resets_baseline_and_pulse) ... ok
+test_no_contact_at_start_cannot_certify_lift (test_motor.MotorTests.test_no_contact_at_start_cannot_certify_lift) ... ok
+test_recontact_does_not_hide_lift_failure (test_motor.MotorTests.test_recontact_does_not_hide_lift_failure) ... ok
+test_unknown_nonfinite_and_malformed_sensors_rejected (test_motor.MotorTests.test_unknown_nonfinite_and_malformed_sensors_rejected) ... ok
 test_provenance_copies_match_recorded_hashes (test_reference.ArtifactTests.test_provenance_copies_match_recorded_hashes) ... ok
 test_registry_entries_require_user_approval_provenance (test_reference.ArtifactTests.test_registry_entries_require_user_approval_provenance) ... ok
 test_schema_definitions_and_example_instances (test_reference.ArtifactTests.test_schema_definitions_and_example_instances) ... ok
@@ -69,6 +87,6 @@ test_verified_constructor_and_receipt (test_source_consistency.SourceConsistency
 test_wrong_callable_source_rejected (test_source_consistency.SourceConsistencyTests.test_wrong_callable_source_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 69 tests in 2.247s
+Ran 87 tests in 2.635s
 
 OK
