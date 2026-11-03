@@ -1,114 +1,156 @@
-# Skillforge
+# WSPL ? Weight Space Programming Language
 
-**LLM-programmed neural and interpretable RMV skills, composed through finite-trace temporal programs.** Working name, confirmed by Kevin O'Connor; revisit branding later.
+**A typed programming interface for LLM-authored neural programs.**
 
-An LLM proposes a task specification in LTLf and implementations of small closed-loop skills. A checked compiler and planner select skills under explicit contracts. An independent observer verifies what happened. Validated skills become a reusable library; changing one mechanism should permit local repair.
+WSPL investigates whether an LLM can construct, inspect and repair useful neural
+controllers through programs with explicit semantics, rather than manipulating
+opaque tensors alone. The intended executable artifacts are neural weights.
+**Skillforge** is the robotics and reusable-skill testbed in this repository.
 
-```mermaid
-flowchart LR
-    N[Task description] --> L[LLM task proposal]
-    L --> T[Typed LTLf specification]
-    T --> A[Automaton and contract-based planner]
-    K[Validated skill library] --> A
-    A --> S[Neural or RMV action block]
-    S --> E[Robot simulator]
-    E --> O[Independent outcome observer]
-    O --> A
-    W[LLM weight proposal or gradient learning] --> V[Skill validation]
-    V --> K
-```
+This is an early research prototype led by Kevin O'Connor. We distinguish a
+program matching its weights, a controller satisfying an input-output contract,
+and a robot satisfying a trajectory property. Each needs its own evidence.
 
-The diagram describes the proposed robot system. This repository implements reference semantics, a small-alphabet LTLf compiler, strong finite-model planning and supplied hierarchy fixtures. A single-tick robot adapter and independent sampled outcome observers now pass a headless integration check. Neural skill acquisition and physical task execution remain planned.
-
-## Simulation stack
-
-We use the following open-source research software as the selected simulation stack:
-
-- **[MuJoCo](https://github.com/google-deepmind/mujoco):** physics, including motion, collisions, friction and contact.
-- **[robosuite](https://github.com/ARISE-Initiative/robosuite):** robot models, controllers, cameras and manipulation environments built on MuJoCo.
-- **[LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO):** tasks and datasets organized to evaluate learning and transfer, using robosuite environments.
-
-An isolated MuJoCo 3.2.7 / robosuite 1.4.1 environment passed a five-tick headless LIBERO sensor/command integration check. See [adapter definitions, versions and limitations](docs/SIM_ADAPTER.md). This is engineering preflight; a source-pinned robot-skill experiment remains to be prepared.
-
-## Start here
-
-- [System specification](docs/SYSTEM_SPEC.md): interfaces, temporal semantics, execution, RMV fidelity and guarantees.
-- [First experiment](docs/EXPERIMENT_01.md): LLM/gradient acquisition × MLP/RMV, costs, held-out composition and repair.
-- [Roadmap](docs/ROADMAP.md): implementation stages and evidence required to advance.
-- [M1 engineering notes](docs/M1_ENGINEERING.md): compiler semantics, strong planning, limits and executable discrete example.
-- [Hierarchical task suite](docs/HIERARCHICAL_TASKS.md): reusable pickup/placement/transfer/group routines, prerequisite tasks, repeated calls and recovery fixtures.
-- [Diverse robot tasks](docs/ROBOT_TASK_SUITE.md): sixteen physical task specifications for repeated grasps, sorting, articulation, obstacles, timed holding and recovery; explicit integration blockers.
-- [Physical adapter](docs/SIM_ADAPTER.md): measured input channels, motor scaling, independent observer events and the headless integration receipt.
-- [Prior evidence](docs/EVIDENCE.md): completed toy-world experiments and their limits.
-- [Related work](docs/RELATED_WORK.md): what is established and where this proposal could contribute.
-- [WSPL experimental program](docs/wspl/EXPERIMENT_PROGRAM.md): authoring, repair and composition across discrete causal worlds, low-dimensional control and manipulation, with six matched representation/feedback arms.
-- [First WSPL scalar reference](docs/wspl/SCALAR_CORE.md): typed JSON IR and exact rational interpretation; compiler, solver and blinded harness remain future work.
-- [Task example](examples/pick_place.task.json), [skill contract](examples/lift.skill.json), [RMV graph](examples/lift_gate.rmv.json).
-
-## What exists
+## Current status
 
 | Component | Status |
 | --- | --- |
-| Typed JSON task/skill/RMV schemas | Provided |
-| Direct LTLf semantics on completed finite traces | Implemented reference; unit-tested |
-| Scalar grounded RMV evaluation including affine motor readout | Implemented reference; unit-tested |
-| WSPL typed scalar JSON IR and exact rational reference | Initial prototype; not the textual language, compiler or universal verifier |
-| Source-identity gate and explicit user approval registry | Implemented; prior attempts and approvals retained |
-| Small-alphabet LTLf-to-DFA compiler | Implemented with explicit construction limits |
-| Strong finite-model strategy synthesis and abstract executor | Implemented; all declared outcomes must reach acceptance |
-| Supplied hierarchy expansion and macro-summary task fixtures | Implemented; nested primitive execution remains planned |
-| Diverse robot task catalog and labelled temporal checks | 16 inspected specifications; local assets audited, physical integration pending |
-| LLM task translation / weight-authoring harness | Planned |
-| Single-tick LIBERO motor adapter and sampled outcome observers | Implemented; headless integration checked |
-| Differentiable MLP/RMV blocks and scalar export checks | Implemented; optional PyTorch, unit-tested |
-| Approach-only physical comparison and AdamW imitation runner | Completed engineering pilot; [results](docs/APPROACH_V1_RESULTS.md) |
-| Physical primitive hierarchy executor | Planned |
-| Contact skills / physical composition / repair | Not run |
+| Typed scalar JSON IR and exact rational interpreter | Implemented; engineering examples and negative checks |
+| WSPL-to-neural compiler and serialized weights | In development |
+| Universal contract verifier / numerical execution proof | Planned |
+| Blinded LLM authoring and counterexample-feedback harness | Planned |
+| Small-alphabet LTLf compiler and strong finite-model planner | Implemented for supplied symbolic effect models |
+| Hierarchical task expansion | Implemented at a supplied macro-summary cut; no physical primitive executor |
+| Neural MLP/RMV blocks and single-tick LIBERO bridge | Implemented; independent sampled outcome observers |
+| Pregrasp positioning pilot | Completed; scoped results below |
+| Diverse robot tasks | 16 inspected specifications over 7 audited scene assets; contact/obstacle integration pending |
 
-## Reference checks
+The public-facing WSPL text syntax in the proposal is not implemented. The scalar
+prototype is a JSON IR; it does not yet compile neural weights, prove universal
+contracts or synthesize controllers. No WSPL CLI is advertised as available.
 
-Python 3.11 or later. Reference evaluators use only the standard library. Schema tests additionally use `jsonschema`:
+## Try the exact scalar reference
+
+Python 3.11 or later. The reference core uses the standard library:
 
 ```sh
 python -m pip install -e ".[dev]"
+```
+
+```python
+import json
+from pathlib import Path
+from skillforge.wspl_core import ScalarProgram
+
+program = ScalarProgram(json.loads(
+    Path("examples/wspl/brake_patch.core.json").read_text(encoding="utf-8")))
+result = program.evaluate({"d": "1/5", "v": "2/5", "a_base": "1"})
+assert str(result["a"]) == "-1"
+```
+
+Constants and inputs are exact rational strings or integers; floating-point input
+is not silently treated as an exact specification. The scalar IR supports affine
+arithmetic, ReLU, clipping, normalization, min/max and graded Lukasiewicz logic.
+Unit labels, bounds and acyclic references are checked. Conservative interval
+analysis can reject a valid program when a stronger proof is needed.
+
+See [the scalar core](docs/wspl/SCALAR_CORE.md),
+[BrakePatch](examples/wspl/brake_patch.core.json) and
+[ApproachP](examples/wspl/approach_p.core.json).
+
+## Research program
+
+Three studies?fresh authoring, repair of independently trained artifacts, and
+frozen composition?span discrete causal worlds, low-dimensional dynamics and
+robot manipulation. Each compares direct weights, ordinary PWA code and WSPL,
+with and without verifier feedback. All arms receive final verification.
+
+The [experimental program](docs/wspl/EXPERIMENT_PROGRAM.md) separates mathematical
+contracts, deployment numerics and physical outcomes. The proposed first screen
+has 36 synthesis runs, but is not registered, funded, approved or launchable yet.
+Model identity, monetary cap, frozen tasks and final thresholds remain unset.
+
+- [Structured study plan](experiments/plans/wspl_cross_domain_v1.json)
+- [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)
+- [Original supplied WSPL proposal](docs/wspl/PROPOSAL_v0_1_2026-11-03.md), archived unchanged with provenance
+- [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents
+
+## Existing robot evidence
+
+A small, unblinded engineering pilot compared six controllers on positioning at
+a supplied standoff above an object. Each neural block had about 1,600 parameters.
+
+| Controller | Successful evaluation starts |
+| --- | ---: |
+| Zero translation | 0/8 |
+| Reference proportional controller | 8/8 |
+| Analytic MLP weights encoding the reference | 8/8 |
+| Analytic RMV weights encoding the reference | 8/8 |
+| AdamW MLP, four demonstrations | 5/8 |
+| AdamW RMV, four demonstrations | 3/8 |
+
+The complete attempt took 56.266 recorded CPU seconds. RMV/scalar discrepancies
+on recorded visited inputs were below 3e-8. This is empirical numerical agreement,
+not a universal floating-point guarantee. Earlier failed attempts and costs are
+retained in the [audited report](docs/APPROACH_V1_RESULTS.md).
+
+These were inspected analytic encodings of a known controller, not a blinded LLM
+synthesis result. The task was pregrasp positioning, not grasping, pickup, general
+transfer or physical hierarchy execution. Four demonstrations did not reliably
+teach the same closed-loop behavior; a general LLM-over-gradient advantage is not
+established.
+
+## Robotics testbed
+
+The selected stack is MuJoCo for physics, robosuite for robot/control infrastructure,
+and LIBERO for tasks and assets. The local adapter was checked against MuJoCo
+3.2.7, robosuite 1.4.1 and a pinned LIBERO checkout. Simulation is optional and
+must be installed/configured separately; reference tests do not launch it.
+
+- [System specification](docs/SYSTEM_SPEC.md) and [adapter contracts](docs/SIM_ADAPTER.md)
+- [Sixteen robot task specifications](docs/ROBOT_TASK_SUITE.md): repeated grasps,
+  sorting, drawer/door chains, barriers, blocker clearance, timed holding and recovery
+- [Symbolic hierarchy fixtures](docs/HIERARCHICAL_TASKS.md)
+- [LTLf compilation and strong planning](docs/M1_ENGINEERING.md)
+
+Obstacle/articulation/orientation inputs, contact-ready skills, independent
+physical observers and the primitive executor remain explicit integration work.
+An existing BDDL scene is not a working Skillforge task.
+
+## Checks and reproducibility
+
+```sh
 python -m unittest discover -s tests -v
 ```
 
-No simulator, model download, training, LLM API call or hardware control occurs in those tests. LTLf evaluation applies to a **closed, nonempty trace**; a false unfinished prefix is not a failure verdict. Logical propositions describe observed state, commands or verified skill outcomes; action blocks themselves are executable policies.
+The current local suite has 122 passing checks. Optional neural/adapter checks
+skip when PyTorch or NumPy is absent; full local results used a separate CPU
+research environment. No model download, simulator rollout, scientific training
+run or LLM API call occurs in the unit suite. A single optimizer transaction is
+used only as a checkpoint/gradient unit fixture.
 
-After installation, compile a task or synthesize/execute the supplied discrete pickup fixture:
+[Validation receipt](docs/validation.json) and [test output](docs/unit_tests.txt)
+record the checked sources. Scientific runs require an exact user-approved source
+manifest through [the source gate](experiments/source_pins/README.md). Historical
+pins are preserved, not refreshed to match later development. Model weights,
+datasets, credentials and machine-specific bindings are excluded from Git.
 
-```sh
-python -m skillforge compile examples/pick_place.task.json --output work/pick_place.dfa.json
-python -m skillforge plan examples/discrete_pickup.task.json examples/discrete_pickup.model.json --initial start --execute --outcome-choice last --output work/discrete_pickup.plan.json
-```
+Install simulator environments **outside this checkout** for source-gated runs;
+the local-source gate rejects unpinned package code inside the repository. Use
+ignored `artifacts/local_paths.json` for machine bindings.
 
-The second command deliberately selects the timeout/failure branches. The synthesized strategy recovers under the fixture's explicitly bounded-failure assumptions. These are engineering fixtures, not robotic or learned-skill results. Output files are created exclusively; choose a new path for another run.
+## Project record
 
-For a task with a blocker dependency and reusable subtasks:
+- [Working context](docs/CONTEXT.md)
+- [Evidence and limitations](docs/EVIDENCE.md)
+- [Research roadmap](docs/ROADMAP.md)
+- [Provenance](provenance/README.md)
+- [Research coordination contract](AGENTS.md)
 
-```sh
-python -m skillforge hierarchy examples/hierarchical_tasks.json --case clear_then_retrieve --execute --output work/clear_then_retrieve.json
-```
+This repository preserves code, proposals, results and negative findings for the
+ongoing research program. It is separate from legacy Gravemind, RBL-RMV and TNST
+projects; their artifacts are not silently relabelled as WSPL results.
 
-The root leaves its two goals unordered; the supplied effect model forces clearing access before retrieving the target. The hierarchy is given, and its pickup/placement bodies are abstracted by outcome contracts rather than physically executed.
-
-## Research questions
-
-The WSPL direction treats neural weights as compiled executable artifacts of a
-typed program. The [cross-domain protocol](docs/wspl/EXPERIMENT_PROGRAM.md) tests
-whether that interface helps beyond direct weight authoring and ordinary code,
-separately from verifier feedback. Its structured plan is a design draft, not a
-registered study or runnable source pin. The original robotics acquisition and
-MLP/RMV questions below remain part of the application program.
-
-1. Can LLM-authored weights acquire reliable skills using fewer interactions or less total time than gradient learning?
-2. Can grounded RMV implementations retain useful performance while providing exact computational explanations of motor outputs?
-3. Do independently validated skills transfer to unseen temporal compositions without internal retraining?
-4. Can changing one mechanism be handled by local repair while preserving still-valid behavior?
-
-LTLf planning, LLM-generated robot programs and skill libraries already have substantial prior work. Novelty must be assessed around weight-authored, faithfully compiled RMV skills, their acquisition cost and compositional repair. The toy-world evidence supports supplied factorization; it is not robotic validation or evidence that LLMs outperform gradient-trained skills.
-
-## Repository boundaries
-
-This is a new local repository, separate from Gravemind and legacy RBL/TNST robot models. [Provenance](provenance/README.md) links the antecedents without copying datasets or checkpoints. No GitHub remote, publishing configuration or redistribution license has been selected. Future scientific runs require exact source approval under [AGENTS.md](AGENTS.md); the current specification authorizes no run automatically.
+GitHub: https://github.com/k-oconnor/WSPL (private research archive).
+No redistribution license has been selected. Nothing in the proposed experiment
+program authorizes new API spending, training, deployment or physical hardware use.
