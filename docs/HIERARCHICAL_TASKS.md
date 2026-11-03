@@ -2,6 +2,8 @@
 
 Status: seven checked abstract engineering fixtures and a proposed physical benchmark. No new skill training, LLM call or robot execution has been performed. The suite tests reuse of supplied parameterized hierarchies; discovery of new hierarchies is a separate question.
 
+The broader physical task catalog is now in ROBOT_TASK_SUITE.md and examples/robot_task_suite_v1.json: sixteen scene-grounded specifications, including multiple grasps, articulated chains, obstacle routes, causal blocker removal, dwell and recovery. Its catalog/trace checks do not execute these seven abstract templates or a physical hierarchy. All new physical tasks still report explicit integration blockers.
+
 ## Reusable library and levels
 
 | Level | Reusable computation |

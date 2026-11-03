@@ -88,6 +88,18 @@ test_known_grounded_calculation (test_reference.RMVTests.test_known_grounded_cal
 test_normalization_and_final_readout_clipping_included (test_reference.RMVTests.test_normalization_and_final_readout_clipping_included) ... ok
 test_observation_names_and_numeric_types_are_strict (test_reference.RMVTests.test_observation_names_and_numeric_types_are_strict) ... ok
 test_positive_and_negative_literals_of_one_channel_can_coexist (test_reference.RMVTests.test_positive_and_negative_literals_of_one_channel_can_coexist) ... ok
+test_all_supplied_positive_label_fixtures (test_robot_tasks.RobotTaskTests.test_all_supplied_positive_label_fixtures) ... ok
+test_asset_audit_rejects_unbound_native_entity (test_robot_tasks.RobotTaskTests.test_asset_audit_rejects_unbound_native_entity) ... ok
+test_bddl_inspector_grouped_objects_regions_and_native_goal (test_robot_tasks.RobotTaskTests.test_bddl_inspector_grouped_objects_regions_and_native_goal) ... ok
+test_blocker_dependency_is_not_a_supplied_order_edge (test_robot_tasks.RobotTaskTests.test_blocker_dependency_is_not_a_supplied_order_edge) ... ok
+test_diversity_counts_readiness_and_snapshot (test_robot_tasks.RobotTaskTests.test_diversity_counts_readiness_and_snapshot) ... ok
+test_malformed_bindings_cycles_dwell_and_false_native_claim (test_robot_tasks.RobotTaskTests.test_malformed_bindings_cycles_dwell_and_false_native_claim) ... ok
+test_missing_sensor_tick_unknown_value_and_budget (test_robot_tasks.RobotTaskTests.test_missing_sensor_tick_unknown_value_and_budget) ... ok
+test_recovery_retains_first_delivery_and_requires_new_grasp (test_robot_tasks.RobotTaskTests.test_recovery_retains_first_delivery_and_requires_new_grasp) ... ok
+test_repeated_pickup_needs_distinct_pulses_and_rejects_sticky_event (test_robot_tasks.RobotTaskTests.test_repeated_pickup_needs_distinct_pulses_and_rejects_sticky_event) ... ok
+test_undo_final_placement_and_forbidden_contact_fail (test_robot_tasks.RobotTaskTests.test_undo_final_placement_and_forbidden_contact_fail) ... ok
+test_wait_requires_twenty_consecutive_true_samples (test_robot_tasks.RobotTaskTests.test_wait_requires_twenty_consecutive_true_samples) ... ok
+test_wrong_order_and_coincident_milestones_fail (test_robot_tasks.RobotTaskTests.test_wrong_order_and_coincident_milestones_fail) ... ok
 test_added_or_missing_source_rejected (test_source_consistency.SourceConsistencyTests.test_added_or_missing_source_rejected) ... ok
 test_changed_source_fails_before_runner (test_source_consistency.SourceConsistencyTests.test_changed_source_fails_before_runner) ... ok
 test_dependency_shadowing_is_rejected (test_source_consistency.SourceConsistencyTests.test_dependency_shadowing_is_rejected) ... ok
@@ -102,6 +114,6 @@ test_verified_constructor_and_receipt (test_source_consistency.SourceConsistency
 test_wrong_callable_source_rejected (test_source_consistency.SourceConsistencyTests.test_wrong_callable_source_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 102 tests in 4.931s
+Ran 114 tests in 10.201s
 
 OK

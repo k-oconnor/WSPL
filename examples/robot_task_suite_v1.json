@@ -1,0 +1,1804 @@
+{
+  "format": "skillforge.robot_tasks.v1",
+  "clock_hz": 20,
+  "status": "inspected_design_only",
+  "skills": {
+    "approach_contact": {
+      "status": "planned",
+      "meaning": "Reach a validated contact-ready pose, beyond the completed standoff pilot."
+    },
+    "close": {
+      "status": "planned",
+      "meaning": "Establish bilateral object contact independently of lifting."
+    },
+    "lift": {
+      "status": "planned",
+      "meaning": "Raise the bound object with independently observed maintained grasp."
+    },
+    "transport": {
+      "status": "planned",
+      "meaning": "Move a held object to a bound destination without unintended release."
+    },
+    "lower": {
+      "status": "planned",
+      "meaning": "Lower to a physically supported placement."
+    },
+    "release": {
+      "status": "planned",
+      "meaning": "Release only at an allowed supported destination."
+    },
+    "retreat": {
+      "status": "planned",
+      "meaning": "Clear the placed object without displacing it."
+    },
+    "open_drawer": {
+      "status": "planned",
+      "meaning": "Establish handle contact and open the bound articulated drawer."
+    },
+    "close_drawer": {
+      "status": "planned",
+      "meaning": "Close a drawer without trapping a manipulated object or gripper."
+    },
+    "close_door": {
+      "status": "planned",
+      "meaning": "Close an articulated appliance door after safe placement."
+    },
+    "stack": {
+      "status": "planned",
+      "meaning": "Place one object on another with stable support."
+    },
+    "hold": {
+      "status": "planned",
+      "meaning": "Maintain the independently observed held condition over elapsed motor ticks."
+    },
+    "route_around": {
+      "status": "planned",
+      "meaning": "Select and execute a route around physical obstacle geometry."
+    },
+    "route_over": {
+      "status": "planned",
+      "meaning": "Select and execute a route above physical obstacle geometry."
+    },
+    "recover_contact": {
+      "status": "planned",
+      "meaning": "Locate and reacquire a recoverably dropped object."
+    }
+  },
+  "capabilities": {
+    "motor12": {
+      "status": "available",
+      "meaning": "Twelve measured bound-object/target channels and four OSC outputs; structured perception."
+    },
+    "goal_binding": {
+      "status": "available",
+      "meaning": "Supply one fixed world target; does not choose grasp poses."
+    },
+    "object_rebinding": {
+      "status": "planned",
+      "meaning": "Executor binds distinct object IDs and targets per invocation, without changing skill weights."
+    },
+    "physical_executor": {
+      "status": "planned",
+      "meaning": "Execute primitive sequences with invocation IDs, failure handling and observed phase progression."
+    },
+    "pickup_observer": {
+      "status": "planned",
+      "meaning": "Calibrated elevation/contact/support evidence for actual pickup, including reset of stale status."
+    },
+    "placement_observer": {
+      "status": "planned",
+      "meaning": "Stable geometry containment/support plus gripper release and retreat; no target-distance shortcut."
+    },
+    "collision_observer": {
+      "status": "planned",
+      "meaning": "Monitor forbidden robot/held-object contacts and swept clearance at physics substeps, with phase-dependent allowed contacts."
+    },
+    "contact_orientation_interface": {
+      "status": "planned",
+      "meaning": "Explicit grasp orientation/object geometry interface; fixed-orientation sufficiency must be established before reusing motor12."
+    },
+    "articulation_interface": {
+      "status": "planned",
+      "meaning": "Named joint/handle pose channels and calibrated open/closed thresholds; new declared interface version."
+    },
+    "articulation_observer": {
+      "status": "planned",
+      "meaning": "Observed joint transition and clearance before/after articulated motion."
+    },
+    "stack_observer": {
+      "status": "planned",
+      "meaning": "Stable object-on-object support, including support retention through later motion."
+    },
+    "obstacle_scene_interface": {
+      "status": "planned",
+      "meaning": "Declared obstacle geometry/poses visible to the route selector/controller; no hidden navigation inside motor adapter."
+    },
+    "route_observer": {
+      "status": "planned",
+      "meaning": "Independent path gate and swept held-body clearance; labels alone do not prove route feasibility."
+    },
+    "accessibility_observer": {
+      "status": "planned",
+      "meaning": "Verify target grasp access and whether blocker removal was physically necessary."
+    },
+    "event_clock": {
+      "status": "planned",
+      "meaning": "Invocation-scoped outcome pulses and consecutive 20 Hz timestamps, including terminal STOP."
+    },
+    "hold_observer": {
+      "status": "planned",
+      "meaning": "Observe held-object/contact/support state on each required dwell tick."
+    },
+    "fault_injection": {
+      "status": "planned",
+      "meaning": "Logged one-shot recoverable perturbation with visible state consequences, paired timing across methods."
+    },
+    "progress_observer": {
+      "status": "planned",
+      "meaning": "Check already-completed objects remain at destination and count unnecessary repeated work."
+    }
+  },
+  "tasks": [
+    {
+      "id": "single_box",
+      "tier": 1,
+      "family": "single_transfer",
+      "instruction": "Pick the cream-cheese box and place it on the bowl.",
+      "axes": [
+        "contact",
+        "single_grasp"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+        "mode": "existing_scene",
+        "changes": [],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "cream_cheese_1",
+        "dst": "akita_black_bowl_1"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "dst"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a",
+          "placed_a"
+        ]
+      ],
+      "terminal": [
+        "a_at_dst",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 800,
+      "expected_grasp_occurrences": 1,
+      "perturbation": null
+    },
+    {
+      "id": "single_bowl",
+      "tier": 1,
+      "family": "single_transfer",
+      "instruction": "Pick the bowl and place it on the plate.",
+      "axes": [
+        "contact",
+        "shape_change"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_goal/put_the_bowl_on_the_plate.bddl",
+        "mode": "existing_scene",
+        "changes": [],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "akita_black_bowl_1",
+        "dst": "plate_1"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "dst"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a",
+          "placed_a"
+        ]
+      ],
+      "terminal": [
+        "a_at_dst",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 800,
+      "expected_grasp_occurrences": 1,
+      "perturbation": null
+    },
+    {
+      "id": "load_two",
+      "tier": 2,
+      "family": "multi_object",
+      "instruction": "Put both objects in the basket, in either order.",
+      "axes": [
+        "multiple_grasps",
+        "unordered_subgoals"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.bddl",
+        "mode": "existing_scene",
+        "changes": [],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "alphabet_soup_1",
+        "b": "cream_cheese_1",
+        "dst": "basket_1_contain_region"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "dst"
+          }
+        },
+        {
+          "id": "picked_b",
+          "kind": "pickup",
+          "bindings": {
+            "object": "b"
+          }
+        },
+        {
+          "id": "placed_b",
+          "kind": "place",
+          "bindings": {
+            "object": "b",
+            "target": "dst"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a",
+          "placed_a"
+        ],
+        [
+          "picked_b",
+          "placed_b"
+        ]
+      ],
+      "terminal": [
+        "a_at_dst",
+        "b_at_dst",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 800,
+      "expected_grasp_occurrences": 2,
+      "perturbation": null
+    },
+    {
+      "id": "sort_two",
+      "tier": 2,
+      "family": "multi_object",
+      "instruction": "Put the white mug on the left plate and the yellow/white mug on the right plate.",
+      "axes": [
+        "multiple_grasps",
+        "object_target_binding"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate.bddl",
+        "mode": "existing_scene",
+        "changes": [],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "porcelain_mug_1",
+        "b": "white_yellow_mug_1",
+        "left": "plate_1",
+        "right": "plate_2"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "left"
+          }
+        },
+        {
+          "id": "picked_b",
+          "kind": "pickup",
+          "bindings": {
+            "object": "b"
+          }
+        },
+        {
+          "id": "placed_b",
+          "kind": "place",
+          "bindings": {
+            "object": "b",
+            "target": "right"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a",
+          "placed_a"
+        ],
+        [
+          "picked_b",
+          "placed_b"
+        ]
+      ],
+      "terminal": [
+        "a_at_left",
+        "b_at_right",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 800,
+      "expected_grasp_occurrences": 2,
+      "perturbation": null
+    },
+    {
+      "id": "ordered_load",
+      "tier": 2,
+      "family": "temporal_order",
+      "instruction": "Finish placing the soup before picking up the cream-cheese box.",
+      "axes": [
+        "multiple_grasps",
+        "strict_order"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.bddl",
+        "mode": "goal_overlay",
+        "changes": [
+          "Add strict temporal order; native BDDL final conjunction alone does not impose it."
+        ],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "alphabet_soup_1",
+        "b": "cream_cheese_1",
+        "dst": "basket_1_contain_region"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "dst"
+          }
+        },
+        {
+          "id": "picked_b",
+          "kind": "pickup",
+          "bindings": {
+            "object": "b"
+          }
+        },
+        {
+          "id": "placed_b",
+          "kind": "place",
+          "bindings": {
+            "object": "b",
+            "target": "dst"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a",
+          "placed_a"
+        ],
+        [
+          "placed_a",
+          "picked_b"
+        ],
+        [
+          "picked_b",
+          "placed_b"
+        ]
+      ],
+      "terminal": [
+        "a_at_dst",
+        "b_at_dst",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 800,
+      "expected_grasp_occurrences": 2,
+      "perturbation": null
+    },
+    {
+      "id": "round_trip",
+      "tier": 3,
+      "family": "repeated_grasp",
+      "instruction": "Move the same box to the bowl, then plate, then bowl again.",
+      "axes": [
+        "repeated_object",
+        "repeated_grasps",
+        "long_chain"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+        "mode": "goal_overlay",
+        "changes": [
+          "Observe three distinct pickup/place invocations; reuse of a stale pickup flag is invalid."
+        ],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "cream_cheese_1",
+        "bowl": "akita_black_bowl_1",
+        "plate": "plate_1"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a_first",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a_first",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "bowl"
+          }
+        },
+        {
+          "id": "picked_a_middle",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a_middle",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "plate"
+          }
+        },
+        {
+          "id": "picked_a_last",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a_last",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "bowl"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a_first",
+          "placed_a_first"
+        ],
+        [
+          "placed_a_first",
+          "picked_a_middle"
+        ],
+        [
+          "picked_a_middle",
+          "placed_a_middle"
+        ],
+        [
+          "placed_a_middle",
+          "picked_a_last"
+        ],
+        [
+          "picked_a_last",
+          "placed_a_last"
+        ]
+      ],
+      "terminal": [
+        "a_at_bowl",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 3,
+      "perturbation": null
+    },
+    {
+      "id": "swap_via_buffer",
+      "tier": 3,
+      "family": "rearrangement",
+      "instruction": "Swap the box and bottle source locations using the plate as a staging buffer.",
+      "axes": [
+        "repeated_grasps",
+        "staging",
+        "long_chain"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+        "mode": "custom_scene_planned",
+        "changes": [
+          "Define stable source-slot occupancy observers and a usable buffer region; validate bottle grasp/orientation and fixture clearance."
+        ],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "cream_cheese_1",
+        "b": "wine_bottle_1",
+        "buffer": "plate_1",
+        "slot_a": "main_table_cream_cheese_region",
+        "slot_b": "main_table_wine_bottle_region"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a_stage",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a_stage",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "buffer"
+          }
+        },
+        {
+          "id": "picked_b",
+          "kind": "pickup",
+          "bindings": {
+            "object": "b"
+          }
+        },
+        {
+          "id": "placed_b",
+          "kind": "place",
+          "bindings": {
+            "object": "b",
+            "target": "slot_a"
+          }
+        },
+        {
+          "id": "picked_a_finish",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a_finish",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "slot_b"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a_stage",
+          "placed_a_stage"
+        ],
+        [
+          "placed_a_stage",
+          "picked_b"
+        ],
+        [
+          "picked_b",
+          "placed_b"
+        ],
+        [
+          "placed_b",
+          "picked_a_finish"
+        ],
+        [
+          "picked_a_finish",
+          "placed_a_finish"
+        ]
+      ],
+      "terminal": [
+        "a_at_slot_b",
+        "b_at_slot_a",
+        "buffer_empty",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 3,
+      "perturbation": null
+    },
+    {
+      "id": "drawer_cycle",
+      "tier": 3,
+      "family": "articulated_chain",
+      "instruction": "Open the drawer, put the bowl inside, retreat, then close the drawer.",
+      "axes": [
+        "articulation",
+        "strict_order",
+        "long_chain"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_goal/open_the_top_drawer_and_put_the_bowl_inside.bddl",
+        "mode": "goal_overlay",
+        "changes": [
+          "Require initially closed drawer and an observed open transition; add final closed state and safe retreat before close. Native goal only checks bowl containment."
+        ],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "akita_black_bowl_1",
+        "drawer": "wooden_cabinet_1_top_region"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat",
+          "open_drawer",
+          "close_drawer"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock",
+          "articulation_interface",
+          "articulation_observer"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "drawer_opened",
+          "kind": "open",
+          "bindings": {
+            "fixture": "drawer"
+          }
+        },
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "drawer"
+          }
+        },
+        {
+          "id": "drawer_closed",
+          "kind": "close",
+          "bindings": {
+            "fixture": "drawer"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "drawer_opened",
+          "picked_a"
+        ],
+        [
+          "picked_a",
+          "placed_a"
+        ],
+        [
+          "placed_a",
+          "drawer_closed"
+        ]
+      ],
+      "terminal": [
+        "a_inside_drawer",
+        "drawer_closed_state",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 1,
+      "perturbation": null
+    },
+    {
+      "id": "microwave_load_close",
+      "tier": 3,
+      "family": "articulated_chain",
+      "instruction": "Place the mug inside the open microwave, retreat, and close the door.",
+      "axes": [
+        "articulation",
+        "placement_clearance"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it.bddl",
+        "mode": "existing_scene",
+        "changes": [],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "white_yellow_mug_1",
+        "inside": "microwave_1_heating_region",
+        "door": "microwave_1"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat",
+          "close_door"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock",
+          "articulation_interface",
+          "articulation_observer"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "inside"
+          }
+        },
+        {
+          "id": "door_closed",
+          "kind": "close",
+          "bindings": {
+            "fixture": "door"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a",
+          "placed_a"
+        ],
+        [
+          "placed_a",
+          "door_closed"
+        ]
+      ],
+      "terminal": [
+        "a_inside",
+        "door_closed_state",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 1,
+      "perturbation": null
+    },
+    {
+      "id": "stack_in_tray",
+      "tier": 3,
+      "family": "stacking",
+      "instruction": "Put the bottom bowl in the tray, then stack the other bowl on it.",
+      "axes": [
+        "multiple_grasps",
+        "support_dependency"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_90/LIVING_ROOM_SCENE4_stack_the_left_bowl_on_the_right_bowl_and_place_them_in_the_tray.bddl",
+        "mode": "goal_overlay",
+        "changes": [
+          "Require base-first temporal order and stable support after release; native goal only states final On/In predicates."
+        ],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "base": "akita_black_bowl_2",
+        "top": "akita_black_bowl_1",
+        "tray": "wooden_tray_1_contain_region"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat",
+          "stack"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock",
+          "stack_observer"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_base",
+          "kind": "pickup",
+          "bindings": {
+            "object": "base"
+          }
+        },
+        {
+          "id": "placed_base",
+          "kind": "place",
+          "bindings": {
+            "object": "base",
+            "target": "tray"
+          }
+        },
+        {
+          "id": "picked_top",
+          "kind": "pickup",
+          "bindings": {
+            "object": "top"
+          }
+        },
+        {
+          "id": "stacked_top",
+          "kind": "stack",
+          "bindings": {
+            "object": "top",
+            "target": "base"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_base",
+          "placed_base"
+        ],
+        [
+          "placed_base",
+          "picked_top"
+        ],
+        [
+          "picked_top",
+          "stacked_top"
+        ]
+      ],
+      "terminal": [
+        "base_in_tray",
+        "top_supported_on_base",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 2,
+      "perturbation": null
+    },
+    {
+      "id": "carry_around",
+      "tier": 3,
+      "family": "obstacle_route",
+      "instruction": "Carry the box around the barrier before placing it on the bowl.",
+      "axes": [
+        "obstacles",
+        "held_object_clearance",
+        "route_selection"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+        "mode": "custom_scene_planned",
+        "changes": [
+          "Add real collision geometry between source and destination; verify nontrivial obstruction with the whole robot/gripper/held object, not point-end-effector distance.",
+          "Use a tall barrier with a validated side passage and ceiling constraint preventing an over-barrier shortcut; calibrate swept-body clearance and reachable goal."
+        ],
+        "planned_entities": {
+          "barrier_1": "Anchored collidable barrier; geometry not constructed yet.",
+          "route_gate_1": "Observed non-collidable route qualification volume; not an action waypoint policy."
+        }
+      },
+      "bindings": {
+        "a": "cream_cheese_1",
+        "dst": "akita_black_bowl_1",
+        "barrier": "barrier_1",
+        "gate": "route_gate_1"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat",
+          "route_around"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock",
+          "obstacle_scene_interface",
+          "route_observer"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "route_gate",
+          "kind": "pass_gate",
+          "bindings": {
+            "object": "a",
+            "gate": "gate"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "dst"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a",
+          "route_gate"
+        ],
+        [
+          "route_gate",
+          "placed_a"
+        ]
+      ],
+      "terminal": [
+        "a_at_dst",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 1,
+      "perturbation": null
+    },
+    {
+      "id": "carry_over",
+      "tier": 3,
+      "family": "obstacle_route",
+      "instruction": "Carry the box over the barrier before placing it on the bowl.",
+      "axes": [
+        "obstacles",
+        "held_object_clearance",
+        "route_selection"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+        "mode": "custom_scene_planned",
+        "changes": [
+          "Add real collision geometry between source and destination; verify nontrivial obstruction with the whole robot/gripper/held object, not point-end-effector distance.",
+          "Use a low barrier and side constraints, with a validated over-barrier clearance gate; ensure both grasp and release locations remain reachable."
+        ],
+        "planned_entities": {
+          "barrier_1": "Anchored collidable barrier; geometry not constructed yet.",
+          "route_gate_1": "Observed non-collidable route qualification volume; not an action waypoint policy."
+        }
+      },
+      "bindings": {
+        "a": "cream_cheese_1",
+        "dst": "akita_black_bowl_1",
+        "barrier": "barrier_1",
+        "gate": "route_gate_1"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat",
+          "route_over"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock",
+          "obstacle_scene_interface",
+          "route_observer"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "route_gate",
+          "kind": "pass_gate",
+          "bindings": {
+            "object": "a",
+            "gate": "gate"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "dst"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a",
+          "route_gate"
+        ],
+        [
+          "route_gate",
+          "placed_a"
+        ]
+      ],
+      "terminal": [
+        "a_at_dst",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 1,
+      "perturbation": null
+    },
+    {
+      "id": "clear_then_fetch",
+      "tier": 3,
+      "family": "causal_prerequisite",
+      "instruction": "Clear the blocker to the plate and deliver the box to the bowl; infer the necessary ordering.",
+      "axes": [
+        "multiple_grasps",
+        "obstacles",
+        "causal_prerequisite"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+        "mode": "custom_scene_planned",
+        "changes": [
+          "Position a movable blocker so all allowed target grasps are inaccessible until it moves. Validate necessity with a matched cleared configuration; reject layouts with a direct or overhead bypass.",
+          "Keep root delivery goals unordered; the scene/effect model, not a supplied temporal edge, must force clearance first."
+        ],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "cream_cheese_1",
+        "blocker": "wine_bottle_1",
+        "buffer": "plate_1",
+        "dst": "akita_black_bowl_1"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock",
+          "obstacle_scene_interface",
+          "accessibility_observer"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_blocker",
+          "kind": "pickup",
+          "bindings": {
+            "object": "blocker"
+          }
+        },
+        {
+          "id": "placed_blocker",
+          "kind": "place",
+          "bindings": {
+            "object": "blocker",
+            "target": "buffer"
+          }
+        },
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "dst"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_blocker",
+          "placed_blocker"
+        ],
+        [
+          "picked_a",
+          "placed_a"
+        ]
+      ],
+      "terminal": [
+        "a_at_dst",
+        "blocker_at_buffer",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop",
+        "target_accessible_at_pickup"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 2,
+      "perturbation": null
+    },
+    {
+      "id": "hold_then_place",
+      "tier": 3,
+      "family": "temporal_dwell",
+      "instruction": "Pick up the box, hold it for at least one second, then place it on the bowl.",
+      "axes": [
+        "elapsed_time",
+        "maintained_grasp"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+        "mode": "goal_overlay",
+        "changes": [
+          "Add 20 consecutive held-state motor samples strictly between pickup and placement; check actual observed contact/support and timestamps."
+        ],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "cream_cheese_1",
+        "dst": "akita_black_bowl_1"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat",
+          "hold"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock",
+          "hold_observer"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "dst"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a",
+          "placed_a"
+        ]
+      ],
+      "terminal": [
+        "a_at_dst",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [
+        {
+          "after": "picked_a",
+          "before": "placed_a",
+          "state": "a_held",
+          "ticks": 20
+        }
+      ],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 1,
+      "perturbation": null
+    },
+    {
+      "id": "recover_drop",
+      "tier": 4,
+      "family": "recovery",
+      "instruction": "After one scheduled recoverable slip, reacquire the box and complete delivery.",
+      "axes": [
+        "repeated_grasps",
+        "fault_recovery"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+        "mode": "custom_scene_planned",
+        "changes": [
+          "Inject exactly one logged slip after verified pickup; keep the object on a reachable recovery surface and expose truthful contact/state changes.",
+          "Invalidate held state and resume from observed recovery, not stale pickup completion."
+        ],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "cream_cheese_1",
+        "dst": "akita_black_bowl_1"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat",
+          "recover_contact"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock",
+          "fault_injection"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a_first",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "drop_observed",
+          "kind": "fault",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "picked_a_retry",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "dst"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a_first",
+          "drop_observed"
+        ],
+        [
+          "drop_observed",
+          "picked_a_retry"
+        ],
+        [
+          "picked_a_retry",
+          "placed_a"
+        ]
+      ],
+      "terminal": [
+        "a_at_dst",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 2,
+      "perturbation": {
+        "after": "picked_a_first",
+        "kind": "recoverable_grasp_slip",
+        "count": 1,
+        "scope": "one item within reachable workspace"
+      }
+    },
+    {
+      "id": "recover_second_item",
+      "tier": 4,
+      "family": "recovery",
+      "instruction": "Load the soup; recover one slip while loading the box without undoing the soup placement.",
+      "axes": [
+        "multiple_grasps",
+        "fault_recovery",
+        "preserve_progress"
+      ],
+      "scene": {
+        "asset": "libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.bddl",
+        "mode": "custom_scene_planned",
+        "changes": [
+          "Inject one recoverable slip on the second object only, with matched phase-triggered timing.",
+          "Record every call, require the first object to stay in the basket after placement, and count unnecessary rework."
+        ],
+        "planned_entities": {}
+      },
+      "bindings": {
+        "a": "alphabet_soup_1",
+        "b": "cream_cheese_1",
+        "dst": "basket_1_contain_region"
+      },
+      "requirements": {
+        "skills": [
+          "approach_contact",
+          "close",
+          "lift",
+          "transport",
+          "lower",
+          "release",
+          "retreat",
+          "recover_contact"
+        ],
+        "capabilities": [
+          "motor12",
+          "goal_binding",
+          "object_rebinding",
+          "physical_executor",
+          "pickup_observer",
+          "placement_observer",
+          "collision_observer",
+          "contact_orientation_interface",
+          "event_clock",
+          "fault_injection",
+          "progress_observer"
+        ]
+      },
+      "milestones": [
+        {
+          "id": "picked_a",
+          "kind": "pickup",
+          "bindings": {
+            "object": "a"
+          }
+        },
+        {
+          "id": "placed_a",
+          "kind": "place",
+          "bindings": {
+            "object": "a",
+            "target": "dst"
+          }
+        },
+        {
+          "id": "picked_b_first",
+          "kind": "pickup",
+          "bindings": {
+            "object": "b"
+          }
+        },
+        {
+          "id": "drop_b",
+          "kind": "fault",
+          "bindings": {
+            "object": "b"
+          }
+        },
+        {
+          "id": "picked_b_retry",
+          "kind": "pickup",
+          "bindings": {
+            "object": "b"
+          }
+        },
+        {
+          "id": "placed_b",
+          "kind": "place",
+          "bindings": {
+            "object": "b",
+            "target": "dst"
+          }
+        }
+      ],
+      "precedence": [
+        [
+          "picked_a",
+          "placed_a"
+        ],
+        [
+          "placed_a",
+          "picked_b_first"
+        ],
+        [
+          "picked_b_first",
+          "drop_b"
+        ],
+        [
+          "drop_b",
+          "picked_b_retry"
+        ],
+        [
+          "picked_b_retry",
+          "placed_b"
+        ]
+      ],
+      "terminal": [
+        "a_at_dst",
+        "b_at_dst",
+        "gripper_clear"
+      ],
+      "invariants": [
+        "no_forbidden_contact",
+        "no_unscheduled_drop",
+        "first_delivery_preserved"
+      ],
+      "dwell": [],
+      "max_motor_ticks": 1200,
+      "expected_grasp_occurrences": 3,
+      "perturbation": {
+        "after": "picked_b_first",
+        "kind": "recoverable_grasp_slip",
+        "count": 1,
+        "scope": "second item only; preserve first placement"
+      }
+    }
+  ]
+}

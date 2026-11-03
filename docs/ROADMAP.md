@@ -28,6 +28,8 @@ Exit evidence: new temporal compositions succeed physically and satisfy their ac
 
 Task families and supplied reusable decompositions are now defined in HIERARCHICAL_TASKS.md. Abstract macro-summary fixtures are checked; primitive hierarchical execution, physical contracts and a matched flat/hierarchical comparison remain unimplemented.
 
+ROBOT_TASK_SUITE.md expands the physical design to sixteen tasks over seven audited local LIBERO scenes. Start integration with single transfers, two-object loading and strict order, then add blocker/route geometry, articulation, dwell and recovery. All sixteen are specifications with labelled trace checks; no physical hierarchy capability follows from catalog validation.
+
 ## M4: local repair and stronger comparisons
 
 Replace/adapt one changed skill and retest old/new tasks. Add global rehearsal and information-matched repair controls before claiming robust repair efficiency. Evaluate diagnosis of the affected skill separately from supplied localization. Consider wider physics changes and additional skills only after this works.

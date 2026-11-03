@@ -14,6 +14,8 @@ Current final status (November 3): user-approved approach-v1-fidelityfix complet
 
 ## Semantics and evidence
 
+- Read docs/ROBOT_TASK_SUITE.md for the sixteen inspected diverse physical task specifications and their readiness blockers. Local BDDL assets/bindings are audited; custom obstacles/perturbations are proposed, not constructed. RobotTaskSuite.check_trace checks supplied labels and consecutive timestamps, not their physical truth, LTLf compilation or execution. Catalog fixtures are not sealed held-out data. The existing motor12 interface does not supply obstacle/articulation/orientation inputs; declare/version any future extension and keep navigation/grasp logic out of the adapter.
+
 - Action blocks execute controls. LTLf propositions report observed state, commands and externally verified skill outcomes. Do not conflate a neural success prediction with physical success.
 - Boolean LTLf on nonempty finite traces and fuzzy RMV arithmetic are distinct. Every bridge needs explicit, versioned thresholds/observer semantics. The direct evaluator is independent of the derivative compiler. A currently accepting DFA state need not remain accepting after further observations.
 - LTLf automata monitor specifications. Strategy synthesis additionally needs action models, environmental assumptions and realizability analysis. State guarantees conditionally; a successful abstract synthesis is not a physical guarantee.

@@ -1,0 +1,631 @@
+{
+  "scope": "read-only asset/specification audit; no simulation",
+  "tasks": [
+    {
+      "id": "single_box",
+      "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+      "sha256": "478bd5726ad7d9bde05e8f26f6a9984d503dc4a91c27d0565f5f0beea1ed3bb1",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "cream_cheese_1",
+          "akita_black_bowl_1"
+        ]
+      ],
+      "scene_mode": "existing_scene",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "single_bowl",
+      "asset": "libero/libero/bddl_files/libero_goal/put_the_bowl_on_the_plate.bddl",
+      "sha256": "edf5f0dd59fe7e6f5db25d8444c8abea0cc2917254d1320199a3dfc8b39ba74d",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "akita_black_bowl_1",
+          "plate_1"
+        ]
+      ],
+      "scene_mode": "existing_scene",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "load_two",
+      "asset": "libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.bddl",
+      "sha256": "4f20311e8758ff6c5ea2d807671364ab71a50c956e53aaa35049fb9637a80ed9",
+      "native_goal": [
+        "And",
+        [
+          "In",
+          "alphabet_soup_1",
+          "basket_1_contain_region"
+        ],
+        [
+          "In",
+          "cream_cheese_1",
+          "basket_1_contain_region"
+        ]
+      ],
+      "scene_mode": "existing_scene",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "sort_two",
+      "asset": "libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate.bddl",
+      "sha256": "fada05c51350d542e2553dd83f4ed242c7178015559c966bbf30e1fdb75d7355",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "porcelain_mug_1",
+          "plate_1"
+        ],
+        [
+          "On",
+          "white_yellow_mug_1",
+          "plate_2"
+        ]
+      ],
+      "scene_mode": "existing_scene",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "ordered_load",
+      "asset": "libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.bddl",
+      "sha256": "4f20311e8758ff6c5ea2d807671364ab71a50c956e53aaa35049fb9637a80ed9",
+      "native_goal": [
+        "And",
+        [
+          "In",
+          "alphabet_soup_1",
+          "basket_1_contain_region"
+        ],
+        [
+          "In",
+          "cream_cheese_1",
+          "basket_1_contain_region"
+        ]
+      ],
+      "scene_mode": "goal_overlay",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "round_trip",
+      "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+      "sha256": "478bd5726ad7d9bde05e8f26f6a9984d503dc4a91c27d0565f5f0beea1ed3bb1",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "cream_cheese_1",
+          "akita_black_bowl_1"
+        ]
+      ],
+      "scene_mode": "goal_overlay",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "swap_via_buffer",
+      "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+      "sha256": "478bd5726ad7d9bde05e8f26f6a9984d503dc4a91c27d0565f5f0beea1ed3bb1",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "cream_cheese_1",
+          "akita_black_bowl_1"
+        ]
+      ],
+      "scene_mode": "custom_scene_planned",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock",
+          "scene:custom_construction"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "drawer_cycle",
+      "asset": "libero/libero/bddl_files/libero_goal/open_the_top_drawer_and_put_the_bowl_inside.bddl",
+      "sha256": "331974c58b0c7ec65ab2f8a075144d93fae91d5b9db4658844fd7bbf495ff1c4",
+      "native_goal": [
+        "And",
+        [
+          "In",
+          "akita_black_bowl_1",
+          "wooden_cabinet_1_top_region"
+        ]
+      ],
+      "scene_mode": "goal_overlay",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "skills:open_drawer",
+          "skills:close_drawer",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock",
+          "capabilities:articulation_interface",
+          "capabilities:articulation_observer"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "microwave_load_close",
+      "asset": "libero/libero/bddl_files/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it.bddl",
+      "sha256": "eb280aa470c524b7e2671fbaeceb1970a93eb6c48282b2ee998e789c74e0f917",
+      "native_goal": [
+        "And",
+        [
+          "In",
+          "white_yellow_mug_1",
+          "microwave_1_heating_region"
+        ],
+        [
+          "Close",
+          "microwave_1"
+        ]
+      ],
+      "scene_mode": "existing_scene",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "skills:close_door",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock",
+          "capabilities:articulation_interface",
+          "capabilities:articulation_observer"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "stack_in_tray",
+      "asset": "libero/libero/bddl_files/libero_90/LIVING_ROOM_SCENE4_stack_the_left_bowl_on_the_right_bowl_and_place_them_in_the_tray.bddl",
+      "sha256": "9806d1f192d22258edfae63690eaefc3a70f469a3addd0d94758f03799e36633",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "akita_black_bowl_1",
+          "akita_black_bowl_2"
+        ],
+        [
+          "In",
+          "akita_black_bowl_2",
+          "wooden_tray_1_contain_region"
+        ]
+      ],
+      "scene_mode": "goal_overlay",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "skills:stack",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock",
+          "capabilities:stack_observer"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "carry_around",
+      "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+      "sha256": "478bd5726ad7d9bde05e8f26f6a9984d503dc4a91c27d0565f5f0beea1ed3bb1",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "cream_cheese_1",
+          "akita_black_bowl_1"
+        ]
+      ],
+      "scene_mode": "custom_scene_planned",
+      "planned_entities": [
+        "barrier_1",
+        "route_gate_1"
+      ],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "skills:route_around",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock",
+          "capabilities:obstacle_scene_interface",
+          "capabilities:route_observer",
+          "scene:custom_construction"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "carry_over",
+      "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+      "sha256": "478bd5726ad7d9bde05e8f26f6a9984d503dc4a91c27d0565f5f0beea1ed3bb1",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "cream_cheese_1",
+          "akita_black_bowl_1"
+        ]
+      ],
+      "scene_mode": "custom_scene_planned",
+      "planned_entities": [
+        "barrier_1",
+        "route_gate_1"
+      ],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "skills:route_over",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock",
+          "capabilities:obstacle_scene_interface",
+          "capabilities:route_observer",
+          "scene:custom_construction"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "clear_then_fetch",
+      "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+      "sha256": "478bd5726ad7d9bde05e8f26f6a9984d503dc4a91c27d0565f5f0beea1ed3bb1",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "cream_cheese_1",
+          "akita_black_bowl_1"
+        ]
+      ],
+      "scene_mode": "custom_scene_planned",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock",
+          "capabilities:obstacle_scene_interface",
+          "capabilities:accessibility_observer",
+          "scene:custom_construction"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "hold_then_place",
+      "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+      "sha256": "478bd5726ad7d9bde05e8f26f6a9984d503dc4a91c27d0565f5f0beea1ed3bb1",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "cream_cheese_1",
+          "akita_black_bowl_1"
+        ]
+      ],
+      "scene_mode": "goal_overlay",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "skills:hold",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock",
+          "capabilities:hold_observer"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "recover_drop",
+      "asset": "libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+      "sha256": "478bd5726ad7d9bde05e8f26f6a9984d503dc4a91c27d0565f5f0beea1ed3bb1",
+      "native_goal": [
+        "And",
+        [
+          "On",
+          "cream_cheese_1",
+          "akita_black_bowl_1"
+        ]
+      ],
+      "scene_mode": "custom_scene_planned",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "skills:recover_contact",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock",
+          "capabilities:fault_injection",
+          "scene:custom_construction"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    },
+    {
+      "id": "recover_second_item",
+      "asset": "libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.bddl",
+      "sha256": "4f20311e8758ff6c5ea2d807671364ab71a50c956e53aaa35049fb9637a80ed9",
+      "native_goal": [
+        "And",
+        [
+          "In",
+          "alphabet_soup_1",
+          "basket_1_contain_region"
+        ],
+        [
+          "In",
+          "cream_cheese_1",
+          "basket_1_contain_region"
+        ]
+      ],
+      "scene_mode": "custom_scene_planned",
+      "planned_entities": [],
+      "readiness": {
+        "physical_runnable": false,
+        "missing": [
+          "skills:approach_contact",
+          "skills:close",
+          "skills:lift",
+          "skills:transport",
+          "skills:lower",
+          "skills:release",
+          "skills:retreat",
+          "skills:recover_contact",
+          "capabilities:object_rebinding",
+          "capabilities:physical_executor",
+          "capabilities:pickup_observer",
+          "capabilities:placement_observer",
+          "capabilities:collision_observer",
+          "capabilities:contact_orientation_interface",
+          "capabilities:event_clock",
+          "capabilities:fault_injection",
+          "capabilities:progress_observer",
+          "scene:custom_construction"
+        ],
+        "reason": "task executor/observers not integrated"
+      }
+    }
+  ],
+  "libero_commit": "8f1084e3132a39270c3a13ebe37270a43ece2a01"
+}

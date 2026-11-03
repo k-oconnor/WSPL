@@ -37,6 +37,7 @@ An isolated MuJoCo 3.2.7 / robosuite 1.4.1 environment passed a five-tick headle
 - [Roadmap](docs/ROADMAP.md): implementation stages and evidence required to advance.
 - [M1 engineering notes](docs/M1_ENGINEERING.md): compiler semantics, strong planning, limits and executable discrete example.
 - [Hierarchical task suite](docs/HIERARCHICAL_TASKS.md): reusable pickup/placement/transfer/group routines, prerequisite tasks, repeated calls and recovery fixtures.
+- [Diverse robot tasks](docs/ROBOT_TASK_SUITE.md): sixteen physical task specifications for repeated grasps, sorting, articulation, obstacles, timed holding and recovery; explicit integration blockers.
 - [Physical adapter](docs/SIM_ADAPTER.md): measured input channels, motor scaling, independent observer events and the headless integration receipt.
 - [Prior evidence](docs/EVIDENCE.md): completed toy-world experiments and their limits.
 - [Related work](docs/RELATED_WORK.md): what is established and where this proposal could contribute.
@@ -53,6 +54,7 @@ An isolated MuJoCo 3.2.7 / robosuite 1.4.1 environment passed a five-tick headle
 | Small-alphabet LTLf-to-DFA compiler | Implemented with explicit construction limits |
 | Strong finite-model strategy synthesis and abstract executor | Implemented; all declared outcomes must reach acceptance |
 | Supplied hierarchy expansion and macro-summary task fixtures | Implemented; nested primitive execution remains planned |
+| Diverse robot task catalog and labelled temporal checks | 16 inspected specifications; local assets audited, physical integration pending |
 | LLM task translation / weight-authoring harness | Planned |
 | Single-tick LIBERO motor adapter and sampled outcome observers | Implemented; headless integration checked |
 | Differentiable MLP/RMV blocks and scalar export checks | Implemented; optional PyTorch, unit-tested |
