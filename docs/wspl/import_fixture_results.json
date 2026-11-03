@@ -1,0 +1,94 @@
+{
+  "scope": "engineering import-fidelity fixtures: WSPL-compiled weights re-expressed as float32 import bundles; not learned networks, S2 baselines, IEEE execution or robot proof",
+  "reports": {
+    "brake_patch": {
+      "imported_artifact_sha256": "088c6ead4c15c41560b45899b67ebf87fe6aa7e7e4fd6af438706cf2c6df3110",
+      "stored_layers_identical": true,
+      "preservation": {
+        "status": "PROVED",
+        "scope": "stored_weight_rational_real_graph_pair",
+        "quantifier": "forall shared inputs in the common artifact domain: assumptions imply ensures",
+        "numerical_execution": "not_established",
+        "physical_trajectory": "not_established",
+        "independently_checked_proof_trace": false,
+        "trust": [
+          "contract parser",
+          "paired graph encoder",
+          "Z3",
+          "rational witness replay through both artifacts"
+        ],
+        "timeout_ms": 5000,
+        "logic": "QF_LRA",
+        "checker_source_sha256": "f108ba9916236a4e2cdcee3b841bd5379cc6d03658992cc5339d88298474e734",
+        "evaluator_source_sha256": "14f0f677b693de77bda7ed13709c3c208e9b600c88c3fb0ae25c96fac43c7369",
+        "parent_sha256": "9533ee778e62050359c77d55a418d7d15716ae2e3bfce6ae83896f55fa2020c1",
+        "edited_sha256": "088c6ead4c15c41560b45899b67ebf87fe6aa7e7e4fd6af438706cf2c6df3110",
+        "name": "compiled_equals_imported",
+        "contract_sha256": "004717ea0f4ef8dde4be1d6931fbd95b664fd14b0f32d6841a9995f7aff4333d",
+        "backend": "Z3",
+        "backend_version": "5.3.3",
+        "domain_query": "sat",
+        "domain_query_sha256": "cc99d7067e78d395d504c36f3ea38909b5ab2f7cf88fd49971193923facb8098",
+        "nonvacuous": true,
+        "domain_witness": {
+          "d": "0",
+          "v": "0",
+          "a_base": "0"
+        },
+        "violation_query": "unsat",
+        "violation_query_sha256": "58df5fb5ecb6c316d06c85d82c7b0b6286c67f94a46017084e8546e986d76b3f",
+        "reason": "violation query UNSAT under declared paired real-graph semantics",
+        "wall_seconds": 0.027913914000237128
+      }
+    },
+    "approach_p": {
+      "imported_artifact_sha256": "6366910613813b72faf480641c7670501f1baefde398ba1822379ad767790273",
+      "stored_layers_identical": true,
+      "preservation": {
+        "status": "PROVED",
+        "scope": "stored_weight_rational_real_graph_pair",
+        "quantifier": "forall shared inputs in the common artifact domain: assumptions imply ensures",
+        "numerical_execution": "not_established",
+        "physical_trajectory": "not_established",
+        "independently_checked_proof_trace": false,
+        "trust": [
+          "contract parser",
+          "paired graph encoder",
+          "Z3",
+          "rational witness replay through both artifacts"
+        ],
+        "timeout_ms": 5000,
+        "logic": "QF_LRA",
+        "checker_source_sha256": "f108ba9916236a4e2cdcee3b841bd5379cc6d03658992cc5339d88298474e734",
+        "evaluator_source_sha256": "14f0f677b693de77bda7ed13709c3c208e9b600c88c3fb0ae25c96fac43c7369",
+        "parent_sha256": "9242d9f40e6a055bfaa40af38674f3fa5c7b71096cc2b789cc88ed1e63b5d122",
+        "edited_sha256": "6366910613813b72faf480641c7670501f1baefde398ba1822379ad767790273",
+        "name": "compiled_equals_imported",
+        "contract_sha256": "187e0406031d638f1ee631b252d11c3e29896dfe9c2cdaddd8f2b1ffafb01d57",
+        "backend": "Z3",
+        "backend_version": "5.3.3",
+        "domain_query": "sat",
+        "domain_query_sha256": "c94bf14b0871731165f61256281cfef5e8a5bf4b9a2fa2df9fca09b003a39e72",
+        "nonvacuous": true,
+        "domain_witness": {
+          "object_dx": "0",
+          "object_dy": "0",
+          "object_dz": "0",
+          "target_dx": "-3/38",
+          "target_dy": "-3/38",
+          "target_dz": "-3/38",
+          "eef_vx": "0",
+          "eef_vy": "0",
+          "eef_vz": "0",
+          "aperture": "0",
+          "left_object_contact": "0",
+          "right_object_contact": "0"
+        },
+        "violation_query": "unsat",
+        "violation_query_sha256": "98fb02cf6647ec004a477f57e428591830ff58f730a0bbf11421d9d6456da943",
+        "reason": "violation query UNSAT under declared paired real-graph semantics",
+        "wall_seconds": 0.017897742999593902
+      }
+    }
+  }
+}
