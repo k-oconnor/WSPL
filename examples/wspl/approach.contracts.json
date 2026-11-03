@@ -1,0 +1,343 @@
+{
+  "format": "wspl.io_contract_suite.v0",
+  "artifact_sha256": "9242d9f40e6a055bfaa40af38674f3fa5c7b71096cc2b789cc88ed1e63b5d122",
+  "contracts": [
+    {
+      "name": "actuator_bounds_and_open_gripper",
+      "assumptions": {
+        "op": "true"
+      },
+      "ensures": {
+        "op": "and",
+        "args": [
+          {
+            "op": "ge",
+            "left": {
+              "terms": {
+                "output.dx": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "-1",
+              "unit": "1"
+            }
+          },
+          {
+            "op": "le",
+            "left": {
+              "terms": {
+                "output.dx": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "1",
+              "unit": "1"
+            }
+          },
+          {
+            "op": "ge",
+            "left": {
+              "terms": {
+                "output.dy": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "-1",
+              "unit": "1"
+            }
+          },
+          {
+            "op": "le",
+            "left": {
+              "terms": {
+                "output.dy": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "1",
+              "unit": "1"
+            }
+          },
+          {
+            "op": "ge",
+            "left": {
+              "terms": {
+                "output.dz": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "-1",
+              "unit": "1"
+            }
+          },
+          {
+            "op": "le",
+            "left": {
+              "terms": {
+                "output.dz": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "1",
+              "unit": "1"
+            }
+          },
+          {
+            "op": "eq",
+            "left": {
+              "terms": {
+                "output.gripper": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "-1",
+              "unit": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "command_direction",
+      "assumptions": {
+        "op": "true"
+      },
+      "ensures": {
+        "op": "and",
+        "args": [
+          {
+            "op": "implies",
+            "args": [
+              {
+                "op": "ge",
+                "left": {
+                  "terms": {
+                    "input.target_dx": "1"
+                  },
+                  "bias": "0",
+                  "unit": "m"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "m"
+                }
+              },
+              {
+                "op": "ge",
+                "left": {
+                  "terms": {
+                    "output.dx": "1"
+                  },
+                  "bias": "0",
+                  "unit": "1"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "1"
+                }
+              }
+            ]
+          },
+          {
+            "op": "implies",
+            "args": [
+              {
+                "op": "le",
+                "left": {
+                  "terms": {
+                    "input.target_dx": "1"
+                  },
+                  "bias": "0",
+                  "unit": "m"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "m"
+                }
+              },
+              {
+                "op": "le",
+                "left": {
+                  "terms": {
+                    "output.dx": "1"
+                  },
+                  "bias": "0",
+                  "unit": "1"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "1"
+                }
+              }
+            ]
+          },
+          {
+            "op": "implies",
+            "args": [
+              {
+                "op": "ge",
+                "left": {
+                  "terms": {
+                    "input.target_dy": "1"
+                  },
+                  "bias": "0",
+                  "unit": "m"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "m"
+                }
+              },
+              {
+                "op": "ge",
+                "left": {
+                  "terms": {
+                    "output.dy": "1"
+                  },
+                  "bias": "0",
+                  "unit": "1"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "1"
+                }
+              }
+            ]
+          },
+          {
+            "op": "implies",
+            "args": [
+              {
+                "op": "le",
+                "left": {
+                  "terms": {
+                    "input.target_dy": "1"
+                  },
+                  "bias": "0",
+                  "unit": "m"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "m"
+                }
+              },
+              {
+                "op": "le",
+                "left": {
+                  "terms": {
+                    "output.dy": "1"
+                  },
+                  "bias": "0",
+                  "unit": "1"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "1"
+                }
+              }
+            ]
+          },
+          {
+            "op": "implies",
+            "args": [
+              {
+                "op": "ge",
+                "left": {
+                  "terms": {
+                    "input.target_dz": "1"
+                  },
+                  "bias": "0",
+                  "unit": "m"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "m"
+                }
+              },
+              {
+                "op": "ge",
+                "left": {
+                  "terms": {
+                    "output.dz": "1"
+                  },
+                  "bias": "0",
+                  "unit": "1"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "1"
+                }
+              }
+            ]
+          },
+          {
+            "op": "implies",
+            "args": [
+              {
+                "op": "le",
+                "left": {
+                  "terms": {
+                    "input.target_dz": "1"
+                  },
+                  "bias": "0",
+                  "unit": "m"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "m"
+                }
+              },
+              {
+                "op": "le",
+                "left": {
+                  "terms": {
+                    "output.dz": "1"
+                  },
+                  "bias": "0",
+                  "unit": "1"
+                },
+                "right": {
+                  "terms": {},
+                  "bias": "0",
+                  "unit": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

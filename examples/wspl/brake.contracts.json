@@ -1,0 +1,136 @@
+{
+  "format": "wspl.io_contract_suite.v0",
+  "artifact_sha256": "9533ee778e62050359c77d55a418d7d15716ae2e3bfce6ae83896f55fa2020c1",
+  "contracts": [
+    {
+      "name": "actuator_bound",
+      "assumptions": {
+        "op": "true"
+      },
+      "ensures": {
+        "op": "and",
+        "args": [
+          {
+            "op": "ge",
+            "left": {
+              "terms": {
+                "output.a": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "-1",
+              "unit": "1"
+            }
+          },
+          {
+            "op": "le",
+            "left": {
+              "terms": {
+                "output.a": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "1",
+              "unit": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "emergency_brake",
+      "assumptions": {
+        "op": "and",
+        "args": [
+          {
+            "op": "le",
+            "left": {
+              "terms": {
+                "input.d": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "1/5",
+              "unit": "1"
+            }
+          },
+          {
+            "op": "ge",
+            "left": {
+              "terms": {
+                "input.v": "1"
+              },
+              "bias": "0",
+              "unit": "1"
+            },
+            "right": {
+              "terms": {},
+              "bias": "2/5",
+              "unit": "1"
+            }
+          }
+        ]
+      },
+      "ensures": {
+        "op": "eq",
+        "left": {
+          "terms": {
+            "output.a": "1"
+          },
+          "bias": "0",
+          "unit": "1"
+        },
+        "right": {
+          "terms": {},
+          "bias": "-1",
+          "unit": "1"
+        }
+      }
+    },
+    {
+      "name": "clear_path",
+      "assumptions": {
+        "op": "ge",
+        "left": {
+          "terms": {
+            "input.d": "1",
+            "input.v": "-1/2"
+          },
+          "bias": "0",
+          "unit": "1"
+        },
+        "right": {
+          "terms": {},
+          "bias": "2/5",
+          "unit": "1"
+        }
+      },
+      "ensures": {
+        "op": "eq",
+        "left": {
+          "terms": {
+            "output.a": "1"
+          },
+          "bias": "0",
+          "unit": "1"
+        },
+        "right": {
+          "terms": {
+            "input.a_base": "1"
+          },
+          "bias": "0",
+          "unit": "1"
+        }
+      }
+    }
+  ]
+}

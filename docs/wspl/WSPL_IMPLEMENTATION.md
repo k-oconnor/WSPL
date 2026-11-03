@@ -8,8 +8,12 @@ Current progress: the scalar JSON IR/type reader and exact reference implement
 an initial part of G0. The fresh dense ReLU compiler/independent artifact loader
 in COMPILER.md implement an initial G1, including optional Torch emission when
 coefficients are exactly representable. Text parsing, broader types, independent
-universal verification and subsequent gates remain incomplete. These are
-engineering fixtures, not synthesis trials or universal contract proofs.
+source equivalence and subsequent gates remain incomplete. VERIFICATION.md now
+describes initial G2 numeric I/O contract checks for serialized real graphs, with
+non-vacuity and exact counterexample replay. INTERVENTION_EVIDENCE.md separately
+implements empirical opaque-network activation probes; these never become proof
+statuses. The known-program solver checks are not scientific synthesis trials,
+IEEE execution proofs or physical guarantees.
 
 ## G0: typed core and independent interpreter
 
@@ -48,9 +52,10 @@ RMV fixed-capacity compilation begins with the representable subset only.
 
 ## G2: independent verifier spike
 
-First evaluate exact rational enumeration for bounded Boolean inputs and an SMT
-QF_LRA encoding for small real PWA graphs. Z3 is a candidate, not a selected or
-validated dependency; its mathematical real sort is distinct from IEEE floats
+The initial verifier now uses Z3/QF_LRA for small serialized ReLU graphs, with
+the engineering checks and limits in VERIFICATION.md. Exact Boolean enumeration
+and full source equivalence remain separate extensions. Z3's mathematical real
+sort is distinct from IEEE floats
 ([official arithmetic guide](https://microsoft.github.io/z3guide/docs/theories/Arithmetic/)).
 Do not infer deployed FP32/FP64 guarantees from real-arithmetic UNSAT.
 

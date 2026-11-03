@@ -196,7 +196,7 @@
   "current_readiness": {
     "wspl_frontend": false,
     "wspl_compiler": true,
-    "wspl_universal_verifier": false,
+    "wspl_universal_verifier": true,
     "blinded_proposer_harness": false,
     "physical_contact_hierarchy": false,
     "typed_scalar_json_ir": true,
@@ -204,8 +204,35 @@
     "textual_wspl_parser": false,
     "compiler_scope": "scalar JSON to fresh dense ReLU MLP only",
     "rational_weight_artifact_loader": true,
-    "exact_coefficient_torch_emission": true
+    "exact_coefficient_torch_emission": true,
+    "verifier_scope": "small serialized ReLU graph numeric I/O contracts under rational real semantics; not source equivalence, IEEE or robot proof",
+    "opaque_nn_intervention_logger": true,
+    "intervention_scope": "empirical tensor-site intervention on declared stateless/eval PyTorch adapters; no proof/semantic/world-causal claim"
   },
   "scope_note": "Design only. No API calls, training, new scientific runs, models installed, task data sealed or universal results produced.",
-  "implementation_progress": "Initial G0 scalar reference and G1 fresh MLP compilation/artifact prototypes; universal equivalence/contracts, fixed allocation, full text front end and blinded harness remain pending."
+  "implementation_progress": "Initial G0 scalar reference, G1 fresh MLP compilation/artifact and G2 scoped real I/O verifier prototypes; empirical opaque-network activation logging separate. Source equivalence, IEEE proofs, fixed allocation, learned imports, full text and blinded harness pending.",
+  "evidence_paths": [
+    {
+      "id": "real_graph_verification",
+      "statuses": [
+        "PROVED",
+        "REFUTED",
+        "UNKNOWN",
+        "INVALID"
+      ],
+      "scope": "bounded real I/O contracts for supported serialized ReLU MLPs"
+    },
+    {
+      "id": "opaque_nn_interventions",
+      "statuses": [
+        "OBSERVED_EFFECT",
+        "NO_OBSERVED_EFFECT",
+        "INVALID_CONTROL",
+        "INVALID"
+      ],
+      "scope": "sampled computational effects with explicit controls and replay",
+      "counts_as_universal_proof": false,
+      "scientific_extension_status": "not_preregistered_or_runnable_comparison"
+    }
+  ]
 }

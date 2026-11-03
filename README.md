@@ -17,7 +17,9 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | --- | --- |
 | Typed scalar JSON IR and exact rational interpreter | Implemented; engineering examples and negative checks |
 | Scalar IR to ReLU MLP weights, source map and independent loader | Initial implementation; fresh architecture only |
-| Universal contract verifier / numerical execution proof | Planned |
+| Small real-graph I/O contract verifier | Initial Z3 prototype; non-vacuity and rational witness replay |
+| Numerical execution proof / source equivalence verifier | Planned |
+| Opaque-network intervention evidence | Paired activation probes, controls, replay and hash-chained empirical logs |
 | Blinded LLM authoring and counterexample-feedback harness | Planned |
 | Small-alphabet LTLf compiler and strong finite-model planner | Implemented for supplied symbolic effect models |
 | Hierarchical task expansion | Implemented at a supplied macro-summary cut; no physical primitive executor |
@@ -26,8 +28,8 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | Diverse robot tasks | 16 inspected specifications over 7 audited scene assets; contact/obstacle integration pending |
 
 The WSPL text syntax in the proposal is not implemented. The scalar JSON IR now
-compiles neural weights, but there is no universal contract verifier or blinded
-controller-synthesis harness. The available compiler command is documented below;
+compiles neural weights and supports scoped real-graph contract checks. There is
+no numerical execution proof or blinded controller-synthesis harness. The available compiler command is documented below;
 the proposal's general `wspl` command suite remains planned.
 
 ## Try the exact scalar reference
@@ -72,6 +74,21 @@ into a 12 -> 6 -> 6 -> 4 network, with 148 parameters. Generated examples and th
 independent loader are described in [the compiler notes](docs/wspl/COMPILER.md).
 Optional Torch emission checks exact coefficient representation; floating-point
 execution and universal contracts are not certified by compilation.
+
+## Check contracts and investigate opaque networks
+
+With `python -m pip install -e ".[dev,verify]"`, the initial verifier checks
+serialized ReLU graphs using rational real arithmetic. The three BrakePatch
+contracts and the approach bounds/direction contracts are solver-backed PROVED;
+broken gain/input-order fixtures produce independently replayed counterexamples.
+This does not establish source equivalence, IEEE execution or physical safety.
+See [verification scope and examples](docs/wspl/VERIFICATION.md).
+
+For networks outside that verifier, [intervention logging](docs/wspl/INTERVENTION_EVIDENCE.md)
+records controlled activation replacements with baseline, no-op and repeat checks.
+It supports tensor-valued PyTorch eval/stateless adapters, records identity/RNG
+and output effects, and can replay/chain empirical evidence. Observed computational
+effects are not semantic concepts, real-world causes or universal guarantees.
 
 ## Research program
 
@@ -138,8 +155,8 @@ An existing BDDL scene is not a working Skillforge task.
 python -m unittest discover -s tests -v
 ```
 
-The current local suite has 132 passing checks. Optional neural/adapter checks
-skip when PyTorch or NumPy is absent; full local results used a separate CPU
+The current local suite has 152 passing checks. Optional neural/adapter checks
+skip when PyTorch or NumPy is absent, and solver checks skip without Z3; full local results used a separate CPU
 research environment. No model download, simulator rollout, scientific training
 run or LLM API call occurs in the unit suite. A single optimizer transaction is
 used only as a checkpoint/gradient unit fixture.

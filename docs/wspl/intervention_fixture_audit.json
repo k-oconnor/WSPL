@@ -1,0 +1,53 @@
+{
+  "scope": "known-answer engineering fixture; no trained model, population effect or physical/semantic claim",
+  "model": "Linear identity 2x2 -> Tanh -> Linear readout [1,0], no biases",
+  "input_values": [
+    [
+      1.0,
+      2.0
+    ]
+  ],
+  "records": [
+    {
+      "feature": 0,
+      "status": "OBSERVED_EFFECT",
+      "controls": {
+        "noop_matches": true,
+        "repeat_matches": true
+      },
+      "effect": {
+        "max_abs": 0.7615941762924194,
+        "mean_abs": 0.7615941762924194
+      },
+      "forward_calls": 4
+    },
+    {
+      "feature": 1,
+      "status": "NO_OBSERVED_EFFECT",
+      "controls": {
+        "noop_matches": true,
+        "repeat_matches": true
+      },
+      "effect": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      },
+      "forward_calls": 4
+    }
+  ],
+  "log": "examples/wspl/intervention_fixture.jsonl",
+  "head_sha256": "d97a505bb3a00c30375d7cac3931f8791621c949e8968f8cbd49360263220fc4",
+  "exact_replay": true,
+  "total_fixture_forward_calls": 12,
+  "instrumentation": {
+    "version": "wspl.interventions.v0",
+    "source_sha256": "64326c7246cb9462da282f094c82ed2350c5717624acfb30f87c64024e89c01c",
+    "protocol": [
+      "baseline",
+      "noop",
+      "intervention",
+      "repeat"
+    ],
+    "state_policy": "registered-state integrity guard; no state rollback"
+  }
+}

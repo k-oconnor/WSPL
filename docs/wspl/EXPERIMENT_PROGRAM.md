@@ -31,6 +31,12 @@ example does not establish any of them. Equality with ordinary code, failure to
 handle independently trained networks, excessive solver cost, or useful proofs
 only for trivial controllers are reportable negative outcomes.
 
+November 3 implementation update: initial serialized real-graph I/O checks and
+empirical opaque-network intervention logging now exist (VERIFICATION.md and
+INTERVENTION_EVIDENCE.md). Intervention records are not universal proof coverage.
+The six-arm scientific harness, data split, budget/model choices and preregistration
+remain pending; no scientific study is authorized by these engineering fixtures.
+
 If claiming interpretability/editability, add a controlled debugging assessment:
 an independent editor receives matched bugs and preservation goals, with source
 and source-map visibility varied explicitly. Measure successful correction,

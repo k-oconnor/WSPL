@@ -7,9 +7,11 @@ matrices without importing the compiler or WSPL source interpreter. Optional
 Torch emission produces an ordinary `nn.Sequential` of Linear/ReLU layers.
 
 This is an initial G1 implementation. Text syntax, fixed-architecture editing,
-RMV allocation, universal equivalence/contract verification, error enclosures,
+RMV allocation, universal source equivalence, error enclosures,
 learned-model imports and the scientific proposer harness remain incomplete.
 Compilation and finite cross-checks do not establish a solver-backed certificate.
+The separate initial I/O verifier in VERIFICATION.md now checks selected contracts
+on these serialized graphs; it does not prove source equivalence or IEEE execution.
 
 ## What the compiler does
 
@@ -117,7 +119,8 @@ serialization, optional Torch coefficient checks and FP32/FP64 finite probe
 agreement. Global Torch RNG is preserved when emitting the deterministic network.
 These are engineering checks, not a scientific benchmark or universal proof.
 
-Next: G2 independently encode the serialized graph and source/contract semantics,
-test non-vacuity, validate counterexamples, and scope PROVED/REFUTED/UNKNOWN/INVALID
-results to mathematical real graphs. Only then proceed to learned-controller
-imports and the blinded cross-domain harness.
+Initial G2 contract checking is now in VERIFICATION.md: serialized graph encoding,
+non-vacuity, validated counterexamples and scoped real-graph statuses. Independent
+source equivalence and numerical execution proofs remain pending, followed by
+learned-controller imports and the blinded cross-domain harness. Empirical opaque
+network interventions are a separate evidence path, not a compiler proof.
