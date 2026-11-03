@@ -1,5 +1,6 @@
 """Inspected development fixtures; no scientific proposer trials."""
 from fractions import Fraction as Q
+import importlib.util
 import json
 from pathlib import Path
 import sys
@@ -12,6 +13,7 @@ from skillforge.authoring_study import (
     grade, mechanism, program, reference_program, ref, target,
 )
 from skillforge.wspl_core import ScalarProgram
+from skillforge.wspl_artifact import ReLUArtifact
 
 USAGE = dict(input_tokens=10, output_tokens=10, elapsed_seconds=0.1, cost=0.)
 
@@ -113,6 +115,52 @@ class AuthoringStudyTests(unittest.TestCase):
         self.assertEqual(grade(task,build_candidate('weights',d),cases())['status'],'REFUTED')
         d=sparse(a);d['layers'][0]['rows'][0]={'4':'1'}
         with self.assertRaises(ValueError):build_candidate('weights',d)
+
+    @unittest.skipUnless(importlib.util.find_spec('z3'), 'optional Z3 unavailable')
+    def test_final_equivalence_is_separate_from_search_feedback_and_task_score(self):
+        for arm in ('wspl_off','code_on'):
+            trial=self.trial(arm)
+            candidate=expression(trial.task) if arm.startswith('code_') else reference_program(trial.task)
+            feedback=trial.submit(candidate,USAGE)
+            self.assertNotIn('source_equivalence',feedback)
+            result=trial.finalize()
+            self.assertTrue(result['qualification'])
+            self.assertEqual(result['source_equivalence']['status'],'EQUIVALENT')
+        trial=self.trial('weights_off')
+        a=build_candidate('wspl',reference_program(trial.task))
+        trial.submit(sparse(a),USAGE)
+        self.assertEqual(trial.finalize()['source_equivalence']['status'],'NOT_APPLICABLE')
+
+    @unittest.skipUnless(importlib.util.find_spec('z3'), 'optional Z3 unavailable')
+    def test_final_equivalence_checks_actual_selected_weights(self):
+        trial=self.trial()
+        trial.submit(reference_program(trial.task),USAGE)
+        changed=trial.artifacts[0].to_dict()
+        changed['layers'][-1]['bias']=['1/2']
+        trial.artifacts[0]=ReLUArtifact(changed)
+        result=trial.finalize()
+        self.assertFalse(result['qualification'])
+        self.assertEqual(result['source_equivalence']['status'],'DIFFERENT')
+
+    @unittest.skipUnless(importlib.util.find_spec('z3'), 'optional Z3 unavailable')
+    def test_boolean_task_success_does_not_establish_continuous_source_equivalence(self):
+        trial=self.trial()
+        trial.submit(reference_program(trial.task),USAGE)
+        changed=trial.artifacts[0].to_dict()
+        # Inject a tent in unused channels: ReLU(2p)-2ReLU(2p-1)+ReLU(2p-2).
+        # It vanishes at every Boolean power value but is positive at p=1/2.
+        for channel,bias in zip((9,10,11),('0','-1','-2')):
+            changed['layers'][0]['weights'][channel]=['0','0','2','0']
+            changed['layers'][0]['bias'][channel]=bias
+            for layer in changed['layers'][1:4]:
+                layer['weights'][channel]=['1' if i==channel else '0' for i in range(12)]
+                layer['bias'][channel]='0'
+        changed['layers'][-1]['weights'][0][9:12]=['1','-2','1']
+        trial.artifacts[0]=ReLUArtifact(changed)
+        result=trial.finalize()
+        self.assertTrue(result['qualification'])
+        self.assertEqual(result['verification']['correct'],16)
+        self.assertEqual(result['source_equivalence']['status'],'DIFFERENT')
 
 
 if __name__=='__main__':unittest.main()

@@ -12,12 +12,34 @@ confirmation or establish commercial savings.
 | Study | Question | First domain | Primary outcome | Readiness |
 | --- | --- | --- | --- | --- |
 | S1 | Does the interface help implement a supplied mechanism? | Boolean switch and door transition rule | Final fixed-size graph exactly matches every Boolean input | Kernel, request exporter and transcript grader implemented; model, task freeze and live controller pending |
-| S2 | Can a learned policy be repaired while preserving unaffected behavior? | Small PWA dynamical controller | Required repair plus preservation plus empirical rollout thresholds | Learned import, patch composition and relational verification needed |
+| S2 | Can a learned policy be repaired while preserving unaffected behavior? | Small PWA dynamical controller | Required repair plus preservation plus empirical rollout thresholds | Frozen import and relational checks implemented; learned baseline, patch composition and transactions needed |
 | S3 | Do frozen modules support new compositions and reject incompatible ones? | Finite causal mechanisms, then dynamics | Correct frozen composition and incompatible-contract detection | General composition checker and independent task split needed |
 
 Robotics follows successful supported-domain tests. The prior standoff pilot and
 sixteen task specifications remain engineering background, not held-out trials
 in these studies. No grasp, obstacle or physical hierarchy capability is assumed.
+
+## Initial claims and evidence requirements
+
+| Claim | Required evidence | What the first screen can establish |
+| --- | --- | --- |
+| C1 A submitted supported scalar program and its stored neural weights compute the same function | Final selected source/artifact pair returns EQUIVALENT over the declared real input box, with source/graph/checker hashes and solver scope | Per-instance rational-real source fidelity, not correctness of the compiler for every program or textual parsing equivalence |
+| C2 An independent LLM can author neural weights that implement a supplied mechanism | Frozen model/prompt/response provenance, every attempt retained, final graph correct on the complete Boolean domain under budget | Bounded authoring feasibility and measured success/cost on these task instances |
+| C3 Representation and verification feedback change authoring outcomes | Six matched arms, independent trial state, paired task/draw comparisons and full cost/denominator accounting | Descriptive feasibility contrasts; two task instances cannot support a broad superiority claim |
+
+These claims are distinct. C1 is a mathematical per-instance result under a
+trusted encoder/solver; C2 and C3 require actual independently collected proposer
+trials. Engineering fixtures and this assistant's inspected constructions cannot
+stand in for those trials. The text parser is available, but this version's
+WSPL arm remains scalar JSON IR: it does not measure the text language's usability.
+Introduce a text arm as a separately versioned comparison before collecting data
+if the desired claim concerns that syntax.
+
+S2 repair of a genuinely learned parent and S3 composition remain subsequent
+claims. Mo's import fixtures establish lossless tensor import and scoped
+relational queries, not learned-model repair or a physical controller benefit.
+Runtime safety, causal discovery, unrestricted-code superiority and commercial
+time savings are outside this initial screen.
 
 ## S1 hypotheses and comparison
 
@@ -83,6 +105,20 @@ Final qualification is full-specification satisfaction, not an estimate of
 generalization to a hidden Boolean distribution. No claim covers real-valued
 interpolations, IEEE arithmetic, closed-loop behavior or semantic sensor grounding.
 The finite-domain PROVED status is explicitly distinct from Z3 real-graph proof.
+
+For the selected code/WSPL source, final grading now also runs the independent
+source-to-stored-weight equivalence checker over the whole declared real input
+box, with a five-second query budget. It is final-only and absent from proposer
+feedback. Direct weights report NOT_APPLICABLE because there is no submitted
+scalar source. Missing Z3 or a timeout remains UNKNOWN, never EQUIVALENT.
+This diagnostic is separate from the common 16/16 task endpoint; it cannot confer
+extra task success on source-based arms. Report task qualification and source
+equivalence jointly and separately. A compiler mismatch needs investigation and
+a versioned repair, not quiet removal of the affected trial.
+
+A regression injects a ReLU tent between the Boolean power values: the modified
+graph still passes all 16 Boolean cases but fails continuous source equivalence.
+This distinguishes the two evidence requirements directly.
 
 ## S1 budgets selection and cost records
 

@@ -282,10 +282,20 @@ class AuthoringTrial:
                       candidates=len(self.ledger), qualification=False)
         if artifact is None:
             result['verification'] = dict(status='INVALID', reason='no valid selected candidate')
+            result['source_equivalence'] = dict(status='NOT_APPLICABLE', reason='no selected valid artifact')
         else:
             result['verification'] = grade(self.task, artifact, cases())
             result['non_development_inputs'] = grade(self.task, artifact, [x for x in cases() if x not in self.development])
             result['qualification'] = result['verification']['status'] == 'PROVED' and self.tokens <= self.max_tokens
             result['artifact_sha256'] = artifact.sha256
+            if self.arm.startswith('weights_'):
+                result['source_equivalence'] = dict(status='NOT_APPLICABLE', reason='direct weights have no submitted scalar source')
+            else:
+                # Final-only diagnostic: never expose this through search feedback.
+                # Graph task correctness remains the common primary endpoint.
+                from .wspl_equiv import check_equivalence
+                candidate = self.ledger[candidate_id]['candidate']
+                source = parse_code(candidate) if self.arm.startswith('code_') else candidate
+                result['source_equivalence'] = check_equivalence(source, artifact, timeout_ms=5000)
         result['evaluation_seconds_before_final'] = sum(e['evaluator_seconds'] for e in self.ledger)
         return result

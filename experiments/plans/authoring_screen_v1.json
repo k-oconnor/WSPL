@@ -11,15 +11,33 @@
   "task_seeds": null,
   "task_access_record": null,
   "draws": 3,
-  "arms": ["weights_off", "weights_on", "code_off", "code_on", "wspl_off", "wspl_on"],
-  "widths": [4, 12, 12, 12, 12, 1],
+  "arms": [
+    "weights_off",
+    "weights_on",
+    "code_off",
+    "code_on",
+    "wspl_off",
+    "wspl_on"
+  ],
+  "widths": [
+    4,
+    12,
+    12,
+    12,
+    12,
+    1
+  ],
   "parameters": 541,
   "mechanism": "two distinct two-literal AND clauses joined by OR; four Boolean supplied inputs",
   "final_domain_size": 16,
   "development_inputs_per_candidate": 4,
   "withheld_input_count": 12,
   "qualification": "exact rational equality on all 16 Boolean assignments; valid fixed architecture; within budget",
-  "caps_per_trial": {"candidates": 8, "total_input_plus_output_tokens": 65536, "candidate_bytes": 24000},
+  "caps_per_trial": {
+    "candidates": 8,
+    "total_input_plus_output_tokens": 65536,
+    "candidate_bytes": 24000
+  },
   "max_proposer_turns": 288,
   "max_proposer_tokens": 2359296,
   "monetary_cap": null,
@@ -35,5 +53,35 @@
     "isolated provider controller, actual prompt/response and billing receipts, pre-call budget enforcement",
     "source-approved candidate collection and grader manifests",
     "freeze prompt/documentation snapshots and execution order before calls"
+  ],
+  "initial_claims": {
+    "C1": {
+      "claim": "per-instance scalar source to stored-weight rational-real equivalence",
+      "endpoint": "final source_equivalence.status == EQUIVALENT",
+      "scope": "code and scalar JSON WSPL; direct weights NOT_APPLICABLE; no text-parser or IEEE equivalence"
+    },
+    "C2": {
+      "claim": "bounded independent LLM authoring feasibility",
+      "endpoint": "all 16 Boolean assignments correct, fixed target, within budgets, complete proposer provenance"
+    },
+    "C3": {
+      "claim": "representation and feedback effects",
+      "endpoint": "paired descriptive qualification/cost contrasts; confirmation needs more independent tasks"
+    }
+  },
+  "final_source_diagnostic": {
+    "method": "wspl_equiv.check_equivalence",
+    "timeout_ms": 5000,
+    "search_feedback": false,
+    "changes_common_primary_endpoint": false
+  },
+  "excluded_initial_claims": [
+    "compiler correct for all programs",
+    "text WSPL usability advantage",
+    "general superiority over unrestricted code or scripted weights",
+    "learned-parent repair",
+    "physical safety",
+    "causal discovery",
+    "commercial savings"
   ]
 }

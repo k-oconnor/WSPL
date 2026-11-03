@@ -88,3 +88,21 @@ sparse-matrix/single-expression front ends do not establish superiority over
 unrestricted scripts/code. Model/sampling/money/task freeze and isolated live
 collection with provider receipts/pre-call accounting remain pending. No new
 manifest is approved, no source registry entry added, no experiment launched.
+
+
+## Initial claim readiness after G3a (November 3)
+
+Reviewed Mo's merged parser, equivalence, frozen-MLP import and relational checks.
+No learned parent/patch transaction or S2 result is implied. The formal protocol
+now maps C1 per-instance rational source fidelity, C2 bounded independent LLM
+weight-authoring feasibility and C3 representation/feedback contrasts to explicit
+evidence and exclusions. S1 retains its scalar JSON WSPL arm and 36-trial pilot;
+it cannot establish text-language usability or broad superiority. Final selected
+code/WSPL sources now receive Mo's independent equivalence diagnostic, never in
+search feedback and separately from common finite task qualification. Three new
+regressions include a ReLU tent that passes every Boolean task case while failing
+continuous source equivalence. Full merged suite:225 tests pass; source receipt
+updated. Provider-neutral preparation preference persists. No proposer calls,
+training, robotics, source approval or scientific launch occurred. File-based
+collection controls, model/budget, fresh task/access/prompt freeze and exact source
+approval remain launch prerequisites.

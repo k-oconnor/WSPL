@@ -1,5 +1,14 @@
 # Working context
 
+Initial-claim readiness update: merged frozen-tensor import and relational checks
+are G3a engineering support, not a learned S2 baseline. S1 final grading now records
+Mo's source-to-weight equivalence diagnostic for selected code/JSON-WSPL sources,
+separately from the shared finite Boolean task score and never in search feedback.
+FORMAL_EXPERIMENTS_V1.md maps C1 source fidelity, C2 bounded LLM authoring and C3
+representation/feedback effects to their evidence. The 36-trial screen remains
+nonconfirmatory and unlaunched. Model/budget selection and isolated file-based
+collection are still prerequisites; no provider integration was selected.
+
 Kevin explicitly selected provider-neutral file interface first for the S1
 authoring screen. Keep public request export and transcript grading independent
 of a provider; choose model and budget before launch. This selects a preparation
@@ -26,7 +35,7 @@ no outreach or scientific launch is authorized by the plan.
 
 Kevin requested this new repo/spec on November 2, 2026 and accepted Skillforge as a working name to revisit later. The research idea is an LLM authoring small neural/RMV action implementations and temporal task programs, with validation, persistent reuse, frozen composition and local repair.
 
-Current organizing direction: Kevin endorsed WSPL, a typed neural weight-space programming language for LLM-authored executable modules, and a formal cross-domain experimental program. The three studies are fresh authoring, repair of independently trained artifacts and frozen composition; domains are discrete causal worlds, low-dimensional dynamics and robot manipulation. All use direct weights/ordinary code/WSPL with and without verifier feedback, with shared final verification. The structured plan is an unregistered design draft, not launchable or approved for model expenditure. The scalar JSON IR/exact interpreter implement partial G0, and fresh dense ReLU compilation with independent rational artifact loading implements an initial G1. All 203 engineering checks pass. Initial Z3 real-graph I/O verification, rational source-to-artifact equivalence, a text front end for the proposal's module form and empirical opaque-NN activation intervention logging now exist. General WSPL syntax, fixed allocation, IEEE/closed-loop proof and blinded harness remain pending. The private archive is https://github.com/k-oconnor/WSPL; local Skillforge is its robotics testbed. See docs/wspl/EXPERIMENT_PROGRAM.md and SCALAR_CORE.md. Earlier positioning evidence remains scoped as below.
+Current organizing direction: Kevin endorsed WSPL, a typed neural weight-space programming language for LLM-authored executable modules, and a formal cross-domain experimental program. The three studies are fresh authoring, repair of independently trained artifacts and frozen composition; domains are discrete causal worlds, low-dimensional dynamics and robot manipulation. All use direct weights/ordinary code/WSPL with and without verifier feedback, with shared final verification. The structured plan is an unregistered design draft, not launchable or approved for model expenditure. The scalar JSON IR/exact interpreter implement partial G0, and fresh dense ReLU compilation with independent rational artifact loading implements an initial G1. All 225 engineering checks pass. Initial Z3 real-graph I/O verification, rational source-to-artifact equivalence, a text front end for the proposal's module form and empirical opaque-NN activation intervention logging now exist. General WSPL syntax, fixed allocation, IEEE/closed-loop proof and blinded harness remain pending. The private archive is https://github.com/k-oconnor/WSPL; local Skillforge is its robotics testbed. See docs/wspl/EXPERIMENT_PROGRAM.md and SCALAR_CORE.md. Earlier positioning evidence remains scoped as below.
 
 The task is broader than the preceding Gravemind toy-world program tests. Those were fixed compositions of Boolean state-transition predictors; they did not control a robot, synthesize a plan or evaluate blinded LLM weight generation. Their summaries/plot are copied with provenance, not relabelled as this project's results.
 
