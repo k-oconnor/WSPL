@@ -149,3 +149,10 @@ key fallback or approved dollar/output-token cap. CLI transport retries may
 occur. Source/executable/dependencies/prompt/config bindings are pinned.
 Read docs/wspl/ASTRA_BREAKOUT_NATIVE_V1.md. No model request, source registration
 or scientific launch has occurred. Exact manifest approval remains required.
+
+
+## Astra native authoring startup failure and prepared replacement (November 3)
+
+User explicitly approved manifest07eeeeda72b5bfc91ecb07ba94c4ee0593fcc3caee50577dde2542f2c87f9f33; registered and launched in isolated Skillforge-astra-breakout-v1,PID24432 at21:05:42UTC. Stopped after CLI emitted an unstable-feature warning as an error item. Result incomplete after20.094s: one attempted collection,two unattempted,zero completed replies or evaluated policies. Token/backend usage unknown. Workers exited; receipt complete denotes controlled exit, not a completed study. Preserve original source/resources/logs. Compact archive docs/wspl/astra_native_v1_startup_failure.json.
+
+Prepared replacement suppresses that startup warning using documented configuration, explicitly passes --model gpt-6-astra, and rejects tool/error events while streaming. Original design/budgets unchanged; three replacement invocations would be additional to the aborted invocation. All274 primary checks pass (one native skip covered by25 focused checks). Offline actual-prompt preflight passes; no additional model calls. See docs/wspl/ASTRA_BREAKOUT_NATIVE_V2.md. New exact source approval is required; no replacement registered or launched.

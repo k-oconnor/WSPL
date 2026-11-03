@@ -19,6 +19,7 @@ def settings(catalog, instructions):
         'approval_policy="never"', 'sandbox_mode="read-only"', 'web_search="disabled"',
         'forced_login_method="chatgpt"', 'model_provider="openai"',
         'project_doc_max_bytes=0', 'skills.include_instructions=false',
+        'suppress_unstable_features_warning=true',
         'skills.bundled.enabled=false', 'mcp_servers={}', 'agents.enabled=false',
         'features.skip_host_skill_discovery=true',
         'features.unbounded_connection_retries=false',
@@ -37,15 +38,24 @@ def environment():
 def command(cli, catalog, instructions, workspace, answer):
     args=[str(cli),'--no-daemon','exec','--strict-config','--ignore-user-config',
           '--ignore-rules','--ephemeral','--skip-git-repo-check','--json','--color','never',
+          '--model','gpt-6-astra',
           '-C',str(workspace),'--output-last-message',str(answer)]
     for setting in settings(catalog,instructions):args+=['-c',setting]
     return args+['-']
+
+
+def check_event(e):
+    kind=e.get('type')
+    if kind in ('thread.started','turn.started','turn.completed'):return
+    if kind in ('item.started','item.updated','item.completed') and e.get('item',{}).get('type') in ('reasoning','agent_message'):return
+    raise ValueError('tool, error or unknown event: '+str(kind)+'/'+str(e.get('item',{}).get('type')))
 
 
 def audit_events(events, answer):
     """Reject tool use, extra turns, failures and unknown event variants."""
     starts=[];completed=[];threads=[];messages=[]
     for e in events:
+        check_event(e)
         kind=e.get('type')
         if kind=='thread.started':threads.append(e['thread_id'])
         elif kind=='turn.started':starts.append(e)
@@ -111,11 +121,18 @@ def collect(cli, catalog, instructions, folder, prompt, seconds, should_stop):
     (folder/'command.json').write_text(json.dumps(args,indent=2)+'\n',encoding='utf-8')
     (folder/'prompt.txt').write_text(prompt,encoding='utf-8')
     started=time.monotonic();reason=None
+    offset=0;pending=b''
     with (folder/'events.jsonl').open('wb') as out, (folder/'stderr.log').open('wb') as err:
         proc=subprocess.Popen(args,stdin=subprocess.PIPE,stdout=out,stderr=err,env=environment())
         try:
             proc.stdin.write(prompt.encode('utf-8'));proc.stdin.close()
             while proc.poll() is None:
+                with (folder/'events.jsonl').open('rb') as event_stream:
+                    event_stream.seek(offset);chunk=event_stream.read();offset=event_stream.tell()
+                pending+=chunk
+                while b'\n' in pending:
+                    line,pending=pending.split(b'\n',1)
+                    if line.strip():check_event(json.loads(line))
                 if should_stop():reason='user_stop_or_study_guard';break
                 if time.monotonic()-started>seconds:reason='call_wall_guard';break
                 time.sleep(.2)

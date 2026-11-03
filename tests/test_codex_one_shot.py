@@ -30,6 +30,8 @@ class CollectionTests(unittest.TestCase):
         self.assertIn('--ignore-user-config',c);self.assertIn('--ignore-rules',c)
         self.assertIn('--ephemeral',c);self.assertIn('forced_login_method="chatgpt"',c)
         self.assertIn('features.shell_tool=false',c)
+        self.assertEqual(c[c.index('--model')+1],'gpt-6-astra')
+        self.assertIn('suppress_unstable_features_warning=true',c)
         with patch.dict('os.environ',{'CODEX_THREAD_ID':'parent','OPENAI_API_KEY':'fake'}):
             self.assertNotIn('CODEX_THREAD_ID',environment());self.assertNotIn('OPENAI_API_KEY',environment())
 
@@ -62,3 +64,13 @@ class CollectionTests(unittest.TestCase):
         with self.assertRaises(ValueError):audit_preview(data+[msg('developer','reference answer')],'task')
         data[0]['tools'][0]['tools'].append(dict(name='shell'))
         with self.assertRaises(ValueError):audit_preview(data,'task')
+
+    def test_streaming_startup_error_aborts_before_waiting_for_completion(self):
+        import sys,time
+        with tempfile.TemporaryDirectory() as tmp:
+            code='import json,time;print(json.dumps({"type":"item.completed","item":{"type":"error","message":"startup warning"}}),flush=True);time.sleep(10)'
+            started=time.monotonic()
+            with patch('skillforge.codex_one_shot.preflight'),patch('skillforge.codex_one_shot.command',return_value=[sys.executable,'-c',code]):
+                with self.assertRaisesRegex(ValueError,'error'):
+                    collect('unused','catalog','instructions',Path(tmp)/'out','task',10,lambda:False)
+            self.assertLess(time.monotonic()-started,5)

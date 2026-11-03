@@ -1,0 +1,43 @@
+{
+  "constructor": {
+    "module": "skillforge.native_weight_edits",
+    "source": "src/skillforge/native_weight_edits.py",
+    "symbol": "NativeEditedPolicy"
+  },
+  "constructor_kwargs": {},
+  "model_id": "astra-breakout-native-v2",
+  "runner": {
+    "module": "run_astra_breakout",
+    "source": "experiments/run_astra_breakout.py",
+    "symbol": "run"
+  },
+  "runner_config": {
+    "bound_files": {
+      "artifacts/local_paths.json": "29ea7239bc82e9022068ea7711c83f35459bf6c91d41d3dc8562532d9dfe586f",
+      "data/astra_native_v1/catalog_frozen.json": "7cddcfcdc4aea65d3e89ed35084828caaf53901a44621d3957a482d5b59e3b91",
+      "data/astra_native_v1/instructions.md": "50790093946c1c6a60920aade678903b95cd8e76625f0b89fc418754fee5bbee",
+      "data/csail_breakout_reference_v1/exp5_write_from_scratch/runs/breakout/message.txt": "766ee251d59a7893ed86d5eaea99ddb847529ab2092afc69f90f55fb0a22e876",
+      "docs/wspl/ASTRA_BREAKOUT_NATIVE_V1.md": "af8f8d602d3b2f5316dd00ea9ec10d4cd46f04a795f3ccda4943cd417a192302",
+      "docs/wspl/ASTRA_BREAKOUT_NATIVE_V2.md": "9a9b16ed8109ed80543b5a76e41c5b0f50d008bf215f3efc08feda29c72f80d3",
+      "requirements/csail-breakout-replay.txt": "fc0675d8b98b6d0351d0b0556dda8f9c6f9a22d7363d33baa2991ea66315f4cf"
+    },
+    "call_guard_seconds": 1200,
+    "catalog": "data/astra_native_v1/catalog_frozen.json",
+    "cli_sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+    "dependencies_sha256": "8451e58ac3fb1757cc2ee5285cd84685f7a6dfff3d802f85df0b836795b73ade",
+    "draws": 3,
+    "episodes": 1000,
+    "instructions": "data/astra_native_v1/instructions.md",
+    "local_paths": "artifacts/local_paths.json",
+    "max_steps": 10000,
+    "prompt": "data/csail_breakout_reference_v1/exp5_write_from_scratch/runs/breakout/message.txt",
+    "wall_guard_seconds": 7200
+  },
+  "schema": 1,
+  "source_roots": [
+    "src",
+    "experiments",
+    "tests",
+    "tools"
+  ]
+}

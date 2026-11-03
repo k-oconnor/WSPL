@@ -1,0 +1,42 @@
+{
+  "scope": "controlled startup failure; not a policy result",
+  "results": {
+    "status": "incomplete",
+    "trials": [
+      {
+        "draw": 0,
+        "status": "collection_failed",
+        "summary": null,
+        "error": "RuntimeError: user_stop_or_study_guard"
+      },
+      {
+        "draw": 1,
+        "status": "not_attempted",
+        "summary": null
+      },
+      {
+        "draw": 2,
+        "status": "not_attempted",
+        "summary": null
+      }
+    ],
+    "source_manifest_sha256": "07eeeeda72b5bfc91ecb07ba94c4ee0593fcc3caee50577dde2542f2c87f9f33",
+    "active_seconds": 20.094000000040978,
+    "planned_draws": 3,
+    "attempted_draws": 1,
+    "completed_evaluations": 0,
+    "scope": "exploratory fresh native tanh authoring, no WSPL superiority or formal proof",
+    "usage": "CLI-reported tokens; ChatGPT-backed usage, no enforceable dollar/output-token cap",
+    "gpu_used": false,
+    "training_updates": 0
+  },
+  "source_receipt_status": "complete",
+  "raw_file_sha256": {
+    "source_receipt.json": "e702cfa32a69b60353f9bc0ad8ebe37d3cb80f7cc85cbae73faa787e0c26afd8",
+    "draw_0/events.jsonl": "3251ad7d990ec0c296b7be0b68a5bad7a1e53f1f4452b42d8cb50e6e063491c8",
+    "draw_0/stderr.log": "7b6f5d222fd969860da45121e819c4679556487f7ab69bf43e4fb3c23c79ae54",
+    "draw_0/prompt_preview.json": "6622778fcb75524e4b82f6fca82c2adf6c88c895fe15b027093f073263d76ed3"
+  },
+  "backend_usage": "unknown; no completed turn usage receipt",
+  "workers_exited": true
+}
