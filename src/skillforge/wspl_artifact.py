@@ -67,8 +67,9 @@ class ReLUArtifact:
             if parameters>1_000_000:raise ValueError('artifact capacity limit')
         if width!=len(self._outputs):raise ValueError('output width differs')
         a=d['allocation']
-        # fresh_mlp: compiled from scalar IR; imported: frozen tensors (wspl_import), source_sha256 = bundle hash.
-        if (not isinstance(a,dict) or set(a)!={'mode','widths','parameters'} or a['mode'] not in ('fresh_mlp','imported') or
+        # fresh_mlp: compiled from scalar IR; imported: frozen tensors (wspl_import), source_sha256 = bundle hash;
+        # augmented: output-patch composition (wspl_compose), source_sha256 = composition-record hash.
+        if (not isinstance(a,dict) or set(a)!={'mode','widths','parameters'} or a['mode'] not in ('fresh_mlp','imported','augmented') or
             a['widths']!=[len(self._inputs)]+[len(x[1]) for x in parsed] or a['parameters']!=parameters):
             raise ValueError('allocation metadata differs from stored weights')
         if not isinstance(d['source_map'],dict):raise ValueError('invalid source map')
