@@ -21,6 +21,7 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | Small real-graph I/O contract verifier | Initial Z3 prototype; non-vacuity and rational witness replay |
 | Source IR to stored-weight equivalence check | Initial Z3 prototype; compiler-independent encoding, replayed differences |
 | Numerical (IEEE) execution proof | Planned |
+| Frozen MLP tensor import and parent/edited relational contracts | Initial G3a prototype; exact hex-float import, Z3 relational checks; no patch composition yet |
 | Opaque-network intervention evidence | Paired activation probes, controls, replay and hash-chained empirical logs |
 | Blinded LLM authoring and counterexample-feedback harness | Planned |
 | Small-alphabet LTLf compiler and strong finite-model planner | Implemented for supplied symbolic effect models |

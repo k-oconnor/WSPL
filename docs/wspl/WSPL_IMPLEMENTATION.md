@@ -94,6 +94,13 @@ invalidates affected claims. Keep original artifacts accessible and record
 failures. Original learned networks must not be replaced with convenient
 compiler-generated equivalents without separate evidence.
 
+G3a progress (issue #6, IMPORT.md): frozen hidden-ReLU/final-linear tensors import
+losslessly from a hex-float bundle into an `imported` ReLUArtifact whose layers are
+exactly the tensors, and relational parent/edited contracts (preservation regions,
+tolerances, relative repair bounds) are checked in QF_LRA with replayed witnesses.
+Pre/postprocessing composition, output-patch composition and transaction
+manifests/rollback (G3b) and any learned parent remain missing.
+
 ## G4: fair proposer/evaluator harness
 
 Initial S1 kernel now exists: authoring_study.py implements all six finite-domain
