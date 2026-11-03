@@ -12,7 +12,7 @@ Exit evidence: acceptance equivalence on a declared finite trace suite; negative
 
 ## M2: grounded motor skills
 
-Implement a fresh simulator adapter, independent outcome observers and differentiable MLP/RMV blocks with exported semantics. Preflight physical channels, no-op difficulty, reference feasibility, controller input sensitivity and RMV fidelity. Prepare the first experiment's exact source identity before new training or benchmark execution.
+Implement a fresh adapter for the selected MuJoCo/robosuite/LIBERO stack, independent outcome observers and differentiable MLP/RMV blocks with exported semantics. Pin compatible versions and task/controller settings after preflight. Check physical channels, no-op difficulty, reference feasibility, controller input sensitivity and RMV fidelity. Prepare the first experiment's exact source identity before new training or benchmark execution.
 
 Exit evidence: reliable isolated approach, close and lift on held-out physical conditions, acquisition cost curves for all four arms and a faithful complete RMV motor output. A successful symbolic interpreter over old supplied motors does not satisfy this milestone.
 

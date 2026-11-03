@@ -20,6 +20,16 @@ flowchart LR
 
 The diagram describes the proposed system. This repository currently contains the **specification, schemas, examples and reference semantics**, not a robot system or a completed LTLf compiler.
 
+## Simulation stack
+
+We use the following open-source research software as the selected simulation stack:
+
+- **[MuJoCo](https://github.com/google-deepmind/mujoco):** physics, including motion, collisions, friction and contact.
+- **[robosuite](https://github.com/ARISE-Initiative/robosuite):** robot models, controllers, cameras and manipulation environments built on MuJoCo.
+- **[LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO):** tasks and datasets organized to evaluate learning and transfer, using robosuite environments.
+
+This selects the software stack. Compatible versions, task definitions, observations and controller settings will be audited and pinned before the first robot experiment; installation and execution are not yet implemented here.
+
 ## Start here
 
 - [System specification](docs/SYSTEM_SPEC.md): interfaces, temporal semantics, execution, RMV fidelity and guarantees.

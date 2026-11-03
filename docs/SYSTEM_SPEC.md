@@ -36,7 +36,7 @@ These are twelve structured channels, not learned visual perception. Goal/object
 
 Output is four normalized commands: dx, dy, dz, gripper. A shared, declared low-level adapter scales xyz increments, holds orientation and maps the gripper command into the simulator. It may use the simulator's ordinary servo/IK controller; it must not run an approach/grasp/place routine on behalf of the neural block. Frequency, clipping, workspace limits and hold/abort behavior are matched infrastructure and included in execution logs. Proposed initial control rate is 20 Hz, subject to simulator preflight and source pinning.
 
-Robot adapter first target: a fresh, isolated MuJoCo/Robosuite tabletop setup, drawing on prior LIBERO integration for installation knowledge. No dependency or simulator version is selected/pinned yet. Do not import legacy task-completing primitives as if their behavior were newly learned by a skill.
+Selected robot stack, confirmed by Kevin: [MuJoCo](https://github.com/google-deepmind/mujoco) for physics; [robosuite](https://github.com/ARISE-Initiative/robosuite) for robots, controllers, cameras and manipulation environments; [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) for tasks/datasets and learning/transfer evaluation. Use a fresh, isolated integration, drawing on prior LIBERO work for installation knowledge. Compatible package versions/commits, task assets, observation definitions and controller configuration remain to be audited and pinned. Stack selection does not establish that a working robot adapter exists. Do not import legacy task-completing primitives as if their behavior were newly learned by a skill.
 
 ## Logical interface and clock
 
