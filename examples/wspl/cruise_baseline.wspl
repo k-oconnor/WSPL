@@ -1,0 +1,9 @@
+// Cruise: a compiled stand-in baseline controller for patch-composition fixtures.
+// Not a learned network and never an S2 baseline; normalized demonstration values.
+module Cruise {
+  input d: Real[0,2] normalized_distance;
+  input v: Real[0,1] normalized_speed;
+  output a: Real[-1,1] normalized_acceleration;
+
+  a = clip(0.5 - v + 0.25*d, -1, 1);
+}

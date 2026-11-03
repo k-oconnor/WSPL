@@ -1,0 +1,1255 @@
+{
+  "scope": "engineering patch fixtures: compiled stand-in Cruise baseline and compiled BrakePatch, plus an untrained synthetic parent; not learned networks, S2 baselines, IEEE execution or robot proof",
+  "composition_equivalence": {
+    "note": "composed artifact relabelled with the combined module hash for the checker",
+    "combined_module": "module CruiseWithBrake {\n  input d: Real[0,2] normalized_distance;\n  input v: Real[0,1] normalized_speed;\n  output a: Real[-1,1] normalized_acceleration;\n  let a_base: Real[-1,1] = clip(0.5 - v + 0.25*d, -1, 1);\n  let urgency: Truth = clip((0.4 + 0.5*v - d)/0.4, 0, 1);\n  a = clip(a_base - 2*urgency, -1, 1);\n}\n",
+    "result": {
+      "status": "EQUIVALENT",
+      "scope": "source_ir_vs_stored_weight_rational_real_graph",
+      "quantifier": "forall inputs in declared domain: every source output equals the artifact output",
+      "numerical_execution": "not_established",
+      "physical_trajectory": "not_established",
+      "independently_checked_proof_trace": false,
+      "trust": [
+        "scalar IR validator",
+        "source encoder",
+        "artifact graph encoder",
+        "Z3",
+        "rational replay through both interpreters"
+      ],
+      "timeout_ms": 5000,
+      "logic": "QF_LRA",
+      "checker_source_sha256": "51f230f0c376b412187c6d1c6c273e3d2679530727a8a3b99def3c489ee3eb1b",
+      "source_interpreter_sha256": "0e3e57015f4fca01bf5ee860b1d7c4eb1aaf5608d1d9522222e63a00ec8647ee",
+      "artifact_evaluator_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+      "source_sha256": "e848b7fb3a774b3ff61f5f9b59add09062f71b5709472d27f8481f0f7e4b762e",
+      "artifact_sha256": "92017eb66642d71eda2e1e1f417f6f091b58d02099f18e02f0cb0eeed20d0cda",
+      "backend": "Z3",
+      "backend_version": "5.3.3",
+      "difference_query_sha256": "9f68a1ca5da91bd935a8da3004ffcdd63d7ca13c30542a25ae9069c860fbfa77",
+      "difference_query": "unsat",
+      "reason": "difference query UNSAT under declared rational real semantics",
+      "wall_seconds": 0.007706332000452676
+    }
+  },
+  "transactions": {
+    "committed": {
+      "format": "wspl.patch_transaction.v0",
+      "operation": "compose_output",
+      "label": "output-patch augmentation",
+      "parent_sha256": "b8a6c10a85dd9d44032685f821b5679de3bc5d178e1e2ad786b6d7e03cafc51c",
+      "patch_sha256": "9533ee778e62050359c77d55a418d7d15716ae2e3bfce6ae83896f55fa2020c1",
+      "bindings": {
+        "a_base": "parent.a",
+        "d": "input.d",
+        "v": "input.v"
+      },
+      "replace": {
+        "a": "a"
+      },
+      "contracts": {
+        "io": [
+          {
+            "name": "actuator_bound",
+            "assumptions": {
+              "op": "true"
+            },
+            "ensures": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "ge",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "-1",
+                    "unit": "1"
+                  }
+                },
+                {
+                  "op": "le",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "1",
+                    "unit": "1"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "emergency_brake",
+            "assumptions": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "le",
+                  "left": {
+                    "terms": {
+                      "input.d": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "1/5",
+                    "unit": "1"
+                  }
+                },
+                {
+                  "op": "ge",
+                  "left": {
+                    "terms": {
+                      "input.v": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "2/5",
+                    "unit": "1"
+                  }
+                }
+              ]
+            },
+            "ensures": {
+              "op": "eq",
+              "left": {
+                "terms": {
+                  "output.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              },
+              "right": {
+                "terms": {},
+                "bias": "-1",
+                "unit": "1"
+              }
+            }
+          }
+        ],
+        "relational": [
+          {
+            "name": "clear_path_preserved",
+            "assumptions": {
+              "op": "ge",
+              "left": {
+                "terms": {
+                  "input.d": "1",
+                  "input.v": "-1/2"
+                },
+                "bias": "0",
+                "unit": "1"
+              },
+              "right": {
+                "terms": {},
+                "bias": "2/5",
+                "unit": "1"
+              }
+            },
+            "ensures": {
+              "op": "eq",
+              "left": {
+                "terms": {
+                  "edited.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              },
+              "right": {
+                "terms": {
+                  "parent.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              }
+            }
+          }
+        ],
+        "interface": [
+          {
+            "name": "interface_a_base",
+            "assumptions": {
+              "op": "true"
+            },
+            "ensures": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "ge",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "-1",
+                    "unit": "1"
+                  }
+                },
+                {
+                  "op": "le",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "1",
+                    "unit": "1"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "decision_rule": "COMMITTED iff every result PROVED; REJECTED if any REFUTED or INVALID; otherwise UNRESOLVED",
+      "timeout_ms": 5000,
+      "numerical_execution": "not_established",
+      "physical_trajectory": "not_established",
+      "decision": "COMMITTED",
+      "results": [
+        {
+          "kind": "interface",
+          "status": "PROVED",
+          "scope": "stored_weight_rational_real_graph",
+          "quantifier": "forall inputs in artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "source_equivalence": "not_checked",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "real-graph encoder",
+            "Z3",
+            "rational witness replay"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "verifier_source_sha256": "7c5d164dafa058c5aad79b1bc42d78ccd584d04f81346dc115a03d06b7adbdb5",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "artifact_sha256": "b8a6c10a85dd9d44032685f821b5679de3bc5d178e1e2ad786b6d7e03cafc51c",
+          "name": "interface_a_base",
+          "contract_sha256": "931083bf772684e3bfbf382e33152724298681e0f79d84821333dbf3d838d12e",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "da2e2949dfafad3111a6304dd7bd9e100c6fca01bc209e6a8d6b8b73551d75aa",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "0",
+            "v": "0"
+          },
+          "violation_query": "unsat",
+          "violation_query_sha256": "5b0a470dfe5564ec6c7122ddeb56726cb2edc9eac648d09fcbd54e06e9374621",
+          "reason": "violation query UNSAT under declared real-graph semantics",
+          "wall_seconds": 0.0023654809992876835
+        },
+        {
+          "kind": "io",
+          "status": "PROVED",
+          "scope": "stored_weight_rational_real_graph",
+          "quantifier": "forall inputs in artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "source_equivalence": "not_checked",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "real-graph encoder",
+            "Z3",
+            "rational witness replay"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "verifier_source_sha256": "7c5d164dafa058c5aad79b1bc42d78ccd584d04f81346dc115a03d06b7adbdb5",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "artifact_sha256": "2da06c4786bcfed1c61a21207842902f6b5a0187d945e39fb3632dea98474978",
+          "name": "actuator_bound",
+          "contract_sha256": "bb9f79d16ef9eeb691d8eec347b010eedfe977d8f30096c02e48dcd0fa125022",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "ffe54bc21990a2776193d6e5fd4b74584eaf207afc6a32282cc2a059c82b0da4",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "0",
+            "v": "1/2"
+          },
+          "violation_query": "unsat",
+          "violation_query_sha256": "05b69a1917ee34f0dcb7e2e515bdebf81fd39b29a9e685a22e55ac63dfce4d44",
+          "reason": "violation query UNSAT under declared real-graph semantics",
+          "wall_seconds": 0.0073287630002596416
+        },
+        {
+          "kind": "io",
+          "status": "PROVED",
+          "scope": "stored_weight_rational_real_graph",
+          "quantifier": "forall inputs in artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "source_equivalence": "not_checked",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "real-graph encoder",
+            "Z3",
+            "rational witness replay"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "verifier_source_sha256": "7c5d164dafa058c5aad79b1bc42d78ccd584d04f81346dc115a03d06b7adbdb5",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "artifact_sha256": "2da06c4786bcfed1c61a21207842902f6b5a0187d945e39fb3632dea98474978",
+          "name": "emergency_brake",
+          "contract_sha256": "a0a8e769e5a6fdd2deeb19f197367cbe682f064a5ee1dbad4d5e6a55fdc2077d",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "ec730705afb7a7ec2f65a7f4c8a03a233dfaef068da42aea046347bc2f8afe15",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "0",
+            "v": "1/2"
+          },
+          "violation_query": "unsat",
+          "violation_query_sha256": "59fa233ac9a313e454f9ad35a9bfb08b1eefdb835034d96b06f4396700a28a33",
+          "reason": "violation query UNSAT under declared real-graph semantics",
+          "wall_seconds": 0.007663385999876482
+        },
+        {
+          "kind": "relational",
+          "status": "PROVED",
+          "scope": "stored_weight_rational_real_graph_pair",
+          "quantifier": "forall shared inputs in the common artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "paired graph encoder",
+            "Z3",
+            "rational witness replay through both artifacts"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "checker_source_sha256": "f108ba9916236a4e2cdcee3b841bd5379cc6d03658992cc5339d88298474e734",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "parent_sha256": "b8a6c10a85dd9d44032685f821b5679de3bc5d178e1e2ad786b6d7e03cafc51c",
+          "edited_sha256": "2da06c4786bcfed1c61a21207842902f6b5a0187d945e39fb3632dea98474978",
+          "name": "clear_path_preserved",
+          "contract_sha256": "6a87f0b6e353eeb4021a8e9485359b3a20c397cc61d678b7771e8e631bb2dba5",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "710a81386077b3dea707087c578d4257b2210225044620f4582bcb886a1f8f77",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "2/5",
+            "v": "0"
+          },
+          "violation_query": "unsat",
+          "violation_query_sha256": "e097e3224048401675edccc8a7ba9f814b6bae7a58862ed3da25eace2f3f1562",
+          "reason": "violation query UNSAT under declared paired real-graph semantics",
+          "wall_seconds": 0.008579409999583731
+        }
+      ],
+      "parent_unchanged": true,
+      "returned_sha256": "2da06c4786bcfed1c61a21207842902f6b5a0187d945e39fb3632dea98474978",
+      "results_digest_sha256": "d1f33e7679f994571515dbc67d95807943a1813de6d550f095ecd31c0abe89a9",
+      "candidate_sha256": "2da06c4786bcfed1c61a21207842902f6b5a0187d945e39fb3632dea98474978",
+      "composition_sha256": "3395072369d91bf29145a90d68956e7961fd2b513c8045f32af5ff34266ddd1d",
+      "candidate_allocation": {
+        "mode": "augmented",
+        "widths": [
+          2,
+          6,
+          6,
+          4,
+          2,
+          1
+        ],
+        "parameters": 101
+      },
+      "added_depth": 3,
+      "added_parameters": 92,
+      "placement_rows_checked": 19,
+      "contract_counts": {
+        "interface": 1,
+        "io": 2,
+        "relational": 1
+      },
+      "manifest_body_sha256": "8319e9cdab83aa5ff532b3cd12eb9b0183ce22636f9631d987928ccfc2e11cfc"
+    },
+    "rejected_unestablished_parent_bound": {
+      "format": "wspl.patch_transaction.v0",
+      "operation": "compose_output",
+      "label": "output-patch augmentation",
+      "parent_sha256": "433358a44a5a8ff3b1d5838e161d614a767c50ba78ffabf24bb17e8b07e79758",
+      "patch_sha256": "9533ee778e62050359c77d55a418d7d15716ae2e3bfce6ae83896f55fa2020c1",
+      "bindings": {
+        "a_base": "parent.a",
+        "d": "input.d",
+        "v": "input.v"
+      },
+      "replace": {
+        "a": "a"
+      },
+      "contracts": {
+        "io": [
+          {
+            "name": "actuator_bound",
+            "assumptions": {
+              "op": "true"
+            },
+            "ensures": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "ge",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "-1",
+                    "unit": "1"
+                  }
+                },
+                {
+                  "op": "le",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "1",
+                    "unit": "1"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "emergency_brake",
+            "assumptions": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "le",
+                  "left": {
+                    "terms": {
+                      "input.d": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "1/5",
+                    "unit": "1"
+                  }
+                },
+                {
+                  "op": "ge",
+                  "left": {
+                    "terms": {
+                      "input.v": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "2/5",
+                    "unit": "1"
+                  }
+                }
+              ]
+            },
+            "ensures": {
+              "op": "eq",
+              "left": {
+                "terms": {
+                  "output.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              },
+              "right": {
+                "terms": {},
+                "bias": "-1",
+                "unit": "1"
+              }
+            }
+          }
+        ],
+        "relational": [
+          {
+            "name": "clear_path_preserved",
+            "assumptions": {
+              "op": "ge",
+              "left": {
+                "terms": {
+                  "input.d": "1",
+                  "input.v": "-1/2"
+                },
+                "bias": "0",
+                "unit": "1"
+              },
+              "right": {
+                "terms": {},
+                "bias": "2/5",
+                "unit": "1"
+              }
+            },
+            "ensures": {
+              "op": "eq",
+              "left": {
+                "terms": {
+                  "edited.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              },
+              "right": {
+                "terms": {
+                  "parent.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              }
+            }
+          }
+        ],
+        "interface": [
+          {
+            "name": "interface_a_base",
+            "assumptions": {
+              "op": "true"
+            },
+            "ensures": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "ge",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "-1",
+                    "unit": "1"
+                  }
+                },
+                {
+                  "op": "le",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "1",
+                    "unit": "1"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "decision_rule": "COMMITTED iff every result PROVED; REJECTED if any REFUTED or INVALID; otherwise UNRESOLVED",
+      "timeout_ms": 5000,
+      "numerical_execution": "not_established",
+      "physical_trajectory": "not_established",
+      "decision": "REJECTED",
+      "results": [
+        {
+          "kind": "interface",
+          "status": "REFUTED",
+          "scope": "stored_weight_rational_real_graph",
+          "quantifier": "forall inputs in artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "source_equivalence": "not_checked",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "real-graph encoder",
+            "Z3",
+            "rational witness replay"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "verifier_source_sha256": "7c5d164dafa058c5aad79b1bc42d78ccd584d04f81346dc115a03d06b7adbdb5",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "artifact_sha256": "433358a44a5a8ff3b1d5838e161d614a767c50ba78ffabf24bb17e8b07e79758",
+          "name": "interface_a_base",
+          "contract_sha256": "693f46e05944566f6b3b1985a1b30de8599a1bff4971f748471b4d77f544570c",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "3ea949f2b1423d13f7a437a90d6a19ef9b6242bcaf20069ba918d6d386d56ea7",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "2",
+            "v": "0"
+          },
+          "violation_query": "sat",
+          "violation_query_sha256": "00925280bdb92d4ae320068e1fb75469e81da9a69b3ef1b9ad0ee7677b159cb4",
+          "reason": "SAT violation independently replayed",
+          "witness_validated": true,
+          "counterexample": {
+            "inputs": {
+              "d": "2",
+              "v": "0"
+            },
+            "outputs": {
+              "a": "202495466117851/17592186044416"
+            }
+          },
+          "wall_seconds": 0.003479531999801111
+        },
+        {
+          "kind": "io",
+          "status": "PROVED",
+          "scope": "stored_weight_rational_real_graph",
+          "quantifier": "forall inputs in artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "source_equivalence": "not_checked",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "real-graph encoder",
+            "Z3",
+            "rational witness replay"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "verifier_source_sha256": "7c5d164dafa058c5aad79b1bc42d78ccd584d04f81346dc115a03d06b7adbdb5",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "artifact_sha256": "0cba95857377362fc147e32be842f3f78bbe41a602172bdca9c2c13beed70d37",
+          "name": "actuator_bound",
+          "contract_sha256": "362ffdce5a73141d646aa2568cca6e1d6a7315244c822e35dc3823050ffbd788",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "cf7a147bd5b1e78df442099ea48e28604ac74766de50aa0792f8a89d472d077d",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "111532119837641/804349224109847",
+            "v": "0"
+          },
+          "violation_query": "unsat",
+          "violation_query_sha256": "367620bef4e527dc3c937836adcfe4871a4c10f9a4580816ce01c1d2c44baf0f",
+          "reason": "violation query UNSAT under declared real-graph semantics",
+          "wall_seconds": 0.009416473999408481
+        },
+        {
+          "kind": "io",
+          "status": "REFUTED",
+          "scope": "stored_weight_rational_real_graph",
+          "quantifier": "forall inputs in artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "source_equivalence": "not_checked",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "real-graph encoder",
+            "Z3",
+            "rational witness replay"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "verifier_source_sha256": "7c5d164dafa058c5aad79b1bc42d78ccd584d04f81346dc115a03d06b7adbdb5",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "artifact_sha256": "0cba95857377362fc147e32be842f3f78bbe41a602172bdca9c2c13beed70d37",
+          "name": "emergency_brake",
+          "contract_sha256": "7975a84cb2107b067c590b2d38abb6db8e8062f550dc7f16ebd4e3addbc54f39",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "580eaa62bb3944e5c7ea8a6150fbcb4b65c297dbe65093ddc4388cb9fbdad0b1",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "0",
+            "v": "2/5"
+          },
+          "violation_query": "sat",
+          "violation_query_sha256": "89135b8c73136140e308085b51c2057c1168be68ec13dd650e6bc9b5d5228f68",
+          "reason": "SAT violation independently replayed",
+          "witness_validated": true,
+          "counterexample": {
+            "inputs": {
+              "d": "41439881958934943339835940389/238276037549016369890234173474",
+              "v": "1"
+            },
+            "outputs": {
+              "a": "-1127632379793977/1247072059464796"
+            }
+          },
+          "wall_seconds": 0.010929056999884779
+        },
+        {
+          "kind": "relational",
+          "status": "REFUTED",
+          "scope": "stored_weight_rational_real_graph_pair",
+          "quantifier": "forall shared inputs in the common artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "paired graph encoder",
+            "Z3",
+            "rational witness replay through both artifacts"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "checker_source_sha256": "f108ba9916236a4e2cdcee3b841bd5379cc6d03658992cc5339d88298474e734",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "parent_sha256": "433358a44a5a8ff3b1d5838e161d614a767c50ba78ffabf24bb17e8b07e79758",
+          "edited_sha256": "0cba95857377362fc147e32be842f3f78bbe41a602172bdca9c2c13beed70d37",
+          "name": "clear_path_preserved",
+          "contract_sha256": "28ba1542cbee13ee72bfc6352b55189d85827a71d155ba40720a444c5e16884e",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "b67dbb2a4daebc3008be13fd691f133b7df47ee0c615107da953a7fb852417a2",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "2/5",
+            "v": "0"
+          },
+          "violation_query": "sat",
+          "violation_query_sha256": "ef3f2e0abfb126594690cca829e0b2c2a5a961f42a5b56e83cb3006ce61ca77c",
+          "reason": "SAT violation independently replayed",
+          "witness_validated": true,
+          "counterexample": {
+            "inputs": {
+              "d": "2",
+              "v": "0"
+            },
+            "parent_outputs": {
+              "a": "202495466117851/17592186044416"
+            },
+            "edited_outputs": {
+              "a": "1"
+            }
+          },
+          "wall_seconds": 0.011232305999328673
+        }
+      ],
+      "parent_unchanged": true,
+      "returned_sha256": "433358a44a5a8ff3b1d5838e161d614a767c50ba78ffabf24bb17e8b07e79758",
+      "results_digest_sha256": "6f7182eaa037a8e83b0d35ede7f8f9b68a88e414224658ac22aed0c503999519",
+      "candidate_sha256": "0cba95857377362fc147e32be842f3f78bbe41a602172bdca9c2c13beed70d37",
+      "composition_sha256": "3956d388a0f6405dde709a28cd9dfa4411ec19f09988f143f14b25e1c8de6265",
+      "candidate_allocation": {
+        "mode": "augmented",
+        "widths": [
+          2,
+          8,
+          6,
+          4,
+          2,
+          1
+        ],
+        "parameters": 119
+      },
+      "added_depth": 3,
+      "added_parameters": 102,
+      "placement_rows_checked": 21,
+      "contract_counts": {
+        "interface": 1,
+        "io": 2,
+        "relational": 1
+      },
+      "manifest_body_sha256": "35bcdcd0a7bc1f5a359fc9bb961f7f05dcd74c409b893fc5ac5236911d26a439"
+    },
+    "rejected_false_preservation": {
+      "format": "wspl.patch_transaction.v0",
+      "operation": "compose_output",
+      "label": "output-patch augmentation",
+      "parent_sha256": "b8a6c10a85dd9d44032685f821b5679de3bc5d178e1e2ad786b6d7e03cafc51c",
+      "patch_sha256": "9533ee778e62050359c77d55a418d7d15716ae2e3bfce6ae83896f55fa2020c1",
+      "bindings": {
+        "a_base": "parent.a",
+        "d": "input.d",
+        "v": "input.v"
+      },
+      "replace": {
+        "a": "a"
+      },
+      "contracts": {
+        "io": [
+          {
+            "name": "actuator_bound",
+            "assumptions": {
+              "op": "true"
+            },
+            "ensures": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "ge",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "-1",
+                    "unit": "1"
+                  }
+                },
+                {
+                  "op": "le",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "1",
+                    "unit": "1"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "emergency_brake",
+            "assumptions": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "le",
+                  "left": {
+                    "terms": {
+                      "input.d": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "1/5",
+                    "unit": "1"
+                  }
+                },
+                {
+                  "op": "ge",
+                  "left": {
+                    "terms": {
+                      "input.v": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "2/5",
+                    "unit": "1"
+                  }
+                }
+              ]
+            },
+            "ensures": {
+              "op": "eq",
+              "left": {
+                "terms": {
+                  "output.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              },
+              "right": {
+                "terms": {},
+                "bias": "-1",
+                "unit": "1"
+              }
+            }
+          }
+        ],
+        "relational": [
+          {
+            "name": "clear_path_preserved",
+            "assumptions": {
+              "op": "ge",
+              "left": {
+                "terms": {
+                  "input.d": "1",
+                  "input.v": "-1/2"
+                },
+                "bias": "0",
+                "unit": "1"
+              },
+              "right": {
+                "terms": {},
+                "bias": "2/5",
+                "unit": "1"
+              }
+            },
+            "ensures": {
+              "op": "eq",
+              "left": {
+                "terms": {
+                  "edited.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              },
+              "right": {
+                "terms": {
+                  "parent.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              }
+            }
+          },
+          {
+            "name": "unchanged_everywhere",
+            "assumptions": {
+              "op": "true"
+            },
+            "ensures": {
+              "op": "eq",
+              "left": {
+                "terms": {
+                  "edited.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              },
+              "right": {
+                "terms": {
+                  "parent.a": "1"
+                },
+                "bias": "0",
+                "unit": "1"
+              }
+            }
+          }
+        ],
+        "interface": [
+          {
+            "name": "interface_a_base",
+            "assumptions": {
+              "op": "true"
+            },
+            "ensures": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "ge",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "-1",
+                    "unit": "1"
+                  }
+                },
+                {
+                  "op": "le",
+                  "left": {
+                    "terms": {
+                      "output.a": "1"
+                    },
+                    "bias": "0",
+                    "unit": "1"
+                  },
+                  "right": {
+                    "terms": {},
+                    "bias": "1",
+                    "unit": "1"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "decision_rule": "COMMITTED iff every result PROVED; REJECTED if any REFUTED or INVALID; otherwise UNRESOLVED",
+      "timeout_ms": 5000,
+      "numerical_execution": "not_established",
+      "physical_trajectory": "not_established",
+      "decision": "REJECTED",
+      "results": [
+        {
+          "kind": "interface",
+          "status": "PROVED",
+          "scope": "stored_weight_rational_real_graph",
+          "quantifier": "forall inputs in artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "source_equivalence": "not_checked",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "real-graph encoder",
+            "Z3",
+            "rational witness replay"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "verifier_source_sha256": "7c5d164dafa058c5aad79b1bc42d78ccd584d04f81346dc115a03d06b7adbdb5",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "artifact_sha256": "b8a6c10a85dd9d44032685f821b5679de3bc5d178e1e2ad786b6d7e03cafc51c",
+          "name": "interface_a_base",
+          "contract_sha256": "931083bf772684e3bfbf382e33152724298681e0f79d84821333dbf3d838d12e",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "61ea75bb11685a1c0255ad3279f9eb3bb3b4dc8f2998459fcafeb9bf809dfa87",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "0",
+            "v": "0"
+          },
+          "violation_query": "unsat",
+          "violation_query_sha256": "5b0a470dfe5564ec6c7122ddeb56726cb2edc9eac648d09fcbd54e06e9374621",
+          "reason": "violation query UNSAT under declared real-graph semantics",
+          "wall_seconds": 0.002217015000496758
+        },
+        {
+          "kind": "io",
+          "status": "PROVED",
+          "scope": "stored_weight_rational_real_graph",
+          "quantifier": "forall inputs in artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "source_equivalence": "not_checked",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "real-graph encoder",
+            "Z3",
+            "rational witness replay"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "verifier_source_sha256": "7c5d164dafa058c5aad79b1bc42d78ccd584d04f81346dc115a03d06b7adbdb5",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "artifact_sha256": "2da06c4786bcfed1c61a21207842902f6b5a0187d945e39fb3632dea98474978",
+          "name": "actuator_bound",
+          "contract_sha256": "bb9f79d16ef9eeb691d8eec347b010eedfe977d8f30096c02e48dcd0fa125022",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "37b33050f9141cabf6693ba7a6ee995b2a8c7954958d7b73a87bba9a53c60f72",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "0",
+            "v": "1/2"
+          },
+          "violation_query": "unsat",
+          "violation_query_sha256": "05b69a1917ee34f0dcb7e2e515bdebf81fd39b29a9e685a22e55ac63dfce4d44",
+          "reason": "violation query UNSAT under declared real-graph semantics",
+          "wall_seconds": 0.007169090000388678
+        },
+        {
+          "kind": "io",
+          "status": "PROVED",
+          "scope": "stored_weight_rational_real_graph",
+          "quantifier": "forall inputs in artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "source_equivalence": "not_checked",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "real-graph encoder",
+            "Z3",
+            "rational witness replay"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "verifier_source_sha256": "7c5d164dafa058c5aad79b1bc42d78ccd584d04f81346dc115a03d06b7adbdb5",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "artifact_sha256": "2da06c4786bcfed1c61a21207842902f6b5a0187d945e39fb3632dea98474978",
+          "name": "emergency_brake",
+          "contract_sha256": "a0a8e769e5a6fdd2deeb19f197367cbe682f064a5ee1dbad4d5e6a55fdc2077d",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "82bff73aa64ff3f21159af31a2cb7e1263aa90f8f58aa2868a5d328cbff618e9",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "5/51",
+            "v": "107/204"
+          },
+          "violation_query": "unsat",
+          "violation_query_sha256": "59fa233ac9a313e454f9ad35a9bfb08b1eefdb835034d96b06f4396700a28a33",
+          "reason": "violation query UNSAT under declared real-graph semantics",
+          "wall_seconds": 0.00758717299959244
+        },
+        {
+          "kind": "relational",
+          "status": "PROVED",
+          "scope": "stored_weight_rational_real_graph_pair",
+          "quantifier": "forall shared inputs in the common artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "paired graph encoder",
+            "Z3",
+            "rational witness replay through both artifacts"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "checker_source_sha256": "f108ba9916236a4e2cdcee3b841bd5379cc6d03658992cc5339d88298474e734",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "parent_sha256": "b8a6c10a85dd9d44032685f821b5679de3bc5d178e1e2ad786b6d7e03cafc51c",
+          "edited_sha256": "2da06c4786bcfed1c61a21207842902f6b5a0187d945e39fb3632dea98474978",
+          "name": "clear_path_preserved",
+          "contract_sha256": "6a87f0b6e353eeb4021a8e9485359b3a20c397cc61d678b7771e8e631bb2dba5",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "6bca06f1274caf8abc2452a30848c9671cff6eedd572000c6655710e2afac41b",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "2",
+            "v": "0"
+          },
+          "violation_query": "unsat",
+          "violation_query_sha256": "e097e3224048401675edccc8a7ba9f814b6bae7a58862ed3da25eace2f3f1562",
+          "reason": "violation query UNSAT under declared paired real-graph semantics",
+          "wall_seconds": 0.008580583999901137
+        },
+        {
+          "kind": "relational",
+          "status": "REFUTED",
+          "scope": "stored_weight_rational_real_graph_pair",
+          "quantifier": "forall shared inputs in the common artifact domain: assumptions imply ensures",
+          "numerical_execution": "not_established",
+          "physical_trajectory": "not_established",
+          "independently_checked_proof_trace": false,
+          "trust": [
+            "contract parser",
+            "paired graph encoder",
+            "Z3",
+            "rational witness replay through both artifacts"
+          ],
+          "timeout_ms": 5000,
+          "logic": "QF_LRA",
+          "checker_source_sha256": "f108ba9916236a4e2cdcee3b841bd5379cc6d03658992cc5339d88298474e734",
+          "evaluator_source_sha256": "fc1c4cac10a53a168cc89e194c505e9fbccf4b8a9e8d090917a7d286dadf0acf",
+          "parent_sha256": "b8a6c10a85dd9d44032685f821b5679de3bc5d178e1e2ad786b6d7e03cafc51c",
+          "edited_sha256": "2da06c4786bcfed1c61a21207842902f6b5a0187d945e39fb3632dea98474978",
+          "name": "unchanged_everywhere",
+          "contract_sha256": "340392a37a6f4fb9ce738e5088070438bcc3f9a4c6d790fb189a8e8100dd2905",
+          "backend": "Z3",
+          "backend_version": "5.3.3",
+          "domain_query": "sat",
+          "domain_query_sha256": "014103a8b2bb7b17a210e5001c3da374d08295da4f6869c09ab6b1d35b20a6a4",
+          "nonvacuous": true,
+          "domain_witness": {
+            "d": "0",
+            "v": "1/2"
+          },
+          "violation_query": "sat",
+          "violation_query_sha256": "52d7a634a985c5c789eceff6a5b3d7bb7d1fb5e04c66fbab1534e20591f2ed0a",
+          "reason": "SAT violation independently replayed",
+          "witness_validated": true,
+          "counterexample": {
+            "inputs": {
+              "d": "18/35",
+              "v": "22/35"
+            },
+            "parent_outputs": {
+              "a": "0"
+            },
+            "edited_outputs": {
+              "a": "-1"
+            }
+          },
+          "wall_seconds": 0.008663939999678405
+        }
+      ],
+      "parent_unchanged": true,
+      "returned_sha256": "b8a6c10a85dd9d44032685f821b5679de3bc5d178e1e2ad786b6d7e03cafc51c",
+      "results_digest_sha256": "e2a688f188ea734c7c5cb443213167bb8596d0aaf6cbcfe29475bf8be5a21841",
+      "candidate_sha256": "2da06c4786bcfed1c61a21207842902f6b5a0187d945e39fb3632dea98474978",
+      "composition_sha256": "3395072369d91bf29145a90d68956e7961fd2b513c8045f32af5ff34266ddd1d",
+      "candidate_allocation": {
+        "mode": "augmented",
+        "widths": [
+          2,
+          6,
+          6,
+          4,
+          2,
+          1
+        ],
+        "parameters": 101
+      },
+      "added_depth": 3,
+      "added_parameters": 92,
+      "placement_rows_checked": 19,
+      "contract_counts": {
+        "interface": 1,
+        "io": 2,
+        "relational": 2
+      },
+      "manifest_body_sha256": "5e26a54f265e330aebac2aeb918a59603b31e8a5c43aeff6dba2fbbc5210f239"
+    }
+  }
+}

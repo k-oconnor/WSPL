@@ -1,5 +1,6 @@
 """Frozen-tensor import engineering checks (G3a); fixtures are not learned baselines."""
 import copy
+from fractions import Fraction
 import hashlib
 import importlib.util
 import json
@@ -131,12 +132,77 @@ class RejectionTests(unittest.TestCase):
         self.assert_rejected(lambda b: b['layers'][-1].update(activation='relu'), 'only hidden relu')
         self.assert_rejected(lambda b: b['layers'][0]['weight'][0].pop(), 'ragged')
         self.assert_rejected(lambda b: b['layers'][0]['bias'].pop(), 'bias length')
-        self.assert_rejected(lambda b: b.update(preprocessing=[{'input': 'd', 'scale': '0x1p+1'}]), 'G3b')
-        self.assert_rejected(lambda b: b.update(postprocessing=[{}]), 'G3b')
+        self.assert_rejected(lambda b: b.update(preprocessing=[{'input': 'd', 'scale': '0x1p+1'}]), 'exactly port, scale and offset')
+        self.assert_rejected(lambda b: b.update(postprocessing=[{}]), 'exactly port, scale and offset')
+        self.assert_rejected(lambda b: b.update(preprocessing={}), 'must be a list')
+        entry = lambda port, scale='0x1p-1', offset='0x0p+0': {'port': port, 'scale': scale, 'offset': offset}
+        self.assert_rejected(lambda b: b.update(preprocessing=[entry('zz')]), 'unknown port')
+        self.assert_rejected(lambda b: b.update(preprocessing=[entry('d'), entry('d')]), 'listed twice')
+        self.assert_rejected(lambda b: b.update(preprocessing=[entry('d', scale='0x0p+0')]), 'nonzero')
+        self.assert_rejected(lambda b: b.update(postprocessing=[entry('a', scale='0.5')]), 'hex float string required')
+        self.assert_rejected(lambda b: b.update(postprocessing=[entry('d')]), 'unknown port')
         self.assert_rejected(lambda b: b.update(provenance={}), 'provenance')
         self.assert_rejected(lambda b: b.update(extra=1), 'bundle with fields')
         self.assert_rejected(lambda b: b['inputs'][0]['type'].update(upper=2), 'exact rational strings')
         self.assert_rejected(lambda b: b['inputs'][1].update(name='d'), 'duplicate')
+
+
+def processed_bundle(layout='out_by_in'):
+    """BrakePatch tensors fed raw metres / metres-per-second, publishing a scaled command."""
+    bundle = bundle_from_artifact(committed('brake_patch'), provenance=fixture('brake_patch')['provenance'], tensor_layout=layout)
+    bundle['inputs'][0]['type'].update(unit='m', lower='0', upper='4')
+    bundle['inputs'][1]['type'].update(unit='m_per_s', lower='0', upper='16')
+    bundle['outputs'][0]['type'].update(unit='m_per_s2', lower='-3', upper='3')
+    bundle['preprocessing'] = [{'port': 'd', 'scale': '0x1p-1', 'offset': '0x0p+0'},
+                               {'port': 'v', 'scale': '0x1p-4', 'offset': '0x0p+0'}]
+    bundle['postprocessing'] = [{'port': 'a', 'scale': '0x1.8p+1', 'offset': '-0x1p-2'}]
+    return bundle
+
+
+class ProcessingTests(unittest.TestCase):
+    def test_processed_import_matches_direct_evaluation(self):
+        artifact, network = import_bundle(processed_bundle()), committed('brake_patch')
+        steps = [Fraction(i, 4) for i in range(17)]
+        for d in steps:
+            for v in steps[::2]:
+                for a_base in (Fraction(-1), Fraction(-1, 3), Fraction(0), Fraction(1, 2), Fraction(1)):
+                    raw = {'d': d, 'v': v * 4, 'a_base': a_base}
+                    net = network.evaluate({'d': d / 2, 'v': v / 4, 'a_base': a_base})['a']
+                    self.assertEqual(artifact.evaluate(raw)['a'], 3 * net - Fraction(1, 4), raw)
+
+    def test_tensors_stay_exact_slices_and_are_recorded(self):
+        artifact = import_bundle(processed_bundle())
+        d, original = artifact.to_dict(), committed('brake_patch').to_dict()['layers']
+        record = d['source_map']['import']
+        self.assertEqual(record['tensor_layers'], [1, 2, 3])
+        self.assertEqual(record['preprocessing_layer'], 0)
+        self.assertEqual(record['postprocessing_boundary_layer'], 3)
+        self.assertIn('processing relay layers', record['stored_layers'])
+        self.assertEqual(record['preprocessing'], [{'port': 'd', 'scale': '1/2', 'offset': '0'},
+                                                   {'port': 'v', 'scale': '1/16', 'offset': '0'}])
+        self.assertEqual(d['layers'][1]['weights'],
+                         [[x for w in row for x in (w, str(-Fraction(w)))] for row in original[0]['weights']])
+        self.assertEqual(d['layers'][2], original[1])
+        self.assertEqual(d['layers'][3]['weights'][0::2], original[2]['weights'])
+        self.assertEqual(d['layers'][3]['weights'][1::2], [[str(-Fraction(w)) for w in r] for r in original[2]['weights']])
+        self.assertEqual(record['tensor_sha256'], import_bundle(fixture('brake_patch')).to_dict()['source_map']['import']['tensor_sha256'])
+        self.assertEqual(d['allocation']['widths'], [3, 6, 4, 2, 2, 1])
+
+    def test_processing_with_transposed_layout_and_linear_only_network(self):
+        self.assertEqual(import_bundle(processed_bundle('in_by_out')).to_dict()['layers'],
+                         import_bundle(processed_bundle()).to_dict()['layers'])
+        port = lambda n: {'name': n, 'type': {'kind': 'Real', 'unit': '1', 'lower': '-1', 'upper': '1'}}
+        linear = {'format': 'wspl.mlp_import.v0', 'dtype': 'float64', 'tensor_layout': 'out_by_in',
+                  'inputs': [port('x0'), port('x1')], 'outputs': [port('y')],
+                  'layers': [{'activation': 'linear', 'weight': [['0x1p-1', '-0x1p+0']], 'bias': ['0x1p-3']}],
+                  'preprocessing': [{'port': 'x1', 'scale': '-0x1p+1', 'offset': '0x1p-1'}],
+                  'postprocessing': [{'port': 'y', 'scale': '0x1p+2', 'offset': '0x0p+0'}], 'provenance': {'kind': 'synthetic'}}
+        artifact = import_bundle(linear)
+        self.assertEqual(len(artifact.to_dict()['layers']), 3)
+        for x0 in (Fraction(-1), Fraction(0), Fraction(1, 3), Fraction(1)):
+            for x1 in (Fraction(-1), Fraction(-1, 4), Fraction(1)):
+                expected = 4 * (Fraction(1, 2) * x0 - (-2 * x1 + Fraction(1, 2)) + Fraction(1, 8))
+                self.assertEqual(artifact.evaluate({'x0': x0, 'x1': x1})['y'], expected)
 
 
 class CommandLineTests(unittest.TestCase):

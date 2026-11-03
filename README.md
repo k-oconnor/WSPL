@@ -21,7 +21,8 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | Small real-graph I/O contract verifier | Initial Z3 prototype; non-vacuity and rational witness replay |
 | Source IR to stored-weight equivalence check | Initial Z3 prototype; compiler-independent encoding, replayed differences |
 | Numerical (IEEE) execution proof | Planned |
-| Frozen MLP tensor import and parent/edited relational contracts | Initial G3a prototype; exact hex-float import, Z3 relational checks; no patch composition yet |
+| Frozen MLP tensor import and parent/edited relational contracts | Initial G3a prototype; exact hex-float import with pre/postprocessing relays, Z3 relational checks |
+| Output-patch composition and transactions | Initial G3b prototype; augmentation with verified slices, COMMITTED/REJECTED/UNRESOLVED gating, replayable manifests |
 | Opaque-network intervention evidence | Paired activation probes, controls, replay and hash-chained empirical logs |
 | Blinded LLM authoring and counterexample-feedback harness | Planned |
 | Small-alphabet LTLf compiler and strong finite-model planner | Implemented for supplied symbolic effect models |
@@ -249,8 +250,8 @@ An existing BDDL scene is not a working Skillforge task.
 python -m unittest discover -s tests -v
 ```
 
-The current local suite has 227 checks; all pass
-with the tested Z3, PyTorch and NumPy environment. Optional neural/adapter checks
+The current local suite has 247 checks; all pass
+with Z3 installed, with 37 skipped when PyTorch/NumPy are absent. Optional neural/adapter checks
 skip when PyTorch or NumPy is absent, and solver checks skip without Z3; full local results used a separate CPU
 research environment. No model download, simulator rollout, scientific training
 run or LLM API call occurs in the unit suite. A single optimizer transaction is
