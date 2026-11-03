@@ -88,6 +88,14 @@ compiler-generated equivalents without separate evidence.
 
 ## G4: fair proposer/evaluator harness
 
+Initial S1 kernel now exists: authoring_study.py implements all six finite-domain
+arms at a common fixed capacity, data-only candidate parsing, feedback separation,
+budgets and one-shot final selection. run_authoring_screen.py grades request/turn-
+bound offline transcripts and preserves all 36 denominators. See
+FORMAL_EXPERIMENTS_V1.md for the narrower front ends and finite proof scope.
+Live isolated provider collection, billing receipts, pre-call budget enforcement
+and sealed task access remain unimplemented; this does not complete G4.
+
 Implement the six arms, immutable trial configuration, construction-code isolation,
 independent proposer state, feedback-on/off firewall, shared candidate verifier,
 bounded logging and final-data access restrictions. Audit actual billed tokens,
@@ -116,7 +124,9 @@ learned symbolic recovery profiles follow useful controller results.
 
 ## Immediate next implementation slice
 
-G0 through G2 on BrakePatch and ApproachP: parser/type rules, exact reference,
-serialized ReLU graph and independently checked scoped contracts. G3 then grounds
-the work in one genuinely learned controller; G4/G5 test the scientific hypothesis.
-None of these WSPL gates is complete merely because the earlier robot pilot ran.
+Finish isolated provider collection and freeze model/tasks/cost for the narrow S1
+finite-domain screen in FORMAL_EXPERIMENTS_V1.md. This pilot uses independent
+finite artifact evaluation; it does not require or establish universal source
+equivalence. G3 learned import/patches are prerequisites for S2 rather than a
+requirement for this supplied-mechanism S1 pilot. General source/numerical proof,
+script construction, S2 and S3 gates remain separate from S1 feasibility.

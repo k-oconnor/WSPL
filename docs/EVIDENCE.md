@@ -70,3 +70,21 @@ weakens gain, persists a replayed counterexample and checks a supplied correctio
 optional opaque Tanh probes remain empirical. Full suite: 155 tests pass. Standalone
 CPU demo: PROVED / REFUTED / PROVED plus effect/no-effect controls and exact replay.
 No model calls, training or robot execution; no scientific run approved.
+
+
+## Formal experiment preparation (November 3)
+
+Implemented S1 finite supplied-mechanism authoring kernel, six arms at a fixed
+541-parameter target, data-only sparse-weight/PWA-expression/WSPL front ends,
+finite rational verification, development/verification feedback separation,
+usage budgets, final selection, request export and source-gated offline transcript
+grading. Preserves all 36 trial denominators and descriptive task/draw-paired
+contrasts; 14 new engineering checks bring the full suite to 169 passing tests.
+No scientific proposer calls or training ran. FORMAL_EXPERIMENTS_V1.md specifies
+S1 authoring, S2 independently learned repair and S3 frozen composition with their
+separate missing capabilities. The first screen is explicitly nonconfirmatory;
+finite Boolean proofs are not continuous/deployment/robot guarantees. Narrow
+sparse-matrix/single-expression front ends do not establish superiority over
+unrestricted scripts/code. Model/sampling/money/task freeze and isolated live
+collection with provider receipts/pre-call accounting remain pending. No new
+manifest is approved, no source registry entry added, no experiment launched.

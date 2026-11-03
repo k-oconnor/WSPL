@@ -115,6 +115,13 @@ contracts, deployment numerics and physical outcomes. The proposed first screen
 has 36 synthesis runs, but is not registered, funded, approved or launchable yet.
 Model identity, monetary cap, frozen tasks and final thresholds remain unset.
 
+The [formal experiment protocols](docs/wspl/FORMAL_EXPERIMENTS_V1.md) now specify
+the first finite-domain authoring screen and subsequent learned repair/composition
+studies. Implemented: six-arm trial kernel, common 541-parameter target, finite
+verification, feedback firewall, budget/selection records, public request export
+and source-gated offline grading. Isolated provider collection and frozen launch
+settings remain pending; no model calls or scientific trials have run.
+
 - [Structured study plan](experiments/plans/wspl_cross_domain_v1.json)
 - [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)
 - [Original supplied WSPL proposal](docs/wspl/PROPOSAL_v0_1_2026-11-03.md), archived unchanged with provenance

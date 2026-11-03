@@ -1,5 +1,15 @@
 # Roadmap and evidence milestones
 
+## Operational formal study preparation
+
+See wspl/FORMAL_EXPERIMENTS_V1.md. The first finite Boolean authoring screen now
+has a six-arm kernel, common 541-parameter allocation, data-only expression/sparse
+matrix/WSPL submission, separate feedback views, one-shot final grading, budgets,
+complete paired denominators, public request export and offline source-gated
+transcript grading. Fresh task/model/cost freeze and isolated live collection
+remain pending. S2 learned repair and S3 composition are explicit subsequent
+protocols with unresolved import/patch/composition prerequisites.
+
 ## WSPL language and cross-domain studies
 
 The user endorsed a typed weight-space programming language and a formal
@@ -7,7 +17,7 @@ authoring/repair/composition program across three domains. See
 wspl/EXPERIMENT_PROGRAM.md and wspl/WSPL_IMPLEMENTATION.md. The scalar JSON IR and
 exact rational reference implement an initial part of G0, and the fresh ReLU MLP
 compiler/independent artifact loader in wspl/COMPILER.md implement an initial G1.
-All 155 engineering checks pass. Initial real-graph I/O verification and empirical
+All 169 engineering checks pass. Initial real-graph I/O verification and empirical
 opaque-network intervention logging are implemented; see wspl/VERIFICATION.md and
 wspl/INTERVENTION_EVIDENCE.md. Source equivalence, IEEE/closed-loop proofs, learned
 import/patch transactions and the blinded proposer harness remain missing. The proposed first screen
