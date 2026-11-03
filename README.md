@@ -201,7 +201,7 @@ An existing BDDL scene is not a working Skillforge task.
 python -m unittest discover -s tests -v
 ```
 
-The current local suite has 183 checks (14 added for source equivalence); all pass
+The current local suite has 203 checks; all pass
 with Z3 installed, with 37 skipped when PyTorch/NumPy are absent. Optional neural/adapter checks
 skip when PyTorch or NumPy is absent, and solver checks skip without Z3; full local results used a separate CPU
 research environment. No model download, simulator rollout, scientific training
