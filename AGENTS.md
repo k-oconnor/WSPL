@@ -2,7 +2,7 @@
 
 Kevin authorized a new repository and specification for LLM-programmed neural/RMV action blocks composed by LTLf programs. Skillforge is a user-accepted working name. Coordinate this work with sibling `thesis_master` and the ambition of accumulating compact, executable, experimentally validated knowledge toward a causal neuro-symbolic world model.
 
-Read README.md, docs/CONTEXT.md, docs/SYSTEM_SPEC.md, docs/M1_ENGINEERING.md, docs/EXPERIMENT_01.md and docs/EVIDENCE.md before implementation or scientific claims. Implemented: reference semantics, small-alphabet LTLf DFA compilation and strong planning/execution in supplied finite models. LLM harness, skill learners and robot execution remain planned; do not describe them as implemented.
+Read README.md, docs/CONTEXT.md, docs/SYSTEM_SPEC.md, docs/M1_ENGINEERING.md, docs/EXPERIMENT_01.md, docs/EVIDENCE.md and docs/APPROACH_V1_RESULTS.md before implementation or scientific claims. Implemented: reference semantics, finite-model planning/hierarchy fixtures, differentiable MLP/RMV blocks, motor adapter/observers and a completed pregrasp positioning/imitation screen. A blinded LLM harness, contact skills and physical primitive hierarchy execution remain planned.
 
 Read docs/SIM_ADAPTER.md for the implemented single-tick LIBERO bridge and sampled physical observers. Its five-tick headless integration check is engineering evidence only. Physical task/primitive-hierarchy execution and skill acquisition remain planned. Do not turn tools/sim_preflight.py into an unapproved scientific runner. Missing motor ticks abort observer invocations; no collision or admitted grasp observer exists yet.
 
@@ -10,13 +10,15 @@ November 3: differentiable MLP/RMV blocks and an approach-only positioning/imita
 
 Current November 3 launch status supersedes that preparation note: approach-v1 was explicitly user-approved and ran, then failed on native horizon accounting before any fitting. One reference positioning trial succeeded. See docs/APPROACH_V1_LAUNCH.md. The horizon-fix replacement is prepared but unapproved; do not reuse the original digest approval. Run the isolated simulator interpreter outside this checkout to satisfy the unchanged source gate. All 100 unit checks pass; no process is active and no learned physical result exists yet.
 
+Current final status (November 3): user-approved approach-v1-fidelityfix completed all 60 episodes and both 2,000-update fits. Evaluation: zero 0/8; reference, analytic MLP and analytic RMV each 8/8; learned MLP 5/8 and learned RMV 3/8. RMV visited-input scalar fidelity <=2.99e-8. Source gate complete, external environment unchanged, no job active and no follow-on run approved. This supersedes historical preparation/failed-attempt notes. Read docs/APPROACH_V1_RESULTS.md for limitations: inspected analytic teacher encodings and same-scene standoff positioning, not blinded authorship, grasp, hierarchy or transfer evidence.
+
 ## Semantics and evidence
 
 - Action blocks execute controls. LTLf propositions report observed state, commands and externally verified skill outcomes. Do not conflate a neural success prediction with physical success.
 - Boolean LTLf on nonempty finite traces and fuzzy RMV arithmetic are distinct. Every bridge needs explicit, versioned thresholds/observer semantics. The direct evaluator is independent of the derivative compiler. A currently accepting DFA state need not remain accepting after further observations.
 - LTLf automata monitor specifications. Strategy synthesis additionally needs action models, environmental assumptions and realizability analysis. State guarantees conditionally; a successful abstract synthesis is not a physical guarantee.
 - Ground RMV inputs in named channels. Fidelity covers normalization, literals, conjunction/disjunction, affine motor readout and clipping. Report explanation size and empirical usefulness separately from exact arithmetic.
-- Keep the two-by-two acquisition experiment: LLM/gradient × MLP/RMV. Count calls, tokens, failed proposals, feedback, data collection, revisions, compilation and validation. Interaction efficiency and wall-time efficiency are separate claims.
+- Keep the two-by-two acquisition experiment: LLM/gradient Ãƒâ€” MLP/RMV. Count calls, tokens, failed proposals, feedback, data collection, revisions, compilation and validation. Interaction efficiency and wall-time efficiency are separate claims.
 - Preserve held-out physical layouts, disturbances and task structures; seal choices before final evaluation. Do not use hidden evaluator state in a controller. Supplied structured perception and low-level control adapters must be explicit and matched.
 - This project does not replace legacy RBL-RMV, TNST/TNTST or robot Model 1. No canonical architecture substitution is authorized by importing a prior artifact.
 - Record negative results. Toy-world modularity/repair results assume supplied wiring, privileged intermediate inputs and known repair localization; monolith repair lacked rehearsal.
@@ -31,7 +33,7 @@ Prepare a concrete constructor, runner, configuration and complete Python invent
 
 While a source-pinned run is active, do not edit/add/remove inventoried Python in that checkout. Use a separate worktree. Preserve one rolling resumable checkpoint per arm every 1,800 seconds plus final/clean-stop; no accumulating best/initial/per-improvement weight copies unless Kevin changes that policy.
 
-The registry was initially empty; it now records Kevin's exact original approach-v1 approval and its failed run. The horizon-fix replacement is not approved or queued. Creating this repository/spec does not authorize API expenditure, new training, robot deployment or hardware control. Prepare work concretely before obtaining any approval explicitly required by this contract. Do not request approval for routine reversible development or unit checks.
+The registry records three explicit user-approved pilot identities: two failed attempts and the completed fidelity repair. No follow-on experiment is approved or queued. Creating this repository/spec does not authorize API expenditure, new training, robot deployment or hardware control. Prepare work concretely before obtaining any approval explicitly required by this contract. Do not request approval for routine reversible development or unit checks.
 
 ## Repo hygiene
 

@@ -95,3 +95,6 @@ requires exact replacement-digest approval before registering and launching.
 Expected runtime remains several minutes with a 20-minute wall guard, CPU only,
 no APIs, one final/clean-stop checkpoint. Launch after approval through the source
 gate using the ignored sim_python binding; never transfer prior approvals.
+
+
+November 3 final update: the fidelity-fix source above was explicitly user-approved and completed through the source gate. See docs/APPROACH_V1_RESULTS.md (or APPROACH_V1_RESULTS.md within docs) for the audited eight-start results and costs. Earlier preparation/failed-attempt descriptions are historical. No follow-on run is approved.

@@ -49,16 +49,16 @@ An isolated MuJoCo 3.2.7 / robosuite 1.4.1 environment passed a five-tick headle
 | Typed JSON task/skill/RMV schemas | Provided |
 | Direct LTLf semantics on completed finite traces | Implemented reference; unit-tested |
 | Scalar grounded RMV evaluation including affine motor readout | Implemented reference; unit-tested |
-| Source-identity gate and empty approval registry | Provided; gate tests copied with provenance |
+| Source-identity gate and explicit user approval registry | Implemented; prior attempts and approvals retained |
 | Small-alphabet LTLf-to-DFA compiler | Implemented with explicit construction limits |
 | Strong finite-model strategy synthesis and abstract executor | Implemented; all declared outcomes must reach acceptance |
 | Supplied hierarchy expansion and macro-summary task fixtures | Implemented; nested primitive execution remains planned |
 | LLM task translation / weight-authoring harness | Planned |
 | Single-tick LIBERO motor adapter and sampled outcome observers | Implemented; headless integration checked |
 | Differentiable MLP/RMV blocks and scalar export checks | Implemented; optional PyTorch, unit-tested |
-| Approach-only physical comparison and AdamW imitation runner | Prepared, unapproved; see [protocol](docs/APPROACH_V1.md) |
+| Approach-only physical comparison and AdamW imitation runner | Completed engineering pilot; [results](docs/APPROACH_V1_RESULTS.md) |
 | Physical primitive hierarchy executor | Planned |
-| Robotic acquisition, composition or repair results | Not run |
+| Contact skills / physical composition / repair | Not run |
 
 ## Reference checks
 

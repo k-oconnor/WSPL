@@ -164,3 +164,6 @@ episodes/updates. That guard cannot interrupt a hung native simulator call. The
 existing five-tick integration check and synthetic rollout fixtures do not replace
 the required physical feasibility panel. The simulator environment must be outside
 the repository for the unchanged source gate. Nothing launches automatically.
+
+
+November 3 final update: the fidelity-fix source above was explicitly user-approved and completed through the source gate. See docs/APPROACH_V1_RESULTS.md (or APPROACH_V1_RESULTS.md within docs) for the audited eight-start results and costs. Earlier preparation/failed-attempt descriptions are historical. No follow-on run is approved.

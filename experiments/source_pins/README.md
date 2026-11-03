@@ -15,3 +15,6 @@ python experiments/source_consistency.py run --model-id APPROVED_ID --output res
 ```
 
 The commands above are templates, not existing runnable experiments. Never refresh an approved historical identity to hide changes, auto-approve a candidate or bypass the gate. Unit checks and read-only audits do not require experiment approval.
+
+
+November 3 final update: the fidelity-fix source above was explicitly user-approved and completed through the source gate. See docs/APPROACH_V1_RESULTS.md (or APPROACH_V1_RESULTS.md within docs) for the audited eight-start results and costs. Earlier preparation/failed-attempt descriptions are historical. No follow-on run is approved.

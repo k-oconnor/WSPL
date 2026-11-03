@@ -12,6 +12,12 @@
       "sha256": "75e33ff7d7d55a1500cfd9521a95f26dc1443f5a6354c3cde595749b87f6931b",
       "approved_by": "user",
       "approval": "User explicitly selected Approve this manifest and launch the repaired approach pilot on 2026-11-03"
+    },
+    "approach-v1-fidelityfix": {
+      "manifest": "experiments/source_pins/approach_v1_fidelityfix.manifest.json",
+      "sha256": "d770313a57ec51094e3147e6876c975835e5ccd55950e057d7bde2c3e247aaa4",
+      "approved_by": "user",
+      "approval": "User explicitly selected Approve this manifest and launch the fidelity-repaired pilot on 2026-11-03"
     }
   }
 }
