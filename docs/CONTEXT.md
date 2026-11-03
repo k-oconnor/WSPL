@@ -1,5 +1,14 @@
 # Working context
 
+Kevin endorsed adding Path to Recursive Twin Improvement (RTI) to the README
+after discussion. Proposed loop: two frontier-model instantiations alternately
+edit each other's weights, admitting changes only after independent domain
+improvement and required contract/preservation checks. Outcomes become proposed
+training signals for better editing. Distinguish target-domain gains from editor
+competence, formal proofs from empirical scores, and accessible-small-target
+precursors from genuine editable frontier twins. RTI/training/recursive gains are
+future research, not implemented results or authorization to run a new study.
+
 Kevin selected WSPL text syntax for the initial authoring comparison. Both WSPL
 arms now accept Core PWA module strings through Mo's parser, with JSON IR internal
 only. Candidate contracts are rejected, fixed input order/types remain enforced,
