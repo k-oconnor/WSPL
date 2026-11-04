@@ -36,6 +36,12 @@
       "sha256": "73bf70a24e92b978831aeca4998c44d049b6b2f39b4dda9544c5409b02b7fc46",
       "approved_by": "user",
       "approval": "User explicitly selected Approve this replacement manifest and launch on 2026-11-03; three fresh Astra/xhigh invocations additional to the preserved aborted v1 attempt, under the presented protocol and limits."
+    },
+    "breakout-matched-v1": {
+      "manifest": "experiments/source_pins/breakout_matched_v1.manifest.json",
+      "sha256": "9771cbf74140ac577d366ccd935139d9efe1e2f6016cf91dc385c78d7d2256b7",
+      "approved_by": "user",
+      "approval": "User explicitly selected Approve this manifest and launch the matched comparison on 2026-11-03; nine fresh Astra/xhigh proposals across native edits, restricted Python PWA and WSPL text, fixed ReLU target, protocol time/usage limits and paired evaluation as presented."
     }
   }
 }

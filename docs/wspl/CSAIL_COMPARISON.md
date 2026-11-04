@@ -99,7 +99,8 @@ dependencies. This is artifact replay, not fresh Astra authoring.
 The [fresh native authoring screen](ASTRA_BREAKOUT_NATIVE_RESULTS.md) has since
 completed three policies (484.756,541.818,510.042 mean return). The
 [matched ReLU extension](BREAKOUT_MATCHED_V1.md) is prepared with native edits,
-restricted Python PWA source and WSPL, three fresh draws each. Neither its source
-nor its nine new proposer invocations are approved yet. Trained PPO references
+restricted Python PWA source and WSPL, three fresh draws each. The exact source
+and nine invocations are now user-approved and the run has launched; see its
+[startup record](breakout_matched_v1_launch.json). No comparison result exists yet. Trained PPO references
 remain unprepared. The $150 estimate covered the Boolean screen, not PPO
 rebuilding or this expanded benchmark. No outreach is sent here.

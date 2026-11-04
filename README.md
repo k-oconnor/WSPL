@@ -162,7 +162,7 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 - [CSAIL comparison and product win conditions](docs/wspl/CSAIL_COMPARISON.md): useful performance, checked changes and less engineering/review effort; outperforming the published game score is optional
 - [Completed Breakout artifact replay](docs/wspl/BREAKOUT_REPLAY_RESULTS.md): 511.828 mean return versus upstream 517.411; uniform control 0.551; 1,000 episodes each, CPU only, no model calls
 - [Completed fresh Astra native authoring screen](docs/wspl/ASTRA_BREAKOUT_NATIVE_RESULTS.md): three one-shot policies, 3,000 evaluated episodes; all replies, usage and failed-attempt history archived
-- [Prepared matched ReLU comparison](docs/wspl/BREAKOUT_MATCHED_V1.md): native edits / restricted Python source / WSPL, three fresh draws each, identical 20,486-parameter target; no new model calls, exact-source approval pending
+- [Matched ReLU comparison](docs/wspl/BREAKOUT_MATCHED_V1.md): approved and launched; native edits / restricted Python source / WSPL, three fresh draws each, identical 20,486-parameter target; [startup record](docs/wspl/breakout_matched_v1_launch.json)
 - [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)
 - [Original supplied WSPL proposal](docs/wspl/PROPOSAL_v0_1_2026-11-03.md), archived unchanged with provenance
 - [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents

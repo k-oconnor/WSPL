@@ -1,0 +1,84 @@
+{
+  "scope": "startup evidence only, not completed comparison",
+  "launch": {
+    "pid": 39012,
+    "launched_utc": "2026-11-04T02:40:10.7783159Z",
+    "manifest_sha256": "9771cbf74140ac577d366ccd935139d9efe1e2f6016cf91dc385c78d7d2256b7",
+    "cwd": "C:/Users/kevin/OneDrive/Desktop/Skillforge-breakout-matched-v1",
+    "output": "results/breakout_matched_v1",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "max_invocations": 9
+  },
+  "source_gate_status": "verified",
+  "constructor_calls": 1,
+  "startup_status": {
+    "status": "running",
+    "trials": [
+      {
+        "arm": "weights",
+        "draw": 0,
+        "status": "collecting",
+        "summary": null
+      },
+      {
+        "arm": "code",
+        "draw": 0,
+        "status": "not_attempted",
+        "summary": null
+      },
+      {
+        "arm": "wspl",
+        "draw": 0,
+        "status": "not_attempted",
+        "summary": null
+      },
+      {
+        "arm": "code",
+        "draw": 1,
+        "status": "not_attempted",
+        "summary": null
+      },
+      {
+        "arm": "wspl",
+        "draw": 1,
+        "status": "not_attempted",
+        "summary": null
+      },
+      {
+        "arm": "weights",
+        "draw": 1,
+        "status": "not_attempted",
+        "summary": null
+      },
+      {
+        "arm": "wspl",
+        "draw": 2,
+        "status": "not_attempted",
+        "summary": null
+      },
+      {
+        "arm": "weights",
+        "draw": 2,
+        "status": "not_attempted",
+        "summary": null
+      },
+      {
+        "arm": "code",
+        "draw": 2,
+        "status": "not_attempted",
+        "summary": null
+      }
+    ],
+    "source_manifest_sha256": "9771cbf74140ac577d366ccd935139d9efe1e2f6016cf91dc385c78d7d2256b7",
+    "active_seconds": 0.030999999959021807
+  },
+  "event_types": [
+    "thread.started",
+    "turn.started"
+  ],
+  "model_argument": "gpt-6-astra",
+  "command_sha256": "1010a0b2a35a0cec6a651536d85343500961c96b0bfe707509448546139a7585",
+  "cli_warning": "auxiliary unknown gpt-5.6-luna metadata warning retained; no error event",
+  "live_status": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-breakout-matched-v1\\results\\breakout_matched_v1\\status.json"
+}
