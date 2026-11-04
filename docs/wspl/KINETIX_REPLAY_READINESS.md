@@ -41,5 +41,10 @@ the full577KBprompt exceeds that path's capacity. Implement a verified file/stdi
 preflight before any authoring call, without truncating the supplied weights.
 The actual collection path already sends prompt text through stdin.
 
-No Kinetix environment has been installed or validated as part of this acquisition.
-No replay or fresh repair is yet launch-ready, registered or approved.
+November 4 update: isolated WSL CPU runtime installed at the released Kinetix
+commit and JAX 0.4.38. Seven focused checks pass, including three zero-action
+physics ticks. The published 51 edits reconstruct all 171,664 values numerically;
+3,145 signed-zero bits differ because integer text loses negative zero. The
+released NPZ is float64, so replay preserves that arithmetic explicitly.
+See [replay protocol](KINETIX_REPLAY_V1.md). No scored policy episodes, model
+requests, registration or approval. Fresh-authoring preflight work remains deferred.

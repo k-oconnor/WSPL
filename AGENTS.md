@@ -1,3 +1,79 @@
+November4 fresh Kinetix completion supersedes launch: source/study complete
+18:16:31UTC/10:16PST,6801.156active seconds,7constructors. Parent0/1024success;
+all6freshrepairs1024/1024. Native/WSPL mean100%,descriptivefeasible ceiling.
+AllWSPLnative_numpy_v1,zero loops/surgery. Output38315native/29706WSPL(22.5%less),
+mostly native third-draw outlier; median reduction3.3%,input+output reduction.78%.
+Input2118909total,no cache. Windows audit reconstructed all6reply/plan/FP32artifacts,
+verified104sources/518resources/freshthreads/prompts; Linux11286resources and
+2169recordedactions across21trajectories; all7168episodes accounted,zero newphysics.
+Report docs/wspl/KINETIX_REPAIR_V1_RESULTS.md,audits wsp_kinetix_v1_audit_*.json,
+tool tools/audit_wsp_kinetix_v1.py; compact raw replies/sources artifacts/wsp_kinetix_v1.
+README updated. No performance superiority,formal tanh proof,robustness or next-run
+authorization. Preserve isolated archives unchanged. Further useful tests should
+avoid fixed-scene success ceiling and target preservation or bounded variation.
+
+November4 fresh Kinetix comparison launch supersedes preparation: Kevin approved
+0cd0a7a6f7e7e0b6c5a8e2348788dc127f3d435a187c048c35bc56ed760f23e3 with
+"Approve this manifest and launch the Kinetix comparison". Reverified104sources,
+518Windows/11286Linuxresources; registered main/isolated. Hidden Windows host
+PID4824 launched16:23:09UTC/08:23PST in Skillforge-wsp-kinetix-v1, output
+results/wsp_kinetix_v1. Parent FP32 control runs first; >10%success prevents
+all model calls. Otherwise six fresh proposals follow under approved guards.
+Inspect live status/receipt; launch is not completion. Do not change isolated
+source/bound files, duplicate or automatically retry. Main may develop separately.
+Startup record docs/wspl/kinetix_repair_v1_launch.json.
+
+November4 fresh Kinetix authoring preparation: user said Lets gooooo after replay.
+Prepared six fresh Astra/xhigh calls,native/WSPLx3,common full580KBprompt with
+original parent failure trace and weights; no published repair/local scores.
+Same171664FP32parent/deployment; fixed topology. FP32parent1024episode control
+first; >10%success stops before calls. Otherwise1024episodes per valid proposal;
+maximum7168. Model context872000,compaction threshold800000; ~2.1M input tokens
+before caching, no hard dollar/output cap,existing Codex usage,no API fallback.
+20min call/six-hour overall/two-hour worker guards. CPU only.
+Large prompt offline preview uses explicit digest sentinel; full guarded UTF8
+stdin collection,not a claim of server receipt. All441development checks:439pass/
+2skips;8focusedWindowspass,7Linuxpass/Windows-onlyskip. Both isolated contexts
+and104sources/518Windows/11286Linuxresources verified. Candidate 0cd0a7a6f7e7e0b6c5a8e2348788dc127f3d435a187c048c35bc56ed760f23e3
+is unapproved,unregistered,not launched. Isolated Skillforge-wsp-kinetix-v1 over
+9eda868. Protocol docs/wspl/KINETIX_REPAIR_V1.md,sharedguide KINETIX_REPAIR_INTERFACE_V1.md,
+preparation kinetix_repair_v1_preparation.json. Approval is still required.
+
+November 4 Kinetix completion supersedes launch: study/source receipt complete
+15:51:17UTC/07:51PST,1715.603active seconds. Parent0/1024success,alltimeout;
+released repair1024/1024success,mean73steps; no red/invalid episodes.
+Means return .1518696762 /1.3738456808. Read-only audit verified99sources,
+11287resources,actor identities,all2048episode records and987recordedactions
+across6savedtrajectories; zero new simulator steps. Report
+KINETIX_REPLAY_V1_RESULTS.md and kinetix_replay_v1_results.json under docs/wspl;
+auditor tools/audit_kinetix_replay_v1.py. This is supplied-repair replication on
+one fixed level/start, not fresh authorship, WSPL advantage or physical proof.
+Preserve isolated archive unchanged. Next prepare matched fresh authoring with
+file/stdin prompt preflight and explicit numeric alignment; no follow-on approved.
+
+November 4 Kinetix launch supersedes preparation: Kevin explicitly approved
+manifest ef3ca419ffae13e156be92a3eb2d220762c035cc2eb00839e4d8c3c8d0b0046a,
+"Approve this manifest and launch the Kinetix replay". Reverified99 sources and
+11287 bound files, registered in main/isolated, launched hidden WSL CPU replay
+15:23:09UTC/07:23PST, Windows launcherPID46384. Isolated checkout
+Skillforge-kinetix-replay-v1; outputresults/kinetix_replay_v1. Source receipt
+verified at startup; inspect live status before claiming completion. Do not
+modify isolated source/bound resources, duplicate or automatically retry.
+Startup record docs/wspl/kinetix_replay_v1_launch.json. No fresh authoring approved.
+
+November 4 Kinetix preparation update: replay ready, not approved/registered/launched.
+Read docs/wspl/KINETIX_REPLAY_V1.md and KINETIX_REPLAY_V1_PREPARATION.md.
+Candidate ef3ca419ffae13e156be92a3eb2d220762c035cc2eb00839e4d8c3c8d0b0046a;
+isolated Skillforge-kinetix-replay-v1, 99 Python sources,11287 bound resources.
+Official Kinetix80ee9c2/JAX0.4.38/Jax2D1.0.1 isolated WSL CPU runtime.
+Released 51 edits reconstruct171664 values numerically,3145 signed-zero bit
+mismatches from integer printing; released actor and local inference FP64,
+physics/observations FP32. 431 development checks passed/two skips; all7
+Kinetix focused checks including three zero-action ticks passed. No scored
+policy episodes or proposer calls. Prepared1024episodes per arm,parent/repair,
+paired seeds,two-hour guard. Fresh authoring remains deferred until replay audit.
+Do not treat preparation as authorization. Exact source approval still required.
+
 # Skillforge research contract
 
 November4 completion supersedes launch: reworked Breakout run/source receipt

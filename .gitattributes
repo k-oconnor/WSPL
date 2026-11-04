@@ -5,7 +5,10 @@ artifacts/astra_breakout_native_v2/*.answer.md -text
 # Preserve recorded bytes and audit-script identities in research archives.
 artifacts/wsp_breakout_v1/*.answer.md -text
 artifacts/wsp_breakout_v1/*.source.wspl -text
+artifacts/wsp_kinetix_v1/*.answer.md -text
+artifacts/wsp_kinetix_v1/*.source.wspl -text
 artifacts/wsp_repair_v1/*.answer.md -text
 docs/wspl/wsp_*.json -text
 docs/wspl/wsp_*tests.txt -text
 tools/audit_wsp_*.py -text
+tools/audit_kinetix_replay_v1.py -text

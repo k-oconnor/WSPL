@@ -1,9 +1,11 @@
 """Bounded, auditable Codex collection. No scientific entry point here."""
 import json
+import hashlib
 import os
 from pathlib import Path
 import subprocess
 import time
+import threading
 
 
 DISABLED = ('code_mode code_mode_host shell_tool unified_exec unified_exec_tty '
@@ -35,12 +37,13 @@ def environment():
     return env
 
 
-def command(cli, catalog, instructions, workspace, answer):
+def command(cli, catalog, instructions, workspace, answer, large_prompt=False):
     args=[str(cli),'--no-daemon','exec','--strict-config','--ignore-user-config',
           '--ignore-rules','--ephemeral','--skip-git-repo-check','--json','--color','never',
           '--model','gpt-6-astra',
           '-C',str(workspace),'--output-last-message',str(answer)]
     for setting in settings(catalog,instructions):args+=['-c',setting]
+    if large_prompt:args+=['-c','model_context_window=872000','-c','model_auto_compact_token_limit=800000']
     return args+['-']
 
 
@@ -81,13 +84,24 @@ def preflight(cli,catalog,instructions,folder,prompt):
     offline=folder/'offline-home';offline.mkdir()
     args=[str(cli),'--no-daemon','debug','prompt-input']
     for setting in settings(catalog,instructions):args+=['-c',setting]
-    args+=[prompt]
+    # debug prompt-input has no file/stdin option. Large prompts use a digest
+    # sentinel to audit context; actual collection still sends the full stdin.
+    large=len(prompt.encode('utf-16-le'))>16000
+    digest=hashlib.sha256(prompt.encode('utf-8')).hexdigest()
+    preview_prompt=('Full prompt supplied through exec stdin; SHA-256 '+digest) if large else prompt
+    if large:args+=['-c','model_context_window=872000','-c','model_auto_compact_token_limit=800000']
+    args+=[preview_prompt]
     env=environment();env['CODEX_HOME']=str(offline.resolve())
     result=subprocess.run(args,cwd=folder/'empty',env=env,capture_output=True,encoding='utf-8',timeout=30)
     (folder/'prompt_preview.json').write_text(result.stdout,encoding='utf-8')
     (folder/'preflight.stderr').write_text(result.stderr,encoding='utf-8')
     if result.returncode or result.stderr.strip():raise ValueError('offline config preflight failed or warned')
-    audit_preview(json.loads(result.stdout),prompt)
+    audit_preview(json.loads(result.stdout),preview_prompt)
+    (folder/'preflight_binding.json').write_text(json.dumps(dict(
+        mode='context_only_digest_sentinel' if large else 'full_prompt',
+        prompt_sha256=digest,prompt_utf8_bytes=len(prompt.encode('utf-8')),
+        collection_transport='full UTF-8 stdin via codex exec -',
+        limitation='Large-prompt preflight verifies configuration/context, not server-side prompt receipt.' if large else None),indent=2)+'\n',encoding='utf-8')
 
 
 def audit_preview(messages,prompt):
@@ -117,16 +131,23 @@ def collect(cli, catalog, instructions, folder, prompt, seconds, should_stop):
     workspace=folder/'empty';workspace.mkdir()
     preflight(cli,catalog,instructions,folder,prompt)
     answer=folder/'answer.md'
-    args=command(cli,catalog,instructions,workspace.resolve(),answer.resolve())
+    args=command(cli,catalog,instructions,workspace.resolve(),answer.resolve(),large_prompt=len(prompt.encode('utf-16-le'))>16000)
     (folder/'command.json').write_text(json.dumps(args,indent=2)+'\n',encoding='utf-8')
     (folder/'prompt.txt').write_text(prompt,encoding='utf-8')
     started=time.monotonic();reason=None
     offset=0;pending=b''
     with (folder/'events.jsonl').open('wb') as out, (folder/'stderr.log').open('wb') as err:
         proc=subprocess.Popen(args,stdin=subprocess.PIPE,stdout=out,stderr=err,env=environment())
+        payload=prompt.encode('utf-8');delivery={}
+        def send_prompt():
+            try:
+                delivery['bytes_written']=proc.stdin.write(payload)
+                proc.stdin.close()
+            except (OSError,ValueError) as exc:delivery['error']=str(exc)
+        writer=threading.Thread(target=send_prompt,daemon=True);writer.start()
         try:
-            proc.stdin.write(prompt.encode('utf-8'));proc.stdin.close()
             while proc.poll() is None:
+                if 'error' in delivery:raise RuntimeError('prompt stdin delivery failed: '+delivery['error'])
                 with (folder/'events.jsonl').open('rb') as event_stream:
                     event_stream.seek(offset);chunk=event_stream.read();offset=event_stream.tell()
                 pending+=chunk
@@ -142,11 +163,14 @@ def collect(cli, catalog, instructions, folder, prompt, seconds, should_stop):
                 if os.name=='nt':subprocess.run(['taskkill','/PID',str(proc.pid),'/T','/F'],capture_output=True)
                 else:proc.kill()
                 proc.wait(timeout=15)
+            writer.join(timeout=5)
     if reason:raise RuntimeError(reason)
     if proc.returncode:raise RuntimeError('Codex exited '+str(proc.returncode)+'; see preserved stderr/events')
+    if writer.is_alive() or 'error' in delivery or delivery.get('bytes_written')!=len(payload):raise RuntimeError('incomplete prompt stdin delivery')
     events=[json.loads(line) for line in (folder/'events.jsonl').read_text(encoding='utf-8').splitlines() if line.strip()]
     text=answer.read_text(encoding='utf-8')
     audit=audit_events(events,text)
     audit['active_seconds']=time.monotonic()-started
+    audit['prompt_transport']=dict(bytes_written=delivery['bytes_written'],sha256=hashlib.sha256(payload).hexdigest(),transport='stdin',server_receipt_verified=False)
     (folder/'collection.json').write_text(json.dumps(audit,indent=2)+'\n',encoding='utf-8')
     return text,audit

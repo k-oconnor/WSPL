@@ -1,0 +1,35 @@
+{
+  "status": "prepared_unapproved_not_launched",
+  "manifest_sha256": "0cd0a7a6f7e7e0b6c5a8e2348788dc127f3d435a187c048c35bc56ed760f23e3",
+  "source_files": 104,
+  "windows_bound_files": 518,
+  "linux_bound_files": 11286,
+  "isolated_checkout": "C:/Users/kevin/OneDrive/Desktop/Skillforge-wsp-kinetix-v1",
+  "windows_python": "C:/Users/kevin/skillforge-runtime/venv-sim/Scripts/python.exe",
+  "full_suite": {
+    "total": 441,
+    "passed": 439,
+    "skipped": 2
+  },
+  "focused_windows": {
+    "total": 8,
+    "passed": 8
+  },
+  "focused_linux": {
+    "total": 8,
+    "passed": 7,
+    "skipped": 1
+  },
+  "offline_context_preflights": [
+    "native",
+    "wspl"
+  ],
+  "large_prompt_full_server_receipt_verified": false,
+  "model_calls": 0,
+  "scored_episodes": 0,
+  "notes": [
+    "Final parent-gate/source changes rechecked by focused Windows suite and both isolated resource audits.",
+    "Native Kinetix three-tick fixture passed during replay preparation; no new policy simulation here.",
+    "Estimated ~2.1M input tokens across six calls before caching; actual usage unknown until collection."
+  ]
+}

@@ -1,0 +1,50 @@
+The parent creeps onto the ramp, then alternates drive/coast without clearing it. This patch adds settling and a velocity-gated backup for a run-up, followed by sustained leftward drive. It replaces only a small control path and the active motor’s logits.
+
+```wspl
+wspl 0.2;
+target base=artifact("parent",sha256="faaafa1c0e3c0d1f3ce2e0de66c72d98621fbaf0a78ec066837af26e6edec56f");
+edit base as candidate mode=fixed numeric=native_numpy_v1 {
+  W1[0:679,0:4]=0;
+  b1[0:4]=[0,10,0,0];
+  W1[52,0]=1;
+  W1[54,1]=1;
+  W1[234,2]=1;
+  W1[253,3]=1;
+
+  W2[0:128,0:7]=0;
+  b2[0:7]=[140,-292.5,-96,-63.5,-108,305.4,-294.6];
+  W2[0,0]=-40;
+  W2[1,1]=30;
+  W2[2,2]=40;
+  W2[3,3]=100;
+  W2[0,4]=40;
+  W2[1,5]=-30;
+  W2[1,6]=30;
+
+  W3[0:128,0:2]=0;
+  b3[0:2]=[-10,-15];
+  W3[0:3,0]=5;
+  W3[3:7,1]=5;
+
+  W4[0:128,0:2]=0;
+  b4[0:2]=0;
+  W4[0,0]=3;
+  W4[1,1]=3;
+
+  W5[0:128,0:2]=0;
+  b5[0:2]=0;
+  W5[0,0]=3;
+  W5[1,1]=3;
+
+  W6[0:128,0:2]=0;
+  b6[0:2]=0;
+  W6[0,0]=3;
+  W6[1,1]=3;
+
+  W7[0:128,0:3]=0;
+  b7[0:3]=[-2,0,0];
+  W7[1,0]=32;
+  W7[0,1]=-16;
+  W7[0,2]=16;
+}
+```

@@ -1,0 +1,14 @@
+{
+  "status": "audit_passed",
+  "phase": "linux",
+  "source_files": 104,
+  "bound_files": 11286,
+  "manifest_sha256": "0cd0a7a6f7e7e0b6c5a8e2348788dc127f3d435a187c048c35bc56ed760f23e3",
+  "episodes": 7168,
+  "recorded_actions_replayed": 2169,
+  "arm_stats": {},
+  "active_seconds": 6801.156000000192,
+  "finished_utc": "2026-11-04T18:16:31.124601+00:00",
+  "auditor_sha256": "840a7bf51448064cc9f241be74ff9d351d1bcb5551b3cf9abe4ff49f0c0dd20d",
+  "scope": "Read-only source/resource, record and artifact audits; no new physics steps. Windows reconstructs edits/collection; Linux replays saved actions."
+}

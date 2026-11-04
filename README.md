@@ -84,8 +84,10 @@ and reported output-token use 20% lower in this run. Full plans, weights,
 equations, scores and trajectories are retained, with
 [all replies and sources archived](artifacts/wsp_breakout_v1/README.md).
 The audit reconstructed every candidate and checked 6,000 episode records and
-127,378 recorded actions. [Kinetix replay preparation](docs/wspl/KINETIX_REPLAY_READINESS.md)
-has begun with pinned reference files; no Kinetix experiment has launched.
+127,378 recorded actions. The subsequent [Kinetix repair screen](docs/wspl/KINETIX_REPAIR_V1_RESULTS.md)
+also completed: all three native and three WSPL repairs succeeded in 1,024/1,024
+episodes each, versus 0/1,024 for the parent. This is a success ceiling, not a
+comparative performance advantage; all WSPL proposals used literal edits.
 
 ## WSPL syntax: programs that construct weights
 
@@ -284,6 +286,38 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 - [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents
 
 ## Experiments
+
+### Kinetix: repair of a supplied trained controller
+
+Six fresh Astra/xhigh proposals edited the same 171,664-parameter FP32 parent,
+with identical task information, fixed topology and 1,024 paired episodes each.
+The parent scored 0/1,024; **every native and WSPL repair scored 1,024/1,024**.
+The descriptive feasibility rule passed, with no task-performance advantage.
+
+WSPL used 29,706 output tokens versus 38,315 native (**22.5% fewer**, including
+reasoning). That aggregate difference is largely driven by one native draw;
+median output use differs by only 3.3%, and input+output totals by 0.78% because
+the supplied weights dominate context. All WSPL programs chose the
+native-compatible literal profile.
+
+Across three proposals, WSPL used **97 edit statements versus 112** and
+**1,949,335 charged construction operations versus 2,487,951** (21.6% fewer).
+These counters measure editor work, including tensor processing, not inference
+FLOPs; both arms still execute the same dense architecture. The larger third
+native repair drives much of this aggregate difference. Five of the six fresh
+repairs used 24–36 statements, compared with 51 in the published repair; the
+published float64 replay is historical context, not a matched control here.
+
+The protocol deliberately excluded circuit placement and graph surgery to hold
+topology fixed. Constants, exact arithmetic and loops were available but unused.
+Literal edits sufficed for these compact run-up controllers; presenting the
+compatibility profile first may also have influenced selection, but that is an
+untested explanation. This establishes useful repair through either interface,
+not an advantage from richer constructs. The next discriminating comparison
+should allow structured surgery alongside equivalent raw graph access and test
+preservation obligations or varied conditions.
+[Results, limitations and audits](docs/wspl/KINETIX_REPAIR_V1_RESULTS.md);
+[all replies and source programs](artifacts/wsp_kinetix_v1/README.md).
 
 ### Matched native versus WSPL: performance and token efficiency
 

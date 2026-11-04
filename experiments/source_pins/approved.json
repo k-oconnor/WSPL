@@ -58,6 +58,20 @@
       "approval": "User explicitly selected Approve this manifest and launch the reworked Breakout comparison on 2026-11-04; six fresh Astra/xhigh one-shot proposals, native/WSPL, three each, original fixed tanh network, 1000 paired episodes per valid proposal, artifact retention and stated usage/time limits.",
       "approval_question_item_id": "call_29d904c693c949fab85cfcbbeace151d",
       "approved_utc": "2026-11-04T09:21:46.841172+00:00"
+    },
+    "kinetix-replay-v1": {
+      "manifest": "experiments/source_pins/kinetix_replay_v1.manifest.json",
+      "sha256": "ef3ca419ffae13e156be92a3eb2d220762c035cc2eb00839e4d8c3c8d0b0046a",
+      "approved_by": "user",
+      "approval": "User explicitly selected Approve this manifest and launch the Kinetix replay",
+      "registered_utc": "2026-11-04T15:23:09.008589+00:00"
+    },
+    "wsp-kinetix-v1": {
+      "manifest": "experiments/source_pins/wsp_kinetix_v1.manifest.json",
+      "sha256": "0cd0a7a6f7e7e0b6c5a8e2348788dc127f3d435a187c048c35bc56ed760f23e3",
+      "approved_by": "user",
+      "approval": "User explicitly selected Approve this manifest and launch the Kinetix comparison",
+      "registered_utc": "2026-11-04T16:23:09.412498+00:00"
     }
   }
 }

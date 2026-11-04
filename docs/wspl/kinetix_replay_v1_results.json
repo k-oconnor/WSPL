@@ -1,0 +1,45 @@
+{
+  "status": "audit_passed",
+  "manifest_sha256": "ef3ca419ffae13e156be92a3eb2d220762c035cc2eb00839e4d8c3c8d0b0046a",
+  "sources": 99,
+  "resources": 11287,
+  "source_receipt_status": "complete",
+  "constructor_calls": 1,
+  "finished_utc": "2026-11-04T15:51:17.202179+00:00",
+  "episodes": 2048,
+  "trajectories": 6,
+  "recorded_actions_replayed": 987,
+  "active_seconds": 1715.603087317,
+  "summaries": {
+    "parent": {
+      "episodes": 1024,
+      "outcomes": {
+        "success": 0,
+        "red": 0,
+        "timeout": 1024,
+        "invalid": 0
+      },
+      "mean_return": 0.1518696762440362,
+      "mean_length": 256.0
+    },
+    "edited": {
+      "episodes": 1024,
+      "outcomes": {
+        "success": 1024,
+        "red": 0,
+        "timeout": 0,
+        "invalid": 0
+      },
+      "mean_return": 1.373845680791419,
+      "mean_length": 73.0
+    }
+  },
+  "reconstruction": {
+    "statements": 51,
+    "parameters": 171664,
+    "numerical_mismatches": 0,
+    "signed_zero_bit_differences": 3145
+  },
+  "auditor_sha256": "2b5c3e06647986ea4dce99fe88441f5e859ce3e66de5a88716e098d1ad493ddb",
+  "scope": "Source/runtime and artifact identities, episode accounting, stored-action RNG replay and recorded return sums; zero new simulator steps. Full physics trajectories not independently rerun."
+}
