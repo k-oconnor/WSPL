@@ -1,3 +1,4 @@
 * text=auto eol=lf
 *.png binary
 *.pdf binary
+artifacts/astra_breakout_native_v2/*.answer.md -text

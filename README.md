@@ -24,7 +24,7 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | Frozen MLP tensor import and parent/edited relational contracts | Initial G3a prototype; exact hex-float import with pre/postprocessing relays, Z3 relational checks |
 | Output-patch composition and transactions | Initial G3b prototype; augmentation with verified slices, COMMITTED/REJECTED/UNRESOLVED gating, replayable manifests |
 | Opaque-network intervention evidence | Paired activation probes, controls, replay and hash-chained empirical logs |
-| Blinded LLM authoring and counterexample-feedback harness | Planned |
+| Fresh LLM authoring | Native Breakout three-draw screen completed; comparative WSPL/feedback screen pending |
 | Small-alphabet LTLf compiler and strong finite-model planner | Implemented for supplied symbolic effect models |
 | Hierarchical task expansion | Implemented at a supplied macro-summary cut; no physical primitive executor |
 | Neural MLP/RMV blocks and single-tick LIBERO bridge | Implemented; independent sampled outcome observers |
@@ -35,7 +35,7 @@ The proposal's first module form now parses from text into the scalar JSON IR an
 contract suites ([text front end](docs/wspl/PARSER.md)); other proposed syntax is not
 implemented. The scalar JSON IR compiles neural weights and supports scoped
 real-graph contract checks. There is
-no numerical execution proof or blinded controller-synthesis harness. The available compiler command is documented below;
+no numerical execution proof or comparative WSPL controller-synthesis result. The available compiler command is documented below;
 the proposal's general `wspl` command suite remains planned.
 
 ## Try the exact scalar reference
@@ -149,7 +149,8 @@ the first finite-domain authoring screen and subsequent learned repair/compositi
 studies. Implemented: six-arm trial kernel, common 541-parameter target, finite
 verification, feedback firewall, budget/selection records, public request export
 and source-gated offline grading. Isolated provider collection and frozen launch
-settings remain pending; no model calls or scientific trials have run.
+settings for that six-arm screen remain pending. A separate native Breakout
+authoring screen has completed, as reported below.
 
 Initial claims are explicitly mapped to evidence in that protocol. Final selected
 code/WSPL artifacts now receive a separate rational source-equivalence diagnostic;
@@ -160,10 +161,43 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 - [Structured study plan](experiments/plans/wspl_cross_domain_v1.json)
 - [CSAIL comparison and product win conditions](docs/wspl/CSAIL_COMPARISON.md): useful performance, checked changes and less engineering/review effort; outperforming the published game score is optional
 - [Completed Breakout artifact replay](docs/wspl/BREAKOUT_REPLAY_RESULTS.md): 511.828 mean return versus upstream 517.411; uniform control 0.551; 1,000 episodes each, CPU only, no model calls
-- [Fresh Astra native authoring screen](docs/wspl/ASTRA_BREAKOUT_NATIVE_V2.md): repaired three-draw screen approved and launched; first draw collecting, [startup record](docs/wspl/astra_native_v2_launch.json); original aborted attempt preserved
+- [Completed fresh Astra native authoring screen](docs/wspl/ASTRA_BREAKOUT_NATIVE_RESULTS.md): three one-shot policies, 3,000 evaluated episodes; all replies, usage and failed-attempt history archived
 - [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)
 - [Original supplied WSPL proposal](docs/wspl/PROPOSAL_v0_1_2026-11-03.md), archived unchanged with provenance
 - [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents
+
+## First fresh weight-authoring result: Breakout
+
+In a supplied-rule pilot, **Astra authored functioning neural Breakout controllers
+in one response per draw**, using the original CSAIL compact weight-edit syntax.
+Each starts from a zero-initialized 600 -> 32 -> 32 -> 6 tanh network with 20,486
+parameters. Three separate fresh conversations received the same game rules and
+source, with no reference solution, evaluation feedback or gradient updates.
+
+| Fresh policy | Episodes | Mean return | Episode standard error |
+| --- | ---: | ---: | ---: |
+| Draw 1 | 1,000 | 484.756 | 4.469 |
+| Draw 2 | 1,000 | 541.818 | 5.000 |
+| Draw 3 | 1,000 | 510.042 | 7.755 |
+
+The three-policy mean is **512.205**. Our separate released-policy replay scored
+511.828 and its uniform control 0.551; those used different evaluation seeds and
+provide context rather than a paired superiority test. Every fresh policy used
+the same 1,000 evaluation seed pairs. All 3,000 episodes, including horizon
+truncations, are retained. All edits parsed successfully, and the event logs show
+one completed turn and zero tool calls per draw.
+
+The completed run took 41.1 minutes, including 29.7 minutes collecting replies.
+Reported usage: 10,020 input tokens (3,200 cached) and 65,775 output tokens,
+including 55,638 reasoning tokens. An earlier invocation aborted on a CLI startup
+warning is also recorded; its usage is unknown. The read-only audit checks source
+identity, raw-file hashes, reply-to-weight reconstruction and every episode record.
+
+This demonstrates useful native weight authoring on one supplied task. A matched
+WSPL comparison, gradient-trained control and formal controller proof remain
+future experiments. See the [full results and limitations](docs/wspl/ASTRA_BREAKOUT_NATIVE_RESULTS.md),
+[machine-readable audit](docs/wspl/astra_native_v2_results.json) and
+[all three authored replies](artifacts/astra_breakout_native_v2/README.md).
 
 ## Path to Recursive Twin Improvement
 
@@ -253,8 +287,8 @@ An existing BDDL scene is not a working Skillforge task.
 python -m unittest discover -s tests -v
 ```
 
-The suite now contains 261 checks: 260 pass in the primary research environment,
-with the native MinAtar fixture skipped there. All 12 replay-specific checks pass
+The suite now contains 274 checks: 273 pass in the primary research environment,
+with the native MinAtar fixture skipped there. All 25 replay/authoring-focused checks pass
 in the separate MinAtar CPU environment, including that fixture. Optional neural/adapter checks
 skip when PyTorch or NumPy is absent, and solver checks skip without Z3; full local results used a separate CPU
 research environment. No model download, simulator rollout, scientific training

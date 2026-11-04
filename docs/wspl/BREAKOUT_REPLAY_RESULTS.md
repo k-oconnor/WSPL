@@ -47,8 +47,7 @@ It does not test a fresh Astra proposal, compare WSPL with native editing or
 ordinary code, establish formal properties of the tanh policy, reproduce PPO
 training, or satisfy the product win conditions.
 
-The next planned step is independent fresh Astra authoring under the native
-compact edit interface, with frozen task information, no feedback in the one-shot
-replication and complete cost records. It needs its own runner and source/budget
-approval. A shared-ReLU WSPL comparison follows as a separate extension; this
-completed replay does not authorize either step.
+The subsequent, separately approved [fresh Astra native authoring screen](ASTRA_BREAKOUT_NATIVE_RESULTS.md)
+has now completed three draws with no evaluation feedback. Its result and usage
+records are separate from this fixed-artifact replay. A shared-ReLU WSPL
+comparison remains a future extension requiring its own approval.

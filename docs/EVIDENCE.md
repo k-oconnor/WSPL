@@ -155,3 +155,12 @@ isolatedcheckout8488733. Docs/wspl/BREAKOUT_REPLAY_RESULTS.md and compact
 breakout_replay_results.json archive result/audit/raw-file identities. This is
 fixed released-artifact replay, no fresh Astra authorship, WSPL advantage,
 formal tanh proof, PPO reproduction or product win. No next run authorized.
+
+
+## Completed fresh Astra native authoring screen (November 3)
+
+Run/results/source receipt complete at approved digest73bf70a24e92b978831aeca4998c44d049b6b2f39b4dda9544c5409b02b7fc46,isolated Skillforge-astra-breakout-v2 checkoutfeae13d. Three separate fresh one-response Astra/xhigh requests produced native20,486-parameter tanh Breakout policies.1000paired episodes each:484.756(SE4.469),541.818(SE5.000),510.042(SE7.755);policy-mean512.205,across-policy sampleSD28.592. All3000episodes retained;804/775/521horizon truncations.193/118/91edits,zero skips;3339/1032/1153nonzero parameters. No toolcalls,scorefeedback or optimizer updates.
+
+Read-only completion audit verified65source files,bound resources/executable/dependencies,three constructor calls,unique threads/one turn,prompt/preview identity,all episode/seed/action/termination accounting,independently recomputed statistics,and bitwise reply-to-NPZ reconstruction. Local raw receipts/episodes/weights preserved;raw replies also byte-preserved in Git under artifacts/astra_breakout_native_v2. Reproducible auditor tools/audit_astra_breakout_native_v2.py. Report docs/wspl/ASTRA_BREAKOUT_NATIVE_RESULTS.md;full audit/results docs/wspl/astra_native_v2_results.json;README updated.
+
+Elapsed2468.609s;collection1779.844s. Usage10020input(3200cached),65775outputincluding55638reasoning. Prefix caching does not imply shared conversation;provider sampling seeds not controlled. Prior aborted invocation remains in history with unknown usage:four total harness invocations,three completed replies. LocalCPU evaluation only;hostedmodelcompute/dollar cost unmeasured. Released replay511.828 useddifferent seeds,contextonly. This establishes supplied-rule native weight authoring in one task;no WSPL superiority,gradient comparison,formal controller proof,robot transfer orRTI result. No further experiment authorized or queued.

@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "scope": "completed exploratory native weight-authoring screen; no WSPL comparison",
+  "results": {
+    "status": "complete",
+    "trials": [
+      {
+        "draw": 0,
+        "status": "complete",
+        "summary": {
+          "episodes": 1000,
+          "mean": 484.756,
+          "se": 4.468995231859437,
+          "min": 3.0,
+          "max": 679.0,
+          "mean_length": 8929.132,
+          "truncations": 804
+        },
+        "collection": {
+          "thread_id": "01a1a34b-7686-7460-a5d9-c3b3251d0247",
+          "usage": {
+            "input_tokens": 3340,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 24384,
+            "reasoning_output_tokens": 20718
+          },
+          "agent_messages": 1,
+          "tool_calls": 0,
+          "active_seconds": 580.3909999998286
+        },
+        "parse": {
+          "statements": 193,
+          "applied": 193,
+          "skipped": 0,
+          "errors": [],
+          "parameters": 20486,
+          "nonzero": 3339,
+          "tensor_sha256": "95a9e4b9fc3ebf544fb982875ab794d482f4baf2ae8aff2a796aedc957c7be35",
+          "parser_policy": "last complete edits block; invalid statements skipped and retained; no proposal execution"
+        },
+        "weights_sha256": "b36084d7439cfa56e08e18d16c2f41112140a55757b1cbc43dcc55a6de912e2a",
+        "completed_episodes": 1000
+      },
+      {
+        "draw": 1,
+        "status": "complete",
+        "summary": {
+          "episodes": 1000,
+          "mean": 541.818,
+          "se": 4.999887573911213,
+          "min": 0.0,
+          "max": 674.0,
+          "mean_length": 8836.132,
+          "truncations": 775
+        },
+        "collection": {
+          "thread_id": "01a1a358-0d36-7500-87ae-341e481e2aac",
+          "usage": {
+            "input_tokens": 3340,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 22871,
+            "reasoning_output_tokens": 19682
+          },
+          "agent_messages": 1,
+          "tool_calls": 0,
+          "active_seconds": 681.9529999999795
+        },
+        "parse": {
+          "statements": 118,
+          "applied": 118,
+          "skipped": 0,
+          "errors": [],
+          "parameters": 20486,
+          "nonzero": 1032,
+          "tensor_sha256": "322e39b356b2a35d74bd1451a4c45c9583c3ff213415328fce37d4676a33947c",
+          "parser_policy": "last complete edits block; invalid statements skipped and retained; no proposal execution"
+        },
+        "weights_sha256": "d5549d09779934ac2d15bc97c76e74ef4f802007a8fdc452a49bffe44217c95d",
+        "completed_episodes": 1000
+      },
+      {
+        "draw": 2,
+        "status": "complete",
+        "summary": {
+          "episodes": 1000,
+          "mean": 510.042,
+          "se": 7.75545700454521,
+          "min": 4.0,
+          "max": 832.0,
+          "mean_length": 7286.778,
+          "truncations": 521
+        },
+        "collection": {
+          "thread_id": "01a1a366-2263-7001-9035-7994e407145e",
+          "usage": {
+            "input_tokens": 3340,
+            "cached_input_tokens": 3200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 18520,
+            "reasoning_output_tokens": 15238
+          },
+          "agent_messages": 1,
+          "tool_calls": 0,
+          "active_seconds": 517.5
+        },
+        "parse": {
+          "statements": 91,
+          "applied": 91,
+          "skipped": 0,
+          "errors": [],
+          "parameters": 20486,
+          "nonzero": 1153,
+          "tensor_sha256": "a16e73689428ecd595d75d985770f3e96a9ef4b33c60712dd5b6e79bea3627f3",
+          "parser_policy": "last complete edits block; invalid statements skipped and retained; no proposal execution"
+        },
+        "weights_sha256": "fc18d0e5c5429efc689a1f36b5a17f8e469b8b2c87f42c58f9ff136791b69607",
+        "completed_episodes": 1000
+      }
+    ],
+    "source_manifest_sha256": "73bf70a24e92b978831aeca4998c44d049b6b2f39b4dda9544c5409b02b7fc46",
+    "active_seconds": 2468.6090000001714,
+    "planned_draws": 3,
+    "attempted_draws": 3,
+    "completed_evaluations": 3,
+    "scope": "exploratory fresh native tanh authoring, no WSPL superiority or formal proof",
+    "usage": "CLI-reported tokens; ChatGPT-backed usage, no enforceable dollar/output-token cap",
+    "gpu_used": false,
+    "training_updates": 0
+  },
+  "audit": {
+    "status": "passed",
+    "manifest_sha256": "73bf70a24e92b978831aeca4998c44d049b6b2f39b4dda9544c5409b02b7fc46",
+    "source_files": 65,
+    "episodes_checked": 3000,
+    "trials": [
+      {
+        "draw": 0,
+        "summary": {
+          "episodes": 1000,
+          "mean": 484.756,
+          "se": 4.468995231859437,
+          "min": 3.0,
+          "max": 679.0,
+          "mean_length": 8929.132,
+          "truncations": 804
+        },
+        "statements": 193,
+        "nonzero": 3339,
+        "collection_seconds": 580.3909999998286,
+        "usage": {
+          "input_tokens": 3340,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 24384,
+          "reasoning_output_tokens": 20718
+        },
+        "tensor_sha256": "95a9e4b9fc3ebf544fb982875ab794d482f4baf2ae8aff2a796aedc957c7be35",
+        "weights_sha256": "b36084d7439cfa56e08e18d16c2f41112140a55757b1cbc43dcc55a6de912e2a"
+      },
+      {
+        "draw": 1,
+        "summary": {
+          "episodes": 1000,
+          "mean": 541.818,
+          "se": 4.999887573911213,
+          "min": 0.0,
+          "max": 674.0,
+          "mean_length": 8836.132,
+          "truncations": 775
+        },
+        "statements": 118,
+        "nonzero": 1032,
+        "collection_seconds": 681.9529999999795,
+        "usage": {
+          "input_tokens": 3340,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 22871,
+          "reasoning_output_tokens": 19682
+        },
+        "tensor_sha256": "322e39b356b2a35d74bd1451a4c45c9583c3ff213415328fce37d4676a33947c",
+        "weights_sha256": "d5549d09779934ac2d15bc97c76e74ef4f802007a8fdc452a49bffe44217c95d"
+      },
+      {
+        "draw": 2,
+        "summary": {
+          "episodes": 1000,
+          "mean": 510.042,
+          "se": 7.755457004545209,
+          "min": 4.0,
+          "max": 832.0,
+          "mean_length": 7286.778,
+          "truncations": 521
+        },
+        "statements": 91,
+        "nonzero": 1153,
+        "collection_seconds": 517.5,
+        "usage": {
+          "input_tokens": 3340,
+          "cached_input_tokens": 3200,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 18520,
+          "reasoning_output_tokens": 15238
+        },
+        "tensor_sha256": "a16e73689428ecd595d75d985770f3e96a9ef4b33c60712dd5b6e79bea3627f3",
+        "weights_sha256": "fc18d0e5c5429efc689a1f36b5a17f8e469b8b2c87f42c58f9ff136791b69607"
+      }
+    ],
+    "policy_mean_return": 512.2053333333333,
+    "policy_sample_sd": 28.59244601871854,
+    "usage_totals": {
+      "input_tokens": 10020,
+      "cached_input_tokens": 3200,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 65775,
+      "reasoning_output_tokens": 55638
+    },
+    "reasoning_tokens_included_in_output_tokens": true,
+    "active_seconds": 2468.6090000001714,
+    "collection_seconds": 1779.8439999998081,
+    "checks": {
+      "source": true,
+      "bound_resources": true,
+      "dependencies": true,
+      "executable": true,
+      "receipts": true,
+      "unique_threads": true,
+      "one_turn_per_draw": true,
+      "tool_calls_zero": true,
+      "prompt_identity": true,
+      "preview_context": true,
+      "reply_to_npz_replay": true,
+      "all_episode_accounting": true,
+      "independent_statistics": true
+    },
+    "prior_attempt": {
+      "invocations": 1,
+      "completed_replies": 0,
+      "evaluated_policies": 0,
+      "usage": "unknown",
+      "manifest_sha256": "07eeeeda72b5bfc91ecb07ba94c4ee0593fcc3caee50577dde2542f2c87f9f33"
+    },
+    "total_authoring_history": {
+      "invocations": 4,
+      "completed_replies": 3
+    },
+    "raw_file_sha256": {
+      "approved_manifest.json": "73bf70a24e92b978831aeca4998c44d049b6b2f39b4dda9544c5409b02b7fc46",
+      "source_receipt.json": "1644888cfe4bc186cedcd16efd14de438790ab739a6b65b955c1d630a0f0c156",
+      "results.json": "5fbf79664595fa103a04694095d2db6530c750e1d2090ffaa85e51e296f96ced",
+      "status.json": "5fbf79664595fa103a04694095d2db6530c750e1d2090ffaa85e51e296f96ced",
+      "episodes.jsonl": "d670d1fc5965041a10c76892aeb16227ac890bc2b7eb2cdcda154aec230ead32",
+      "draw_0/answer.md": "014f4c9748fdeb03a624a54de924ab66ce92a420dad625dcacbfa8a0d341a603",
+      "draw_0/prompt.txt": "06fb12e8c199f7bd283408c965d58c88ca8ddc4d269bb5c483bc05996c70c4f2",
+      "draw_0/prompt_preview.json": "bac9b4eccacf2645eb981a5df1f56b5523b5d2bf7abf967361f5fa74436ef6e6",
+      "draw_0/events.jsonl": "43a50bccb9fa568350c1e969ab42d4946e6a81de0e5c7c26597a6771e92da10a",
+      "draw_0/stderr.log": "9edaf60ed87d6b8a62f871e4be87385ff111d56aac2b09388400b0f6ec3e2406",
+      "draw_0/preflight.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "draw_0/command.json": "c5aa8620c60713df3dfeb5032b9f2d759c9d91b71187536a808386bac5351bed",
+      "draw_0/collection.json": "76cc3e288bc7cdbc7d0251db3c68cf1db6f47bcda32566bb025e3072137485c0",
+      "draw_0/policy.npz": "b36084d7439cfa56e08e18d16c2f41112140a55757b1cbc43dcc55a6de912e2a",
+      "draw_1/answer.md": "883bfa09f867fc56f56749b6c35d1d1a7986d2849a910fd1c4ed54c613cef9de",
+      "draw_1/prompt.txt": "06fb12e8c199f7bd283408c965d58c88ca8ddc4d269bb5c483bc05996c70c4f2",
+      "draw_1/prompt_preview.json": "55c625bdcaf243fb6ac5279cc7de746e04d020920e3c20cd1fdc1e6b42a76c0e",
+      "draw_1/events.jsonl": "710b706ac61200470c8bbe27c5af283582fcc7042aa23a6abecbf875f6fa7a99",
+      "draw_1/stderr.log": "6e9640913bc948ca64baffbd84dd9f828946a96726902d46af3060e6e8b6f6a8",
+      "draw_1/preflight.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "draw_1/command.json": "ec0c14962dba7417091a1c9392dffd96ecb24367c0d059b6072ab3d4a953f7d8",
+      "draw_1/collection.json": "f27389ef1f54485ec6a1e1830802ec2eed56992407eaced0f35a92f961453a5a",
+      "draw_1/policy.npz": "d5549d09779934ac2d15bc97c76e74ef4f802007a8fdc452a49bffe44217c95d",
+      "draw_2/answer.md": "256a5fa05b93d7e7c3daec6829947ae1affb28023e7ed904841f01d4344302ea",
+      "draw_2/prompt.txt": "06fb12e8c199f7bd283408c965d58c88ca8ddc4d269bb5c483bc05996c70c4f2",
+      "draw_2/prompt_preview.json": "7d7daaedf4ac26cd7a7ba8dbb5d9a53cba58161d9af866029d21ba04d5e64344",
+      "draw_2/events.jsonl": "af80cf87b708a20c87a363f2f0cfbc3aedefd679e8b7d0f23e29f999940a229e",
+      "draw_2/stderr.log": "2bac8824f36671883f8a0aa74a3a8fb23cf1ada44706b4f4c187d0f8d3baae4a",
+      "draw_2/preflight.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "draw_2/command.json": "6f415953a3f926e8ee1e9554118aab49a824735e4bf67c2452b51e7843ac05c7",
+      "draw_2/collection.json": "b6b10c7c13a6f9af9da2a95984daec9115a248254f4e0a9e0f7bf4390b8a24f5",
+      "draw_2/policy.npz": "fc18d0e5c5429efc689a1f36b5a17f8e469b8b2c87f42c58f9ff136791b69607"
+    },
+    "audit_script_sha256": "052b7897ef203cb2eba66f5a08a7732ef13e1873b9975953f4b735bb09d319f7",
+    "limits": [
+      "three exploratory authoring draws",
+      "episode SE is conditional on a fixed policy",
+      "prefix caching is not shared conversation state",
+      "CLI previews are not server attestations",
+      "no WSPL comparison, gradient baseline or formal controller proof"
+    ]
+  },
+  "source_receipt": {
+    "status": "complete",
+    "constructor_calls": 3,
+    "started_utc": "2026-11-03T21:23:12.142643+00:00",
+    "finished_utc": "2026-11-03T22:04:22.275270+00:00"
+  },
+  "execution_checkout": "feae13d",
+  "proposer_requested": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "cli_version": "0.164.0-alpha.11.1",
+  "raw_archive": "Skillforge-astra-breakout-v2/results/astra_breakout_native_v2",
+  "audit_script": "tools/audit_astra_breakout_native_v2.py",
+  "tracked_reply_sha256": {
+    "artifacts/astra_breakout_native_v2/draw_0.answer.md": "014f4c9748fdeb03a624a54de924ab66ce92a420dad625dcacbfa8a0d341a603",
+    "artifacts/astra_breakout_native_v2/draw_1.answer.md": "883bfa09f867fc56f56749b6c35d1d1a7986d2849a910fd1c4ed54c613cef9de",
+    "artifacts/astra_breakout_native_v2/draw_2.answer.md": "256a5fa05b93d7e7c3daec6829947ae1affb28023e7ed904841f01d4344302ea"
+  },
+  "context_only_reference": {
+    "released_policy_mean": 511.828,
+    "released_policy_se": 7.604821610513144,
+    "uniform_mean": 0.551,
+    "upstream_mean": 517.411,
+    "paired_with_fresh_draws": false
+  },
+  "workers_exited": true
+}
