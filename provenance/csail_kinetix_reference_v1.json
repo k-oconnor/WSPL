@@ -1,0 +1,96 @@
+{
+  "repository": "https://github.com/RikiyaT/lm_understand-logs",
+  "commit": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+  "files": [
+    {
+      "path": "exp4_fix_car/README.md",
+      "bytes": 6997,
+      "git_blob_sha1": "ddd1e15fd68562c2870e262e8d100a303b3e2b1b",
+      "sha256": "97cf395dd262069b09137807c492fc96dee396f45505fd5df2ab4b85a71102ce"
+    },
+    {
+      "path": "exp4_fix_car/eval/base_result.json",
+      "bytes": 2005,
+      "git_blob_sha1": "48449ef975d9a631fe091062ca4c1610ecb106b8",
+      "sha256": "0ccbbad5e2ac84dc0970fb14065167d5b66a18635a967b05827fc17dbee9c1b8"
+    },
+    {
+      "path": "exp4_fix_car/eval/oneshot_result.json",
+      "bytes": 4333,
+      "git_blob_sha1": "c389009c253759bda83d9be6a71aa4ffe799a00f",
+      "sha256": "d9e57db254079b776ee574ba94bfc061ca1e4ce199fad316dea6f8faa2049330"
+    },
+    {
+      "path": "exp4_fix_car/eval/ppo_training_result.json",
+      "bytes": 12038,
+      "git_blob_sha1": "334f7faf8410ea7f6796f83112c0545adba779c5",
+      "sha256": "2c7b750580500a90a7fdb4f6fcf3300d1ceb82a0a2219fd155b64dd5752c1ee2"
+    },
+    {
+      "path": "exp4_fix_car/networks/edited_actor.npz",
+      "bytes": 263158,
+      "git_blob_sha1": "52487c5c622087395f5b22a28e42ff30f83dff26",
+      "sha256": "610d62dbacdb16389f698cdf7d3bf39b185e410b8c6e03a1ac4833768066060a"
+    },
+    {
+      "path": "exp4_fix_car/networks/ppo_final_seed0.npz",
+      "bytes": 1026498,
+      "git_blob_sha1": "0ed8c549357d5bcb017f083b136d999e7948c1b2",
+      "sha256": "b0cdbccd5b4751d5a6dc4cb0deb18a036e6d08d71ad34802cea44dd26c6f4d11"
+    },
+    {
+      "path": "exp4_fix_car/runs/oneshot_repair/instructions.md",
+      "bytes": 27,
+      "git_blob_sha1": "64e5124a5a23e80b959fbc015c5384c1e61544c6",
+      "sha256": "b33fe0624137cd6f190e42a8659046baf16261f3c29cd6455734523ba473afeb"
+    },
+    {
+      "path": "exp4_fix_car/runs/oneshot_repair/loop.log",
+      "bytes": 362,
+      "git_blob_sha1": "2ada62c82bd1fe1e354dd63f5d47da26d1fd4737",
+      "sha256": "7edf78ac7a2cbdacfbe6187237db66c67f9552ef8b432fbe591e1b6fcbad369c"
+    },
+    {
+      "path": "exp4_fix_car/runs/oneshot_repair/oneshot_repair.log",
+      "bytes": 4515,
+      "git_blob_sha1": "198d5605a96d1ee2be729d5482f784aed6bb3034",
+      "sha256": "af4b0e3fc61e6ca52d3768fd166af3362e2e292c3a71fc8b09dd409061453419"
+    },
+    {
+      "path": "exp4_fix_car/runs/oneshot_repair/reply/answer.md",
+      "bytes": 2748,
+      "git_blob_sha1": "cbdc0cd0c78e265ed83e2fef211debcfee74f262",
+      "sha256": "dc295adb701bb943a6a324fd7fd4aeb97bb69a2d8fb73b9472e3a9371275f959"
+    },
+    {
+      "path": "exp4_fix_car/runs/oneshot_repair/reply/events.jsonl",
+      "bytes": 3374,
+      "git_blob_sha1": "119e216e325273377edc9fadff9ece94fc745395",
+      "sha256": "bd8ac4c887e9411b74ea230490f17e5a14a042bcfc3483639ffe70ad37c5b032"
+    },
+    {
+      "path": "exp4_fix_car/runs/oneshot_repair/reply/prompt.txt",
+      "bytes": 577774,
+      "git_blob_sha1": "1b573d0d37843e534d8476fe8dc9eb29d337256a",
+      "sha256": "2ed66051f4fa554d43d0163eb48e4256dc80aef78d875a218826beefeb7d0559"
+    },
+    {
+      "path": "exp4_fix_car/runs/oneshot_repair/reply/run.json",
+      "bytes": 1078,
+      "git_blob_sha1": "ea60c1861cadcb545eadd10080047c8e932af973",
+      "sha256": "0d8e476c05ed5c194a0dde7660976f06d9df51bfbe3706b6d7212748ca99207d"
+    },
+    {
+      "path": "exp4_fix_car/runs/oneshot_repair/reply/stderr.log",
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "downloaded_utc": "2026-11-04T14:01:28.4659602Z",
+  "code_executed": false,
+  "scientific_episodes": 0,
+  "model_calls": 0,
+  "duplicate_message_omitted": true,
+  "git_blob_and_sha256_verified": true
+}

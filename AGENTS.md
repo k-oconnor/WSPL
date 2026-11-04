@@ -1,5 +1,119 @@
 # Skillforge research contract
 
+November4 completion supersedes launch: reworked Breakout run/source receipt
+complete11:00:10UTC/03:00PST, six constructors,5885.156active seconds. All six
+valid,1000episodes each. Native scores498.366/260.406/352.777(mean370.5163),
+WSPL524.558/374.460/276.037(mean391.685), SD119.97/125.15. Predeclared
+feasible_for_next_domain; no superiority claim. WSPL all exact_to_storage,
+136/136/142loop iterations. Outputtokens native66085/WSPL53167; sourcebytes
+16185/7131. Audit verifies95source/10bound/runtime/CLI identities, sixfreshthreads,
+allreply-plan-weight reconstructions,6000episode records and18trajectories with
+127378recordedactions replayed from observations/RNG (no new simulator episodes).
+Report docs/wspl/BREAKOUT_REWORKED_V1_RESULTS.md; audit wsp_breakout_v1_results.json;
+tool tools/audit_wsp_breakout_v1.py; all6replies+sources artifacts/wsp_breakout_v1.
+All raw evidence remains isolated and unchanged. Kinetix preparation has begun:
+14referencefiles/1904907bytes downloaded and Gitblob/SHA256 verified from
+upstream4d09ba6d6a7e891dd8063974dfe81b3d78e3494f; provenance/csail_kinetix_reference_v1.json.
+Read docs/wspl/KINETIX_REPLAY_READINESS.md. No simulator/runtime integration or
+Kinetix source pin yet. Reconstruct shown rounded actor, verify published edit,
+then prepare replay.577KBprompt requires fixing offline argument-based preflight
+before fresh authoring. Published answers must be withheld from future writers.
+
+November 4 launch supersedes preparation: Kevin explicitly approved
+e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4,
+"Approve this manifest and launch the reworked Breakout comparison". Reverified
+95sources/10boundfiles, core runtime/CLI/prompts, registered in main and isolated.
+Launched hidden09:22:02UTC/01:22PST in Skillforge-wsp-breakout-v1; launcherPID724,
+worker38504. Source receipt verified, first constructor and fresh native thread/
+turn started; startup stderr empty. Outputresults/wsp_breakout_v1. Inspect live
+status; no completed result yet. Docs/wspl/BREAKOUT_REWORKED_V1_LAUNCH.md and
+wsp_breakout_v1_launch.json preserve startup. Do not duplicate/retry or edit
+isolated inventoried source/bound files. Main can develop independently.
+After completion, audit/retain all artifacts, then prepare Kinetix as requested.
+
+November 4 reworked Breakout preparation: Kevin requested running the rebuilt
+WSPL, retaining its artifacts, then moving to Kinetix. Prepared six fresh
+Astra/xhigh one-shot proposals, native/WSPL x three draws, original fixed
+600-32-32-6 tanh network (20,486 FP32 parameters), same common task packet and
+1,000 paired episodes per valid proposal. Both reject malformed proposals in
+full; WSPL offers native-compatible literals and exact arithmetic/loops. No
+scalar relay compiler or topology augmentation in this screen. Archive raw
+prompts/replies/events, replayable plans, exact candidate/deployment weights,
+stored equations, all episode records and first three primary trajectories.
+Protocol docs/wspl/BREAKOUT_REWORKED_V1.md; implementation wsp_breakout.py and
+run_wsp_breakout.py. All426 primary checks completed (425pass/one covered skip),
+12native checks pass,19new harness checks; both common prompt preflights pass.
+Candidate e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4,
+95 Python sources/10 bound files, verified in isolated Skillforge-wsp-breakout-v1
+over base29eb1cd. No approval registered, model calls or scientific episodes.
+Exact digest approval is the only remaining launch step. Kinetix is the next
+domain: prepare released-parent/repair replay before a fresh comparison; no
+Kinetix scientific launch is implied. Historical matched-ReLU writeup pause
+remains. Read docs/wspl/BREAKOUT_REWORKED_V1_LAUNCH.md for prepared identity.
+
+## Current language design direction
+
+November4 repair completion supersedes running notes: run and source receipt
+complete at08:18:15UTC/00:18:15PST;12constructor calls,405active seconds. Direct6/6,
+WSPL6/6,all24external real-graph claims PROVED,all249FP32inputs/candidate zeroerror.
+WSPL useduntie twice,rawgraph edits in four;no region replacement/transplant/
+residual/modules exercised. Prespecified ceiling/no advantage decision. Supplied
+3/9/8-parameter circuits,not learned or physical controllers. Read-only audit
+reverified90source/14boundfiles/runtime/CLI,12unique threads,no tools,exactreply-
+candidate/construction replay,formal/numeric replay and fresh81-point independent
+rational diagnostics. Usage41214input/10239output(including6664reasoning),nocache.
+Report docs/wspl/REPAIR_SCREEN_V1_RESULTS.md;data wsp_repair_v1_results.json;raw
+replies artifacts/wsp_repair_v1;auditor tools/audit_wsp_repair_v1.py. No follow-on
+approved. Preserve isolated source,protocol and raw evidence unchanged.
+
+November 4 launch supersedes the preparation notes: Kevin explicitly approved
+807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe and selected
+"Approve this manifest and launch the 12-proposal screen". Reverified90source/
+14bound files, runtime/CLI/task/prompt identities; registered in main and isolated
+Skillforge-wsp-repair-v1. Hidden launch08:11:28UTC/00:11PST, launcherPID41992,
+worker38748, outputresults/wsp_repair_v1. Source gate passed; first direct
+proposal evaluated successfully and queue continues. Live state governs current
+status. No inventoried source or bound resources may change in the isolated
+checkout during collection. Main can develop independently. Do not duplicate or
+automatically retry this run. Docs/wspl/REPAIR_SCREEN_V1_LAUNCH.md and launch JSON
+preserve approval/startup evidence; no complete scientific result claimed yet.
+
+November 4: Kevin authorized the stress checks and preparing the next repair
+screen. WSP_STRESS_V1.md records 100 seeded graphs/1200 sequential steps and
+unchanged outputs after graph surgery on three archived 20486-parameter policies.
+REPAIR_SCREEN_V1.md / REPAIR_INTERFACE_V1.md define the prepared 12-invocation
+Astra/xhigh one-shot screen: three supplied synthetic circuits, two arms, two
+draws. Direct and WSPL have identical raw graph/tensor access and topology budgets;
+WSPL adds structured surgery. External repair AND preservation claims plus an
+FP32 panel define success. These are constructed parents, not learned robot
+policies. Constructor wsp_repair.RepairStudy; runner run_wsp_repair.run. Exact
+source approval remains required; nothing registered or launched. Preserve
+matched Breakout archives and the previous results-writeup pause.
+Prepared candidate 807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe
+is verified in main and isolated Skillforge-wsp-repair-v1 (snapshot over29eb1cd,
+90 inventoried Python files). See REPAIR_SCREEN_V1_LAUNCH.md. All407 primary tests
+completed (406pass/one native skip, separately12/12native),18new harness tests;
+six offline prompts plus isolated preflight passed. No registry entry or launch.
+
+November 3: Kevin requested retooling and syntax alignment before another test,
+with at least native weight-edit expressivity and richer circuit edits. Read
+docs/wspl/WSP_TOOLING_DESIGN.md and WSP_SYNTAX_0_2.md for the proposed editor-facing
+design. Complete direct tensor access is the floor; explicit circuit placement,
+graph surgery, descriptions and verification are distinct layers. Kevin then
+requested the first implementation pass. Read docs/wspl/WSP_EDITOR_FIRST_PASS.md:
+generic finite FP32 tensor edits, explicit scalar affine/ReLU placement, immutable
+plan/apply and frozen descriptions/checks are implemented in new wsp_* modules.
+Kevin then requested general graph surgery. It is now implemented for stateless
+FP32 vector DAGs; read docs/wspl/WSP_GRAPH_SURGERY.md. Region replacement accounts
+for every cut edge and shared parameter; transplant/redirect/residual/untie edits
+use explicit host budgets and immutable replay. General stateful/framework imports,
+mixed dtypes, arbitrary view aliases, IEEE proofs and admission remain future work.
+Validation: docs/wspl/wsp_graph_surgery_validation.json; supplied-answer demo:
+tools/demo_wsp_graph.py. Preserve existing Core PWA and historical run semantics.
+No scientific experiment follows automatically.
+The matched comparison completed; its fairness/result writeup remains under
+discussion. The user prioritized interface retooling over a post-hoc study now.
+
 Kevin authorized a new repository and specification for LLM-programmed neural/RMV action blocks composed by LTLf programs. Skillforge is a user-accepted working name. Coordinate this work with sibling `thesis_master` and the ambition of accumulating compact, executable, experimentally validated knowledge toward a causal neuro-symbolic world model.
 
 Read README.md, docs/CONTEXT.md, docs/SYSTEM_SPEC.md, docs/M1_ENGINEERING.md, docs/EXPERIMENT_01.md, docs/EVIDENCE.md and docs/APPROACH_V1_RESULTS.md before implementation or scientific claims. Implemented: reference semantics, finite-model planning/hierarchy fixtures, differentiable MLP/RMV blocks, motor adapter/observers and a completed pregrasp positioning/imitation screen. A blinded LLM harness, contact skills and physical primitive hierarchy execution remain planned.

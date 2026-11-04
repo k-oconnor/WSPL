@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "model_id": "wsp-breakout-v1",
+  "source_roots": [
+    "src",
+    "experiments",
+    "tests",
+    "tools"
+  ],
+  "constructor": {
+    "module": "skillforge.wsp_breakout",
+    "source": "src/skillforge/wsp_breakout.py",
+    "symbol": "ReworkedBreakoutPolicy"
+  },
+  "constructor_kwargs": {},
+  "runner": {
+    "module": "run_wsp_breakout",
+    "source": "experiments/run_wsp_breakout.py",
+    "symbol": "run"
+  },
+  "runner_config": {
+    "bound_files": {
+      "data/wsp_breakout_v1/native.txt": "fad78d8dc8400690d6a3d82a9d6cf52ebae1ab803ae5f0b3fb8a5b5a08cbe4ee",
+      "data/wsp_breakout_v1/wspl.txt": "060a0a41a32924c9f98d1ff629ae12e2a34e499c313d24b1af9dedc79cdfcd6f",
+      "data/csail_breakout_reference_v1/exp5_write_from_scratch/runs/breakout/message.txt": "766ee251d59a7893ed86d5eaea99ddb847529ab2092afc69f90f55fb0a22e876",
+      "docs/wspl/BREAKOUT_REWORKED_INTERFACE_V1.md": "7c99d8a6acb33ef11db36563a70ef0e661bb6d905aeb7b016667a11774c4de95",
+      "docs/wspl/BREAKOUT_REWORKED_V1.md": "131f7b7cb7877f5caa0ff2a4dc76fb757f5c860c8ee4bd3d2bd8c56d85142d1c",
+      "data/wsp_breakout_v1/bundle.json": "9f9761a96abaf9c9b51d8230c17336911be55b32755395e2cee1bc807f5ae7c8",
+      "artifacts/local_paths.json": "764dd182aac2a8a7deb0f1ff6e42aca252b37981a3273c31203a01f99cfa0215",
+      "data/astra_native_v1/catalog_frozen.json": "7cddcfcdc4aea65d3e89ed35084828caaf53901a44621d3957a482d5b59e3b91",
+      "data/astra_native_v1/instructions.md": "50790093946c1c6a60920aade678903b95cd8e76625f0b89fc418754fee5bbee",
+      "requirements/csail-breakout-replay.txt": "fc0675d8b98b6d0351d0b0556dda8f9c6f9a22d7363d33baa2991ea66315f4cf"
+    },
+    "prompts": {
+      "native": "data/wsp_breakout_v1/native.txt",
+      "wspl": "data/wsp_breakout_v1/wspl.txt"
+    },
+    "guide": "docs/wspl/BREAKOUT_REWORKED_INTERFACE_V1.md",
+    "reference_prompt": "data/csail_breakout_reference_v1/exp5_write_from_scratch/runs/breakout/message.txt",
+    "local_paths": "artifacts/local_paths.json",
+    "catalog": "data/astra_native_v1/catalog_frozen.json",
+    "instructions": "data/astra_native_v1/instructions.md",
+    "cli_sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+    "dependencies_sha256": "54c3c12d71fd68a11ef1829de95b3cc9ce7e190a08964848a57b625c387f44bc",
+    "episodes": 1000,
+    "max_steps": 10000,
+    "call_guard_seconds": 1200,
+    "wall_guard_seconds": 14400
+  }
+}

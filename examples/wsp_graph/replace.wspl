@@ -1,0 +1,14 @@
+wspl 0.2;
+target base=artifact("base",sha256="692b928fb6ed8e194bfe5db305e8da226412e8f260da8bff00ca92cf40402776");
+region steering in base {
+  nodes=[node("left")];
+  inputs={obs:edge("left.x")};
+  outputs={contribution:edge("sum.a")};
+  shared_parameters=["W"];
+}
+edit base as candidate mode=graph budget="repair" {
+  replace steering with artifact("patch",sha256="396f378554c949740c761dc56e41e4b8f59aca14809b68f48aa47bb6382ec736") as fixed {
+    inputs={x:steering.inputs.obs};
+    outputs={steering.outputs.contribution:y};
+  }
+}

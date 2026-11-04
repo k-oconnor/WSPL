@@ -1,0 +1,17 @@
+{
+  "max_nodes": 16,
+  "max_edges": 32,
+  "max_parameters": 32,
+  "max_depth": 8,
+  "max_live_values": 64,
+  "allowed_ops": [
+    "affine",
+    "relu",
+    "tanh",
+    "identity",
+    "add",
+    "scale",
+    "concat",
+    "slice"
+  ]
+}

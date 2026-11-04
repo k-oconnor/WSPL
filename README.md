@@ -13,8 +13,19 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 
 ## Current status
 
+The WSP editor implements direct FP32 tensor editing, explicit affine/ReLU circuit
+placement, immutable plans and frozen-artifact descriptions/checks. It now also
+supports [graph surgery](docs/wspl/WSP_GRAPH_SURGERY.md): replace subgraphs,
+transplant modules, rewire edges, add residual paths and untie shared weights in
+stateless vector DAGs. Plans expose every boundary consumer and shared parameter.
+The broader [tooling design](docs/wspl/WSP_TOOLING_DESIGN.md) and
+[syntax](docs/wspl/WSP_SYNTAX_0_2.md) retain future extensions. The new frontend
+preserves historical Core PWA semantics; its evidence so far is engineering validation.
+
 | Component | Status |
 | --- | --- |
+| WSPL 0.2 fixed-architecture editor | First pass: direct FP32 tensor construction, placed affine/ReLU circuits, plan/apply/inspect/diff/describe/check/probe CLI and APIs |
+| WSPL 0.2 graph surgery | Stateless vector DAG replacement, transplantation, rewiring, residuals and explicit shared-weight separation; replayed plans and full edited-graph checks |
 | Typed scalar JSON IR and exact rational interpreter | Implemented; engineering examples and negative checks |
 | WSPL text front end (proposal module form) | Initial parser to JSON IR and contract suites; Core PWA only |
 | Scalar IR to ReLU MLP weights, source map and independent loader | Initial implementation; fresh architecture only |
@@ -31,12 +42,49 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 | Pregrasp positioning pilot | Completed; scoped results below |
 | Diverse robot tasks | 16 inspected specifications over 7 audited scene assets; contact/obstacle integration pending |
 
-The proposal's first module form now parses from text into the scalar JSON IR and
-contract suites ([text front end](docs/wspl/PARSER.md)); other proposed syntax is not
-implemented. The scalar JSON IR compiles neural weights and supports scoped
+The proposal's first module form parses from text into the scalar JSON IR and
+contract suites ([text front end](docs/wspl/PARSER.md)). The separate WSPL 0.2
+editor implements the tensor/circuit and graph subsets linked above. The scalar
+JSON IR compiles neural weights and supports scoped
 real-graph contract checks. There is
 no numerical execution proof or comparative WSPL controller-synthesis result. The available compiler command is documented below;
 the proposal's general `wspl` command suite remains planned.
+
+Try the supplied graph-edit example after installing the editor and verifier:
+
+```sh
+python -m pip install -e ".[editor,verify]"
+python tools/demo_wsp_graph.py --output work/wsp_graph_surgery_demo
+```
+
+Choose a new output directory. The [example](examples/wsp_graph/README.md) replaces
+one branch, adds a residual and separates a shared weight in three independent
+candidates. It checks each intended change and preserved branch against the
+actual stored graph. These are known-answer fixtures, not learned robot results.
+
+The [graph stress checks](docs/wspl/WSP_STRESS_V1.md) now cover 100 seeded DAGs,
+1,200 edit steps and preserved execution of three archived controller artifacts.
+The [matched repair screen](docs/wspl/REPAIR_SCREEN_V1_RESULTS.md) completed:
+**6/6 successes for direct editing and 6/6 with WSPL available**, across three
+supplied circuit tasks and two fresh Astra draws each. All repair/preservation
+claims and numerical checks passed. WSPL used `untie` in two proposals and raw
+graph edits in four; general region replacement was not exercised. This is a
+feasibility pass with a ceiling, not a comparative advantage or learned-controller
+result. The twelve replies and independently replayed completion audit are archived.
+
+The [reworked Breakout comparison](docs/wspl/BREAKOUT_REWORKED_V1_RESULTS.md)
+completed and passed its descriptive feasibility rule. Three fresh WSPL policies
+averaged **391.685** reward versus **370.516** for three native-edit policies on
+the same original 20,486-parameter tanh network. All six were valid, with 1,000
+paired episodes each. Across-proposal SDs were 125.2 and 120.0, respectively:
+this small screen does not establish superiority. All WSPL proposals used
+construction loops and exact arithmetic; their stored source was 56% shorter
+and reported output-token use 20% lower in this run. Full plans, weights,
+equations, scores and trajectories are retained, with
+[all replies and sources archived](artifacts/wsp_breakout_v1/README.md).
+The audit reconstructed every candidate and checked 6,000 episode records and
+127,378 recorded actions. [Kinetix replay preparation](docs/wspl/KINETIX_REPLAY_READINESS.md)
+has begun with pinned reference files; no Kinetix experiment has launched.
 
 ## Try the exact scalar reference
 
@@ -288,16 +336,22 @@ An existing BDDL scene is not a working Skillforge task.
 python -m unittest discover -s tests -v
 ```
 
-The suite now contains 289 checks: 288 pass in the primary research environment,
-with the native MinAtar fixture skipped there. All 40 replay/authoring-focused checks pass
-in the separate MinAtar CPU environment, including that fixture. Optional neural/adapter checks
+The suite now contains 426 checks: 425 pass in the primary research environment,
+with the native MinAtar fixture skipped there. All 12 replay fixture checks pass
+in the separate MinAtar CPU environment, including that fixture. Fifty editor
+checks cover tensor compatibility, placement, transactions and evidence; fifty
+graph checks cover cut boundaries, rewiring, shared storage, budgets, rollback,
+CLI/examples and edited-graph claims. The [validation receipt](docs/wspl/wsp_graph_surgery_validation.json)
+records the graph milestone; [repair preparation](docs/wspl/wsp_repair_preparation_validation.json)
+adds 18 harness checks and current source identities. Optional neural/adapter checks
 skip when PyTorch or NumPy is absent, and solver checks skip without Z3; full local results used a separate CPU
 research environment. No model download, simulator rollout, scientific training
 run or LLM API call occurs in the unit suite. A single optimizer transaction is
 used only as a checkpoint/gradient unit fixture.
 
-[Validation receipt](docs/validation.json) and [test output](docs/unit_tests.txt)
-record the checked sources. Scientific runs require an exact user-approved source
+[Current validation receipt](docs/wspl/wsp_editor_first_pass_validation.json) and
+[test output](docs/wspl/wsp_editor_first_pass_unit_tests.txt) record the checked
+sources; earlier receipts remain historical records. Scientific runs require an exact user-approved source
 manifest through [the source gate](experiments/source_pins/README.md). Historical
 pins are preserved, not refreshed to match later development. Model weights,
 datasets, credentials and machine-specific bindings are excluded from Git.

@@ -1,0 +1,12 @@
+{
+  "manifest_sha256": "807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe",
+  "source_files": 90,
+  "bound_files": 14,
+  "source_verified": true,
+  "dependencies_verified": true,
+  "task_ids_verified": true,
+  "isolated_prompt_preflight": "passed",
+  "registered": false,
+  "launched": false,
+  "model_calls": 0
+}

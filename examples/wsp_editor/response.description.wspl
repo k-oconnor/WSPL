@@ -1,0 +1,12 @@
+describe candidate {
+    view positive_error = h1[0];
+    view positive_preactivation = pre(h1[0]);
+    hypothesis "positive_error responds to error above the deadband";
+    claim response semantics=real_graph {
+        assume x[0] in [-1,1] and x[1] in [-1,1];
+        ensure y[0] == relu(x[0]-x[1]-0.25) - relu(x[1]-x[0]-0.25);
+    }
+    claim producer semantics=real_graph {
+        ensure positive_preactivation == x[0]-x[1]-0.25;
+    }
+}

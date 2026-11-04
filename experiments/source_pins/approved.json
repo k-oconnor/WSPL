@@ -42,6 +42,22 @@
       "sha256": "9771cbf74140ac577d366ccd935139d9efe1e2f6016cf91dc385c78d7d2256b7",
       "approved_by": "user",
       "approval": "User explicitly selected Approve this manifest and launch the matched comparison on 2026-11-03; nine fresh Astra/xhigh proposals across native edits, restricted Python PWA and WSPL text, fixed ReLU target, protocol time/usage limits and paired evaluation as presented."
+    },
+    "wsp-repair-v1": {
+      "manifest": "experiments/source_pins/wsp_repair_v1.manifest.json",
+      "sha256": "807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe",
+      "approved_by": "user",
+      "approval": "User explicitly selected Approve this manifest and launch the 12-proposal screen on 2026-11-04; twelve fresh Astra/xhigh one-shot calls across three supplied synthetic circuit tasks, direct/WSPL interfaces and two draws, under the presented usage and time guards.",
+      "approval_question_item_id": "call_b76577d192c9474d9a566599d144b9c0",
+      "approved_utc": "2026-11-04T08:11:13.172957+00:00"
+    },
+    "wsp-breakout-v1": {
+      "manifest": "experiments/source_pins/wsp_breakout_v1.manifest.json",
+      "sha256": "e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4",
+      "approved_by": "user",
+      "approval": "User explicitly selected Approve this manifest and launch the reworked Breakout comparison on 2026-11-04; six fresh Astra/xhigh one-shot proposals, native/WSPL, three each, original fixed tanh network, 1000 paired episodes per valid proposal, artifact retention and stated usage/time limits.",
+      "approval_question_item_id": "call_29d904c693c949fab85cfcbbeace151d",
+      "approved_utc": "2026-11-04T09:21:46.841172+00:00"
     }
   }
 }

@@ -1,0 +1,83 @@
+{
+  "manifest_sha256": "e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4",
+  "entries": [
+    {
+      "draw": 0,
+      "arm": "native",
+      "candidate_id": "cc2a2e94edfcc94109beef5c2d6b4e2907fd1393822680e7345d5b6146f2e8ef",
+      "mean_reward": 498.366,
+      "files": {
+        "draw_0_native.answer.md": "3c9a41dd7d53d40241f55fd10cde1189e8e13cdeea195da66d5d7b32e99e1abd",
+        "draw_0_native.source.wspl": "949d6e7b4b1c5ef569e1bd3008791411895bdc1eb96ad01425ce1f5368978448"
+      },
+      "full_archive": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-breakout-v1\\results\\wsp_breakout_v1\\draw_0_native",
+      "candidate_file_sha256": "dbd9d45738a649671248f4deb887bd81e4a472eee77ee6077d433b514a81ddb2",
+      "deployment_sha256": "4b72391b906e76bf56e703e33f8bba8b4884babd2d82f4b2401eab7972282982"
+    },
+    {
+      "draw": 0,
+      "arm": "wspl",
+      "candidate_id": "eb3a5db9535eca775346b576709863381c633d8f21ce6756c03cc8b0ddaff20c",
+      "mean_reward": 524.558,
+      "files": {
+        "draw_0_wspl.answer.md": "cdf291ac73b3dbfe8a3bf363a7efb036e6efa86714db2c67ffba69ad4c38b05f",
+        "draw_0_wspl.source.wspl": "84e18bdfa4df8975f0493586fa3b9b34215d9430c88d6ea0a29bd1939d01c1dc"
+      },
+      "full_archive": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-breakout-v1\\results\\wsp_breakout_v1\\draw_0_wspl",
+      "candidate_file_sha256": "a0a7472c43e06cf47ad3e272a4ce66ee9ca9304bd6261649835ecbc906a44ae1",
+      "deployment_sha256": "287d0be05a4a0570445ce0779834d4c9e0113e64d89377af5b5b8c46509adffe"
+    },
+    {
+      "draw": 1,
+      "arm": "wspl",
+      "candidate_id": "e28a251d8ccb326969ffee0734de8c2b5fac74085f664544eca19686718aa35b",
+      "mean_reward": 374.46,
+      "files": {
+        "draw_1_wspl.answer.md": "da1b10fd797a9b7bab228eabec24743cd97ecea05a1f8e0f5997260bb077c633",
+        "draw_1_wspl.source.wspl": "d9af751a409a2d9eca1c34157234ff72ddcf28c0d1df9bddcad92aa2749a101a"
+      },
+      "full_archive": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-breakout-v1\\results\\wsp_breakout_v1\\draw_1_wspl",
+      "candidate_file_sha256": "2d9535035318d31dbebdc2a7ad6bba2ff248620f2589410f1ed37dd88f8b2e9e",
+      "deployment_sha256": "89ead531dd95eedf3c29517cbe2112edc9ea28106878e09aa81cc45ddb7c5ee1"
+    },
+    {
+      "draw": 1,
+      "arm": "native",
+      "candidate_id": "82a1a92abc3ab9afc21171c208d86e1a0ff54c9f2f9660b5c88344637cf08e49",
+      "mean_reward": 260.406,
+      "files": {
+        "draw_1_native.answer.md": "cbc83d7ee1438846790ba45164604e9213b8b0d0a9a76e7083f898e39accb566",
+        "draw_1_native.source.wspl": "4fd75086c248f94b782dd28e29805c7cfc2538ea985e4a3c139b0f20a95f90ef"
+      },
+      "full_archive": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-breakout-v1\\results\\wsp_breakout_v1\\draw_1_native",
+      "candidate_file_sha256": "3c4f144a5efc6db285c4bd38e5e4672fa20f7e7f32b94d0c63fc5ef5c3091f00",
+      "deployment_sha256": "f2e6c9ddbc6750639569d041e31141d38bb149f20db90f7728a3597024ac9a2c"
+    },
+    {
+      "draw": 2,
+      "arm": "native",
+      "candidate_id": "887ea5c2759a88e3c9ede716e502e50bffe4a6d98403fd54885e8bb2c5fa97f2",
+      "mean_reward": 352.777,
+      "files": {
+        "draw_2_native.answer.md": "7076dfcd16fc9eebab3def32afeb9ac172a1ce299a0e5c1a8708fcd1ef4f9dae",
+        "draw_2_native.source.wspl": "9aa2f95f04cb818cde2dcdb1901f809af3068965c8ba2b4d7c94832a747227c5"
+      },
+      "full_archive": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-breakout-v1\\results\\wsp_breakout_v1\\draw_2_native",
+      "candidate_file_sha256": "b2305ffa27d40bff782ca45b3f977bbd9e13670120564f7ba904f2b599703702",
+      "deployment_sha256": "a551a0a504df830b147556c173857fc285ba113d559b49890b1081e7abf70df6"
+    },
+    {
+      "draw": 2,
+      "arm": "wspl",
+      "candidate_id": "d7646e51edec02519579ae8c7a82bb89a4205c36de859b5aa95d3c9c89ab4ca2",
+      "mean_reward": 276.037,
+      "files": {
+        "draw_2_wspl.answer.md": "7e5edd57615117a96e3326676de9b140e7ed644071fe3131befc0f8b27ebddaa",
+        "draw_2_wspl.source.wspl": "438d88cb4b5a23f18cad55a1db741b8530bacb7be9605ff833b25eb621faf154"
+      },
+      "full_archive": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-breakout-v1\\results\\wsp_breakout_v1\\draw_2_wspl",
+      "candidate_file_sha256": "de7c2f3d501541bbbd8f6c2cd4685121c53ef7e742989ed24a15a159fc400a98",
+      "deployment_sha256": "f6179a66ec84d389f78bc0b9fcc1b249be2662bb68d09c48df53fb11b8377517"
+    }
+  ]
+}

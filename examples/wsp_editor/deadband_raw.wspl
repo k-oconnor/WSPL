@@ -1,0 +1,11 @@
+wspl 0.2;
+target control = dense(
+    widths=[2,4,1], activations=[relu,linear],
+    layout=in_out, storage=f32, init=zeros
+);
+edit control as candidate mode=fixed numeric=exact_to_storage {
+    W1[:,:] = [[1,-1,0,0],[-1,1,0,0]];
+    b1[:] = [-0.25,-0.25,0,0];
+    W2[:,:] = [[1],[-1],[0],[0]];
+    b2[:] = 0;
+}

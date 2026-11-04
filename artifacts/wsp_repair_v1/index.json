@@ -1,0 +1,131 @@
+{
+  "manifest_sha256": "807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe",
+  "trials": [
+    {
+      "task": "shared_gain",
+      "draw": 0,
+      "arm": "direct",
+      "answer": "shared_gain_0_direct.answer.md",
+      "answer_sha256": "e1cac69190b11548be2416cf4f9fe05b7fba1062fb8b9904fa21a189280b05c1",
+      "candidate_id": "015a7630bc63a074a99ee006061ef41cb7dea5b1bc0980cdf4280c1f28931fb9",
+      "success": true,
+      "structured_operations": []
+    },
+    {
+      "task": "shared_gain",
+      "draw": 0,
+      "arm": "wspl",
+      "answer": "shared_gain_0_wspl.answer.md",
+      "answer_sha256": "89389c33cde457a0c8d5323abfe7affa5b592a389c98edc365f86c92d2747c56",
+      "candidate_id": "015a7630bc63a074a99ee006061ef41cb7dea5b1bc0980cdf4280c1f28931fb9",
+      "success": true,
+      "structured_operations": [
+        "untie"
+      ]
+    },
+    {
+      "task": "clipped_drive",
+      "draw": 0,
+      "arm": "wspl",
+      "answer": "clipped_drive_0_wspl.answer.md",
+      "answer_sha256": "530c47a8d988a25d6715833f47fab4eb58b2d58fbddbd90772f490047239f3c9",
+      "candidate_id": "68873cd4cf8672976fc54e9852d51fbbf85f5461cc45f1ed877cbd775fbf54ce",
+      "success": true,
+      "structured_operations": []
+    },
+    {
+      "task": "clipped_drive",
+      "draw": 0,
+      "arm": "direct",
+      "answer": "clipped_drive_0_direct.answer.md",
+      "answer_sha256": "88d410ee674f59fe44c230f8563c1a2b44218d01924aefe248069e44f4ef8e81",
+      "candidate_id": "68873cd4cf8672976fc54e9852d51fbbf85f5461cc45f1ed877cbd775fbf54ce",
+      "success": true,
+      "structured_operations": []
+    },
+    {
+      "task": "isolated_deadband",
+      "draw": 0,
+      "arm": "direct",
+      "answer": "isolated_deadband_0_direct.answer.md",
+      "answer_sha256": "b3306c13fa95d4fadb88dcfa9efe53cefa66d64fc82c9f9aeb793864245e5c41",
+      "candidate_id": "dac6135259e73577426c340fcd854339bad1060650927f5e18258e7cb0f60b25",
+      "success": true,
+      "structured_operations": []
+    },
+    {
+      "task": "isolated_deadband",
+      "draw": 0,
+      "arm": "wspl",
+      "answer": "isolated_deadband_0_wspl.answer.md",
+      "answer_sha256": "fbb5ec7c044e0f35d2c72dc023f0335d5cecb41afd759ccfbfbd5d5b707b1ad1",
+      "candidate_id": "5e44f6893afdae4b9a3ee274970a97e1a8e93b84ebe027caa6f002525eac5da4",
+      "success": true,
+      "structured_operations": []
+    },
+    {
+      "task": "shared_gain",
+      "draw": 1,
+      "arm": "wspl",
+      "answer": "shared_gain_1_wspl.answer.md",
+      "answer_sha256": "97cff7e10c5f1ab9690777bf688d7e65cc793b1e934ad1bbfe30c02c548f989b",
+      "candidate_id": "015a7630bc63a074a99ee006061ef41cb7dea5b1bc0980cdf4280c1f28931fb9",
+      "success": true,
+      "structured_operations": [
+        "untie"
+      ]
+    },
+    {
+      "task": "shared_gain",
+      "draw": 1,
+      "arm": "direct",
+      "answer": "shared_gain_1_direct.answer.md",
+      "answer_sha256": "b50d846642eb03657ee46fb444bc20aae0a3759542fef30d82a53690642e8bc6",
+      "candidate_id": "015a7630bc63a074a99ee006061ef41cb7dea5b1bc0980cdf4280c1f28931fb9",
+      "success": true,
+      "structured_operations": []
+    },
+    {
+      "task": "clipped_drive",
+      "draw": 1,
+      "arm": "direct",
+      "answer": "clipped_drive_1_direct.answer.md",
+      "answer_sha256": "c520996f49843e57d713b8de682b014f5ae0db9e0cb2678a1a416288dc285c25",
+      "candidate_id": "e368bf2fc333db82572f665d06e1ad5855833472fbf9fe531f2ea9c65c705a23",
+      "success": true,
+      "structured_operations": []
+    },
+    {
+      "task": "clipped_drive",
+      "draw": 1,
+      "arm": "wspl",
+      "answer": "clipped_drive_1_wspl.answer.md",
+      "answer_sha256": "f0119f908b80e59fe047d04bd36cc0e409f191bd3481edc642dc3cc8023a69a7",
+      "candidate_id": "5a8403a14d5b23340957612e9d1bf78e68f7f28cad69c38c9c84bb3901789ce7",
+      "success": true,
+      "structured_operations": []
+    },
+    {
+      "task": "isolated_deadband",
+      "draw": 1,
+      "arm": "wspl",
+      "answer": "isolated_deadband_1_wspl.answer.md",
+      "answer_sha256": "8836874220a52f0c6b020352ced4463376b3ad9f28feb78d419c0e9cd11b10f8",
+      "candidate_id": "87e5fb22cd3967c3b36aeda1dd00bd04d0a4a08146d2025cf242ef55e403c919",
+      "success": true,
+      "structured_operations": []
+    },
+    {
+      "task": "isolated_deadband",
+      "draw": 1,
+      "arm": "direct",
+      "answer": "isolated_deadband_1_direct.answer.md",
+      "answer_sha256": "c66dfe6a8df827e001b132709e0e67e7334fc8b4493b1c6045cd9a03492b5c2e",
+      "candidate_id": "81145125e397715d3a732542320ea03df4a6be8977c7e9a6886580434592b466",
+      "success": true,
+      "structured_operations": []
+    }
+  ],
+  "full_run": "Skillforge-wsp-repair-v1/results/wsp_repair_v1",
+  "scope": "byte-preserved model replies; deployed artifacts and collection logs retained in isolated run"
+}

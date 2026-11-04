@@ -1,0 +1,42 @@
+{
+  "client_date": "2026-11-04",
+  "model_calls": 0,
+  "rows": [
+    {
+      "task": "shared_gain",
+      "arm": "direct",
+      "status": "passed",
+      "prompt_bytes": 10770
+    },
+    {
+      "task": "shared_gain",
+      "arm": "wspl",
+      "status": "passed",
+      "prompt_bytes": 10768
+    },
+    {
+      "task": "clipped_drive",
+      "arm": "direct",
+      "status": "passed",
+      "prompt_bytes": 10756
+    },
+    {
+      "task": "clipped_drive",
+      "arm": "wspl",
+      "status": "passed",
+      "prompt_bytes": 10754
+    },
+    {
+      "task": "isolated_deadband",
+      "arm": "direct",
+      "status": "passed",
+      "prompt_bytes": 11146
+    },
+    {
+      "task": "isolated_deadband",
+      "arm": "wspl",
+      "status": "passed",
+      "prompt_bytes": 11144
+    }
+  ]
+}

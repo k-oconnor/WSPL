@@ -1,0 +1,123 @@
+{
+  "observed_utc": "2026-11-04T08:13:08.098350+00:00",
+  "launch": {
+    "manifest_sha256": "807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe",
+    "pid": 41992,
+    "started_utc": "2026-11-04T08:11:28.3827914Z",
+    "working_directory": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-repair-v1",
+    "executable": "C:\\Users\\kevin\\skillforge-runtime\\venv-wspl-match\\Scripts\\python.exe",
+    "arguments": [
+      "experiments/source_consistency.py",
+      "run",
+      "--model-id",
+      "wsp-repair-v1",
+      "--output",
+      "results/wsp_repair_v1"
+    ],
+    "output": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-repair-v1\\results\\wsp_repair_v1",
+    "planned_invocations": 12,
+    "wall_guard_seconds": 14400,
+    "call_guard_seconds": 1200,
+    "hidden": true
+  },
+  "status": "running",
+  "constructor_calls": 4,
+  "trials": [
+    {
+      "task": "shared_gain",
+      "draw": 0,
+      "arm": "direct",
+      "status": "evaluated",
+      "candidate_id": "015a7630bc63a074a99ee006061ef41cb7dea5b1bc0980cdf4280c1f28931fb9",
+      "success": true,
+      "formal": "PROVED",
+      "numerical": "PASS"
+    },
+    {
+      "task": "shared_gain",
+      "draw": 0,
+      "arm": "wspl",
+      "status": "evaluated",
+      "candidate_id": "015a7630bc63a074a99ee006061ef41cb7dea5b1bc0980cdf4280c1f28931fb9",
+      "success": true,
+      "formal": "PROVED",
+      "numerical": "PASS"
+    },
+    {
+      "task": "clipped_drive",
+      "draw": 0,
+      "arm": "wspl",
+      "status": "evaluated",
+      "candidate_id": "68873cd4cf8672976fc54e9852d51fbbf85f5461cc45f1ed877cbd775fbf54ce",
+      "success": true,
+      "formal": "PROVED",
+      "numerical": "PASS"
+    },
+    {
+      "task": "clipped_drive",
+      "draw": 0,
+      "arm": "direct",
+      "status": "collecting",
+      "candidate_id": null
+    },
+    {
+      "task": "isolated_deadband",
+      "draw": 0,
+      "arm": "direct",
+      "status": "not_attempted",
+      "candidate_id": null
+    },
+    {
+      "task": "isolated_deadband",
+      "draw": 0,
+      "arm": "wspl",
+      "status": "not_attempted",
+      "candidate_id": null
+    },
+    {
+      "task": "shared_gain",
+      "draw": 1,
+      "arm": "wspl",
+      "status": "not_attempted",
+      "candidate_id": null
+    },
+    {
+      "task": "shared_gain",
+      "draw": 1,
+      "arm": "direct",
+      "status": "not_attempted",
+      "candidate_id": null
+    },
+    {
+      "task": "clipped_drive",
+      "draw": 1,
+      "arm": "direct",
+      "status": "not_attempted",
+      "candidate_id": null
+    },
+    {
+      "task": "clipped_drive",
+      "draw": 1,
+      "arm": "wspl",
+      "status": "not_attempted",
+      "candidate_id": null
+    },
+    {
+      "task": "isolated_deadband",
+      "draw": 1,
+      "arm": "wspl",
+      "status": "not_attempted",
+      "candidate_id": null
+    },
+    {
+      "task": "isolated_deadband",
+      "draw": 1,
+      "arm": "direct",
+      "status": "not_attempted",
+      "candidate_id": null
+    }
+  ],
+  "source_receipt_status": "verified",
+  "source_manifest_sha256": "807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe",
+  "scope": "launch/status snapshot only; read current results before interpreting completion"
+}

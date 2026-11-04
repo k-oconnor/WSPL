@@ -1,5 +1,118 @@
 # Working context
 
+November4 completed reworked Breakout: mean native370.5163/WSPL391.685, three
+valid proposals each and1000episodes each; high author variance, no superiority
+claim. Descriptive progression gate passed. All WSPL proposals used loops/exact
+arithmetic; outputtokens66085/53167, sourcebytes16185/7131(native/WSPL). Full
+audit passed95source/10bound/runtime/CLI checks,6freshthreads, exactreconstruction,
+6000episodes,18trajectories and127378savedactions. No new gameplay/modelcalls.
+Report BREAKOUT_REWORKED_V1_RESULTS.md; audit wsp_breakout_v1_results.json;
+raw replies/sources artifacts/wsp_breakout_v1, full evidence isolated unchanged.
+Kinetix next:14files downloaded at upstream4d09ba6 andverified; no simulator run
+or installation. Read KINETIX_REPLAY_READINESS.md for rounded-parent, importer,
+runtime and577KBprompt transport work before new source approval.
+
+November4 reworked Breakout approved and launched: exact e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4
+approved via explicit card, registered after95source/10bound/runtime/CLI checks.
+Hidden launch09:22UTC/01:22PST, launcher724/worker38504, isolated
+Skillforge-wsp-breakout-v1/results/wsp_breakout_v1. Sourcegate verified; first
+native author thread and turn started, no startup error. Live status governs
+progress. Preserve isolated source/bound resources; no retry/duplicate. Main
+development allowed. Audit complete artifacts before moving to Kinetix.
+
+November 4: Kevin requested the rebuilt WSPL Breakout test and complete artifact
+retention, then Kinetix. Prepared original-tanh six-proposal native/WSPL screen;
+see docs/wspl/BREAKOUT_REWORKED_V1.md and BREAKOUT_REWORKED_V1_LAUNCH.md.
+Candidate e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4;
+isolated Skillforge-wsp-breakout-v1 has95 verified sources and10 bound files.
+426 primary checks (425pass/one separately covered skip),12native checks,
+19new harness checks and both offline prompts pass. No calls/episodes/approval
+registration yet. Exact digest approval remains. Preserve prior archives and the
+earlier matched-ReLU writeup pause. Next domain is Kinetix parent/repair replay,
+then fresh native/WSPL repair with separate exact source approvals.
+
+November4 completed repair screen: source/run complete,12proposals/constructors,
+405seconds. Both direct and WSPL6/6,24claimsPROVED,249FP32inputs each zeroerror.
+WSPL actualuse2untie and4raw-only proposals;no region replacement/transplant/
+residual ormodule use. Ceiling result,no comparative advantage. Read-only audit
+passed90source/14bound/runtime/CLI checks,12freshthreads,exactconstruction and
+evaluation replays plus81-point independent rational diagnostics. Report
+docs/wspl/REPAIR_SCREEN_V1_RESULTS.md;data wsp_repair_v1_results.json;byte-preserved
+replies artifacts/wsp_repair_v1. Total41214input/10239output tokens (6664reasoning
+included),0cache. Larger graphs/reuse/preservation are a discussion direction,
+not an approved next study. Preserve previous matched-Breakout writeup pause.
+
+November 4 approved repair launch: exact807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe
+approved by user's explicit card response, registered in main/isolated. Launch
+00:11PST/08:11UTC in Skillforge-wsp-repair-v1, launcherPID41992, worker38748.
+Source90files,14auxiliary resources, dependency/CLI/task/prompt identities verified.
+First direct proposal passes both external claims and numerical check; queue
+continues. Check live results/wsp_repair_v1/status.json for actual progress.
+Do not edit isolated source/bound inputs or rerun automatically. Main remains free.
+Launch snapshot docs/wspl/wsp_repair_v1_launch.json; no completed-study claim.
+
+November 4 next screen: user authorized the proposed stress checks and experiment
+preparation. Both stress checks passed; source tools/stress_wsp_graph.py, report
+docs/wspl/WSP_STRESS_V1.md. Prepared 12 fresh Astra/xhigh proposals across three
+supplied circuit repair tasks, direct and structured interfaces, two draws each.
+Same raw topology/parameter access and budgets, external repair and preservation
+claims and FP32 check; no feedback or training. Docs/wspl/REPAIR_SCREEN_V1.md
+records design/limits and descriptive go rules. No new model calls/registration/
+scientific launch. Exact source approval is the pending final step. All failures
+and unattempted trials stay visible; incomplete pairs have no success contrast.
+Prepared exact digest807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe,
+90 Python files, isolated snapshot Skillforge-wsp-repair-v1 over base29eb1cd.
+Protocol and launch identity docs/wspl/REPAIR_SCREEN_V1_LAUNCH.md.407unit tests
+completed with one covered native skip;18new repair checks and sixoffline prompt
+preflights pass. Digest is unapproved/unregistered; no new model calls.
+
+Current graph extension, November 3: Kevin said "Onto general graph surgery it is."
+Implemented stateless vector DAGs with explicit canonical FP32 sharing, exhaustive
+region cuts, replace/transplant/redirect/residual/untie syntax, host-owned topology
+budgets, immutable plan/apply and downstream dependency diffs. Dense graphify is
+explicit; full edited-DAG real-graph checks and replayed witnesses are supported
+except tanh. Runnable shared-branch examples: examples/wsp_graph and
+tools/demo_wsp_graph.py. See docs/wspl/WSP_GRAPH_SURGERY.md and new validation
+receipt. No scientific/training/model-authoring run. Arbitrary stateful graphs,
+framework import, mixed dtypes, physical view aliases and IEEE proofs remain future
+work. Historical first-pass receipt and scientific archives are preserved.
+Final validation: 389 primary tests, 388 pass and one native fixture skipped;
+12/12 native checks pass separately. All 50 new graph tests pass. Inventory of
+85 Python files unchanged during testing. Three demo candidates prove intended
+and preserved-branch claims and replay counterexamples for false claims.
+
+First implementation pass, November 3: Kevin accepted the design and requested
+notification when the first pass was done. New wsp_* modules implement generic
+finite FP32 tensor editing, exact direct rational rounding, native compatibility,
+explicit affine/ReLU circuit placement, immutable replayed plan/apply, frozen
+descriptions and optional Z3 real-graph checks. CLI covers inspect/plan/apply/
+describe/check/probe/diff. Worked raw/placed Deadband artifacts are identical;
+true claims prove and false claims have independently replayed witnesses.
+See docs/wspl/WSP_EDITOR_FIRST_PASS.md and its validation receipt. This is local
+engineering, not a new authoring/training/robot experiment. The current extension
+above supersedes its fixed-topology limit. Historical parsers/runners/approved
+manifests and matched results remain unchanged.
+
+Latest direction, November 3: Kevin requested retooling and syntax alignment
+before considering another experiment, then asked Astra to design the tools it
+would actually use for weight-space programming. The proposed WSPL 0.2 design is
+in docs/wspl/WSP_TOOLING_DESIGN.md and WSP_SYNTAX_0_2.md: complete direct tensor
+editing with explicit numeric/legacy profiles; placed reusable circuits; separate
+graph surgery with exhaustive boundary mappings; frozen-artifact descriptions;
+independently owned checks and staged candidates. These documents are proposals,
+not implemented parser/tool capabilities or approval of a new scientific run.
+Recommended implementation unit is generic tensor access, placed circuits and
+descriptions; automatic allocation is an optional path rather than an expressivity
+gate. The existing Core PWA parser and historical source-pinned runs stay versioned.
+
+The matched screen completed and has a read-only audit, but Kevin requested
+fairness discussion before a result writeup. Do not interpret it as a general
+language verdict. Direct edits control placement; the two source arms share the
+compiler. A rejected program's redundant negative input relays demonstrate a
+conservative allocation limitation. Post-hoc WSPL explanation of frozen weights
+remains a useful direction, after this interface retool. No next experiment has
+been prepared or launched. Earlier launch notes below are historical.
+
 Breakout replay COMPLETE: both arms1000episodes and source gate complete,
 two constructor calls, empty stderr, processes exited. Released policy mean511.828
 SE7.60482 versus upstream517.411 SE7.41695; uniform mean0.551 SE0.02478.

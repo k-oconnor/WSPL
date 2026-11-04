@@ -1,0 +1,6 @@
+wspl 0.2;
+target base=artifact("base",sha256="692b928fb6ed8e194bfe5db305e8da226412e8f260da8bff00ca92cf40402776");
+edit base as candidate mode=graph budget="repair" {
+  untie parameter("left.weight") as privateW;
+  privateW[:,:]=5;
+}

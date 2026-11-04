@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "model_id": "wsp-repair-v1",
+  "source_roots": [
+    "src",
+    "experiments",
+    "tests",
+    "tools"
+  ],
+  "constructor": {
+    "module": "skillforge.wsp_repair",
+    "source": "src/skillforge/wsp_repair.py",
+    "symbol": "RepairStudy"
+  },
+  "constructor_kwargs": {},
+  "runner": {
+    "module": "run_wsp_repair",
+    "source": "experiments/run_wsp_repair.py",
+    "symbol": "run"
+  },
+  "runner_config": {
+    "bound_files": {
+      "data/wsp_repair_v1/shared_gain.direct.txt": "6740f43123052855e666405dba7432222731c78cd8327461bfd9ca9955e57808",
+      "data/wsp_repair_v1/shared_gain.wspl.txt": "48bd2effe7f740b2676f5cdc808fb408a181590137fdf72651dbf414a5a0b5cc",
+      "data/wsp_repair_v1/clipped_drive.direct.txt": "2a31ee2297c0f100946cd714a516f73613e00ce68590e7822678d2dfd5f3d5a7",
+      "data/wsp_repair_v1/clipped_drive.wspl.txt": "4e96ce92688595a4401d0508a338747e9948ecfb8644130f48f13397ab92dd21",
+      "data/wsp_repair_v1/isolated_deadband.direct.txt": "8f3fc53f86a6f3d7e58f46d0f9b7284cef3466b90e8e1f20813c6949a2fa72bd",
+      "data/wsp_repair_v1/isolated_deadband.wspl.txt": "95a8a974c4a7197774aae7bbe5b51a0266d7d16c973c389fc499e99c1051ec09",
+      "artifacts/local_paths.json": "764dd182aac2a8a7deb0f1ff6e42aca252b37981a3273c31203a01f99cfa0215",
+      "data/astra_native_v1/catalog_frozen.json": "7cddcfcdc4aea65d3e89ed35084828caaf53901a44621d3957a482d5b59e3b91",
+      "data/astra_native_v1/instructions.md": "50790093946c1c6a60920aade678903b95cd8e76625f0b89fc418754fee5bbee",
+      "docs/wspl/REPAIR_INTERFACE_V1.md": "6f4901f2485cb57786b90cc5960ede2aba885d8c0d98d4ad3ecf37e1695760e1",
+      "docs/wspl/REPAIR_SCREEN_V1.md": "672c6acc29608e26aa975a90fe2ae0596eef6f13fadc37e79c479c6e43653404",
+      "requirements/breakout-matched.txt": "4081e142b48cf2fe703775dd34f8cf7869d67bc82434b64ed76679030d914931",
+      "requirements/csail-breakout-replay.txt": "fc0675d8b98b6d0351d0b0556dda8f9c6f9a22d7363d33baa2991ea66315f4cf",
+      "data/wsp_repair_v1/bundle.json": "fc0be86b3f081cc89b801050264b7cae49c909534a1594b05238772915c8f703"
+    },
+    "prompts": {
+      "shared_gain": {
+        "direct": "data/wsp_repair_v1/shared_gain.direct.txt",
+        "wspl": "data/wsp_repair_v1/shared_gain.wspl.txt"
+      },
+      "clipped_drive": {
+        "direct": "data/wsp_repair_v1/clipped_drive.direct.txt",
+        "wspl": "data/wsp_repair_v1/clipped_drive.wspl.txt"
+      },
+      "isolated_deadband": {
+        "direct": "data/wsp_repair_v1/isolated_deadband.direct.txt",
+        "wspl": "data/wsp_repair_v1/isolated_deadband.wspl.txt"
+      }
+    },
+    "guide": "docs/wspl/REPAIR_INTERFACE_V1.md",
+    "task_ids": {
+      "shared_gain": "855147612e2feb50a37572cefc650f896e416a9dde4f7fcf696c238e0822b368",
+      "clipped_drive": "2433b79c82b852608ce546ce839fc0baba2e2307941cda19c63a54f1361d0e8c",
+      "isolated_deadband": "13ccee74b0319723a7a322057efc601c556922955bc79f86fdc279e0364c1d72"
+    },
+    "local_paths": "artifacts/local_paths.json",
+    "catalog": "data/astra_native_v1/catalog_frozen.json",
+    "instructions": "data/astra_native_v1/instructions.md",
+    "cli_sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+    "dependencies_sha256": "e9951d52a6aeab822bfd5f296363524439bfbc9d1aa17dc5c51f448c1de27b95",
+    "call_guard_seconds": 1200,
+    "wall_guard_seconds": 14400
+  }
+}

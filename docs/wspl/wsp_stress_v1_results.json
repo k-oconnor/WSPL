@@ -1,0 +1,59 @@
+{
+  "kind": "seeded engineering stress test; no scientific run",
+  "status": "passed",
+  "seconds": 17.86260009999387,
+  "script_sha256": "72aae9ef2036bf0fb917c57531ea46327eb79f77607237a94c1afcd0992f902f",
+  "model_calls": 0,
+  "training_updates": 0,
+  "scored_episodes": 0,
+  "randomized": {
+    "graphs": 100,
+    "edit_steps": 1200,
+    "changed_states": 1000,
+    "rejected_operations": 400,
+    "seed_range": [
+      41000,
+      41099
+    ],
+    "max_torch_absolute_error": 0.0
+  },
+  "controllers": [
+    {
+      "source": "artifacts/astra_breakout_native_v2/draw_0.answer.md",
+      "source_sha256": "014f4c9748fdeb03a624a54de924ab66ce92a420dad625dcacbfa8a0d341a603",
+      "parent_id": "2f0bc3fe9fd5e2e29bb070d8c85293fc57ca96214d6fe029450a5ce4323addda",
+      "candidate_id": "dcbf5caba03c0c267b69bbd706ae60b5e4fcd60fc20b4247cd4cc45f8b76a83e",
+      "parameters": 20486,
+      "samples": 32,
+      "tensor_bits_preserved": true,
+      "numpy_outputs_bitwise_identical": true,
+      "max_torch_absolute_error": 0.0,
+      "seconds": 0.7015620002057403
+    },
+    {
+      "source": "artifacts/astra_breakout_native_v2/draw_1.answer.md",
+      "source_sha256": "883bfa09f867fc56f56749b6c35d1d1a7986d2849a910fd1c4ed54c613cef9de",
+      "parent_id": "9e8566b5653fc8de80da1646c70defe19ab74cc2d96124bec86725bc81dbe42a",
+      "candidate_id": "8006be88dfb6e151e2e46f24163a4686c3d910bc851857d22eafc62619d5f27e",
+      "parameters": 20486,
+      "samples": 32,
+      "tensor_bits_preserved": true,
+      "numpy_outputs_bitwise_identical": true,
+      "max_torch_absolute_error": 0.0,
+      "seconds": 0.6570999999530613
+    },
+    {
+      "source": "artifacts/astra_breakout_native_v2/draw_2.answer.md",
+      "source_sha256": "256a5fa05b93d7e7c3daec6829947ae1affb28023e7ed904841f01d4344302ea",
+      "parent_id": "460d376d6f202aca94e95ca558706e5bf7370be476a5cc0bb8ad13c510527e29",
+      "candidate_id": "ba842ce57004408ecaaa4fb8b821cbe2c36815f04401330c746a8a64d7e54e23",
+      "parameters": 20486,
+      "samples": 32,
+      "tensor_bits_preserved": true,
+      "numpy_outputs_bitwise_identical": true,
+      "max_torch_absolute_error": 7.62939453125e-06,
+      "seconds": 0.6538102000486106
+    }
+  ],
+  "raw_results_sha256": "def046ea876488268f4364ed32a2e25137a978eb6e6a18dd913f54dd8f2e6ab4"
+}

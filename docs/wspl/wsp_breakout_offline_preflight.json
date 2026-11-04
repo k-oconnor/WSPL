@@ -1,0 +1,19 @@
+{
+  "offline": true,
+  "model_calls": 0,
+  "scored_episodes": 0,
+  "arms": {
+    "native": {
+      "status": "PASS",
+      "prompt_sha256": "fad78d8dc8400690d6a3d82a9d6cf52ebae1ab803ae5f0b3fb8a5b5a08cbe4ee",
+      "prompt_bytes": 13172,
+      "preview_sha256": "89914842384e62c9e5a593dddb99e5e6db1ebb669b7a6fc215f4180394067194"
+    },
+    "wspl": {
+      "status": "PASS",
+      "prompt_sha256": "060a0a41a32924c9f98d1ff629ae12e2a34e499c313d24b1af9dedc79cdfcd6f",
+      "prompt_bytes": 13170,
+      "preview_sha256": "d1e28073a9d663d4f92b0e4f0d516c2d820c1ffcfe37fb31927c601f63bb8202"
+    }
+  }
+}

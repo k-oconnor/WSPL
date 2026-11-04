@@ -1,0 +1,17 @@
+{
+  "status": "VERIFIED_UNAPPROVED",
+  "manifest_sha256": "e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4",
+  "source_files": 95,
+  "bound_files": 10,
+  "dependencies_sha256": "54c3c12d71fd68a11ef1829de95b3cc9ce7e190a08964848a57b625c387f44bc",
+  "cli_sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+  "offline_preflights": 2,
+  "model_calls": 0,
+  "scored_episodes": 0,
+  "registry_unchanged": true,
+  "isolated": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-breakout-v1",
+  "isolated_harness_tests": 19,
+  "isolated_harness_passed": 19,
+  "isolated_harness_log_sha256": "c62f206790d9c3247553610990942c313314053ee28e246d425c21534203c040",
+  "source_reverified_after_checks": true
+}

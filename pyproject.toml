@@ -13,6 +13,7 @@ dependencies = []
 dev = ["jsonschema>=4.23,<5"]
 verify = ["z3-solver==5.3.3.0"]
 replay = ["numpy==1.26.4", "MinAtar==1.0.15"]
+editor = ["numpy==1.26.4"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

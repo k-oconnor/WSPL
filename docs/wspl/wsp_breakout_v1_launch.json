@@ -1,0 +1,74 @@
+{
+  "recorded_utc": "2026-11-04T09:23:44.796149+00:00",
+  "launch": {
+    "model_id": "wsp-breakout-v1",
+    "manifest_sha256": "e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4",
+    "launched_utc": "2026-11-04T09:22:02.7024134Z",
+    "launcher_pid": 724,
+    "executable": "C:/Users/kevin/skillforge-runtime/venv-wspl-match/Scripts/python.exe",
+    "arguments": [
+      "experiments/source_consistency.py",
+      "run",
+      "--model-id",
+      "wsp-breakout-v1",
+      "--output",
+      "results/wsp_breakout_v1"
+    ],
+    "cwd": "C:/Users/kevin/OneDrive/Desktop/Skillforge-wsp-breakout-v1",
+    "stdout": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-breakout-v1\\results\\wsp_breakout_v1.launch.stdout.log",
+    "stderr": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-wsp-breakout-v1\\results\\wsp_breakout_v1.launch.stderr.log",
+    "expected_hours": "1-2",
+    "wall_guard_seconds": 14400,
+    "status": "launched"
+  },
+  "receipt_status": "verified",
+  "constructor_calls": 1,
+  "status_snapshot": {
+    "status": "running",
+    "trials": [
+      {
+        "draw": 0,
+        "arm": "native",
+        "status": "collecting"
+      },
+      {
+        "draw": 0,
+        "arm": "wspl",
+        "status": "not_attempted"
+      },
+      {
+        "draw": 1,
+        "arm": "wspl",
+        "status": "not_attempted"
+      },
+      {
+        "draw": 1,
+        "arm": "native",
+        "status": "not_attempted"
+      },
+      {
+        "draw": 2,
+        "arm": "native",
+        "status": "not_attempted"
+      },
+      {
+        "draw": 2,
+        "arm": "wspl",
+        "status": "not_attempted"
+      }
+    ],
+    "active_seconds": 0.0470000000204891,
+    "manifest_sha256": "e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4"
+  },
+  "source_reverified": true,
+  "source_files": 95,
+  "bound_files": 10,
+  "first_thread_id": "01a1a5dd-9691-7473-8ea3-628a0d1b443d",
+  "event_types": [
+    "thread.started",
+    "turn.started"
+  ],
+  "launcher_stderr_bytes": 0,
+  "model_argument_verified": "gpt-6-astra",
+  "scope": "startup only; live status supersedes this snapshot"
+}
