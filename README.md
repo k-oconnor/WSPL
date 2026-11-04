@@ -20,7 +20,8 @@ transplant modules, rewire edges, add residual paths and untie shared weights in
 stateless vector DAGs. Plans expose every boundary consumer and shared parameter.
 The broader [tooling design](docs/wspl/WSP_TOOLING_DESIGN.md) and
 [syntax](docs/wspl/WSP_SYNTAX_0_2.md) retain future extensions. The new frontend
-preserves historical Core PWA semantics; its evidence so far is engineering validation.
+preserves historical Core PWA semantics; engineering checks and completed
+authoring screens are summarized under [Experiments](#experiments).
 
 | Component | Status |
 | --- | --- |
@@ -35,7 +36,7 @@ preserves historical Core PWA semantics; its evidence so far is engineering vali
 | Frozen MLP tensor import and parent/edited relational contracts | Initial G3a prototype; exact hex-float import with pre/postprocessing relays, Z3 relational checks |
 | Output-patch composition and transactions | Initial G3b prototype; augmentation with verified slices, COMMITTED/REJECTED/UNRESOLVED gating, replayable manifests |
 | Opaque-network intervention evidence | Paired activation probes, controls, replay and hash-chained empirical logs |
-| Fresh LLM authoring | Native Breakout three-draw screen completed; comparative WSPL/feedback screen pending |
+| Fresh LLM authoring | Native and matched native/WSPL Breakout screens completed; feedback-driven authoring remains planned |
 | Small-alphabet LTLf compiler and strong finite-model planner | Implemented for supplied symbolic effect models |
 | Hierarchical task expansion | Implemented at a supplied macro-summary cut; no physical primitive executor |
 | Neural MLP/RMV blocks and single-tick LIBERO bridge | Implemented; independent sampled outcome observers |
@@ -47,7 +48,7 @@ contract suites ([text front end](docs/wspl/PARSER.md)). The separate WSPL 0.2
 editor implements the tensor/circuit and graph subsets linked above. The scalar
 JSON IR compiles neural weights and supports scoped
 real-graph contract checks. There is
-no numerical execution proof or comparative WSPL controller-synthesis result. The available compiler command is documented below;
+no numerical execution proof. The available compiler command is documented below;
 the proposal's general `wspl` command suite remains planned.
 
 Try the supplied graph-edit example after installing the editor and verifier:
@@ -85,6 +86,72 @@ equations, scores and trajectories are retained, with
 The audit reconstructed every candidate and checked 6,000 episode records and
 127,378 recorded actions. [Kinetix replay preparation](docs/wspl/KINETIX_REPLAY_READINESS.md)
 has begun with pinned reference files; no Kinetix experiment has launched.
+
+## WSPL syntax: programs that construct weights
+
+WSPL 0.2 declares a target network and an explicit edit transaction. The following
+runnable construction illustration adapts coordinate-weight assignments from an
+[actual Breakout proposal](artifacts/wsp_breakout_v1/draw_1_wspl.source.wspl).
+It illustrates syntax; it is not the complete game-playing controller.
+
+```wspl
+wspl 0.2;
+target base=dense(widths=[600,32,32,6],activations=[tanh,tanh,linear],layout=in_out,storage=f32,init=zeros);
+
+const gain=16;
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  for r in range(10) {
+    for c in range(10) {
+      W1[6*(10*r+c)+3,15:20]=gain*[r,c,c,c,c];
+      W1[6*(10*r+c)+4,0:2]=-10*gain*[c,r];
+    }
+  }
+}
+```
+
+`W1` connects input rows to first-layer unit columns; `b1` is that layer's bias.
+Here the input index names a grid cell and channel: channel 3 contains the ball,
+and channel 4 its previous position. A few expressions populate coordinate-based
+weights across the board. **Construction loops run once to produce weights.**
+Inference executes the resulting fixed neural network, with no runtime loops or
+policy code supplied by the author.
+
+| Syntax | Meaning |
+| --- | --- |
+| `target base=dense(...)` | Declare shape, activations, layout, storage and zero initialization |
+| `target base=artifact("name",sha256="...")` | Bind an existing artifact by exact identity; `...` must be replaced with its actual digest |
+| `edit base as candidate mode=fixed` | Construct a new candidate without changing the parent's tensors or topology |
+| `const gain=16;` / `for r in range(10) { ... }` | Named construction values and bounded expansion of repeated weight patterns |
+| `W1[i,j]=v;` / `W2[0:4,0:4]=copy(W1[0:4,0:4]);` | Direct tensor writes, slices, broadcasts and statement-snapshot copies |
+| `+=`, `-=`, `*=` | Update selected entries; later writes see the current candidate storage |
+| `parent.W1[...]` | Read the original immutable tensor values |
+| `numeric=exact_to_storage` | Exact rational construction arithmetic, rounded directly to FP32 at each assignment |
+| `numeric=native_numpy_v1` | Historical native literal-edit arithmetic; this compatibility profile excludes loops and expressions |
+
+Graph mode adds explicit operations on consumers and shared parameters. This
+fragment was used successfully in the synthetic repair screen:
+
+```wspl
+untie parameter("n0.weight") as W_drive;
+W_drive[0,0]=3;
+```
+
+Inside a graph-mode transaction with a host-supplied budget, `untie` gives that
+consumer a private copy before the update. Other consumers retain the shared
+weight. Region `replace`, `transplant`, `redirect` and `add_residual` operations
+are also implemented; their boundary mappings and topology budgets are explicit.
+See the [graph surgery guide](docs/wspl/WSP_GRAPH_SURGERY.md) for complete examples.
+
+The editor interprets bounded construction syntax as data; it does not execute
+arbitrary proposal Python. `plan` records the parent, candidate, write footprint
+and rounding; `apply` replays the plan and checks identity. `describe` and `check`
+attach separate evidence to frozen artifacts. Author-provided semantic labels
+remain hypotheses. Formal checks cover the supported affine/ReLU real-graph
+subset; editable tanh networks receive empirical execution checks, not proofs.
+The [implemented editor guide](docs/wspl/WSP_EDITOR_FIRST_PASS.md) and
+[study interface](docs/wspl/BREAKOUT_REWORKED_INTERFACE_V1.md) document the working
+subset; the broader [syntax design](docs/wspl/WSP_SYNTAX_0_2.md) also includes
+planned features. The historical Core PWA module frontend below is separate.
 
 ## Try the exact scalar reference
 
@@ -210,12 +277,66 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 - [CSAIL comparison and product win conditions](docs/wspl/CSAIL_COMPARISON.md): useful performance, checked changes and less engineering/review effort; outperforming the published game score is optional
 - [Completed Breakout artifact replay](docs/wspl/BREAKOUT_REPLAY_RESULTS.md): 511.828 mean return versus upstream 517.411; uniform control 0.551; 1,000 episodes each, CPU only, no model calls
 - [Completed fresh Astra native authoring screen](docs/wspl/ASTRA_BREAKOUT_NATIVE_RESULTS.md): three one-shot policies, 3,000 evaluated episodes; all replies, usage and failed-attempt history archived
-- [Matched ReLU comparison](docs/wspl/BREAKOUT_MATCHED_V1.md): approved and launched; native edits / restricted Python source / WSPL, three fresh draws each, identical 20,486-parameter target; [startup record](docs/wspl/breakout_matched_v1_launch.json)
+- [Earlier matched ReLU comparison](docs/wspl/BREAKOUT_MATCHED_V1.md): completed; interpretation paused during review of compiler/interface fairness
+- [Reworked native/WSPL comparison](docs/wspl/BREAKOUT_REWORKED_V1_RESULTS.md): completed on the original tanh network; performance, token use and replayable artifacts summarized below
 - [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)
 - [Original supplied WSPL proposal](docs/wspl/PROPOSAL_v0_1_2026-11-03.md), archived unchanged with provenance
 - [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents
 
-## First fresh weight-authoring result: Breakout
+## Experiments
+
+### Matched native versus WSPL: performance and token efficiency
+
+Six fresh Astra/xhigh proposals used the same task information, zero-initialized
+20,486-parameter tanh network and 1,000 paired evaluation episodes per policy.
+Three proposals used native literal weight edits and three used the rebuilt
+WSPL interface. All six were valid. No author received tools, evaluation feedback
+or gradient training.
+
+| Measure | Native | WSPL | Observed change with WSPL |
+| --- | ---: | ---: | ---: |
+| Mean reward across three proposals | 370.516 | 391.685 | +5.7% |
+| Best proposal reward | 498.366 | 524.558 | +5.3% |
+| Total output tokens, including reasoning | 66,085 | 53,167 | 19.5% fewer |
+| Reasoning output tokens | 55,737 | 49,137 | 11.8% fewer |
+| Other output tokens | 10,348 | 4,030 | 61.1% fewer |
+| Stored executable source bytes, all three | 16,185 | 7,131 | 55.9% fewer |
+
+Token and byte totals cover all three proposals per arm; reasoning and other
+output tokens partition total output. Input totals were closely matched:
+12,177 native versus 12,186 WSPL. Native stored sources include their post-hoc
+WSPL normalization wrapper, which was never supplied to either writer.
+
+All three WSPL programs used construction loops and exact arithmetic. Repeated
+weight patterns could be expressed once and expanded by the editor. The largest
+token reduction was in non-reasoning output, consistent with more compact weight
+construction. These observations motivate a larger efficiency study; they do
+not establish why reasoning usage changed or a general cost advantage.
+
+For the best pair in this screen, WSPL used **2,864 source bytes versus 5,913**
+(51.6% fewer) and **17,504 total output tokens versus 19,308** (9.3% fewer),
+while scoring 524.558 versus 498.366. Our best earlier native policy scored
+**541.818**, above the best WSPL score here; that earlier prompt package and
+evaluation seeds differ, so it is historical context rather than a matched control.
+
+Across-proposal reward SDs were 120.0 native and 125.2 WSPL. **Three authoring
+draws per arm do not establish performance superiority or a reliable efficiency
+advantage.** The predeclared descriptive progression criterion passed. No formal
+tanh/controller proof is claimed, and shorter source is not itself evidence of
+easier human review.
+
+All replies, sources, weights, edit plans, equations, episode records and the
+first three trajectories per policy were retained. The audit reconstructed all
+six candidates, checked all 6,000 episode records and replayed 127,378 recorded
+actions from their observations and RNG states.
+
+- [Full results and limitations](docs/wspl/BREAKOUT_REWORKED_V1_RESULTS.md)
+- [Best matched WSPL program](artifacts/wsp_breakout_v1/draw_0_wspl.source.wspl)
+- [Best matched native program](artifacts/wsp_breakout_v1/draw_0_native.answer.md)
+- [Best historical native program](artifacts/astra_breakout_native_v2/draw_1.answer.md)
+- [All six replies and executable sources](artifacts/wsp_breakout_v1/README.md)
+
+### First fresh native weight-authoring screen: Breakout
 
 In a supplied-rule pilot, **Astra authored functioning neural Breakout controllers
 in one response per draw**, using the original CSAIL compact weight-edit syntax.
@@ -242,9 +363,9 @@ including 55,638 reasoning tokens. An earlier invocation aborted on a CLI startu
 warning is also recorded; its usage is unknown. The read-only audit checks source
 identity, raw-file hashes, reply-to-weight reconstruction and every episode record.
 
-This demonstrates useful native weight authoring on one supplied task. A matched
-WSPL comparison, gradient-trained control and formal controller proof remain
-future experiments. See the [full results and limitations](docs/wspl/ASTRA_BREAKOUT_NATIVE_RESULTS.md),
+This demonstrates useful native weight authoring on one supplied task. The later
+matched WSPL comparison is reported above; a gradient-trained control and formal
+controller proof remain future work. See the [full results and limitations](docs/wspl/ASTRA_BREAKOUT_NATIVE_RESULTS.md),
 [machine-readable audit](docs/wspl/astra_native_v2_results.json) and
 [all three authored replies](artifacts/astra_breakout_native_v2/README.md).
 
