@@ -29,10 +29,10 @@ class Linear:
     def record(self):return dict(terms={k:str(v) for k,v in self.terms},bias=str(self.bias))
 
 
-def compile_scalar(document,*,target='fresh_mlp',max_parameters=100_000,max_layers=64,max_units=4096):
+def compile_scalar(document,*,target='fresh_mlp',max_parameters=100_000,max_layers=64,max_units=4096,max_nodes=1024):
     if target!='fresh_mlp':raise ValueError('only fresh MLP allocation is implemented; fixed/augmented modes unsupported')
     if any(type(v) is not int or v<1 for v in (max_parameters,max_layers,max_units)):raise ValueError('positive compilation limits required')
-    d=copy.deepcopy(document);ScalarProgram(d)  # type/domain/scope validation, no evaluation
+    d=copy.deepcopy(document);ScalarProgram(d,max_nodes=max_nodes)  # type/domain/scope validation, no evaluation
     env={n:Linear([(f'i{i}',Q(1))]) for i,n in enumerate(d['inputs'])}
     inputs={f'i{i}':i for i in range(len(env))};units={};depth={k:0 for k in inputs};memo={};source_nodes=[]
     def relu(form):

@@ -162,6 +162,7 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 - [CSAIL comparison and product win conditions](docs/wspl/CSAIL_COMPARISON.md): useful performance, checked changes and less engineering/review effort; outperforming the published game score is optional
 - [Completed Breakout artifact replay](docs/wspl/BREAKOUT_REPLAY_RESULTS.md): 511.828 mean return versus upstream 517.411; uniform control 0.551; 1,000 episodes each, CPU only, no model calls
 - [Completed fresh Astra native authoring screen](docs/wspl/ASTRA_BREAKOUT_NATIVE_RESULTS.md): three one-shot policies, 3,000 evaluated episodes; all replies, usage and failed-attempt history archived
+- [Prepared matched ReLU comparison](docs/wspl/BREAKOUT_MATCHED_V1.md): native edits / restricted Python source / WSPL, three fresh draws each, identical 20,486-parameter target; no new model calls, exact-source approval pending
 - [Implementation gates](docs/wspl/WSPL_IMPLEMENTATION.md)
 - [Original supplied WSPL proposal](docs/wspl/PROPOSAL_v0_1_2026-11-03.md), archived unchanged with provenance
 - [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents
@@ -287,8 +288,8 @@ An existing BDDL scene is not a working Skillforge task.
 python -m unittest discover -s tests -v
 ```
 
-The suite now contains 274 checks: 273 pass in the primary research environment,
-with the native MinAtar fixture skipped there. All 25 replay/authoring-focused checks pass
+The suite now contains 289 checks: 288 pass in the primary research environment,
+with the native MinAtar fixture skipped there. All 40 replay/authoring-focused checks pass
 in the separate MinAtar CPU environment, including that fixture. Optional neural/adapter checks
 skip when PyTorch or NumPy is absent, and solver checks skip without Z3; full local results used a separate CPU
 research environment. No model download, simulator rollout, scientific training

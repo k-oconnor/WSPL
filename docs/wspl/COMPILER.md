@@ -128,3 +128,15 @@ compiler-independent source equivalence check over the declared rational domain 
 also described there. Numerical execution proofs remain pending, followed by
 learned-controller imports and the blinded cross-domain harness. Empirical opaque
 network interventions are a separate evidence path, not a compiler proof.
+
+## Matched Breakout target adapter
+
+The prepared [ReLU interface screen](BREAKOUT_MATCHED_V1.md) adds a separate
+breakout_matched adapter. It compiles a fresh DAG, then embeds only graphs that
+fit two 32-wide hidden layers into a fixed 600-32-32-6 target. Signed affine-output
+and nonnegative hidden relays are counted; over-capacity graphs are rejected.
+This is not a general fixed-architecture compiler mode. An opt-in max_nodes
+resource parameter supports the larger source profile; existing defaults and
+scalar semantics remain unchanged. Explicit FP32 deployment rounding produces a
+separate artifact and can cause source-equivalence failure; nothing is silently
+treated as an exact numerical execution proof. No matched screen has run yet.

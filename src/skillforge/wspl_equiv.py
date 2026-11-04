@@ -77,7 +77,7 @@ def _encode_artifact(z3,artifact_document,inputs,constraints):
     return previous
 
 
-def check_equivalence(source,artifact,*,timeout_ms=5000,max_parameters=10000):
+def check_equivalence(source,artifact,*,timeout_ms=5000,max_parameters=10000,max_source_nodes=1024):
     started=time.monotonic();here=Path(__file__)
     result=dict(status='INVALID',scope='source_ir_vs_stored_weight_rational_real_graph',
                 quantifier='forall inputs in declared domain: every source output equals the artifact output',
@@ -85,6 +85,7 @@ def check_equivalence(source,artifact,*,timeout_ms=5000,max_parameters=10000):
                 independently_checked_proof_trace=False,
                 trust=['scalar IR validator','source encoder','artifact graph encoder','Z3','rational replay through both interpreters'],
                 timeout_ms=timeout_ms,logic='QF_LRA',
+                max_source_nodes=max_source_nodes,max_parameters=max_parameters,
                 checker_source_sha256=hashlib.sha256(here.read_bytes()).hexdigest(),
                 source_interpreter_sha256=hashlib.sha256(here.with_name('wspl_core.py').read_bytes()).hexdigest(),
                 artifact_evaluator_sha256=hashlib.sha256(here.with_name('wspl_artifact.py').read_bytes()).hexdigest())
@@ -92,7 +93,7 @@ def check_equivalence(source,artifact,*,timeout_ms=5000,max_parameters=10000):
         result.update(status=status,**fields);result['wall_seconds']=time.monotonic()-started
         return result
     try:
-        program=ScalarProgram(source)
+        program=ScalarProgram(source,max_nodes=max_source_nodes)
         if not isinstance(artifact,ReLUArtifact):artifact=ReLUArtifact(artifact)
         d=artifact.to_dict()
         result['source_sha256']=hashlib.sha256(canonical_bytes(source)).hexdigest();result['artifact_sha256']=artifact.sha256

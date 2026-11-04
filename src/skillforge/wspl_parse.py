@@ -132,7 +132,8 @@ class ParsedModule:
 
 
 class _Parser:
-    def __init__(self, text):
+    def __init__(self, text, *, max_nodes=1024):
+        self.max_nodes=max_nodes
         if not isinstance(text, str):
             raise ParseError('WSPL source text required')
         if len(text.encode('utf-8')) > MAX_SOURCE_BYTES:
@@ -196,7 +197,7 @@ class _Parser:
                    'outputs': [{'name': k, 'type': self.outputs[k]['type'], 'value': self.assigned[k]}
                                for k in self.output_order]}
         try:
-            ScalarProgram(program)
+            ScalarProgram(program,max_nodes=self.max_nodes)
         except ValueError as exc:
             raise ParseError(f'IR validation failed: {exc}') from exc
         return module_name, program
@@ -527,9 +528,9 @@ class _Parser:
         return {'op': COMPARISONS[token.text], 'left': form(left), 'right': form(right)}
 
 
-def parse_module(text):
+def parse_module(text, *, max_nodes=1024):
     """Parse one WSPL Core PWA module; return its IR, contracts and parse report."""
-    parser = _Parser(text)
+    parser = _Parser(text,max_nodes=max_nodes)
     name, program = parser.module()
     report = {'format': 'wspl.parse_report.v0', 'module': name,
               'text_sha256': hashlib.sha256(text.encode('utf-8')).hexdigest(),

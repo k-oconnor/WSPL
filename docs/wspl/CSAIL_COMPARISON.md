@@ -96,7 +96,10 @@ The first fixed-artifact replay is now
 upstream 517.411 and uniform control 0.551, with 1,000 episodes per arm. The
 [approved protocol](BREAKOUT_REPLAY_V1.md) used pinned resources and isolated CPU
 dependencies. This is artifact replay, not fresh Astra authoring.
-Fresh Astra/WSPL authoring and trained PPO references remain unprepared. The $150
-estimate covers the Boolean screen, not PPO rebuilding or the expanded benchmark.
-Freeze separate resource plans, task variants, sampling and source approvals
-before subsequent execution. No outreach is sent here.
+The [fresh native authoring screen](ASTRA_BREAKOUT_NATIVE_RESULTS.md) has since
+completed three policies (484.756,541.818,510.042 mean return). The
+[matched ReLU extension](BREAKOUT_MATCHED_V1.md) is prepared with native edits,
+restricted Python PWA source and WSPL, three fresh draws each. Neither its source
+nor its nine new proposer invocations are approved yet. Trained PPO references
+remain unprepared. The $150 estimate covered the Boolean screen, not PPO
+rebuilding or this expanded benchmark. No outreach is sent here.

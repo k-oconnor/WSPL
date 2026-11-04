@@ -1,0 +1,51 @@
+{
+  "constructor": {
+    "module": "skillforge.breakout_matched",
+    "source": "src/skillforge/breakout_matched.py",
+    "symbol": "MatchedBreakoutPolicy"
+  },
+  "constructor_kwargs": {},
+  "model_id": "breakout-matched-v1",
+  "runner": {
+    "module": "run_breakout_matched",
+    "source": "experiments/run_breakout_matched.py",
+    "symbol": "run"
+  },
+  "runner_config": {
+    "bound_files": {
+      "artifacts/local_paths.json": "764dd182aac2a8a7deb0f1ff6e42aca252b37981a3273c31203a01f99cfa0215",
+      "data/astra_native_v1/catalog_frozen.json": "7cddcfcdc4aea65d3e89ed35084828caaf53901a44621d3957a482d5b59e3b91",
+      "data/astra_native_v1/instructions.md": "50790093946c1c6a60920aade678903b95cd8e76625f0b89fc418754fee5bbee",
+      "data/breakout_matched_v1/bundle.json": "7ebfce258ef12ca709f4988ab97fa56c00c172ba75ee1fd7bdd835495f2e21c9",
+      "data/breakout_matched_v1/code.prompt.txt": "70a366303f1313a2d889bd32b3dcda1132421e9754f761776007ee2de286491d",
+      "data/breakout_matched_v1/weights.prompt.txt": "ba4f086166fdd58a243b23b1117af47aee306b3d36bbf48dfc87ad67eee6c0b2",
+      "data/breakout_matched_v1/wspl.prompt.txt": "2e977652a76d1d6a229d892d858736b0c858f487f524b4c55277c75b2468cba7",
+      "data/csail_breakout_reference_v1/exp5_write_from_scratch/runs/breakout/message.txt": "766ee251d59a7893ed86d5eaea99ddb847529ab2092afc69f90f55fb0a22e876",
+      "docs/wspl/BREAKOUT_MATCHED_INTERFACE_V1.md": "987663cf22a0701568862cb438e657231be2dba9a8d74463c66644087130f965",
+      "docs/wspl/BREAKOUT_MATCHED_V1.md": "7435097cfe6fcf6a3c796b2c0de3c5ceb2d3903c5523e5b58f54282002d178a8",
+      "requirements/breakout-matched.txt": "4081e142b48cf2fe703775dd34f8cf7869d67bc82434b64ed76679030d914931",
+      "requirements/csail-breakout-replay.txt": "fc0675d8b98b6d0351d0b0556dda8f9c6f9a22d7363d33baa2991ea66315f4cf"
+    },
+    "call_guard_seconds": 1200,
+    "catalog": "data/astra_native_v1/catalog_frozen.json",
+    "cli_sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+    "dependencies_sha256": "e9951d52a6aeab822bfd5f296363524439bfbc9d1aa17dc5c51f448c1de27b95",
+    "episodes": 1000,
+    "instructions": "data/astra_native_v1/instructions.md",
+    "local_paths": "artifacts/local_paths.json",
+    "max_steps": 10000,
+    "prompts": {
+      "code": "data/breakout_matched_v1/code.prompt.txt",
+      "weights": "data/breakout_matched_v1/weights.prompt.txt",
+      "wspl": "data/breakout_matched_v1/wspl.prompt.txt"
+    },
+    "wall_guard_seconds": 14400
+  },
+  "schema": 1,
+  "source_roots": [
+    "src",
+    "experiments",
+    "tests",
+    "tools"
+  ]
+}

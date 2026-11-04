@@ -43,7 +43,8 @@ class ScalarType:
 
 
 class ScalarProgram:
-    def __init__(self, document):
+    def __init__(self, document, *, max_nodes=1024):
+        if type(max_nodes) is not int or not 1<=max_nodes<=100000:raise ValueError('invalid source node budget')
         d = copy.deepcopy(document)
         if not isinstance(d, dict) or set(d) != {'format', 'inputs', 'lets', 'outputs'} or d['format'] != 'wspl.scalar_ir.v0':
             raise ValueError('unsupported scalar IR document')
@@ -56,7 +57,7 @@ class ScalarProgram:
         def lower(expr, depth=0):
             nonlocal count
             count += 1
-            if count > 1024 or depth > 32 or not isinstance(expr, dict): raise ValueError('invalid/oversized expression')
+            if count > max_nodes or depth > 32 or not isinstance(expr, dict): raise ValueError('invalid/oversized expression')
             op = expr.get('op')
             if op == 'ref':
                 if set(expr) != {'op', 'name'} or expr['name'] not in environment: raise ValueError('unknown/forward reference')
