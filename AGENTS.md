@@ -1,3 +1,97 @@
+November 4 diffusion coordinate-edit COMPLETE, supersedes launch.
+Finished20:57:28UTC/12:57PST;242.25active seconds;6constructor calls.
+Python3/3 andWSPL3/3 successful;18/18 real-graph permutation witnesses.
+All six programs yield bit-identical weights per parent. Maxprobe9.54e-7,
+maxsample8.37e-6,threshold.001. AllWSPLloops/copies,no placement/surgery.
+Outputtokens3260Python/2710WSPL;reasoning2488/1892;nonreasoning772/818.
+WSPL16.9%less reportedoutput,driven byreasoning;no broad efficiencyclaim.
+Construction9.139sPython/54.797sWSPL. Audit116sources,1366Windows/1579Linux
+resources,6freshthreads,18candidates and1152storedpairs;no newcalls/generation.
+Report docs/wspl/DIFFUSION_EDIT_V1_RESULTS.md; auditdiffusion_edit_v1_audit.json;
+reproducible auditor tools/audit_diffusion_edit_v1.py. Feasibility ceiling,
+not learned-semantic discovery or graph-surgery result. Preserve isolatedarchive.
+
+November 4 diffusion editing comparison LAUNCHED, supersedes preparation.
+Kevin approved final digest494c130f55b69d0705885e15ea5c3af4a49fe31883c4319ac870e8dec939a4ac
+with "Approve this manifest and launch the diffusion editing comparison".
+Registered main/isolated;116sources,1366Windows/1579Linuxresources verified.
+Hidden CPU source-gated process PID26192 launched20:53:22UTC/12:53PST in
+Skillforge-diffusion-edit-v1; outputresults/diffusion_edit_v1. Startup receipt
+verified,one constructor,first Python draw collecting with fresh thread/turn,
+launch stderr empty. Six planned author calls;20min/call and4h overall guards.
+Check live status/receipt before claiming completion. No automatic retries.
+Do not change isolated pinned source/bound resources while active. Main can
+continue independently. Startup record docs/wspl/diffusion_edit_v1_launch.json.
+
+November 4 diffusion coordinate-edit screen PREPARED, unapproved/unregistered.
+Protocol DIFFUSION_EDIT_V1.md and common DIFFUSION_EDIT_INTERFACE_V1.md under
+docs/wspl. Six Astra/xhigh one-shot programs, Python/WSPL x3; each applied to all
+three released denoisers. Fixed architecture, cyclic shift two pixels right,
+time unchanged, conjugate input/output and coupled-noise evaluation. Controlled
+boundary weight editing, not topology augmentation or semantic discovery.
+True NumPy comparator in newly installed bubblewrap/separate skillforge-author
+venv; no host/network/GPU/process creation. No existing bound runtime modified.
+454 full-suite passes/two existing skips; final seven focused checks passed.
+116 sources,1366 Windows and1579 Linux resources verified in isolated checkout
+Skillforge-diffusion-edit-v1. Exact final candidate:
+494c130f55b69d0705885e15ea5c3af4a49fe31883c4319ac870e8dec939a4ac
+experiments/source_pins/diffusion_edit_v1_final.manifest.json.
+Initial f908eb0 candidate superseded before approval; preserve it unapproved.
+Both offline prompt preflights pass. No calls or new real-model samples.
+Expected30-90min,call20min/overall4h guards,existing Codex usage with no hard
+output/dollar cap. Needs exact final user approval before registration/launch.
+Main can develop; preserve isolated pinned files/resources. Go not launched.
+
+November 4 diffusion replay COMPLETE, supersedes launch/preparation below.
+Source receipt and study complete; one constructor; all 3072 samples/48 batches
+saved in 10.344 active seconds. Audit docs/wspl/diffusion_replay_v1_audit.json
+verifies hashes, counts, exact archived weights, finite/range checks, summaries
+and paired initial noise. First64 previews visibly show filled triangles,
+squares and circles; no automated shape accuracy or exact sampler reproduction
+claim. Combined preview in isolated results/diffusion_replay_v1/contact_sheets.png.
+No model calls/training/GPU. Preserve archive. Go still requires preparation.
+
+November 4 diffusion replay LAUNCHED: user approved exact digest
+6c2420f54ce0d8bdff4640eb50271b8c3b7f646c23bdbc1fdb57ef9fd972b401,
+"Approve this manifest and launch the diffusion replay". Registered in main and
+isolated Skillforge-diffusion-replay-v1 after 110 source/1358 resource checks.
+Hidden CPU process PID50424 launched 20:37:49UTC/12:37PST via source gate.
+Output results/diffusion_replay_v1 in isolated checkout; launch logs/PID alongside.
+Inspect status/receipt before claiming completion; 3072 planned images, 30min guard.
+Do not change isolated pinned sources/resources, duplicate or auto-retry.
+Startup evidence docs/wspl/diffusion_replay_v1_launch.json in main. No Go launch.
+
+November 4 diffusion replay prepared, not approved/registered/launched.
+Protocol docs/wspl/DIFFUSION_REPLAY_V1.md; isolated Skillforge-diffusion-replay-v1.
+Candidate 6c2420f54ce0d8bdff4640eb50271b8c3b7f646c23bdbc1fdb57ef9fd972b401.
+110 sources and 1358 resources verified in isolation. Full suite 448 checks,
+446 pass/two existing environment skips; eight final focused tests pass,
+including a subsequently added synthetic runner archival/stop check.
+Three released FP32 denoisers, 1024 images each, paired PCG64 noise, reconstructed
+posterior-variance DDPM, CPU one BLAS thread, 30-minute guard. Archive all images,
+first64 previews, selected intermediate states, exact weights, seeds and hashes.
+No original sampler/classifier released; no replicated accuracy or WSPL claim.
+No samples/model calls/GPU/training. Exact approval still required.
+Go remains in preparation: identified public PGX source and sandbox requirements;
+bubblewrap not currently installed in WSL. No Go evaluator or sandbox validated.
+Do not edit isolated pinned Python/resources; main may continue Go development.
+
+November4 next-domain selection: Kevin selected original Experiments2(diffusion)
+and6(Go), both ReLU-native. Read docs/wspl/RELU_EXPERIMENTS_2_AND_6.md.
+Acquired115files/31144905bytes at upstream4d09ba6; provenance/csail_relu_reference_v1.json;
+ignored data/csail_relu_reference_v1. All Gitblob/SHA256/size checks passed. Final
+PowerShell summary-print failed after receipt; independent audit confirms acquisition;
+original script preserved with recordedhash, future printfixed. No downloadedcode executed.
+All3diffusion FP32models import; actual1.48MGoactor fullsize no-op WSPL plan/apply
+retains bitwiseidentity with explicit1480274limit; no global limits changed. Audit
+csail_relu_input_audit.json,tool audit_csail_relu_inputs.py. No samples,games,training
+or modelcalls. Diffusion original is weight interpretation,not editing: preserve that
+and label editingextension separately. Go usesPGXgo_9x9 perprompt; exactversion/wrapper
+and smallhiddenopponents absent fromrelease,3same-sizePPOopponents available. Python
+construction is the proper comparator; graphaugmentation separate fromfixedarchitecture.
+Next engineering: sampler/PGXrules fixtures and isolated construction sandbox.
+No new scientificpin,registryapproval or launch. Preserve completedKinetixarchives.
+
 November4 fresh Kinetix completion supersedes launch: source/study complete
 18:16:31UTC/10:16PST,6801.156active seconds,7constructors. Parent0/1024success;
 all6freshrepairs1024/1024. Native/WSPL mean100%,descriptivefeasible ceiling.

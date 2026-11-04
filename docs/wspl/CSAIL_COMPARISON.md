@@ -23,7 +23,12 @@ code and competent native weight editing at a common supported architecture.
 A ReLU adaptation is labelled as an extension, not an exact tanh replication.
 Match model settings, tool access and feedback within each comparison.
 
-Our current compiler/verifier supports ReLU graphs, not the original tanh models.
+Our current compiler/verifier supports ReLU graphs, not those original MinAtar
+and Kinetix tanh models. This is not a restriction shared by the entire release:
+Experiment 2's diffusion denoisers and Experiment 6's Go actor are ReLU-native.
+Kevin selected both next on November 4; see
+[preparation and study boundaries](RELU_EXPERIMENTS_2_AND_6.md). Go's comparator
+must retain Python weight construction rather than being reduced to literal edits.
 Game returns are empirical; supported graph proofs do not prove winning or
 simulator-wide safety. Public task/solution exposure and fresh authoring draws
 must be logged. Do not hide architecture expansion in a language comparison.

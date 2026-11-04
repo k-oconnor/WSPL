@@ -1,0 +1,50 @@
+{
+  "pid": 26192,
+  "started_utc": "2026-11-04T20:53:22.2985978Z",
+  "manifest_sha256": "494c130f55b69d0705885e15ea5c3af4a49fe31883c4319ac870e8dec939a4ac",
+  "output": "C:/Users/kevin/OneDrive/Desktop/Skillforge-diffusion-edit-v1/results/diffusion_edit_v1",
+  "source_receipt_status": "verified",
+  "constructor_calls": 1,
+  "startup_status": {
+    "status": "running",
+    "trials": [
+      {
+        "draw": 0,
+        "arm": "python",
+        "status": "collecting"
+      },
+      {
+        "draw": 0,
+        "arm": "wspl",
+        "status": "not_attempted"
+      },
+      {
+        "draw": 1,
+        "arm": "wspl",
+        "status": "not_attempted"
+      },
+      {
+        "draw": 1,
+        "arm": "python",
+        "status": "not_attempted"
+      },
+      {
+        "draw": 2,
+        "arm": "python",
+        "status": "not_attempted"
+      },
+      {
+        "draw": 2,
+        "arm": "wspl",
+        "status": "not_attempted"
+      }
+    ],
+    "manifest_sha256": "494c130f55b69d0705885e15ea5c3af4a49fe31883c4319ac870e8dec939a4ac",
+    "active_seconds": 0.0470000000204891
+  },
+  "startup_event_types": [
+    "thread.started",
+    "turn.started"
+  ],
+  "stderr_bytes": 0
+}

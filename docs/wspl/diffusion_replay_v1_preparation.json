@@ -1,0 +1,19 @@
+{
+  "status": "prepared_unapproved",
+  "manifest_sha256": "6c2420f54ce0d8bdff4640eb50271b8c3b7f646c23bdbc1fdb57ef9fd972b401",
+  "isolated_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-diffusion-replay-v1",
+  "source_files": 110,
+  "resources": 1358,
+  "full_suite": {
+    "tests": 448,
+    "skipped": 2,
+    "passed": 446
+  },
+  "final_focused_tests": 8,
+  "full_suite_note": "Full suite preceded the additional synthetic runner archival/stop test; all eight final focused tests then passed in main and isolation.",
+  "images_sampled": 0,
+  "model_calls": 0,
+  "gpu_used": false,
+  "registered": false,
+  "launched": false
+}

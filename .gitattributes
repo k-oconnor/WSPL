@@ -12,3 +12,6 @@ docs/wspl/wsp_*.json -text
 docs/wspl/wsp_*tests.txt -text
 tools/audit_wsp_*.py -text
 tools/audit_kinetix_replay_v1.py -text
+
+artifacts/diffusion_edit_v1/* -text
+docs/wspl/diffusion_* -text

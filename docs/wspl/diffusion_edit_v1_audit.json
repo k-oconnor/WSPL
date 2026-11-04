@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "sources": 116,
+  "resources": 1366,
+  "fresh_threads": 6,
+  "candidates": 18,
+  "paired_samples": 1152,
+  "all_arms_bitwise_identical_per_parent": true,
+  "summary": {
+    "python": {
+      "successes": 3,
+      "certificates": 9,
+      "usage": {
+        "input_tokens": 5907,
+        "cached_input_tokens": 0,
+        "output_tokens": 3260,
+        "reasoning_output_tokens": 2488
+      },
+      "construction_seconds": 9.139000000432134
+    },
+    "wspl": {
+      "successes": 3,
+      "certificates": 9,
+      "usage": {
+        "input_tokens": 5916,
+        "cached_input_tokens": 0,
+        "output_tokens": 2710,
+        "reasoning_output_tokens": 1892
+      },
+      "construction_seconds": 54.79699999978766
+    }
+  },
+  "records": [
+    {
+      "arm": "python",
+      "draw": 0,
+      "usage": {
+        "input_tokens": 1969,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 983,
+        "reasoning_output_tokens": 718
+      },
+      "source_bytes": 709,
+      "construction_seconds": 2.843000000109896,
+      "source_sha256": "7c2e63851b1186b45ef7c62aba8a3b4c1fd56c4309c339112f71a6c43105cb81",
+      "syntax": "NumPy index permutation"
+    },
+    {
+      "arm": "wspl",
+      "draw": 0,
+      "usage": {
+        "input_tokens": 1972,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 968,
+        "reasoning_output_tokens": 693
+      },
+      "source_bytes": 508,
+      "construction_seconds": 18.29700000002049,
+      "source_sha256": "66368741dc63a8b0cecd67ca1c0d6154ec1f88f267605f6bf04fd1cbb90b9293",
+      "syntax": "bounded loops and immutable parent copies"
+    },
+    {
+      "arm": "wspl",
+      "draw": 1,
+      "usage": {
+        "input_tokens": 1972,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 732,
+        "reasoning_output_tokens": 462
+      },
+      "source_bytes": 507,
+      "construction_seconds": 18.437999999849126,
+      "source_sha256": "dab07782de5bc433e63f7ebb1f6c7cb49cd06062221a180d7c8529d6aa4fb218",
+      "syntax": "bounded loops and immutable parent copies"
+    },
+    {
+      "arm": "python",
+      "draw": 1,
+      "usage": {
+        "input_tokens": 1969,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1289,
+        "reasoning_output_tokens": 1034
+      },
+      "source_bytes": 690,
+      "construction_seconds": 3.7340000001713634,
+      "source_sha256": "f5d7a8b2a16b006bde4c55010188fc2fff94c25f6ff19ff28f936e6a7564a814",
+      "syntax": "NumPy index permutation"
+    },
+    {
+      "arm": "python",
+      "draw": 2,
+      "usage": {
+        "input_tokens": 1969,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 988,
+        "reasoning_output_tokens": 736
+      },
+      "source_bytes": 637,
+      "construction_seconds": 2.5620000001508743,
+      "source_sha256": "f9881170d28caff186558fc89ae1825bc712fb26ffa41ee7d06d56bc3c76f967",
+      "syntax": "NumPy index permutation"
+    },
+    {
+      "arm": "wspl",
+      "draw": 2,
+      "usage": {
+        "input_tokens": 1972,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1010,
+        "reasoning_output_tokens": 737
+      },
+      "source_bytes": 508,
+      "construction_seconds": 18.061999999918044,
+      "source_sha256": "66368741dc63a8b0cecd67ca1c0d6154ec1f88f267605f6bf04fd1cbb90b9293",
+      "syntax": "bounded loops and immutable parent copies"
+    }
+  ],
+  "active_seconds": 242.25,
+  "finished_utc": "2026-11-04T20:57:28.681085+00:00",
+  "scope": "No new model calls, construction execution or sampled rollouts; source/resource/event/array/archive audit."
+}

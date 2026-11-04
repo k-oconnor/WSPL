@@ -287,6 +287,26 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 
 ## Experiments
 
+### Diffusion: controlled coordinate editing
+
+[Released-model replay](docs/wspl/DIFFUSION_REPLAY_V1_RESULTS.md) produced 3,072
+images from three small ReLU denoisers using a declared DDPM reconstruction.
+In the subsequent [Python versus WSPL comparison](docs/wspl/DIFFUSION_EDIT_V1_RESULTS.md),
+all six fresh Astra programs correctly shifted generated images two pixels right
+with wraparound. Each program transferred to all three models: 18/18 applications
+passed, with bit-identical edited weights per parent and exact real-graph
+permutation witnesses. This was a known coordinate transformation, not semantic
+feature discovery or general graph surgery.
+
+WSPL used 2,710 reported output tokens versus Python's 3,260 (16.9% fewer),
+driven by reasoning tokens; non-reasoning output was slightly larger. Local
+construction took 54.8s versus 9.1s. Both arms reached the task ceiling, so this
+establishes feasibility rather than an accuracy or general efficiency advantage.
+WSPL used loops and tensor copies, not circuit placement. The complete screen
+finished in 4.04 minutes. [Raw programs and replies](artifacts/diffusion_edit_v1/index.json)
+and [audit](docs/wspl/diffusion_edit_v1_audit.json) are retained.
+
+
 ### Kinetix: repair of a supplied trained controller
 
 Six fresh Astra/xhigh proposals edited the same 171,664-parameter FP32 parent,

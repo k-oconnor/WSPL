@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "reference_commit": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+  "files": 115,
+  "bytes": 31144905,
+  "artifacts": [
+    {
+      "id": "246a5b58",
+      "parameters": 23824,
+      "dtype": "float32",
+      "artifact_id": "3f2373b3b5e1565f85003ebdd88ce05b0c0a34830e781784a5889342ad04f3fa"
+    },
+    {
+      "id": "a6a9dfb7",
+      "parameters": 23824,
+      "dtype": "float32",
+      "artifact_id": "e0294953f4f3da3e6728893750117e11962320a597104fc03008732d4d91f68b"
+    },
+    {
+      "id": "d88aba69",
+      "parameters": 23824,
+      "dtype": "float32",
+      "artifact_id": "90e9be46f5f9b99c060a91006ef8d5ffe35d2e46727bdf724a2afbd281575e5c"
+    },
+    {
+      "id": "go_budget_0",
+      "parameters": 1480274,
+      "dtype": "float32",
+      "artifact_id": "879751e41efca0607d2abf1c50a7999bcf908db19271b91a20e51d8a3b961b2e",
+      "full_size_noop_plan_apply": "bitwise_identity",
+      "seconds": 9.84296640008688,
+      "resources": {
+        "loop_iterations": 0,
+        "operations": 169,
+        "statements": 1
+      }
+    }
+  ],
+  "scope": "Hash, shape, finite dtype, WSPL import and full-size no-op edit checks only; no diffusion sampling, Go games or model calls."
+}

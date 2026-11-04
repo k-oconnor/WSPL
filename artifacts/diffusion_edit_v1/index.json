@@ -1,0 +1,65 @@
+{
+  "manifest_sha256": "494c130f55b69d0705885e15ea5c3af4a49fe31883c4319ac870e8dec939a4ac",
+  "files": [
+    {
+      "file": "0_python.answer.md",
+      "sha256": "543c42bb1daa9381a97157e4c5e0c6a88ad099f9d99deb301b04ef3409a1ef07",
+      "bytes": 910
+    },
+    {
+      "file": "0_python.source.py",
+      "sha256": "d086c46e00e2cc4411d08cebe6faa7fd39ba58b87d0cd6c84692bfea9aee2ef0",
+      "bytes": 731
+    },
+    {
+      "file": "0_wspl.answer.md",
+      "sha256": "5ee891331a63279dd29d0446380e1b706edb6786e5731e1f1bdb20d194592cfd",
+      "bytes": 731
+    },
+    {
+      "file": "0_wspl.source.wspl",
+      "sha256": "e13d66bf6f2384e54ad67af003a104ac00ac367d5c4de77b5efbadce85a784b3",
+      "bytes": 525
+    },
+    {
+      "file": "1_wspl.answer.md",
+      "sha256": "e529d3fce99d309669dc3c1edc268a497fe9df8c1e570ea909023c3902e00d92",
+      "bytes": 689
+    },
+    {
+      "file": "1_wspl.source.wspl",
+      "sha256": "6fddf235f932053974194477e22f67dd31a9753f000f9f14e86c951fb998e4fa",
+      "bytes": 523
+    },
+    {
+      "file": "1_python.answer.md",
+      "sha256": "f30b9e6c9d7dd269c6162cb4e097c125d275c8607e8be9d8a4db6de28ad9a17e",
+      "bytes": 893
+    },
+    {
+      "file": "1_python.source.py",
+      "sha256": "ef87079df5110baad45ae61fd600efd8ecee013c2a0ec8042756e02085737db5",
+      "bytes": 712
+    },
+    {
+      "file": "2_python.answer.md",
+      "sha256": "815ef4d77102b5ee34c0fd3eeeca7742c51b881f43780c7e2cf764a538f0e3e0",
+      "bytes": 856
+    },
+    {
+      "file": "2_python.source.py",
+      "sha256": "6e57f45ed6dfc97616d439c2d4d0552da5df530333c7580e80411f53bc398e69",
+      "bytes": 658
+    },
+    {
+      "file": "2_wspl.answer.md",
+      "sha256": "6c16d844124a244f55db87da74ff31126452ed4bfdc0ccbfe7c2fab415f0a29a",
+      "bytes": 722
+    },
+    {
+      "file": "2_wspl.source.wspl",
+      "sha256": "e13d66bf6f2384e54ad67af003a104ac00ac367d5c4de77b5efbadce85a784b3",
+      "bytes": 525
+    }
+  ]
+}

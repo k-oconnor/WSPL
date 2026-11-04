@@ -1,0 +1,9 @@
+{
+  "pid": 50424,
+  "started_utc": "2026-11-04T20:37:49.3760102Z",
+  "manifest_sha256": "6c2420f54ce0d8bdff4640eb50271b8c3b7f646c23bdbc1fdb57ef9fd972b401",
+  "output": "C:/Users/kevin/OneDrive/Desktop/Skillforge-diffusion-replay-v1/results/diffusion_replay_v1",
+  "startup_source_status": "complete",
+  "constructor_calls": 1,
+  "saved_samples_at_check": 3072
+}

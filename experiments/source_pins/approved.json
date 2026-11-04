@@ -1,77 +1,89 @@
 {
-  "schema": 1,
   "models": {
     "approach-v1": {
-      "manifest": "experiments/source_pins/approach_v1.manifest.json",
-      "sha256": "e05119fd34b2c77973773f5abcebb50858f45bc523287ea8eeddbcac3659bba9",
       "approval": "User explicitly selected Approve this manifest and launch the approach pilot on 2026-11-03",
-      "approved_by": "user"
-    },
-    "approach-v1-horizonfix": {
-      "manifest": "experiments/source_pins/approach_v1_horizonfix.manifest.json",
-      "sha256": "75e33ff7d7d55a1500cfd9521a95f26dc1443f5a6354c3cde595749b87f6931b",
       "approved_by": "user",
-      "approval": "User explicitly selected Approve this manifest and launch the repaired approach pilot on 2026-11-03"
+      "manifest": "experiments/source_pins/approach_v1.manifest.json",
+      "sha256": "e05119fd34b2c77973773f5abcebb50858f45bc523287ea8eeddbcac3659bba9"
     },
     "approach-v1-fidelityfix": {
+      "approval": "User explicitly selected Approve this manifest and launch the fidelity-repaired pilot on 2026-11-03",
+      "approved_by": "user",
       "manifest": "experiments/source_pins/approach_v1_fidelityfix.manifest.json",
-      "sha256": "d770313a57ec51094e3147e6876c975835e5ccd55950e057d7bde2c3e247aaa4",
-      "approved_by": "user",
-      "approval": "User explicitly selected Approve this manifest and launch the fidelity-repaired pilot on 2026-11-03"
+      "sha256": "d770313a57ec51094e3147e6876c975835e5ccd55950e057d7bde2c3e247aaa4"
     },
-    "csail-breakout-replay-v1": {
-      "manifest": "experiments/source_pins/csail_breakout_replay_v1.manifest.json",
-      "sha256": "46379f57b9ebd29f36390be998f89352249246f917263afecb2c4b5e2d2d963c",
+    "approach-v1-horizonfix": {
+      "approval": "User explicitly selected Approve this manifest and launch the repaired approach pilot on 2026-11-03",
       "approved_by": "user",
-      "approval": "User explicitly selected Approve this manifest and launch the CPU replay on 2026-11-03; fixed released artifact and uniform control only; no paid API calls or training."
+      "manifest": "experiments/source_pins/approach_v1_horizonfix.manifest.json",
+      "sha256": "75e33ff7d7d55a1500cfd9521a95f26dc1443f5a6354c3cde595749b87f6931b"
     },
     "astra-breakout-native-v1": {
-      "manifest": "experiments/source_pins/astra_breakout_native_v1.manifest.json",
-      "sha256": "07eeeeda72b5bfc91ecb07ba94c4ee0593fcc3caee50577dde2542f2c87f9f33",
+      "approval": "User explicitly selected Approve this manifest and launch the three-draw screen on 2026-11-03; three ChatGPT-backed Codex Astra/xhigh invocations, paired native evaluation, protocol guards and limits as presented.",
       "approved_by": "user",
-      "approval": "User explicitly selected Approve this manifest and launch the three-draw screen on 2026-11-03; three ChatGPT-backed Codex Astra/xhigh invocations, paired native evaluation, protocol guards and limits as presented."
+      "manifest": "experiments/source_pins/astra_breakout_native_v1.manifest.json",
+      "sha256": "07eeeeda72b5bfc91ecb07ba94c4ee0593fcc3caee50577dde2542f2c87f9f33"
     },
     "astra-breakout-native-v2": {
-      "manifest": "experiments/source_pins/astra_breakout_native_v2.manifest.json",
-      "sha256": "73bf70a24e92b978831aeca4998c44d049b6b2f39b4dda9544c5409b02b7fc46",
+      "approval": "User explicitly selected Approve this replacement manifest and launch on 2026-11-03; three fresh Astra/xhigh invocations additional to the preserved aborted v1 attempt, under the presented protocol and limits.",
       "approved_by": "user",
-      "approval": "User explicitly selected Approve this replacement manifest and launch on 2026-11-03; three fresh Astra/xhigh invocations additional to the preserved aborted v1 attempt, under the presented protocol and limits."
+      "manifest": "experiments/source_pins/astra_breakout_native_v2.manifest.json",
+      "sha256": "73bf70a24e92b978831aeca4998c44d049b6b2f39b4dda9544c5409b02b7fc46"
     },
     "breakout-matched-v1": {
+      "approval": "User explicitly selected Approve this manifest and launch the matched comparison on 2026-11-03; nine fresh Astra/xhigh proposals across native edits, restricted Python PWA and WSPL text, fixed ReLU target, protocol time/usage limits and paired evaluation as presented.",
+      "approved_by": "user",
       "manifest": "experiments/source_pins/breakout_matched_v1.manifest.json",
-      "sha256": "9771cbf74140ac577d366ccd935139d9efe1e2f6016cf91dc385c78d7d2256b7",
-      "approved_by": "user",
-      "approval": "User explicitly selected Approve this manifest and launch the matched comparison on 2026-11-03; nine fresh Astra/xhigh proposals across native edits, restricted Python PWA and WSPL text, fixed ReLU target, protocol time/usage limits and paired evaluation as presented."
+      "sha256": "9771cbf74140ac577d366ccd935139d9efe1e2f6016cf91dc385c78d7d2256b7"
     },
-    "wsp-repair-v1": {
-      "manifest": "experiments/source_pins/wsp_repair_v1.manifest.json",
-      "sha256": "807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe",
+    "csail-breakout-replay-v1": {
+      "approval": "User explicitly selected Approve this manifest and launch the CPU replay on 2026-11-03; fixed released artifact and uniform control only; no paid API calls or training.",
       "approved_by": "user",
-      "approval": "User explicitly selected Approve this manifest and launch the 12-proposal screen on 2026-11-04; twelve fresh Astra/xhigh one-shot calls across three supplied synthetic circuit tasks, direct/WSPL interfaces and two draws, under the presented usage and time guards.",
-      "approval_question_item_id": "call_b76577d192c9474d9a566599d144b9c0",
-      "approved_utc": "2026-11-04T08:11:13.172957+00:00"
+      "manifest": "experiments/source_pins/csail_breakout_replay_v1.manifest.json",
+      "sha256": "46379f57b9ebd29f36390be998f89352249246f917263afecb2c4b5e2d2d963c"
     },
-    "wsp-breakout-v1": {
-      "manifest": "experiments/source_pins/wsp_breakout_v1.manifest.json",
-      "sha256": "e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4",
+    "diffusion-edit-v1": {
+      "approval": "User explicitly selected Approve this manifest and launch the diffusion editing comparison on 2026-11-04",
       "approved_by": "user",
-      "approval": "User explicitly selected Approve this manifest and launch the reworked Breakout comparison on 2026-11-04; six fresh Astra/xhigh one-shot proposals, native/WSPL, three each, original fixed tanh network, 1000 paired episodes per valid proposal, artifact retention and stated usage/time limits.",
-      "approval_question_item_id": "call_29d904c693c949fab85cfcbbeace151d",
-      "approved_utc": "2026-11-04T09:21:46.841172+00:00"
+      "manifest": "experiments/source_pins/diffusion_edit_v1_final.manifest.json",
+      "sha256": "494c130f55b69d0705885e15ea5c3af4a49fe31883c4319ac870e8dec939a4ac"
+    },
+    "diffusion-replay-v1": {
+      "approval": "User explicitly selected Approve this manifest and launch the diffusion replay on 2026-11-04",
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/diffusion_replay_v1.manifest.json",
+      "sha256": "6c2420f54ce0d8bdff4640eb50271b8c3b7f646c23bdbc1fdb57ef9fd972b401"
     },
     "kinetix-replay-v1": {
-      "manifest": "experiments/source_pins/kinetix_replay_v1.manifest.json",
-      "sha256": "ef3ca419ffae13e156be92a3eb2d220762c035cc2eb00839e4d8c3c8d0b0046a",
-      "approved_by": "user",
       "approval": "User explicitly selected Approve this manifest and launch the Kinetix replay",
-      "registered_utc": "2026-11-04T15:23:09.008589+00:00"
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/kinetix_replay_v1.manifest.json",
+      "registered_utc": "2026-11-04T15:23:09.008589+00:00",
+      "sha256": "ef3ca419ffae13e156be92a3eb2d220762c035cc2eb00839e4d8c3c8d0b0046a"
+    },
+    "wsp-breakout-v1": {
+      "approval": "User explicitly selected Approve this manifest and launch the reworked Breakout comparison on 2026-11-04; six fresh Astra/xhigh one-shot proposals, native/WSPL, three each, original fixed tanh network, 1000 paired episodes per valid proposal, artifact retention and stated usage/time limits.",
+      "approval_question_item_id": "call_29d904c693c949fab85cfcbbeace151d",
+      "approved_by": "user",
+      "approved_utc": "2026-11-04T09:21:46.841172+00:00",
+      "manifest": "experiments/source_pins/wsp_breakout_v1.manifest.json",
+      "sha256": "e842840acc4c8229f370e37c456bf6898f88f676a13e3dde36b2b3ba5085acc4"
     },
     "wsp-kinetix-v1": {
-      "manifest": "experiments/source_pins/wsp_kinetix_v1.manifest.json",
-      "sha256": "0cd0a7a6f7e7e0b6c5a8e2348788dc127f3d435a187c048c35bc56ed760f23e3",
-      "approved_by": "user",
       "approval": "User explicitly selected Approve this manifest and launch the Kinetix comparison",
-      "registered_utc": "2026-11-04T16:23:09.412498+00:00"
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/wsp_kinetix_v1.manifest.json",
+      "registered_utc": "2026-11-04T16:23:09.412498+00:00",
+      "sha256": "0cd0a7a6f7e7e0b6c5a8e2348788dc127f3d435a187c048c35bc56ed760f23e3"
+    },
+    "wsp-repair-v1": {
+      "approval": "User explicitly selected Approve this manifest and launch the 12-proposal screen on 2026-11-04; twelve fresh Astra/xhigh one-shot calls across three supplied synthetic circuit tasks, direct/WSPL interfaces and two draws, under the presented usage and time guards.",
+      "approval_question_item_id": "call_b76577d192c9474d9a566599d144b9c0",
+      "approved_by": "user",
+      "approved_utc": "2026-11-04T08:11:13.172957+00:00",
+      "manifest": "experiments/source_pins/wsp_repair_v1.manifest.json",
+      "sha256": "807c27b5bc0d769969a6bae14dda809fc68b4b185cccfad704b491658e2a28fe"
     }
-  }
+  },
+  "schema": 1
 }

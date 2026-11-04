@@ -1,0 +1,24 @@
+{
+  "status": "prepared_unapproved",
+  "manifest_sha256": "494c130f55b69d0705885e15ea5c3af4a49fe31883c4319ac870e8dec939a4ac",
+  "manifest": "experiments/source_pins/diffusion_edit_v1_final.manifest.json",
+  "sources": 116,
+  "windows_resources": 1366,
+  "linux_resources": 1579,
+  "full_suite": {
+    "passed": 454,
+    "skipped": 2,
+    "total": 456
+  },
+  "final_focused": 7,
+  "notes": [
+    "Final focused tests cover the subsequent NPZ-header validation and parent archival changes.",
+    "Initial offline preparation stopped at a missing empty preflight directory; no model call occurred. Partial preparation preserved; ready bundle and both preflights succeeded.",
+    "Initial unapproved candidate f908eb0e012c2fe42bdbb3e24ff8ac46fe2a24fdecbba7e20c5e3529d942b23f superseded before any approval by final source pin adding explicit parent weight archival."
+  ],
+  "model_calls": 0,
+  "generated_real_model_images": 0,
+  "registered": false,
+  "launched": false,
+  "isolated_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-diffusion-edit-v1"
+}
