@@ -173,7 +173,7 @@ class Builder:
         if op == '=':
             words = np.empty(items.size, np.uint32); rounded = np.zeros(items.size, bool); exact = []
             for i, item in enumerate(items.tolist()):
-                hit = cache.get(item)
+                hit = cache.get((type(item), item))  # Fraction(1) == 1 == True; keep types apart.
                 if hit is None:
                     if isinstance(item, Bits):
                         hit = (item.value, False)
@@ -186,7 +186,7 @@ class Builder:
                         hit = (word, fraction(word) != item)
                     else:
                         return None
-                    cache[item] = hit
+                    cache[(type(item), item)] = hit
                 words[i], rounded[i] = hit
                 exact.append(item)
             exact = np.array(exact, dtype=object)
@@ -197,7 +197,7 @@ class Builder:
         # Augmented ops: exact float64 arithmetic where provably exact.
         rhs = np.empty(items.size, np.float64)
         for i, item in enumerate(items.tolist()):
-            hit = cache.get(item)
+            hit = cache.get((type(item), item))  # Fraction(1) == 1 == True; keep types apart.
             if hit is None:
                 if isinstance(item, Bits):
                     q = fraction(item.value)
@@ -214,7 +214,7 @@ class Builder:
                     single = float(np.float32(f))
                 if Fraction(f) != q or (op == '*=' and single != f):
                     return None
-                hit = cache[item] = f
+                hit = cache[(type(item), item)] = f
             rhs[i] = hit
         b = np.broadcast_to(rhs.reshape(base.shape), target.shape).reshape(-1)
         a = np.ascontiguousarray(target).reshape(-1).view(np.float32).astype(np.float64)
