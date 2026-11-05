@@ -1,0 +1,89 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+const kernel=[
+  0,1,9/20,3/20,
+  1,13/20,1/4,1/10,
+  9/20,1/4,3/20,1/20,
+  3/20,1/10,1/20,0
+];
+
+// Number of on-board coordinates at each absolute displacement 0..3.
+const multiplicity=[
+  1,1,1,1,
+  1,2,1,1,
+  1,2,2,1,
+  1,2,2,2,
+  1,2,2,2,
+  1,2,2,2,
+  1,2,2,1,
+  1,2,1,1,
+  1,1,1,1
+];
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  for r in range(9) {
+    for c in range(9) {
+      // Influence contributes estimated territory only at empty points.
+      // Sixteen exceeds the maximum possible positive influence.
+      // Legal placement-shape features remain unchanged.
+      for p in range(2) {
+        for q in range(2) {
+          W1[3*(9*r+c)+p,324+81*q+9*r+c]=-16;
+        }
+      }
+
+      // Construction-time kernel normalization, not a neural evaluation.
+      // Normalize each empty-point contribution to at most one point.
+      W2[324+9*r+c,490]=0;
+      for dr in range(4) {
+        for dc in range(4) {
+          W2[324+9*r+c,490]+=
+            kernel[4*dr+dc]
+            *multiplicity[4*r+dr]
+            *multiplicity[4*c+dc];
+        }
+      }
+      W2[405+9*r+c,490]=10/(7*W2[324+9*r+c,490]);
+      W2[324+9*r+c,490]=-W2[405+9*r+c,490];
+    }
+  }
+
+  // Contested connection feature:
+  // relu(friendly_neighbors + opposing_neighbors/4 - 1).
+  // It remains zero without any adjacent friendly stone.
+  for t in range(2) {
+    for r in range(9) {
+      for c in range(8) {
+        W2[81+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]=1/4;
+        W2[81+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]=1/4;
+      }
+    }
+  }
+
+  // Cap the pass deterrent at three logit units:
+  // -relu(deficit)/4 + relu(deficit-12)/4.
+  // This avoids making eye destruction preferable merely because
+  // the static score estimate indicates a large deficit.
+  W3[:,491]=0;
+  b3[491]=-12;
+  W3[490,491]=1;
+
+  W4[:,491]=0;
+  b4[491]=0;
+  W4[491,491]=1;
+
+  W5[:,491]=0;
+  b5[491]=0;
+  W5[491,491]=1;
+
+  W6[:,491]=0;
+  b6[491]=0;
+  W6[491,491]=1;
+
+  W7[491,:]=0;
+  W7[490,81]=-1/4;
+  W7[491,81]=1/4;
+}

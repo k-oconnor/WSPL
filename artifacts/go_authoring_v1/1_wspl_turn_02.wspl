@@ -1,0 +1,233 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+const color_gate=2048;
+const propagation_gate=4096;
+const parity_gain=16;
+const rescue_core=13/2;
+const atari_gain=4;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Immutable spatial templates:
+  // parent.W6[81:162,0:81] is orthogonal adjacency A.
+  // -parent.W5[81:162,324:405] is diagonal adjacency D.
+
+  W2[0:512,0:512]=0;
+  W3[0:512,0:512]=0;
+  W4[0:512,0:512]=0;
+  b2[0:512]=0;
+  b3[0:512]=0;
+  b4[0:512]=0;
+
+  // h2 carries two complementary liberty markers for each color.
+  // A shared safety certificate is
+  // 9*L(q) + 5*sum_neighbor(L) + 16*sum_neighbor(excess)
+  // - empty_diagonals - 9.
+  // A positive certificate proves at least two distinct liberties.
+  // Otherwise, markers distinguish the two checkerboard liberty classes.
+
+  W2[0:162,0:162]=eye(162);
+
+  W2[162:243,162:243]=
+      (9+parity_gain)*eye(81)
+      +(5+parity_gain)*parent.W6[81:162,0:81];
+  W2[243:324,243:324]=
+      (9+parity_gain)*eye(81)
+      +(5+parity_gain)*parent.W6[81:162,0:81];
+
+  W2[162:243,324:405]=
+      9*eye(81)+5*parent.W6[81:162,0:81];
+  W2[243:324,405:486]=
+      9*eye(81)+5*parent.W6[81:162,0:81];
+
+  W2[324:405,162:243]=16*parent.W6[81:162,0:81];
+  W2[324:405,324:405]=16*parent.W6[81:162,0:81];
+  W2[405:486,243:324]=16*parent.W6[81:162,0:81];
+  W2[405:486,405:486]=16*parent.W6[81:162,0:81];
+
+  W2[0:81,162:243]=
+      color_gate*eye(81)-parent.W5[81:162,324:405];
+  W2[81:162,162:243]=-parent.W5[81:162,324:405];
+  W2[0:81,324:405]=
+      color_gate*eye(81)-parent.W5[81:162,324:405];
+  W2[81:162,324:405]=-parent.W5[81:162,324:405];
+
+  W2[81:162,243:324]=
+      color_gate*eye(81)-parent.W5[81:162,324:405];
+  W2[0:81,243:324]=-parent.W5[81:162,324:405];
+  W2[81:162,405:486]=
+      color_gate*eye(81)-parent.W5[81:162,324:405];
+  W2[0:81,405:486]=-parent.W5[81:162,324:405];
+
+  // Parent secondary biases encode -(65 + on-board diagonal degree).
+  b2[162:243]=parent.b2[324:405]+65-color_gate-9;
+  b2[243:324]=parent.b2[405:486]+65-color_gate-9;
+  b2[324:405]=b2[162:243];
+  b2[405:486]=b2[243:324];
+
+  // Direct liberties of even-parity stones belong to the second class.
+  // Move their marker contributions from the first channel to the second.
+  for r in range(0,9,2) {
+    for c in range(0,9,2) {
+      W2[162+9*r+c,162:243]-=
+          parity_gain*parent.W6[81+9*r+c,0:81];
+      W2[162+9*r+c,162+9*r+c]-=parity_gain;
+      W2[162+9*r+c,324:405]+=
+          parity_gain*parent.W6[81+9*r+c,0:81];
+      W2[162+9*r+c,324+9*r+c]+=parity_gain;
+
+      W2[243+9*r+c,243:324]-=
+          parity_gain*parent.W6[81+9*r+c,0:81];
+      W2[243+9*r+c,243+9*r+c]-=parity_gain;
+      W2[243+9*r+c,405:486]+=
+          parity_gain*parent.W6[81+9*r+c,0:81];
+      W2[243+9*r+c,405+9*r+c]+=parity_gain;
+    }
+  }
+  for r in range(1,9,2) {
+    for c in range(1,9,2) {
+      W2[162+9*r+c,162:243]-=
+          parity_gain*parent.W6[81+9*r+c,0:81];
+      W2[162+9*r+c,162+9*r+c]-=parity_gain;
+      W2[162+9*r+c,324:405]+=
+          parity_gain*parent.W6[81+9*r+c,0:81];
+      W2[162+9*r+c,324+9*r+c]+=parity_gain;
+
+      W2[243+9*r+c,243:324]-=
+          parity_gain*parent.W6[81+9*r+c,0:81];
+      W2[243+9*r+c,243+9*r+c]-=parity_gain;
+      W2[243+9*r+c,405:486]+=
+          parity_gain*parent.W6[81+9*r+c,0:81];
+      W2[243+9*r+c,405+9*r+c]+=parity_gain;
+    }
+  }
+
+  W2[486:490,486:490]=eye(4);
+
+  // h3: propagate each marker only through stones of its color.
+  W3[0:162,0:162]=eye(162);
+
+  W3[162:243,162:243]=eye(81)+parent.W6[81:162,0:81];
+  W3[243:324,243:324]=eye(81)+parent.W6[81:162,0:81];
+  W3[324:405,324:405]=eye(81)+parent.W6[81:162,0:81];
+  W3[405:486,405:486]=eye(81)+parent.W6[81:162,0:81];
+
+  W3[0:81,162:243]=propagation_gate*eye(81);
+  W3[0:81,324:405]=propagation_gate*eye(81);
+  W3[81:162,243:324]=propagation_gate*eye(81);
+  W3[81:162,405:486]=propagation_gate*eye(81);
+  b3[162:486]=-propagation_gate;
+  W3[486:490,486:490]=eye(4);
+
+  // h4: one more propagation step, returning binary marker absences.
+  W4[0:162,0:162]=eye(162);
+
+  W4[162:243,162:243]=-eye(81)-parent.W6[81:162,0:81];
+  W4[243:324,243:324]=-eye(81)-parent.W6[81:162,0:81];
+  W4[324:405,324:405]=-eye(81)-parent.W6[81:162,0:81];
+  W4[405:486,405:486]=-eye(81)-parent.W6[81:162,0:81];
+
+  W4[0:81,162:243]=eye(81);
+  W4[0:81,324:405]=eye(81);
+  W4[81:162,243:324]=eye(81);
+  W4[81:162,405:486]=eye(81);
+  W4[486:490,486:490]=eye(4);
+
+  // h5: a stone adjacent to an empty candidate necessarily has one marker.
+  // Its absence sum is therefore 0 when certified safe, otherwise 1.
+  W5[0:512,0:162]=0;
+  b5[0:162]=0;
+  W5[162:243,0:81]=eye(81);
+  W5[324:405,0:81]=eye(81);
+  W5[243:324,81:162]=eye(81);
+  W5[405:486,81:162]=eye(81);
+
+  // Rescue reward becomes U + 6.5*min(1,U), rather than 7.5*U.
+  // Preserve a small preference for rescuing multiple adjacent stones.
+  W6[0:81,81:162]=-parent.W6[81:162,0:81];
+  b6[81:162]=1;
+  W6[0:81,324:405]+=parent.W6[81:162,0:81];
+  W7[81:162,0:81]=-rescue_core*eye(81);
+  b7[0:81]+=rescue_core;
+
+  // Spare units: exact singleton/two-liberty detectors at 21 symmetric
+  // interior points. All selected points have orthogonal degree four.
+  //
+  // T = relu(8*opponent(q) + adjacent_own
+  //          -8*adjacent_opponent -9).
+  // For an opposing singleton, T = relu(3 - liberties).
+  // Recompute its affine expression at h5 and subtract 2*relu(T-1)
+  // to retain exactly the two-liberty case.
+
+  W1[0:243,490:511]=0;
+  b1[490:511]=-9;
+  W2[490:511,490:511]=eye(21);
+  W3[490:511,490:511]=eye(21);
+  W4[490:511,490:511]=eye(21);
+  b4[490:511]=-1;
+
+  W5[0:512,490:511]=0;
+  W5[490:511,490:511]=-2*eye(21);
+  b5[490:511]=-9;
+  W6[490:511,0:512]=0;
+
+  // Central 3x3.
+  for r in range(3,6) {
+    for c in range(3,6) {
+      W5[0:81,490+3*(r-3)+c-3]=
+          parent.W6[81:162,9*r+c];
+      W5[81:162,490+3*(r-3)+c-3]=
+          -8*parent.W6[81:162,9*r+c];
+      W5[81+9*r+c,490+3*(r-3)+c-3]+=8;
+      W6[490+3*(r-3)+c-3,324:405]=
+          atari_gain*parent.W6[81+9*r+c,0:81];
+    }
+  }
+
+  // Four third-line corner points.
+  for r in range(2) {
+    for c in range(2) {
+      W5[0:81,499+2*r+c]=
+          parent.W6[81:162,9*(2+4*r)+2+4*c];
+      W5[81:162,499+2*r+c]=
+          -8*parent.W6[81:162,9*(2+4*r)+2+4*c];
+      W5[81+9*(2+4*r)+2+4*c,499+2*r+c]+=8;
+      W6[499+2*r+c,324:405]=
+          atari_gain*parent.W6[81+9*(2+4*r)+2+4*c,0:81];
+    }
+  }
+
+  // Four axial third-line points.
+  for k in range(2) {
+    W5[0:81,503+3*k]=parent.W6[81:162,9*(2+4*k)+4];
+    W5[81:162,503+3*k]=-8*parent.W6[81:162,9*(2+4*k)+4];
+    W5[81+9*(2+4*k)+4,503+3*k]+=8;
+    W6[503+3*k,324:405]=
+        atari_gain*parent.W6[81+9*(2+4*k)+4,0:81];
+
+    W5[0:81,504+k]=parent.W6[81:162,38+4*k];
+    W5[81:162,504+k]=-8*parent.W6[81:162,38+4*k];
+    W5[81+38+4*k,504+k]+=8;
+    W6[504+k,324:405]=
+        atari_gain*parent.W6[81+38+4*k,0:81];
+  }
+
+  // Four second-line corner points.
+  for r in range(2) {
+    for c in range(2) {
+      W5[0:81,507+2*r+c]=
+          parent.W6[81:162,9*(1+6*r)+1+6*c];
+      W5[81:162,507+2*r+c]=
+          -8*parent.W6[81:162,9*(1+6*r)+1+6*c];
+      W5[81+9*(1+6*r)+1+6*c,507+2*r+c]+=8;
+      W6[507+2*r+c,324:405]=
+          atari_gain*parent.W6[81+9*(1+6*r)+1+6*c,0:81];
+    }
+  }
+
+  // Copy the same explicit singleton formulas into the input layer.
+  for q in range(81) {
+    W1[3*q,490:511]=W5[q,490:511];
+    W1[3*q+1,490:511]=W5[81+q,490:511];
+  }
+}

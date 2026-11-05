@@ -69,10 +69,30 @@ def _target(record, parent, limits):
     raise ValueError('unsupported target constructor')
 
 
+def selected_flat_indices(shape, selection):
+    """Row-major indices for basic indexing, without materializing the tensor."""
+    strides=[];stride=1
+    for width in reversed(shape):
+        strides.append(stride);stride*=width
+    strides.reverse()
+    axes=[];offset=0
+    for width,index,stride in zip(shape,selection,strides):
+        if isinstance(index,slice):
+            start,stop,step=index.indices(width)
+            axes.append(np.arange(start,stop,step,dtype=np.int64)*stride)
+        else:offset+=(index%width)*stride
+    result=np.array(offset,dtype=np.int64)
+    for axis,values in enumerate(axes):
+        dims=[1]*len(axes);dims[axis]=len(values)
+        result=result+values.reshape(dims)
+    return result
+
+
 class Builder:
     def __init__(self, parent, bindings, limits):
         self.parent = parent
         self.base = parent
+        self.parent_graph = parent.to_dict()['graph']
         self.graph_context = None
         self.arrays = parent.arrays(bits=True)
         self.arithmetic = Arithmetic(self.arrays, parent.arrays(bits=True), {}, bindings, limits)
@@ -88,8 +108,9 @@ class Builder:
         if name not in self.arrays:
             raise ValueError('unknown writable tensor')
         target = np.asarray(self.arrays[name][selection])
-        self.arithmetic.charge(self.arrays[name].size)
-        indices = np.arange(self.arrays[name].size).reshape(self.arrays[name].shape)[selection]
+        # Basic-index coordinate arithmetic scales with selected elements/rank.
+        self.arithmetic.charge(max(1,target.size)*(len(selection)+1))
+        indices = selected_flat_indices(self.arrays[name].shape,selection)
         self.arithmetic.charge(target.size)
         try:
             value = np.broadcast_to(value, target.shape)
@@ -153,7 +174,7 @@ class Builder:
             self.write(name, selected, value, '=', row['span'], 'native_numpy_v1')
             self.writes[-1]['operator'] = op
         self.writes[-1]['clipped_slice'] = bool(clipped)
-        if self.base.to_dict()['graph']['kind']=='dag':
+        if self.parent_graph['kind']=='dag':
             from .wsp_graph import parameter_uses
             self.writes[-1]['parameter_users']=parameter_uses(self.base.to_dict()['graph']).get(name,[])
         for p in self.placements:
@@ -196,7 +217,7 @@ class Builder:
                         raise ValueError('placement needs exact profile and a declared circuit')
                     for old in self.placements:
                         old['later_edits_may_invalidate'] = True
-                    report = place(row, circuits[row['name']], self.parent.to_dict()['graph'], self.arithmetic, self.write, self.reserved)
+                    report = place(row, circuits[row['name']], self.parent_graph, self.arithmetic, self.write, self.reserved)
                     self.placements.append(report)
             except EditError:
                 raise

@@ -1,0 +1,127 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+const reinforcement_gain=5/2;
+const first_line_rate=3/32;
+const second_line_rate=1/32;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Immutable orthogonal adjacency:
+  // A = parent.W6[162:243,0:81]/2.
+
+  W5[0:512,490:512]=0;
+  b5[490:512]=0;
+  W6[490:512,0:512]=0;
+
+  // For an own singleton at an interior point:
+  // relu(8*own + adjacent_opponent - 8*adjacent_own
+  //      - 2*own_marker_absences - 9)
+  // is exactly one for two liberties and zero otherwise.
+  b5[490:511]=-9;
+
+  // Central 3x3.
+  for r in range(3,6) {
+    for c in range(3,6) {
+      W5[0:81,490+3*(r-3)+c-3]=
+          -4*parent.W6[162:243,9*r+c];
+      W5[9*r+c,490+3*(r-3)+c-3]+=8;
+      W5[81:162,490+3*(r-3)+c-3]=
+          parent.W6[162:243,9*r+c]/2;
+      W5[162+9*r+c,490+3*(r-3)+c-3]=-2;
+      W5[324+9*r+c,490+3*(r-3)+c-3]=-2;
+      W6[490+3*(r-3)+c-3,324:405]=
+          reinforcement_gain*parent.W6[162+9*r+c,0:81]/2;
+    }
+  }
+
+  // Third-line corner points.
+  for r in range(2) {
+    for c in range(2) {
+      W5[0:81,499+2*r+c]=
+          -4*parent.W6[162:243,9*(2+4*r)+2+4*c];
+      W5[9*(2+4*r)+2+4*c,499+2*r+c]+=8;
+      W5[81:162,499+2*r+c]=
+          parent.W6[162:243,9*(2+4*r)+2+4*c]/2;
+      W5[162+9*(2+4*r)+2+4*c,499+2*r+c]=-2;
+      W5[324+9*(2+4*r)+2+4*c,499+2*r+c]=-2;
+      W6[499+2*r+c,324:405]=
+          reinforcement_gain
+          *parent.W6[162+9*(2+4*r)+2+4*c,0:81]/2;
+    }
+  }
+
+  // Axial third-line points.
+  for k in range(2) {
+    W5[0:81,503+3*k]=
+        -4*parent.W6[162:243,9*(2+4*k)+4];
+    W5[9*(2+4*k)+4,503+3*k]+=8;
+    W5[81:162,503+3*k]=
+        parent.W6[162:243,9*(2+4*k)+4]/2;
+    W5[162+9*(2+4*k)+4,503+3*k]=-2;
+    W5[324+9*(2+4*k)+4,503+3*k]=-2;
+    W6[503+3*k,324:405]=
+        reinforcement_gain*parent.W6[162+9*(2+4*k)+4,0:81]/2;
+
+    W5[0:81,504+k]=-4*parent.W6[162:243,38+4*k];
+    W5[38+4*k,504+k]+=8;
+    W5[81:162,504+k]=parent.W6[162:243,38+4*k]/2;
+    W5[162+38+4*k,504+k]=-2;
+    W5[324+38+4*k,504+k]=-2;
+    W6[504+k,324:405]=
+        reinforcement_gain*parent.W6[162+38+4*k,0:81]/2;
+  }
+
+  // Second-line corner points.
+  for r in range(2) {
+    for c in range(2) {
+      W5[0:81,507+2*r+c]=
+          -4*parent.W6[162:243,9*(1+6*r)+1+6*c];
+      W5[9*(1+6*r)+1+6*c,507+2*r+c]+=8;
+      W5[81:162,507+2*r+c]=
+          parent.W6[162:243,9*(1+6*r)+1+6*c]/2;
+      W5[162+9*(1+6*r)+1+6*c,507+2*r+c]=-2;
+      W5[324+9*(1+6*r)+1+6*c,507+2*r+c]=-2;
+      W6[507+2*r+c,324:405]=
+          reinforcement_gain
+          *parent.W6[162+9*(1+6*r)+1+6*c,0:81]/2;
+    }
+  }
+
+  // Remaining spare channel: relu(32 - total stones).
+  // Edge restraint vanishes once the board is sufficiently developed.
+  W1[0:243,511]=0;
+  b1[511]=32;
+  for q in range(81) {
+    W1[3*q,511]=-1;
+    W1[3*q+1,511]=-1;
+  }
+
+  W2[0:512,511]=0;
+  W3[0:512,511]=0;
+  W4[0:512,511]=0;
+  W2[511,0:512]=0;
+  W3[511,0:512]=0;
+  W4[511,0:512]=0;
+  W5[511,0:512]=0;
+  b2[511]=0;
+  b3[511]=0;
+  b4[511]=0;
+  b5[511]=0;
+
+  W2[511,511]=1;
+  W3[511,511]=1;
+  W4[511,511]=1;
+  W5[511,511]=1;
+
+  for q in range(9) {
+    W6[511,324+q]-=first_line_rate;
+    W6[511,324+72+q]-=first_line_rate;
+    W6[511,324+9*q]-=first_line_rate;
+    W6[511,324+9*q+8]-=first_line_rate;
+
+    W6[511,324+9+q]-=second_line_rate;
+    W6[511,324+63+q]-=second_line_rate;
+    W6[511,324+9*q+1]-=second_line_rate;
+    W6[511,324+9*q+7]-=second_line_rate;
+  }
+}

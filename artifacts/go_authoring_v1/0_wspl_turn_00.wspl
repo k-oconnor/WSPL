@@ -1,0 +1,309 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+const kernel=[
+  0,1,9/20,3/20,
+  1,13/20,1/4,1/10,
+  9/20,1/4,3/20,1/20,
+  3/20,1/10,1/20,0
+];
+const shape=[
+  0,-1,9/20,3/25,
+  -1,1/5,9/50,1/20,
+  9/20,9/50,3/25,3/100,
+  3/25,1/20,3/100,0,
+  0,-7/10,7/20,1/10,
+  -7/10,9/20,1/4,2/25,
+  7/20,1/4,3/20,1/25,
+  1/10,2/25,1/25,0
+];
+const prior=[-5/2,-4/5,1/5,1/2,3/5,1/2,1/5,-4/5,-5/2];
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  W1[:,:]=0;
+  W2[:,:]=0;
+  W3[:,:]=0;
+  W4[:,:]=0;
+  W5[:,:]=0;
+  W6[:,:]=0;
+  W7[:,:]=0;
+  b1[:]=0;
+  b2[:]=0;
+  b3[:]=0;
+  b4[:]=0;
+  b5[:]=0;
+  b6[:]=0;
+  b7[:]=0;
+
+  // Pointwise initialization.
+  // h1: own, opponent, local liberties by color, influence by color.
+  // h2: own, opponent, one-hop chain liberties, shape, connections.
+  // h3: own eye, opponent enclosure, liberty alarms, risk, shape.
+  for r in range(9) {
+    for c in range(9) {
+      for p in range(2) {
+        W1[3*(9*r+c)+p,81*p+9*r+c]=1;
+        W1[3*(9*r+c)+p,162+81*p+9*r+c]=4;
+        b1[162+81*p+9*r+c]=-4;
+
+        W2[81*p+9*r+c,81*p+9*r+c]=1;
+        W2[81*p+9*r+c,162+81*p+9*r+c]=20;
+        W2[162+81*p+9*r+c,162+81*p+9*r+c]=1;
+        b2[162+81*p+9*r+c]=-20;
+
+        W3[81*p+9*r+c,162+81*p+9*r+c]=64;
+        b3[162+81*p+9*r+c]=-60;
+      }
+
+      b2[324+9*r+c]=16;
+      W2[324+9*r+c,324+9*r+c]=-17/10;
+      W2[405+9*r+c,324+9*r+c]=-3/2;
+      b2[405+9*r+c]=-1;
+
+      b3[9*r+c]=1;
+      b3[81+9*r+c]=1;
+      b3[324+9*r+c]=2;
+      W3[324+9*r+c,405+9*r+c]=1;
+      W3[405+9*r+c,405+9*r+c]=11/5;
+
+      W4[324+9*r+c,162+9*r+c]=1;
+      W4[9*r+c,243+9*r+c]=1;
+      W4[405+9*r+c,324+9*r+c]=1;
+      W4[81+9*r+c,405+9*r+c]=1;
+
+      for k in range(6) {
+        W5[81*k+9*r+c,81*k+9*r+c]=1;
+        W6[81*k+9*r+c,81*k+9*r+c]=1;
+      }
+      W5[162+9*r+c,81+9*r+c]=-12;
+      W5[405+9*r+c,162+9*r+c]=-2;
+      W6[81+9*r+c,243+9*r+c]=-1;
+
+      W7[9*r+c,9*r+c]=7;
+      W7[81+9*r+c,9*r+c]=11/2;
+      W7[162+9*r+c,9*r+c]=-15/2;
+      W7[243+9*r+c,9*r+c]=-13;
+      W7[324+9*r+c,9*r+c]=1;
+      W7[405+9*r+c,9*r+c]=21;
+      b7[9*r+c]=-16+prior[r]+prior[c];
+
+      W7[486,9*r+c]=-(prior[r]+prior[c])/24;
+      W7[487,9*r+c]=(prior[r]+prior[c])/24;
+    }
+  }
+
+  // Each undirected orthogonal edge, in both board orientations.
+  // For t=0 the endpoints are (r,c),(r,c+1);
+  // for t=1 they are their transposes.
+  for t in range(2) {
+    for r in range(9) {
+      for c in range(8) {
+        for p in range(2) {
+          for q in range(2) {
+            W1[3*(r*(9-8*t)+(c+1)*(1+8*t))+q,
+               162+81*p+r*(9-8*t)+c*(1+8*t)]-=1;
+            W1[3*(r*(9-8*t)+c*(1+8*t))+q,
+               162+81*p+r*(9-8*t)+(c+1)*(1+8*t)]-=1;
+          }
+          b1[162+81*p+r*(9-8*t)+c*(1+8*t)]+=1;
+          b1[162+81*p+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+          W2[162+81*p+r*(9-8*t)+(c+1)*(1+8*t),
+             162+81*p+r*(9-8*t)+c*(1+8*t)]+=1;
+          W2[162+81*p+r*(9-8*t)+c*(1+8*t),
+             162+81*p+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+          // Alarm = relu(1 + degree_same/2 - 3*(U-1)),
+          // U = local liberties + neighboring chain sums - degree_same.
+          W3[81*p+r*(9-8*t)+(c+1)*(1+8*t),
+             162+81*p+r*(9-8*t)+c*(1+8*t)]+=13/2;
+          W3[81*p+r*(9-8*t)+c*(1+8*t),
+             162+81*p+r*(9-8*t)+(c+1)*(1+8*t)]+=13/2;
+
+          W3[81*(1-p)+r*(9-8*t)+(c+1)*(1+8*t),
+             162+81*p+r*(9-8*t)+c*(1+8*t)]+=3;
+          W3[81*(1-p)+r*(9-8*t)+c*(1+8*t),
+             162+81*p+r*(9-8*t)+(c+1)*(1+8*t)]+=3;
+
+          W3[162+81*p+r*(9-8*t)+(c+1)*(1+8*t),
+             162+81*p+r*(9-8*t)+c*(1+8*t)]-=3;
+          W3[162+81*p+r*(9-8*t)+c*(1+8*t),
+             162+81*p+r*(9-8*t)+(c+1)*(1+8*t)]-=3;
+
+          b3[162+81*p+r*(9-8*t)+c*(1+8*t)]-=3;
+          b3[162+81*p+r*(9-8*t)+(c+1)*(1+8*t)]-=3;
+        }
+
+        // Connection count.
+        W2[r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]+=1;
+        W2[r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+        // Own-eye and opponent-enclosure tests.
+        W3[r*(9-8*t)+(c+1)*(1+8*t),
+           r*(9-8*t)+c*(1+8*t)]+=1;
+        W3[r*(9-8*t)+c*(1+8*t),
+           r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+        W3[81+r*(9-8*t)+(c+1)*(1+8*t),
+           81+r*(9-8*t)+c*(1+8*t)]+=1;
+        W3[81+r*(9-8*t)+c*(1+8*t),
+           81+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+        b3[r*(9-8*t)+c*(1+8*t)]-=1;
+        b3[r*(9-8*t)+(c+1)*(1+8*t)]-=1;
+        b3[81+r*(9-8*t)+c*(1+8*t)]-=1;
+        b3[81+r*(9-8*t)+(c+1)*(1+8*t)]-=1;
+
+        // Estimated post-placement liberty deficit.
+        W3[r*(9-8*t)+(c+1)*(1+8*t),
+           324+r*(9-8*t)+c*(1+8*t)]+=2;
+        W3[r*(9-8*t)+c*(1+8*t),
+           324+r*(9-8*t)+(c+1)*(1+8*t)]+=2;
+        W3[81+r*(9-8*t)+(c+1)*(1+8*t),
+           324+r*(9-8*t)+c*(1+8*t)]+=1;
+        W3[81+r*(9-8*t)+c*(1+8*t),
+           324+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+        W3[162+r*(9-8*t)+(c+1)*(1+8*t),
+           324+r*(9-8*t)+c*(1+8*t)]-=1;
+        W3[162+r*(9-8*t)+c*(1+8*t),
+           324+r*(9-8*t)+(c+1)*(1+8*t)]-=1;
+        b3[324+r*(9-8*t)+c*(1+8*t)]-=1;
+        b3[324+r*(9-8*t)+(c+1)*(1+8*t)]-=1;
+
+        // Translate neighboring stone alarms to candidate-move features.
+        W4[243+r*(9-8*t)+(c+1)*(1+8*t),
+           r*(9-8*t)+c*(1+8*t)]+=1;
+        W4[243+r*(9-8*t)+c*(1+8*t),
+           r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+        W4[162+r*(9-8*t)+(c+1)*(1+8*t),
+           81+r*(9-8*t)+c*(1+8*t)]+=1;
+        W4[162+r*(9-8*t)+c*(1+8*t),
+           81+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+        W4[243+r*(9-8*t)+(c+1)*(1+8*t),
+           162+r*(9-8*t)+c*(1+8*t)]-=2;
+        W4[243+r*(9-8*t)+c*(1+8*t),
+           162+r*(9-8*t)+(c+1)*(1+8*t)]-=2;
+      }
+    }
+  }
+
+  // Diagonal enemy stones distinguish true eyes from false eyes.
+  for r in range(8) {
+    for c in range(8) {
+      W3[81+9*(r+1)+c+1,9*r+c]-=1/2;
+      W3[81+9*r+c,9*(r+1)+c+1]-=1/2;
+      W3[81+9*(r+1)+c,9*r+c+1]-=1/2;
+      W3[81+9*r+c+1,9*(r+1)+c]-=1/2;
+    }
+  }
+  for c in range(8) {
+    W3[81+9+c+1,c]-=1/2;
+    W3[81+9+c,c+1]-=1/2;
+    W3[81+63+c+1,72+c]-=1/2;
+    W3[81+63+c,72+c+1]-=1/2;
+  }
+  for r in range(8) {
+    W3[81+9*(r+1)+1,9*r]-=1/2;
+    W3[81+9*r+1,9*(r+1)]-=1/2;
+    W3[81+9*(r+1)+7,9*r+8]-=1/2;
+    W3[81+9*r+7,9*(r+1)+8]-=1/2;
+  }
+
+  // Axial influence and shape kernels.
+  for t in range(2) {
+    for d in range(1,4) {
+      for r in range(9) {
+        for c in range(9-d) {
+          for p in range(2) {
+            W1[3*(r*(9-8*t)+(c+d)*(1+8*t))+p,
+               324+81*p+r*(9-8*t)+c*(1+8*t)]+=kernel[d];
+            W1[3*(r*(9-8*t)+(c+d)*(1+8*t))+1-p,
+               324+81*p+r*(9-8*t)+c*(1+8*t)]-=9*kernel[d]/10;
+            b1[324+81*p+r*(9-8*t)+c*(1+8*t)]-=3*kernel[d]/10;
+
+            W1[3*(r*(9-8*t)+c*(1+8*t))+p,
+               324+81*p+r*(9-8*t)+(c+d)*(1+8*t)]+=kernel[d];
+            W1[3*(r*(9-8*t)+c*(1+8*t))+1-p,
+               324+81*p+r*(9-8*t)+(c+d)*(1+8*t)]-=9*kernel[d]/10;
+            b1[324+81*p+r*(9-8*t)+(c+d)*(1+8*t)]-=3*kernel[d]/10;
+
+            W2[81*p+r*(9-8*t)+(c+d)*(1+8*t),
+               324+r*(9-8*t)+c*(1+8*t)]+=shape[16*p+d];
+            W2[81*p+r*(9-8*t)+c*(1+8*t),
+               324+r*(9-8*t)+(c+d)*(1+8*t)]+=shape[16*p+d];
+          }
+        }
+      }
+    }
+  }
+
+  // Off-axis influence and shape kernels, reflected in both axes.
+  for dr in range(1,4) {
+    for dc in range(1,4) {
+      for r in range(9-dr) {
+        for c in range(9-dc) {
+          for p in range(2) {
+            W1[3*(9*(r+dr)+c+dc)+p,
+               324+81*p+9*r+c]+=kernel[4*dr+dc];
+            W1[3*(9*(r+dr)+c+dc)+1-p,
+               324+81*p+9*r+c]-=9*kernel[4*dr+dc]/10;
+            b1[324+81*p+9*r+c]-=3*kernel[4*dr+dc]/10;
+
+            W1[3*(9*r+c)+p,
+               324+81*p+9*(r+dr)+c+dc]+=kernel[4*dr+dc];
+            W1[3*(9*r+c)+1-p,
+               324+81*p+9*(r+dr)+c+dc]-=9*kernel[4*dr+dc]/10;
+            b1[324+81*p+9*(r+dr)+c+dc]-=3*kernel[4*dr+dc]/10;
+
+            W1[3*(9*(r+dr)+c)+p,
+               324+81*p+9*r+c+dc]+=kernel[4*dr+dc];
+            W1[3*(9*(r+dr)+c)+1-p,
+               324+81*p+9*r+c+dc]-=9*kernel[4*dr+dc]/10;
+            b1[324+81*p+9*r+c+dc]-=3*kernel[4*dr+dc]/10;
+
+            W1[3*(9*r+c+dc)+p,
+               324+81*p+9*(r+dr)+c]+=kernel[4*dr+dc];
+            W1[3*(9*r+c+dc)+1-p,
+               324+81*p+9*(r+dr)+c]-=9*kernel[4*dr+dc]/10;
+            b1[324+81*p+9*(r+dr)+c]-=3*kernel[4*dr+dc]/10;
+
+            W2[81*p+9*(r+dr)+c+dc,
+               324+9*r+c]+=shape[16*p+4*dr+dc];
+            W2[81*p+9*r+c,
+               324+9*(r+dr)+c+dc]+=shape[16*p+4*dr+dc];
+            W2[81*p+9*(r+dr)+c,
+               324+9*r+c+dc]+=shape[16*p+4*dr+dc];
+            W2[81*p+9*r+c+dc,
+               324+9*(r+dr)+c]+=shape[16*p+4*dr+dc];
+          }
+        }
+      }
+    }
+  }
+
+  // Occupancy-based phase hinges and White-to-move.
+  for i in range(81) {
+    for p in range(2) {
+      W1[3*i+p,486]=1;
+      W1[3*i+p,487]=1;
+      W1[3*i+p,488]=1;
+    }
+  }
+  b1[486]=-16;
+  b1[487]=-40;
+  b1[488]=-60;
+  W1[2,489]=1;
+
+  for j in range(486,490) {
+    W2[j,j]=1;
+    W3[j,j]=1;
+    W4[j,j]=1;
+    W5[j,j]=1;
+    W6[j,j]=1;
+  }
+  b7[81]=-15/2;
+  W7[487,81]=11/40;
+  W7[488,81]=-11/40;
+  W7[489,81]=1/4;
+}

@@ -1,0 +1,283 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+const capture_gain=9;
+const rescue_gain=15/2;
+const self_atari_cost=10;
+const contact_cost=11/4;
+const connection_gain=5/2;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  W1[0:243,0:512]=0;
+  W2[0:512,0:512]=0;
+  W3[0:512,0:512]=0;
+  W4[0:512,0:512]=0;
+  W5[0:512,0:512]=0;
+  W6[0:512,0:512]=0;
+  W7[0:512,0:82]=0;
+  b1[0:512]=0;
+  b2[0:512]=0;
+  b3[0:512]=0;
+  b4[0:512]=0;
+  b5[0:512]=0;
+  b6[0:512]=0;
+  b7[0:82]=0;
+
+  // Temporary coefficient templates in W7:
+  // orthogonal, diagonal, straight-two, knight, diagonal-two, straight-three.
+  for r in range(9) {
+    for c in range(8) {
+      W7[9*r+c,9*r+c+1]=1;
+      W7[9*r+c+1,9*r+c]=1;
+    }
+  }
+  for r in range(8) {
+    for c in range(9) {
+      W7[9*r+c,9*r+c+9]=1;
+      W7[9*r+c+9,9*r+c]=1;
+    }
+  }
+  for r in range(8) {
+    for c in range(8) {
+      W7[81+9*r+c,9*r+c+10]=1;
+      W7[81+9*r+c+10,9*r+c]=1;
+      W7[81+9*r+c+1,9*r+c+9]=1;
+      W7[81+9*r+c+9,9*r+c+1]=1;
+    }
+  }
+  for r in range(9) {
+    for c in range(7) {
+      W7[162+9*r+c,9*r+c+2]=1;
+      W7[162+9*r+c+2,9*r+c]=1;
+    }
+  }
+  for r in range(7) {
+    for c in range(9) {
+      W7[162+9*r+c,9*r+c+18]=1;
+      W7[162+9*r+c+18,9*r+c]=1;
+    }
+  }
+  for r in range(7) {
+    for c in range(8) {
+      W7[243+9*r+c,9*r+c+19]=1;
+      W7[243+9*r+c+19,9*r+c]=1;
+      W7[243+9*r+c+1,9*r+c+18]=1;
+      W7[243+9*r+c+18,9*r+c+1]=1;
+    }
+  }
+  for r in range(8) {
+    for c in range(7) {
+      W7[243+9*r+c,9*r+c+11]=1;
+      W7[243+9*r+c+11,9*r+c]=1;
+      W7[243+9*r+c+2,9*r+c+9]=1;
+      W7[243+9*r+c+9,9*r+c+2]=1;
+    }
+  }
+  for r in range(7) {
+    for c in range(7) {
+      W7[324+9*r+c,9*r+c+20]=1;
+      W7[324+9*r+c+20,9*r+c]=1;
+      W7[324+9*r+c+2,9*r+c+18]=1;
+      W7[324+9*r+c+18,9*r+c+2]=1;
+    }
+  }
+  for r in range(9) {
+    for c in range(6) {
+      W7[405+9*r+c,9*r+c+3]=1;
+      W7[405+9*r+c+3,9*r+c]=1;
+    }
+  }
+  for r in range(6) {
+    for c in range(9) {
+      W7[405+9*r+c,9*r+c+27]=1;
+      W7[405+9*r+c+27,9*r+c]=1;
+    }
+  }
+
+  // h1: own, opponent, own direct liberties, opponent direct liberties,
+  // supported-eye evidence, candidate direct liberties.
+  b1[324:405]=-10;
+  b1[405:486]=4;
+
+  for q in range(81) {
+    W1[3*q,q]=1;
+    W1[3*q+1,81+q]=1;
+
+    W1[3*q,162:243]=-W7[q,0:81];
+    W1[3*q+1,162:243]=-W7[q,0:81];
+    W1[3*q,162+q]+=4;
+
+    W1[3*q,243:324]=-W7[q,0:81];
+    W1[3*q+1,243:324]=-W7[q,0:81];
+    W1[3*q+1,243+q]+=4;
+
+    W1[3*q,324:405]=2*W7[q,0:81]+W7[81+q,0:81];
+
+    W1[3*q,405:486]=-W7[q,0:81];
+    W1[3*q+1,405:486]=-W7[q,0:81];
+
+    W1[3*q,486]=-1;
+    W1[3*q+1,486]=-1;
+    W1[3*q,487]=-1;
+    W1[3*q+1,487]=-1;
+
+    W1[3*q,488]=1;
+    W1[3*q+1,488]=-1;
+    W1[3*q,489]=-1;
+    W1[3*q+1,489]=1;
+  }
+
+  // Correct board degrees and eye thresholds at edges and corners.
+  for q in range(9) {
+    b1[162+q]-=1;
+    b1[162+72+q]-=1;
+    b1[162+9*q]-=1;
+    b1[162+9*q+8]-=1;
+
+    b1[243+q]-=1;
+    b1[243+72+q]-=1;
+    b1[243+9*q]-=1;
+    b1[243+9*q+8]-=1;
+
+    b1[405+q]-=1;
+    b1[405+72+q]-=1;
+    b1[405+9*q]-=1;
+    b1[405+9*q+8]-=1;
+
+    b1[324+q]+=3;
+    b1[324+72+q]+=3;
+    b1[324+9*q]+=3;
+    b1[324+9*q+8]+=3;
+  }
+
+  b1[486]=16;
+  b1[487]=1;
+  b1[488]=-15/2;
+  b1[489]=15/2;
+  W1[2,488]=15;
+  W1[2,489]=-15;
+
+  // h2: seed evidence of at least two distinct group liberties.
+  // Adjacent stones cannot share a direct liberty.
+  W2[0:162,0:162]=eye(162);
+  W2[162:243,162:243]=12*eye(81)+W7[0:81,0:81];
+  W2[243:324,243:324]=12*eye(81)+W7[0:81,0:81];
+  W2[0:81,162:243]=4*eye(81);
+  W2[81:162,243:324]=4*eye(81);
+  b2[162:324]=-16;
+
+  // Complement of supported-eye evidence, with a small crowding adjustment.
+  W2[324:405,324:405]=-eye(81);
+  W2[0:81,324:405]=-(W7[0:81,0:81]+W7[81:162,0:81])/64;
+  b2[324:405]=1;
+  W2[405:486,405:486]=eye(81);
+  W2[486:490,486:490]=eye(4);
+
+  // h3: color-gated propagation and a positive-offset positional accumulator.
+  W3[0:162,0:162]=eye(162);
+  W3[162:243,162:243]=eye(81)+W7[0:81,0:81];
+  W3[243:324,243:324]=eye(81)+W7[0:81,0:81];
+  W3[0:81,162:243]=192*eye(81);
+  W3[81:162,243:324]=192*eye(81);
+  b3[162:324]=-192;
+
+  W3[0:81,324:405]=
+      -3/20*W7[0:81,0:81]
+      +1/4*W7[81:162,0:81]
+      +13/20*W7[162:243,0:81]
+      +9/20*W7[243:324,0:81]
+      +3/10*W7[324:405,0:81]
+      +1/10*W7[405:486,0:81];
+
+  W3[81:162,324:405]=
+      1/2*W7[0:81,0:81]
+      +3/10*W7[81:162,0:81]
+      +9/20*W7[162:243,0:81]
+      +7/20*W7[243:324,0:81]
+      +1/5*W7[324:405,0:81]
+      +1/10*W7[405:486,0:81];
+
+  W3[324:405,324:405]=24*eye(81);
+  W3[405:486,324:405]=1/2*eye(81);
+  b3[324:405]=40;
+  W3[405:486,405:486]=eye(81);
+  W3[486:490,486:490]=eye(4);
+
+  // Central first move; third-line development during the opening.
+  for r in range(9) {
+    for c in range(9) {
+      W3[487,324+9*r+c]=6-3*((r-4)*(r-4)+(c-4)*(c-4))/2;
+    }
+  }
+  for r in range(2,7,4) {
+    for c in range(9) {
+      W3[486,324+9*r+c]+=1/20;
+    }
+  }
+  for r in range(9) {
+    for c in range(2,7,4) {
+      W3[486,324+9*r+c]+=1/20;
+    }
+  }
+
+  // h4: a second color-gated safety propagation.
+  W4[0:162,0:162]=eye(162);
+  W4[162:243,162:243]=eye(81)+W7[0:81,0:81];
+  W4[243:324,243:324]=eye(81)+W7[0:81,0:81];
+  W4[0:81,162:243]=1024*eye(81);
+  W4[81:162,243:324]=1024*eye(81);
+  b4[162:324]=-1024;
+  W4[324:486,324:486]=eye(162);
+  W4[486:490,486:490]=eye(4);
+
+  // h5: locally endangered stones, occupancy, positional value, liberty deficit.
+  W5[0:81,0:81]=eye(81);
+  W5[162:243,0:81]=-eye(81);
+  W5[81:162,81:162]=eye(81);
+  W5[243:324,81:162]=-eye(81);
+
+  W5[0:81,162:243]=eye(81);
+  W5[81:162,243:324]=eye(81);
+  W5[324:405,324:405]=eye(81);
+  W5[405:486,405:486]=-eye(81);
+  b5[405:486]=2;
+  W5[486:490,486:490]=eye(4);
+
+  // h6: capture, rescue, self-atari risk, unsupported contact, value, connection.
+  W6[81:162,0:81]=W7[0:81,0:81];
+  W6[0:81,81:162]=W7[0:81,0:81];
+
+  W6[405:486,162:243]=eye(81);
+  W6[162:243,162:243]=-3/2*W7[0:81,0:81];
+  W6[0:81,162:243]=3/2*W7[0:81,0:81];
+  W6[81:162,162:243]=-2*W7[0:81,0:81];
+
+  W6[243:324,243:324]=W7[0:81,0:81];
+  W6[162:243,243:324]=-W7[0:81,0:81];
+  W6[81:162,243:324]=-2*W7[0:81,0:81];
+
+  W6[324:405,324:405]=eye(81);
+  W6[162:243,405:486]=W7[0:81,0:81]-1/2*W7[81:162,0:81];
+  b6[405:486]=-1;
+  W6[486:490,486:490]=eye(4);
+
+  // Replace temporary templates with the final policy readout.
+  W7[0:512,0:82]=0;
+  W7[0:81,0:81]=capture_gain*eye(81);
+  W7[81:162,0:81]=rescue_gain*eye(81);
+  W7[162:243,0:81]=-self_atari_cost*eye(81);
+  W7[243:324,0:81]=-contact_cost*eye(81);
+  W7[324:405,0:81]=eye(81);
+  W7[405:486,0:81]=connection_gain*eye(81);
+
+  for r in range(9) {
+    for c in range(9) {
+      b7[9*r+c]=-64-((r-4)*(r-4)+(c-4)*(c-4))/20;
+    }
+  }
+
+  // Passing competes chiefly with low-value territory-filling moves.
+  b7[81]=-9/2;
+  W7[488,81]=2/25;
+  W7[489,81]=-2/25;
+}

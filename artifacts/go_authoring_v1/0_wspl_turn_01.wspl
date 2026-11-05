@@ -1,0 +1,163 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Retain the existing input features, spatial kernels, and phase channels.
+  // Rebuild the tactical layers.
+  W3[:,0:486]=0;
+  W4[:,0:486]=0;
+  W5[:,0:486]=0;
+  W6[:,0:486]=0;
+  W7[0:486,:]=0;
+  b3[0:486]=0;
+  b4[0:486]=0;
+  b5[0:486]=0;
+  b6[0:486]=0;
+
+  for i in range(81) {
+    for p in range(2) {
+      // Local safety certificate:
+      // relu(2*local_liberties + sum(friendly_neighbor_liberties) - 2).
+      // The existing occupancy gate restricts it to this color.
+      // Every stone in a group with exactly one liberty has certificate zero.
+      W2[162+81*p+i,162+81*p+i]=2;
+      b2[162+81*p+i]=-22;
+
+      // h3: stone indicators and one-hop propagated certificates.
+      W3[81*p+i,81*p+i]=1;
+      W3[81*p+i,162+81*p+i]=128;
+      W3[162+81*p+i,162+81*p+i]=1;
+      b3[162+81*p+i]=-128;
+
+      // h4: endangered-stone indicators.
+      // Neighbor contributions below extend certificate propagation again.
+      W4[81*p+i,81*p+i]=1;
+      W4[162+81*p+i,81*p+i]=-1;
+    }
+
+    // h3 remaining channels: shape and placement-liberty deficit.
+    W3[324+i,324+i]=1;
+    W3[405+i,324+i]=11/5;
+    b3[405+i]=2;
+
+    // h4 remaining channels: risk, own-eye test, shape, enemy enclosure.
+    W4[405+i,162+i]=1;
+    b4[243+i]=2;
+    W4[324+i,324+i]=1;
+    b4[405+i]=1;
+
+    // h5: neighboring capture/rescue alarms, adjusted risk, eye, shape,
+    // and enemy enclosure.
+    for k in range(2,6) {
+      W5[81*k+i,81*k+i]=1;
+    }
+
+    // h6: suppress futile rescues and preserve eyes.
+    for k in range(6) {
+      W6[81*k+i,81*k+i]=1;
+    }
+    W6[162+i,81+i]=-8;
+    W6[243+i,81+i]=-8;
+    W6[405+i,162+i]=-2;
+
+    W7[i,i]=9;
+    W7[81+i,i]=7;
+    W7[162+i,i]=-8;
+    W7[243+i,i]=-9;
+    W7[324+i,i]=1;
+    W7[405+i,i]=6;
+  }
+
+  // Orthogonal edges, in both orientations.
+  for t in range(2) {
+    for r in range(9) {
+      for c in range(8) {
+        for p in range(2) {
+          // Propagate certificates only through occupied same-color points.
+          W3[162+81*p+r*(9-8*t)+(c+1)*(1+8*t),
+             162+81*p+r*(9-8*t)+c*(1+8*t)]+=1;
+          W3[162+81*p+r*(9-8*t)+c*(1+8*t),
+             162+81*p+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+          W4[162+81*p+r*(9-8*t)+(c+1)*(1+8*t),
+             81*p+r*(9-8*t)+c*(1+8*t)]-=1;
+          W4[162+81*p+r*(9-8*t)+c*(1+8*t),
+             81*p+r*(9-8*t)+(c+1)*(1+8*t)]-=1;
+
+          // Direct empty-neighbor contribution to placement risk.
+          W3[81*p+r*(9-8*t)+(c+1)*(1+8*t),
+             405+r*(9-8*t)+c*(1+8*t)]+=1;
+          W3[81*p+r*(9-8*t)+c*(1+8*t),
+             405+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+        }
+
+        // Friendly liberty certificates reduce estimated self-atari risk.
+        W3[162+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]-=1/2;
+        W3[162+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]-=1/2;
+        b3[405+r*(9-8*t)+c*(1+8*t)]-=1;
+        b3[405+r*(9-8*t)+(c+1)*(1+8*t)]-=1;
+
+        // Own-eye enclosure requires every orthogonal neighbor to be own.
+        W4[r*(9-8*t)+(c+1)*(1+8*t),
+           243+r*(9-8*t)+c*(1+8*t)]+=2;
+        W4[r*(9-8*t)+c*(1+8*t),
+           243+r*(9-8*t)+(c+1)*(1+8*t)]+=2;
+        b4[243+r*(9-8*t)+c*(1+8*t)]-=2;
+        b4[243+r*(9-8*t)+(c+1)*(1+8*t)]-=2;
+
+        // A legal move enclosed entirely by opponents must capture.
+        W4[81+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]+=1;
+        W4[81+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+        b4[405+r*(9-8*t)+c*(1+8*t)]-=1;
+        b4[405+r*(9-8*t)+(c+1)*(1+8*t)]-=1;
+
+        // Convert endangered opposing stones into move-level capture signals.
+        W5[81+r*(9-8*t)+(c+1)*(1+8*t),
+           r*(9-8*t)+c*(1+8*t)]+=1;
+        W5[81+r*(9-8*t)+c*(1+8*t),
+           r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+        // Convert endangered friendly stones into rescue signals.
+        W5[r*(9-8*t)+(c+1)*(1+8*t),
+           81+r*(9-8*t)+c*(1+8*t)]+=1;
+        W5[r*(9-8*t)+c*(1+8*t),
+           81+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+        // Captures can supply liberties, but retain a conservative residual
+        // penalty for otherwise completely cramped placements.
+        W5[81+r*(9-8*t)+(c+1)*(1+8*t),
+           162+r*(9-8*t)+c*(1+8*t)]-=3/2;
+        W5[81+r*(9-8*t)+c*(1+8*t),
+           162+r*(9-8*t)+(c+1)*(1+8*t)]-=3/2;
+      }
+    }
+  }
+
+  // Interior eyes tolerate one opposing diagonal, but not two.
+  for r in range(8) {
+    for c in range(8) {
+      W4[81+9*(r+1)+c+1,243+9*r+c]-=1;
+      W4[81+9*r+c,243+9*(r+1)+c+1]-=1;
+      W4[81+9*(r+1)+c,243+9*r+c+1]-=1;
+      W4[81+9*r+c+1,243+9*(r+1)+c]-=1;
+    }
+  }
+
+  // Edge and corner eyes cannot tolerate an opposing diagonal.
+  for c in range(8) {
+    W4[81+9+c+1,243+c]-=1;
+    W4[81+9+c,243+c+1]-=1;
+    W4[81+63+c+1,243+72+c]-=1;
+    W4[81+63+c,243+72+c+1]-=1;
+  }
+  for r in range(8) {
+    W4[81+9*(r+1)+1,243+9*r]-=1;
+    W4[81+9*r+1,243+9*(r+1)]-=1;
+    W4[81+9*(r+1)+7,243+9*r+8]-=1;
+    W4[81+9*r+7,243+9*(r+1)+8]-=1;
+  }
+}

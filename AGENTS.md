@@ -1,3 +1,90 @@
+Go authoring recovery COMPLETE, November 4, 2026 21:39 PST.
+Original run timed out at first call of Python draw2; four frozen candidates
+preserved byte-for-byte in Skillforge-go-authoring-resume-v1. Recovery source pin
+cf96be2cc6651cd382e27f77f7cfdc347b98a5a124e9e924c587e569fe3eb108,
+result/receipt complete, three new constructors, 42,000 games. Python means
+42.52/32.67/21.32%; WSPL38.28/30.92/52.15%; zero1.62%. Across-author means
+32.17/40.45%; difference8.28pp driven by third pair. No general language
+advantage established. 45 completed responses/39 accepted programs, plus one
+interrupted call with unknown usage; no rejected returned constructions.
+Source inspection shows fixed-shape circuit refactoring, not high-level
+placement or graph growth. Intermediate evaluations/ablations not performed.
+Report docs/wspl/GO_AUTHORING_V1_RESULTS.md; summary JSON alongside. Preserve
+original and recovery archives. New scientific tests require a new exact pin.
+
+November 4 Go authoring screen LAUNCHED, supersedes preparation.
+User approved dcf87c7a310ea245af2411152065b5c6e9593d1cbc576862562c522cdfe27f1d
+with "Approve this manifest and launch the Go authoring screen". Registered
+main/isolated after130source/1360Windows/4398Linuxresource verification.
+Hidden PID49480 launched22:54:20UTC/14:54PST via source gate in isolated
+Skillforge-go-authoring-v1,outputresults/go_authoring_v1. Startup source receipt
+verified,one constructor,first Python session turn00 has fresh thread/turn,
+launch stderr empty. Max48calls/6sessions;all freeze before42000CPUgames.
+20min/call,6h overall guard. Inspect status/receipt before completion claims.
+Do not change isolated pinned source or bound runtimes/resources, duplicate or
+auto-retry. Main may develop independently. Startup evidence
+ docs/wspl/go_authoring_v1_launch.json. No later study automatically approved.
+
+November 4 fresh Go authoring screen PREPARED, unapproved/unregistered.
+Six Astra/xhigh sessions (Python/WSPL x3), up to8 response/construction steps,
+max48 fresh calls. Full visible transcript replayed each call; not resumed
+hidden reasoning. No gameplay/forward-pass feedback; weight-only persistence;
+invalid transaction keeps previous weights; FINAL or step cap freezes latest.
+Freeze all6 before evaluation, plus zero-weight control;2000games x3PPO x7
+candidates=42000games. Smaller8-step/NumPy-only allowance than original120-run
+MIT sandbox; no strict original-budget replication or compute-matching claim.
+WSPL optimized selected-slice indexing/reads and dense graph metadata caching;
+old isolated archives unchanged. Full470checks:461pass/9skips;7Go covered in
+Linux;4authoring and3slice checks pass isolated, including full1.48M tensors.
+130sources,1360Windows/4398Linuxresources verified; both prompt preflights pass.
+Candidate dcf87c7a310ea245af2411152065b5c6e9593d1cbc576862562c522cdfe27f1d,
+experiments/source_pins/go_authoring_v1.manifest.json; isolated
+Skillforge-go-authoring-v1. Protocol docs/wspl/GO_AUTHORING_V1.md and common
+GO_AUTHORING_INTERFACE_V1.md. No model calls or authored-policy games.
+Existing Codex usage,no hard dollar/output cap;20min/call,6h overall guard;
+expected1-3h. CPU-only construction/evaluation. Needs exact approval to launch.
+Preserve isolated source/resources; main can develop independently.
+
+November 4 Go replay COMPLETE, supersedes launch/preparation.
+12,000 games/378 batches,125.53active seconds,one constructor,finished22:05:18UTC.
+Budget0 win rates40.85/27.90/36.05%;budget50 75.00/69.25/82.15% vs PPOs0/1/2.
+Released exact42.55/26.30/36.25 and74.15/69.95/78.55. Broad ranking reproduced;
+largest discrepancy+3.60pp budget50/s2,not exact/statistical match in every cell.
+Read-only audit verifies121sources/3469resources,actors,12kepisode accounting,
+independent final-board area scores and repetition-loss colors;77,747selected
+moves checked for occupied-point exclusion. No new games or authoring calls.
+Report docs/wspl/GO_REPLAY_V1_RESULTS.md;audit go_replay_v1_audit.json;
+auditor tools/audit_go_replay_v1.py. Full isolated archive preserved.
+Next fresh Python/WSPL authoring is not approved; equal construction/feedback
+access required. This replay itself establishes no WSPL advantage.
+
+November 4 Go replay LAUNCHED, supersedes preparation.
+User approved a0044b77433bd6262a77e93454be06d0721e32c6eecaa136307471d1d44d600c
+with "Approve this manifest and launch the Go replay". Registered main/isolated
+following121source/3469resource verification. Hidden Windows launcher42712,
+Linux PID476, started22:03:07UTC/14:03PST. Source gate verified,one constructor;
+first budget0-vs-PPOs0 batches completed, stderr empty at startup.
+Isolated Skillforge-go-replay-v1/results/go_replay_v1; status.json live.
+12000planned games,CPU-only,two-hour guard,no calls/training. Inspect status and
+receipt for completion. Do not modify isolated source/bound runtime, duplicate
+or auto-retry. Startup record docs/wspl/go_replay_v1_launch.json.
+
+November 4 Go replay prepared, not approved, registered or launched.
+Protocol docs/wspl/GO_REPLAY_V1.md. Six matchups: released budget0/budget50
+against three same-size PPO seeds, 2000 games each, balanced colors, 12000 total.
+Pinned PGX87278d2 (2.6.0), JAX0.4.38/NumPy1.26.4 in new separate Linux runtime
+/home/kevin/venvs/skillforge-go. Old runtimes unchanged. Original evaluation
+helper/version/RNG unavailable; statistical replay, not bitwise reproduction.
+Seven rule/encoding/inference tests pass in isolated Linux checkout; production
+synthetic batches32/16 pass. Full Windows suite454pass/9skips (7Go covered
+separately,2existing). No released-policy games, training or model calls.
+121sources/3469resources verified; installed PGX source matches pinned checkout.
+Candidate a0044b77433bd6262a77e93454be06d0721e32c6eecaa136307471d1d44d600c
+experiments/source_pins/go_replay_v1.manifest.json. Isolated Skillforge-go-replay-v1.
+CPU only, two-hour guard, archive every episode/action/finalboard plus firsttwo
+trajectories per batch. No automatic fresh authoring. Exact approval needed.
+Evidence docs/wspl/go_replay_v1_preparation.json. Preserve isolated pinned source.
+
 November 4 diffusion coordinate-edit COMPLETE, supersedes launch.
 Finished20:57:28UTC/12:57PST;242.25active seconds;6constructor calls.
 Python3/3 andWSPL3/3 successful;18/18 real-graph permutation witnesses.

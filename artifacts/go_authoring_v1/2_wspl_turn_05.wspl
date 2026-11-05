@@ -1,0 +1,46 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+const C=162;
+const E=324;
+const F=405;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  for p in range(81) {
+    // Both two-liberty seeds are at most one for a group
+    // with only two liberties. Their weighted combination
+    // therefore cannot falsely certify three liberties.
+    //
+    // Existing third-liberty certificates remain positive:
+    // the original seed is then at least 3/2.
+    W3[E+p,E+p]=1/4;
+    b3[E+p]=-5/4;
+
+    W3[F+p,F+p]=1/4;
+    b3[F+p]=-5/4;
+
+    // The smallest positive certificate is now 1/4.
+    W5[E+p,E+p]=-4;
+  }
+
+  // Horizontal directed adjacency.
+  for r in range(9) {
+    for c in range(8) {
+      for s in range(2) {
+        W5[E+9*r+c+1-s,E+9*r+c+s]=-4;
+
+        // A certified neighboring friendly group retains
+        // at least two liberties after connection.
+        W5[F+9*r+c+1-s,C+9*r+c+s]=-16;
+      }
+    }
+  }
+
+  // Vertical directed adjacency.
+  for p in range(72) {
+    for s in range(2) {
+      W5[E+p+9*(1-s),E+p+9*s]=-4;
+      W5[F+p+9*(1-s),C+p+9*s]=-16;
+    }
+  }
+}

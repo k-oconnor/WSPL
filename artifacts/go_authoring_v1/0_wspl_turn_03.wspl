@@ -1,0 +1,165 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Replace the early risk channel with a three-liberty certificate.
+  // Existing C = relu(2*local_liberties + neighboring_liberties - 2).
+  // Each distinct liberty contributes at most two to that weighted sum,
+  // so relu(C-2) cannot activate for a group with only two liberties.
+  W3[:,405:486]=0;
+  b3[405:486]=-2;
+
+  // Delay move-level aggregation to h6, allowing another gated hop
+  // of chain-safety propagation before forming endangered-stone signals.
+  W4[:,0:486]=0;
+  W5[:,0:486]=0;
+  W6[:,0:486]=0;
+  b4[0:486]=0;
+  b5[0:486]=0;
+  b6[0:486]=0;
+
+  for i in range(81) {
+    W3[162+i,405+i]=1;
+
+    for p in range(2) {
+      // h4: stone indicators and twice-propagated safety certificates.
+      W4[81*p+i,81*p+i]=1;
+      W4[81*p+i,162+81*p+i]=512;
+      W4[162+81*p+i,162+81*p+i]=1;
+      b4[162+81*p+i]=-512;
+
+      // h5: endangered stones. Neighbor terms below extend the
+      // effective certificate reach to three same-color edges.
+      W5[81*p+i,81*p+i]=1;
+      W5[162+81*p+i,81*p+i]=-1;
+    }
+
+    // h4: retain shape; reconstruct conservative placement risk.
+    W4[324+i,324+i]=1;
+    b4[405+i]=2;
+
+    // h5: risk, own eye, shape, and opposing-chain pressure.
+    W5[405+i,162+i]=1;
+    b5[243+i]=2;
+    W5[324+i,324+i]=1;
+
+    b5[405+i]=-11/2;
+    W5[81+i,405+i]=8;
+    W5[243+i,405+i]=-1/2;
+
+    // h6: aggregate tactics, preserving the established output layout.
+    W6[162+i,162+i]=1;
+    W6[243+i,243+i]=1;
+    W6[324+i,324+i]=1;
+
+    // Rescues must be locally safe and must not fill a true eye.
+    W6[162+i,81+i]=-8;
+    W6[243+i,81+i]=-8;
+
+    // Avoid speculative attacking pressure from cramped placements.
+    W6[162+i,405+i]=-4;
+  }
+
+  for t in range(2) {
+    for r in range(9) {
+      for c in range(8) {
+        for p in range(2) {
+          // Another same-color propagation stage.
+          W4[162+81*p+r*(9-8*t)+(c+1)*(1+8*t),
+             162+81*p+r*(9-8*t)+c*(1+8*t)]+=1;
+          W4[162+81*p+r*(9-8*t)+c*(1+8*t),
+             162+81*p+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+          // Final safety test before generating binary danger alarms.
+          W5[162+81*p+r*(9-8*t)+(c+1)*(1+8*t),
+             81*p+r*(9-8*t)+c*(1+8*t)]-=1;
+          W5[162+81*p+r*(9-8*t)+c*(1+8*t),
+             81*p+r*(9-8*t)+(c+1)*(1+8*t)]-=1;
+
+          // Occupancy converts degree into the empty-neighbor count.
+          W4[81*p+r*(9-8*t)+(c+1)*(1+8*t),
+             405+r*(9-8*t)+c*(1+8*t)]+=1;
+          W4[81*p+r*(9-8*t)+c*(1+8*t),
+             405+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+        }
+
+        b4[405+r*(9-8*t)+c*(1+8*t)]-=1;
+        b4[405+r*(9-8*t)+(c+1)*(1+8*t)]-=1;
+
+        // Joining a certified three-liberty friendly chain leaves
+        // at least two liberties after occupying this candidate.
+        W4[405+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]-=2;
+        W4[405+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]-=2;
+
+        // Own-eye enclosure test.
+        W5[r*(9-8*t)+(c+1)*(1+8*t),
+           243+r*(9-8*t)+c*(1+8*t)]+=2;
+        W5[r*(9-8*t)+c*(1+8*t),
+           243+r*(9-8*t)+(c+1)*(1+8*t)]+=2;
+        b5[243+r*(9-8*t)+c*(1+8*t)]-=2;
+        b5[243+r*(9-8*t)+(c+1)*(1+8*t)]-=2;
+
+        // Preserve the modest opposing-chain size correction.
+        W5[81+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]+=1/4;
+        W5[81+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]+=1/4;
+
+        // Capture signals.
+        W6[81+r*(9-8*t)+(c+1)*(1+8*t),
+           r*(9-8*t)+c*(1+8*t)]+=1;
+        W6[81+r*(9-8*t)+c*(1+8*t),
+           r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+        // Rescue signals.
+        W6[r*(9-8*t)+(c+1)*(1+8*t),
+           81+r*(9-8*t)+c*(1+8*t)]+=1;
+        W6[r*(9-8*t)+c*(1+8*t),
+           81+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+        // Captures can supply the liberties missing before placement.
+        W6[81+r*(9-8*t)+(c+1)*(1+8*t),
+           162+r*(9-8*t)+c*(1+8*t)]-=2;
+        W6[81+r*(9-8*t)+c*(1+8*t),
+           162+r*(9-8*t)+(c+1)*(1+8*t)]-=2;
+
+        // Aggregate weak-chain pressure, without duplicating the
+        // baseline bonus already awarded to capture alarms.
+        W6[405+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]+=1;
+        W6[405+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]+=1;
+
+        W6[81+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]-=5/2;
+        W6[81+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]-=5/2;
+      }
+    }
+  }
+
+  // Diagonal qualifications for own eyes.
+  for r in range(8) {
+    for c in range(8) {
+      W5[81+9*(r+1)+c+1,243+9*r+c]-=1;
+      W5[81+9*r+c,243+9*(r+1)+c+1]-=1;
+      W5[81+9*(r+1)+c,243+9*r+c+1]-=1;
+      W5[81+9*r+c+1,243+9*(r+1)+c]-=1;
+    }
+  }
+
+  for c in range(8) {
+    W5[81+9+c+1,243+c]-=1;
+    W5[81+9+c,243+c+1]-=1;
+    W5[81+63+c+1,243+72+c]-=1;
+    W5[81+63+c,243+72+c+1]-=1;
+  }
+  for r in range(8) {
+    W5[81+9*(r+1)+1,243+9*r]-=1;
+    W5[81+9*r+1,243+9*(r+1)]-=1;
+    W5[81+9*(r+1)+7,243+9*r+8]-=1;
+    W5[81+9*r+7,243+9*(r+1)+8]-=1;
+  }
+}

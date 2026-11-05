@@ -1,0 +1,31 @@
+{
+  "status": "prepared_unapproved",
+  "manifest_sha256": "a0044b77433bd6262a77e93454be06d0721e32c6eecaa136307471d1d44d600c",
+  "sources": 121,
+  "bound_resources": 3469,
+  "actors": 5,
+  "planned_matchups": 6,
+  "planned_games": 12000,
+  "full_suite": {
+    "total": 463,
+    "passed": 454,
+    "skipped": 9,
+    "skip_note": "Seven Go tests require the separate WSL runtime; two preexisting environment-specific skips."
+  },
+  "isolated_go_tests": 7,
+  "production_synthetic_batches": [
+    32,
+    16
+  ],
+  "production_synthetic_check_sha256": "fb031a3e5db345ed36718b89976a4a090c2211fb1c156ed34e6064837f2a2553",
+  "pgx_commit": "87278d2d6e677fd87248c457207b59cfa42e578d",
+  "pgx": "2.6.0",
+  "jax": "0.4.38",
+  "numpy": "1.26.4",
+  "reference_commit": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+  "released_policy_games": 0,
+  "model_calls": 0,
+  "registered": false,
+  "launched": false,
+  "isolated_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-go-replay-v1"
+}

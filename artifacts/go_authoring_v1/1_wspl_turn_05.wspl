@@ -1,0 +1,54 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+const final_color_gate=8;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Current immutable templates:
+  // A = parent.W6[162:243,0:81]/2, orthogonal adjacency.
+  // -D = parent.W6[243:324,0:81], negative diagonal adjacency.
+  // The former capture-channel template is no longer populated.
+
+  W5[0:512,0:512]=0;
+  b5[0:512]=0;
+
+  // Extend group-safety evidence through same-color neighbors.
+  W5[162:243,0:81]=
+      eye(81)+parent.W6[162:243,0:81]/2;
+  W5[324:405,0:81]=
+      eye(81)+parent.W6[162:243,0:81]/2;
+  W5[0:81,0:81]=
+      final_color_gate*eye(81)-parent.W6[162:243,0:81]/2;
+  b5[0:81]=-final_color_gate;
+
+  W5[243:324,81:162]=
+      eye(81)+parent.W6[162:243,0:81]/2;
+  W5[405:486,81:162]=
+      eye(81)+parent.W6[162:243,0:81]/2;
+  W5[81:162,81:162]=
+      final_color_gate*eye(81)-parent.W6[162:243,0:81]/2;
+  b5[81:162]=-final_color_gate;
+
+  // Preserve raw stone maps.
+  W5[0:81,162:243]=eye(81);
+  W5[81:162,243:324]=eye(81);
+
+  // Opposing singleton with exactly two liberties.
+  W5[0:81,324:405]=parent.W6[162:243,0:81]/2;
+  W5[81:162,324:405]=
+      8*eye(81)-4*parent.W6[162:243,0:81];
+  W5[243:324,324:405]=-2*eye(81);
+  W5[405:486,324:405]=-2*eye(81);
+  b5[324:405]=parent.b6[162:243]-7;
+
+  // Connections, discounted for diagonal redundancy and danger.
+  W5[0:81,405:486]=
+      parent.W6[162:243,0:81]/2
+      +parent.W6[243:324,0:81]/2;
+  W5[162:243,405:486]=-parent.W6[162:243,0:81]/4;
+  W5[324:405,405:486]=-parent.W6[162:243,0:81]/4;
+  b5[405:486]=-1;
+
+  // Preserve opening and material features.
+  W5[486:490,486:490]=eye(4);
+}

@@ -1,0 +1,155 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+const propagation_gate=4096;
+const capture_gain=9;
+const atari_gain=4;
+const eye_cost=18;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Immutable templates:
+  // A = parent.W6[81:162,0:81], orthogonal adjacency.
+  // -D = parent.W5[81:162,324:405], negative diagonal adjacency.
+
+  // Retire the previous coordinate-selected singleton detectors.
+  W1[0:243,490:512]=0;
+  b1[490:512]=0;
+
+  // h2 retains the existing four liberty-marker maps.
+  // Replace its raw stone channels with:
+  // t = 1 + own - opponent, and a universal singleton detector.
+  W2[0:512,0:162]=0;
+  b2[0:162]=0;
+
+  W2[0:81,0:81]=eye(81);
+  W2[81:162,0:81]=-eye(81);
+  b2[0:81]=1;
+
+  // For an opposing singleton, T = relu(3 - direct liberties).
+  // Any adjacent opposing stone suppresses this detector.
+  W2[0:81,81:162]=parent.W6[81:162,0:81];
+  W2[81:162,81:162]=
+      8*eye(81)-8*parent.W6[81:162,0:81];
+
+  // The inherited deficit bias is 2 minus the on-board degree.
+  b2[81:162]=parent.b5[405:486]-7;
+
+  W2[0:512,490:512]=0;
+  W2[490:512,0:512]=0;
+  b2[490:512]=0;
+
+  // h3: propagate markers through their own color.
+  // t is 2 for own stones, 0 for opposing stones, and 1 for empties.
+  W3[0:512,0:512]=0;
+  b3[0:512]=0;
+
+  W3[0:162,0:162]=eye(162);
+
+  W3[162:243,162:243]=
+      eye(81)+parent.W6[81:162,0:81];
+  W3[243:324,243:324]=
+      eye(81)+parent.W6[81:162,0:81];
+  W3[324:405,324:405]=
+      eye(81)+parent.W6[81:162,0:81];
+  W3[405:486,405:486]=
+      eye(81)+parent.W6[81:162,0:81];
+
+  W3[0:81,162:243]=propagation_gate*eye(81);
+  W3[0:81,324:405]=propagation_gate*eye(81);
+  b3[162:243]=-2*propagation_gate;
+  b3[324:405]=-2*propagation_gate;
+
+  W3[0:81,243:324]=-propagation_gate*eye(81);
+  W3[0:81,405:486]=-propagation_gate*eye(81);
+
+  W3[486:490,486:490]=eye(4);
+
+  // h4: one additional propagation step, producing marker absences.
+  W4[0:512,0:512]=0;
+  b4[0:512]=0;
+
+  W4[0:162,0:162]=eye(162);
+
+  W4[162:243,162:243]=
+      -eye(81)-parent.W6[81:162,0:81];
+  W4[243:324,243:324]=
+      -eye(81)-parent.W6[81:162,0:81];
+  W4[324:405,324:405]=
+      -eye(81)-parent.W6[81:162,0:81];
+  W4[405:486,405:486]=
+      -eye(81)-parent.W6[81:162,0:81];
+
+  W4[0:81,162:243]=eye(81);
+  W4[0:81,324:405]=eye(81);
+  b4[162:243]=-1;
+  b4[324:405]=-1;
+
+  W4[0:81,243:324]=-eye(81);
+  W4[0:81,405:486]=-eye(81);
+  b4[243:324]=1;
+  b4[405:486]=1;
+
+  W4[486:490,486:490]=eye(4);
+
+  // h5: endangered stones, decoded stones, exact singleton threats.
+  W5[0:512,0:512]=0;
+  b5[0:512]=0;
+
+  W5[162:243,0:81]=eye(81);
+  W5[324:405,0:81]=eye(81);
+  W5[243:324,81:162]=eye(81);
+  W5[405:486,81:162]=eye(81);
+
+  W5[0:81,162:243]=eye(81);
+  b5[162:243]=-1;
+  W5[0:81,243:324]=-eye(81);
+  b5[243:324]=1;
+
+  // T is 1 for a two-liberty singleton and 2 for an atari singleton.
+  // The latter has exactly one missing liberty marker; subtracting
+  // twice its absence sum leaves only the two-liberty case.
+  W5[81:162,324:405]=eye(81);
+  W5[243:324,324:405]=-2*eye(81);
+  W5[405:486,324:405]=-2*eye(81);
+
+  W5[486:490,486:490]=eye(4);
+
+  // h6: move capture rewards into the positive positional accumulator.
+  // Reuse the former capture channel for explicit eye evidence.
+  W6[0:512,0:81]=0;
+  W6[162:243,0:81]=2*parent.W6[81:162,0:81];
+  W6[243:324,0:81]=parent.W5[81:162,324:405];
+  b6[0:81]=parent.b5[324:405];
+
+  W6[81:162,324:405]+=
+      capture_gain*parent.W6[81:162,0:81];
+
+  // Replace the old eye contribution with universal atari threats.
+  W6[324:405,324:405]=
+      atari_gain*parent.W6[81:162,0:81];
+
+  // Direct formulation of the existing self-atari penalty:
+  // relu(2-degree - own_neighbors/2 + opponent_neighbors
+  //      + 3*endangered_own_neighbors/2
+  //      - 2*endangered_opponent_neighbors).
+  W6[0:512,162:243]=0;
+  W6[0:81,162:243]=
+      3/2*parent.W6[81:162,0:81];
+  W6[81:162,162:243]=
+      -2*parent.W6[81:162,0:81];
+  W6[162:243,162:243]=
+      -1/2*parent.W6[81:162,0:81];
+  W6[243:324,162:243]=
+      parent.W6[81:162,0:81];
+  b6[162:243]=parent.b5[405:486];
+
+  // Remove retired feature inputs and spare producers.
+  W6[405:486,0:512]=0;
+  W6[490:512,0:512]=0;
+  W6[0:512,490:512]=0;
+  b6[490:512]=0;
+
+  // Other readout channels and calibrated offsets remain unchanged.
+  W7[0:81,0:81]=-eye_cost*eye(81);
+  W7[490:512,0:82]=0;
+}

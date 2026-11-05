@@ -54,6 +54,26 @@
       "manifest": "experiments/source_pins/diffusion_replay_v1.manifest.json",
       "sha256": "6c2420f54ce0d8bdff4640eb50271b8c3b7f646c23bdbc1fdb57ef9fd972b401"
     },
+    "go-authoring-resume-v1": {
+      "approval": "Approve this manifest and launch the Go recovery",
+      "approval_question_item_id": "call_fbd1b185e6c847b1bd291acd7761948a",
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/go_authoring_resume_v1.manifest.json",
+      "registered_utc": "2026-11-05T03:47:48.401965+00:00",
+      "sha256": "cf96be2cc6651cd382e27f77f7cfdc347b98a5a124e9e924c587e569fe3eb108"
+    },
+    "go-authoring-v1": {
+      "approval": "User explicitly selected Approve this manifest and launch the Go authoring screen on 2026-11-04",
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/go_authoring_v1.manifest.json",
+      "sha256": "dcf87c7a310ea245af2411152065b5c6e9593d1cbc576862562c522cdfe27f1d"
+    },
+    "go-replay-v1": {
+      "approval": "User explicitly selected Approve this manifest and launch the Go replay on 2026-11-04",
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/go_replay_v1.manifest.json",
+      "sha256": "a0044b77433bd6262a77e93454be06d0721e32c6eecaa136307471d1d44d600c"
+    },
     "kinetix-replay-v1": {
       "approval": "User explicitly selected Approve this manifest and launch the Kinetix replay",
       "approved_by": "user",

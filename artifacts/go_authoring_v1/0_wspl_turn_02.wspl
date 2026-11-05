@@ -1,0 +1,103 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Replace the redundant enemy-enclosure channel with weak-chain pressure.
+  // Legal-move masking and the existing capture alarms already identify
+  // captures made inside opposing enclosures.
+  W4[:,405:486]=0;
+  W5[:,405:486]=0;
+  W6[:,405:486]=0;
+  W7[405:486,:]=0;
+  b4[405:486]=-11/2;
+  b5[405:486]=0;
+  b6[405:486]=0;
+
+  for i in range(81) {
+    // Pressure is gated to opposing stones. The safety certificate and
+    // its neighboring values suppress pressure on locally secure chains.
+    // Friendly adjacency supplies a small chain-size correction.
+    W4[81+i,405+i]=8;
+    W4[243+i,405+i]=-1/2;
+
+    // Pressure is usable only when the placement is sufficiently safe.
+    W6[405+i,405+i]=1;
+    W6[162+i,405+i]=-4;
+
+    // Remove the old enclosure-specific risk exemption.
+    W6[405+i,162+i]=0;
+    W7[405+i,i]=5/2;
+  }
+
+  for t in range(2) {
+    for r in range(9) {
+      for c in range(8) {
+        // Extend the safety test across neighboring opposing stones.
+        W4[243+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]=-1/2;
+        W4[243+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]=-1/2;
+
+        // Local opposing-chain size correction.
+        W4[81+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]=1/4;
+        W4[81+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]=1/4;
+
+        // Transfer pressure from stones to adjacent candidate moves.
+        W5[405+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]=1;
+        W5[405+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]=1;
+
+        // Existing capture alarms already receive a substantial bonus.
+        // Remove their baseline pressure contribution, retaining only
+        // the small chain-size correction.
+        W5[81+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]=-5/2;
+        W5[81+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]=-5/2;
+
+        // Capture alarms supply the liberty-risk exemption formerly
+        // provided by the opponent-enclosure channel.
+        W5[81+r*(9-8*t)+(c+1)*(1+8*t),
+           162+r*(9-8*t)+c*(1+8*t)]=-2;
+        W5[81+r*(9-8*t)+c*(1+8*t),
+           162+r*(9-8*t)+(c+1)*(1+8*t)]=-2;
+      }
+    }
+  }
+
+  // Approximate score deficit, with a two-point tolerance:
+  // opponent stones - own stones
+  // + (opponent influence - own influence)/8
+  // + 7.5 - 15*White_to_move - 2.
+  // This is only a pass deterrent, not an asserted territory count.
+  W2[:,490]=0;
+  b2[490]=11/2;
+  W2[489,490]=-15;
+
+  for i in range(81) {
+    W2[i,490]=-1;
+    W2[81+i,490]=1;
+    W2[324+i,490]=-1/8;
+    W2[405+i,490]=1/8;
+  }
+
+  W3[:,490]=0;
+  W4[:,490]=0;
+  W5[:,490]=0;
+  W6[:,490]=0;
+  b3[490]=0;
+  b4[490]=0;
+  b5[490]=0;
+  b6[490]=0;
+
+  W3[490,490]=1;
+  W4[490,490]=1;
+  W5[490,490]=1;
+  W6[490,490]=1;
+
+  W7[490,:]=0;
+  W7[490,81]=-1/4;
+}

@@ -1,0 +1,19 @@
+{
+  "windows_launcher_pid": 42712,
+  "started_utc": "2026-11-04T22:03:07.1991185Z",
+  "manifest_sha256": "a0044b77433bd6262a77e93454be06d0721e32c6eecaa136307471d1d44d600c",
+  "output": "C:/Users/kevin/OneDrive/Desktop/Skillforge-go-replay-v1/results/go_replay_v1",
+  "command": "cd /mnt/c/Users/kevin/OneDrive/Desktop/Skillforge-go-replay-v1 && exec env JAX_PLATFORMS=cpu JAX_ENABLE_X64=false OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 CUDA_VISIBLE_DEVICES= PYTHONPATH= /home/kevin/venvs/skillforge-go/bin/python -u experiments/source_consistency.py run --model-id go-replay-v1 --output results/go_replay_v1",
+  "linux_pid": 476,
+  "source_receipt_status": "verified",
+  "constructor_calls": 1,
+  "startup_status": {
+    "status": "running",
+    "match": "budget_0_vs_s0",
+    "completed_in_match": 1664,
+    "completed_games": 1664,
+    "active_seconds": 18.586875191000004,
+    "last_batch_sha256": "0ba48b332c98d550da346e525b88989ff645c69b465fa2300a7c75910786ffbe"
+  },
+  "stderr_bytes": 0
+}

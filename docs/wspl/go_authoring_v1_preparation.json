@@ -1,0 +1,25 @@
+{
+  "status": "prepared_unapproved",
+  "manifest_sha256": "dcf87c7a310ea245af2411152065b5c6e9593d1cbc576862562c522cdfe27f1d",
+  "sources": 130,
+  "windows_resources": 1360,
+  "linux_resources": 4398,
+  "full_suite": {
+    "total": 470,
+    "passed": 461,
+    "skipped": 9
+  },
+  "separate_go_tests": 7,
+  "isolated_authoring_tests": 4,
+  "isolated_slice_tests": 3,
+  "planned_sessions": 6,
+  "max_steps_per_session": 8,
+  "max_model_calls": 48,
+  "planned_evaluation_games": 42000,
+  "model_calls": 0,
+  "scientific_games": 0,
+  "registered": false,
+  "launched": false,
+  "isolated_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\Skillforge-go-authoring-v1",
+  "scope": "Fresh visible-transcript construction sessions; no resumed hidden reasoning, no game feedback; smaller allowance than original study."
+}

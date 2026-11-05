@@ -164,6 +164,18 @@ class Arithmetic:
             except (ValueError, TypeError) as exc:
                 raise ValueError('rectangular numeric array required') from exc
         if isinstance(node, ast.Subscript):
+            # Preserve statement snapshots while boxing only the requested slice.
+            name=None;parent=False
+            if isinstance(node.value,ast.Name) and node.value.id in self.arrays and node.value.id not in self.constants:
+                name=node.value.id
+            elif isinstance(node.value,ast.Attribute) and isinstance(node.value.value,ast.Name) and node.value.value.id=='parent':
+                name=node.value.attr;parent=True
+            if name is not None:
+                bank=self.parent if parent else self.arrays
+                if name not in bank:raise ValueError('unknown tensor '+name)
+                selection,_=self.selection(node.slice,bank[name].shape,text)
+                a=np.asarray(bank[name][selection]);self.charge(a.size+1)
+                return np.array([Bits(int(x)) for x in a.flat],dtype=object).reshape(a.shape)
             a = self.eval(node.value, text)
             selection, _ = self.selection(node.slice, a.shape, text)
             return np.asarray(a[selection], dtype=object).copy()

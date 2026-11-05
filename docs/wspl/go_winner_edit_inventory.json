@@ -1,0 +1,98 @@
+[
+  {
+    "step": "turn_00",
+    "changed_parameters": 14551,
+    "changed_by_tensor": {
+      "W1": 5401,
+      "W2": 1677,
+      "W3": 1227,
+      "W4": 1227,
+      "W5": 2932,
+      "W6": 732,
+      "W7": 568,
+      "b1": 227,
+      "b2": 162,
+      "b3": 162,
+      "b5": 154,
+      "b7": 82
+    },
+    "nonzero": 14551
+  },
+  {
+    "step": "turn_01",
+    "changed_parameters": 8608,
+    "changed_by_tensor": {
+      "W1": 256,
+      "W2": 450,
+      "W3": 369,
+      "W4": 1269,
+      "W5": 2214,
+      "W6": 3078,
+      "W7": 243,
+      "b2": 81,
+      "b3": 81,
+      "b4": 243,
+      "b5": 81,
+      "b6": 243
+    },
+    "nonzero": 17925
+  },
+  {
+    "step": "turn_02",
+    "changed_parameters": 7554,
+    "changed_by_tensor": {
+      "W2": 1924,
+      "W3": 4824,
+      "W4": 162,
+      "b2": 158,
+      "b3": 324,
+      "b4": 162
+    },
+    "nonzero": 22999
+  },
+  {
+    "step": "turn_03",
+    "changed_parameters": 8793,
+    "changed_by_tensor": {
+      "W3": 3393,
+      "W4": 369,
+      "W5": 3681,
+      "W6": 945,
+      "W7": 81,
+      "b3": 81,
+      "b4": 81,
+      "b5": 81,
+      "b6": 81
+    },
+    "nonzero": 23980
+  },
+  {
+    "step": "turn_04",
+    "changed_parameters": 5671,
+    "changed_by_tensor": {
+      "W1": 3892,
+      "W2": 1536,
+      "b1": 81,
+      "b2": 162
+    },
+    "nonzero": 20512
+  },
+  {
+    "step": "turn_05",
+    "changed_parameters": 981,
+    "changed_by_tensor": {
+      "W3": 162,
+      "W5": 657,
+      "b3": 162
+    },
+    "nonzero": 20674
+  },
+  {
+    "step": "turn_06",
+    "changed_parameters": 256,
+    "changed_by_tensor": {
+      "W5": 256
+    },
+    "nonzero": 20674
+  }
+]

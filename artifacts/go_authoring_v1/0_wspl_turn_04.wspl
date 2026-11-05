@@ -1,0 +1,81 @@
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // h3 color encoding: 2 for own, 1 for empty, 0 for opponent.
+  // The freed plane measures direct placement-liberty shortage.
+  W3[:,0:162]=0;
+  W3[:,405:486]=0;
+  b3[0:162]=0;
+  b3[405:486]=0;
+
+  // Decode colors at h4 and adapt the existing propagation gates.
+  W4[:,0:162]=0;
+  W4[0:162,162:324]=0;
+  W4[:,405:486]=0;
+  b4[0:162]=0;
+  b4[405:486]=0;
+
+  for i in range(81) {
+    W3[i,i]=1;
+    W3[81+i,i]=-1;
+    b3[i]=1;
+
+    // F = relu(3 - 2*direct_empty_neighbors).
+    // F is 3, 1, or 0 for zero, one, or at least two liberties.
+    b3[81+i]=3;
+
+    // C is the existing local friendly-chain certificate.
+    // R = relu(2*C - 3).
+    // A stone with two direct liberties supplies R >= 1;
+    // a stronger certificate can eliminate a larger shortage.
+    W3[162+i,405+i]=2;
+    b3[405+i]=-3;
+
+    // Recover exact binary color indicators.
+    W4[i,i]=1;
+    b4[i]=-1;
+    W4[i,81+i]=-1;
+    b4[81+i]=1;
+
+    // Preserve same-color chain propagation with the new encoding.
+    W4[i,162+i]=512;
+    b4[162+i]=-1024;
+    W4[i,243+i]=-512;
+    b4[243+i]=0;
+
+    // Placement risk = relu(F - neighboring friendly R).
+    W4[81+i,405+i]=1;
+  }
+
+  for t in range(2) {
+    for r in range(9) {
+      for c in range(8) {
+        for p in range(2) {
+          // Count occupied neighbors when constructing F.
+          W3[81*p+r*(9-8*t)+(c+1)*(1+8*t),
+             81+r*(9-8*t)+c*(1+8*t)]+=2;
+          W3[81*p+r*(9-8*t)+c*(1+8*t),
+             81+r*(9-8*t)+(c+1)*(1+8*t)]+=2;
+        }
+
+        b3[81+r*(9-8*t)+c*(1+8*t)]-=2;
+        b3[81+r*(9-8*t)+(c+1)*(1+8*t)]-=2;
+
+        // Direct liberties of adjacent stones are disjoint from
+        // the candidate's direct liberties. The larger zero-liberty
+        // shortage guards against double-counting shared liberties.
+        W4[405+r*(9-8*t)+(c+1)*(1+8*t),
+           405+r*(9-8*t)+c*(1+8*t)]=-1;
+        W4[405+r*(9-8*t)+c*(1+8*t),
+           405+r*(9-8*t)+(c+1)*(1+8*t)]=-1;
+
+        // Match the capture exemption to the new maximum shortage.
+        W6[81+r*(9-8*t)+(c+1)*(1+8*t),
+           162+r*(9-8*t)+c*(1+8*t)]=-3;
+        W6[81+r*(9-8*t)+c*(1+8*t),
+           162+r*(9-8*t)+(c+1)*(1+8*t)]=-3;
+      }
+    }
+  }
+}
