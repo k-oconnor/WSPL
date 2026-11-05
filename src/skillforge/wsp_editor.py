@@ -6,6 +6,7 @@ import argparse
 import ast
 from dataclasses import dataclass, asdict
 from fractions import Fraction
+import functools
 import hashlib
 import io
 import json
@@ -21,6 +22,7 @@ from .wsp_syntax import parse, expression
 from .wsp_circuit import place
 
 
+@functools.lru_cache(maxsize=None)
 def implementation_id():
     paths = ('wsp_artifact.py', 'wsp_syntax.py', 'wsp_values.py', 'wsp_circuit.py',
              'wsp_editor.py', 'wsp_evidence.py', 'wsp_graph.py', 'wsp_surgery.py',
@@ -65,7 +67,7 @@ def _target(record, parent, limits):
             raise ValueError('artifact requires a name and exact sha256')
         if parent is None or parent.sha256 != kwargs['sha256']:
             raise ValueError('missing parent or artifact identity differs')
-        return TensorArtifact(parent.to_dict(), max_elements=limits.max_elements)
+        return parent.within(limits.max_elements)  # Immutable; only the element limit can differ.
     raise ValueError('unsupported target constructor')
 
 
@@ -92,7 +94,7 @@ class Builder:
     def __init__(self, parent, bindings, limits):
         self.parent = parent
         self.base = parent
-        self.parent_graph = parent.to_dict()['graph']
+        self.parent_graph = parent.graph
         self.graph_context = None
         self.arrays = parent.arrays(bits=True)
         self.arithmetic = Arithmetic(self.arrays, parent.arrays(bits=True), {}, bindings, limits)
@@ -176,7 +178,7 @@ class Builder:
         self.writes[-1]['clipped_slice'] = bool(clipped)
         if self.parent_graph['kind']=='dag':
             from .wsp_graph import parameter_uses
-            self.writes[-1]['parameter_users']=parameter_uses(self.base.to_dict()['graph']).get(name,[])
+            self.writes[-1]['parameter_users']=parameter_uses(self.base.graph).get(name,[])
         for p in self.placements:
             p['later_edits_may_invalidate'] = True  # Conservative until dependency analysis.
 
@@ -281,7 +283,7 @@ def plan(source, *, parent=None, bindings=None, limits=Limits(), artifacts=None,
         descriptions.append(describe(artifact, d).to_dict())
     changed = diff(parent, candidate, limit=0)
     body = dict(format='wsp.edit_plan.v1', implementation_id=implementation_id(), source=source,
-                parent=parent.to_dict(), parent_id=parent.sha256, candidate=candidate.to_dict(), candidate_id=candidate.sha256,
+                parent=parent.document(), parent_id=parent.sha256, candidate=candidate.document(), candidate_id=candidate.sha256,
                 limits=asdict(limits), bindings={k:pack(v) for k,v in bound.items()}, numeric_profile=profile,
                 native_runtime=dict(numpy=np.__version__) if profile=='native_numpy_v1' else None,
                 writes=builder.writes, placements=builder.placements, descriptions=descriptions,
@@ -290,7 +292,9 @@ def plan(source, *, parent=None, bindings=None, limits=Limits(), artifacts=None,
                 touched={k:sorted(v) for k,v in builder.touched.items()}, diff=changed,
                 graph_edits=builder.graph_context.receipt() if builder.graph_context else None,
                 status='NO_CHANGE' if candidate.sha256==parent.sha256 else 'STAGED', admission='not_performed')
-    return EditPlan(canonical(body))
+    staged = EditPlan(canonical(body))
+    object.__setattr__(staged, '_candidate', candidate)  # Cache only; identity is the text.
+    return staged
 
 
 def apply(edit_plan, *, parent, expected_parent_id):
@@ -309,7 +313,8 @@ def apply(edit_plan, *, parent, expected_parent_id):
                   artifacts=artifacts,budgets=budgets)
     if replay.sha256 != edit_plan.sha256:
         raise ValueError('plan replay differs; source/receipt/candidate tampering')
-    return TensorArtifact(replay.to_dict()['candidate'], max_elements=limits.max_elements)
+    # Equal plan text implies this is exactly the recorded candidate document.
+    return replay._candidate.within(limits.max_elements)
 
 
 def import_legacy(answer):

@@ -1,6 +1,7 @@
 """Bounded, data-only WSPL 0.2 structural parser. No proposal execution."""
 from dataclasses import dataclass
 import ast
+import functools
 import re
 
 
@@ -281,6 +282,13 @@ class Reader:
 
 
 def expression(text, *, mode='eval'):
+    # Construction loops re-run identical statement text; parse each once.
+    # Callers treat the returned tree as read-only.
+    return _expression(text, mode)
+
+
+@functools.lru_cache(maxsize=8192)
+def _expression(text, mode):
     try:
         tree = ast.parse(text, mode=mode)
     except (SyntaxError, RecursionError) as exc:
