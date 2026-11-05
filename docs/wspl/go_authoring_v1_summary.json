@@ -1,0 +1,394 @@
+{
+  "status": "complete",
+  "active_seconds": 6714.53199999989,
+  "manifest_sha256": "cf96be2cc6651cd382e27f77f7cfdc347b98a5a124e9e924c587e569fe3eb108",
+  "evaluations": {
+    "0_python": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 948,
+          "win_rate": 0.474,
+          "ci95_wilson": [
+            0.45218735524878717,
+            0.4959123312098378
+          ],
+          "color_wins": [
+            389,
+            559
+          ],
+          "mean_length": 100.6985
+        },
+        "1": {
+          "games": 2000,
+          "wins": 689,
+          "win_rate": 0.3445,
+          "ci95_wilson": [
+            0.32398954487377196,
+            0.3656066568306976
+          ],
+          "color_wins": [
+            262,
+            427
+          ],
+          "mean_length": 97.9725
+        },
+        "2": {
+          "games": 2000,
+          "wins": 914,
+          "win_rate": 0.457,
+          "ci95_wilson": [
+            0.4352713350530484,
+            0.47889353101313925
+          ],
+          "color_wins": [
+            376,
+            538
+          ],
+          "mean_length": 102.83
+        }
+      },
+      "mean_win_rate": 0.4251666666666667,
+      "active_seconds": 60.315319152
+    },
+    "0_wspl": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 830,
+          "win_rate": 0.415,
+          "ci95_wilson": [
+            0.39358894368635533,
+            0.43673695435145754
+          ],
+          "color_wins": [
+            303,
+            527
+          ],
+          "mean_length": 102.253
+        },
+        "1": {
+          "games": 2000,
+          "wins": 639,
+          "win_rate": 0.3195,
+          "ci95_wilson": [
+            0.29942731808054834,
+            0.3402647359879839
+          ],
+          "color_wins": [
+            228,
+            411
+          ],
+          "mean_length": 100.6045
+        },
+        "2": {
+          "games": 2000,
+          "wins": 828,
+          "win_rate": 0.414,
+          "ci95_wilson": [
+            0.39259844495741614,
+            0.43573128717495924
+          ],
+          "color_wins": [
+            324,
+            504
+          ],
+          "mean_length": 103.3045
+        }
+      },
+      "mean_win_rate": 0.3828333333333333,
+      "active_seconds": 61.68787209000001
+    },
+    "1_wspl": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 715,
+          "win_rate": 0.3575,
+          "ci95_wilson": [
+            0.3367872695395422,
+            0.37875908893561483
+          ],
+          "color_wins": [
+            183,
+            532
+          ],
+          "mean_length": 101.4545
+        },
+        "1": {
+          "games": 2000,
+          "wins": 470,
+          "win_rate": 0.235,
+          "ci95_wilson": [
+            0.2169366617147952,
+            0.2540793733442688
+          ],
+          "color_wins": [
+            143,
+            327
+          ],
+          "mean_length": 97.7215
+        },
+        "2": {
+          "games": 2000,
+          "wins": 670,
+          "win_rate": 0.335,
+          "ci95_wilson": [
+            0.3146482151175497,
+            0.35598441048526375
+          ],
+          "color_wins": [
+            190,
+            480
+          ],
+          "mean_length": 101.3915
+        }
+      },
+      "mean_win_rate": 0.30916666666666665,
+      "active_seconds": 61.308838821999984
+    },
+    "1_python": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 759,
+          "win_rate": 0.3795,
+          "ci95_wilson": [
+            0.35848296481803094,
+            0.4009790435767509
+          ],
+          "color_wins": [
+            271,
+            488
+          ],
+          "mean_length": 94.1945
+        },
+        "1": {
+          "games": 2000,
+          "wins": 503,
+          "win_rate": 0.2515,
+          "ci95_wilson": [
+            0.23297357642562866,
+            0.270979196073154
+          ],
+          "color_wins": [
+            172,
+            331
+          ],
+          "mean_length": 90.2215
+        },
+        "2": {
+          "games": 2000,
+          "wins": 698,
+          "win_rate": 0.349,
+          "ci95_wilson": [
+            0.32841760262465747,
+            0.3701613456542808
+          ],
+          "color_wins": [
+            300,
+            398
+          ],
+          "mean_length": 93.9215
+        }
+      },
+      "mean_win_rate": 0.32666666666666666,
+      "active_seconds": 59.324308126999995
+    },
+    "2_python": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 512,
+          "win_rate": 0.256,
+          "ci95_wilson": [
+            0.23735369946659707,
+            0.27558181960665434
+          ],
+          "color_wins": [
+            157,
+            355
+          ],
+          "mean_length": 96.934
+        },
+        "1": {
+          "games": 2000,
+          "wins": 318,
+          "win_rate": 0.159,
+          "ci95_wilson": [
+            0.14362957550964012,
+            0.17567785073617437
+          ],
+          "color_wins": [
+            94,
+            224
+          ],
+          "mean_length": 93.5495
+        },
+        "2": {
+          "games": 2000,
+          "wins": 449,
+          "win_rate": 0.2245,
+          "ci95_wilson": [
+            0.20675148405284127,
+            0.24330480899912904
+          ],
+          "color_wins": [
+            150,
+            299
+          ],
+          "mean_length": 96.014
+        }
+      },
+      "mean_win_rate": 0.2131666666666667,
+      "active_seconds": 59.19479857900001
+    },
+    "2_wspl": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1155,
+          "win_rate": 0.5775,
+          "ci95_wilson": [
+            0.5557234463021639,
+            0.5989794113692419
+          ],
+          "color_wins": [
+            505,
+            650
+          ],
+          "mean_length": 110.4925
+        },
+        "1": {
+          "games": 2000,
+          "wins": 834,
+          "win_rate": 0.417,
+          "ci95_wilson": [
+            0.39557021501833134,
+            0.4387480148303565
+          ],
+          "color_wins": [
+            351,
+            483
+          ],
+          "mean_length": 106.9645
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1140,
+          "win_rate": 0.57,
+          "ci95_wilson": [
+            0.5481889458364095,
+            0.591542667544215
+          ],
+          "color_wins": [
+            526,
+            614
+          ],
+          "mean_length": 111.4265
+        }
+      },
+      "mean_win_rate": 0.5215,
+      "active_seconds": 59.603783604
+    },
+    "zero_control": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 41,
+          "win_rate": 0.0205,
+          "ci95_wilson": [
+            0.01514715886374858,
+            0.02769128947897298
+          ],
+          "color_wins": [
+            23,
+            18
+          ],
+          "mean_length": 118.1735
+        },
+        "1": {
+          "games": 2000,
+          "wins": 28,
+          "win_rate": 0.014,
+          "ci95_wilson": [
+            0.009703783146220175,
+            0.020159586811157672
+          ],
+          "color_wins": [
+            14,
+            14
+          ],
+          "mean_length": 119.2825
+        },
+        "2": {
+          "games": 2000,
+          "wins": 28,
+          "win_rate": 0.014,
+          "ci95_wilson": [
+            0.009703783146220175,
+            0.020159586811157672
+          ],
+          "color_wins": [
+            13,
+            15
+          ],
+          "mean_length": 119.869
+        }
+      },
+      "mean_win_rate": 0.016166666666666666,
+      "active_seconds": 59.40812847900003
+    }
+  },
+  "trials": [
+    {
+      "name": "0_python",
+      "status": "frozen",
+      "termination": "author_final",
+      "final_sha256": "1b95a981dbab4f9fe61916f215d296856ec8dac8f03eaa21c731a0fa2d5d4138",
+      "steps": 8
+    },
+    {
+      "name": "0_wspl",
+      "status": "frozen",
+      "termination": "author_final",
+      "final_sha256": "2001624b1880d21570ebb47a47a054ffb1fa927a8936966e9b652d0a0275f333",
+      "steps": 7
+    },
+    {
+      "name": "1_wspl",
+      "status": "frozen",
+      "termination": "author_final",
+      "final_sha256": "6bf256e3e4d26c7630fc3ec1c6783307cf33f587d0a06d250208b0e6494e0fc4",
+      "steps": 8
+    },
+    {
+      "name": "1_python",
+      "status": "frozen",
+      "termination": "author_final",
+      "final_sha256": "bbd1efd4f1c989a5f60438b27443e69bb27147677b242519938ac62e95ff9a9d",
+      "steps": 8
+    },
+    {
+      "name": "2_python",
+      "status": "frozen",
+      "termination": "author_final",
+      "final_sha256": "bbc94c24a689d507980b19a4b2a0914aa8b1e391bc7998f26e07ad0d409fa533",
+      "steps": 6
+    },
+    {
+      "name": "2_wspl",
+      "status": "frozen",
+      "termination": "author_final",
+      "final_sha256": "1f9c8bebdfc1a26225dc1251da1eb0b100417425fbd490ce9a99a5d15c320e3f",
+      "steps": 8
+    }
+  ]
+}

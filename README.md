@@ -287,6 +287,43 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 
 ## Experiments
 
+### Go: constructing neural policies without gameplay feedback
+
+Six Astra/xhigh sessions programmed a fixed 1.48M-parameter ReLU policy from
+zero weights: three using Python/NumPy, three using WSPL. Each had up to eight
+response/construction steps, with construction diagnostics but no gameplay,
+policy-output feedback or gradient training. All candidates were frozen before
+42,000 CPU games against three same-size PPO opponents, including a zero control.
+
+| Authoring draw | Python/NumPy win rate | WSPL win rate | WSPL minus Python |
+| --- | ---: | ---: | ---: |
+| 1 | 42.52% | 38.28% | -4.23 pp |
+| 2 | 32.67% | 30.92% | -1.75 pp |
+| 3 | 21.32% | **52.15%** | **+30.83 pp** |
+| Mean | 32.17% | **40.45%** | **+8.28 pp** |
+
+Rates average 6,000 games per policy over the three opponents. Zero control:
+1.62%. WSPL's best policy exceeds the best Python policy by 9.63 percentage
+points. The large third-pair win outweighs two smaller losses, but three authoring
+replicates do not establish a reliable language advantage. These are opponent
+win rates, not direct Python-versus-WSPL matches.
+
+The strongest WSPL session repeatedly refactored explicit liberty, vulnerability,
+connection and eye-handling computations inside the fixed network, using tensor
+edits, loops, slices and parent references. It did not use graph growth or the
+high-level circuit-placement syntax. Semantic correctness of its claimed
+"certificates" and the contribution of individual edits remain unverified.
+Python also produced explicit tactical circuits. WSPL used more reported input
+and output tokens in this screen; there is no token-efficiency win here.
+
+One Python request timed out before returning an answer. Recovery preserved four
+frozen candidates byte-for-byte and completed the remaining pair; the failed
+call's usage is unknown. All six candidates constructed successfully. This is a
+smaller construction-budget screen than the original CSAIL experiment, not a
+strict reproduction. See the [results and accounting](docs/wspl/GO_AUTHORING_V1_RESULTS.md),
+[protocol](docs/wspl/GO_AUTHORING_V1.md), and
+[recovery protocol](docs/wspl/GO_AUTHORING_RESUME_V1.md).
+
 ### Diffusion: controlled coordinate editing
 
 [Released-model replay](docs/wspl/DIFFUSION_REPLAY_V1_RESULTS.md) produced 3,072
