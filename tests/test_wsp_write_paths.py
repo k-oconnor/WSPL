@@ -110,6 +110,16 @@ class WritePathTests(unittest.TestCase):
                     steps = [('A', (slice(None),), value, op)]
                     self.assertEqual(run(parent, steps, Limits(), True), run(parent, steps, Limits(), False))
 
+    def test_mixed_types_with_equal_hashes(self):
+        # Fraction(1), 1 and True hash equal; only the rational is a valid value.
+        parent = TensorArtifact.from_arrays({'A': np.ones(3, np.float32)})
+        for op in ('=', '+=', '*='):
+            for value in (np.array([Fraction(1), 1, Fraction(1)], dtype=object), np.array([Fraction(1), True, 2], dtype=object),
+                          np.array([Bits(0x3f800000), Fraction(1), 1], dtype=object)):
+                with self.subTest(op=op, value=value):
+                    steps = [('A', (slice(None),), value, op)]
+                    self.assertEqual(run(parent, steps, Limits(), True), run(parent, steps, Limits(), False))
+
     def test_plan_level_programs_match_reference(self):
         rng = np.random.default_rng(5)
         a = rng.standard_normal((8, 8)).astype(np.float32); a[0, 0] = -0.0
