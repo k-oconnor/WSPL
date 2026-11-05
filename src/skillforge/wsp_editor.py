@@ -114,10 +114,28 @@ class Builder:
         self.arithmetic.charge(max(1,target.size)*(len(selection)+1))
         indices = selected_flat_indices(self.arrays[name].shape,selection)
         self.arithmetic.charge(target.size)
+        rhs = np.asarray(value)
         try:
             value = np.broadcast_to(value, target.shape)
         except ValueError as exc:
             raise ValueError('RHS does not broadcast to selected shape') from exc
+        fast = self._fast_words(op, target, rhs)
+        if fast is None:
+            converted = self._reference_words(name, op, target, value, indices)
+        else:
+            converted, rounded, requested = fast
+            positions = np.flatnonzero(rounded)
+            self.rounded_count += len(positions)
+            for pos in positions[:max(0, 64-len(self.rounding))].tolist():
+                word = int(converted.flat[pos])
+                self.rounding.append(dict(tensor=name, flat_index=int(np.asarray(indices).flat[pos]), requested=requested(pos),
+                                          stored=str(fraction(word)), bits=f'{word:08x}'))
+        self.arrays[name][selection] = np.asarray(converted, dtype=np.uint32).reshape(target.shape)
+        self.touched.setdefault(name, []).append(np.asarray(indices, dtype=np.int64).reshape(-1))
+        self.writes.append(dict(tensor=name, flat_indices=np.asarray(indices).reshape(-1).tolist(), operator=op, source_span=span, origin=label, selected_shape=list(target.shape), empty=target.size==0))
+
+    def _reference_words(self, name, op, target, value, indices):
+        """Original element-wise exact path; also the fallback for every edge case."""
         converted = []
         for flat, old, item in zip(np.asarray(indices).flat, target.flat, value.flat):
             if op != '=':
@@ -133,9 +151,103 @@ class Builder:
                     if len(self.rounding) < 64:
                         self.rounding.append(dict(tensor=name, flat_index=int(flat), requested=str(item), stored=str(fraction(word)), bits=f'{word:08x}'))
             converted.append(word)
-        self.arrays[name][selection] = np.array(converted, dtype=np.uint32).reshape(target.shape)
-        self.touched.setdefault(name, set()).update(map(int, np.asarray(indices).flat))
-        self.writes.append(dict(tensor=name, flat_indices=list(map(int, np.asarray(indices).flat)), operator=op, source_span=span, origin=label, selected_shape=list(target.shape), empty=target.size==0))
+        return converted
+
+    def _fast_words(self, op, target, rhs):
+        """Same words, rounding flags and requested values as _reference_words.
+
+        Returns None whenever exactness or an error cannot be decided cheaply;
+        the caller then runs the reference path, which raises any error itself.
+        Nothing here mutates builder state.
+        """
+        # Every float64 is a dyadic rational with < 1100-bit numerator/denominator,
+        # so the reference precision check cannot fire on float64-exact values.
+        if self.limits.max_integer_bits < 1100 or target.size == 0:
+            return None
+        if rhs.dtype != object:
+            return None
+        # Work per RHS element (before broadcasting), then broadcast the results.
+        base = rhs
+        items = base.reshape(-1)
+        cache = {}
+        if op == '=':
+            words = np.empty(items.size, np.uint32); rounded = np.zeros(items.size, bool); exact = []
+            for i, item in enumerate(items.tolist()):
+                hit = cache.get(item)
+                if hit is None:
+                    if isinstance(item, Bits):
+                        hit = (item.value, False)
+                    elif type(item) is Fraction:
+                        try:
+                            self.arithmetic.bounded(np.array(item, dtype=object))
+                            word = round_f32(item)
+                        except (ValueError, OverflowError):
+                            return None
+                        hit = (word, fraction(word) != item)
+                    else:
+                        return None
+                    cache[item] = hit
+                words[i], rounded[i] = hit
+                exact.append(item)
+            exact = np.array(exact, dtype=object)
+            words = np.broadcast_to(words.reshape(base.shape), target.shape).reshape(-1)
+            rounded = np.broadcast_to(rounded.reshape(base.shape), target.shape).reshape(-1)
+            exact = np.broadcast_to(exact.reshape(base.shape), target.shape).reshape(-1)
+            return words.copy(), rounded, lambda pos: str(exact[pos])
+        # Augmented ops: exact float64 arithmetic where provably exact.
+        rhs = np.empty(items.size, np.float64)
+        for i, item in enumerate(items.tolist()):
+            hit = cache.get(item)
+            if hit is None:
+                if isinstance(item, Bits):
+                    q = fraction(item.value)
+                elif type(item) is Fraction:
+                    q = item
+                else:
+                    return None
+                try:
+                    f = float(q)
+                except OverflowError:
+                    return None
+                # Products need a 24-bit RHS to stay exact; sums need an exact float64 RHS.
+                with np.errstate(over='ignore'):
+                    single = float(np.float32(f))
+                if Fraction(f) != q or (op == '*=' and single != f):
+                    return None
+                hit = cache[item] = f
+            rhs[i] = hit
+        b = np.broadcast_to(rhs.reshape(base.shape), target.shape).reshape(-1)
+        a = np.ascontiguousarray(target).reshape(-1).view(np.float32).astype(np.float64)
+        with np.errstate(over='ignore', invalid='ignore'):
+            if op == '*=':
+                result = a*b; inexact = np.zeros(result.size, bool)
+            else:
+                b = b if op == '+=' else -b
+                result = a+b
+                back = result-a  # TwoSum: error is zero iff the float64 sum is exact.
+                inexact = ((a-(result-back))+(b-back)) != 0
+            single = result.astype(np.float32)
+        if not np.isfinite(result).all() or not np.isfinite(single).all():
+            return None
+        words = single.view(np.uint32).copy()
+        words[result == 0] = 0  # Exact rational zero is +0, as Fraction rounding gives.
+        rounded = single.astype(np.float64) != result
+        slow = np.flatnonzero(inexact)
+        exact_slow = {}
+        if len(slow):
+            olds = np.ascontiguousarray(target).reshape(-1)
+            spread = np.broadcast_to(base, target.shape).reshape(-1)
+        for pos in slow.tolist():
+            old, item = olds[pos], spread[pos]
+            x, y = fraction(old), fraction(item.value) if isinstance(item, Bits) else item
+            q = x+y if op == '+=' else x-y
+            try:
+                self.arithmetic.bounded(np.array(q, dtype=object))
+                word = round_f32(q)
+            except (ValueError, OverflowError):
+                return None
+            words[pos] = word; rounded[pos] = fraction(word) != q; exact_slow[pos] = q
+        return words, rounded, lambda pos: str(exact_slow[pos] if pos in exact_slow else Fraction(float(result[pos])))
 
     def raw(self, row, profile):
         text = row['text']; tree = expression(text, mode='exec')
@@ -289,7 +401,7 @@ def plan(source, *, parent=None, bindings=None, limits=Limits(), artifacts=None,
                 writes=builder.writes, placements=builder.placements, descriptions=descriptions,
                 rounding=dict(changed=builder.rounded_count, examples=builder.rounding),
                 resources=dict(statements=builder.statements, loop_iterations=builder.loop_iterations, operations=builder.arithmetic.operations),
-                touched={k:sorted(v) for k,v in builder.touched.items()}, diff=changed,
+                touched={k:np.unique(np.concatenate(v)).tolist() if v else [] for k,v in builder.touched.items()}, diff=changed,
                 graph_edits=builder.graph_context.receipt() if builder.graph_context else None,
                 status='NO_CHANGE' if candidate.sha256==parent.sha256 else 'STAGED', admission='not_performed')
     staged = EditPlan(canonical(body))
