@@ -6,6 +6,7 @@ import argparse
 import ast
 from dataclasses import dataclass, asdict
 from fractions import Fraction
+import functools
 import hashlib
 import io
 import json
@@ -21,6 +22,7 @@ from .wsp_syntax import parse, expression
 from .wsp_circuit import place
 
 
+@functools.lru_cache(maxsize=None)
 def implementation_id():
     paths = ('wsp_artifact.py', 'wsp_syntax.py', 'wsp_values.py', 'wsp_circuit.py',
              'wsp_editor.py', 'wsp_evidence.py', 'wsp_graph.py', 'wsp_surgery.py',
@@ -65,7 +67,7 @@ def _target(record, parent, limits):
             raise ValueError('artifact requires a name and exact sha256')
         if parent is None or parent.sha256 != kwargs['sha256']:
             raise ValueError('missing parent or artifact identity differs')
-        return TensorArtifact(parent.to_dict(), max_elements=limits.max_elements)
+        return parent.within(limits.max_elements)  # Immutable; only the element limit can differ.
     raise ValueError('unsupported target constructor')
 
 
@@ -92,7 +94,7 @@ class Builder:
     def __init__(self, parent, bindings, limits):
         self.parent = parent
         self.base = parent
-        self.parent_graph = parent.to_dict()['graph']
+        self.parent_graph = parent.graph
         self.graph_context = None
         self.arrays = parent.arrays(bits=True)
         self.arithmetic = Arithmetic(self.arrays, parent.arrays(bits=True), {}, bindings, limits)
@@ -112,10 +114,28 @@ class Builder:
         self.arithmetic.charge(max(1,target.size)*(len(selection)+1))
         indices = selected_flat_indices(self.arrays[name].shape,selection)
         self.arithmetic.charge(target.size)
+        rhs = np.asarray(value)
         try:
             value = np.broadcast_to(value, target.shape)
         except ValueError as exc:
             raise ValueError('RHS does not broadcast to selected shape') from exc
+        fast = self._fast_words(op, target, rhs)
+        if fast is None:
+            converted = self._reference_words(name, op, target, value, indices)
+        else:
+            converted, rounded, requested = fast
+            positions = np.flatnonzero(rounded)
+            self.rounded_count += len(positions)
+            for pos in positions[:max(0, 64-len(self.rounding))].tolist():
+                word = int(converted.flat[pos])
+                self.rounding.append(dict(tensor=name, flat_index=int(np.asarray(indices).flat[pos]), requested=requested(pos),
+                                          stored=str(fraction(word)), bits=f'{word:08x}'))
+        self.arrays[name][selection] = np.asarray(converted, dtype=np.uint32).reshape(target.shape)
+        self.touched.setdefault(name, []).append(np.asarray(indices, dtype=np.int64).reshape(-1))
+        self.writes.append(dict(tensor=name, flat_indices=np.asarray(indices).reshape(-1).tolist(), operator=op, source_span=span, origin=label, selected_shape=list(target.shape), empty=target.size==0))
+
+    def _reference_words(self, name, op, target, value, indices):
+        """Original element-wise exact path; also the fallback for every edge case."""
         converted = []
         for flat, old, item in zip(np.asarray(indices).flat, target.flat, value.flat):
             if op != '=':
@@ -131,9 +151,103 @@ class Builder:
                     if len(self.rounding) < 64:
                         self.rounding.append(dict(tensor=name, flat_index=int(flat), requested=str(item), stored=str(fraction(word)), bits=f'{word:08x}'))
             converted.append(word)
-        self.arrays[name][selection] = np.array(converted, dtype=np.uint32).reshape(target.shape)
-        self.touched.setdefault(name, set()).update(map(int, np.asarray(indices).flat))
-        self.writes.append(dict(tensor=name, flat_indices=list(map(int, np.asarray(indices).flat)), operator=op, source_span=span, origin=label, selected_shape=list(target.shape), empty=target.size==0))
+        return converted
+
+    def _fast_words(self, op, target, rhs):
+        """Same words, rounding flags and requested values as _reference_words.
+
+        Returns None whenever exactness or an error cannot be decided cheaply;
+        the caller then runs the reference path, which raises any error itself.
+        Nothing here mutates builder state.
+        """
+        # Every float64 is a dyadic rational with < 1100-bit numerator/denominator,
+        # so the reference precision check cannot fire on float64-exact values.
+        if self.limits.max_integer_bits < 1100 or target.size == 0:
+            return None
+        if rhs.dtype != object:
+            return None
+        # Work per RHS element (before broadcasting), then broadcast the results.
+        base = rhs
+        items = base.reshape(-1)
+        cache = {}
+        if op == '=':
+            words = np.empty(items.size, np.uint32); rounded = np.zeros(items.size, bool); exact = []
+            for i, item in enumerate(items.tolist()):
+                hit = cache.get((type(item), item))  # Fraction(1) == 1 == True; keep types apart.
+                if hit is None:
+                    if isinstance(item, Bits):
+                        hit = (item.value, False)
+                    elif type(item) is Fraction:
+                        try:
+                            self.arithmetic.bounded(np.array(item, dtype=object))
+                            word = round_f32(item)
+                        except (ValueError, OverflowError):
+                            return None
+                        hit = (word, fraction(word) != item)
+                    else:
+                        return None
+                    cache[(type(item), item)] = hit
+                words[i], rounded[i] = hit
+                exact.append(item)
+            exact = np.array(exact, dtype=object)
+            words = np.broadcast_to(words.reshape(base.shape), target.shape).reshape(-1)
+            rounded = np.broadcast_to(rounded.reshape(base.shape), target.shape).reshape(-1)
+            exact = np.broadcast_to(exact.reshape(base.shape), target.shape).reshape(-1)
+            return words.copy(), rounded, lambda pos: str(exact[pos])
+        # Augmented ops: exact float64 arithmetic where provably exact.
+        rhs = np.empty(items.size, np.float64)
+        for i, item in enumerate(items.tolist()):
+            hit = cache.get((type(item), item))  # Fraction(1) == 1 == True; keep types apart.
+            if hit is None:
+                if isinstance(item, Bits):
+                    q = fraction(item.value)
+                elif type(item) is Fraction:
+                    q = item
+                else:
+                    return None
+                try:
+                    f = float(q)
+                except OverflowError:
+                    return None
+                # Products need a 24-bit RHS to stay exact; sums need an exact float64 RHS.
+                with np.errstate(over='ignore'):
+                    single = float(np.float32(f))
+                if Fraction(f) != q or (op == '*=' and single != f):
+                    return None
+                hit = cache[(type(item), item)] = f
+            rhs[i] = hit
+        b = np.broadcast_to(rhs.reshape(base.shape), target.shape).reshape(-1)
+        a = np.ascontiguousarray(target).reshape(-1).view(np.float32).astype(np.float64)
+        with np.errstate(over='ignore', invalid='ignore'):
+            if op == '*=':
+                result = a*b; inexact = np.zeros(result.size, bool)
+            else:
+                b = b if op == '+=' else -b
+                result = a+b
+                back = result-a  # TwoSum: error is zero iff the float64 sum is exact.
+                inexact = ((a-(result-back))+(b-back)) != 0
+            single = result.astype(np.float32)
+        if not np.isfinite(result).all() or not np.isfinite(single).all():
+            return None
+        words = single.view(np.uint32).copy()
+        words[result == 0] = 0  # Exact rational zero is +0, as Fraction rounding gives.
+        rounded = single.astype(np.float64) != result
+        slow = np.flatnonzero(inexact)
+        exact_slow = {}
+        if len(slow):
+            olds = np.ascontiguousarray(target).reshape(-1)
+            spread = np.broadcast_to(base, target.shape).reshape(-1)
+        for pos in slow.tolist():
+            old, item = olds[pos], spread[pos]
+            x, y = fraction(old), fraction(item.value) if isinstance(item, Bits) else item
+            q = x+y if op == '+=' else x-y
+            try:
+                self.arithmetic.bounded(np.array(q, dtype=object))
+                word = round_f32(q)
+            except (ValueError, OverflowError):
+                return None
+            words[pos] = word; rounded[pos] = fraction(word) != q; exact_slow[pos] = q
+        return words, rounded, lambda pos: str(exact_slow[pos] if pos in exact_slow else Fraction(float(result[pos])))
 
     def raw(self, row, profile):
         text = row['text']; tree = expression(text, mode='exec')
@@ -176,7 +290,7 @@ class Builder:
         self.writes[-1]['clipped_slice'] = bool(clipped)
         if self.parent_graph['kind']=='dag':
             from .wsp_graph import parameter_uses
-            self.writes[-1]['parameter_users']=parameter_uses(self.base.to_dict()['graph']).get(name,[])
+            self.writes[-1]['parameter_users']=parameter_uses(self.base.graph).get(name,[])
         for p in self.placements:
             p['later_edits_may_invalidate'] = True  # Conservative until dependency analysis.
 
@@ -281,16 +395,18 @@ def plan(source, *, parent=None, bindings=None, limits=Limits(), artifacts=None,
         descriptions.append(describe(artifact, d).to_dict())
     changed = diff(parent, candidate, limit=0)
     body = dict(format='wsp.edit_plan.v1', implementation_id=implementation_id(), source=source,
-                parent=parent.to_dict(), parent_id=parent.sha256, candidate=candidate.to_dict(), candidate_id=candidate.sha256,
+                parent=parent.document(), parent_id=parent.sha256, candidate=candidate.document(), candidate_id=candidate.sha256,
                 limits=asdict(limits), bindings={k:pack(v) for k,v in bound.items()}, numeric_profile=profile,
                 native_runtime=dict(numpy=np.__version__) if profile=='native_numpy_v1' else None,
                 writes=builder.writes, placements=builder.placements, descriptions=descriptions,
                 rounding=dict(changed=builder.rounded_count, examples=builder.rounding),
                 resources=dict(statements=builder.statements, loop_iterations=builder.loop_iterations, operations=builder.arithmetic.operations),
-                touched={k:sorted(v) for k,v in builder.touched.items()}, diff=changed,
+                touched={k:np.unique(np.concatenate(v)).tolist() if v else [] for k,v in builder.touched.items()}, diff=changed,
                 graph_edits=builder.graph_context.receipt() if builder.graph_context else None,
                 status='NO_CHANGE' if candidate.sha256==parent.sha256 else 'STAGED', admission='not_performed')
-    return EditPlan(canonical(body))
+    staged = EditPlan(canonical(body))
+    object.__setattr__(staged, '_candidate', candidate)  # Cache only; identity is the text.
+    return staged
 
 
 def apply(edit_plan, *, parent, expected_parent_id):
@@ -309,7 +425,25 @@ def apply(edit_plan, *, parent, expected_parent_id):
                   artifacts=artifacts,budgets=budgets)
     if replay.sha256 != edit_plan.sha256:
         raise ValueError('plan replay differs; source/receipt/candidate tampering')
-    return TensorArtifact(replay.to_dict()['candidate'], max_elements=limits.max_elements)
+    # Equal plan text implies this is exactly the recorded candidate document.
+    return replay._candidate.within(limits.max_elements)
+
+
+def plan_and_apply(source, *, parent=None, bindings=None, limits=Limits(), artifacts=None, budgets=None):
+    """Opt-in plan() plus its candidate, without apply()'s same-process replay.
+
+    apply() re-runs plan() from a plan's recorded source and requires the same
+    plan hash, so a saved, transported or edited plan cannot install anything
+    else. Immediately after plan() in the same process that replay recomputes
+    the identical text, so this returns plan()'s own candidate and halves the
+    cost. Use apply() for every plan loaded from disk or another process; the
+    audit and stress tools keep doing so.
+
+    Returns (edit_plan, candidate). The candidate is byte-identical to
+    apply(edit_plan, parent=..., expected_parent_id=...).
+    """
+    staged = plan(source, parent=parent, bindings=bindings, limits=limits, artifacts=artifacts, budgets=budgets)
+    return staged, staged._candidate.within(limits.max_elements)
 
 
 def import_legacy(answer):
