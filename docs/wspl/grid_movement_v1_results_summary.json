@@ -1,0 +1,186 @@
+{
+  "status": "passed",
+  "source_manifest_sha256": "e85e4734b6f03605ef961605c1d487e3edb06ed43580f4d19468c0bd6940b326",
+  "checkpoint_sha256": "aef3a749ecb692f91e93aa789e95047735f7464858b337a3110983d37869a026",
+  "adapter_sha256": "9ef3f56348e50bfc0d00668a7631b42d0fbbbae5e7b82c5aac79c2cd2a3f57df",
+  "generations_verified": 1152,
+  "modes_identical": true,
+  "summary": {
+    "foundation": {
+      "training_diagnostic": {
+        "palette_only": {
+          "n": 32,
+          "exact": 0,
+          "valid": 32
+        },
+        "unconstrained": {
+          "n": 32,
+          "exact": 0,
+          "valid": 32
+        }
+      },
+      "familiar": {
+        "palette_only": {
+          "n": 64,
+          "exact": 0,
+          "valid": 64
+        },
+        "unconstrained": {
+          "n": 64,
+          "exact": 0,
+          "valid": 64
+        }
+      },
+      "novel": {
+        "palette_only": {
+          "n": 64,
+          "exact": 0,
+          "valid": 64
+        },
+        "unconstrained": {
+          "n": 64,
+          "exact": 0,
+          "valid": 64
+        }
+      },
+      "copy_domain": {
+        "palette_only": {
+          "n": 64,
+          "exact": 64,
+          "valid": 64
+        },
+        "unconstrained": {
+          "n": 64,
+          "exact": 64,
+          "valid": 64
+        }
+      },
+      "copy_random": {
+        "palette_only": {
+          "n": 64,
+          "exact": 64,
+          "valid": 64
+        },
+        "unconstrained": {
+          "n": 64,
+          "exact": 64,
+          "valid": 64
+        }
+      }
+    },
+    "adapter": {
+      "training_diagnostic": {
+        "palette_only": {
+          "n": 32,
+          "exact": 11,
+          "valid": 32
+        },
+        "unconstrained": {
+          "n": 32,
+          "exact": 11,
+          "valid": 32
+        }
+      },
+      "familiar": {
+        "palette_only": {
+          "n": 64,
+          "exact": 8,
+          "valid": 64
+        },
+        "unconstrained": {
+          "n": 64,
+          "exact": 8,
+          "valid": 64
+        }
+      },
+      "novel": {
+        "palette_only": {
+          "n": 64,
+          "exact": 3,
+          "valid": 64
+        },
+        "unconstrained": {
+          "n": 64,
+          "exact": 3,
+          "valid": 64
+        }
+      },
+      "copy_domain": {
+        "palette_only": {
+          "n": 64,
+          "exact": 60,
+          "valid": 64
+        },
+        "unconstrained": {
+          "n": 64,
+          "exact": 60,
+          "valid": 64
+        }
+      },
+      "copy_random": {
+        "palette_only": {
+          "n": 64,
+          "exact": 63,
+          "valid": 64
+        },
+        "unconstrained": {
+          "n": 64,
+          "exact": 63,
+          "valid": 64
+        }
+      }
+    }
+  },
+  "diagnostics": {
+    "foundation": {
+      "training_diagnostic": {
+        "cell_accuracy": 0.79296875,
+        "unchanged_input": 30
+      },
+      "familiar": {
+        "cell_accuracy": 0.8115234375,
+        "unchanged_input": 58
+      },
+      "novel": {
+        "cell_accuracy": 0.751953125,
+        "unchanged_input": 54
+      },
+      "copy_domain": {
+        "cell_accuracy": 1.0,
+        "unchanged_input": 64
+      },
+      "copy_random": {
+        "cell_accuracy": 1.0,
+        "unchanged_input": 64
+      }
+    },
+    "adapter": {
+      "training_diagnostic": {
+        "cell_accuracy": 0.890625,
+        "unchanged_input": 0
+      },
+      "familiar": {
+        "cell_accuracy": 0.861328125,
+        "unchanged_input": 0
+      },
+      "novel": {
+        "cell_accuracy": 0.818359375,
+        "unchanged_input": 0
+      },
+      "copy_domain": {
+        "cell_accuracy": 0.99609375,
+        "unchanged_input": 60
+      },
+      "copy_random": {
+        "cell_accuracy": 0.998046875,
+        "unchanged_input": 63
+      }
+    }
+  },
+  "active_seconds": 573.1400000001304,
+  "training_seconds": 85.79700000002049,
+  "unique_movement_examples": 168,
+  "final_training_nll": 0.052983902394771576,
+  "reachability_gate_passed": false,
+  "no_new_inference": true
+}

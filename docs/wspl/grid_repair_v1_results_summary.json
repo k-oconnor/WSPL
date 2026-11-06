@@ -1,0 +1,200 @@
+{
+  "status": "passed",
+  "source_manifest_sha256": "024e9c7ad54d54303555363fbddfbd02015b61f0e970279ef770e9431ad48799",
+  "generations_verified": 768,
+  "summary": {
+    "unchanged": {
+      "copy": {
+        "n": 64,
+        "exact": 63
+      },
+      "fresh_L": {
+        "n": 128,
+        "exact": 3
+      },
+      "larger": {
+        "n": 64,
+        "exact": 3
+      }
+    },
+    "gradient": {
+      "copy": {
+        "n": 64,
+        "exact": 64
+      },
+      "fresh_L": {
+        "n": 128,
+        "exact": 5
+      },
+      "larger": {
+        "n": 64,
+        "exact": 4
+      }
+    },
+    "astra": {
+      "copy": {
+        "n": 64,
+        "exact": 64
+      },
+      "fresh_L": {
+        "n": 128,
+        "exact": 4
+      },
+      "larger": {
+        "n": 64,
+        "exact": 4
+      }
+    }
+  },
+  "paired": {
+    "gradient": {
+      "copy": {
+        "corrected": 1,
+        "broken": 0
+      },
+      "fresh_L": {
+        "corrected": 4,
+        "broken": 2
+      },
+      "larger": {
+        "corrected": 2,
+        "broken": 1
+      }
+    },
+    "astra": {
+      "copy": {
+        "corrected": 1,
+        "broken": 0
+      },
+      "fresh_L": {
+        "corrected": 2,
+        "broken": 1
+      },
+      "larger": {
+        "corrected": 1,
+        "broken": 0
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 660937,
+    "cached_input_tokens": 0,
+    "output_tokens": 24852,
+    "reasoning_output_tokens": 16037
+  },
+  "initial_acquisition": {
+    "movement": {
+      "n": 64,
+      "exact": 28
+    },
+    "copy": {
+      "n": 32,
+      "exact": 32
+    }
+  },
+  "edits": [
+    {
+      "turn": 0,
+      "metrics": {
+        "movement": {
+          "n": 64,
+          "exact": 28
+        },
+        "copy": {
+          "n": 32,
+          "exact": 32
+        }
+      },
+      "changed_coefficients": {
+        "read.weight": 0,
+        "read.bias": 0,
+        "write.weight": 0,
+        "write.bias": 0
+      },
+      "program_bytes": 2890
+    },
+    {
+      "turn": 1,
+      "metrics": {
+        "movement": {
+          "n": 64,
+          "exact": 31
+        },
+        "copy": {
+          "n": 32,
+          "exact": 32
+        }
+      },
+      "changed_coefficients": {
+        "read.weight": 17856,
+        "read.bias": 0,
+        "write.weight": 0,
+        "write.bias": 0
+      },
+      "program_bytes": 4604
+    },
+    {
+      "turn": 2,
+      "metrics": {
+        "movement": {
+          "n": 64,
+          "exact": 31
+        },
+        "copy": {
+          "n": 32,
+          "exact": 32
+        }
+      },
+      "changed_coefficients": {
+        "read.weight": 0,
+        "read.bias": 0,
+        "write.weight": 0,
+        "write.bias": 0
+      },
+      "program_bytes": 6450
+    },
+    {
+      "turn": 3,
+      "metrics": {
+        "movement": {
+          "n": 64,
+          "exact": 34
+        },
+        "copy": {
+          "n": 32,
+          "exact": 32
+        }
+      },
+      "changed_coefficients": {
+        "read.weight": 576,
+        "read.bias": 1,
+        "write.weight": 576,
+        "write.bias": 576
+      },
+      "program_bytes": 5828
+    },
+    {
+      "turn": 4,
+      "metrics": {
+        "movement": {
+          "n": 64,
+          "exact": 34
+        },
+        "copy": {
+          "n": 32,
+          "exact": 32
+        }
+      },
+      "changed_coefficients": {
+        "read.weight": 0,
+        "read.bias": 0,
+        "write.weight": 0,
+        "write.bias": 0
+      },
+      "program_bytes": 8600
+    }
+  ],
+  "active_seconds": 1573.969000000041,
+  "descriptive_repair_signal": false,
+  "no_new_inference": true
+}

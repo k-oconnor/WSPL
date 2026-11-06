@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "source_manifest_sha256": "8f1fe472be15b3cdb347ecbfc0f5efcb7060a3ad0857ce35512eac2349f41468",
+  "checkpoint_sha256": "633fb81d3bd911a525903bf0bcaa5dfaaffc3ea621f6cb0318a1f58b1eae27db",
+  "trained_model_sha256": "b8cf2a97f33aca737f43c3e439c1caac79f23bf793b0e9bd6ac8eb8dec776f38",
+  "step": 512,
+  "unique_training_examples": 2048,
+  "targets": 32768,
+  "saved_generations_verified": 640,
+  "training_holdout_disjoint": true,
+  "checkpoint_matches_evaluated_model": true,
+  "first_training_nll": 0.7142359018325806,
+  "final_training_nll": 8.959280535236758e-07,
+  "training_seconds": 97.125,
+  "summary": {
+    "heldout": {
+      "palette_only": {
+        "n": 256,
+        "exact": 256,
+        "valid": 256
+      },
+      "unconstrained": {
+        "n": 256,
+        "exact": 256,
+        "valid": 256
+      }
+    },
+    "historical_copy": {
+      "palette_only": {
+        "n": 64,
+        "exact": 64,
+        "valid": 64
+      },
+      "unconstrained": {
+        "n": 64,
+        "exact": 64,
+        "valid": 64
+      }
+    }
+  },
+  "active_seconds": 366.875,
+  "peak_allocated_bytes": 5438509568,
+  "no_new_inference": true
+}

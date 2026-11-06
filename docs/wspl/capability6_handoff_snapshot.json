@@ -1,0 +1,121 @@
+{
+  "captured_utc": "2026-11-06T13:55:43.631060+00:00",
+  "run_id": "capability6-v1",
+  "manifest_sha256": "39074af2e7bf08aab2f7691654c9e9b3771c09b53bb152e84aae9337cdfa6a02",
+  "status": "final evaluation in progress",
+  "current_arm": "gradient",
+  "current_split": "copy4",
+  "development_only": true,
+  "arms": {
+    "gradient": {
+      "frozen": true,
+      "development": {
+        "copy4": {
+          "n": 256,
+          "exact": 256
+        },
+        "copy6": {
+          "n": 256,
+          "exact": 252
+        },
+        "move": {
+          "n": 512,
+          "exact": 481
+        }
+      },
+      "budget": {
+        "updates": 8192,
+        "train_seconds": 1353.7160000042059,
+        "targets": 1082188
+      }
+    },
+    "native_0": {
+      "frozen": true,
+      "development": {
+        "copy4": {
+          "n": 256,
+          "exact": 256
+        },
+        "copy6": {
+          "n": 256,
+          "exact": 256
+        },
+        "move": {
+          "n": 512,
+          "exact": 511
+        }
+      },
+      "budget": {
+        "updates": 8192,
+        "train_seconds": 1638.3829999994487,
+        "targets": 1082188
+      }
+    },
+    "wspl_0": {
+      "frozen": true,
+      "development": {
+        "copy4": {
+          "n": 256,
+          "exact": 256
+        },
+        "copy6": {
+          "n": 256,
+          "exact": 256
+        },
+        "move": {
+          "n": 512,
+          "exact": 510
+        }
+      },
+      "budget": {
+        "updates": 8192,
+        "train_seconds": 1553.9000000015367,
+        "targets": 1082188
+      }
+    },
+    "wspl_1": {
+      "frozen": true,
+      "development": {
+        "copy4": {
+          "n": 256,
+          "exact": 256
+        },
+        "copy6": {
+          "n": 256,
+          "exact": 255
+        },
+        "move": {
+          "n": 512,
+          "exact": 511
+        }
+      },
+      "budget": {
+        "updates": 8192,
+        "train_seconds": 1546.0969999909867,
+        "targets": 1068448
+      }
+    },
+    "native_1": {
+      "frozen": true,
+      "development": {
+        "copy4": {
+          "n": 256,
+          "exact": 256
+        },
+        "copy6": {
+          "n": 256,
+          "exact": 256
+        },
+        "move": {
+          "n": 512,
+          "exact": 512
+        }
+      },
+      "budget": {
+        "updates": 8192,
+        "train_seconds": 1347.4449999979697,
+        "targets": 1071048
+      }
+    }
+  }
+}

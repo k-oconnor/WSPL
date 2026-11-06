@@ -11,6 +11,15 @@ This is an early research prototype led by Kevin O'Connor. We distinguish a
 program matching its weights, a controller satisfying an input-output contract,
 and a robot satisfying a trajectory property. Each needs its own evidence.
 
+## Current capability-engineering experiment
+
+**November 6, 2026:** all five 6x6 spatial-capability training/authoring arms are
+frozen; final held-out evaluation is in progress. We are testing whether LLM-led
+neural engineering adds a reusable capability, and whether native tools plus
+WSPL improve on native tools alone. See the [current research handoff](CURRENT_RESEARCH.md)
+for the design, development-only scores, local run locations and remaining audit.
+No final capability or WSPL-superiority claim is established yet.
+
 ## Current status
 
 The WSP editor implements direct FP32 tensor editing, explicit affine/ReLU circuit
