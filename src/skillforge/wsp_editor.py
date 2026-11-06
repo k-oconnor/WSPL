@@ -429,6 +429,23 @@ def apply(edit_plan, *, parent, expected_parent_id):
     return replay._candidate.within(limits.max_elements)
 
 
+def plan_and_apply(source, *, parent=None, bindings=None, limits=Limits(), artifacts=None, budgets=None):
+    """Opt-in plan() plus its candidate, without apply()'s same-process replay.
+
+    apply() re-runs plan() from a plan's recorded source and requires the same
+    plan hash, so a saved, transported or edited plan cannot install anything
+    else. Immediately after plan() in the same process that replay recomputes
+    the identical text, so this returns plan()'s own candidate and halves the
+    cost. Use apply() for every plan loaded from disk or another process; the
+    audit and stress tools keep doing so.
+
+    Returns (edit_plan, candidate). The candidate is byte-identical to
+    apply(edit_plan, parent=..., expected_parent_id=...).
+    """
+    staged = plan(source, parent=parent, bindings=bindings, limits=limits, artifacts=artifacts, budgets=budgets)
+    return staged, staged._candidate.within(limits.max_elements)
+
+
 def import_legacy(answer):
     """Historical skip-invalid import; isolated and explicitly labelled."""
     from .native_weight_edits import NativeEditedPolicy, NAMES

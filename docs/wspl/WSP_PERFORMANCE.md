@@ -67,3 +67,9 @@ Measured on Python 3.11.16 and NumPy 1.26.4 on Linux, with the seeded synthetic 
 - serializing plans of about 50 MB, which embed the full parent and candidate and every written index.
 
 A smaller plan format (`wsp.edit_plan.v2`) would remove most of the serialization cost. It is deferred because it changes the format.
+
+## Optional: `plan_and_apply`
+
+`wsp_editor.plan_and_apply(source, parent=..., ...)` returns `(plan, candidate)` without the replay that `apply` performs. That replay is only redundant immediately after `plan` in the same process. `apply` is unchanged, and every saved or transported plan should still go through it.
+
+This halves construction time for same-process callers: the largest Go turn drops from 6.0 s to 2.8 s, and `2_wspl_turn_00` from 2.8 s to 1.3 s. No existing caller is switched to it. Adopting it in a study harness is a separate decision.
