@@ -2,6 +2,7 @@
 import ast
 from dataclasses import dataclass, asdict
 from fractions import Fraction
+import functools
 import math
 import re
 
@@ -79,6 +80,28 @@ def unpack(document, limits=Limits()):
     return np.array(values, dtype=object).reshape(shape)
 
 
+@functools.lru_cache(maxsize=65536)
+def _literal(text, kind, lineno, col_offset, end_lineno, end_col_offset):
+    """Exact value of one numeric literal; cached because loop bodies repeat it.
+
+    Depends only on the source text and the node's position and value type.
+    Errors are not cached, so they are raised again on every evaluation.
+    """
+    node = ast.Constant(value=None, lineno=lineno, col_offset=col_offset, end_lineno=end_lineno, end_col_offset=end_col_offset)
+    raw = ast.get_source_segment(text, node)
+    if kind not in (int, float) or raw is None or not re.fullmatch(r'(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?', raw):
+        raise ValueError('decimal/scientific numeric literal required')
+    # Bound exponent before Fraction can allocate a gigantic power of ten.
+    exponent = re.search(r'[eE]([+-]?\d+)', raw)
+    if len(raw) > 1500 or (exponent and (len(exponent[1]) > 5 or abs(int(exponent[1])) > 1200)):
+        raise ValueError('numeric literal precision limit')
+    return Fraction(raw)
+
+
+def _exact(item):
+    return fraction(item.value) if isinstance(item, Bits) else item
+
+
 class Arithmetic:
     def __init__(self, arrays, parent, constants, bindings, limits=Limits()):
         self.arrays, self.parent, self.constants, self.bindings = arrays, parent, constants, bindings
@@ -107,14 +130,8 @@ class Arithmetic:
         return self.eval(expression(text).body, text)
 
     def literal(self, node, text):
-        raw = ast.get_source_segment(text, node)
-        if type(node.value) not in (int, float) or raw is None or not re.fullmatch(r'(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?', raw):
-            raise ValueError('decimal/scientific numeric literal required')
-        # Bound exponent before Fraction can allocate a gigantic power of ten.
-        exponent = re.search(r'[eE]([+-]?\d+)', raw)
-        if len(raw) > 1500 or (exponent and (len(exponent[1]) > 5 or abs(int(exponent[1])) > 1200)):
-            raise ValueError('numeric literal precision limit')
-        return self.bounded(np.array(Fraction(raw), dtype=object))
+        value = _literal(text, type(node.value), node.lineno, node.col_offset, node.end_lineno, node.end_col_offset)
+        return self.bounded(np.array(value, dtype=object))
 
     def selection(self, node, shape, text):
         entries = node.elts if isinstance(node, ast.Tuple) else [node]
@@ -181,10 +198,22 @@ class Arithmetic:
             return np.asarray(a[selection], dtype=object).copy()
         if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
             a = self.eval(node.operand, text)
+            if a.ndim == 0:  # Scalar index/coefficient arithmetic; same result as numeric().
+                x = _exact(a.item())
+                return self.bounded(np.array(x if isinstance(node.op, ast.UAdd) else -x, dtype=object))
             a = numeric(a)
             return self.bounded(a if isinstance(node.op, ast.UAdd) else -a)
         if isinstance(node, ast.BinOp) and isinstance(node.op, (ast.Add, ast.Sub, ast.Mult, ast.Div, ast.MatMult)):
             a, b = self.eval(node.left, text), self.eval(node.right, text)
+            if a.ndim == 0 and b.ndim == 0 and not isinstance(node.op, ast.MatMult):
+                # Scalar fast path: identical charge (broadcast size 1) and exact result.
+                x, y = _exact(a.item()), _exact(b.item())
+                self.charge(1)
+                if 1 > self.limits.max_elements:
+                    raise ValueError('arithmetic result exceeds element limit')
+                op = node.op
+                out = x+y if isinstance(op, ast.Add) else x-y if isinstance(op, ast.Sub) else x*y if isinstance(op, ast.Mult) else x/y
+                return self.bounded(np.array(out, dtype=object))
             a, b = numeric(a), numeric(b)
             if isinstance(node.op, ast.MatMult):
                 if a.ndim != 2 or b.ndim != 2 or a.shape[1] != b.shape[0]:
