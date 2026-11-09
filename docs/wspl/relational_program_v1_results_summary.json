@@ -1,0 +1,255 @@
+{
+  "status": "complete",
+  "seconds": 1008.6400000001304,
+  "summary": {
+    "untouched": {
+      "n": 60,
+      "correct": 24,
+      "corrected": [],
+      "broken": [],
+      "groups": {
+        "changes": {
+          "n": 16,
+          "correct": 12
+        },
+        "cools": {
+          "n": 16,
+          "correct": 0
+        },
+        "retention": {
+          "n": 12,
+          "correct": 12
+        },
+        "warms": {
+          "n": 16,
+          "correct": 0
+        }
+      }
+    },
+    "joint": {
+      "n": 60,
+      "correct": 29,
+      "corrected": [
+        "relation_reserved_4_1_warms",
+        "relation_reserved_4_1_cools",
+        "relation_reserved_4_1_changes",
+        "relation_reserved_5_1_warms",
+        "relation_reserved_5_1_cools"
+      ],
+      "broken": [],
+      "groups": {
+        "changes": {
+          "n": 16,
+          "correct": 13
+        },
+        "cools": {
+          "n": 16,
+          "correct": 2
+        },
+        "retention": {
+          "n": 12,
+          "correct": 12
+        },
+        "warms": {
+          "n": 16,
+          "correct": 2
+        }
+      }
+    },
+    "wsp_only": {
+      "n": 60,
+      "correct": 24,
+      "corrected": [],
+      "broken": [],
+      "groups": {
+        "changes": {
+          "n": 16,
+          "correct": 12
+        },
+        "cools": {
+          "n": 16,
+          "correct": 0
+        },
+        "retention": {
+          "n": 12,
+          "correct": 12
+        },
+        "warms": {
+          "n": 16,
+          "correct": 0
+        }
+      }
+    },
+    "asp_only": {
+      "n": 60,
+      "correct": 30,
+      "corrected": [
+        "relation_reserved_0_0_warms",
+        "relation_reserved_0_1_cools",
+        "relation_reserved_1_0_warms",
+        "relation_reserved_1_1_cools",
+        "relation_reserved_2_0_warms",
+        "relation_reserved_2_1_cools",
+        "relation_reserved_3_0_warms",
+        "relation_reserved_3_1_cools",
+        "relation_reserved_4_0_warms",
+        "relation_reserved_4_1_warms",
+        "relation_reserved_4_1_cools",
+        "relation_reserved_4_1_changes",
+        "relation_reserved_5_0_cools",
+        "relation_reserved_5_1_warms",
+        "relation_reserved_5_1_cools",
+        "relation_reserved_5_1_changes",
+        "relation_reserved_6_1_warms",
+        "relation_reserved_7_1_cools"
+      ],
+      "broken": [
+        "relation_reserved_0_0_changes",
+        "relation_reserved_0_1_changes",
+        "relation_reserved_1_0_changes",
+        "relation_reserved_1_1_changes",
+        "relation_reserved_2_0_changes",
+        "relation_reserved_2_1_changes",
+        "relation_reserved_3_0_changes",
+        "relation_reserved_3_1_changes",
+        "relation_reserved_4_0_changes",
+        "relation_reserved_5_0_changes",
+        "relation_reserved_6_1_changes",
+        "relation_reserved_7_1_changes"
+      ],
+      "groups": {
+        "changes": {
+          "n": 16,
+          "correct": 2
+        },
+        "cools": {
+          "n": 16,
+          "correct": 8
+        },
+        "retention": {
+          "n": 12,
+          "correct": 12
+        },
+        "warms": {
+          "n": 16,
+          "correct": 8
+        }
+      }
+    },
+    "answer_bias": {
+      "n": 60,
+      "correct": 33,
+      "corrected": [
+        "relation_reserved_4_1_warms",
+        "relation_reserved_4_1_cools",
+        "relation_reserved_4_1_changes",
+        "relation_reserved_5_1_warms",
+        "relation_reserved_5_1_cools",
+        "relation_reserved_5_1_changes",
+        "relation_reserved_6_0_warms",
+        "relation_reserved_6_0_cools",
+        "relation_reserved_7_0_warms",
+        "relation_reserved_7_0_cools"
+      ],
+      "broken": [
+        "relation_reserved_0_0_changes"
+      ],
+      "groups": {
+        "changes": {
+          "n": 16,
+          "correct": 13
+        },
+        "cools": {
+          "n": 16,
+          "correct": 4
+        },
+        "retention": {
+          "n": 12,
+          "correct": 12
+        },
+        "warms": {
+          "n": 16,
+          "correct": 4
+        }
+      }
+    }
+  },
+  "pair_summary": {
+    "untouched": {
+      "n": 24,
+      "both_correct": 4,
+      "answer_changing_pairs": 20
+    },
+    "joint": {
+      "n": 24,
+      "both_correct": 5,
+      "answer_changing_pairs": 20
+    },
+    "wsp_only": {
+      "n": 24,
+      "both_correct": 4,
+      "answer_changing_pairs": 20
+    },
+    "asp_only": {
+      "n": 24,
+      "both_correct": 2,
+      "answer_changing_pairs": 20
+    },
+    "answer_bias": {
+      "n": 24,
+      "both_correct": 5,
+      "answer_changing_pairs": 20
+    }
+  },
+  "decision": {
+    "criteria": {
+      "family_gain_at_least_six": false,
+      "improved_tasks_at_least_two": false,
+      "counterfactual_pair_gain_at_least_three": false,
+      "retention_preserved": true,
+      "both_components_help": false,
+      "joint_unique_corrections_at_least_two": false
+    },
+    "continue_conceptual_asp": false,
+    "family_n": 48,
+    "joint_unique_corrections": [],
+    "rule": "Descriptive triage, not statistical significance. If unmet, park conceptual ASP under this interface; no automatic next run."
+  },
+  "audit": {
+    "source_verified": true,
+    "artifact_hashes_verified": true,
+    "compact_equals_full": true,
+    "metrics_pairs_decision_recomputed": true,
+    "bias_reproduced": true,
+    "key_changed": true,
+    "value_changed": false,
+    "relative_weight_change": 0.049499999907661386,
+    "usage": {
+      "input_tokens": 336044,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 20764,
+      "reasoning_output_tokens": 14390
+    },
+    "prediction_counts": {
+      "untouched": {
+        "3": 48
+      },
+      "joint": {
+        "3": 43,
+        "2": 5
+      },
+      "wsp_only": {
+        "3": 48
+      },
+      "asp_only": {
+        "1": 42,
+        "2": 6
+      },
+      "answer_bias": {
+        "2": 35,
+        "3": 13
+      }
+    }
+  }
+}

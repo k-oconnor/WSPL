@@ -1,0 +1,520 @@
+{
+  "status": "complete",
+  "active_seconds": 563.25,
+  "manifest_sha256": "3c6e9d2b76b4a4874d4d00594f39b0569829dac908f1b059679a8803c16268c4",
+  "summary": {
+    "challenge": {
+      "untouched": {
+        "all": {
+          "n": 299,
+          "correct": 97,
+          "raw_correct": 79,
+          "corrected": [],
+          "broken": []
+        },
+        "heat_slice": {
+          "n": 10,
+          "correct": 2,
+          "raw_correct": 1,
+          "corrected": [],
+          "broken": []
+        }
+      },
+      "forced": {
+        "all": {
+          "n": 299,
+          "correct": 91,
+          "raw_correct": 76,
+          "corrected": [
+            "Mercury_7145513",
+            "MCAS_2006_5_29",
+            "Mercury_189490",
+            "MCAS_2003_8_25",
+            "Mercury_7154263",
+            "NYSEDREGENTS_2014_4_9",
+            "Mercury_SC_408700"
+          ],
+          "broken": [
+            "Mercury_7103565",
+            "NAEP_2005_8_S11+14",
+            "Mercury_7071365",
+            "Mercury_7139493",
+            "MEAP_2005_5_1",
+            "LEAP_2004_8_10397",
+            "TIMSS_2003_8_pg29",
+            "Mercury_SC_LBS10472",
+            "Mercury_7141698",
+            "Mercury_7187058",
+            "Mercury_7267995",
+            "Mercury_7131828",
+            "Mercury_SC_402239"
+          ]
+        },
+        "heat_slice": {
+          "n": 10,
+          "correct": 3,
+          "raw_correct": 3,
+          "corrected": [
+            "Mercury_SC_408700"
+          ],
+          "broken": []
+        }
+      },
+      "original_key": {
+        "all": {
+          "n": 299,
+          "correct": 93,
+          "raw_correct": 79,
+          "corrected": [
+            "Mercury_7004410",
+            "Mercury_7145513",
+            "MEA_2016_5_6",
+            "Mercury_189490",
+            "MCAS_2003_8_25",
+            "Mercury_7154263",
+            "Mercury_SC_408700"
+          ],
+          "broken": [
+            "Mercury_7103565",
+            "NAEP_2005_8_S11+14",
+            "Mercury_7071365",
+            "Mercury_7139493",
+            "MEAP_2005_5_1",
+            "LEAP_2004_8_10397",
+            "Mercury_SC_LBS10472",
+            "Mercury_7141698",
+            "Mercury_7187058",
+            "Mercury_7131828",
+            "Mercury_SC_402239"
+          ]
+        },
+        "heat_slice": {
+          "n": 10,
+          "correct": 3,
+          "raw_correct": 3,
+          "corrected": [
+            "Mercury_SC_408700"
+          ],
+          "broken": []
+        }
+      },
+      "ridge_key": {
+        "all": {
+          "n": 299,
+          "correct": 93,
+          "raw_correct": 75,
+          "corrected": [
+            "MCAS_2006_5_29",
+            "MEA_2016_5_6",
+            "Mercury_189490",
+            "Mercury_7154263",
+            "NYSEDREGENTS_2014_4_9",
+            "Mercury_SC_408700"
+          ],
+          "broken": [
+            "Mercury_7103565",
+            "NAEP_2005_8_S11+14",
+            "Mercury_7071365",
+            "Mercury_7139493",
+            "LEAP_2004_8_10397",
+            "Mercury_SC_LBS10472",
+            "Mercury_7187058",
+            "Mercury_7267995",
+            "Mercury_7131828",
+            "Mercury_SC_402239"
+          ]
+        },
+        "heat_slice": {
+          "n": 10,
+          "correct": 3,
+          "raw_correct": 2,
+          "corrected": [
+            "Mercury_SC_408700"
+          ],
+          "broken": []
+        }
+      },
+      "astra_key": {
+        "all": {
+          "n": 299,
+          "correct": 95,
+          "raw_correct": 77,
+          "corrected": [
+            "Mercury_7115063",
+            "Mercury_189490",
+            "Mercury_7154263",
+            "NYSEDREGENTS_2014_4_9",
+            "Mercury_SC_408700",
+            "Mercury_SC_400172"
+          ],
+          "broken": [
+            "Mercury_7103565",
+            "NAEP_2005_8_S11+14",
+            "Mercury_7071365",
+            "Mercury_7139493",
+            "TIMSS_2003_8_pg29",
+            "Mercury_SC_LBS10472",
+            "Mercury_7131828",
+            "Mercury_SC_402239"
+          ]
+        },
+        "heat_slice": {
+          "n": 10,
+          "correct": 3,
+          "raw_correct": 2,
+          "corrected": [
+            "Mercury_SC_408700"
+          ],
+          "broken": []
+        }
+      },
+      "grid_key": {
+        "all": {
+          "n": 299,
+          "correct": 93,
+          "raw_correct": 77,
+          "corrected": [
+            "Mercury_7154263"
+          ],
+          "broken": [
+            "Mercury_7071365",
+            "Mercury_7139493",
+            "Mercury_SC_LBS10472",
+            "Mercury_7131828",
+            "Mercury_SC_402239"
+          ]
+        },
+        "heat_slice": {
+          "n": 10,
+          "correct": 2,
+          "raw_correct": 1,
+          "corrected": [],
+          "broken": []
+        }
+      }
+    },
+    "easy": {
+      "untouched": {
+        "all": {
+          "n": 570,
+          "correct": 285,
+          "raw_correct": 319,
+          "corrected": [],
+          "broken": []
+        },
+        "heat_slice": {
+          "n": 30,
+          "correct": 13,
+          "raw_correct": 15,
+          "corrected": [],
+          "broken": []
+        }
+      },
+      "forced": {
+        "all": {
+          "n": 570,
+          "correct": 268,
+          "raw_correct": 291,
+          "corrected": [
+            "Mercury_7122448",
+            "Mercury_SC_LBS10170",
+            "TIMSS_2011_8_pg139",
+            "NYSEDREGENTS_2014_8_21",
+            "Mercury_SC_401137",
+            "Mercury_SC_405952",
+            "Mercury_7085190",
+            "Mercury_7213885",
+            "Mercury_183733",
+            "Mercury_SC_408452",
+            "Mercury_7081813",
+            "Mercury_7107433",
+            "Mercury_7221883",
+            "Mercury_180128",
+            "MEA_2014_5_4",
+            "Mercury_7188265",
+            "Mercury_7163748",
+            "Mercury_7103338",
+            "NYSEDREGENTS_2014_8_7",
+            "Mercury_7032568",
+            "Mercury_7114083",
+            "Mercury_7082093",
+            "Mercury_7004708",
+            "Mercury_SC_402287",
+            "Mercury_7032708"
+          ],
+          "broken": [
+            "Mercury_7185220",
+            "Mercury_SC_401158",
+            "Mercury_7137673",
+            "NYSEDREGENTS_2014_8_8",
+            "VASoL_2009_5_25",
+            "AKDE&ED_2012_4_35",
+            "Mercury_7119805",
+            "Mercury_SC_LBS10682",
+            "Mercury_7206448",
+            "Mercury_408929",
+            "Mercury_7015715",
+            "Mercury_7139685",
+            "Mercury_7236128",
+            "Mercury_7013090",
+            "Mercury_7206500",
+            "Mercury_SC_416526",
+            "Mercury_7205380",
+            "Mercury_SC_415425",
+            "NYSEDREGENTS_2014_8_3",
+            "Mercury_7176190",
+            "Mercury_7080553",
+            "NYSEDREGENTS_2014_8_11",
+            "Mercury_7083388",
+            "Mercury_7068828",
+            "Mercury_7064663",
+            "Mercury_SC_405442",
+            "Mercury_SC_401367",
+            "Mercury_7247905",
+            "Mercury_7213080",
+            "MDSA_2010_4_24",
+            "NYSEDREGENTS_2014_8_5",
+            "Mercury_7007893",
+            "NYSEDREGENTS_2014_4_18",
+            "Mercury_SC_LBS10689",
+            "Mercury_7114013",
+            "Mercury_7217525",
+            "VASoL_2008_3_39",
+            "Mercury_7032830",
+            "Mercury_7210403",
+            "TIMSS_2003_8_pg98",
+            "Mercury_7037415",
+            "Mercury_7094098"
+          ]
+        },
+        "heat_slice": {
+          "n": 30,
+          "correct": 15,
+          "raw_correct": 18,
+          "corrected": [
+            "Mercury_7122448",
+            "Mercury_SC_401137",
+            "Mercury_7103338"
+          ],
+          "broken": [
+            "Mercury_7139685"
+          ]
+        }
+      },
+      "original_key": {
+        "all": {
+          "n": 570,
+          "correct": 276,
+          "raw_correct": 294,
+          "corrected": [
+            "Mercury_7122448",
+            "Mercury_SC_LBS10170",
+            "Mercury_412415",
+            "NYSEDREGENTS_2014_8_21",
+            "Mercury_SC_401137",
+            "Mercury_SC_405952",
+            "Mercury_7085190",
+            "Mercury_7213885",
+            "Mercury_183733",
+            "Mercury_7081813",
+            "Mercury_7107433",
+            "Mercury_7221883",
+            "Mercury_7188265",
+            "Mercury_7103338",
+            "NYSEDREGENTS_2014_8_7",
+            "Mercury_7032568",
+            "Mercury_7114083",
+            "Mercury_7082093",
+            "Mercury_SC_402287",
+            "Mercury_7032708",
+            "Mercury_7239645",
+            "Mercury_7271618"
+          ],
+          "broken": [
+            "Mercury_7185220",
+            "Mercury_SC_401158",
+            "NYSEDREGENTS_2014_8_8",
+            "Mercury_7119805",
+            "Mercury_7015715",
+            "Mercury_7139685",
+            "Mercury_7236128",
+            "Mercury_7013090",
+            "Mercury_SC_416526",
+            "Mercury_SC_415425",
+            "NYSEDREGENTS_2014_8_3",
+            "Mercury_SC_405887",
+            "Mercury_7080553",
+            "NYSEDREGENTS_2014_8_11",
+            "Mercury_7083388",
+            "Mercury_7064663",
+            "Mercury_185203",
+            "Mercury_SC_405442",
+            "Mercury_SC_401367",
+            "Mercury_7247905",
+            "Mercury_7213080",
+            "MDSA_2010_4_24",
+            "Mercury_SC_LBS10789",
+            "NYSEDREGENTS_2014_4_18",
+            "Mercury_SC_LBS10689",
+            "Mercury_7114013",
+            "Mercury_7217525",
+            "VASoL_2008_3_39",
+            "Mercury_7032830",
+            "Mercury_7210403",
+            "Mercury_7037415"
+          ]
+        },
+        "heat_slice": {
+          "n": 30,
+          "correct": 15,
+          "raw_correct": 18,
+          "corrected": [
+            "Mercury_7122448",
+            "Mercury_SC_401137",
+            "Mercury_7103338"
+          ],
+          "broken": [
+            "Mercury_7139685"
+          ]
+        }
+      },
+      "ridge_key": {
+        "all": {
+          "n": 570,
+          "correct": 282,
+          "raw_correct": 308,
+          "corrected": [
+            "Mercury_7122448",
+            "TIMSS_2011_8_pg139",
+            "NYSEDREGENTS_2014_8_21",
+            "Mercury_7085190",
+            "Mercury_7213885",
+            "Mercury_7081813",
+            "Mercury_7001785",
+            "Mercury_7221883",
+            "Mercury_180128",
+            "Mercury_7188265",
+            "Mercury_177380",
+            "Mercury_7163748",
+            "NYSEDREGENTS_2014_8_7",
+            "Mercury_7032568",
+            "Mercury_7114083",
+            "Mercury_7082093",
+            "Mercury_7004708",
+            "Mercury_SC_402287",
+            "Mercury_406772",
+            "MCAS_2002_8_19",
+            "Mercury_7042508"
+          ],
+          "broken": [
+            "Mercury_7137673",
+            "VASoL_2009_5_25",
+            "Mercury_SC_401592",
+            "AKDE&ED_2012_4_35",
+            "Mercury_7119805",
+            "Mercury_SC_LBS10682",
+            "Mercury_7206448",
+            "Mercury_7206500",
+            "Mercury_7270410",
+            "Mercury_7176190",
+            "Mercury_7080553",
+            "NYSEDREGENTS_2014_8_11",
+            "Mercury_7083388",
+            "Mercury_7064663",
+            "Mercury_7203508",
+            "Mercury_SC_401367",
+            "MDSA_2010_4_24",
+            "Mercury_7007893",
+            "NYSEDREGENTS_2014_4_18",
+            "Mercury_7114013",
+            "Mercury_SC_LBS10783",
+            "Mercury_7210403",
+            "Mercury_7037415",
+            "Mercury_7094098"
+          ]
+        },
+        "heat_slice": {
+          "n": 30,
+          "correct": 14,
+          "raw_correct": 16,
+          "corrected": [
+            "Mercury_7122448"
+          ],
+          "broken": []
+        }
+      },
+      "astra_key": {
+        "all": {
+          "n": 570,
+          "correct": 286,
+          "raw_correct": 306,
+          "corrected": [
+            "NYSEDREGENTS_2014_8_21",
+            "Mercury_7154490",
+            "Mercury_7213885",
+            "Mercury_7081813",
+            "Mercury_7107433",
+            "Mercury_180128",
+            "Mercury_7188265",
+            "Mercury_7032568",
+            "Mercury_7114083",
+            "Mercury_7082093",
+            "Mercury_SC_402287",
+            "MCAS_2002_8_19",
+            "Mercury_7239645",
+            "Mercury_7042508"
+          ],
+          "broken": [
+            "Mercury_7185220",
+            "VASoL_2009_5_25",
+            "Mercury_7236128",
+            "Mercury_7176190",
+            "MCAS_2013_5_29396",
+            "Mercury_7080553",
+            "NYSEDREGENTS_2014_8_11",
+            "Mercury_7064663",
+            "Mercury_SC_401367",
+            "Mercury_7247905",
+            "Mercury_7007893",
+            "MCAS_2004_5_26",
+            "Mercury_SC_LBS10689"
+          ]
+        },
+        "heat_slice": {
+          "n": 30,
+          "correct": 13,
+          "raw_correct": 16,
+          "corrected": [],
+          "broken": []
+        }
+      },
+      "grid_key": {
+        "all": {
+          "n": 570,
+          "correct": 288,
+          "raw_correct": 320,
+          "corrected": [
+            "NYSEDREGENTS_2014_8_21",
+            "Mercury_7213885",
+            "Mercury_7081813",
+            "Mercury_7221883",
+            "Mercury_7032568",
+            "Mercury_7082093"
+          ],
+          "broken": [
+            "Mercury_7083388",
+            "Mercury_7247905",
+            "Mercury_SC_LBS10783"
+          ]
+        },
+        "heat_slice": {
+          "n": 30,
+          "correct": 13,
+          "raw_correct": 15,
+          "corrected": [],
+          "broken": []
+        }
+      }
+    }
+  }
+}

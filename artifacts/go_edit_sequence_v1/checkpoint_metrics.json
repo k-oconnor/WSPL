@@ -1,0 +1,821 @@
+[
+  {
+    "session": "2_wspl",
+    "arm": "wspl",
+    "step": 0,
+    "status": "accepted",
+    "usage": {
+      "input_tokens": 2381,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 17212,
+      "reasoning_output_tokens": 13791
+    },
+    "collection_seconds": 618.6720000000205,
+    "program": {
+      "bytes": 7692,
+      "characters": 7692,
+      "lines": 319,
+      "nonblank_lines": 279,
+      "sha256": "40c83cd318ae1391a0e8297026f02352bbac2f705b14be5f9d6840b05a5aa551"
+    },
+    "construction": {
+      "exit_code": 0,
+      "seconds": 26.530999999959022,
+      "stdout": "",
+      "stderr": "",
+      "plan_sha256": "962fa5b98a3b4ce04d567c720d5be39dcf834fa6ec714ff49ef241b646ef30eb",
+      "parent_id": "6d8757ccb99946b3f628dd804387cdf80e9626ed6bdc517db9eae4c2fd7c4883",
+      "candidate_id": "91847be81940fefe93224350a805ba66eb103c1dac8b5954472fb4bcdced794b",
+      "resources": {
+        "loop_iterations": 2859,
+        "operations": 6381347,
+        "statements": 17010
+      },
+      "placements": 0,
+      "numeric_profile": "exact_to_storage"
+    },
+    "edit": 0,
+    "checkpoint_sha256": "4ca189a52e3bf7831eec110a4b8db45aebe9e1117b7d7c1bb7ef9f9c1bf8d2a3",
+    "evaluation": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 945,
+          "win_rate": 0.4725,
+          "ci95_wilson": [
+            0.45069374278170404,
+            0.4944116948187647
+          ],
+          "color_wins": [
+            418,
+            527
+          ],
+          "mean_length": 110.4445
+        },
+        "1": {
+          "games": 2000,
+          "wins": 710,
+          "win_rate": 0.355,
+          "ci95_wilson": [
+            0.33432485348219587,
+            0.3762310902293674
+          ],
+          "color_wins": [
+            337,
+            373
+          ],
+          "mean_length": 108.684
+        },
+        "2": {
+          "games": 2000,
+          "wins": 971,
+          "win_rate": 0.4855,
+          "ci95_wilson": [
+            0.46364493782474786,
+            0.5074106565464084
+          ],
+          "color_wins": [
+            457,
+            514
+          ],
+          "mean_length": 111.75
+        }
+      },
+      "mean_win_rate": 0.43766666666666665
+    },
+    "changed_coefficients": 14551,
+    "changed_by_tensor": {
+      "W1": 5401,
+      "W2": 1677,
+      "W3": 1227,
+      "W4": 1227,
+      "W5": 2932,
+      "W6": 732,
+      "W7": 568,
+      "b1": 227,
+      "b2": 162,
+      "b3": 162,
+      "b4": 0,
+      "b5": 154,
+      "b6": 0,
+      "b7": 82
+    },
+    "nonzero_coefficients": 14551,
+    "contrast": null
+  },
+  {
+    "session": "2_wspl",
+    "arm": "wspl",
+    "step": 1,
+    "status": "accepted",
+    "usage": {
+      "input_tokens": 6834,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 15557,
+      "reasoning_output_tokens": 13738
+    },
+    "collection_seconds": 598.9220000000205,
+    "program": {
+      "bytes": 4392,
+      "characters": 4392,
+      "lines": 187,
+      "nonblank_lines": 149,
+      "sha256": "90a78cbef4dad0b1a7a31f88119c75f282f9d4126d7d917693dc376663ded7cc"
+    },
+    "construction": {
+      "exit_code": 0,
+      "seconds": 18.07799999997951,
+      "stdout": "",
+      "stderr": "",
+      "plan_sha256": "16009edaa7ec59d72e976312447387cb1f46cdb9e4831a1fbb37516bdd691623",
+      "parent_id": "91847be81940fefe93224350a805ba66eb103c1dac8b5954472fb4bcdced794b",
+      "candidate_id": "15bff5fa5beb6a12d70849e0e4fd52cb15c4dd0a143d23ee84aca224cf02efbf",
+      "resources": {
+        "loop_iterations": 981,
+        "operations": 3186724,
+        "statements": 10138
+      },
+      "placements": 0,
+      "numeric_profile": "exact_to_storage"
+    },
+    "edit": 1,
+    "checkpoint_sha256": "7cae3c542f358a1b682667ea724ce91848d753dbf2c88317c43774dab09529c9",
+    "evaluation": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1091,
+          "win_rate": 0.5455,
+          "ci95_wilson": [
+            0.523611383074441,
+            0.5672141656229649
+          ],
+          "color_wins": [
+            472,
+            619
+          ],
+          "mean_length": 108.282
+        },
+        "1": {
+          "games": 2000,
+          "wins": 805,
+          "win_rate": 0.4025,
+          "ci95_wilson": [
+            0.38121430570705017,
+            0.4241595185127941
+          ],
+          "color_wins": [
+            359,
+            446
+          ],
+          "mean_length": 105.7055
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1125,
+          "win_rate": 0.5625,
+          "ci95_wilson": [
+            0.5406595098290176,
+            0.5841008592608258
+          ],
+          "color_wins": [
+            497,
+            628
+          ],
+          "mean_length": 109.8545
+        }
+      },
+      "mean_win_rate": 0.5035
+    },
+    "changed_coefficients": 8608,
+    "changed_by_tensor": {
+      "W1": 256,
+      "W2": 450,
+      "W3": 369,
+      "W4": 1269,
+      "W5": 2214,
+      "W6": 3078,
+      "W7": 243,
+      "b1": 0,
+      "b2": 81,
+      "b3": 81,
+      "b4": 243,
+      "b5": 81,
+      "b6": 243,
+      "b7": 0
+    },
+    "nonzero_coefficients": 17925,
+    "contrast": {
+      "difference": 0.06583333333333333,
+      "per_opponent": [
+        0.073,
+        0.0475,
+        0.077
+      ],
+      "improved": 1471,
+      "worsened": 1076,
+      "unchanged": 3453,
+      "descriptive_normal_ci95": [
+        0.04943108979501717,
+        0.08223557687164948
+      ]
+    }
+  },
+  {
+    "session": "2_wspl",
+    "arm": "wspl",
+    "step": 2,
+    "status": "accepted",
+    "usage": {
+      "input_tokens": 9538,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 15999,
+      "reasoning_output_tokens": 14863
+    },
+    "collection_seconds": 577.0160000000615,
+    "program": {
+      "bytes": 3081,
+      "characters": 3081,
+      "lines": 120,
+      "nonblank_lines": 102,
+      "sha256": "1f2b586451169315bce68defb830b53e4832e47ba0d2e309598d76bb163d47d4"
+    },
+    "construction": {
+      "exit_code": 0,
+      "seconds": 16.562000000150874,
+      "stdout": "",
+      "stderr": "",
+      "plan_sha256": "3f3ad9c5481414aa0cb703bd6272637df226fd55f1a27e8b22ddb109866b70ed",
+      "parent_id": "15bff5fa5beb6a12d70849e0e4fd52cb15c4dd0a143d23ee84aca224cf02efbf",
+      "candidate_id": "a517f490cef6102442dbbfa8ba382e4bd406b3dae1d74c0505f95f5fec77b0b6",
+      "resources": {
+        "loop_iterations": 7539,
+        "operations": 1466466,
+        "statements": 18529
+      },
+      "placements": 0,
+      "numeric_profile": "exact_to_storage"
+    },
+    "edit": 2,
+    "checkpoint_sha256": "4d494859e11fd5f192c16758c485fd12dcacc558e58450823fe0e9b9d503b470",
+    "evaluation": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1121,
+          "win_rate": 0.5605,
+          "ci95_wilson": [
+            0.5386525115661582,
+            0.5821155257128101
+          ],
+          "color_wins": [
+            487,
+            634
+          ],
+          "mean_length": 108.725
+        },
+        "1": {
+          "games": 2000,
+          "wins": 854,
+          "win_rate": 0.427,
+          "ci95_wilson": [
+            0.4054820253501738,
+            0.44879786355288903
+          ],
+          "color_wins": [
+            370,
+            484
+          ],
+          "mean_length": 106.238
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1117,
+          "win_rate": 0.5585,
+          "ci95_wilson": [
+            0.5366458707116039,
+            0.5801298347564895
+          ],
+          "color_wins": [
+            509,
+            608
+          ],
+          "mean_length": 109.176
+        }
+      },
+      "mean_win_rate": 0.5153333333333333
+    },
+    "changed_coefficients": 7554,
+    "changed_by_tensor": {
+      "W1": 0,
+      "W2": 1924,
+      "W3": 4824,
+      "W4": 162,
+      "W5": 0,
+      "W6": 0,
+      "W7": 0,
+      "b1": 0,
+      "b2": 158,
+      "b3": 324,
+      "b4": 162,
+      "b5": 0,
+      "b6": 0,
+      "b7": 0
+    },
+    "nonzero_coefficients": 22999,
+    "contrast": {
+      "difference": 0.011833333333333333,
+      "per_opponent": [
+        0.015,
+        0.0245,
+        -0.004
+      ],
+      "improved": 1109,
+      "worsened": 1038,
+      "unchanged": 3853,
+      "descriptive_normal_ci95": [
+        -0.0033005795312117166,
+        0.02696724619787838
+      ]
+    }
+  },
+  {
+    "session": "2_wspl",
+    "arm": "wspl",
+    "step": 3,
+    "status": "accepted",
+    "usage": {
+      "input_tokens": 11509,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 13774,
+      "reasoning_output_tokens": 12948
+    },
+    "collection_seconds": 585.2969999997877,
+    "program": {
+      "bytes": 2357,
+      "characters": 2357,
+      "lines": 89,
+      "nonblank_lines": 74,
+      "sha256": "39a8d389c064d00c23cfab159accec26d26b286117db14ae3d8a8b0c9b3d21b8"
+    },
+    "construction": {
+      "exit_code": 0,
+      "seconds": 14.109999999869615,
+      "stdout": "",
+      "stderr": "",
+      "plan_sha256": "6f5f5803977481b3134eba0a50c9ca5139f0fc2a9e0ee9b8fe51f9e2dc7b639a",
+      "parent_id": "a517f490cef6102442dbbfa8ba382e4bd406b3dae1d74c0505f95f5fec77b0b6",
+      "candidate_id": "b0cfe2bc38b31fa9093cf13e02a4e1c6dd44715653795829f9a63d61d5eedb93",
+      "resources": {
+        "loop_iterations": 7083,
+        "operations": 1021308,
+        "statements": 15536
+      },
+      "placements": 0,
+      "numeric_profile": "exact_to_storage"
+    },
+    "edit": 3,
+    "checkpoint_sha256": "3db3e8d8c1e0d60b4fae0eaf6f41bf22ca3599ee512ea814714a152887be70cc",
+    "evaluation": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1182,
+          "win_rate": 0.591,
+          "ci95_wilson": [
+            0.5692984219724071,
+            0.6123526754224047
+          ],
+          "color_wins": [
+            521,
+            661
+          ],
+          "mean_length": 109.9945
+        },
+        "1": {
+          "games": 2000,
+          "wins": 881,
+          "win_rate": 0.4405,
+          "ci95_wilson": [
+            0.4188772751220193,
+            0.46235085350444977
+          ],
+          "color_wins": [
+            376,
+            505
+          ],
+          "mean_length": 106.9085
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1185,
+          "win_rate": 0.5925,
+          "ci95_wilson": [
+            0.5708077822521831,
+            0.6138375640007852
+          ],
+          "color_wins": [
+            565,
+            620
+          ],
+          "mean_length": 110.953
+        }
+      },
+      "mean_win_rate": 0.5413333333333333
+    },
+    "changed_coefficients": 8793,
+    "changed_by_tensor": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 3393,
+      "W4": 369,
+      "W5": 3681,
+      "W6": 945,
+      "W7": 81,
+      "b1": 0,
+      "b2": 0,
+      "b3": 81,
+      "b4": 81,
+      "b5": 81,
+      "b6": 81,
+      "b7": 0
+    },
+    "nonzero_coefficients": 23980,
+    "contrast": {
+      "difference": 0.026,
+      "per_opponent": [
+        0.0305,
+        0.0135,
+        0.034
+      ],
+      "improved": 666,
+      "worsened": 510,
+      "unchanged": 4824,
+      "descriptive_normal_ci95": [
+        0.01481670632955549,
+        0.03718329367044451
+      ]
+    }
+  },
+  {
+    "session": "2_wspl",
+    "arm": "wspl",
+    "step": 4,
+    "status": "accepted",
+    "usage": {
+      "input_tokens": 13138,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 5328,
+      "reasoning_output_tokens": 4537
+    },
+    "collection_seconds": 218.40599999995902,
+    "program": {
+      "bytes": 2245,
+      "characters": 2245,
+      "lines": 88,
+      "nonblank_lines": 76,
+      "sha256": "3d51648cf3c476722cf74c78c9d8dc587d79ced6b62402e9eb8780f88cb02d97"
+    },
+    "construction": {
+      "exit_code": 0,
+      "seconds": 11.359999999869615,
+      "stdout": "",
+      "stderr": "",
+      "plan_sha256": "429906d1530979365d8295490ae79337642ffb6723e619e78349bba3025f5925",
+      "parent_id": "b0cfe2bc38b31fa9093cf13e02a4e1c6dd44715653795829f9a63d61d5eedb93",
+      "candidate_id": "51d5bf83c944e4097c71dc548c9b5ce17405fae877e6716fda96c8cbb63211d5",
+      "resources": {
+        "loop_iterations": 978,
+        "operations": 569010,
+        "statements": 2997
+      },
+      "placements": 0,
+      "numeric_profile": "exact_to_storage"
+    },
+    "edit": 4,
+    "checkpoint_sha256": "f62543a19c63157546113359aee5768bb002e24d67a2de1f3ec0c83e89d00a00",
+    "evaluation": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1189,
+          "win_rate": 0.5945,
+          "ci95_wilson": [
+            0.5728205849603423,
+            0.615817093103501
+          ],
+          "color_wins": [
+            520,
+            669
+          ],
+          "mean_length": 110.035
+        },
+        "1": {
+          "games": 2000,
+          "wins": 868,
+          "win_rate": 0.434,
+          "ci95_wilson": [
+            0.4124256686636799,
+            0.4558273815774454
+          ],
+          "color_wins": [
+            374,
+            494
+          ],
+          "mean_length": 106.7775
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1185,
+          "win_rate": 0.5925,
+          "ci95_wilson": [
+            0.5708077822521831,
+            0.6138375640007852
+          ],
+          "color_wins": [
+            576,
+            609
+          ],
+          "mean_length": 111.06
+        }
+      },
+      "mean_win_rate": 0.5403333333333333
+    },
+    "changed_coefficients": 5671,
+    "changed_by_tensor": {
+      "W1": 3892,
+      "W2": 1536,
+      "W3": 0,
+      "W4": 0,
+      "W5": 0,
+      "W6": 0,
+      "W7": 0,
+      "b1": 81,
+      "b2": 162,
+      "b3": 0,
+      "b4": 0,
+      "b5": 0,
+      "b6": 0,
+      "b7": 0
+    },
+    "nonzero_coefficients": 20512,
+    "contrast": {
+      "difference": -0.001,
+      "per_opponent": [
+        0.0035,
+        -0.0065,
+        0.0
+      ],
+      "improved": 222,
+      "worsened": 228,
+      "unchanged": 5550,
+      "descriptive_normal_ci95": [
+        -0.007930412648952976,
+        0.005930412648952976
+      ]
+    }
+  },
+  {
+    "session": "2_wspl",
+    "arm": "wspl",
+    "step": 5,
+    "status": "accepted",
+    "usage": {
+      "input_tokens": 14719,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 5315,
+      "reasoning_output_tokens": 4922
+    },
+    "collection_seconds": 213.34400000004098,
+    "program": {
+      "bytes": 1163,
+      "characters": 1163,
+      "lines": 46,
+      "nonblank_lines": 39,
+      "sha256": "59646984cfc69ddea6a5e967fe3b649ef0d3863ea1a62d8a4c5bc0c0b66cbabd"
+    },
+    "construction": {
+      "exit_code": 0,
+      "seconds": 9.891000000061467,
+      "stdout": "",
+      "stderr": "",
+      "plan_sha256": "8edd3749d33d18fe92e0f77614bd2fcface1f58e3a5526e1eb0fae3713db11c0",
+      "parent_id": "51d5bf83c944e4097c71dc548c9b5ce17405fae877e6716fda96c8cbb63211d5",
+      "candidate_id": "6ee8ec39e77276fea74571b24250faf54c65a458a1467d8dee1ad34753b7fd15",
+      "resources": {
+        "loop_iterations": 522,
+        "operations": 24261,
+        "statements": 1137
+      },
+      "placements": 0,
+      "numeric_profile": "exact_to_storage"
+    },
+    "edit": 5,
+    "checkpoint_sha256": "3109cc161cff5ec026d5a73f4333f090885bd0125f3a500770e2621f8fad8fa4",
+    "evaluation": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1157,
+          "win_rate": 0.5785,
+          "ci95_wilson": [
+            0.5567284308162279,
+            0.5999705927606154
+          ],
+          "color_wins": [
+            505,
+            652
+          ],
+          "mean_length": 109.4445
+        },
+        "1": {
+          "games": 2000,
+          "wins": 858,
+          "win_rate": 0.429,
+          "ci95_wilson": [
+            0.4074654732874753,
+            0.45080674742646254
+          ],
+          "color_wins": [
+            362,
+            496
+          ],
+          "mean_length": 106.6005
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1158,
+          "win_rate": 0.579,
+          "ci95_wilson": [
+            0.5572309570907255,
+            0.6004661494388366
+          ],
+          "color_wins": [
+            530,
+            628
+          ],
+          "mean_length": 110.8495
+        }
+      },
+      "mean_win_rate": 0.5288333333333334
+    },
+    "changed_coefficients": 981,
+    "changed_by_tensor": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 162,
+      "W4": 0,
+      "W5": 657,
+      "W6": 0,
+      "W7": 0,
+      "b1": 0,
+      "b2": 0,
+      "b3": 162,
+      "b4": 0,
+      "b5": 0,
+      "b6": 0,
+      "b7": 0
+    },
+    "nonzero_coefficients": 20674,
+    "contrast": {
+      "difference": -0.0115,
+      "per_opponent": [
+        -0.016,
+        -0.005,
+        -0.0135
+      ],
+      "improved": 647,
+      "worsened": 716,
+      "unchanged": 4637,
+      "descriptive_normal_ci95": [
+        -0.02355884500685989,
+        0.0005588450068598899
+      ]
+    }
+  },
+  {
+    "session": "2_wspl",
+    "arm": "wspl",
+    "step": 6,
+    "status": "accepted",
+    "usage": {
+      "input_tokens": 15862,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 11246,
+      "reasoning_output_tokens": 10876
+    },
+    "collection_seconds": 491.655999999959,
+    "program": {
+      "bytes": 861,
+      "characters": 861,
+      "lines": 37,
+      "nonblank_lines": 31,
+      "sha256": "4b54f318764d08aefa8e0600933ba6b580f1095b677853274101f66c81765915"
+    },
+    "construction": {
+      "exit_code": 0,
+      "seconds": 9.780999999959022,
+      "stdout": "",
+      "stderr": "",
+      "plan_sha256": "b036d400e8b8688fa186e3fc3427fe2ba63924ead3e7f15525a9b1f72e4213cc",
+      "parent_id": "6ee8ec39e77276fea74571b24250faf54c65a458a1467d8dee1ad34753b7fd15",
+      "candidate_id": "8eb8c2c8b9fa72c4c6f1b8d2f41729b2c1634a45a128d01e64ad26548551afe0",
+      "resources": {
+        "loop_iterations": 472,
+        "operations": 16877,
+        "statements": 523
+      },
+      "placements": 0,
+      "numeric_profile": "exact_to_storage"
+    },
+    "edit": 6,
+    "checkpoint_sha256": "1f9c8bebdfc1a26225dc1251da1eb0b100417425fbd490ce9a99a5d15c320e3f",
+    "evaluation": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1155,
+          "win_rate": 0.5775,
+          "ci95_wilson": [
+            0.5557234463021639,
+            0.5989794113692419
+          ],
+          "color_wins": [
+            505,
+            650
+          ],
+          "mean_length": 110.4925
+        },
+        "1": {
+          "games": 2000,
+          "wins": 834,
+          "win_rate": 0.417,
+          "ci95_wilson": [
+            0.39557021501833134,
+            0.4387480148303565
+          ],
+          "color_wins": [
+            351,
+            483
+          ],
+          "mean_length": 106.9645
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1140,
+          "win_rate": 0.57,
+          "ci95_wilson": [
+            0.5481889458364095,
+            0.591542667544215
+          ],
+          "color_wins": [
+            526,
+            614
+          ],
+          "mean_length": 111.4265
+        }
+      },
+      "mean_win_rate": 0.5215
+    },
+    "changed_coefficients": 256,
+    "changed_by_tensor": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 0,
+      "W4": 0,
+      "W5": 256,
+      "W6": 0,
+      "W7": 0,
+      "b1": 0,
+      "b2": 0,
+      "b3": 0,
+      "b4": 0,
+      "b5": 0,
+      "b6": 0,
+      "b7": 0
+    },
+    "nonzero_coefficients": 20674,
+    "contrast": {
+      "difference": -0.007333333333333333,
+      "per_opponent": [
+        -0.001,
+        -0.012,
+        -0.009
+      ],
+      "improved": 313,
+      "worsened": 357,
+      "unchanged": 5330,
+      "descriptive_normal_ci95": [
+        -0.015787996304382837,
+        0.0011213296377161714
+      ]
+    }
+  }
+]

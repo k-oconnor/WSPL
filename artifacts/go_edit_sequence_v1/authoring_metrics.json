@@ -1,0 +1,1511 @@
+{
+  "arms": {
+    "python": {
+      "program_bytes": 84033,
+      "program_lines": 2534,
+      "completed_responses": 22,
+      "accepted_programs": 19,
+      "collection_seconds": 10544.797999999486,
+      "construction_seconds": 4.197427115,
+      "usage": {
+        "input_tokens": 232218,
+        "cached_input_tokens": 29824,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 261509,
+        "reasoning_output_tokens": 234482
+      },
+      "mean_win_rate": 0.3216666666666667
+    },
+    "wspl": {
+      "program_bytes": 87007,
+      "program_lines": 3130,
+      "completed_responses": 23,
+      "accepted_programs": 20,
+      "collection_seconds": 10395.718999999575,
+      "construction_seconds": 385.0310000004247,
+      "usage": {
+        "input_tokens": 307130,
+        "cached_input_tokens": 2176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 288427,
+        "reasoning_output_tokens": 251047
+      },
+      "mean_win_rate": 0.4044999999999999
+    }
+  },
+  "sessions": [
+    {
+      "name": "0_python",
+      "arm": "python",
+      "usage": {
+        "input_tokens": 92360,
+        "cached_input_tokens": 19456,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 95696,
+        "reasoning_output_tokens": 85368
+      },
+      "program_bytes": 32105,
+      "program_lines": 966,
+      "completed_responses": 8,
+      "accepted_programs": 7,
+      "collection_seconds": 3314.4860000000335,
+      "construction_seconds": 1.5790584329999997,
+      "mean_win_rate": 0.4251666666666667
+    },
+    {
+      "name": "0_wspl",
+      "arm": "wspl",
+      "usage": {
+        "input_tokens": 86339,
+        "cached_input_tokens": 2176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 86501,
+        "reasoning_output_tokens": 74897
+      },
+      "program_bytes": 27692,
+      "program_lines": 910,
+      "completed_responses": 7,
+      "accepted_programs": 6,
+      "collection_seconds": 2881.4209999998566,
+      "construction_seconds": 135.4060000006575,
+      "mean_win_rate": 0.3828333333333333
+    },
+    {
+      "name": "1_wspl",
+      "arm": "wspl",
+      "usage": {
+        "input_tokens": 129831,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 111749,
+        "reasoning_output_tokens": 94779
+      },
+      "program_bytes": 37524,
+      "program_lines": 1334,
+      "completed_responses": 8,
+      "accepted_programs": 7,
+      "collection_seconds": 3957.7349999998696,
+      "construction_seconds": 143.31199999991804,
+      "mean_win_rate": 0.30916666666666665
+    },
+    {
+      "name": "1_python",
+      "arm": "python",
+      "usage": {
+        "input_tokens": 89318,
+        "cached_input_tokens": 2176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 105530,
+        "reasoning_output_tokens": 94935
+      },
+      "program_bytes": 33558,
+      "program_lines": 1013,
+      "completed_responses": 8,
+      "accepted_programs": 7,
+      "collection_seconds": 4638.578999999911,
+      "construction_seconds": 1.5268230739999997,
+      "mean_win_rate": 0.32666666666666666
+    },
+    {
+      "name": "2_python",
+      "arm": "python",
+      "usage": {
+        "input_tokens": 50540,
+        "cached_input_tokens": 8192,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 60283,
+        "reasoning_output_tokens": 54179
+      },
+      "program_bytes": 18370,
+      "program_lines": 555,
+      "completed_responses": 6,
+      "accepted_programs": 5,
+      "collection_seconds": 2591.732999999542,
+      "construction_seconds": 1.0915456080000001,
+      "mean_win_rate": 0.2131666666666667
+    },
+    {
+      "name": "2_wspl",
+      "arm": "wspl",
+      "usage": {
+        "input_tokens": 90960,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 90177,
+        "reasoning_output_tokens": 81371
+      },
+      "program_bytes": 21791,
+      "program_lines": 886,
+      "completed_responses": 8,
+      "accepted_programs": 7,
+      "collection_seconds": 3556.562999999849,
+      "construction_seconds": 106.31299999984913,
+      "mean_win_rate": 0.5215
+    }
+  ],
+  "steps": [
+    {
+      "session": "0_python",
+      "arm": "python",
+      "step": 0,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 2372,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 23622,
+        "reasoning_output_tokens": 20182
+      },
+      "collection_seconds": 809.4539999999106,
+      "program": {
+        "bytes": 9800,
+        "characters": 9800,
+        "lines": 309,
+        "nonblank_lines": 278,
+        "sha256": "7f5e1c38271c736140c8367b54350ee0380c4122541b07a38266c1aa3ec574d1"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.2697179780000001,
+        "stdout": "Installed explicit liberty-proof, tactical, shape, and passing circuits.\nCoefficient count: 1480274\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "0_python",
+      "arm": "python",
+      "step": 1,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 6723,
+        "cached_input_tokens": 6528,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10834,
+        "reasoning_output_tokens": 9322
+      },
+      "collection_seconds": 378.1879999998491,
+      "program": {
+        "bytes": 4843,
+        "characters": 4843,
+        "lines": 147,
+        "nonblank_lines": 126,
+        "sha256": "65d66d8229b61d050fa97cb752c5efbec9b71f94d05b7f4f9c0acb3f32f88304"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21846580199999988,
+        "stdout": "Added 80 directional two-liberty and 80 three-liberty seed circuits.\nPreserved existing tactical, positional, and passing scoring.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "0_python",
+      "arm": "python",
+      "step": 2,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 8962,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 17343,
+        "reasoning_output_tokens": 15020
+      },
+      "collection_seconds": 580.25,
+      "program": {
+        "bytes": 7482,
+        "characters": 7482,
+        "lines": 211,
+        "nonblank_lines": 187,
+        "sha256": "39198dffff5fd670a4928ba0efe04172155dcd0e1ff22f857c752f4d3146b38e"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.2178235449999999,
+        "stdout": "Installed both-axis two-liberty certificates at all 81 points.\nAdded 98 supplemental and 96 directional three-liberty seeds.\nAdded bounded capture-size priority and diagonal eye corrections.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "0_python",
+      "arm": "python",
+      "step": 3,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 12104,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 11926,
+        "reasoning_output_tokens": 11509
+      },
+      "collection_seconds": 456.39100000006147,
+      "program": {
+        "bytes": 1384,
+        "characters": 1384,
+        "lines": 39,
+        "nonblank_lines": 31,
+        "sha256": "ff4685b3e97dd4c9ac8152c627a3f4a65197a52e16e854e1c2861a80f783c3da"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21862214700000004,
+        "stdout": "Updated connection preferences and opening spacing.\nPreserved all liberty, capture, self-atari, eye, and pass circuits.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "0_python",
+      "arm": "python",
+      "step": 4,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 13134,
+        "cached_input_tokens": 12928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 13144,
+        "reasoning_output_tokens": 12136
+      },
+      "collection_seconds": 449.8129999998491,
+      "program": {
+        "bytes": 3258,
+        "characters": 3258,
+        "lines": 103,
+        "nonblank_lines": 86,
+        "sha256": "fa6cf8982ff06c198362d2d03c6f954f28dfc5320acae340310e27d2b3e0e65d"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.2180463269999997,
+        "stdout": "Added four opposing corner L-shape liberty certificates.\nPreserved existing certificates, area estimation, and move scoring.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "0_python",
+      "arm": "python",
+      "step": 5,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 14817,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6866,
+        "reasoning_output_tokens": 5834
+      },
+      "collection_seconds": 218.875,
+      "program": {
+        "bytes": 3343,
+        "characters": 3343,
+        "lines": 101,
+        "nonblank_lines": 86,
+        "sha256": "48e0758caab7839c0a67545c7d381e2582ee066468af6632d22e2d10b509df26"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21785104300000002,
+        "stdout": "Added four friendly corner distinct-liberty certificates.\nStrengthened corner three-liberty certificates for both colors.\nPreserved all positional, tactical-scoring, and passing weights.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "0_python",
+      "arm": "python",
+      "step": 6,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 16537,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 11414,
+        "reasoning_output_tokens": 10869
+      },
+      "collection_seconds": 399.20300000021234,
+      "program": {
+        "bytes": 1995,
+        "characters": 1995,
+        "lines": 56,
+        "nonblank_lines": 45,
+        "sha256": "eb59d8b1b509716d75a84423c4b51b20bbcdc371c169c97cf7e0079fd531efd7"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21853159100000008,
+        "stdout": "Sharpened 316 directional liberty seeds using integer thresholds.\nPreserved calibrated corner circuits and all scoring coefficients.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "0_python",
+      "arm": "python",
+      "step": 7,
+      "status": "final",
+      "usage": {
+        "input_tokens": 17711,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 547,
+        "reasoning_output_tokens": 496
+      },
+      "collection_seconds": 22.312000000150874
+    },
+    {
+      "session": "0_wspl",
+      "arm": "wspl",
+      "step": 0,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 2375,
+        "cached_input_tokens": 2176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 22460,
+        "reasoning_output_tokens": 18090
+      },
+      "collection_seconds": 642.25,
+      "program": {
+        "bytes": 9440,
+        "characters": 9440,
+        "lines": 309,
+        "nonblank_lines": 276,
+        "sha256": "9f45a6fd1c3adfffff505c91459a98d8cba4e6033d9fb5151f8d66aceacdc3cc"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 48.125,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "b4a2895e586c3564fe6ad5e977b287819c16ea01509889ba3ad6d87e54b8911f",
+        "parent_id": "6d8757ccb99946b3f628dd804387cdf80e9626ed6bdc517db9eae4c2fd7c4883",
+        "candidate_id": "c2a8f4122206eb03c6b49941d8b55d54bcdb1d4e9c4108e045cf0827c9c3998e",
+        "resources": {
+          "loop_iterations": 4695,
+          "operations": 7570662,
+          "statements": 35204
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "0_wspl",
+      "arm": "wspl",
+      "step": 1,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 7821,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 16242,
+        "reasoning_output_tokens": 14130
+      },
+      "collection_seconds": 578.405999999959,
+      "program": {
+        "bytes": 5240,
+        "characters": 5240,
+        "lines": 163,
+        "nonblank_lines": 143,
+        "sha256": "1c4da750f628c5c44d7a6f14d03d57b96e18d47dad929cd987c5330984e5a0f7"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 25.484000000171363,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "f8b52ddc6a37279c7e8c1542f4fe268185cdc9b1ea869471035578f8d2931902",
+        "parent_id": "c2a8f4122206eb03c6b49941d8b55d54bcdb1d4e9c4108e045cf0827c9c3998e",
+        "candidate_id": "5bc39fcdc75ba0707faf8e1629b5d0c11ddf3db9283586084e0858520f7ebc75",
+        "resources": {
+          "loop_iterations": 1593,
+          "operations": 4452656,
+          "statements": 8471
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "0_wspl",
+      "arm": "wspl",
+      "step": 2,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 10826,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7887,
+        "reasoning_output_tokens": 6727
+      },
+      "collection_seconds": 275.469000000041,
+      "program": {
+        "bytes": 3096,
+        "characters": 3096,
+        "lines": 103,
+        "nonblank_lines": 89,
+        "sha256": "573112ec36cc45185158203c450b6e5e67c54ac4b579da566b5eb57e26740124"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 13.015000000130385,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "3c52112bf7baebe3ec67d08996d224a789f06361cc029a439c2bc9bb7bf2c411",
+        "parent_id": "5bc39fcdc75ba0707faf8e1629b5d0c11ddf3db9283586084e0858520f7ebc75",
+        "candidate_id": "2607e82fe0f0ef9df659d209a7e0473fcca60fb87f50e149260e13a1db585f01",
+        "resources": {
+          "loop_iterations": 326,
+          "operations": 633008,
+          "statements": 2297
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "0_wspl",
+      "arm": "wspl",
+      "step": 3,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 12792,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9920,
+        "reasoning_output_tokens": 7768
+      },
+      "collection_seconds": 303.13999999989755,
+      "program": {
+        "bytes": 5312,
+        "characters": 5312,
+        "lines": 165,
+        "nonblank_lines": 140,
+        "sha256": "bdacb37a2a8e19515076339bd65397c353cc43881b08b4a39c93ad35fc2bb25c"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 22.391000000061467,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "1198a8fc59548ddc33e005db7fe6c1b5b73ab8b31aec4fcee3d63a44ca6e7001",
+        "parent_id": "2607e82fe0f0ef9df659d209a7e0473fcca60fb87f50e149260e13a1db585f01",
+        "candidate_id": "dab5203698db3186155efffa45bbbe0c0d6222d0dae0cfcd78e2d8b25dcb398f",
+        "resources": {
+          "loop_iterations": 783,
+          "operations": 3465993,
+          "statements": 7381
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "0_wspl",
+      "arm": "wspl",
+      "step": 4,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 15832,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9362,
+        "reasoning_output_tokens": 8462
+      },
+      "collection_seconds": 299.530999999959,
+      "program": {
+        "bytes": 2394,
+        "characters": 2394,
+        "lines": 81,
+        "nonblank_lines": 69,
+        "sha256": "9a2d50537377d3f7bf75f1658611668ec4d00797800a830a26dca0bb93004e3a"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 14.563000000081956,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "8ac733afb7cf474b7bcc5b3df255e9f9558edf4fbbc3903bf5222149b966992c",
+        "parent_id": "dab5203698db3186155efffa45bbbe0c0d6222d0dae0cfcd78e2d8b25dcb398f",
+        "candidate_id": "a8428e54060147f8d82938ae0afbbc60b09f0821cb54f1ad32e1dc1e8314bc1f",
+        "resources": {
+          "loop_iterations": 533,
+          "operations": 1190877,
+          "statements": 2830
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "0_wspl",
+      "arm": "wspl",
+      "step": 5,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17518,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 14199,
+        "reasoning_output_tokens": 13344
+      },
+      "collection_seconds": 526.8280000002123,
+      "program": {
+        "bytes": 2210,
+        "characters": 2210,
+        "lines": 89,
+        "nonblank_lines": 79,
+        "sha256": "97ce42acc961cfb22dda80bbdf63130491a2de07477e154e391975d8a89ed7ac"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 11.828000000212342,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "e52549cb4a849d50d8be85da6cfcdd391934f1543a6e1359c281ed0b43a508ac",
+        "parent_id": "a8428e54060147f8d82938ae0afbbc60b09f0821cb54f1ad32e1dc1e8314bc1f",
+        "candidate_id": "befcbf3a0e79165b6322dede42b0e023c4bd44fcf0650e807e0c811b6111bb54",
+        "resources": {
+          "loop_iterations": 2360,
+          "operations": 104454,
+          "statements": 2845
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "0_wspl",
+      "arm": "wspl",
+      "step": 6,
+      "status": "final",
+      "usage": {
+        "input_tokens": 19175,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6431,
+        "reasoning_output_tokens": 6376
+      },
+      "collection_seconds": 255.79699999978766
+    },
+    {
+      "session": "1_wspl",
+      "arm": "wspl",
+      "step": 0,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 2375,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 18446,
+        "reasoning_output_tokens": 15018
+      },
+      "collection_seconds": 599.9840000001714,
+      "program": {
+        "bytes": 7114,
+        "characters": 7114,
+        "lines": 283,
+        "nonblank_lines": 250,
+        "sha256": "032e478e53a79882784b19f1405a22eb38233d029f3fd9d16fbb7f444e90417d"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 30.014999999897555,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "36f1a02d23901bd4649b6601006c7778d4511f41b22342945e7aa4f98427c43f",
+        "parent_id": "6d8757ccb99946b3f628dd804387cdf80e9626ed6bdc517db9eae4c2fd7c4883",
+        "candidate_id": "e8eb819e30962ef58d915196d85d563369e61da3f7af3c6872292b7b07aad0dc",
+        "resources": {
+          "loop_iterations": 998,
+          "operations": 8865047,
+          "statements": 3747
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "1_wspl",
+      "arm": "wspl",
+      "step": 1,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 6831,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 20307,
+        "reasoning_output_tokens": 15433
+      },
+      "collection_seconds": 629.6409999998286,
+      "program": {
+        "bytes": 9893,
+        "characters": 9893,
+        "lines": 386,
+        "nonblank_lines": 338,
+        "sha256": "8cdbf8ec1df416f5ae9441c2013644735037edf41feb0952f616e295305da697"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 30.093000000109896,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "cb894d1354506da8aa8a12f9b62f29194b071df9c08df57a566c665c2e6b1258",
+        "parent_id": "e8eb819e30962ef58d915196d85d563369e61da3f7af3c6872292b7b07aad0dc",
+        "candidate_id": "5d6ca37c2041c236f61878de2796964da47294c219bf02b37f4a4e957adf3f4b",
+        "resources": {
+          "loop_iterations": 998,
+          "operations": 9864471,
+          "statements": 4387
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "1_wspl",
+      "arm": "wspl",
+      "step": 2,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 12855,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 22751,
+        "reasoning_output_tokens": 19518
+      },
+      "collection_seconds": 814.780999999959,
+      "program": {
+        "bytes": 7634,
+        "characters": 7634,
+        "lines": 233,
+        "nonblank_lines": 201,
+        "sha256": "35a443ace210200e89c24db2058fb49520b3142d7a064ec236f880bb04466328"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 21.094000000040978,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "82ce23138a0f27f3d40e4eb8028ac14e0ad25da46558cd94dd411070beb3d47c",
+        "parent_id": "5d6ca37c2041c236f61878de2796964da47294c219bf02b37f4a4e957adf3f4b",
+        "candidate_id": "8b95d5f0d7591e98815455da47c2064e33462ffc1d74957099eaddb6f2e4f964",
+        "resources": {
+          "loop_iterations": 157,
+          "operations": 5762728,
+          "statements": 667
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "1_wspl",
+      "arm": "wspl",
+      "step": 3,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17083,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 12201,
+        "reasoning_output_tokens": 10358
+      },
+      "collection_seconds": 407.60899999993853,
+      "program": {
+        "bytes": 4490,
+        "characters": 4490,
+        "lines": 155,
+        "nonblank_lines": 124,
+        "sha256": "46170fb90c55ebf2b7a993c98037540cc934d6e10730250f667161b1504c349f"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 20.469000000040978,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "00777328e0d72709bbe9bd51d14962fc6080ce22af1f96a0e48e2d1e318ffaa4",
+        "parent_id": "8b95d5f0d7591e98815455da47c2064e33462ffc1d74957099eaddb6f2e4f964",
+        "candidate_id": "2032cd3d1dbca875e5ffa0feb801f96e7e62a07d94fcdf9d191b85270257eed0",
+        "resources": {
+          "loop_iterations": 0,
+          "operations": 5918863,
+          "statements": 75
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "1_wspl",
+      "arm": "wspl",
+      "step": 4,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19807,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 14657,
+        "reasoning_output_tokens": 13442
+      },
+      "collection_seconds": 558.4220000000205,
+      "program": {
+        "bytes": 3136,
+        "characters": 3136,
+        "lines": 96,
+        "nonblank_lines": 80,
+        "sha256": "7f45cb3c06131830ae66eec08ad075819ce2e56ceccb5db46fc40c8031dce16c"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 17.875,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "0a36e51833d8c996c099bb5ba80ed7fede0828ea341670fe4b6abd1d2a60d2f7",
+        "parent_id": "2032cd3d1dbca875e5ffa0feb801f96e7e62a07d94fcdf9d191b85270257eed0",
+        "candidate_id": "be42dfd0cccb491790ad76c696d684f20e404a702b99e4083dc98657d9396549",
+        "resources": {
+          "loop_iterations": 0,
+          "operations": 4014016,
+          "statements": 45
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "1_wspl",
+      "arm": "wspl",
+      "step": 5,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 21829,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7902,
+        "reasoning_output_tokens": 7190
+      },
+      "collection_seconds": 326.0470000000205,
+      "program": {
+        "bytes": 1705,
+        "characters": 1705,
+        "lines": 54,
+        "nonblank_lines": 45,
+        "sha256": "8c4fdbc9e5e5ef60c74cc5634deb9334765143ac1a48734b0d201674a634983d"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 13.733999999938533,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "95529299152641aa341eee10fc87ecc35fbed1ca867ce41f9063dc871ed2f627",
+        "parent_id": "be42dfd0cccb491790ad76c696d684f20e404a702b99e4083dc98657d9396549",
+        "candidate_id": "4ab5edc7e32465f93b9c6934ef6be6bffee71a6e259a416df57c954fe6cbae1e",
+        "resources": {
+          "loop_iterations": 0,
+          "operations": 1760149,
+          "statements": 22
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "1_wspl",
+      "arm": "wspl",
+      "step": 6,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 23295,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 11289,
+        "reasoning_output_tokens": 9678
+      },
+      "collection_seconds": 445.76599999982864,
+      "program": {
+        "bytes": 3552,
+        "characters": 3552,
+        "lines": 127,
+        "nonblank_lines": 113,
+        "sha256": "abc122d1ef039bafab7cd1b0f78fee8fd54a89095d90634f156b3bcd8f043304"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 10.031999999890104,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "291a485a52d6e14e3b700ecf9d14eb822037b63b846c06a12bc2c0f9d564f78d",
+        "parent_id": "4ab5edc7e32465f93b9c6934ef6be6bffee71a6e259a416df57c954fe6cbae1e",
+        "candidate_id": "5e1fb8e6fab3f7e8a19b97b32e78a2af3b78faa0fbfbaf5a3f1ade4e696f8842",
+        "resources": {
+          "loop_iterations": 116,
+          "operations": 145133,
+          "statements": 394
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "1_wspl",
+      "arm": "wspl",
+      "step": 7,
+      "status": "final",
+      "usage": {
+        "input_tokens": 25756,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4196,
+        "reasoning_output_tokens": 4142
+      },
+      "collection_seconds": 175.48500000010245
+    },
+    {
+      "session": "1_python",
+      "arm": "python",
+      "step": 0,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 2372,
+        "cached_input_tokens": 2176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 27281,
+        "reasoning_output_tokens": 23826
+      },
+      "collection_seconds": 1121.34300000011,
+      "program": {
+        "bytes": 9436,
+        "characters": 9436,
+        "lines": 301,
+        "nonblank_lines": 264,
+        "sha256": "5389170a940db1a751c18aba9bf23c31ffd59cd35105b93ce2911ae42f836bc7"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21780241400000033,
+        "stdout": "Saved explicit Go heuristic circuits; no forward passes or fitting.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "1_python",
+      "arm": "python",
+      "step": 1,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 6760,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10657,
+        "reasoning_output_tokens": 9136
+      },
+      "collection_seconds": 472.9849999998696,
+      "program": {
+        "bytes": 4830,
+        "characters": 4830,
+        "lines": 143,
+        "nonblank_lines": 118,
+        "sha256": "31c63a8d4f6b5fd912129d5f42832b732513292afc3837cd97fd0896b9cacd8e"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.217789051,
+        "stdout": "Added conservative low-liberty attacking pressure.\nPreserved enclosure functions by explicit coefficient factoring.\nNo forward passes, fitting, search, or gameplay queries.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "1_python",
+      "arm": "python",
+      "step": 2,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 9036,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 14969,
+        "reasoning_output_tokens": 13824
+      },
+      "collection_seconds": 654.9220000000205,
+      "program": {
+        "bytes": 3433,
+        "characters": 3433,
+        "lines": 107,
+        "nonblank_lines": 93,
+        "sha256": "ef64df3d1396064ad87f97a25c5ab20092aa036f48a255fb44b168dc6dee0816"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.2177504950000002,
+        "stdout": "Strengthened explicit liberty proofs and added defensive pressure.\nNo forward passes, fitting, search, or gameplay queries.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "1_python",
+      "arm": "python",
+      "step": 3,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 10887,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8104,
+        "reasoning_output_tokens": 7447
+      },
+      "collection_seconds": 350.3289999999106,
+      "program": {
+        "bytes": 2287,
+        "characters": 2287,
+        "lines": 61,
+        "nonblank_lines": 51,
+        "sha256": "a73ada54414e36fa37308ace9792757b2052ff8fabd5cd61b85414d275cd414d"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.2180332909999998,
+        "stdout": "Added diminishing returns for repeated atari contacts.\nConstruction used coefficient edits only; no policy evaluation.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "1_python",
+      "arm": "python",
+      "step": 4,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 12199,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 16036,
+        "reasoning_output_tokens": 15020
+      },
+      "collection_seconds": 747.4680000001099,
+      "program": {
+        "bytes": 3622,
+        "characters": 3622,
+        "lines": 102,
+        "nonblank_lines": 84,
+        "sha256": "70ec8e3e6905bfe074632f1432c68d58f407a46c4b1fccd872de4055ab2baaab"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21858746999999967,
+        "stdout": "Added 16 straight-chain liberty circuits using spare units.\nExisting scoring coefficients unchanged.\nNo forward passes, fitting, search, or gameplay queries.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "1_python",
+      "arm": "python",
+      "step": 5,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 13928,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 13000,
+        "reasoning_output_tokens": 11731
+      },
+      "collection_seconds": 602.2970000000205,
+      "program": {
+        "bytes": 4402,
+        "characters": 4402,
+        "lines": 132,
+        "nonblank_lines": 112,
+        "sha256": "d0e81e3ef8bf4577df7cf0f01ab986df529f395a8ed98ce16cfbd5d2eadec4a8"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21812515799999987,
+        "stdout": "Added 16 early boundary-liberty certificates.\nAdded 16 certified friendly-support circuits.\nNo forward passes, fitting, search, or gameplay queries.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "1_python",
+      "arm": "python",
+      "step": 6,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 15945,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 13893,
+        "reasoning_output_tokens": 12418
+      },
+      "collection_seconds": 608.5319999998901,
+      "program": {
+        "bytes": 5548,
+        "characters": 5548,
+        "lines": 167,
+        "nonblank_lines": 139,
+        "sha256": "03be7c64c60716c8325c32f2165caf16679383b3122db697329998ff9deb1f84"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21873519499999983,
+        "stdout": "Extended connected-chain liberty certificates.\nScoring weights unchanged.\nCoefficient construction only; no forward passes or evaluation.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "1_python",
+      "arm": "python",
+      "step": 7,
+      "status": "final",
+      "usage": {
+        "input_tokens": 18191,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1590,
+        "reasoning_output_tokens": 1533
+      },
+      "collection_seconds": 80.70299999997951
+    },
+    {
+      "session": "2_python",
+      "arm": "python",
+      "step": 0,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 2378,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 17984,
+        "reasoning_output_tokens": 14502
+      },
+      "collection_seconds": 776.2649999998976,
+      "program": {
+        "bytes": 10681,
+        "characters": 10681,
+        "lines": 309,
+        "nonblank_lines": 264,
+        "sha256": "4c8471241cbb149245c15ff8762a6809d2f33054719935369bb8bd16a47c0e35"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21775489500000011,
+        "stdout": "Constructed symmetric liberty, safety, shape, territory and passing circuits.\nNonzero coefficients: 42456\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "2_python",
+      "arm": "python",
+      "step": 1,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 6823,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 13917,
+        "reasoning_output_tokens": 13045
+      },
+      "collection_seconds": 537.2189999998081,
+      "program": {
+        "bytes": 2585,
+        "characters": 2585,
+        "lines": 77,
+        "nonblank_lines": 60,
+        "sha256": "860eb8684c9d518d0ccaffd4d2960aa8b8037ff0a1291191f66c9c5990b5f961"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.2181202390000001,
+        "stdout": "Updated tactical thresholds, escape-credit calibration, and passing.\nConstruction used coefficient edits only; no policy evaluations.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "2_python",
+      "arm": "python",
+      "step": 2,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 8396,
+        "cached_input_tokens": 8192,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8488,
+        "reasoning_output_tokens": 7768
+      },
+      "collection_seconds": 379.8430000001099,
+      "program": {
+        "bytes": 2265,
+        "characters": 2265,
+        "lines": 72,
+        "nonblank_lines": 59,
+        "sha256": "77bc504f4136b1ea672ea0b8f8236d04ab6c35a888a743b49d2226a73a396443"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.2189408049999999,
+        "stdout": "Refined attack, preventive-defense, contact, and true-eye circuits.\nNo training, search, simulations, or neural evaluations performed.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "2_python",
+      "arm": "python",
+      "step": 3,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 9794,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8429,
+        "reasoning_output_tokens": 7768
+      },
+      "collection_seconds": 368.68699999991804,
+      "program": {
+        "bytes": 1918,
+        "characters": 1918,
+        "lines": 67,
+        "nonblank_lines": 55,
+        "sha256": "f268d9573b41ea18dfb1cd144f857cf11c31538a4c65bc2f8196a005e67e5be1"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21844712999999993,
+        "stdout": "Added bounded tactical relief using two freed spatial channels.\nNo training, search, simulation, or neural evaluations performed.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "2_python",
+      "arm": "python",
+      "step": 4,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 11105,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8395,
+        "reasoning_output_tokens": 8081
+      },
+      "collection_seconds": 389.79699999978766,
+      "program": {
+        "bytes": 921,
+        "characters": 921,
+        "lines": 30,
+        "nonblank_lines": 23,
+        "sha256": "0523338d754deb87e9943339e3a32cd83c3e059aba092d2e92cec3f24ae8e158"
+      },
+      "construction": {
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 0.21828253900000005,
+        "stdout": "Refined passing aggregates; placement logits unchanged.\nCoefficient construction only; no neural evaluations performed.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "session": "2_python",
+      "arm": "python",
+      "step": 5,
+      "status": "final",
+      "usage": {
+        "input_tokens": 12044,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3070,
+        "reasoning_output_tokens": 3015
+      },
+      "collection_seconds": 139.9220000000205
+    },
+    {
+      "session": "2_wspl",
+      "arm": "wspl",
+      "step": 0,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 2381,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 17212,
+        "reasoning_output_tokens": 13791
+      },
+      "collection_seconds": 618.6720000000205,
+      "program": {
+        "bytes": 7692,
+        "characters": 7692,
+        "lines": 319,
+        "nonblank_lines": 279,
+        "sha256": "40c83cd318ae1391a0e8297026f02352bbac2f705b14be5f9d6840b05a5aa551"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 26.530999999959022,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "962fa5b98a3b4ce04d567c720d5be39dcf834fa6ec714ff49ef241b646ef30eb",
+        "parent_id": "6d8757ccb99946b3f628dd804387cdf80e9626ed6bdc517db9eae4c2fd7c4883",
+        "candidate_id": "91847be81940fefe93224350a805ba66eb103c1dac8b5954472fb4bcdced794b",
+        "resources": {
+          "loop_iterations": 2859,
+          "operations": 6381347,
+          "statements": 17010
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "2_wspl",
+      "arm": "wspl",
+      "step": 1,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 6834,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 15557,
+        "reasoning_output_tokens": 13738
+      },
+      "collection_seconds": 598.9220000000205,
+      "program": {
+        "bytes": 4392,
+        "characters": 4392,
+        "lines": 187,
+        "nonblank_lines": 149,
+        "sha256": "90a78cbef4dad0b1a7a31f88119c75f282f9d4126d7d917693dc376663ded7cc"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 18.07799999997951,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "16009edaa7ec59d72e976312447387cb1f46cdb9e4831a1fbb37516bdd691623",
+        "parent_id": "91847be81940fefe93224350a805ba66eb103c1dac8b5954472fb4bcdced794b",
+        "candidate_id": "15bff5fa5beb6a12d70849e0e4fd52cb15c4dd0a143d23ee84aca224cf02efbf",
+        "resources": {
+          "loop_iterations": 981,
+          "operations": 3186724,
+          "statements": 10138
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "2_wspl",
+      "arm": "wspl",
+      "step": 2,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 9538,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 15999,
+        "reasoning_output_tokens": 14863
+      },
+      "collection_seconds": 577.0160000000615,
+      "program": {
+        "bytes": 3081,
+        "characters": 3081,
+        "lines": 120,
+        "nonblank_lines": 102,
+        "sha256": "1f2b586451169315bce68defb830b53e4832e47ba0d2e309598d76bb163d47d4"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 16.562000000150874,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "3f3ad9c5481414aa0cb703bd6272637df226fd55f1a27e8b22ddb109866b70ed",
+        "parent_id": "15bff5fa5beb6a12d70849e0e4fd52cb15c4dd0a143d23ee84aca224cf02efbf",
+        "candidate_id": "a517f490cef6102442dbbfa8ba382e4bd406b3dae1d74c0505f95f5fec77b0b6",
+        "resources": {
+          "loop_iterations": 7539,
+          "operations": 1466466,
+          "statements": 18529
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "2_wspl",
+      "arm": "wspl",
+      "step": 3,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 11509,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 13774,
+        "reasoning_output_tokens": 12948
+      },
+      "collection_seconds": 585.2969999997877,
+      "program": {
+        "bytes": 2357,
+        "characters": 2357,
+        "lines": 89,
+        "nonblank_lines": 74,
+        "sha256": "39a8d389c064d00c23cfab159accec26d26b286117db14ae3d8a8b0c9b3d21b8"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 14.109999999869615,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "6f5f5803977481b3134eba0a50c9ca5139f0fc2a9e0ee9b8fe51f9e2dc7b639a",
+        "parent_id": "a517f490cef6102442dbbfa8ba382e4bd406b3dae1d74c0505f95f5fec77b0b6",
+        "candidate_id": "b0cfe2bc38b31fa9093cf13e02a4e1c6dd44715653795829f9a63d61d5eedb93",
+        "resources": {
+          "loop_iterations": 7083,
+          "operations": 1021308,
+          "statements": 15536
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "2_wspl",
+      "arm": "wspl",
+      "step": 4,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 13138,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5328,
+        "reasoning_output_tokens": 4537
+      },
+      "collection_seconds": 218.40599999995902,
+      "program": {
+        "bytes": 2245,
+        "characters": 2245,
+        "lines": 88,
+        "nonblank_lines": 76,
+        "sha256": "3d51648cf3c476722cf74c78c9d8dc587d79ced6b62402e9eb8780f88cb02d97"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 11.359999999869615,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "429906d1530979365d8295490ae79337642ffb6723e619e78349bba3025f5925",
+        "parent_id": "b0cfe2bc38b31fa9093cf13e02a4e1c6dd44715653795829f9a63d61d5eedb93",
+        "candidate_id": "51d5bf83c944e4097c71dc548c9b5ce17405fae877e6716fda96c8cbb63211d5",
+        "resources": {
+          "loop_iterations": 978,
+          "operations": 569010,
+          "statements": 2997
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "2_wspl",
+      "arm": "wspl",
+      "step": 5,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 14719,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5315,
+        "reasoning_output_tokens": 4922
+      },
+      "collection_seconds": 213.34400000004098,
+      "program": {
+        "bytes": 1163,
+        "characters": 1163,
+        "lines": 46,
+        "nonblank_lines": 39,
+        "sha256": "59646984cfc69ddea6a5e967fe3b649ef0d3863ea1a62d8a4c5bc0c0b66cbabd"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 9.891000000061467,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "8edd3749d33d18fe92e0f77614bd2fcface1f58e3a5526e1eb0fae3713db11c0",
+        "parent_id": "51d5bf83c944e4097c71dc548c9b5ce17405fae877e6716fda96c8cbb63211d5",
+        "candidate_id": "6ee8ec39e77276fea74571b24250faf54c65a458a1467d8dee1ad34753b7fd15",
+        "resources": {
+          "loop_iterations": 522,
+          "operations": 24261,
+          "statements": 1137
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "2_wspl",
+      "arm": "wspl",
+      "step": 6,
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 15862,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 11246,
+        "reasoning_output_tokens": 10876
+      },
+      "collection_seconds": 491.655999999959,
+      "program": {
+        "bytes": 861,
+        "characters": 861,
+        "lines": 37,
+        "nonblank_lines": 31,
+        "sha256": "4b54f318764d08aefa8e0600933ba6b580f1095b677853274101f66c81765915"
+      },
+      "construction": {
+        "exit_code": 0,
+        "seconds": 9.780999999959022,
+        "stdout": "",
+        "stderr": "",
+        "plan_sha256": "b036d400e8b8688fa186e3fc3427fe2ba63924ead3e7f15525a9b1f72e4213cc",
+        "parent_id": "6ee8ec39e77276fea74571b24250faf54c65a458a1467d8dee1ad34753b7fd15",
+        "candidate_id": "8eb8c2c8b9fa72c4c6f1b8d2f41729b2c1634a45a128d01e64ad26548551afe0",
+        "resources": {
+          "loop_iterations": 472,
+          "operations": 16877,
+          "statements": 523
+        },
+        "placements": 0,
+        "numeric_profile": "exact_to_storage"
+      }
+    },
+    {
+      "session": "2_wspl",
+      "arm": "wspl",
+      "step": 7,
+      "status": "final",
+      "usage": {
+        "input_tokens": 16979,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5746,
+        "reasoning_output_tokens": 5696
+      },
+      "collection_seconds": 253.25
+    }
+  ],
+  "unknown_usage": "One interrupted Python draw2 step0 call; excluded from reported usage totals.",
+  "definitions": {
+    "program_bytes": "UTF-8 bytes of saved proposal files, including comments and line endings.",
+    "program_lines": "splitlines count including comments and blank lines; cumulative sums count repeated code.",
+    "tokens": "Provider-reported response usage; output includes reasoning. No tokenizer estimate for source alone.",
+    "operations": "WSPL interpreter charged operations, not FLOPs or comparable Python operation counts."
+  }
+}

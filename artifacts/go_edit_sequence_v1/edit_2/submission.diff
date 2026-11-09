@@ -1,0 +1,248 @@
+--- previous_submitted_transaction
++++ edit_2_submitted_transaction
+@@ -8,127 +8,76 @@
+ const E=324;
+ const F=405;
+ const G=486;
+-const N=487;
+-const T=488;
+ 
+ edit base as candidate mode=fixed numeric=exact_to_storage {
+-  // Replace local enemy pressure with a third-liberty certificate.
+-  W2[:,E:F]=0;
+-  b2[E:F]=0;
+-  W3[:,E:F]=0;
+-  b3[E:F]=0;
++  // Keep the original two-liberty seeds in h2 C/D.
++  // Use h2 E/F for complementary enemy/friendly certificates.
++  W2[:,E:G]=0;
++  b2[E:G]=0;
+ 
+-  // Add another gated propagation stage.
+-  W4[:,C:F]=0;
+-  b4[C:F]=0;
+-
+-  // Rebuild the final two feature stages.
+-  W5[:,:]=0;
+-  b5[:]=0;
+-  W6[:,:]=0;
+-  b6[:]=0;
++  // Rebuild propagation, third-liberty evidence, and shape.
++  W3[:,C:G]=0;
++  b3[C:G]=0;
+ 
+   for p in range(81) {
+-    // Adjacent stones have disjoint direct-liberty sets.
+-    // Half-weighted neighbor liberties give a conservative
+-    // certificate even when neighbors share liberties.
++    // Complementary bound:
++    // direct liberties + adjacent same-color direct liberties
++    // minus every empty diagonal.
++    //
++    // Shared liberties of adjacent group members can occur only
++    // at these diagonals. Subtracting all of them is conservative.
+     W2[B+p,E+p]=12;
+     W2[D+p,E+p]=1;
+-    b2[E+p]=-14;
++    b2[E+p]=-13;
+ 
+-    W3[B+p,E+p]=48;
+-    W3[E+p,E+p]=1;
+-    b3[E+p]=-48;
++    W2[A+p,F+p]=12;
++    W2[C+p,F+p]=1;
++    b2[F+p]=-13;
+ 
+-    W4[A+p,C+p]=128;
+-    W4[C+p,C+p]=1;
+-    b4[C+p]=-128;
++    // Merge both independent certificates and propagate only
++    // through stones of the corresponding color.
++    W3[A+p,C+p]=128;
++    W3[C+p,C+p]=1;
++    W3[F+p,C+p]=1;
++    b3[C+p]=-128;
+ 
+-    W4[B+p,D+p]=128;
+-    W4[D+p,D+p]=1;
+-    b4[D+p]=-128;
++    W3[B+p,D+p]=128;
++    W3[D+p,D+p]=1;
++    W3[E+p,D+p]=1;
++    b3[D+p]=-128;
+ 
+-    W4[B+p,E+p]=128;
+-    W4[E+p,E+p]=1;
+-    b4[E+p]=-128;
++    // Recover the original local third-liberty seed one layer
++    // later: relu(relu(bound-1)-1) = relu(bound-2).
++    W3[D+p,E+p]=1;
++    b3[E+p]=-1;
+ 
+-    // h5 A/B: own/enemy stones lacking a two-liberty certificate.
+-    W5[A+p,A+p]=1;
+-    W5[C+p,A+p]=-2;
+-    W5[B+p,B+p]=1;
+-    W5[D+p,B+p]=-2;
++    // Larger gating margins accommodate merged certificates.
++    W4[A+p,C+p]=512;
++    b4[C+p]=-512;
++    W4[B+p,D+p]=512;
++    b4[D+p]=-512;
+ 
+-    // h5 E: enemy stones lacking a three-liberty certificate.
+-    W5[B+p,E+p]=1;
+-    W5[E+p,E+p]=-2;
+-
+-    // Shifted deficit baseline and local eye feature.
+-    b5[C+p]=6;
+-    b5[D+p]=2;
+-    W5[F+p,F+p]=1;
+-
+-    // Excess-contact features implement diminishing bonuses.
+-    b6[A+p]=-1;
+-    b6[B+p]=-1;
+-
+-    W6[C+p,C+p]=1;
+-    b6[C+p]=-4;
+-    W6[D+p,D+p]=1;
+-    W6[F+p,F+p]=1;
+-
+-    W7[A+p,p]=-6;
+-    W7[B+p,p]=-8;
+-    W7[C+p,p]=-11;
+-    W7[D+p,p]=-13/2;
+-    W7[E+p,p]=12/5;
+-    W7[F+p,p]=1;
+-  }
+-
+-  // Preserve opening phase, occupancy, and side-to-move channels.
+-  for j in range(486,489) {
+-    W5[j,j]=1;
+-    W6[j,j]=1;
++    // Reconstruct the analytic spatial kernel directly from
++    // the stone indicators still available in h2.
++    b3[F+p]=parent.b1[F+p];
++    for q in range(81) {
++      W3[A+q,F+p]=parent.W1[3*q,F+p];
++      W3[B+q,F+p]=parent.W1[3*q+1,F+p];
++    }
+   }
+ 
+   // Horizontal directed adjacency.
+   for r in range(9) {
+     for c in range(8) {
+       for s in range(2) {
+-        W2[D+9*r+c+1-s,E+9*r+c+s]+=1/2;
+-        W3[E+9*r+c+1-s,E+9*r+c+s]+=1;
++        W2[D+9*r+c+1-s,E+9*r+c+s]+=1;
++        W2[C+9*r+c+1-s,F+9*r+c+s]+=1;
+ 
+-        W4[C+9*r+c+1-s,C+9*r+c+s]+=1;
+-        W4[D+9*r+c+1-s,D+9*r+c+s]+=1;
+-        W4[E+9*r+c+1-s,E+9*r+c+s]+=1;
++        W3[C+9*r+c+1-s,C+9*r+c+s]+=1;
++        W3[F+9*r+c+1-s,C+9*r+c+s]+=1;
+ 
+-        W5[C+9*r+c+1-s,A+9*r+c+s]-=2;
+-        W5[D+9*r+c+1-s,B+9*r+c+s]-=2;
+-        W5[E+9*r+c+1-s,E+9*r+c+s]-=2;
+-
+-        W5[B+9*r+c+1-s,C+9*r+c+s]+=1;
+-        b5[C+9*r+c+s]-=1;
+-
+-        W5[A+9*r+c+1-s,D+9*r+c+s]+=1;
+-        W5[B+9*r+c+1-s,D+9*r+c+s]-=2;
+-        b5[D+9*r+c+s]-=1;
+-
+-        W6[A+9*r+c+1-s,A+9*r+c+s]+=1;
+-        W6[B+9*r+c+1-s,B+9*r+c+s]+=1;
+-
+-        // Each safe friendly contact contributes one remaining
+-        // liberty, rather than assuming it contributes two.
+-        W6[A+9*r+c+1-s,C+9*r+c+s]+=1;
+-        W6[B+9*r+c+1-s,C+9*r+c+s]-=1;
+-
+-        // Do not treat urgent connections as ordinary eye filling.
+-        W6[A+9*r+c+1-s,D+9*r+c+s]-=1;
+-
+-        // Pressure excludes stones already counted as captures.
+-        W6[E+9*r+c+1-s,E+9*r+c+s]+=1;
+-        W6[B+9*r+c+1-s,E+9*r+c+s]-=1;
+-
+-        W6[A+9*r+c+1-s,F+9*r+c+s]+=15/2;
+-        W6[B+9*r+c+1-s,F+9*r+c+s]+=21/2;
++        W3[D+9*r+c+1-s,D+9*r+c+s]+=1;
++        W3[E+9*r+c+1-s,D+9*r+c+s]+=1;
+       }
+     }
+   }
+@@ -136,50 +85,34 @@
+   // Vertical directed adjacency.
+   for p in range(72) {
+     for s in range(2) {
+-      W2[D+p+9*(1-s),E+p+9*s]+=1/2;
+-      W3[E+p+9*(1-s),E+p+9*s]+=1;
++      W2[D+p+9*(1-s),E+p+9*s]+=1;
++      W2[C+p+9*(1-s),F+p+9*s]+=1;
+ 
+-      W4[C+p+9*(1-s),C+p+9*s]+=1;
+-      W4[D+p+9*(1-s),D+p+9*s]+=1;
+-      W4[E+p+9*(1-s),E+p+9*s]+=1;
++      W3[C+p+9*(1-s),C+p+9*s]+=1;
++      W3[F+p+9*(1-s),C+p+9*s]+=1;
+ 
+-      W5[C+p+9*(1-s),A+p+9*s]-=2;
+-      W5[D+p+9*(1-s),B+p+9*s]-=2;
+-      W5[E+p+9*(1-s),E+p+9*s]-=2;
+-
+-      W5[B+p+9*(1-s),C+p+9*s]+=1;
+-      b5[C+p+9*s]-=1;
+-
+-      W5[A+p+9*(1-s),D+p+9*s]+=1;
+-      W5[B+p+9*(1-s),D+p+9*s]-=2;
+-      b5[D+p+9*s]-=1;
+-
+-      W6[A+p+9*(1-s),A+p+9*s]+=1;
+-      W6[B+p+9*(1-s),B+p+9*s]+=1;
+-
+-      W6[A+p+9*(1-s),C+p+9*s]+=1;
+-      W6[B+p+9*(1-s),C+p+9*s]-=1;
+-
+-      W6[A+p+9*(1-s),D+p+9*s]-=1;
+-
+-      W6[E+p+9*(1-s),E+p+9*s]+=1;
+-      W6[B+p+9*(1-s),E+p+9*s]-=1;
+-
+-      W6[A+p+9*(1-s),F+p+9*s]+=15/2;
+-      W6[B+p+9*(1-s),F+p+9*s]+=21/2;
++      W3[D+p+9*(1-s),D+p+9*s]+=1;
++      W3[E+p+9*(1-s),D+p+9*s]+=1;
+     }
+   }
+ 
+-  // False-eye adjustment and reduced reward for redundant connections.
++  // Subtract empty diagonals: occupancy minus one.
++  // Reflections and reversal cover every directed diagonal.
+   for r in range(8) {
+     for c in range(8) {
+       for d in range(2) {
+         for s in range(2) {
+-          W5[B+9*r+c+d+(1-s)*(10-2*d),
+-             D+9*r+c+d+s*(10-2*d)]-=1/2;
++          W2[A+9*r+c+d+(1-s)*(10-2*d),
++             E+9*r+c+d+s*(10-2*d)]+=1;
++          W2[B+9*r+c+d+(1-s)*(10-2*d),
++             E+9*r+c+d+s*(10-2*d)]+=1;
++          b2[E+9*r+c+d+s*(10-2*d)]-=1;
+ 
+-          W1[3*(9*r+c+d+(1-s)*(10-2*d)),
+-             E+9*r+c+d+s*(10-2*d)]-=1/2;
++          W2[A+9*r+c+d+(1-s)*(10-2*d),
++             F+9*r+c+d+s*(10-2*d)]+=1;
++          W2[B+9*r+c+d+(1-s)*(10-2*d),
++             F+9*r+c+d+s*(10-2*d)]+=1;
++          b2[F+9*r+c+d+s*(10-2*d)]-=1;
+         }
+       }
+     }

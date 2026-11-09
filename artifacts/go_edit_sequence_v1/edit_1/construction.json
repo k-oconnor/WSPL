@@ -1,0 +1,16 @@
+{
+  "exit_code": 0,
+  "seconds": 18.07799999997951,
+  "stdout": "",
+  "stderr": "",
+  "plan_sha256": "16009edaa7ec59d72e976312447387cb1f46cdb9e4831a1fbb37516bdd691623",
+  "parent_id": "91847be81940fefe93224350a805ba66eb103c1dac8b5954472fb4bcdced794b",
+  "candidate_id": "15bff5fa5beb6a12d70849e0e4fd52cb15c4dd0a143d23ee84aca224cf02efbf",
+  "resources": {
+    "loop_iterations": 981,
+    "operations": 3186724,
+    "statements": 10138
+  },
+  "placements": 0,
+  "numeric_profile": "exact_to_storage"
+}

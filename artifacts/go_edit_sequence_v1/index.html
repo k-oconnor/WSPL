@@ -1,0 +1,3500 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Go neural-program edit review</title><style>
+body{font:16px/1.55 system-ui,sans-serif;max-width:1250px;margin:36px auto;padding:0 22px;color:#172536;background:#f5f7fa}
+h1,h2,h3{line-height:1.2}table{border-collapse:collapse;width:100%;background:white;margin:18px 0;font-variant-numeric:tabular-nums}
+th,td{padding:9px 12px;border-bottom:1px solid #d8dee7;text-align:right}th:first-child,td:first-child{text-align:left}
+article{background:white;border:1px solid #d8dee7;border-radius:8px;margin:24px 0;padding:20px}pre{overflow:auto;background:#101925;color:#e8eef7;padding:16px;font:13px/1.5 monospace;max-height:600px}
+.add{color:#9aefad}.del{color:#ffabab}.meta{color:#a4c8ff}summary{cursor:pointer;font-weight:650;padding:10px 0}a{color:#125bb5}.scroll{overflow:auto}.note{color:#536277}
+</style><h1>Go neural-program edit review</h1>
+<p>Seven saved WSPL transactions, 42,000 CPU games, no gameplay feedback during authoring.
+All 189 final-checkpoint batches exactly reproduce the original evaluation.</p>
+<p class="note">Post-hoc analysis of the winning session on previously seen seeds. Intervals are descriptive,
+not evidence over independent author replicates. No new games or model calls were used to build this report.</p><h2>Checkpoint progression</h2><div class="scroll"><table><tr><th>Edit</th><th>Win rate</th><th>Change (pp)</th><th>Changed weights</th><th>Source bytes</th><th>Lines</th><th>Input tokens</th><th>Output tokens</th><th>Reasoning</th></tr><tr><td><a href="#edit0">0</a></td><td>43.77%</td><td>—</td><td>14,551</td><td>7,692</td><td>319</td><td>2,381</td><td>17,212</td><td>13,791</td></tr><tr><td><a href="#edit1">1</a></td><td>50.35%</td><td>+6.58</td><td>8,608</td><td>4,392</td><td>187</td><td>6,834</td><td>15,557</td><td>13,738</td></tr><tr><td><a href="#edit2">2</a></td><td>51.53%</td><td>+1.18</td><td>7,554</td><td>3,081</td><td>120</td><td>9,538</td><td>15,999</td><td>14,863</td></tr><tr><td><a href="#edit3">3</a></td><td>54.13%</td><td>+2.60</td><td>8,793</td><td>2,357</td><td>89</td><td>11,509</td><td>13,774</td><td>12,948</td></tr><tr><td><a href="#edit4">4</a></td><td>54.03%</td><td>-0.10</td><td>5,671</td><td>2,245</td><td>88</td><td>13,138</td><td>5,328</td><td>4,537</td></tr><tr><td><a href="#edit5">5</a></td><td>52.88%</td><td>-1.15</td><td>981</td><td>1,163</td><td>46</td><td>14,719</td><td>5,315</td><td>4,922</td></tr><tr><td><a href="#edit6">6</a></td><td>52.15%</td><td>-0.73</td><td>256</td><td>861</td><td>37</td><td>15,862</td><td>11,246</td><td>10,876</td></tr></table></div><h2>Whole-screen accounting</h2><p>Includes FINAL responses; excludes the interrupted call with unknown usage. Output tokens include reasoning. Source bytes include comments and original line endings; sums count all submitted transactions, including repeated code.</p><table><tr><th>Arm</th><th>Responses</th><th>Programs</th><th>Program bytes</th><th>Lines</th><th>Input</th><th>Output</th><th>Reasoning</th></tr><tr><td>python</td><td>22</td><td>19</td><td>84,033</td><td>2534</td><td>232,218</td><td>261,509</td><td>234,482</td></tr><tr><td>wspl</td><td>23</td><td>20</td><td>87,007</td><td>3130</td><td>307,130</td><td>288,427</td><td>251,047</td></tr></table><p><a href="authoring_metrics.json">Full per-call and per-session accounting</a> · <a href="checkpoint_metrics.json">Checkpoint metrics</a></p><article id="edit0"><h2>Edit 0 · 43.77% win rate</h2><p>14,551 coefficients changed; 14,551 nonzero afterward. Collection: 618.7s; construction: 26.53s. WSPL charged operations: 6,381,347; placements: 0.</p><p><a href="edit_0/proposal.wspl">Exact submitted program</a> · <a href="edit_0/answer.md">Raw response</a> · <a href="edit_0/weight_changes.json">All weight changes</a> · <a href="edit_0/metrics.json">Metrics and hashes</a></p><details><summary>Actual stored-weight changes (first 80; full JSON linked above)</summary><pre><span class="del">- W1[0,0] = 0.0</span>
+<span class="add">+ W1[0,0] = 1.0</span>
+<span class="del">- W1[0,162] = 0.0</span>
+<span class="add">+ W1[0,162] = 4.0</span>
+<span class="del">- W1[0,163] = 0.0</span>
+<span class="add">+ W1[0,163] = -1.0</span>
+<span class="del">- W1[0,171] = 0.0</span>
+<span class="add">+ W1[0,171] = -1.0</span>
+<span class="del">- W1[0,244] = 0.0</span>
+<span class="add">+ W1[0,244] = -1.0</span>
+<span class="del">- W1[0,252] = 0.0</span>
+<span class="add">+ W1[0,252] = -1.0</span>
+<span class="del">- W1[0,325] = 0.0</span>
+<span class="add">+ W1[0,325] = 1.0</span>
+<span class="del">- W1[0,333] = 0.0</span>
+<span class="add">+ W1[0,333] = 1.0</span>
+<span class="del">- W1[0,406] = 0.0</span>
+<span class="add">+ W1[0,406] = -0.44999998807907104</span>
+<span class="del">- W1[0,407] = 0.0</span>
+<span class="add">+ W1[0,407] = 0.3499999940395355</span>
+<span class="del">- W1[0,408] = 0.0</span>
+<span class="add">+ W1[0,408] = 0.15000000596046448</span>
+<span class="del">- W1[0,414] = 0.0</span>
+<span class="add">+ W1[0,414] = -0.44999998807907104</span>
+<span class="del">- W1[0,415] = 0.0</span>
+<span class="add">+ W1[0,415] = 0.10000000149011612</span>
+<span class="del">- W1[0,416] = 0.0</span>
+<span class="add">+ W1[0,416] = 0.10000000149011612</span>
+<span class="del">- W1[0,423] = 0.0</span>
+<span class="add">+ W1[0,423] = 0.3499999940395355</span>
+<span class="del">- W1[0,424] = 0.0</span>
+<span class="add">+ W1[0,424] = 0.10000000149011612</span>
+<span class="del">- W1[0,425] = 0.0</span>
+<span class="add">+ W1[0,425] = -0.05000000074505806</span>
+<span class="del">- W1[0,432] = 0.0</span>
+<span class="add">+ W1[0,432] = 0.15000000596046448</span>
+<span class="del">- W1[0,486] = 0.0</span>
+<span class="add">+ W1[0,486] = -0.02500000037252903</span>
+<span class="del">- W1[0,487] = 0.0</span>
+<span class="add">+ W1[0,487] = 1.0</span>
+<span class="del">- W1[1,81] = 0.0</span>
+<span class="add">+ W1[1,81] = 1.0</span>
+<span class="del">- W1[1,163] = 0.0</span>
+<span class="add">+ W1[1,163] = -1.0</span>
+<span class="del">- W1[1,171] = 0.0</span>
+<span class="add">+ W1[1,171] = -1.0</span>
+<span class="del">- W1[1,243] = 0.0</span>
+<span class="add">+ W1[1,243] = 4.0</span>
+<span class="del">- W1[1,244] = 0.0</span>
+<span class="add">+ W1[1,244] = -1.0</span>
+<span class="del">- W1[1,252] = 0.0</span>
+<span class="add">+ W1[1,252] = -1.0</span>
+<span class="del">- W1[1,406] = 0.0</span>
+<span class="add">+ W1[1,406] = -0.4000000059604645</span>
+<span class="del">- W1[1,407] = 0.0</span>
+<span class="add">+ W1[1,407] = 0.6499999761581421</span>
+<span class="del">- W1[1,408] = 0.0</span>
+<span class="add">+ W1[1,408] = 0.10000000149011612</span>
+<span class="del">- W1[1,414] = 0.0</span>
+<span class="add">+ W1[1,414] = -0.4000000059604645</span>
+<span class="del">- W1[1,415] = 0.0</span>
+<span class="add">+ W1[1,415] = 0.44999998807907104</span>
+<span class="del">- W1[1,416] = 0.0</span>
+<span class="add">+ W1[1,416] = 0.11999999731779099</span>
+<span class="del">- W1[1,423] = 0.0</span>
+<span class="add">+ W1[1,423] = 0.6499999761581421</span>
+<span class="del">- W1[1,424] = 0.0</span>
+<span class="add">+ W1[1,424] = 0.11999999731779099</span>
+<span class="del">- W1[1,425] = 0.0</span>
+<span class="add">+ W1[1,425] = 0.05000000074505806</span>
+<span class="del">- W1[1,432] = 0.0</span>
+<span class="add">+ W1[1,432] = 0.10000000149011612</span>
+<span class="del">- W1[1,486] = 0.0</span>
+<span class="add">+ W1[1,486] = -0.02500000037252903</span>
+<span class="del">- W1[1,487] = 0.0</span>
+<span class="add">+ W1[1,487] = 1.0</span>
+<span class="del">- W1[2,488] = 0.0</span>
+<span class="add">+ W1[2,488] = 1.0</span>
+<span class="del">- W1[3,1] = 0.0</span>
+<span class="add">+ W1[3,1] = 1.0</span>
+<span class="del">- W1[3,162] = 0.0</span>
+<span class="add">+ W1[3,162] = -1.0</span>
+<span class="del">- W1[3,163] = 0.0</span>
+<span class="add">+ W1[3,163] = 4.0</span>
+<span class="del">- W1[3,164] = 0.0</span>
+<span class="add">+ W1[3,164] = -1.0</span>
+<span class="del">- W1[3,172] = 0.0</span>
+<span class="add">+ W1[3,172] = -1.0</span>
+<span class="del">- W1[3,243] = 0.0</span>
+<span class="add">+ W1[3,243] = -1.0</span>
+<span class="del">- W1[3,245] = 0.0</span>
+<span class="add">+ W1[3,245] = -1.0</span>
+<span class="del">- W1[3,253] = 0.0</span>
+<span class="add">+ W1[3,253] = -1.0</span>
+<span class="del">- W1[3,324] = 0.0</span>
+<span class="add">+ W1[3,324] = 1.0</span>
+<span class="del">- W1[3,326] = 0.0</span>
+<span class="add">+ W1[3,326] = 1.0</span>
+<span class="del">- W1[3,334] = 0.0</span>
+<span class="add">+ W1[3,334] = 1.0</span>
+<span class="del">- W1[3,405] = 0.0</span>
+<span class="add">+ W1[3,405] = -0.44999998807907104</span>
+<span class="del">- W1[3,407] = 0.0</span>
+<span class="add">+ W1[3,407] = -0.44999998807907104</span>
+<span class="del">- W1[3,408] = 0.0</span>
+<span class="add">+ W1[3,408] = 0.3499999940395355</span>
+<span class="del">- W1[3,409] = 0.0</span>
+<span class="add">+ W1[3,409] = 0.15000000596046448</span>
+<span class="del">- W1[3,414] = 0.0</span>
+<span class="add">+ W1[3,414] = 0.10000000149011612</span>
+<span class="del">- W1[3,415] = 0.0</span>
+<span class="add">+ W1[3,415] = -0.44999998807907104</span>
+<span class="del">- W1[3,416] = 0.0</span>
+<span class="add">+ W1[3,416] = 0.10000000149011612</span>
+<span class="del">- W1[3,417] = 0.0</span>
+<span class="add">+ W1[3,417] = 0.10000000149011612</span>
+<span class="del">- W1[3,423] = 0.0</span>
+<span class="add">+ W1[3,423] = 0.10000000149011612</span>
+<span class="del">- W1[3,424] = 0.0</span>
+<span class="add">+ W1[3,424] = 0.3499999940395355</span>
+<span class="del">- W1[3,425] = 0.0</span>
+<span class="add">+ W1[3,425] = 0.10000000149011612</span>
+<span class="del">- W1[3,426] = 0.0</span>
+<span class="add">+ W1[3,426] = -0.05000000074505806</span>
+<span class="del">- W1[3,433] = 0.0</span>
+<span class="add">+ W1[3,433] = 0.15000000596046448</span>
+<span class="del">- W1[3,486] = 0.0</span>
+<span class="add">+ W1[3,486] = -0.02500000037252903</span>
+<span class="del">- W1[3,487] = 0.0</span>
+<span class="add">+ W1[3,487] = 1.0</span>
+<span class="del">- W1[4,82] = 0.0</span>
+<span class="add">+ W1[4,82] = 1.0</span>
+<span class="del">- W1[4,162] = 0.0</span>
+<span class="add">+ W1[4,162] = -1.0</span>
+<span class="del">- W1[4,164] = 0.0</span>
+<span class="add">+ W1[4,164] = -1.0</span>
+<span class="del">- W1[4,172] = 0.0</span>
+<span class="add">+ W1[4,172] = -1.0</span>
+<span class="del">- W1[4,243] = 0.0</span>
+<span class="add">+ W1[4,243] = -1.0</span>
+<span class="del">- W1[4,244] = 0.0</span>
+<span class="add">+ W1[4,244] = 4.0</span>
+<span class="del">- W1[4,245] = 0.0</span>
+<span class="add">+ W1[4,245] = -1.0</span>
+<span class="del">- W1[4,253] = 0.0</span>
+<span class="add">+ W1[4,253] = -1.0</span>
+<span class="del">- W1[4,405] = 0.0</span>
+<span class="add">+ W1[4,405] = -0.4000000059604645</span>
+<span class="del">- W1[4,407] = 0.0</span>
+<span class="add">+ W1[4,407] = -0.4000000059604645</span>
+<span class="del">- W1[4,408] = 0.0</span>
+<span class="add">+ W1[4,408] = 0.6499999761581421</span>
+<span class="del">- W1[4,409] = 0.0</span>
+<span class="add">+ W1[4,409] = 0.10000000149011612</span>
+<span class="del">- W1[4,414] = 0.0</span>
+<span class="add">+ W1[4,414] = 0.44999998807907104</span>
+<span class="del">- W1[4,415] = 0.0</span>
+<span class="add">+ W1[4,415] = -0.4000000059604645</span>
+<span class="del">- W1[4,416] = 0.0</span>
+<span class="add">+ W1[4,416] = 0.44999998807907104</span>
+</pre></details><details><summary>Submitted transaction</summary><pre>wspl 0.2;
+target base=artifact(&quot;parent&quot;,sha256=&quot;{{PARENT_SHA256}}&quot;);
+
+const A=0;
+const B=81;
+const C=162;
+const D=243;
+const E=324;
+const F=405;
+const G=486;
+const N=487;
+const T=488;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  W1[:,:]=0; b1[:]=0;
+  W2[:,:]=0; b2[:]=0;
+  W3[:,:]=0; b3[:]=0;
+  W4[:,:]=0; b4[:]=0;
+  W5[:,:]=0; b5[:]=0;
+  W6[:,:]=0; b6[:]=0;
+  W7[:,:]=0; b7[:]=0;
+
+  // Per-point channels and local producers.
+  for p in range(81) {
+    // h1: own, enemy, own direct liberties, enemy direct
+    // liberties, connection feature, shifted shape score.
+    W1[3*p,A+p]=1;
+    W1[3*p+1,B+p]=1;
+    W1[3*p,C+p]=4;
+    W1[3*p+1,D+p]=4;
+    b1[C+p]=-4;
+    b1[D+p]=-4;
+    b1[E+p]=-1;
+    b1[F+p]=20;
+
+    W1[3*p,G]=-1/40;
+    W1[3*p+1,G]=-1/40;
+    W1[3*p,N]=1;
+    W1[3*p+1,N]=1;
+
+    // h2: seed evidence of at least two group liberties.
+    W2[A+p,A+p]=1;
+    W2[B+p,B+p]=1;
+    W2[A+p,C+p]=12;
+    W2[C+p,C+p]=1;
+    b2[C+p]=-13;
+    W2[B+p,D+p]=12;
+    W2[D+p,D+p]=1;
+    b2[D+p]=-13;
+
+    // Local enemy pressure, distinct from the capture detector.
+    W2[B+p,E+p]=3;
+    W2[D+p,E+p]=-1;
+    W2[F+p,F+p]=1;
+    W2[E+p,F+p]=4/5;
+
+    // h3: propagate safety evidence through same-color stones.
+    W3[A+p,A+p]=1;
+    W3[B+p,B+p]=1;
+    W3[A+p,C+p]=48;
+    W3[C+p,C+p]=1;
+    b3[C+p]=-48;
+    W3[B+p,D+p]=48;
+    W3[D+p,D+p]=1;
+    b3[D+p]=-48;
+    W3[E+p,E+p]=1;
+    W3[F+p,F+p]=1;
+
+    // h4: binary vulnerability after another neighborhood step.
+    W4[A+p,A+p]=1;
+    W4[B+p,B+p]=1;
+    W4[A+p,C+p]=1;
+    W4[C+p,C+p]=-2;
+    W4[B+p,D+p]=1;
+    W4[D+p,D+p]=-2;
+    W4[E+p,E+p]=1;
+    W4[F+p,F+p]=1;
+
+    // h5: adjacent vulnerable stones, resulting-liberty deficit,
+    // eye penalty, pressure, and shape.
+    b5[C+p]=2;
+    b5[D+p]=2;
+    W5[F+p,F+p]=1;
+
+    // h6: rescue and attack are suppressed by liberty deficit.
+    W6[A+p,A+p]=1;
+    W6[C+p,A+p]=-4;
+    W6[B+p,B+p]=1;
+    W6[C+p,C+p]=1;
+    W6[D+p,D+p]=1;
+    W6[E+p,E+p]=1;
+    W6[B+p,E+p]=-2;
+    W6[C+p,E+p]=-4;
+    W6[F+p,F+p]=1;
+
+    W7[A+p,p]=8;
+    W7[B+p,p]=17/2;
+    W7[C+p,p]=-10;
+    W7[D+p,p]=-13/2;
+    W7[E+p,p]=12/5;
+    W7[F+p,p]=1;
+    b7[p]=-20;
+  }
+
+  // Global opening phase, occupancy, and side-to-move.
+  b1[G]=1;
+  W1[2,T]=1;
+  for j in range(486,489) {
+    W2[j,j]=1;
+    W3[j,j]=1;
+    W4[j,j]=1;
+    W5[j,j]=1;
+    W6[j,j]=1;
+  }
+  b7[81]=-7;
+  W7[N,81]=1/20;
+  W7[T,81]=7/20;
+
+  // Horizontal directed adjacency.
+  // Destination: 9*r+c+s. Source: 9*r+c+1-s.
+  for r in range(9) {
+    for c in range(8) {
+      for s in range(2) {
+        W1[3*(9*r+c+1-s),C+9*r+c+s]-=1;
+        W1[3*(9*r+c+1-s)+1,C+9*r+c+s]-=1;
+        W1[3*(9*r+c+1-s),D+9*r+c+s]-=1;
+        W1[3*(9*r+c+1-s)+1,D+9*r+c+s]-=1;
+        b1[C+9*r+c+s]+=1;
+        b1[D+9*r+c+s]+=1;
+        W1[3*(9*r+c+1-s),E+9*r+c+s]+=1;
+        W1[3*(9*r+c+1-s),F+9*r+c+s]-=9/20;
+        W1[3*(9*r+c+1-s)+1,F+9*r+c+s]-=2/5;
+
+        W2[C+9*r+c+1-s,C+9*r+c+s]+=1/2;
+        W2[D+9*r+c+1-s,D+9*r+c+s]+=1/2;
+        W2[D+9*r+c+1-s,E+9*r+c+s]-=1/2;
+
+        W3[C+9*r+c+1-s,C+9*r+c+s]+=1;
+        W3[D+9*r+c+1-s,D+9*r+c+s]+=1;
+
+        W4[C+9*r+c+1-s,C+9*r+c+s]-=2;
+        W4[D+9*r+c+1-s,D+9*r+c+s]-=2;
+
+        W5[C+9*r+c+1-s,A+9*r+c+s]+=1;
+        W5[D+9*r+c+1-s,B+9*r+c+s]+=1;
+
+        W5[A+9*r+c+1-s,C+9*r+c+s]-=1;
+        W5[B+9*r+c+1-s,C+9*r+c+s]+=1;
+        W5[C+9*r+c+1-s,C+9*r+c+s]+=2;
+        W5[D+9*r+c+1-s,C+9*r+c+s]-=1;
+        b5[C+9*r+c+s]-=1;
+
+        W5[A+9*r+c+1-s,D+9*r+c+s]+=1;
+        W5[B+9*r+c+1-s,D+9*r+c+s]-=2;
+        b5[D+9*r+c+s]-=1;
+
+        W5[E+9*r+c+1-s,E+9*r+c+s]+=1;
+      }
+    }
+  }
+
+  // Vertical directed adjacency.
+  // Destination: p+9*s. Source: p+9*(1-s).
+  for p in range(72) {
+    for s in range(2) {
+      W1[3*(p+9*(1-s)),C+p+9*s]-=1;
+      W1[3*(p+9*(1-s))+1,C+p+9*s]-=1;
+      W1[3*(p+9*(1-s)),D+p+9*s]-=1;
+      W1[3*(p+9*(1-s))+1,D+p+9*s]-=1;
+      b1[C+p+9*s]+=1;
+      b1[D+p+9*s]+=1;
+      W1[3*(p+9*(1-s)),E+p+9*s]+=1;
+      W1[3*(p+9*(1-s)),F+p+9*s]-=9/20;
+      W1[3*(p+9*(1-s))+1,F+p+9*s]-=2/5;
+
+      W2[C+p+9*(1-s),C+p+9*s]+=1/2;
+      W2[D+p+9*(1-s),D+p+9*s]+=1/2;
+      W2[D+p+9*(1-s),E+p+9*s]-=1/2;
+
+      W3[C+p+9*(1-s),C+p+9*s]+=1;
+      W3[D+p+9*(1-s),D+p+9*s]+=1;
+
+      W4[C+p+9*(1-s),C+p+9*s]-=2;
+      W4[D+p+9*(1-s),D+p+9*s]-=2;
+
+      W5[C+p+9*(1-s),A+p+9*s]+=1;
+      W5[D+p+9*(1-s),B+p+9*s]+=1;
+
+      W5[A+p+9*(1-s),C+p+9*s]-=1;
+      W5[B+p+9*(1-s),C+p+9*s]+=1;
+      W5[C+p+9*(1-s),C+p+9*s]+=2;
+      W5[D+p+9*(1-s),C+p+9*s]-=1;
+      b5[C+p+9*s]-=1;
+
+      W5[A+p+9*(1-s),D+p+9*s]+=1;
+      W5[B+p+9*(1-s),D+p+9*s]-=2;
+      b5[D+p+9*s]-=1;
+
+      W5[E+p+9*(1-s),E+p+9*s]+=1;
+    }
+  }
+
+  // Adjacent diagonals: shape and false-eye adjustment.
+  for r in range(8) {
+    for c in range(8) {
+      for d in range(2) {
+        for s in range(2) {
+          W1[3*(9*r+c+d+(1-s)*(10-2*d)),
+             F+9*r+c+d+s*(10-2*d)]+=1/10;
+          W1[3*(9*r+c+d+(1-s)*(10-2*d))+1,
+             F+9*r+c+d+s*(10-2*d)]+=9/20;
+          W5[B+9*r+c+d+(1-s)*(10-2*d),
+             D+9*r+c+d+s*(10-2*d)]-=1/2;
+        }
+      }
+    }
+  }
+
+  // Two-step horizontal extensions and approaches.
+  for r in range(9) {
+    for c in range(7) {
+      for s in range(2) {
+        W1[3*(9*r+c+2*(1-s)),F+9*r+c+2*s]+=7/20;
+        W1[3*(9*r+c+2*(1-s))+1,F+9*r+c+2*s]+=13/20;
+      }
+    }
+  }
+
+  // Two-step vertical extensions and approaches.
+  for p in range(63) {
+    for s in range(2) {
+      W1[3*(p+18*(1-s)),F+p+18*s]+=7/20;
+      W1[3*(p+18*(1-s))+1,F+p+18*s]+=13/20;
+    }
+  }
+
+  // Knight offsets (2,1), reflected and reversed.
+  for r in range(7) {
+    for c in range(8) {
+      for d in range(2) {
+        for s in range(2) {
+          W1[3*(9*r+c+d+(1-s)*(19-2*d)),
+             F+9*r+c+d+s*(19-2*d)]+=1/10;
+          W1[3*(9*r+c+d+(1-s)*(19-2*d))+1,
+             F+9*r+c+d+s*(19-2*d)]+=3/25;
+        }
+      }
+    }
+  }
+
+  // Knight offsets (1,2), reflected and reversed.
+  for r in range(8) {
+    for c in range(7) {
+      for d in range(2) {
+        for s in range(2) {
+          W1[3*(9*r+c+2*d+(1-s)*(11-4*d)),
+             F+9*r+c+2*d+s*(11-4*d)]+=1/10;
+          W1[3*(9*r+c+2*d+(1-s)*(11-4*d))+1,
+             F+9*r+c+2*d+s*(11-4*d)]+=3/25;
+        }
+      }
+    }
+  }
+
+  // Three-step horizontal development.
+  for r in range(9) {
+    for c in range(6) {
+      for s in range(2) {
+        W1[3*(9*r+c+3*(1-s)),F+9*r+c+3*s]+=3/20;
+        W1[3*(9*r+c+3*(1-s))+1,F+9*r+c+3*s]+=1/10;
+      }
+    }
+  }
+
+  // Three-step vertical development.
+  for p in range(54) {
+    for s in range(2) {
+      W1[3*(p+27*(1-s)),F+p+27*s]+=3/20;
+      W1[3*(p+27*(1-s))+1,F+p+27*s]+=1/10;
+    }
+  }
+
+  // Longer diagonal spacing.
+  for r in range(7) {
+    for c in range(7) {
+      for d in range(2) {
+        for s in range(2) {
+          W1[3*(9*r+c+2*d+(1-s)*(20-4*d)),
+             F+9*r+c+2*d+s*(20-4*d)]-=1/20;
+          W1[3*(9*r+c+2*d+(1-s)*(20-4*d))+1,
+             F+9*r+c+2*d+s*(20-4*d)]+=1/20;
+        }
+      }
+    }
+  }
+
+  // Opening geometry fades to zero at forty occupied points.
+  for k in range(9) {
+    W7[G,k]-=3;
+    W7[G,72+k]-=3;
+    W7[G,9*k]-=3;
+    W7[G,9*k+8]-=3;
+
+    W7[G,9+k]-=1;
+    W7[G,63+k]-=1;
+    W7[G,9*k+1]-=1;
+    W7[G,9*k+7]-=1;
+
+    W7[G,18+k]+=2/5;
+    W7[G,54+k]+=2/5;
+    W7[G,9*k+2]+=2/5;
+    W7[G,9*k+6]+=2/5;
+
+    W7[G,27+k]+=1/5;
+    W7[G,45+k]+=1/5;
+    W7[G,9*k+3]+=1/5;
+    W7[G,9*k+5]+=1/5;
+  }
+}
+</pre></details><details><summary>Text diff against previous submitted transaction</summary><p class="note">These are separate patch programs. This text diff is NOT a cumulative controller diff; the stored-weight changes above show the actual state transition.</p><pre><span class="del">--- empty</span>
+<span class="add">+++ edit_0_submitted_transaction</span>
+<span class="meta">@@ -0,0 +1,319 @@</span>
+<span class="add">+wspl 0.2;</span>
+<span class="add">+target base=artifact(&quot;parent&quot;,sha256=&quot;{{PARENT_SHA256}}&quot;);</span>
+<span class="add">+</span>
+<span class="add">+const A=0;</span>
+<span class="add">+const B=81;</span>
+<span class="add">+const C=162;</span>
+<span class="add">+const D=243;</span>
+<span class="add">+const E=324;</span>
+<span class="add">+const F=405;</span>
+<span class="add">+const G=486;</span>
+<span class="add">+const N=487;</span>
+<span class="add">+const T=488;</span>
+<span class="add">+</span>
+<span class="add">+edit base as candidate mode=fixed numeric=exact_to_storage {</span>
+<span class="add">+  W1[:,:]=0; b1[:]=0;</span>
+<span class="add">+  W2[:,:]=0; b2[:]=0;</span>
+<span class="add">+  W3[:,:]=0; b3[:]=0;</span>
+<span class="add">+  W4[:,:]=0; b4[:]=0;</span>
+<span class="add">+  W5[:,:]=0; b5[:]=0;</span>
+<span class="add">+  W6[:,:]=0; b6[:]=0;</span>
+<span class="add">+  W7[:,:]=0; b7[:]=0;</span>
+<span class="add">+</span>
+<span class="add">+  // Per-point channels and local producers.</span>
+<span class="add">+  for p in range(81) {</span>
+<span class="add">+    // h1: own, enemy, own direct liberties, enemy direct</span>
+<span class="add">+    // liberties, connection feature, shifted shape score.</span>
+<span class="add">+    W1[3*p,A+p]=1;</span>
+<span class="add">+    W1[3*p+1,B+p]=1;</span>
+<span class="add">+    W1[3*p,C+p]=4;</span>
+<span class="add">+    W1[3*p+1,D+p]=4;</span>
+<span class="add">+    b1[C+p]=-4;</span>
+<span class="add">+    b1[D+p]=-4;</span>
+<span class="add">+    b1[E+p]=-1;</span>
+<span class="add">+    b1[F+p]=20;</span>
+<span class="add">+</span>
+<span class="add">+    W1[3*p,G]=-1/40;</span>
+<span class="add">+    W1[3*p+1,G]=-1/40;</span>
+<span class="add">+    W1[3*p,N]=1;</span>
+<span class="add">+    W1[3*p+1,N]=1;</span>
+<span class="add">+</span>
+<span class="add">+    // h2: seed evidence of at least two group liberties.</span>
+<span class="add">+    W2[A+p,A+p]=1;</span>
+<span class="add">+    W2[B+p,B+p]=1;</span>
+<span class="add">+    W2[A+p,C+p]=12;</span>
+<span class="add">+    W2[C+p,C+p]=1;</span>
+<span class="add">+    b2[C+p]=-13;</span>
+<span class="add">+    W2[B+p,D+p]=12;</span>
+<span class="add">+    W2[D+p,D+p]=1;</span>
+<span class="add">+    b2[D+p]=-13;</span>
+<span class="add">+</span>
+<span class="add">+    // Local enemy pressure, distinct from the capture detector.</span>
+<span class="add">+    W2[B+p,E+p]=3;</span>
+<span class="add">+    W2[D+p,E+p]=-1;</span>
+<span class="add">+    W2[F+p,F+p]=1;</span>
+<span class="add">+    W2[E+p,F+p]=4/5;</span>
+<span class="add">+</span>
+<span class="add">+    // h3: propagate safety evidence through same-color stones.</span>
+<span class="add">+    W3[A+p,A+p]=1;</span>
+<span class="add">+    W3[B+p,B+p]=1;</span>
+<span class="add">+    W3[A+p,C+p]=48;</span>
+<span class="add">+    W3[C+p,C+p]=1;</span>
+<span class="add">+    b3[C+p]=-48;</span>
+<span class="add">+    W3[B+p,D+p]=48;</span>
+<span class="add">+    W3[D+p,D+p]=1;</span>
+<span class="add">+    b3[D+p]=-48;</span>
+<span class="add">+    W3[E+p,E+p]=1;</span>
+<span class="add">+    W3[F+p,F+p]=1;</span>
+<span class="add">+</span>
+<span class="add">+    // h4: binary vulnerability after another neighborhood step.</span>
+<span class="add">+    W4[A+p,A+p]=1;</span>
+<span class="add">+    W4[B+p,B+p]=1;</span>
+<span class="add">+    W4[A+p,C+p]=1;</span>
+<span class="add">+    W4[C+p,C+p]=-2;</span>
+<span class="add">+    W4[B+p,D+p]=1;</span>
+<span class="add">+    W4[D+p,D+p]=-2;</span>
+<span class="add">+    W4[E+p,E+p]=1;</span>
+<span class="add">+    W4[F+p,F+p]=1;</span>
+<span class="add">+</span>
+<span class="add">+    // h5: adjacent vulnerable stones, resulting-liberty deficit,</span>
+<span class="add">+    // eye penalty, pressure, and shape.</span>
+<span class="add">+    b5[C+p]=2;</span>
+<span class="add">+    b5[D+p]=2;</span>
+<span class="add">+    W5[F+p,F+p]=1;</span>
+<span class="add">+</span>
+<span class="add">+    // h6: rescue and attack are suppressed by liberty deficit.</span>
+<span class="add">+    W6[A+p,A+p]=1;</span>
+<span class="add">+    W6[C+p,A+p]=-4;</span>
+<span class="add">+    W6[B+p,B+p]=1;</span>
+<span class="add">+    W6[C+p,C+p]=1;</span>
+<span class="add">+    W6[D+p,D+p]=1;</span>
+<span class="add">+    W6[E+p,E+p]=1;</span>
+<span class="add">+    W6[B+p,E+p]=-2;</span>
+<span class="add">+    W6[C+p,E+p]=-4;</span>
+<span class="add">+    W6[F+p,F+p]=1;</span>
+<span class="add">+</span>
+<span class="add">+    W7[A+p,p]=8;</span>
+<span class="add">+    W7[B+p,p]=17/2;</span>
+<span class="add">+    W7[C+p,p]=-10;</span>
+<span class="add">+    W7[D+p,p]=-13/2;</span>
+<span class="add">+    W7[E+p,p]=12/5;</span>
+<span class="add">+    W7[F+p,p]=1;</span>
+<span class="add">+    b7[p]=-20;</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Global opening phase, occupancy, and side-to-move.</span>
+<span class="add">+  b1[G]=1;</span>
+<span class="add">+  W1[2,T]=1;</span>
+<span class="add">+  for j in range(486,489) {</span>
+<span class="add">+    W2[j,j]=1;</span>
+<span class="add">+    W3[j,j]=1;</span>
+<span class="add">+    W4[j,j]=1;</span>
+<span class="add">+    W5[j,j]=1;</span>
+<span class="add">+    W6[j,j]=1;</span>
+<span class="add">+  }</span>
+<span class="add">+  b7[81]=-7;</span>
+<span class="add">+  W7[N,81]=1/20;</span>
+<span class="add">+  W7[T,81]=7/20;</span>
+<span class="add">+</span>
+<span class="add">+  // Horizontal directed adjacency.</span>
+<span class="add">+  // Destination: 9*r+c+s. Source: 9*r+c+1-s.</span>
+<span class="add">+  for r in range(9) {</span>
+<span class="add">+    for c in range(8) {</span>
+<span class="add">+      for s in range(2) {</span>
+<span class="add">+        W1[3*(9*r+c+1-s),C+9*r+c+s]-=1;</span>
+<span class="add">+        W1[3*(9*r+c+1-s)+1,C+9*r+c+s]-=1;</span>
+<span class="add">+        W1[3*(9*r+c+1-s),D+9*r+c+s]-=1;</span>
+<span class="add">+        W1[3*(9*r+c+1-s)+1,D+9*r+c+s]-=1;</span>
+<span class="add">+        b1[C+9*r+c+s]+=1;</span>
+<span class="add">+        b1[D+9*r+c+s]+=1;</span>
+<span class="add">+        W1[3*(9*r+c+1-s),E+9*r+c+s]+=1;</span>
+<span class="add">+        W1[3*(9*r+c+1-s),F+9*r+c+s]-=9/20;</span>
+<span class="add">+        W1[3*(9*r+c+1-s)+1,F+9*r+c+s]-=2/5;</span>
+<span class="add">+</span>
+<span class="add">+        W2[C+9*r+c+1-s,C+9*r+c+s]+=1/2;</span>
+<span class="add">+        W2[D+9*r+c+1-s,D+9*r+c+s]+=1/2;</span>
+<span class="add">+        W2[D+9*r+c+1-s,E+9*r+c+s]-=1/2;</span>
+<span class="add">+</span>
+<span class="add">+        W3[C+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="add">+        W3[D+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="add">+</span>
+<span class="add">+        W4[C+9*r+c+1-s,C+9*r+c+s]-=2;</span>
+<span class="add">+        W4[D+9*r+c+1-s,D+9*r+c+s]-=2;</span>
+<span class="add">+</span>
+<span class="add">+        W5[C+9*r+c+1-s,A+9*r+c+s]+=1;</span>
+<span class="add">+        W5[D+9*r+c+1-s,B+9*r+c+s]+=1;</span>
+<span class="add">+</span>
+<span class="add">+        W5[A+9*r+c+1-s,C+9*r+c+s]-=1;</span>
+<span class="add">+        W5[B+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="add">+        W5[C+9*r+c+1-s,C+9*r+c+s]+=2;</span>
+<span class="add">+        W5[D+9*r+c+1-s,C+9*r+c+s]-=1;</span>
+<span class="add">+        b5[C+9*r+c+s]-=1;</span>
+<span class="add">+</span>
+<span class="add">+        W5[A+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="add">+        W5[B+9*r+c+1-s,D+9*r+c+s]-=2;</span>
+<span class="add">+        b5[D+9*r+c+s]-=1;</span>
+<span class="add">+</span>
+<span class="add">+        W5[E+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class="add">+      }</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Vertical directed adjacency.</span>
+<span class="add">+  // Destination: p+9*s. Source: p+9*(1-s).</span>
+<span class="add">+  for p in range(72) {</span>
+<span class="add">+    for s in range(2) {</span>
+<span class="add">+      W1[3*(p+9*(1-s)),C+p+9*s]-=1;</span>
+<span class="add">+      W1[3*(p+9*(1-s))+1,C+p+9*s]-=1;</span>
+<span class="add">+      W1[3*(p+9*(1-s)),D+p+9*s]-=1;</span>
+<span class="add">+      W1[3*(p+9*(1-s))+1,D+p+9*s]-=1;</span>
+<span class="add">+      b1[C+p+9*s]+=1;</span>
+<span class="add">+      b1[D+p+9*s]+=1;</span>
+<span class="add">+      W1[3*(p+9*(1-s)),E+p+9*s]+=1;</span>
+<span class="add">+      W1[3*(p+9*(1-s)),F+p+9*s]-=9/20;</span>
+<span class="add">+      W1[3*(p+9*(1-s))+1,F+p+9*s]-=2/5;</span>
+<span class="add">+</span>
+<span class="add">+      W2[C+p+9*(1-s),C+p+9*s]+=1/2;</span>
+<span class="add">+      W2[D+p+9*(1-s),D+p+9*s]+=1/2;</span>
+<span class="add">+      W2[D+p+9*(1-s),E+p+9*s]-=1/2;</span>
+<span class="add">+</span>
+<span class="add">+      W3[C+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="add">+      W3[D+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="add">+</span>
+<span class="add">+      W4[C+p+9*(1-s),C+p+9*s]-=2;</span>
+<span class="add">+      W4[D+p+9*(1-s),D+p+9*s]-=2;</span>
+<span class="add">+</span>
+<span class="add">+      W5[C+p+9*(1-s),A+p+9*s]+=1;</span>
+<span class="add">+      W5[D+p+9*(1-s),B+p+9*s]+=1;</span>
+<span class="add">+</span>
+<span class="add">+      W5[A+p+9*(1-s),C+p+9*s]-=1;</span>
+<span class="add">+      W5[B+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="add">+      W5[C+p+9*(1-s),C+p+9*s]+=2;</span>
+<span class="add">+      W5[D+p+9*(1-s),C+p+9*s]-=1;</span>
+<span class="add">+      b5[C+p+9*s]-=1;</span>
+<span class="add">+</span>
+<span class="add">+      W5[A+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="add">+      W5[B+p+9*(1-s),D+p+9*s]-=2;</span>
+<span class="add">+      b5[D+p+9*s]-=1;</span>
+<span class="add">+</span>
+<span class="add">+      W5[E+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Adjacent diagonals: shape and false-eye adjustment.</span>
+<span class="add">+  for r in range(8) {</span>
+<span class="add">+    for c in range(8) {</span>
+<span class="add">+      for d in range(2) {</span>
+<span class="add">+        for s in range(2) {</span>
+<span class="add">+          W1[3*(9*r+c+d+(1-s)*(10-2*d)),</span>
+<span class="add">+             F+9*r+c+d+s*(10-2*d)]+=1/10;</span>
+<span class="add">+          W1[3*(9*r+c+d+(1-s)*(10-2*d))+1,</span>
+<span class="add">+             F+9*r+c+d+s*(10-2*d)]+=9/20;</span>
+<span class="add">+          W5[B+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="add">+             D+9*r+c+d+s*(10-2*d)]-=1/2;</span>
+<span class="add">+        }</span>
+<span class="add">+      }</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Two-step horizontal extensions and approaches.</span>
+<span class="add">+  for r in range(9) {</span>
+<span class="add">+    for c in range(7) {</span>
+<span class="add">+      for s in range(2) {</span>
+<span class="add">+        W1[3*(9*r+c+2*(1-s)),F+9*r+c+2*s]+=7/20;</span>
+<span class="add">+        W1[3*(9*r+c+2*(1-s))+1,F+9*r+c+2*s]+=13/20;</span>
+<span class="add">+      }</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Two-step vertical extensions and approaches.</span>
+<span class="add">+  for p in range(63) {</span>
+<span class="add">+    for s in range(2) {</span>
+<span class="add">+      W1[3*(p+18*(1-s)),F+p+18*s]+=7/20;</span>
+<span class="add">+      W1[3*(p+18*(1-s))+1,F+p+18*s]+=13/20;</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Knight offsets (2,1), reflected and reversed.</span>
+<span class="add">+  for r in range(7) {</span>
+<span class="add">+    for c in range(8) {</span>
+<span class="add">+      for d in range(2) {</span>
+<span class="add">+        for s in range(2) {</span>
+<span class="add">+          W1[3*(9*r+c+d+(1-s)*(19-2*d)),</span>
+<span class="add">+             F+9*r+c+d+s*(19-2*d)]+=1/10;</span>
+<span class="add">+          W1[3*(9*r+c+d+(1-s)*(19-2*d))+1,</span>
+<span class="add">+             F+9*r+c+d+s*(19-2*d)]+=3/25;</span>
+<span class="add">+        }</span>
+<span class="add">+      }</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Knight offsets (1,2), reflected and reversed.</span>
+<span class="add">+  for r in range(8) {</span>
+<span class="add">+    for c in range(7) {</span>
+<span class="add">+      for d in range(2) {</span>
+<span class="add">+        for s in range(2) {</span>
+<span class="add">+          W1[3*(9*r+c+2*d+(1-s)*(11-4*d)),</span>
+<span class="add">+             F+9*r+c+2*d+s*(11-4*d)]+=1/10;</span>
+<span class="add">+          W1[3*(9*r+c+2*d+(1-s)*(11-4*d))+1,</span>
+<span class="add">+             F+9*r+c+2*d+s*(11-4*d)]+=3/25;</span>
+<span class="add">+        }</span>
+<span class="add">+      }</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Three-step horizontal development.</span>
+<span class="add">+  for r in range(9) {</span>
+<span class="add">+    for c in range(6) {</span>
+<span class="add">+      for s in range(2) {</span>
+<span class="add">+        W1[3*(9*r+c+3*(1-s)),F+9*r+c+3*s]+=3/20;</span>
+<span class="add">+        W1[3*(9*r+c+3*(1-s))+1,F+9*r+c+3*s]+=1/10;</span>
+<span class="add">+      }</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Three-step vertical development.</span>
+<span class="add">+  for p in range(54) {</span>
+<span class="add">+    for s in range(2) {</span>
+<span class="add">+      W1[3*(p+27*(1-s)),F+p+27*s]+=3/20;</span>
+<span class="add">+      W1[3*(p+27*(1-s))+1,F+p+27*s]+=1/10;</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Longer diagonal spacing.</span>
+<span class="add">+  for r in range(7) {</span>
+<span class="add">+    for c in range(7) {</span>
+<span class="add">+      for d in range(2) {</span>
+<span class="add">+        for s in range(2) {</span>
+<span class="add">+          W1[3*(9*r+c+2*d+(1-s)*(20-4*d)),</span>
+<span class="add">+             F+9*r+c+2*d+s*(20-4*d)]-=1/20;</span>
+<span class="add">+          W1[3*(9*r+c+2*d+(1-s)*(20-4*d))+1,</span>
+<span class="add">+             F+9*r+c+2*d+s*(20-4*d)]+=1/20;</span>
+<span class="add">+        }</span>
+<span class="add">+      }</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Opening geometry fades to zero at forty occupied points.</span>
+<span class="add">+  for k in range(9) {</span>
+<span class="add">+    W7[G,k]-=3;</span>
+<span class="add">+    W7[G,72+k]-=3;</span>
+<span class="add">+    W7[G,9*k]-=3;</span>
+<span class="add">+    W7[G,9*k+8]-=3;</span>
+<span class="add">+</span>
+<span class="add">+    W7[G,9+k]-=1;</span>
+<span class="add">+    W7[G,63+k]-=1;</span>
+<span class="add">+    W7[G,9*k+1]-=1;</span>
+<span class="add">+    W7[G,9*k+7]-=1;</span>
+<span class="add">+</span>
+<span class="add">+    W7[G,18+k]+=2/5;</span>
+<span class="add">+    W7[G,54+k]+=2/5;</span>
+<span class="add">+    W7[G,9*k+2]+=2/5;</span>
+<span class="add">+    W7[G,9*k+6]+=2/5;</span>
+<span class="add">+</span>
+<span class="add">+    W7[G,27+k]+=1/5;</span>
+<span class="add">+    W7[G,45+k]+=1/5;</span>
+<span class="add">+    W7[G,9*k+3]+=1/5;</span>
+<span class="add">+    W7[G,9*k+5]+=1/5;</span>
+<span class="add">+  }</span>
+<span class="add">+}</span>
+</pre></details></article><article id="edit1"><h2>Edit 1 · 50.35% win rate</h2><p>8,608 coefficients changed; 17,925 nonzero afterward. Collection: 598.9s; construction: 18.08s. WSPL charged operations: 3,186,724; placements: 0.</p><p>Paired change: +6.58 pp; descriptive 95% interval [+4.94, +8.22] pp. Won instead: 1,471; lost instead: 1,076; unchanged: 3,453.</p><p><a href="edit_1/proposal.wspl">Exact submitted program</a> · <a href="edit_1/answer.md">Raw response</a> · <a href="edit_1/weight_changes.json">All weight changes</a> · <a href="edit_1/metrics.json">Metrics and hashes</a></p><details><summary>Actual stored-weight changes (first 80; full JSON linked above)</summary><pre><span class="del">- W1[0,334] = 0.0</span>
+<span class="add">+ W1[0,334] = -0.5</span>
+<span class="del">- W1[3,333] = 0.0</span>
+<span class="add">+ W1[3,333] = -0.5</span>
+<span class="del">- W1[3,335] = 0.0</span>
+<span class="add">+ W1[3,335] = -0.5</span>
+<span class="del">- W1[6,334] = 0.0</span>
+<span class="add">+ W1[6,334] = -0.5</span>
+<span class="del">- W1[6,336] = 0.0</span>
+<span class="add">+ W1[6,336] = -0.5</span>
+<span class="del">- W1[9,335] = 0.0</span>
+<span class="add">+ W1[9,335] = -0.5</span>
+<span class="del">- W1[9,337] = 0.0</span>
+<span class="add">+ W1[9,337] = -0.5</span>
+<span class="del">- W1[12,336] = 0.0</span>
+<span class="add">+ W1[12,336] = -0.5</span>
+<span class="del">- W1[12,338] = 0.0</span>
+<span class="add">+ W1[12,338] = -0.5</span>
+<span class="del">- W1[15,337] = 0.0</span>
+<span class="add">+ W1[15,337] = -0.5</span>
+<span class="del">- W1[15,339] = 0.0</span>
+<span class="add">+ W1[15,339] = -0.5</span>
+<span class="del">- W1[18,338] = 0.0</span>
+<span class="add">+ W1[18,338] = -0.5</span>
+<span class="del">- W1[18,340] = 0.0</span>
+<span class="add">+ W1[18,340] = -0.5</span>
+<span class="del">- W1[21,339] = 0.0</span>
+<span class="add">+ W1[21,339] = -0.5</span>
+<span class="del">- W1[21,341] = 0.0</span>
+<span class="add">+ W1[21,341] = -0.5</span>
+<span class="del">- W1[24,340] = 0.0</span>
+<span class="add">+ W1[24,340] = -0.5</span>
+<span class="del">- W1[27,325] = 0.0</span>
+<span class="add">+ W1[27,325] = -0.5</span>
+<span class="del">- W1[27,343] = 0.0</span>
+<span class="add">+ W1[27,343] = -0.5</span>
+<span class="del">- W1[30,324] = 0.0</span>
+<span class="add">+ W1[30,324] = -0.5</span>
+<span class="del">- W1[30,326] = 0.0</span>
+<span class="add">+ W1[30,326] = -0.5</span>
+<span class="del">- W1[30,342] = 0.0</span>
+<span class="add">+ W1[30,342] = -0.5</span>
+<span class="del">- W1[30,344] = 0.0</span>
+<span class="add">+ W1[30,344] = -0.5</span>
+<span class="del">- W1[33,325] = 0.0</span>
+<span class="add">+ W1[33,325] = -0.5</span>
+<span class="del">- W1[33,327] = 0.0</span>
+<span class="add">+ W1[33,327] = -0.5</span>
+<span class="del">- W1[33,343] = 0.0</span>
+<span class="add">+ W1[33,343] = -0.5</span>
+<span class="del">- W1[33,345] = 0.0</span>
+<span class="add">+ W1[33,345] = -0.5</span>
+<span class="del">- W1[36,326] = 0.0</span>
+<span class="add">+ W1[36,326] = -0.5</span>
+<span class="del">- W1[36,328] = 0.0</span>
+<span class="add">+ W1[36,328] = -0.5</span>
+<span class="del">- W1[36,344] = 0.0</span>
+<span class="add">+ W1[36,344] = -0.5</span>
+<span class="del">- W1[36,346] = 0.0</span>
+<span class="add">+ W1[36,346] = -0.5</span>
+<span class="del">- W1[39,327] = 0.0</span>
+<span class="add">+ W1[39,327] = -0.5</span>
+<span class="del">- W1[39,329] = 0.0</span>
+<span class="add">+ W1[39,329] = -0.5</span>
+<span class="del">- W1[39,345] = 0.0</span>
+<span class="add">+ W1[39,345] = -0.5</span>
+<span class="del">- W1[39,347] = 0.0</span>
+<span class="add">+ W1[39,347] = -0.5</span>
+<span class="del">- W1[42,328] = 0.0</span>
+<span class="add">+ W1[42,328] = -0.5</span>
+<span class="del">- W1[42,330] = 0.0</span>
+<span class="add">+ W1[42,330] = -0.5</span>
+<span class="del">- W1[42,346] = 0.0</span>
+<span class="add">+ W1[42,346] = -0.5</span>
+<span class="del">- W1[42,348] = 0.0</span>
+<span class="add">+ W1[42,348] = -0.5</span>
+<span class="del">- W1[45,329] = 0.0</span>
+<span class="add">+ W1[45,329] = -0.5</span>
+<span class="del">- W1[45,331] = 0.0</span>
+<span class="add">+ W1[45,331] = -0.5</span>
+<span class="del">- W1[45,347] = 0.0</span>
+<span class="add">+ W1[45,347] = -0.5</span>
+<span class="del">- W1[45,349] = 0.0</span>
+<span class="add">+ W1[45,349] = -0.5</span>
+<span class="del">- W1[48,330] = 0.0</span>
+<span class="add">+ W1[48,330] = -0.5</span>
+<span class="del">- W1[48,332] = 0.0</span>
+<span class="add">+ W1[48,332] = -0.5</span>
+<span class="del">- W1[48,348] = 0.0</span>
+<span class="add">+ W1[48,348] = -0.5</span>
+<span class="del">- W1[48,350] = 0.0</span>
+<span class="add">+ W1[48,350] = -0.5</span>
+<span class="del">- W1[51,331] = 0.0</span>
+<span class="add">+ W1[51,331] = -0.5</span>
+<span class="del">- W1[51,349] = 0.0</span>
+<span class="add">+ W1[51,349] = -0.5</span>
+<span class="del">- W1[54,334] = 0.0</span>
+<span class="add">+ W1[54,334] = -0.5</span>
+<span class="del">- W1[54,352] = 0.0</span>
+<span class="add">+ W1[54,352] = -0.5</span>
+<span class="del">- W1[57,333] = 0.0</span>
+<span class="add">+ W1[57,333] = -0.5</span>
+<span class="del">- W1[57,335] = 0.0</span>
+<span class="add">+ W1[57,335] = -0.5</span>
+<span class="del">- W1[57,351] = 0.0</span>
+<span class="add">+ W1[57,351] = -0.5</span>
+<span class="del">- W1[57,353] = 0.0</span>
+<span class="add">+ W1[57,353] = -0.5</span>
+<span class="del">- W1[60,334] = 0.0</span>
+<span class="add">+ W1[60,334] = -0.5</span>
+<span class="del">- W1[60,336] = 0.0</span>
+<span class="add">+ W1[60,336] = -0.5</span>
+<span class="del">- W1[60,352] = 0.0</span>
+<span class="add">+ W1[60,352] = -0.5</span>
+<span class="del">- W1[60,354] = 0.0</span>
+<span class="add">+ W1[60,354] = -0.5</span>
+<span class="del">- W1[63,335] = 0.0</span>
+<span class="add">+ W1[63,335] = -0.5</span>
+<span class="del">- W1[63,337] = 0.0</span>
+<span class="add">+ W1[63,337] = -0.5</span>
+<span class="del">- W1[63,353] = 0.0</span>
+<span class="add">+ W1[63,353] = -0.5</span>
+<span class="del">- W1[63,355] = 0.0</span>
+<span class="add">+ W1[63,355] = -0.5</span>
+<span class="del">- W1[66,336] = 0.0</span>
+<span class="add">+ W1[66,336] = -0.5</span>
+<span class="del">- W1[66,338] = 0.0</span>
+<span class="add">+ W1[66,338] = -0.5</span>
+<span class="del">- W1[66,354] = 0.0</span>
+<span class="add">+ W1[66,354] = -0.5</span>
+<span class="del">- W1[66,356] = 0.0</span>
+<span class="add">+ W1[66,356] = -0.5</span>
+<span class="del">- W1[69,337] = 0.0</span>
+<span class="add">+ W1[69,337] = -0.5</span>
+<span class="del">- W1[69,339] = 0.0</span>
+<span class="add">+ W1[69,339] = -0.5</span>
+<span class="del">- W1[69,355] = 0.0</span>
+<span class="add">+ W1[69,355] = -0.5</span>
+<span class="del">- W1[69,357] = 0.0</span>
+<span class="add">+ W1[69,357] = -0.5</span>
+<span class="del">- W1[72,338] = 0.0</span>
+<span class="add">+ W1[72,338] = -0.5</span>
+<span class="del">- W1[72,340] = 0.0</span>
+<span class="add">+ W1[72,340] = -0.5</span>
+<span class="del">- W1[72,356] = 0.0</span>
+<span class="add">+ W1[72,356] = -0.5</span>
+<span class="del">- W1[72,358] = 0.0</span>
+<span class="add">+ W1[72,358] = -0.5</span>
+<span class="del">- W1[75,339] = 0.0</span>
+<span class="add">+ W1[75,339] = -0.5</span>
+<span class="del">- W1[75,341] = 0.0</span>
+<span class="add">+ W1[75,341] = -0.5</span>
+<span class="del">- W1[75,357] = 0.0</span>
+<span class="add">+ W1[75,357] = -0.5</span>
+<span class="del">- W1[75,359] = 0.0</span>
+<span class="add">+ W1[75,359] = -0.5</span>
+<span class="del">- W1[78,340] = 0.0</span>
+<span class="add">+ W1[78,340] = -0.5</span>
+<span class="del">- W1[78,358] = 0.0</span>
+<span class="add">+ W1[78,358] = -0.5</span>
+</pre></details><details><summary>Submitted transaction</summary><pre>wspl 0.2;
+target base=artifact(&quot;parent&quot;,sha256=&quot;{{PARENT_SHA256}}&quot;);
+
+const A=0;
+const B=81;
+const C=162;
+const D=243;
+const E=324;
+const F=405;
+const G=486;
+const N=487;
+const T=488;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Replace local enemy pressure with a third-liberty certificate.
+  W2[:,E:F]=0;
+  b2[E:F]=0;
+  W3[:,E:F]=0;
+  b3[E:F]=0;
+
+  // Add another gated propagation stage.
+  W4[:,C:F]=0;
+  b4[C:F]=0;
+
+  // Rebuild the final two feature stages.
+  W5[:,:]=0;
+  b5[:]=0;
+  W6[:,:]=0;
+  b6[:]=0;
+
+  for p in range(81) {
+    // Adjacent stones have disjoint direct-liberty sets.
+    // Half-weighted neighbor liberties give a conservative
+    // certificate even when neighbors share liberties.
+    W2[B+p,E+p]=12;
+    W2[D+p,E+p]=1;
+    b2[E+p]=-14;
+
+    W3[B+p,E+p]=48;
+    W3[E+p,E+p]=1;
+    b3[E+p]=-48;
+
+    W4[A+p,C+p]=128;
+    W4[C+p,C+p]=1;
+    b4[C+p]=-128;
+
+    W4[B+p,D+p]=128;
+    W4[D+p,D+p]=1;
+    b4[D+p]=-128;
+
+    W4[B+p,E+p]=128;
+    W4[E+p,E+p]=1;
+    b4[E+p]=-128;
+
+    // h5 A/B: own/enemy stones lacking a two-liberty certificate.
+    W5[A+p,A+p]=1;
+    W5[C+p,A+p]=-2;
+    W5[B+p,B+p]=1;
+    W5[D+p,B+p]=-2;
+
+    // h5 E: enemy stones lacking a three-liberty certificate.
+    W5[B+p,E+p]=1;
+    W5[E+p,E+p]=-2;
+
+    // Shifted deficit baseline and local eye feature.
+    b5[C+p]=6;
+    b5[D+p]=2;
+    W5[F+p,F+p]=1;
+
+    // Excess-contact features implement diminishing bonuses.
+    b6[A+p]=-1;
+    b6[B+p]=-1;
+
+    W6[C+p,C+p]=1;
+    b6[C+p]=-4;
+    W6[D+p,D+p]=1;
+    W6[F+p,F+p]=1;
+
+    W7[A+p,p]=-6;
+    W7[B+p,p]=-8;
+    W7[C+p,p]=-11;
+    W7[D+p,p]=-13/2;
+    W7[E+p,p]=12/5;
+    W7[F+p,p]=1;
+  }
+
+  // Preserve opening phase, occupancy, and side-to-move channels.
+  for j in range(486,489) {
+    W5[j,j]=1;
+    W6[j,j]=1;
+  }
+
+  // Horizontal directed adjacency.
+  for r in range(9) {
+    for c in range(8) {
+      for s in range(2) {
+        W2[D+9*r+c+1-s,E+9*r+c+s]+=1/2;
+        W3[E+9*r+c+1-s,E+9*r+c+s]+=1;
+
+        W4[C+9*r+c+1-s,C+9*r+c+s]+=1;
+        W4[D+9*r+c+1-s,D+9*r+c+s]+=1;
+        W4[E+9*r+c+1-s,E+9*r+c+s]+=1;
+
+        W5[C+9*r+c+1-s,A+9*r+c+s]-=2;
+        W5[D+9*r+c+1-s,B+9*r+c+s]-=2;
+        W5[E+9*r+c+1-s,E+9*r+c+s]-=2;
+
+        W5[B+9*r+c+1-s,C+9*r+c+s]+=1;
+        b5[C+9*r+c+s]-=1;
+
+        W5[A+9*r+c+1-s,D+9*r+c+s]+=1;
+        W5[B+9*r+c+1-s,D+9*r+c+s]-=2;
+        b5[D+9*r+c+s]-=1;
+
+        W6[A+9*r+c+1-s,A+9*r+c+s]+=1;
+        W6[B+9*r+c+1-s,B+9*r+c+s]+=1;
+
+        // Each safe friendly contact contributes one remaining
+        // liberty, rather than assuming it contributes two.
+        W6[A+9*r+c+1-s,C+9*r+c+s]+=1;
+        W6[B+9*r+c+1-s,C+9*r+c+s]-=1;
+
+        // Do not treat urgent connections as ordinary eye filling.
+        W6[A+9*r+c+1-s,D+9*r+c+s]-=1;
+
+        // Pressure excludes stones already counted as captures.
+        W6[E+9*r+c+1-s,E+9*r+c+s]+=1;
+        W6[B+9*r+c+1-s,E+9*r+c+s]-=1;
+
+        W6[A+9*r+c+1-s,F+9*r+c+s]+=15/2;
+        W6[B+9*r+c+1-s,F+9*r+c+s]+=21/2;
+      }
+    }
+  }
+
+  // Vertical directed adjacency.
+  for p in range(72) {
+    for s in range(2) {
+      W2[D+p+9*(1-s),E+p+9*s]+=1/2;
+      W3[E+p+9*(1-s),E+p+9*s]+=1;
+
+      W4[C+p+9*(1-s),C+p+9*s]+=1;
+      W4[D+p+9*(1-s),D+p+9*s]+=1;
+      W4[E+p+9*(1-s),E+p+9*s]+=1;
+
+      W5[C+p+9*(1-s),A+p+9*s]-=2;
+      W5[D+p+9*(1-s),B+p+9*s]-=2;
+      W5[E+p+9*(1-s),E+p+9*s]-=2;
+
+      W5[B+p+9*(1-s),C+p+9*s]+=1;
+      b5[C+p+9*s]-=1;
+
+      W5[A+p+9*(1-s),D+p+9*s]+=1;
+      W5[B+p+9*(1-s),D+p+9*s]-=2;
+      b5[D+p+9*s]-=1;
+
+      W6[A+p+9*(1-s),A+p+9*s]+=1;
+      W6[B+p+9*(1-s),B+p+9*s]+=1;
+
+      W6[A+p+9*(1-s),C+p+9*s]+=1;
+      W6[B+p+9*(1-s),C+p+9*s]-=1;
+
+      W6[A+p+9*(1-s),D+p+9*s]-=1;
+
+      W6[E+p+9*(1-s),E+p+9*s]+=1;
+      W6[B+p+9*(1-s),E+p+9*s]-=1;
+
+      W6[A+p+9*(1-s),F+p+9*s]+=15/2;
+      W6[B+p+9*(1-s),F+p+9*s]+=21/2;
+    }
+  }
+
+  // False-eye adjustment and reduced reward for redundant connections.
+  for r in range(8) {
+    for c in range(8) {
+      for d in range(2) {
+        for s in range(2) {
+          W5[B+9*r+c+d+(1-s)*(10-2*d),
+             D+9*r+c+d+s*(10-2*d)]-=1/2;
+
+          W1[3*(9*r+c+d+(1-s)*(10-2*d)),
+             E+9*r+c+d+s*(10-2*d)]-=1/2;
+        }
+      }
+    }
+  }
+}
+</pre></details><details><summary>Text diff against previous submitted transaction</summary><p class="note">These are separate patch programs. This text diff is NOT a cumulative controller diff; the stored-weight changes above show the actual state transition.</p><pre><span class="del">--- previous_submitted_transaction</span>
+<span class="add">+++ edit_1_submitted_transaction</span>
+<span class="meta">@@ -12,308 +12,176 @@</span>
+<span class=""> const T=488;</span>
+<span class=""> </span>
+<span class=""> edit base as candidate mode=fixed numeric=exact_to_storage {</span>
+<span class="del">-  W1[:,:]=0; b1[:]=0;</span>
+<span class="del">-  W2[:,:]=0; b2[:]=0;</span>
+<span class="del">-  W3[:,:]=0; b3[:]=0;</span>
+<span class="del">-  W4[:,:]=0; b4[:]=0;</span>
+<span class="del">-  W5[:,:]=0; b5[:]=0;</span>
+<span class="del">-  W6[:,:]=0; b6[:]=0;</span>
+<span class="del">-  W7[:,:]=0; b7[:]=0;</span>
+<span class="add">+  // Replace local enemy pressure with a third-liberty certificate.</span>
+<span class="add">+  W2[:,E:F]=0;</span>
+<span class="add">+  b2[E:F]=0;</span>
+<span class="add">+  W3[:,E:F]=0;</span>
+<span class="add">+  b3[E:F]=0;</span>
+<span class=""> </span>
+<span class="del">-  // Per-point channels and local producers.</span>
+<span class="add">+  // Add another gated propagation stage.</span>
+<span class="add">+  W4[:,C:F]=0;</span>
+<span class="add">+  b4[C:F]=0;</span>
+<span class="add">+</span>
+<span class="add">+  // Rebuild the final two feature stages.</span>
+<span class="add">+  W5[:,:]=0;</span>
+<span class="add">+  b5[:]=0;</span>
+<span class="add">+  W6[:,:]=0;</span>
+<span class="add">+  b6[:]=0;</span>
+<span class="add">+</span>
+<span class="">   for p in range(81) {</span>
+<span class="del">-    // h1: own, enemy, own direct liberties, enemy direct</span>
+<span class="del">-    // liberties, connection feature, shifted shape score.</span>
+<span class="del">-    W1[3*p,A+p]=1;</span>
+<span class="del">-    W1[3*p+1,B+p]=1;</span>
+<span class="del">-    W1[3*p,C+p]=4;</span>
+<span class="del">-    W1[3*p+1,D+p]=4;</span>
+<span class="del">-    b1[C+p]=-4;</span>
+<span class="del">-    b1[D+p]=-4;</span>
+<span class="del">-    b1[E+p]=-1;</span>
+<span class="del">-    b1[F+p]=20;</span>
+<span class="add">+    // Adjacent stones have disjoint direct-liberty sets.</span>
+<span class="add">+    // Half-weighted neighbor liberties give a conservative</span>
+<span class="add">+    // certificate even when neighbors share liberties.</span>
+<span class="add">+    W2[B+p,E+p]=12;</span>
+<span class="add">+    W2[D+p,E+p]=1;</span>
+<span class="add">+    b2[E+p]=-14;</span>
+<span class=""> </span>
+<span class="del">-    W1[3*p,G]=-1/40;</span>
+<span class="del">-    W1[3*p+1,G]=-1/40;</span>
+<span class="del">-    W1[3*p,N]=1;</span>
+<span class="del">-    W1[3*p+1,N]=1;</span>
+<span class="add">+    W3[B+p,E+p]=48;</span>
+<span class="add">+    W3[E+p,E+p]=1;</span>
+<span class="add">+    b3[E+p]=-48;</span>
+<span class=""> </span>
+<span class="del">-    // h2: seed evidence of at least two group liberties.</span>
+<span class="del">-    W2[A+p,A+p]=1;</span>
+<span class="del">-    W2[B+p,B+p]=1;</span>
+<span class="del">-    W2[A+p,C+p]=12;</span>
+<span class="del">-    W2[C+p,C+p]=1;</span>
+<span class="del">-    b2[C+p]=-13;</span>
+<span class="del">-    W2[B+p,D+p]=12;</span>
+<span class="del">-    W2[D+p,D+p]=1;</span>
+<span class="del">-    b2[D+p]=-13;</span>
+<span class="add">+    W4[A+p,C+p]=128;</span>
+<span class="add">+    W4[C+p,C+p]=1;</span>
+<span class="add">+    b4[C+p]=-128;</span>
+<span class=""> </span>
+<span class="del">-    // Local enemy pressure, distinct from the capture detector.</span>
+<span class="del">-    W2[B+p,E+p]=3;</span>
+<span class="del">-    W2[D+p,E+p]=-1;</span>
+<span class="del">-    W2[F+p,F+p]=1;</span>
+<span class="del">-    W2[E+p,F+p]=4/5;</span>
+<span class="add">+    W4[B+p,D+p]=128;</span>
+<span class="add">+    W4[D+p,D+p]=1;</span>
+<span class="add">+    b4[D+p]=-128;</span>
+<span class=""> </span>
+<span class="del">-    // h3: propagate safety evidence through same-color stones.</span>
+<span class="del">-    W3[A+p,A+p]=1;</span>
+<span class="del">-    W3[B+p,B+p]=1;</span>
+<span class="del">-    W3[A+p,C+p]=48;</span>
+<span class="del">-    W3[C+p,C+p]=1;</span>
+<span class="del">-    b3[C+p]=-48;</span>
+<span class="del">-    W3[B+p,D+p]=48;</span>
+<span class="del">-    W3[D+p,D+p]=1;</span>
+<span class="del">-    b3[D+p]=-48;</span>
+<span class="del">-    W3[E+p,E+p]=1;</span>
+<span class="del">-    W3[F+p,F+p]=1;</span>
+<span class="add">+    W4[B+p,E+p]=128;</span>
+<span class="add">+    W4[E+p,E+p]=1;</span>
+<span class="add">+    b4[E+p]=-128;</span>
+<span class=""> </span>
+<span class="del">-    // h4: binary vulnerability after another neighborhood step.</span>
+<span class="del">-    W4[A+p,A+p]=1;</span>
+<span class="del">-    W4[B+p,B+p]=1;</span>
+<span class="del">-    W4[A+p,C+p]=1;</span>
+<span class="del">-    W4[C+p,C+p]=-2;</span>
+<span class="del">-    W4[B+p,D+p]=1;</span>
+<span class="del">-    W4[D+p,D+p]=-2;</span>
+<span class="del">-    W4[E+p,E+p]=1;</span>
+<span class="del">-    W4[F+p,F+p]=1;</span>
+<span class="add">+    // h5 A/B: own/enemy stones lacking a two-liberty certificate.</span>
+<span class="add">+    W5[A+p,A+p]=1;</span>
+<span class="add">+    W5[C+p,A+p]=-2;</span>
+<span class="add">+    W5[B+p,B+p]=1;</span>
+<span class="add">+    W5[D+p,B+p]=-2;</span>
+<span class=""> </span>
+<span class="del">-    // h5: adjacent vulnerable stones, resulting-liberty deficit,</span>
+<span class="del">-    // eye penalty, pressure, and shape.</span>
+<span class="del">-    b5[C+p]=2;</span>
+<span class="add">+    // h5 E: enemy stones lacking a three-liberty certificate.</span>
+<span class="add">+    W5[B+p,E+p]=1;</span>
+<span class="add">+    W5[E+p,E+p]=-2;</span>
+<span class="add">+</span>
+<span class="add">+    // Shifted deficit baseline and local eye feature.</span>
+<span class="add">+    b5[C+p]=6;</span>
+<span class="">     b5[D+p]=2;</span>
+<span class="">     W5[F+p,F+p]=1;</span>
+<span class=""> </span>
+<span class="del">-    // h6: rescue and attack are suppressed by liberty deficit.</span>
+<span class="del">-    W6[A+p,A+p]=1;</span>
+<span class="del">-    W6[C+p,A+p]=-4;</span>
+<span class="del">-    W6[B+p,B+p]=1;</span>
+<span class="add">+    // Excess-contact features implement diminishing bonuses.</span>
+<span class="add">+    b6[A+p]=-1;</span>
+<span class="add">+    b6[B+p]=-1;</span>
+<span class="add">+</span>
+<span class="">     W6[C+p,C+p]=1;</span>
+<span class="add">+    b6[C+p]=-4;</span>
+<span class="">     W6[D+p,D+p]=1;</span>
+<span class="del">-    W6[E+p,E+p]=1;</span>
+<span class="del">-    W6[B+p,E+p]=-2;</span>
+<span class="del">-    W6[C+p,E+p]=-4;</span>
+<span class="">     W6[F+p,F+p]=1;</span>
+<span class=""> </span>
+<span class="del">-    W7[A+p,p]=8;</span>
+<span class="del">-    W7[B+p,p]=17/2;</span>
+<span class="del">-    W7[C+p,p]=-10;</span>
+<span class="add">+    W7[A+p,p]=-6;</span>
+<span class="add">+    W7[B+p,p]=-8;</span>
+<span class="add">+    W7[C+p,p]=-11;</span>
+<span class="">     W7[D+p,p]=-13/2;</span>
+<span class="">     W7[E+p,p]=12/5;</span>
+<span class="">     W7[F+p,p]=1;</span>
+<span class="del">-    b7[p]=-20;</span>
+<span class="">   }</span>
+<span class=""> </span>
+<span class="del">-  // Global opening phase, occupancy, and side-to-move.</span>
+<span class="del">-  b1[G]=1;</span>
+<span class="del">-  W1[2,T]=1;</span>
+<span class="add">+  // Preserve opening phase, occupancy, and side-to-move channels.</span>
+<span class="">   for j in range(486,489) {</span>
+<span class="del">-    W2[j,j]=1;</span>
+<span class="del">-    W3[j,j]=1;</span>
+<span class="del">-    W4[j,j]=1;</span>
+<span class="">     W5[j,j]=1;</span>
+<span class="">     W6[j,j]=1;</span>
+<span class="">   }</span>
+<span class="del">-  b7[81]=-7;</span>
+<span class="del">-  W7[N,81]=1/20;</span>
+<span class="del">-  W7[T,81]=7/20;</span>
+<span class=""> </span>
+<span class="">   // Horizontal directed adjacency.</span>
+<span class="del">-  // Destination: 9*r+c+s. Source: 9*r+c+1-s.</span>
+<span class="">   for r in range(9) {</span>
+<span class="">     for c in range(8) {</span>
+<span class="">       for s in range(2) {</span>
+<span class="del">-        W1[3*(9*r+c+1-s),C+9*r+c+s]-=1;</span>
+<span class="del">-        W1[3*(9*r+c+1-s)+1,C+9*r+c+s]-=1;</span>
+<span class="del">-        W1[3*(9*r+c+1-s),D+9*r+c+s]-=1;</span>
+<span class="del">-        W1[3*(9*r+c+1-s)+1,D+9*r+c+s]-=1;</span>
+<span class="del">-        b1[C+9*r+c+s]+=1;</span>
+<span class="del">-        b1[D+9*r+c+s]+=1;</span>
+<span class="del">-        W1[3*(9*r+c+1-s),E+9*r+c+s]+=1;</span>
+<span class="del">-        W1[3*(9*r+c+1-s),F+9*r+c+s]-=9/20;</span>
+<span class="del">-        W1[3*(9*r+c+1-s)+1,F+9*r+c+s]-=2/5;</span>
+<span class="add">+        W2[D+9*r+c+1-s,E+9*r+c+s]+=1/2;</span>
+<span class="add">+        W3[E+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class=""> </span>
+<span class="del">-        W2[C+9*r+c+1-s,C+9*r+c+s]+=1/2;</span>
+<span class="del">-        W2[D+9*r+c+1-s,D+9*r+c+s]+=1/2;</span>
+<span class="del">-        W2[D+9*r+c+1-s,E+9*r+c+s]-=1/2;</span>
+<span class="add">+        W4[C+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="add">+        W4[D+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="add">+        W4[E+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class=""> </span>
+<span class="del">-        W3[C+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="del">-        W3[D+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="add">+        W5[C+9*r+c+1-s,A+9*r+c+s]-=2;</span>
+<span class="add">+        W5[D+9*r+c+1-s,B+9*r+c+s]-=2;</span>
+<span class="add">+        W5[E+9*r+c+1-s,E+9*r+c+s]-=2;</span>
+<span class=""> </span>
+<span class="del">-        W4[C+9*r+c+1-s,C+9*r+c+s]-=2;</span>
+<span class="del">-        W4[D+9*r+c+1-s,D+9*r+c+s]-=2;</span>
+<span class="del">-</span>
+<span class="del">-        W5[C+9*r+c+1-s,A+9*r+c+s]+=1;</span>
+<span class="del">-        W5[D+9*r+c+1-s,B+9*r+c+s]+=1;</span>
+<span class="del">-</span>
+<span class="del">-        W5[A+9*r+c+1-s,C+9*r+c+s]-=1;</span>
+<span class="">         W5[B+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="del">-        W5[C+9*r+c+1-s,C+9*r+c+s]+=2;</span>
+<span class="del">-        W5[D+9*r+c+1-s,C+9*r+c+s]-=1;</span>
+<span class="">         b5[C+9*r+c+s]-=1;</span>
+<span class=""> </span>
+<span class="">         W5[A+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="">         W5[B+9*r+c+1-s,D+9*r+c+s]-=2;</span>
+<span class="">         b5[D+9*r+c+s]-=1;</span>
+<span class=""> </span>
+<span class="del">-        W5[E+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class="add">+        W6[A+9*r+c+1-s,A+9*r+c+s]+=1;</span>
+<span class="add">+        W6[B+9*r+c+1-s,B+9*r+c+s]+=1;</span>
+<span class="add">+</span>
+<span class="add">+        // Each safe friendly contact contributes one remaining</span>
+<span class="add">+        // liberty, rather than assuming it contributes two.</span>
+<span class="add">+        W6[A+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="add">+        W6[B+9*r+c+1-s,C+9*r+c+s]-=1;</span>
+<span class="add">+</span>
+<span class="add">+        // Do not treat urgent connections as ordinary eye filling.</span>
+<span class="add">+        W6[A+9*r+c+1-s,D+9*r+c+s]-=1;</span>
+<span class="add">+</span>
+<span class="add">+        // Pressure excludes stones already counted as captures.</span>
+<span class="add">+        W6[E+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class="add">+        W6[B+9*r+c+1-s,E+9*r+c+s]-=1;</span>
+<span class="add">+</span>
+<span class="add">+        W6[A+9*r+c+1-s,F+9*r+c+s]+=15/2;</span>
+<span class="add">+        W6[B+9*r+c+1-s,F+9*r+c+s]+=21/2;</span>
+<span class="">       }</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class=""> </span>
+<span class="">   // Vertical directed adjacency.</span>
+<span class="del">-  // Destination: p+9*s. Source: p+9*(1-s).</span>
+<span class="">   for p in range(72) {</span>
+<span class="">     for s in range(2) {</span>
+<span class="del">-      W1[3*(p+9*(1-s)),C+p+9*s]-=1;</span>
+<span class="del">-      W1[3*(p+9*(1-s))+1,C+p+9*s]-=1;</span>
+<span class="del">-      W1[3*(p+9*(1-s)),D+p+9*s]-=1;</span>
+<span class="del">-      W1[3*(p+9*(1-s))+1,D+p+9*s]-=1;</span>
+<span class="del">-      b1[C+p+9*s]+=1;</span>
+<span class="del">-      b1[D+p+9*s]+=1;</span>
+<span class="del">-      W1[3*(p+9*(1-s)),E+p+9*s]+=1;</span>
+<span class="del">-      W1[3*(p+9*(1-s)),F+p+9*s]-=9/20;</span>
+<span class="del">-      W1[3*(p+9*(1-s))+1,F+p+9*s]-=2/5;</span>
+<span class="add">+      W2[D+p+9*(1-s),E+p+9*s]+=1/2;</span>
+<span class="add">+      W3[E+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class=""> </span>
+<span class="del">-      W2[C+p+9*(1-s),C+p+9*s]+=1/2;</span>
+<span class="del">-      W2[D+p+9*(1-s),D+p+9*s]+=1/2;</span>
+<span class="del">-      W2[D+p+9*(1-s),E+p+9*s]-=1/2;</span>
+<span class="add">+      W4[C+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="add">+      W4[D+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="add">+      W4[E+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class=""> </span>
+<span class="del">-      W3[C+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="del">-      W3[D+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="add">+      W5[C+p+9*(1-s),A+p+9*s]-=2;</span>
+<span class="add">+      W5[D+p+9*(1-s),B+p+9*s]-=2;</span>
+<span class="add">+      W5[E+p+9*(1-s),E+p+9*s]-=2;</span>
+<span class=""> </span>
+<span class="del">-      W4[C+p+9*(1-s),C+p+9*s]-=2;</span>
+<span class="del">-      W4[D+p+9*(1-s),D+p+9*s]-=2;</span>
+<span class="del">-</span>
+<span class="del">-      W5[C+p+9*(1-s),A+p+9*s]+=1;</span>
+<span class="del">-      W5[D+p+9*(1-s),B+p+9*s]+=1;</span>
+<span class="del">-</span>
+<span class="del">-      W5[A+p+9*(1-s),C+p+9*s]-=1;</span>
+<span class="">       W5[B+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="del">-      W5[C+p+9*(1-s),C+p+9*s]+=2;</span>
+<span class="del">-      W5[D+p+9*(1-s),C+p+9*s]-=1;</span>
+<span class="">       b5[C+p+9*s]-=1;</span>
+<span class=""> </span>
+<span class="">       W5[A+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="">       W5[B+p+9*(1-s),D+p+9*s]-=2;</span>
+<span class="">       b5[D+p+9*s]-=1;</span>
+<span class=""> </span>
+<span class="del">-      W5[E+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class="add">+      W6[A+p+9*(1-s),A+p+9*s]+=1;</span>
+<span class="add">+      W6[B+p+9*(1-s),B+p+9*s]+=1;</span>
+<span class="add">+</span>
+<span class="add">+      W6[A+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="add">+      W6[B+p+9*(1-s),C+p+9*s]-=1;</span>
+<span class="add">+</span>
+<span class="add">+      W6[A+p+9*(1-s),D+p+9*s]-=1;</span>
+<span class="add">+</span>
+<span class="add">+      W6[E+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class="add">+      W6[B+p+9*(1-s),E+p+9*s]-=1;</span>
+<span class="add">+</span>
+<span class="add">+      W6[A+p+9*(1-s),F+p+9*s]+=15/2;</span>
+<span class="add">+      W6[B+p+9*(1-s),F+p+9*s]+=21/2;</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class=""> </span>
+<span class="del">-  // Adjacent diagonals: shape and false-eye adjustment.</span>
+<span class="add">+  // False-eye adjustment and reduced reward for redundant connections.</span>
+<span class="">   for r in range(8) {</span>
+<span class="">     for c in range(8) {</span>
+<span class="">       for d in range(2) {</span>
+<span class="">         for s in range(2) {</span>
+<span class="del">-          W1[3*(9*r+c+d+(1-s)*(10-2*d)),</span>
+<span class="del">-             F+9*r+c+d+s*(10-2*d)]+=1/10;</span>
+<span class="del">-          W1[3*(9*r+c+d+(1-s)*(10-2*d))+1,</span>
+<span class="del">-             F+9*r+c+d+s*(10-2*d)]+=9/20;</span>
+<span class="">           W5[B+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="">              D+9*r+c+d+s*(10-2*d)]-=1/2;</span>
+<span class="add">+</span>
+<span class="add">+          W1[3*(9*r+c+d+(1-s)*(10-2*d)),</span>
+<span class="add">+             E+9*r+c+d+s*(10-2*d)]-=1/2;</span>
+<span class="">         }</span>
+<span class="">       }</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class="del">-</span>
+<span class="del">-  // Two-step horizontal extensions and approaches.</span>
+<span class="del">-  for r in range(9) {</span>
+<span class="del">-    for c in range(7) {</span>
+<span class="del">-      for s in range(2) {</span>
+<span class="del">-        W1[3*(9*r+c+2*(1-s)),F+9*r+c+2*s]+=7/20;</span>
+<span class="del">-        W1[3*(9*r+c+2*(1-s))+1,F+9*r+c+2*s]+=13/20;</span>
+<span class="del">-      }</span>
+<span class="del">-    }</span>
+<span class="del">-  }</span>
+<span class="del">-</span>
+<span class="del">-  // Two-step vertical extensions and approaches.</span>
+<span class="del">-  for p in range(63) {</span>
+<span class="del">-    for s in range(2) {</span>
+<span class="del">-      W1[3*(p+18*(1-s)),F+p+18*s]+=7/20;</span>
+<span class="del">-      W1[3*(p+18*(1-s))+1,F+p+18*s]+=13/20;</span>
+<span class="del">-    }</span>
+<span class="del">-  }</span>
+<span class="del">-</span>
+<span class="del">-  // Knight offsets (2,1), reflected and reversed.</span>
+<span class="del">-  for r in range(7) {</span>
+<span class="del">-    for c in range(8) {</span>
+<span class="del">-      for d in range(2) {</span>
+<span class="del">-        for s in range(2) {</span>
+<span class="del">-          W1[3*(9*r+c+d+(1-s)*(19-2*d)),</span>
+<span class="del">-             F+9*r+c+d+s*(19-2*d)]+=1/10;</span>
+<span class="del">-          W1[3*(9*r+c+d+(1-s)*(19-2*d))+1,</span>
+<span class="del">-             F+9*r+c+d+s*(19-2*d)]+=3/25;</span>
+<span class="del">-        }</span>
+<span class="del">-      }</span>
+<span class="del">-    }</span>
+<span class="del">-  }</span>
+<span class="del">-</span>
+<span class="del">-  // Knight offsets (1,2), reflected and reversed.</span>
+<span class="del">-  for r in range(8) {</span>
+<span class="del">-    for c in range(7) {</span>
+<span class="del">-      for d in range(2) {</span>
+<span class="del">-        for s in range(2) {</span>
+<span class="del">-          W1[3*(9*r+c+2*d+(1-s)*(11-4*d)),</span>
+<span class="del">-             F+9*r+c+2*d+s*(11-4*d)]+=1/10;</span>
+<span class="del">-          W1[3*(9*r+c+2*d+(1-s)*(11-4*d))+1,</span>
+<span class="del">-             F+9*r+c+2*d+s*(11-4*d)]+=3/25;</span>
+<span class="del">-        }</span>
+<span class="del">-      }</span>
+<span class="del">-    }</span>
+<span class="del">-  }</span>
+<span class="del">-</span>
+<span class="del">-  // Three-step horizontal development.</span>
+<span class="del">-  for r in range(9) {</span>
+<span class="del">-    for c in range(6) {</span>
+<span class="del">-      for s in range(2) {</span>
+<span class="del">-        W1[3*(9*r+c+3*(1-s)),F+9*r+c+3*s]+=3/20;</span>
+<span class="del">-        W1[3*(9*r+c+3*(1-s))+1,F+9*r+c+3*s]+=1/10;</span>
+<span class="del">-      }</span>
+<span class="del">-    }</span>
+<span class="del">-  }</span>
+<span class="del">-</span>
+<span class="del">-  // Three-step vertical development.</span>
+<span class="del">-  for p in range(54) {</span>
+<span class="del">-    for s in range(2) {</span>
+<span class="del">-      W1[3*(p+27*(1-s)),F+p+27*s]+=3/20;</span>
+<span class="del">-      W1[3*(p+27*(1-s))+1,F+p+27*s]+=1/10;</span>
+<span class="del">-    }</span>
+<span class="del">-  }</span>
+<span class="del">-</span>
+<span class="del">-  // Longer diagonal spacing.</span>
+<span class="del">-  for r in range(7) {</span>
+<span class="del">-    for c in range(7) {</span>
+<span class="del">-      for d in range(2) {</span>
+<span class="del">-        for s in range(2) {</span>
+<span class="del">-          W1[3*(9*r+c+2*d+(1-s)*(20-4*d)),</span>
+<span class="del">-             F+9*r+c+2*d+s*(20-4*d)]-=1/20;</span>
+<span class="del">-          W1[3*(9*r+c+2*d+(1-s)*(20-4*d))+1,</span>
+<span class="del">-             F+9*r+c+2*d+s*(20-4*d)]+=1/20;</span>
+<span class="del">-        }</span>
+<span class="del">-      }</span>
+<span class="del">-    }</span>
+<span class="del">-  }</span>
+<span class="del">-</span>
+<span class="del">-  // Opening geometry fades to zero at forty occupied points.</span>
+<span class="del">-  for k in range(9) {</span>
+<span class="del">-    W7[G,k]-=3;</span>
+<span class="del">-    W7[G,72+k]-=3;</span>
+<span class="del">-    W7[G,9*k]-=3;</span>
+<span class="del">-    W7[G,9*k+8]-=3;</span>
+<span class="del">-</span>
+<span class="del">-    W7[G,9+k]-=1;</span>
+<span class="del">-    W7[G,63+k]-=1;</span>
+<span class="del">-    W7[G,9*k+1]-=1;</span>
+<span class="del">-    W7[G,9*k+7]-=1;</span>
+<span class="del">-</span>
+<span class="del">-    W7[G,18+k]+=2/5;</span>
+<span class="del">-    W7[G,54+k]+=2/5;</span>
+<span class="del">-    W7[G,9*k+2]+=2/5;</span>
+<span class="del">-    W7[G,9*k+6]+=2/5;</span>
+<span class="del">-</span>
+<span class="del">-    W7[G,27+k]+=1/5;</span>
+<span class="del">-    W7[G,45+k]+=1/5;</span>
+<span class="del">-    W7[G,9*k+3]+=1/5;</span>
+<span class="del">-    W7[G,9*k+5]+=1/5;</span>
+<span class="del">-  }</span>
+<span class=""> }</span>
+</pre></details></article><article id="edit2"><h2>Edit 2 · 51.53% win rate</h2><p>7,554 coefficients changed; 22,999 nonzero afterward. Collection: 577.0s; construction: 16.56s. WSPL charged operations: 1,466,466; placements: 0.</p><p>Paired change: +1.18 pp; descriptive 95% interval [-0.33, +2.70] pp. Won instead: 1,109; lost instead: 1,038; unchanged: 3,853.</p><p><a href="edit_2/proposal.wspl">Exact submitted program</a> · <a href="edit_2/answer.md">Raw response</a> · <a href="edit_2/weight_changes.json">All weight changes</a> · <a href="edit_2/metrics.json">Metrics and hashes</a></p><details><summary>Actual stored-weight changes (first 80; full JSON linked above)</summary><pre><span class="del">- W2[0,334] = 0.0</span>
+<span class="add">+ W2[0,334] = 1.0</span>
+<span class="del">- W2[0,405] = 0.0</span>
+<span class="add">+ W2[0,405] = 12.0</span>
+<span class="del">- W2[0,415] = 0.0</span>
+<span class="add">+ W2[0,415] = 1.0</span>
+<span class="del">- W2[1,333] = 0.0</span>
+<span class="add">+ W2[1,333] = 1.0</span>
+<span class="del">- W2[1,335] = 0.0</span>
+<span class="add">+ W2[1,335] = 1.0</span>
+<span class="del">- W2[1,406] = 0.0</span>
+<span class="add">+ W2[1,406] = 12.0</span>
+<span class="del">- W2[1,414] = 0.0</span>
+<span class="add">+ W2[1,414] = 1.0</span>
+<span class="del">- W2[1,416] = 0.0</span>
+<span class="add">+ W2[1,416] = 1.0</span>
+<span class="del">- W2[2,334] = 0.0</span>
+<span class="add">+ W2[2,334] = 1.0</span>
+<span class="del">- W2[2,336] = 0.0</span>
+<span class="add">+ W2[2,336] = 1.0</span>
+<span class="del">- W2[2,407] = 0.0</span>
+<span class="add">+ W2[2,407] = 12.0</span>
+<span class="del">- W2[2,415] = 0.0</span>
+<span class="add">+ W2[2,415] = 1.0</span>
+<span class="del">- W2[2,417] = 0.0</span>
+<span class="add">+ W2[2,417] = 1.0</span>
+<span class="del">- W2[3,335] = 0.0</span>
+<span class="add">+ W2[3,335] = 1.0</span>
+<span class="del">- W2[3,337] = 0.0</span>
+<span class="add">+ W2[3,337] = 1.0</span>
+<span class="del">- W2[3,408] = 0.0</span>
+<span class="add">+ W2[3,408] = 12.0</span>
+<span class="del">- W2[3,416] = 0.0</span>
+<span class="add">+ W2[3,416] = 1.0</span>
+<span class="del">- W2[3,418] = 0.0</span>
+<span class="add">+ W2[3,418] = 1.0</span>
+<span class="del">- W2[4,336] = 0.0</span>
+<span class="add">+ W2[4,336] = 1.0</span>
+<span class="del">- W2[4,338] = 0.0</span>
+<span class="add">+ W2[4,338] = 1.0</span>
+<span class="del">- W2[4,409] = 0.0</span>
+<span class="add">+ W2[4,409] = 12.0</span>
+<span class="del">- W2[4,417] = 0.0</span>
+<span class="add">+ W2[4,417] = 1.0</span>
+<span class="del">- W2[4,419] = 0.0</span>
+<span class="add">+ W2[4,419] = 1.0</span>
+<span class="del">- W2[5,337] = 0.0</span>
+<span class="add">+ W2[5,337] = 1.0</span>
+<span class="del">- W2[5,339] = 0.0</span>
+<span class="add">+ W2[5,339] = 1.0</span>
+<span class="del">- W2[5,410] = 0.0</span>
+<span class="add">+ W2[5,410] = 12.0</span>
+<span class="del">- W2[5,418] = 0.0</span>
+<span class="add">+ W2[5,418] = 1.0</span>
+<span class="del">- W2[5,420] = 0.0</span>
+<span class="add">+ W2[5,420] = 1.0</span>
+<span class="del">- W2[6,338] = 0.0</span>
+<span class="add">+ W2[6,338] = 1.0</span>
+<span class="del">- W2[6,340] = 0.0</span>
+<span class="add">+ W2[6,340] = 1.0</span>
+<span class="del">- W2[6,411] = 0.0</span>
+<span class="add">+ W2[6,411] = 12.0</span>
+<span class="del">- W2[6,419] = 0.0</span>
+<span class="add">+ W2[6,419] = 1.0</span>
+<span class="del">- W2[6,421] = 0.0</span>
+<span class="add">+ W2[6,421] = 1.0</span>
+<span class="del">- W2[7,339] = 0.0</span>
+<span class="add">+ W2[7,339] = 1.0</span>
+<span class="del">- W2[7,341] = 0.0</span>
+<span class="add">+ W2[7,341] = 1.0</span>
+<span class="del">- W2[7,412] = 0.0</span>
+<span class="add">+ W2[7,412] = 12.0</span>
+<span class="del">- W2[7,420] = 0.0</span>
+<span class="add">+ W2[7,420] = 1.0</span>
+<span class="del">- W2[7,422] = 0.0</span>
+<span class="add">+ W2[7,422] = 1.0</span>
+<span class="del">- W2[8,340] = 0.0</span>
+<span class="add">+ W2[8,340] = 1.0</span>
+<span class="del">- W2[8,413] = 0.0</span>
+<span class="add">+ W2[8,413] = 12.0</span>
+<span class="del">- W2[8,421] = 0.0</span>
+<span class="add">+ W2[8,421] = 1.0</span>
+<span class="del">- W2[9,325] = 0.0</span>
+<span class="add">+ W2[9,325] = 1.0</span>
+<span class="del">- W2[9,343] = 0.0</span>
+<span class="add">+ W2[9,343] = 1.0</span>
+<span class="del">- W2[9,406] = 0.0</span>
+<span class="add">+ W2[9,406] = 1.0</span>
+<span class="del">- W2[9,414] = 0.0</span>
+<span class="add">+ W2[9,414] = 12.0</span>
+<span class="del">- W2[9,424] = 0.0</span>
+<span class="add">+ W2[9,424] = 1.0</span>
+<span class="del">- W2[10,324] = 0.0</span>
+<span class="add">+ W2[10,324] = 1.0</span>
+<span class="del">- W2[10,326] = 0.0</span>
+<span class="add">+ W2[10,326] = 1.0</span>
+<span class="del">- W2[10,342] = 0.0</span>
+<span class="add">+ W2[10,342] = 1.0</span>
+<span class="del">- W2[10,344] = 0.0</span>
+<span class="add">+ W2[10,344] = 1.0</span>
+<span class="del">- W2[10,405] = 0.0</span>
+<span class="add">+ W2[10,405] = 1.0</span>
+<span class="del">- W2[10,407] = 0.0</span>
+<span class="add">+ W2[10,407] = 1.0</span>
+<span class="del">- W2[10,415] = 0.0</span>
+<span class="add">+ W2[10,415] = 12.0</span>
+<span class="del">- W2[10,423] = 0.0</span>
+<span class="add">+ W2[10,423] = 1.0</span>
+<span class="del">- W2[10,425] = 0.0</span>
+<span class="add">+ W2[10,425] = 1.0</span>
+<span class="del">- W2[11,325] = 0.0</span>
+<span class="add">+ W2[11,325] = 1.0</span>
+<span class="del">- W2[11,327] = 0.0</span>
+<span class="add">+ W2[11,327] = 1.0</span>
+<span class="del">- W2[11,343] = 0.0</span>
+<span class="add">+ W2[11,343] = 1.0</span>
+<span class="del">- W2[11,345] = 0.0</span>
+<span class="add">+ W2[11,345] = 1.0</span>
+<span class="del">- W2[11,406] = 0.0</span>
+<span class="add">+ W2[11,406] = 1.0</span>
+<span class="del">- W2[11,408] = 0.0</span>
+<span class="add">+ W2[11,408] = 1.0</span>
+<span class="del">- W2[11,416] = 0.0</span>
+<span class="add">+ W2[11,416] = 12.0</span>
+<span class="del">- W2[11,424] = 0.0</span>
+<span class="add">+ W2[11,424] = 1.0</span>
+<span class="del">- W2[11,426] = 0.0</span>
+<span class="add">+ W2[11,426] = 1.0</span>
+<span class="del">- W2[12,326] = 0.0</span>
+<span class="add">+ W2[12,326] = 1.0</span>
+<span class="del">- W2[12,328] = 0.0</span>
+<span class="add">+ W2[12,328] = 1.0</span>
+<span class="del">- W2[12,344] = 0.0</span>
+<span class="add">+ W2[12,344] = 1.0</span>
+<span class="del">- W2[12,346] = 0.0</span>
+<span class="add">+ W2[12,346] = 1.0</span>
+<span class="del">- W2[12,407] = 0.0</span>
+<span class="add">+ W2[12,407] = 1.0</span>
+<span class="del">- W2[12,409] = 0.0</span>
+<span class="add">+ W2[12,409] = 1.0</span>
+<span class="del">- W2[12,417] = 0.0</span>
+<span class="add">+ W2[12,417] = 12.0</span>
+<span class="del">- W2[12,425] = 0.0</span>
+<span class="add">+ W2[12,425] = 1.0</span>
+<span class="del">- W2[12,427] = 0.0</span>
+<span class="add">+ W2[12,427] = 1.0</span>
+<span class="del">- W2[13,327] = 0.0</span>
+<span class="add">+ W2[13,327] = 1.0</span>
+<span class="del">- W2[13,329] = 0.0</span>
+<span class="add">+ W2[13,329] = 1.0</span>
+<span class="del">- W2[13,345] = 0.0</span>
+<span class="add">+ W2[13,345] = 1.0</span>
+<span class="del">- W2[13,347] = 0.0</span>
+<span class="add">+ W2[13,347] = 1.0</span>
+<span class="del">- W2[13,408] = 0.0</span>
+<span class="add">+ W2[13,408] = 1.0</span>
+<span class="del">- W2[13,410] = 0.0</span>
+<span class="add">+ W2[13,410] = 1.0</span>
+<span class="del">- W2[13,418] = 0.0</span>
+<span class="add">+ W2[13,418] = 12.0</span>
+</pre></details><details><summary>Submitted transaction</summary><pre>wspl 0.2;
+target base=artifact(&quot;parent&quot;,sha256=&quot;{{PARENT_SHA256}}&quot;);
+
+const A=0;
+const B=81;
+const C=162;
+const D=243;
+const E=324;
+const F=405;
+const G=486;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Keep the original two-liberty seeds in h2 C/D.
+  // Use h2 E/F for complementary enemy/friendly certificates.
+  W2[:,E:G]=0;
+  b2[E:G]=0;
+
+  // Rebuild propagation, third-liberty evidence, and shape.
+  W3[:,C:G]=0;
+  b3[C:G]=0;
+
+  for p in range(81) {
+    // Complementary bound:
+    // direct liberties + adjacent same-color direct liberties
+    // minus every empty diagonal.
+    //
+    // Shared liberties of adjacent group members can occur only
+    // at these diagonals. Subtracting all of them is conservative.
+    W2[B+p,E+p]=12;
+    W2[D+p,E+p]=1;
+    b2[E+p]=-13;
+
+    W2[A+p,F+p]=12;
+    W2[C+p,F+p]=1;
+    b2[F+p]=-13;
+
+    // Merge both independent certificates and propagate only
+    // through stones of the corresponding color.
+    W3[A+p,C+p]=128;
+    W3[C+p,C+p]=1;
+    W3[F+p,C+p]=1;
+    b3[C+p]=-128;
+
+    W3[B+p,D+p]=128;
+    W3[D+p,D+p]=1;
+    W3[E+p,D+p]=1;
+    b3[D+p]=-128;
+
+    // Recover the original local third-liberty seed one layer
+    // later: relu(relu(bound-1)-1) = relu(bound-2).
+    W3[D+p,E+p]=1;
+    b3[E+p]=-1;
+
+    // Larger gating margins accommodate merged certificates.
+    W4[A+p,C+p]=512;
+    b4[C+p]=-512;
+    W4[B+p,D+p]=512;
+    b4[D+p]=-512;
+
+    // Reconstruct the analytic spatial kernel directly from
+    // the stone indicators still available in h2.
+    b3[F+p]=parent.b1[F+p];
+    for q in range(81) {
+      W3[A+q,F+p]=parent.W1[3*q,F+p];
+      W3[B+q,F+p]=parent.W1[3*q+1,F+p];
+    }
+  }
+
+  // Horizontal directed adjacency.
+  for r in range(9) {
+    for c in range(8) {
+      for s in range(2) {
+        W2[D+9*r+c+1-s,E+9*r+c+s]+=1;
+        W2[C+9*r+c+1-s,F+9*r+c+s]+=1;
+
+        W3[C+9*r+c+1-s,C+9*r+c+s]+=1;
+        W3[F+9*r+c+1-s,C+9*r+c+s]+=1;
+
+        W3[D+9*r+c+1-s,D+9*r+c+s]+=1;
+        W3[E+9*r+c+1-s,D+9*r+c+s]+=1;
+      }
+    }
+  }
+
+  // Vertical directed adjacency.
+  for p in range(72) {
+    for s in range(2) {
+      W2[D+p+9*(1-s),E+p+9*s]+=1;
+      W2[C+p+9*(1-s),F+p+9*s]+=1;
+
+      W3[C+p+9*(1-s),C+p+9*s]+=1;
+      W3[F+p+9*(1-s),C+p+9*s]+=1;
+
+      W3[D+p+9*(1-s),D+p+9*s]+=1;
+      W3[E+p+9*(1-s),D+p+9*s]+=1;
+    }
+  }
+
+  // Subtract empty diagonals: occupancy minus one.
+  // Reflections and reversal cover every directed diagonal.
+  for r in range(8) {
+    for c in range(8) {
+      for d in range(2) {
+        for s in range(2) {
+          W2[A+9*r+c+d+(1-s)*(10-2*d),
+             E+9*r+c+d+s*(10-2*d)]+=1;
+          W2[B+9*r+c+d+(1-s)*(10-2*d),
+             E+9*r+c+d+s*(10-2*d)]+=1;
+          b2[E+9*r+c+d+s*(10-2*d)]-=1;
+
+          W2[A+9*r+c+d+(1-s)*(10-2*d),
+             F+9*r+c+d+s*(10-2*d)]+=1;
+          W2[B+9*r+c+d+(1-s)*(10-2*d),
+             F+9*r+c+d+s*(10-2*d)]+=1;
+          b2[F+9*r+c+d+s*(10-2*d)]-=1;
+        }
+      }
+    }
+  }
+}
+</pre></details><details><summary>Text diff against previous submitted transaction</summary><p class="note">These are separate patch programs. This text diff is NOT a cumulative controller diff; the stored-weight changes above show the actual state transition.</p><pre><span class="del">--- previous_submitted_transaction</span>
+<span class="add">+++ edit_2_submitted_transaction</span>
+<span class="meta">@@ -8,127 +8,76 @@</span>
+<span class=""> const E=324;</span>
+<span class=""> const F=405;</span>
+<span class=""> const G=486;</span>
+<span class="del">-const N=487;</span>
+<span class="del">-const T=488;</span>
+<span class=""> </span>
+<span class=""> edit base as candidate mode=fixed numeric=exact_to_storage {</span>
+<span class="del">-  // Replace local enemy pressure with a third-liberty certificate.</span>
+<span class="del">-  W2[:,E:F]=0;</span>
+<span class="del">-  b2[E:F]=0;</span>
+<span class="del">-  W3[:,E:F]=0;</span>
+<span class="del">-  b3[E:F]=0;</span>
+<span class="add">+  // Keep the original two-liberty seeds in h2 C/D.</span>
+<span class="add">+  // Use h2 E/F for complementary enemy/friendly certificates.</span>
+<span class="add">+  W2[:,E:G]=0;</span>
+<span class="add">+  b2[E:G]=0;</span>
+<span class=""> </span>
+<span class="del">-  // Add another gated propagation stage.</span>
+<span class="del">-  W4[:,C:F]=0;</span>
+<span class="del">-  b4[C:F]=0;</span>
+<span class="del">-</span>
+<span class="del">-  // Rebuild the final two feature stages.</span>
+<span class="del">-  W5[:,:]=0;</span>
+<span class="del">-  b5[:]=0;</span>
+<span class="del">-  W6[:,:]=0;</span>
+<span class="del">-  b6[:]=0;</span>
+<span class="add">+  // Rebuild propagation, third-liberty evidence, and shape.</span>
+<span class="add">+  W3[:,C:G]=0;</span>
+<span class="add">+  b3[C:G]=0;</span>
+<span class=""> </span>
+<span class="">   for p in range(81) {</span>
+<span class="del">-    // Adjacent stones have disjoint direct-liberty sets.</span>
+<span class="del">-    // Half-weighted neighbor liberties give a conservative</span>
+<span class="del">-    // certificate even when neighbors share liberties.</span>
+<span class="add">+    // Complementary bound:</span>
+<span class="add">+    // direct liberties + adjacent same-color direct liberties</span>
+<span class="add">+    // minus every empty diagonal.</span>
+<span class="add">+    //</span>
+<span class="add">+    // Shared liberties of adjacent group members can occur only</span>
+<span class="add">+    // at these diagonals. Subtracting all of them is conservative.</span>
+<span class="">     W2[B+p,E+p]=12;</span>
+<span class="">     W2[D+p,E+p]=1;</span>
+<span class="del">-    b2[E+p]=-14;</span>
+<span class="add">+    b2[E+p]=-13;</span>
+<span class=""> </span>
+<span class="del">-    W3[B+p,E+p]=48;</span>
+<span class="del">-    W3[E+p,E+p]=1;</span>
+<span class="del">-    b3[E+p]=-48;</span>
+<span class="add">+    W2[A+p,F+p]=12;</span>
+<span class="add">+    W2[C+p,F+p]=1;</span>
+<span class="add">+    b2[F+p]=-13;</span>
+<span class=""> </span>
+<span class="del">-    W4[A+p,C+p]=128;</span>
+<span class="del">-    W4[C+p,C+p]=1;</span>
+<span class="del">-    b4[C+p]=-128;</span>
+<span class="add">+    // Merge both independent certificates and propagate only</span>
+<span class="add">+    // through stones of the corresponding color.</span>
+<span class="add">+    W3[A+p,C+p]=128;</span>
+<span class="add">+    W3[C+p,C+p]=1;</span>
+<span class="add">+    W3[F+p,C+p]=1;</span>
+<span class="add">+    b3[C+p]=-128;</span>
+<span class=""> </span>
+<span class="del">-    W4[B+p,D+p]=128;</span>
+<span class="del">-    W4[D+p,D+p]=1;</span>
+<span class="del">-    b4[D+p]=-128;</span>
+<span class="add">+    W3[B+p,D+p]=128;</span>
+<span class="add">+    W3[D+p,D+p]=1;</span>
+<span class="add">+    W3[E+p,D+p]=1;</span>
+<span class="add">+    b3[D+p]=-128;</span>
+<span class=""> </span>
+<span class="del">-    W4[B+p,E+p]=128;</span>
+<span class="del">-    W4[E+p,E+p]=1;</span>
+<span class="del">-    b4[E+p]=-128;</span>
+<span class="add">+    // Recover the original local third-liberty seed one layer</span>
+<span class="add">+    // later: relu(relu(bound-1)-1) = relu(bound-2).</span>
+<span class="add">+    W3[D+p,E+p]=1;</span>
+<span class="add">+    b3[E+p]=-1;</span>
+<span class=""> </span>
+<span class="del">-    // h5 A/B: own/enemy stones lacking a two-liberty certificate.</span>
+<span class="del">-    W5[A+p,A+p]=1;</span>
+<span class="del">-    W5[C+p,A+p]=-2;</span>
+<span class="del">-    W5[B+p,B+p]=1;</span>
+<span class="del">-    W5[D+p,B+p]=-2;</span>
+<span class="add">+    // Larger gating margins accommodate merged certificates.</span>
+<span class="add">+    W4[A+p,C+p]=512;</span>
+<span class="add">+    b4[C+p]=-512;</span>
+<span class="add">+    W4[B+p,D+p]=512;</span>
+<span class="add">+    b4[D+p]=-512;</span>
+<span class=""> </span>
+<span class="del">-    // h5 E: enemy stones lacking a three-liberty certificate.</span>
+<span class="del">-    W5[B+p,E+p]=1;</span>
+<span class="del">-    W5[E+p,E+p]=-2;</span>
+<span class="del">-</span>
+<span class="del">-    // Shifted deficit baseline and local eye feature.</span>
+<span class="del">-    b5[C+p]=6;</span>
+<span class="del">-    b5[D+p]=2;</span>
+<span class="del">-    W5[F+p,F+p]=1;</span>
+<span class="del">-</span>
+<span class="del">-    // Excess-contact features implement diminishing bonuses.</span>
+<span class="del">-    b6[A+p]=-1;</span>
+<span class="del">-    b6[B+p]=-1;</span>
+<span class="del">-</span>
+<span class="del">-    W6[C+p,C+p]=1;</span>
+<span class="del">-    b6[C+p]=-4;</span>
+<span class="del">-    W6[D+p,D+p]=1;</span>
+<span class="del">-    W6[F+p,F+p]=1;</span>
+<span class="del">-</span>
+<span class="del">-    W7[A+p,p]=-6;</span>
+<span class="del">-    W7[B+p,p]=-8;</span>
+<span class="del">-    W7[C+p,p]=-11;</span>
+<span class="del">-    W7[D+p,p]=-13/2;</span>
+<span class="del">-    W7[E+p,p]=12/5;</span>
+<span class="del">-    W7[F+p,p]=1;</span>
+<span class="del">-  }</span>
+<span class="del">-</span>
+<span class="del">-  // Preserve opening phase, occupancy, and side-to-move channels.</span>
+<span class="del">-  for j in range(486,489) {</span>
+<span class="del">-    W5[j,j]=1;</span>
+<span class="del">-    W6[j,j]=1;</span>
+<span class="add">+    // Reconstruct the analytic spatial kernel directly from</span>
+<span class="add">+    // the stone indicators still available in h2.</span>
+<span class="add">+    b3[F+p]=parent.b1[F+p];</span>
+<span class="add">+    for q in range(81) {</span>
+<span class="add">+      W3[A+q,F+p]=parent.W1[3*q,F+p];</span>
+<span class="add">+      W3[B+q,F+p]=parent.W1[3*q+1,F+p];</span>
+<span class="add">+    }</span>
+<span class="">   }</span>
+<span class=""> </span>
+<span class="">   // Horizontal directed adjacency.</span>
+<span class="">   for r in range(9) {</span>
+<span class="">     for c in range(8) {</span>
+<span class="">       for s in range(2) {</span>
+<span class="del">-        W2[D+9*r+c+1-s,E+9*r+c+s]+=1/2;</span>
+<span class="del">-        W3[E+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class="add">+        W2[D+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class="add">+        W2[C+9*r+c+1-s,F+9*r+c+s]+=1;</span>
+<span class=""> </span>
+<span class="del">-        W4[C+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="del">-        W4[D+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="del">-        W4[E+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class="add">+        W3[C+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="add">+        W3[F+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class=""> </span>
+<span class="del">-        W5[C+9*r+c+1-s,A+9*r+c+s]-=2;</span>
+<span class="del">-        W5[D+9*r+c+1-s,B+9*r+c+s]-=2;</span>
+<span class="del">-        W5[E+9*r+c+1-s,E+9*r+c+s]-=2;</span>
+<span class="del">-</span>
+<span class="del">-        W5[B+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="del">-        b5[C+9*r+c+s]-=1;</span>
+<span class="del">-</span>
+<span class="del">-        W5[A+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="del">-        W5[B+9*r+c+1-s,D+9*r+c+s]-=2;</span>
+<span class="del">-        b5[D+9*r+c+s]-=1;</span>
+<span class="del">-</span>
+<span class="del">-        W6[A+9*r+c+1-s,A+9*r+c+s]+=1;</span>
+<span class="del">-        W6[B+9*r+c+1-s,B+9*r+c+s]+=1;</span>
+<span class="del">-</span>
+<span class="del">-        // Each safe friendly contact contributes one remaining</span>
+<span class="del">-        // liberty, rather than assuming it contributes two.</span>
+<span class="del">-        W6[A+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="del">-        W6[B+9*r+c+1-s,C+9*r+c+s]-=1;</span>
+<span class="del">-</span>
+<span class="del">-        // Do not treat urgent connections as ordinary eye filling.</span>
+<span class="del">-        W6[A+9*r+c+1-s,D+9*r+c+s]-=1;</span>
+<span class="del">-</span>
+<span class="del">-        // Pressure excludes stones already counted as captures.</span>
+<span class="del">-        W6[E+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class="del">-        W6[B+9*r+c+1-s,E+9*r+c+s]-=1;</span>
+<span class="del">-</span>
+<span class="del">-        W6[A+9*r+c+1-s,F+9*r+c+s]+=15/2;</span>
+<span class="del">-        W6[B+9*r+c+1-s,F+9*r+c+s]+=21/2;</span>
+<span class="add">+        W3[D+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="add">+        W3[E+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="">       }</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class="meta">@@ -136,50 +85,34 @@</span>
+<span class="">   // Vertical directed adjacency.</span>
+<span class="">   for p in range(72) {</span>
+<span class="">     for s in range(2) {</span>
+<span class="del">-      W2[D+p+9*(1-s),E+p+9*s]+=1/2;</span>
+<span class="del">-      W3[E+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class="add">+      W2[D+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class="add">+      W2[C+p+9*(1-s),F+p+9*s]+=1;</span>
+<span class=""> </span>
+<span class="del">-      W4[C+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="del">-      W4[D+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="del">-      W4[E+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class="add">+      W3[C+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="add">+      W3[F+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class=""> </span>
+<span class="del">-      W5[C+p+9*(1-s),A+p+9*s]-=2;</span>
+<span class="del">-      W5[D+p+9*(1-s),B+p+9*s]-=2;</span>
+<span class="del">-      W5[E+p+9*(1-s),E+p+9*s]-=2;</span>
+<span class="del">-</span>
+<span class="del">-      W5[B+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="del">-      b5[C+p+9*s]-=1;</span>
+<span class="del">-</span>
+<span class="del">-      W5[A+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="del">-      W5[B+p+9*(1-s),D+p+9*s]-=2;</span>
+<span class="del">-      b5[D+p+9*s]-=1;</span>
+<span class="del">-</span>
+<span class="del">-      W6[A+p+9*(1-s),A+p+9*s]+=1;</span>
+<span class="del">-      W6[B+p+9*(1-s),B+p+9*s]+=1;</span>
+<span class="del">-</span>
+<span class="del">-      W6[A+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="del">-      W6[B+p+9*(1-s),C+p+9*s]-=1;</span>
+<span class="del">-</span>
+<span class="del">-      W6[A+p+9*(1-s),D+p+9*s]-=1;</span>
+<span class="del">-</span>
+<span class="del">-      W6[E+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class="del">-      W6[B+p+9*(1-s),E+p+9*s]-=1;</span>
+<span class="del">-</span>
+<span class="del">-      W6[A+p+9*(1-s),F+p+9*s]+=15/2;</span>
+<span class="del">-      W6[B+p+9*(1-s),F+p+9*s]+=21/2;</span>
+<span class="add">+      W3[D+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="add">+      W3[E+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class=""> </span>
+<span class="del">-  // False-eye adjustment and reduced reward for redundant connections.</span>
+<span class="add">+  // Subtract empty diagonals: occupancy minus one.</span>
+<span class="add">+  // Reflections and reversal cover every directed diagonal.</span>
+<span class="">   for r in range(8) {</span>
+<span class="">     for c in range(8) {</span>
+<span class="">       for d in range(2) {</span>
+<span class="">         for s in range(2) {</span>
+<span class="del">-          W5[B+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="del">-             D+9*r+c+d+s*(10-2*d)]-=1/2;</span>
+<span class="add">+          W2[A+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="add">+             E+9*r+c+d+s*(10-2*d)]+=1;</span>
+<span class="add">+          W2[B+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="add">+             E+9*r+c+d+s*(10-2*d)]+=1;</span>
+<span class="add">+          b2[E+9*r+c+d+s*(10-2*d)]-=1;</span>
+<span class=""> </span>
+<span class="del">-          W1[3*(9*r+c+d+(1-s)*(10-2*d)),</span>
+<span class="del">-             E+9*r+c+d+s*(10-2*d)]-=1/2;</span>
+<span class="add">+          W2[A+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="add">+             F+9*r+c+d+s*(10-2*d)]+=1;</span>
+<span class="add">+          W2[B+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="add">+             F+9*r+c+d+s*(10-2*d)]+=1;</span>
+<span class="add">+          b2[F+9*r+c+d+s*(10-2*d)]-=1;</span>
+<span class="">         }</span>
+<span class="">       }</span>
+<span class="">     }</span>
+</pre></details></article><article id="edit3"><h2>Edit 3 · 54.13% win rate</h2><p>8,793 coefficients changed; 23,980 nonzero afterward. Collection: 585.3s; construction: 14.11s. WSPL charged operations: 1,021,308; placements: 0.</p><p>Paired change: +2.60 pp; descriptive 95% interval [+1.48, +3.72] pp. Won instead: 666; lost instead: 510; unchanged: 4,824.</p><p><a href="edit_3/proposal.wspl">Exact submitted program</a> · <a href="edit_3/answer.md">Raw response</a> · <a href="edit_3/weight_changes.json">All weight changes</a> · <a href="edit_3/metrics.json">Metrics and hashes</a></p><details><summary>Actual stored-weight changes (first 80; full JSON linked above)</summary><pre><span class="del">- W3[0,406] = -0.44999998807907104</span>
+<span class="add">+ W3[0,406] = 0.0</span>
+<span class="del">- W3[0,407] = 0.3499999940395355</span>
+<span class="add">+ W3[0,407] = 0.0</span>
+<span class="del">- W3[0,408] = 0.15000000596046448</span>
+<span class="add">+ W3[0,408] = 0.0</span>
+<span class="del">- W3[0,414] = -0.44999998807907104</span>
+<span class="add">+ W3[0,414] = 0.0</span>
+<span class="del">- W3[0,415] = 0.10000000149011612</span>
+<span class="add">+ W3[0,415] = 0.0</span>
+<span class="del">- W3[0,416] = 0.10000000149011612</span>
+<span class="add">+ W3[0,416] = 0.0</span>
+<span class="del">- W3[0,423] = 0.3499999940395355</span>
+<span class="add">+ W3[0,423] = 0.0</span>
+<span class="del">- W3[0,424] = 0.10000000149011612</span>
+<span class="add">+ W3[0,424] = 0.0</span>
+<span class="del">- W3[0,425] = -0.05000000074505806</span>
+<span class="add">+ W3[0,425] = 0.0</span>
+<span class="del">- W3[0,432] = 0.15000000596046448</span>
+<span class="add">+ W3[0,432] = 0.0</span>
+<span class="del">- W3[1,405] = -0.44999998807907104</span>
+<span class="add">+ W3[1,405] = 0.0</span>
+<span class="del">- W3[1,407] = -0.44999998807907104</span>
+<span class="add">+ W3[1,407] = 0.0</span>
+<span class="del">- W3[1,408] = 0.3499999940395355</span>
+<span class="add">+ W3[1,408] = 0.0</span>
+<span class="del">- W3[1,409] = 0.15000000596046448</span>
+<span class="add">+ W3[1,409] = 0.0</span>
+<span class="del">- W3[1,414] = 0.10000000149011612</span>
+<span class="add">+ W3[1,414] = 0.0</span>
+<span class="del">- W3[1,415] = -0.44999998807907104</span>
+<span class="add">+ W3[1,415] = 0.0</span>
+<span class="del">- W3[1,416] = 0.10000000149011612</span>
+<span class="add">+ W3[1,416] = 0.0</span>
+<span class="del">- W3[1,417] = 0.10000000149011612</span>
+<span class="add">+ W3[1,417] = 0.0</span>
+<span class="del">- W3[1,423] = 0.10000000149011612</span>
+<span class="add">+ W3[1,423] = 0.0</span>
+<span class="del">- W3[1,424] = 0.3499999940395355</span>
+<span class="add">+ W3[1,424] = 0.0</span>
+<span class="del">- W3[1,425] = 0.10000000149011612</span>
+<span class="add">+ W3[1,425] = 0.0</span>
+<span class="del">- W3[1,426] = -0.05000000074505806</span>
+<span class="add">+ W3[1,426] = 0.0</span>
+<span class="del">- W3[1,433] = 0.15000000596046448</span>
+<span class="add">+ W3[1,433] = 0.0</span>
+<span class="del">- W3[2,405] = 0.3499999940395355</span>
+<span class="add">+ W3[2,405] = 0.0</span>
+<span class="del">- W3[2,406] = -0.44999998807907104</span>
+<span class="add">+ W3[2,406] = 0.0</span>
+<span class="del">- W3[2,408] = -0.44999998807907104</span>
+<span class="add">+ W3[2,408] = 0.0</span>
+<span class="del">- W3[2,409] = 0.3499999940395355</span>
+<span class="add">+ W3[2,409] = 0.0</span>
+<span class="del">- W3[2,410] = 0.15000000596046448</span>
+<span class="add">+ W3[2,410] = 0.0</span>
+<span class="del">- W3[2,414] = 0.10000000149011612</span>
+<span class="add">+ W3[2,414] = 0.0</span>
+<span class="del">- W3[2,415] = 0.10000000149011612</span>
+<span class="add">+ W3[2,415] = 0.0</span>
+<span class="del">- W3[2,416] = -0.44999998807907104</span>
+<span class="add">+ W3[2,416] = 0.0</span>
+<span class="del">- W3[2,417] = 0.10000000149011612</span>
+<span class="add">+ W3[2,417] = 0.0</span>
+<span class="del">- W3[2,418] = 0.10000000149011612</span>
+<span class="add">+ W3[2,418] = 0.0</span>
+<span class="del">- W3[2,423] = -0.05000000074505806</span>
+<span class="add">+ W3[2,423] = 0.0</span>
+<span class="del">- W3[2,424] = 0.10000000149011612</span>
+<span class="add">+ W3[2,424] = 0.0</span>
+<span class="del">- W3[2,425] = 0.3499999940395355</span>
+<span class="add">+ W3[2,425] = 0.0</span>
+<span class="del">- W3[2,426] = 0.10000000149011612</span>
+<span class="add">+ W3[2,426] = 0.0</span>
+<span class="del">- W3[2,427] = -0.05000000074505806</span>
+<span class="add">+ W3[2,427] = 0.0</span>
+<span class="del">- W3[2,434] = 0.15000000596046448</span>
+<span class="add">+ W3[2,434] = 0.0</span>
+<span class="del">- W3[3,405] = 0.15000000596046448</span>
+<span class="add">+ W3[3,405] = 0.0</span>
+<span class="del">- W3[3,406] = 0.3499999940395355</span>
+<span class="add">+ W3[3,406] = 0.0</span>
+<span class="del">- W3[3,407] = -0.44999998807907104</span>
+<span class="add">+ W3[3,407] = 0.0</span>
+<span class="del">- W3[3,409] = -0.44999998807907104</span>
+<span class="add">+ W3[3,409] = 0.0</span>
+<span class="del">- W3[3,410] = 0.3499999940395355</span>
+<span class="add">+ W3[3,410] = 0.0</span>
+<span class="del">- W3[3,411] = 0.15000000596046448</span>
+<span class="add">+ W3[3,411] = 0.0</span>
+<span class="del">- W3[3,415] = 0.10000000149011612</span>
+<span class="add">+ W3[3,415] = 0.0</span>
+<span class="del">- W3[3,416] = 0.10000000149011612</span>
+<span class="add">+ W3[3,416] = 0.0</span>
+<span class="del">- W3[3,417] = -0.44999998807907104</span>
+<span class="add">+ W3[3,417] = 0.0</span>
+<span class="del">- W3[3,418] = 0.10000000149011612</span>
+<span class="add">+ W3[3,418] = 0.0</span>
+<span class="del">- W3[3,419] = 0.10000000149011612</span>
+<span class="add">+ W3[3,419] = 0.0</span>
+<span class="del">- W3[3,424] = -0.05000000074505806</span>
+<span class="add">+ W3[3,424] = 0.0</span>
+<span class="del">- W3[3,425] = 0.10000000149011612</span>
+<span class="add">+ W3[3,425] = 0.0</span>
+<span class="del">- W3[3,426] = 0.3499999940395355</span>
+<span class="add">+ W3[3,426] = 0.0</span>
+<span class="del">- W3[3,427] = 0.10000000149011612</span>
+<span class="add">+ W3[3,427] = 0.0</span>
+<span class="del">- W3[3,428] = -0.05000000074505806</span>
+<span class="add">+ W3[3,428] = 0.0</span>
+<span class="del">- W3[3,435] = 0.15000000596046448</span>
+<span class="add">+ W3[3,435] = 0.0</span>
+<span class="del">- W3[4,406] = 0.15000000596046448</span>
+<span class="add">+ W3[4,406] = 0.0</span>
+<span class="del">- W3[4,407] = 0.3499999940395355</span>
+<span class="add">+ W3[4,407] = 0.0</span>
+<span class="del">- W3[4,408] = -0.44999998807907104</span>
+<span class="add">+ W3[4,408] = 0.0</span>
+<span class="del">- W3[4,410] = -0.44999998807907104</span>
+<span class="add">+ W3[4,410] = 0.0</span>
+<span class="del">- W3[4,411] = 0.3499999940395355</span>
+<span class="add">+ W3[4,411] = 0.0</span>
+<span class="del">- W3[4,412] = 0.15000000596046448</span>
+<span class="add">+ W3[4,412] = 0.0</span>
+<span class="del">- W3[4,416] = 0.10000000149011612</span>
+<span class="add">+ W3[4,416] = 0.0</span>
+<span class="del">- W3[4,417] = 0.10000000149011612</span>
+<span class="add">+ W3[4,417] = 0.0</span>
+<span class="del">- W3[4,418] = -0.44999998807907104</span>
+<span class="add">+ W3[4,418] = 0.0</span>
+<span class="del">- W3[4,419] = 0.10000000149011612</span>
+<span class="add">+ W3[4,419] = 0.0</span>
+<span class="del">- W3[4,420] = 0.10000000149011612</span>
+<span class="add">+ W3[4,420] = 0.0</span>
+<span class="del">- W3[4,425] = -0.05000000074505806</span>
+<span class="add">+ W3[4,425] = 0.0</span>
+<span class="del">- W3[4,426] = 0.10000000149011612</span>
+<span class="add">+ W3[4,426] = 0.0</span>
+<span class="del">- W3[4,427] = 0.3499999940395355</span>
+<span class="add">+ W3[4,427] = 0.0</span>
+<span class="del">- W3[4,428] = 0.10000000149011612</span>
+<span class="add">+ W3[4,428] = 0.0</span>
+<span class="del">- W3[4,429] = -0.05000000074505806</span>
+<span class="add">+ W3[4,429] = 0.0</span>
+<span class="del">- W3[4,436] = 0.15000000596046448</span>
+<span class="add">+ W3[4,436] = 0.0</span>
+<span class="del">- W3[5,407] = 0.15000000596046448</span>
+<span class="add">+ W3[5,407] = 0.0</span>
+<span class="del">- W3[5,408] = 0.3499999940395355</span>
+<span class="add">+ W3[5,408] = 0.0</span>
+<span class="del">- W3[5,409] = -0.44999998807907104</span>
+<span class="add">+ W3[5,409] = 0.0</span>
+<span class="del">- W3[5,411] = -0.44999998807907104</span>
+<span class="add">+ W3[5,411] = 0.0</span>
+<span class="del">- W3[5,412] = 0.3499999940395355</span>
+<span class="add">+ W3[5,412] = 0.0</span>
+<span class="del">- W3[5,413] = 0.15000000596046448</span>
+<span class="add">+ W3[5,413] = 0.0</span>
+<span class="del">- W3[5,417] = 0.10000000149011612</span>
+<span class="add">+ W3[5,417] = 0.0</span>
+</pre></details><details><summary>Submitted transaction</summary><pre>wspl 0.2;
+target base=artifact(&quot;parent&quot;,sha256=&quot;{{PARENT_SHA256}}&quot;);
+
+const A=0;
+const B=81;
+const C=162;
+const E=324;
+const F=405;
+const G=486;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Move the positional kernel to h5, freeing h3/h4 F
+  // for friendly three-liberty certificates.
+  W3[:,F:G]=0;
+  b3[F:G]=0;
+  W4[:,F:G]=0;
+  b4[F:G]=0;
+  W5[:,F:G]=0;
+  b5[F:G]=0;
+
+  // Enemy pressure is nonnegative before its existing ReLU.
+  // Fold it into the shifted score, freeing h6 E.
+  W6[:,E:F]=0;
+  b6[E:F]=0;
+
+  for p in range(81) {
+    // The original friendly seed is relu(liberty_bound-1).
+    // Thresholding it again certifies at least three liberties.
+    W3[C+p,F+p]=1;
+    b3[F+p]=-1;
+
+    // Propagate this certificate through friendly stones.
+    W4[A+p,F+p]=128;
+    W4[F+p,F+p]=1;
+    b4[F+p]=-128;
+
+    // Reconstruct the unchanged positional kernel from the
+    // exact stone indicators retained through h4.
+    b5[F+p]=parent.b3[F+p];
+    for q in range(81) {
+      W5[A+q,F+p]=parent.W3[A+q,F+p];
+      W5[B+q,F+p]=parent.W3[B+q,F+p];
+    }
+
+    // h5 C is at most six, reaching six only when every
+    // orthogonal neighbor is opposing.
+    //
+    // relu(2*h5C - 10 - capture_contacts) is zero elsewhere.
+    // At a surrounded legal move, it equals the existing
+    // liberty deficit: legality guarantees an actual capture.
+    W6[C+p,E+p]=2;
+    b6[E+p]=-10;
+    W7[E+p,p]=11;
+  }
+
+  // Horizontal directed adjacency.
+  for r in range(9) {
+    for c in range(8) {
+      for s in range(2) {
+        W4[F+9*r+c+1-s,F+9*r+c+s]+=1;
+
+        // A neighboring three-liberty group guarantees at
+        // least two liberties remain after connecting to it.
+        W5[F+9*r+c+1-s,C+9*r+c+s]-=8;
+
+        // Preserve the former pressure contribution exactly
+        // as an affine contribution to the shifted score.
+        W6[E+9*r+c+1-s,F+9*r+c+s]+=12/5;
+        W6[B+9*r+c+1-s,F+9*r+c+s]-=12/5;
+
+        W6[B+9*r+c+1-s,E+9*r+c+s]-=1;
+      }
+    }
+  }
+
+  // Vertical directed adjacency.
+  for p in range(72) {
+    for s in range(2) {
+      W4[F+p+9*(1-s),F+p+9*s]+=1;
+
+      W5[F+p+9*(1-s),C+p+9*s]-=8;
+
+      W6[E+p+9*(1-s),F+p+9*s]+=12/5;
+      W6[B+p+9*(1-s),F+p+9*s]-=12/5;
+
+      W6[B+p+9*(1-s),E+p+9*s]-=1;
+    }
+  }
+}
+</pre></details><details><summary>Text diff against previous submitted transaction</summary><p class="note">These are separate patch programs. This text diff is NOT a cumulative controller diff; the stored-weight changes above show the actual state transition.</p><pre><span class="del">--- previous_submitted_transaction</span>
+<span class="add">+++ edit_3_submitted_transaction</span>
+<span class="meta">@@ -4,80 +4,71 @@</span>
+<span class=""> const A=0;</span>
+<span class=""> const B=81;</span>
+<span class=""> const C=162;</span>
+<span class="del">-const D=243;</span>
+<span class=""> const E=324;</span>
+<span class=""> const F=405;</span>
+<span class=""> const G=486;</span>
+<span class=""> </span>
+<span class=""> edit base as candidate mode=fixed numeric=exact_to_storage {</span>
+<span class="del">-  // Keep the original two-liberty seeds in h2 C/D.</span>
+<span class="del">-  // Use h2 E/F for complementary enemy/friendly certificates.</span>
+<span class="del">-  W2[:,E:G]=0;</span>
+<span class="del">-  b2[E:G]=0;</span>
+<span class="add">+  // Move the positional kernel to h5, freeing h3/h4 F</span>
+<span class="add">+  // for friendly three-liberty certificates.</span>
+<span class="add">+  W3[:,F:G]=0;</span>
+<span class="add">+  b3[F:G]=0;</span>
+<span class="add">+  W4[:,F:G]=0;</span>
+<span class="add">+  b4[F:G]=0;</span>
+<span class="add">+  W5[:,F:G]=0;</span>
+<span class="add">+  b5[F:G]=0;</span>
+<span class=""> </span>
+<span class="del">-  // Rebuild propagation, third-liberty evidence, and shape.</span>
+<span class="del">-  W3[:,C:G]=0;</span>
+<span class="del">-  b3[C:G]=0;</span>
+<span class="add">+  // Enemy pressure is nonnegative before its existing ReLU.</span>
+<span class="add">+  // Fold it into the shifted score, freeing h6 E.</span>
+<span class="add">+  W6[:,E:F]=0;</span>
+<span class="add">+  b6[E:F]=0;</span>
+<span class=""> </span>
+<span class="">   for p in range(81) {</span>
+<span class="del">-    // Complementary bound:</span>
+<span class="del">-    // direct liberties + adjacent same-color direct liberties</span>
+<span class="del">-    // minus every empty diagonal.</span>
+<span class="add">+    // The original friendly seed is relu(liberty_bound-1).</span>
+<span class="add">+    // Thresholding it again certifies at least three liberties.</span>
+<span class="add">+    W3[C+p,F+p]=1;</span>
+<span class="add">+    b3[F+p]=-1;</span>
+<span class="add">+</span>
+<span class="add">+    // Propagate this certificate through friendly stones.</span>
+<span class="add">+    W4[A+p,F+p]=128;</span>
+<span class="add">+    W4[F+p,F+p]=1;</span>
+<span class="add">+    b4[F+p]=-128;</span>
+<span class="add">+</span>
+<span class="add">+    // Reconstruct the unchanged positional kernel from the</span>
+<span class="add">+    // exact stone indicators retained through h4.</span>
+<span class="add">+    b5[F+p]=parent.b3[F+p];</span>
+<span class="add">+    for q in range(81) {</span>
+<span class="add">+      W5[A+q,F+p]=parent.W3[A+q,F+p];</span>
+<span class="add">+      W5[B+q,F+p]=parent.W3[B+q,F+p];</span>
+<span class="add">+    }</span>
+<span class="add">+</span>
+<span class="add">+    // h5 C is at most six, reaching six only when every</span>
+<span class="add">+    // orthogonal neighbor is opposing.</span>
+<span class="">     //</span>
+<span class="del">-    // Shared liberties of adjacent group members can occur only</span>
+<span class="del">-    // at these diagonals. Subtracting all of them is conservative.</span>
+<span class="del">-    W2[B+p,E+p]=12;</span>
+<span class="del">-    W2[D+p,E+p]=1;</span>
+<span class="del">-    b2[E+p]=-13;</span>
+<span class="del">-</span>
+<span class="del">-    W2[A+p,F+p]=12;</span>
+<span class="del">-    W2[C+p,F+p]=1;</span>
+<span class="del">-    b2[F+p]=-13;</span>
+<span class="del">-</span>
+<span class="del">-    // Merge both independent certificates and propagate only</span>
+<span class="del">-    // through stones of the corresponding color.</span>
+<span class="del">-    W3[A+p,C+p]=128;</span>
+<span class="del">-    W3[C+p,C+p]=1;</span>
+<span class="del">-    W3[F+p,C+p]=1;</span>
+<span class="del">-    b3[C+p]=-128;</span>
+<span class="del">-</span>
+<span class="del">-    W3[B+p,D+p]=128;</span>
+<span class="del">-    W3[D+p,D+p]=1;</span>
+<span class="del">-    W3[E+p,D+p]=1;</span>
+<span class="del">-    b3[D+p]=-128;</span>
+<span class="del">-</span>
+<span class="del">-    // Recover the original local third-liberty seed one layer</span>
+<span class="del">-    // later: relu(relu(bound-1)-1) = relu(bound-2).</span>
+<span class="del">-    W3[D+p,E+p]=1;</span>
+<span class="del">-    b3[E+p]=-1;</span>
+<span class="del">-</span>
+<span class="del">-    // Larger gating margins accommodate merged certificates.</span>
+<span class="del">-    W4[A+p,C+p]=512;</span>
+<span class="del">-    b4[C+p]=-512;</span>
+<span class="del">-    W4[B+p,D+p]=512;</span>
+<span class="del">-    b4[D+p]=-512;</span>
+<span class="del">-</span>
+<span class="del">-    // Reconstruct the analytic spatial kernel directly from</span>
+<span class="del">-    // the stone indicators still available in h2.</span>
+<span class="del">-    b3[F+p]=parent.b1[F+p];</span>
+<span class="del">-    for q in range(81) {</span>
+<span class="del">-      W3[A+q,F+p]=parent.W1[3*q,F+p];</span>
+<span class="del">-      W3[B+q,F+p]=parent.W1[3*q+1,F+p];</span>
+<span class="del">-    }</span>
+<span class="add">+    // relu(2*h5C - 10 - capture_contacts) is zero elsewhere.</span>
+<span class="add">+    // At a surrounded legal move, it equals the existing</span>
+<span class="add">+    // liberty deficit: legality guarantees an actual capture.</span>
+<span class="add">+    W6[C+p,E+p]=2;</span>
+<span class="add">+    b6[E+p]=-10;</span>
+<span class="add">+    W7[E+p,p]=11;</span>
+<span class="">   }</span>
+<span class=""> </span>
+<span class="">   // Horizontal directed adjacency.</span>
+<span class="">   for r in range(9) {</span>
+<span class="">     for c in range(8) {</span>
+<span class="">       for s in range(2) {</span>
+<span class="del">-        W2[D+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class="del">-        W2[C+9*r+c+1-s,F+9*r+c+s]+=1;</span>
+<span class="add">+        W4[F+9*r+c+1-s,F+9*r+c+s]+=1;</span>
+<span class=""> </span>
+<span class="del">-        W3[C+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="del">-        W3[F+9*r+c+1-s,C+9*r+c+s]+=1;</span>
+<span class="add">+        // A neighboring three-liberty group guarantees at</span>
+<span class="add">+        // least two liberties remain after connecting to it.</span>
+<span class="add">+        W5[F+9*r+c+1-s,C+9*r+c+s]-=8;</span>
+<span class=""> </span>
+<span class="del">-        W3[D+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="del">-        W3[E+9*r+c+1-s,D+9*r+c+s]+=1;</span>
+<span class="add">+        // Preserve the former pressure contribution exactly</span>
+<span class="add">+        // as an affine contribution to the shifted score.</span>
+<span class="add">+        W6[E+9*r+c+1-s,F+9*r+c+s]+=12/5;</span>
+<span class="add">+        W6[B+9*r+c+1-s,F+9*r+c+s]-=12/5;</span>
+<span class="add">+</span>
+<span class="add">+        W6[B+9*r+c+1-s,E+9*r+c+s]-=1;</span>
+<span class="">       }</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class="meta">@@ -85,36 +76,14 @@</span>
+<span class="">   // Vertical directed adjacency.</span>
+<span class="">   for p in range(72) {</span>
+<span class="">     for s in range(2) {</span>
+<span class="del">-      W2[D+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class="del">-      W2[C+p+9*(1-s),F+p+9*s]+=1;</span>
+<span class="add">+      W4[F+p+9*(1-s),F+p+9*s]+=1;</span>
+<span class=""> </span>
+<span class="del">-      W3[C+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="del">-      W3[F+p+9*(1-s),C+p+9*s]+=1;</span>
+<span class="add">+      W5[F+p+9*(1-s),C+p+9*s]-=8;</span>
+<span class=""> </span>
+<span class="del">-      W3[D+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="del">-      W3[E+p+9*(1-s),D+p+9*s]+=1;</span>
+<span class="del">-    }</span>
+<span class="del">-  }</span>
+<span class="add">+      W6[E+p+9*(1-s),F+p+9*s]+=12/5;</span>
+<span class="add">+      W6[B+p+9*(1-s),F+p+9*s]-=12/5;</span>
+<span class=""> </span>
+<span class="del">-  // Subtract empty diagonals: occupancy minus one.</span>
+<span class="del">-  // Reflections and reversal cover every directed diagonal.</span>
+<span class="del">-  for r in range(8) {</span>
+<span class="del">-    for c in range(8) {</span>
+<span class="del">-      for d in range(2) {</span>
+<span class="del">-        for s in range(2) {</span>
+<span class="del">-          W2[A+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="del">-             E+9*r+c+d+s*(10-2*d)]+=1;</span>
+<span class="del">-          W2[B+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="del">-             E+9*r+c+d+s*(10-2*d)]+=1;</span>
+<span class="del">-          b2[E+9*r+c+d+s*(10-2*d)]-=1;</span>
+<span class="del">-</span>
+<span class="del">-          W2[A+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="del">-             F+9*r+c+d+s*(10-2*d)]+=1;</span>
+<span class="del">-          W2[B+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="del">-             F+9*r+c+d+s*(10-2*d)]+=1;</span>
+<span class="del">-          b2[F+9*r+c+d+s*(10-2*d)]-=1;</span>
+<span class="del">-        }</span>
+<span class="del">-      }</span>
+<span class="add">+      W6[B+p+9*(1-s),E+p+9*s]-=1;</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class=""> }</span>
+</pre></details></article><article id="edit4"><h2>Edit 4 · 54.03% win rate</h2><p>5,671 coefficients changed; 20,512 nonzero afterward. Collection: 218.4s; construction: 11.36s. WSPL charged operations: 569,010; placements: 0.</p><p>Paired change: -0.10 pp; descriptive 95% interval [-0.79, +0.59] pp. Won instead: 222; lost instead: 228; unchanged: 5,550.</p><p><a href="edit_4/proposal.wspl">Exact submitted program</a> · <a href="edit_4/answer.md">Raw response</a> · <a href="edit_4/weight_changes.json">All weight changes</a> · <a href="edit_4/metrics.json">Metrics and hashes</a></p><details><summary>Actual stored-weight changes (first 80; full JSON linked above)</summary><pre><span class="del">- W1[0,324] = 0.0</span>
+<span class="add">+ W1[0,324] = -4.0</span>
+<span class="del">- W1[0,334] = -0.5</span>
+<span class="add">+ W1[0,334] = 0.0</span>
+<span class="del">- W1[0,405] = 0.0</span>
+<span class="add">+ W1[0,405] = -4.0</span>
+<span class="del">- W1[0,406] = -0.44999998807907104</span>
+<span class="add">+ W1[0,406] = 0.0</span>
+<span class="del">- W1[0,407] = 0.3499999940395355</span>
+<span class="add">+ W1[0,407] = 0.0</span>
+<span class="del">- W1[0,408] = 0.15000000596046448</span>
+<span class="add">+ W1[0,408] = 0.0</span>
+<span class="del">- W1[0,414] = -0.44999998807907104</span>
+<span class="add">+ W1[0,414] = 0.0</span>
+<span class="del">- W1[0,415] = 0.10000000149011612</span>
+<span class="add">+ W1[0,415] = 0.0</span>
+<span class="del">- W1[0,416] = 0.10000000149011612</span>
+<span class="add">+ W1[0,416] = 0.0</span>
+<span class="del">- W1[0,423] = 0.3499999940395355</span>
+<span class="add">+ W1[0,423] = 0.0</span>
+<span class="del">- W1[0,424] = 0.10000000149011612</span>
+<span class="add">+ W1[0,424] = 0.0</span>
+<span class="del">- W1[0,425] = -0.05000000074505806</span>
+<span class="add">+ W1[0,425] = 0.0</span>
+<span class="del">- W1[0,432] = 0.15000000596046448</span>
+<span class="add">+ W1[0,432] = 0.0</span>
+<span class="del">- W1[1,324] = 0.0</span>
+<span class="add">+ W1[1,324] = -4.0</span>
+<span class="del">- W1[1,405] = 0.0</span>
+<span class="add">+ W1[1,405] = -4.0</span>
+<span class="del">- W1[1,406] = -0.4000000059604645</span>
+<span class="add">+ W1[1,406] = 1.0</span>
+<span class="del">- W1[1,407] = 0.6499999761581421</span>
+<span class="add">+ W1[1,407] = 0.0</span>
+<span class="del">- W1[1,408] = 0.10000000149011612</span>
+<span class="add">+ W1[1,408] = 0.0</span>
+<span class="del">- W1[1,414] = -0.4000000059604645</span>
+<span class="add">+ W1[1,414] = 1.0</span>
+<span class="del">- W1[1,415] = 0.44999998807907104</span>
+<span class="add">+ W1[1,415] = 0.0</span>
+<span class="del">- W1[1,416] = 0.11999999731779099</span>
+<span class="add">+ W1[1,416] = 0.0</span>
+<span class="del">- W1[1,423] = 0.6499999761581421</span>
+<span class="add">+ W1[1,423] = 0.0</span>
+<span class="del">- W1[1,424] = 0.11999999731779099</span>
+<span class="add">+ W1[1,424] = 0.0</span>
+<span class="del">- W1[1,425] = 0.05000000074505806</span>
+<span class="add">+ W1[1,425] = 0.0</span>
+<span class="del">- W1[1,432] = 0.10000000149011612</span>
+<span class="add">+ W1[1,432] = 0.0</span>
+<span class="del">- W1[3,325] = 0.0</span>
+<span class="add">+ W1[3,325] = -4.0</span>
+<span class="del">- W1[3,333] = -0.5</span>
+<span class="add">+ W1[3,333] = 0.0</span>
+<span class="del">- W1[3,335] = -0.5</span>
+<span class="add">+ W1[3,335] = 0.0</span>
+<span class="del">- W1[3,405] = -0.44999998807907104</span>
+<span class="add">+ W1[3,405] = 0.0</span>
+<span class="del">- W1[3,406] = 0.0</span>
+<span class="add">+ W1[3,406] = -4.0</span>
+<span class="del">- W1[3,407] = -0.44999998807907104</span>
+<span class="add">+ W1[3,407] = 0.0</span>
+<span class="del">- W1[3,408] = 0.3499999940395355</span>
+<span class="add">+ W1[3,408] = 0.0</span>
+<span class="del">- W1[3,409] = 0.15000000596046448</span>
+<span class="add">+ W1[3,409] = 0.0</span>
+<span class="del">- W1[3,414] = 0.10000000149011612</span>
+<span class="add">+ W1[3,414] = 0.0</span>
+<span class="del">- W1[3,415] = -0.44999998807907104</span>
+<span class="add">+ W1[3,415] = 0.0</span>
+<span class="del">- W1[3,416] = 0.10000000149011612</span>
+<span class="add">+ W1[3,416] = 0.0</span>
+<span class="del">- W1[3,417] = 0.10000000149011612</span>
+<span class="add">+ W1[3,417] = 0.0</span>
+<span class="del">- W1[3,423] = 0.10000000149011612</span>
+<span class="add">+ W1[3,423] = 0.0</span>
+<span class="del">- W1[3,424] = 0.3499999940395355</span>
+<span class="add">+ W1[3,424] = 0.0</span>
+<span class="del">- W1[3,425] = 0.10000000149011612</span>
+<span class="add">+ W1[3,425] = 0.0</span>
+<span class="del">- W1[3,426] = -0.05000000074505806</span>
+<span class="add">+ W1[3,426] = 0.0</span>
+<span class="del">- W1[3,433] = 0.15000000596046448</span>
+<span class="add">+ W1[3,433] = 0.0</span>
+<span class="del">- W1[4,325] = 0.0</span>
+<span class="add">+ W1[4,325] = -4.0</span>
+<span class="del">- W1[4,405] = -0.4000000059604645</span>
+<span class="add">+ W1[4,405] = 1.0</span>
+<span class="del">- W1[4,406] = 0.0</span>
+<span class="add">+ W1[4,406] = -4.0</span>
+<span class="del">- W1[4,407] = -0.4000000059604645</span>
+<span class="add">+ W1[4,407] = 1.0</span>
+<span class="del">- W1[4,408] = 0.6499999761581421</span>
+<span class="add">+ W1[4,408] = 0.0</span>
+<span class="del">- W1[4,409] = 0.10000000149011612</span>
+<span class="add">+ W1[4,409] = 0.0</span>
+<span class="del">- W1[4,414] = 0.44999998807907104</span>
+<span class="add">+ W1[4,414] = 0.0</span>
+<span class="del">- W1[4,415] = -0.4000000059604645</span>
+<span class="add">+ W1[4,415] = 1.0</span>
+<span class="del">- W1[4,416] = 0.44999998807907104</span>
+<span class="add">+ W1[4,416] = 0.0</span>
+<span class="del">- W1[4,417] = 0.11999999731779099</span>
+<span class="add">+ W1[4,417] = 0.0</span>
+<span class="del">- W1[4,423] = 0.11999999731779099</span>
+<span class="add">+ W1[4,423] = 0.0</span>
+<span class="del">- W1[4,424] = 0.6499999761581421</span>
+<span class="add">+ W1[4,424] = 0.0</span>
+<span class="del">- W1[4,425] = 0.11999999731779099</span>
+<span class="add">+ W1[4,425] = 0.0</span>
+<span class="del">- W1[4,426] = 0.05000000074505806</span>
+<span class="add">+ W1[4,426] = 0.0</span>
+<span class="del">- W1[4,433] = 0.10000000149011612</span>
+<span class="add">+ W1[4,433] = 0.0</span>
+<span class="del">- W1[6,326] = 0.0</span>
+<span class="add">+ W1[6,326] = -4.0</span>
+<span class="del">- W1[6,334] = -0.5</span>
+<span class="add">+ W1[6,334] = 0.0</span>
+<span class="del">- W1[6,336] = -0.5</span>
+<span class="add">+ W1[6,336] = 0.0</span>
+<span class="del">- W1[6,405] = 0.3499999940395355</span>
+<span class="add">+ W1[6,405] = 0.0</span>
+<span class="del">- W1[6,406] = -0.44999998807907104</span>
+<span class="add">+ W1[6,406] = 0.0</span>
+<span class="del">- W1[6,407] = 0.0</span>
+<span class="add">+ W1[6,407] = -4.0</span>
+<span class="del">- W1[6,408] = -0.44999998807907104</span>
+<span class="add">+ W1[6,408] = 0.0</span>
+<span class="del">- W1[6,409] = 0.3499999940395355</span>
+<span class="add">+ W1[6,409] = 0.0</span>
+<span class="del">- W1[6,410] = 0.15000000596046448</span>
+<span class="add">+ W1[6,410] = 0.0</span>
+<span class="del">- W1[6,414] = 0.10000000149011612</span>
+<span class="add">+ W1[6,414] = 0.0</span>
+<span class="del">- W1[6,415] = 0.10000000149011612</span>
+<span class="add">+ W1[6,415] = 0.0</span>
+<span class="del">- W1[6,416] = -0.44999998807907104</span>
+<span class="add">+ W1[6,416] = 0.0</span>
+<span class="del">- W1[6,417] = 0.10000000149011612</span>
+<span class="add">+ W1[6,417] = 0.0</span>
+<span class="del">- W1[6,418] = 0.10000000149011612</span>
+<span class="add">+ W1[6,418] = 0.0</span>
+<span class="del">- W1[6,423] = -0.05000000074505806</span>
+<span class="add">+ W1[6,423] = 0.0</span>
+<span class="del">- W1[6,424] = 0.10000000149011612</span>
+<span class="add">+ W1[6,424] = 0.0</span>
+<span class="del">- W1[6,425] = 0.3499999940395355</span>
+<span class="add">+ W1[6,425] = 0.0</span>
+<span class="del">- W1[6,426] = 0.10000000149011612</span>
+<span class="add">+ W1[6,426] = 0.0</span>
+<span class="del">- W1[6,427] = -0.05000000074505806</span>
+<span class="add">+ W1[6,427] = 0.0</span>
+<span class="del">- W1[6,434] = 0.15000000596046448</span>
+<span class="add">+ W1[6,434] = 0.0</span>
+<span class="del">- W1[7,326] = 0.0</span>
+<span class="add">+ W1[7,326] = -4.0</span>
+<span class="del">- W1[7,405] = 0.6499999761581421</span>
+<span class="add">+ W1[7,405] = 0.0</span>
+<span class="del">- W1[7,406] = -0.4000000059604645</span>
+<span class="add">+ W1[7,406] = 1.0</span>
+</pre></details><details><summary>Submitted transaction</summary><pre>wspl 0.2;
+target base=artifact(&quot;parent&quot;,sha256=&quot;{{PARENT_SHA256}}&quot;);
+
+const A=0;
+const B=81;
+const C=162;
+const D=243;
+const E=324;
+const F=405;
+const G=486;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // The positional kernel now lives in W5. Reuse its old
+  // h1 channels for color-specific liberty-overlap bounds.
+  W1[:,E:G]=0;
+  b1[E:G]=0;
+
+  // Replace only the complementary certificates.
+  // Preserve the independent half-weighted certificates.
+  W2[:,E:G]=0;
+  b2[E:G]=0;
+
+  for p in range(81) {
+    // At an empty point:
+    // E = relu(number of adjacent friendly stones - 1).
+    // F = relu(number of adjacent opposing stones - 1).
+    // Both vanish at occupied points.
+    W1[3*p,E+p]=-4;
+    W1[3*p+1,E+p]=-4;
+    W1[3*p,F+p]=-4;
+    W1[3*p+1,F+p]=-4;
+    b1[E+p]=-1;
+    b1[F+p]=-1;
+
+    // Complementary two-liberty certificates:
+    // direct liberties + neighboring same-color direct liberties
+    // minus a conservative bound on duplicate liberties.
+    W2[B+p,E+p]=12;
+    W2[D+p,E+p]=1;
+    b2[E+p]=-13;
+
+    W2[A+p,F+p]=12;
+    W2[C+p,F+p]=1;
+    b2[F+p]=-13;
+  }
+
+  // Horizontal directed adjacency.
+  for r in range(9) {
+    for c in range(8) {
+      for s in range(2) {
+        W1[3*(9*r+c+1-s),E+9*r+c+s]+=1;
+        W1[3*(9*r+c+1-s)+1,F+9*r+c+s]+=1;
+
+        W2[D+9*r+c+1-s,E+9*r+c+s]+=1;
+        W2[C+9*r+c+1-s,F+9*r+c+s]+=1;
+      }
+    }
+  }
+
+  // Vertical directed adjacency.
+  for p in range(72) {
+    for s in range(2) {
+      W1[3*(p+9*(1-s)),E+p+9*s]+=1;
+      W1[3*(p+9*(1-s))+1,F+p+9*s]+=1;
+
+      W2[D+p+9*(1-s),E+p+9*s]+=1;
+      W2[C+p+9*(1-s),F+p+9*s]+=1;
+    }
+  }
+
+  // Neighboring group members can share liberties at diagonals.
+  // Subtract contact redundancy rather than every empty diagonal:
+  // an empty point touching only one same-color stone contributes
+  // no duplicate-liberty correction.
+  for r in range(8) {
+    for c in range(8) {
+      for d in range(2) {
+        for s in range(2) {
+          W2[F+9*r+c+d+(1-s)*(10-2*d),
+             E+9*r+c+d+s*(10-2*d)]-=1;
+
+          W2[E+9*r+c+d+(1-s)*(10-2*d),
+             F+9*r+c+d+s*(10-2*d)]-=1;
+        }
+      }
+    }
+  }
+}
+</pre></details><details><summary>Text diff against previous submitted transaction</summary><p class="note">These are separate patch programs. This text diff is NOT a cumulative controller diff; the stored-weight changes above show the actual state transition.</p><pre><span class="del">--- previous_submitted_transaction</span>
+<span class="add">+++ edit_4_submitted_transaction</span>
+<span class="meta">@@ -4,71 +4,55 @@</span>
+<span class=""> const A=0;</span>
+<span class=""> const B=81;</span>
+<span class=""> const C=162;</span>
+<span class="add">+const D=243;</span>
+<span class=""> const E=324;</span>
+<span class=""> const F=405;</span>
+<span class=""> const G=486;</span>
+<span class=""> </span>
+<span class=""> edit base as candidate mode=fixed numeric=exact_to_storage {</span>
+<span class="del">-  // Move the positional kernel to h5, freeing h3/h4 F</span>
+<span class="del">-  // for friendly three-liberty certificates.</span>
+<span class="del">-  W3[:,F:G]=0;</span>
+<span class="del">-  b3[F:G]=0;</span>
+<span class="del">-  W4[:,F:G]=0;</span>
+<span class="del">-  b4[F:G]=0;</span>
+<span class="del">-  W5[:,F:G]=0;</span>
+<span class="del">-  b5[F:G]=0;</span>
+<span class="add">+  // The positional kernel now lives in W5. Reuse its old</span>
+<span class="add">+  // h1 channels for color-specific liberty-overlap bounds.</span>
+<span class="add">+  W1[:,E:G]=0;</span>
+<span class="add">+  b1[E:G]=0;</span>
+<span class=""> </span>
+<span class="del">-  // Enemy pressure is nonnegative before its existing ReLU.</span>
+<span class="del">-  // Fold it into the shifted score, freeing h6 E.</span>
+<span class="del">-  W6[:,E:F]=0;</span>
+<span class="del">-  b6[E:F]=0;</span>
+<span class="add">+  // Replace only the complementary certificates.</span>
+<span class="add">+  // Preserve the independent half-weighted certificates.</span>
+<span class="add">+  W2[:,E:G]=0;</span>
+<span class="add">+  b2[E:G]=0;</span>
+<span class=""> </span>
+<span class="">   for p in range(81) {</span>
+<span class="del">-    // The original friendly seed is relu(liberty_bound-1).</span>
+<span class="del">-    // Thresholding it again certifies at least three liberties.</span>
+<span class="del">-    W3[C+p,F+p]=1;</span>
+<span class="del">-    b3[F+p]=-1;</span>
+<span class="add">+    // At an empty point:</span>
+<span class="add">+    // E = relu(number of adjacent friendly stones - 1).</span>
+<span class="add">+    // F = relu(number of adjacent opposing stones - 1).</span>
+<span class="add">+    // Both vanish at occupied points.</span>
+<span class="add">+    W1[3*p,E+p]=-4;</span>
+<span class="add">+    W1[3*p+1,E+p]=-4;</span>
+<span class="add">+    W1[3*p,F+p]=-4;</span>
+<span class="add">+    W1[3*p+1,F+p]=-4;</span>
+<span class="add">+    b1[E+p]=-1;</span>
+<span class="add">+    b1[F+p]=-1;</span>
+<span class=""> </span>
+<span class="del">-    // Propagate this certificate through friendly stones.</span>
+<span class="del">-    W4[A+p,F+p]=128;</span>
+<span class="del">-    W4[F+p,F+p]=1;</span>
+<span class="del">-    b4[F+p]=-128;</span>
+<span class="add">+    // Complementary two-liberty certificates:</span>
+<span class="add">+    // direct liberties + neighboring same-color direct liberties</span>
+<span class="add">+    // minus a conservative bound on duplicate liberties.</span>
+<span class="add">+    W2[B+p,E+p]=12;</span>
+<span class="add">+    W2[D+p,E+p]=1;</span>
+<span class="add">+    b2[E+p]=-13;</span>
+<span class=""> </span>
+<span class="del">-    // Reconstruct the unchanged positional kernel from the</span>
+<span class="del">-    // exact stone indicators retained through h4.</span>
+<span class="del">-    b5[F+p]=parent.b3[F+p];</span>
+<span class="del">-    for q in range(81) {</span>
+<span class="del">-      W5[A+q,F+p]=parent.W3[A+q,F+p];</span>
+<span class="del">-      W5[B+q,F+p]=parent.W3[B+q,F+p];</span>
+<span class="del">-    }</span>
+<span class="del">-</span>
+<span class="del">-    // h5 C is at most six, reaching six only when every</span>
+<span class="del">-    // orthogonal neighbor is opposing.</span>
+<span class="del">-    //</span>
+<span class="del">-    // relu(2*h5C - 10 - capture_contacts) is zero elsewhere.</span>
+<span class="del">-    // At a surrounded legal move, it equals the existing</span>
+<span class="del">-    // liberty deficit: legality guarantees an actual capture.</span>
+<span class="del">-    W6[C+p,E+p]=2;</span>
+<span class="del">-    b6[E+p]=-10;</span>
+<span class="del">-    W7[E+p,p]=11;</span>
+<span class="add">+    W2[A+p,F+p]=12;</span>
+<span class="add">+    W2[C+p,F+p]=1;</span>
+<span class="add">+    b2[F+p]=-13;</span>
+<span class="">   }</span>
+<span class=""> </span>
+<span class="">   // Horizontal directed adjacency.</span>
+<span class="">   for r in range(9) {</span>
+<span class="">     for c in range(8) {</span>
+<span class="">       for s in range(2) {</span>
+<span class="del">-        W4[F+9*r+c+1-s,F+9*r+c+s]+=1;</span>
+<span class="add">+        W1[3*(9*r+c+1-s),E+9*r+c+s]+=1;</span>
+<span class="add">+        W1[3*(9*r+c+1-s)+1,F+9*r+c+s]+=1;</span>
+<span class=""> </span>
+<span class="del">-        // A neighboring three-liberty group guarantees at</span>
+<span class="del">-        // least two liberties remain after connecting to it.</span>
+<span class="del">-        W5[F+9*r+c+1-s,C+9*r+c+s]-=8;</span>
+<span class="del">-</span>
+<span class="del">-        // Preserve the former pressure contribution exactly</span>
+<span class="del">-        // as an affine contribution to the shifted score.</span>
+<span class="del">-        W6[E+9*r+c+1-s,F+9*r+c+s]+=12/5;</span>
+<span class="del">-        W6[B+9*r+c+1-s,F+9*r+c+s]-=12/5;</span>
+<span class="del">-</span>
+<span class="del">-        W6[B+9*r+c+1-s,E+9*r+c+s]-=1;</span>
+<span class="add">+        W2[D+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class="add">+        W2[C+9*r+c+1-s,F+9*r+c+s]+=1;</span>
+<span class="">       }</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class="meta">@@ -76,14 +60,29 @@</span>
+<span class="">   // Vertical directed adjacency.</span>
+<span class="">   for p in range(72) {</span>
+<span class="">     for s in range(2) {</span>
+<span class="del">-      W4[F+p+9*(1-s),F+p+9*s]+=1;</span>
+<span class="add">+      W1[3*(p+9*(1-s)),E+p+9*s]+=1;</span>
+<span class="add">+      W1[3*(p+9*(1-s))+1,F+p+9*s]+=1;</span>
+<span class=""> </span>
+<span class="del">-      W5[F+p+9*(1-s),C+p+9*s]-=8;</span>
+<span class="add">+      W2[D+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class="add">+      W2[C+p+9*(1-s),F+p+9*s]+=1;</span>
+<span class="add">+    }</span>
+<span class="add">+  }</span>
+<span class=""> </span>
+<span class="del">-      W6[E+p+9*(1-s),F+p+9*s]+=12/5;</span>
+<span class="del">-      W6[B+p+9*(1-s),F+p+9*s]-=12/5;</span>
+<span class="add">+  // Neighboring group members can share liberties at diagonals.</span>
+<span class="add">+  // Subtract contact redundancy rather than every empty diagonal:</span>
+<span class="add">+  // an empty point touching only one same-color stone contributes</span>
+<span class="add">+  // no duplicate-liberty correction.</span>
+<span class="add">+  for r in range(8) {</span>
+<span class="add">+    for c in range(8) {</span>
+<span class="add">+      for d in range(2) {</span>
+<span class="add">+        for s in range(2) {</span>
+<span class="add">+          W2[F+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="add">+             E+9*r+c+d+s*(10-2*d)]-=1;</span>
+<span class=""> </span>
+<span class="del">-      W6[B+p+9*(1-s),E+p+9*s]-=1;</span>
+<span class="add">+          W2[E+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="add">+             F+9*r+c+d+s*(10-2*d)]-=1;</span>
+<span class="add">+        }</span>
+<span class="add">+      }</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class=""> }</span>
+</pre></details></article><article id="edit5"><h2>Edit 5 · 52.88% win rate</h2><p>981 coefficients changed; 20,674 nonzero afterward. Collection: 213.3s; construction: 9.89s. WSPL charged operations: 24,261; placements: 0.</p><p>Paired change: -1.15 pp; descriptive 95% interval [-2.36, +0.06] pp. Won instead: 647; lost instead: 716; unchanged: 4,637.</p><p><a href="edit_5/proposal.wspl">Exact submitted program</a> · <a href="edit_5/answer.md">Raw response</a> · <a href="edit_5/weight_changes.json">All weight changes</a> · <a href="edit_5/metrics.json">Metrics and hashes</a></p><details><summary>Actual stored-weight changes (first 80; full JSON linked above)</summary><pre><span class="del">- W3[324,324] = 0.0</span>
+<span class="add">+ W3[324,324] = 0.25</span>
+<span class="del">- W3[325,325] = 0.0</span>
+<span class="add">+ W3[325,325] = 0.25</span>
+<span class="del">- W3[326,326] = 0.0</span>
+<span class="add">+ W3[326,326] = 0.25</span>
+<span class="del">- W3[327,327] = 0.0</span>
+<span class="add">+ W3[327,327] = 0.25</span>
+<span class="del">- W3[328,328] = 0.0</span>
+<span class="add">+ W3[328,328] = 0.25</span>
+<span class="del">- W3[329,329] = 0.0</span>
+<span class="add">+ W3[329,329] = 0.25</span>
+<span class="del">- W3[330,330] = 0.0</span>
+<span class="add">+ W3[330,330] = 0.25</span>
+<span class="del">- W3[331,331] = 0.0</span>
+<span class="add">+ W3[331,331] = 0.25</span>
+<span class="del">- W3[332,332] = 0.0</span>
+<span class="add">+ W3[332,332] = 0.25</span>
+<span class="del">- W3[333,333] = 0.0</span>
+<span class="add">+ W3[333,333] = 0.25</span>
+<span class="del">- W3[334,334] = 0.0</span>
+<span class="add">+ W3[334,334] = 0.25</span>
+<span class="del">- W3[335,335] = 0.0</span>
+<span class="add">+ W3[335,335] = 0.25</span>
+<span class="del">- W3[336,336] = 0.0</span>
+<span class="add">+ W3[336,336] = 0.25</span>
+<span class="del">- W3[337,337] = 0.0</span>
+<span class="add">+ W3[337,337] = 0.25</span>
+<span class="del">- W3[338,338] = 0.0</span>
+<span class="add">+ W3[338,338] = 0.25</span>
+<span class="del">- W3[339,339] = 0.0</span>
+<span class="add">+ W3[339,339] = 0.25</span>
+<span class="del">- W3[340,340] = 0.0</span>
+<span class="add">+ W3[340,340] = 0.25</span>
+<span class="del">- W3[341,341] = 0.0</span>
+<span class="add">+ W3[341,341] = 0.25</span>
+<span class="del">- W3[342,342] = 0.0</span>
+<span class="add">+ W3[342,342] = 0.25</span>
+<span class="del">- W3[343,343] = 0.0</span>
+<span class="add">+ W3[343,343] = 0.25</span>
+<span class="del">- W3[344,344] = 0.0</span>
+<span class="add">+ W3[344,344] = 0.25</span>
+<span class="del">- W3[345,345] = 0.0</span>
+<span class="add">+ W3[345,345] = 0.25</span>
+<span class="del">- W3[346,346] = 0.0</span>
+<span class="add">+ W3[346,346] = 0.25</span>
+<span class="del">- W3[347,347] = 0.0</span>
+<span class="add">+ W3[347,347] = 0.25</span>
+<span class="del">- W3[348,348] = 0.0</span>
+<span class="add">+ W3[348,348] = 0.25</span>
+<span class="del">- W3[349,349] = 0.0</span>
+<span class="add">+ W3[349,349] = 0.25</span>
+<span class="del">- W3[350,350] = 0.0</span>
+<span class="add">+ W3[350,350] = 0.25</span>
+<span class="del">- W3[351,351] = 0.0</span>
+<span class="add">+ W3[351,351] = 0.25</span>
+<span class="del">- W3[352,352] = 0.0</span>
+<span class="add">+ W3[352,352] = 0.25</span>
+<span class="del">- W3[353,353] = 0.0</span>
+<span class="add">+ W3[353,353] = 0.25</span>
+<span class="del">- W3[354,354] = 0.0</span>
+<span class="add">+ W3[354,354] = 0.25</span>
+<span class="del">- W3[355,355] = 0.0</span>
+<span class="add">+ W3[355,355] = 0.25</span>
+<span class="del">- W3[356,356] = 0.0</span>
+<span class="add">+ W3[356,356] = 0.25</span>
+<span class="del">- W3[357,357] = 0.0</span>
+<span class="add">+ W3[357,357] = 0.25</span>
+<span class="del">- W3[358,358] = 0.0</span>
+<span class="add">+ W3[358,358] = 0.25</span>
+<span class="del">- W3[359,359] = 0.0</span>
+<span class="add">+ W3[359,359] = 0.25</span>
+<span class="del">- W3[360,360] = 0.0</span>
+<span class="add">+ W3[360,360] = 0.25</span>
+<span class="del">- W3[361,361] = 0.0</span>
+<span class="add">+ W3[361,361] = 0.25</span>
+<span class="del">- W3[362,362] = 0.0</span>
+<span class="add">+ W3[362,362] = 0.25</span>
+<span class="del">- W3[363,363] = 0.0</span>
+<span class="add">+ W3[363,363] = 0.25</span>
+<span class="del">- W3[364,364] = 0.0</span>
+<span class="add">+ W3[364,364] = 0.25</span>
+<span class="del">- W3[365,365] = 0.0</span>
+<span class="add">+ W3[365,365] = 0.25</span>
+<span class="del">- W3[366,366] = 0.0</span>
+<span class="add">+ W3[366,366] = 0.25</span>
+<span class="del">- W3[367,367] = 0.0</span>
+<span class="add">+ W3[367,367] = 0.25</span>
+<span class="del">- W3[368,368] = 0.0</span>
+<span class="add">+ W3[368,368] = 0.25</span>
+<span class="del">- W3[369,369] = 0.0</span>
+<span class="add">+ W3[369,369] = 0.25</span>
+<span class="del">- W3[370,370] = 0.0</span>
+<span class="add">+ W3[370,370] = 0.25</span>
+<span class="del">- W3[371,371] = 0.0</span>
+<span class="add">+ W3[371,371] = 0.25</span>
+<span class="del">- W3[372,372] = 0.0</span>
+<span class="add">+ W3[372,372] = 0.25</span>
+<span class="del">- W3[373,373] = 0.0</span>
+<span class="add">+ W3[373,373] = 0.25</span>
+<span class="del">- W3[374,374] = 0.0</span>
+<span class="add">+ W3[374,374] = 0.25</span>
+<span class="del">- W3[375,375] = 0.0</span>
+<span class="add">+ W3[375,375] = 0.25</span>
+<span class="del">- W3[376,376] = 0.0</span>
+<span class="add">+ W3[376,376] = 0.25</span>
+<span class="del">- W3[377,377] = 0.0</span>
+<span class="add">+ W3[377,377] = 0.25</span>
+<span class="del">- W3[378,378] = 0.0</span>
+<span class="add">+ W3[378,378] = 0.25</span>
+<span class="del">- W3[379,379] = 0.0</span>
+<span class="add">+ W3[379,379] = 0.25</span>
+<span class="del">- W3[380,380] = 0.0</span>
+<span class="add">+ W3[380,380] = 0.25</span>
+<span class="del">- W3[381,381] = 0.0</span>
+<span class="add">+ W3[381,381] = 0.25</span>
+<span class="del">- W3[382,382] = 0.0</span>
+<span class="add">+ W3[382,382] = 0.25</span>
+<span class="del">- W3[383,383] = 0.0</span>
+<span class="add">+ W3[383,383] = 0.25</span>
+<span class="del">- W3[384,384] = 0.0</span>
+<span class="add">+ W3[384,384] = 0.25</span>
+<span class="del">- W3[385,385] = 0.0</span>
+<span class="add">+ W3[385,385] = 0.25</span>
+<span class="del">- W3[386,386] = 0.0</span>
+<span class="add">+ W3[386,386] = 0.25</span>
+<span class="del">- W3[387,387] = 0.0</span>
+<span class="add">+ W3[387,387] = 0.25</span>
+<span class="del">- W3[388,388] = 0.0</span>
+<span class="add">+ W3[388,388] = 0.25</span>
+<span class="del">- W3[389,389] = 0.0</span>
+<span class="add">+ W3[389,389] = 0.25</span>
+<span class="del">- W3[390,390] = 0.0</span>
+<span class="add">+ W3[390,390] = 0.25</span>
+<span class="del">- W3[391,391] = 0.0</span>
+<span class="add">+ W3[391,391] = 0.25</span>
+<span class="del">- W3[392,392] = 0.0</span>
+<span class="add">+ W3[392,392] = 0.25</span>
+<span class="del">- W3[393,393] = 0.0</span>
+<span class="add">+ W3[393,393] = 0.25</span>
+<span class="del">- W3[394,394] = 0.0</span>
+<span class="add">+ W3[394,394] = 0.25</span>
+<span class="del">- W3[395,395] = 0.0</span>
+<span class="add">+ W3[395,395] = 0.25</span>
+<span class="del">- W3[396,396] = 0.0</span>
+<span class="add">+ W3[396,396] = 0.25</span>
+<span class="del">- W3[397,397] = 0.0</span>
+<span class="add">+ W3[397,397] = 0.25</span>
+<span class="del">- W3[398,398] = 0.0</span>
+<span class="add">+ W3[398,398] = 0.25</span>
+<span class="del">- W3[399,399] = 0.0</span>
+<span class="add">+ W3[399,399] = 0.25</span>
+<span class="del">- W3[400,400] = 0.0</span>
+<span class="add">+ W3[400,400] = 0.25</span>
+<span class="del">- W3[401,401] = 0.0</span>
+<span class="add">+ W3[401,401] = 0.25</span>
+<span class="del">- W3[402,402] = 0.0</span>
+<span class="add">+ W3[402,402] = 0.25</span>
+<span class="del">- W3[403,403] = 0.0</span>
+<span class="add">+ W3[403,403] = 0.25</span>
+</pre></details><details><summary>Submitted transaction</summary><pre>wspl 0.2;
+target base=artifact(&quot;parent&quot;,sha256=&quot;{{PARENT_SHA256}}&quot;);
+
+const C=162;
+const E=324;
+const F=405;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  for p in range(81) {
+    // Both two-liberty seeds are at most one for a group
+    // with only two liberties. Their weighted combination
+    // therefore cannot falsely certify three liberties.
+    //
+    // Existing third-liberty certificates remain positive:
+    // the original seed is then at least 3/2.
+    W3[E+p,E+p]=1/4;
+    b3[E+p]=-5/4;
+
+    W3[F+p,F+p]=1/4;
+    b3[F+p]=-5/4;
+
+    // The smallest positive certificate is now 1/4.
+    W5[E+p,E+p]=-4;
+  }
+
+  // Horizontal directed adjacency.
+  for r in range(9) {
+    for c in range(8) {
+      for s in range(2) {
+        W5[E+9*r+c+1-s,E+9*r+c+s]=-4;
+
+        // A certified neighboring friendly group retains
+        // at least two liberties after connection.
+        W5[F+9*r+c+1-s,C+9*r+c+s]=-16;
+      }
+    }
+  }
+
+  // Vertical directed adjacency.
+  for p in range(72) {
+    for s in range(2) {
+      W5[E+p+9*(1-s),E+p+9*s]=-4;
+      W5[F+p+9*(1-s),C+p+9*s]=-16;
+    }
+  }
+}
+</pre></details><details><summary>Text diff against previous submitted transaction</summary><p class="note">These are separate patch programs. This text diff is NOT a cumulative controller diff; the stored-weight changes above show the actual state transition.</p><pre><span class="del">--- previous_submitted_transaction</span>
+<span class="add">+++ edit_5_submitted_transaction</span>
+<span class="meta">@@ -1,58 +1,37 @@</span>
+<span class=""> wspl 0.2;</span>
+<span class=""> target base=artifact(&quot;parent&quot;,sha256=&quot;{{PARENT_SHA256}}&quot;);</span>
+<span class=""> </span>
+<span class="del">-const A=0;</span>
+<span class="del">-const B=81;</span>
+<span class=""> const C=162;</span>
+<span class="del">-const D=243;</span>
+<span class=""> const E=324;</span>
+<span class=""> const F=405;</span>
+<span class="del">-const G=486;</span>
+<span class=""> </span>
+<span class=""> edit base as candidate mode=fixed numeric=exact_to_storage {</span>
+<span class="del">-  // The positional kernel now lives in W5. Reuse its old</span>
+<span class="del">-  // h1 channels for color-specific liberty-overlap bounds.</span>
+<span class="del">-  W1[:,E:G]=0;</span>
+<span class="del">-  b1[E:G]=0;</span>
+<span class="add">+  for p in range(81) {</span>
+<span class="add">+    // Both two-liberty seeds are at most one for a group</span>
+<span class="add">+    // with only two liberties. Their weighted combination</span>
+<span class="add">+    // therefore cannot falsely certify three liberties.</span>
+<span class="add">+    //</span>
+<span class="add">+    // Existing third-liberty certificates remain positive:</span>
+<span class="add">+    // the original seed is then at least 3/2.</span>
+<span class="add">+    W3[E+p,E+p]=1/4;</span>
+<span class="add">+    b3[E+p]=-5/4;</span>
+<span class=""> </span>
+<span class="del">-  // Replace only the complementary certificates.</span>
+<span class="del">-  // Preserve the independent half-weighted certificates.</span>
+<span class="del">-  W2[:,E:G]=0;</span>
+<span class="del">-  b2[E:G]=0;</span>
+<span class="add">+    W3[F+p,F+p]=1/4;</span>
+<span class="add">+    b3[F+p]=-5/4;</span>
+<span class=""> </span>
+<span class="del">-  for p in range(81) {</span>
+<span class="del">-    // At an empty point:</span>
+<span class="del">-    // E = relu(number of adjacent friendly stones - 1).</span>
+<span class="del">-    // F = relu(number of adjacent opposing stones - 1).</span>
+<span class="del">-    // Both vanish at occupied points.</span>
+<span class="del">-    W1[3*p,E+p]=-4;</span>
+<span class="del">-    W1[3*p+1,E+p]=-4;</span>
+<span class="del">-    W1[3*p,F+p]=-4;</span>
+<span class="del">-    W1[3*p+1,F+p]=-4;</span>
+<span class="del">-    b1[E+p]=-1;</span>
+<span class="del">-    b1[F+p]=-1;</span>
+<span class="del">-</span>
+<span class="del">-    // Complementary two-liberty certificates:</span>
+<span class="del">-    // direct liberties + neighboring same-color direct liberties</span>
+<span class="del">-    // minus a conservative bound on duplicate liberties.</span>
+<span class="del">-    W2[B+p,E+p]=12;</span>
+<span class="del">-    W2[D+p,E+p]=1;</span>
+<span class="del">-    b2[E+p]=-13;</span>
+<span class="del">-</span>
+<span class="del">-    W2[A+p,F+p]=12;</span>
+<span class="del">-    W2[C+p,F+p]=1;</span>
+<span class="del">-    b2[F+p]=-13;</span>
+<span class="add">+    // The smallest positive certificate is now 1/4.</span>
+<span class="add">+    W5[E+p,E+p]=-4;</span>
+<span class="">   }</span>
+<span class=""> </span>
+<span class="">   // Horizontal directed adjacency.</span>
+<span class="">   for r in range(9) {</span>
+<span class="">     for c in range(8) {</span>
+<span class="">       for s in range(2) {</span>
+<span class="del">-        W1[3*(9*r+c+1-s),E+9*r+c+s]+=1;</span>
+<span class="del">-        W1[3*(9*r+c+1-s)+1,F+9*r+c+s]+=1;</span>
+<span class="add">+        W5[E+9*r+c+1-s,E+9*r+c+s]=-4;</span>
+<span class=""> </span>
+<span class="del">-        W2[D+9*r+c+1-s,E+9*r+c+s]+=1;</span>
+<span class="del">-        W2[C+9*r+c+1-s,F+9*r+c+s]+=1;</span>
+<span class="add">+        // A certified neighboring friendly group retains</span>
+<span class="add">+        // at least two liberties after connection.</span>
+<span class="add">+        W5[F+9*r+c+1-s,C+9*r+c+s]=-16;</span>
+<span class="">       }</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class="meta">@@ -60,29 +39,8 @@</span>
+<span class="">   // Vertical directed adjacency.</span>
+<span class="">   for p in range(72) {</span>
+<span class="">     for s in range(2) {</span>
+<span class="del">-      W1[3*(p+9*(1-s)),E+p+9*s]+=1;</span>
+<span class="del">-      W1[3*(p+9*(1-s))+1,F+p+9*s]+=1;</span>
+<span class="del">-</span>
+<span class="del">-      W2[D+p+9*(1-s),E+p+9*s]+=1;</span>
+<span class="del">-      W2[C+p+9*(1-s),F+p+9*s]+=1;</span>
+<span class="del">-    }</span>
+<span class="del">-  }</span>
+<span class="del">-</span>
+<span class="del">-  // Neighboring group members can share liberties at diagonals.</span>
+<span class="del">-  // Subtract contact redundancy rather than every empty diagonal:</span>
+<span class="del">-  // an empty point touching only one same-color stone contributes</span>
+<span class="del">-  // no duplicate-liberty correction.</span>
+<span class="del">-  for r in range(8) {</span>
+<span class="del">-    for c in range(8) {</span>
+<span class="del">-      for d in range(2) {</span>
+<span class="del">-        for s in range(2) {</span>
+<span class="del">-          W2[F+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="del">-             E+9*r+c+d+s*(10-2*d)]-=1;</span>
+<span class="del">-</span>
+<span class="del">-          W2[E+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="del">-             F+9*r+c+d+s*(10-2*d)]-=1;</span>
+<span class="del">-        }</span>
+<span class="del">-      }</span>
+<span class="add">+      W5[E+p+9*(1-s),E+p+9*s]=-4;</span>
+<span class="add">+      W5[F+p+9*(1-s),C+p+9*s]=-16;</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class=""> }</span>
+</pre></details></article><article id="edit6"><h2>Edit 6 · 52.15% win rate</h2><p>256 coefficients changed; 20,674 nonzero afterward. Collection: 491.7s; construction: 9.78s. WSPL charged operations: 16,877; placements: 0.</p><p>Paired change: -0.73 pp; descriptive 95% interval [-1.58, +0.11] pp. Won instead: 313; lost instead: 357; unchanged: 5,330.</p><p><a href="edit_6/proposal.wspl">Exact submitted program</a> · <a href="edit_6/answer.md">Raw response</a> · <a href="edit_6/weight_changes.json">All weight changes</a> · <a href="edit_6/metrics.json">Metrics and hashes</a></p><details><summary>Actual stored-weight changes (first 80; full JSON linked above)</summary><pre><span class="del">- W5[81,253] = -0.5</span>
+<span class="add">+ W5[81,253] = -1.0</span>
+<span class="del">- W5[82,252] = -0.5</span>
+<span class="add">+ W5[82,252] = -2.0</span>
+<span class="del">- W5[82,254] = -0.5</span>
+<span class="add">+ W5[82,254] = -1.0</span>
+<span class="del">- W5[83,253] = -0.5</span>
+<span class="add">+ W5[83,253] = -1.0</span>
+<span class="del">- W5[83,255] = -0.5</span>
+<span class="add">+ W5[83,255] = -1.0</span>
+<span class="del">- W5[84,254] = -0.5</span>
+<span class="add">+ W5[84,254] = -1.0</span>
+<span class="del">- W5[84,256] = -0.5</span>
+<span class="add">+ W5[84,256] = -1.0</span>
+<span class="del">- W5[85,255] = -0.5</span>
+<span class="add">+ W5[85,255] = -1.0</span>
+<span class="del">- W5[85,257] = -0.5</span>
+<span class="add">+ W5[85,257] = -1.0</span>
+<span class="del">- W5[86,256] = -0.5</span>
+<span class="add">+ W5[86,256] = -1.0</span>
+<span class="del">- W5[86,258] = -0.5</span>
+<span class="add">+ W5[86,258] = -1.0</span>
+<span class="del">- W5[87,257] = -0.5</span>
+<span class="add">+ W5[87,257] = -1.0</span>
+<span class="del">- W5[87,259] = -0.5</span>
+<span class="add">+ W5[87,259] = -1.0</span>
+<span class="del">- W5[88,258] = -0.5</span>
+<span class="add">+ W5[88,258] = -1.0</span>
+<span class="del">- W5[88,260] = -0.5</span>
+<span class="add">+ W5[88,260] = -2.0</span>
+<span class="del">- W5[89,259] = -0.5</span>
+<span class="add">+ W5[89,259] = -1.0</span>
+<span class="del">- W5[90,244] = -0.5</span>
+<span class="add">+ W5[90,244] = -2.0</span>
+<span class="del">- W5[90,262] = -0.5</span>
+<span class="add">+ W5[90,262] = -1.0</span>
+<span class="del">- W5[91,243] = -0.5</span>
+<span class="add">+ W5[91,243] = -2.0</span>
+<span class="del">- W5[91,245] = -0.5</span>
+<span class="add">+ W5[91,245] = -2.0</span>
+<span class="del">- W5[91,261] = -0.5</span>
+<span class="add">+ W5[91,261] = -2.0</span>
+<span class="del">- W5[91,263] = -0.5</span>
+<span class="add">+ W5[91,263] = -1.0</span>
+<span class="del">- W5[92,244] = -0.5</span>
+<span class="add">+ W5[92,244] = -2.0</span>
+<span class="del">- W5[92,246] = -0.5</span>
+<span class="add">+ W5[92,246] = -2.0</span>
+<span class="del">- W5[92,262] = -0.5</span>
+<span class="add">+ W5[92,262] = -1.0</span>
+<span class="del">- W5[92,264] = -0.5</span>
+<span class="add">+ W5[92,264] = -1.0</span>
+<span class="del">- W5[93,245] = -0.5</span>
+<span class="add">+ W5[93,245] = -2.0</span>
+<span class="del">- W5[93,247] = -0.5</span>
+<span class="add">+ W5[93,247] = -2.0</span>
+<span class="del">- W5[93,263] = -0.5</span>
+<span class="add">+ W5[93,263] = -1.0</span>
+<span class="del">- W5[93,265] = -0.5</span>
+<span class="add">+ W5[93,265] = -1.0</span>
+<span class="del">- W5[94,246] = -0.5</span>
+<span class="add">+ W5[94,246] = -2.0</span>
+<span class="del">- W5[94,248] = -0.5</span>
+<span class="add">+ W5[94,248] = -2.0</span>
+<span class="del">- W5[94,264] = -0.5</span>
+<span class="add">+ W5[94,264] = -1.0</span>
+<span class="del">- W5[94,266] = -0.5</span>
+<span class="add">+ W5[94,266] = -1.0</span>
+<span class="del">- W5[95,247] = -0.5</span>
+<span class="add">+ W5[95,247] = -2.0</span>
+<span class="del">- W5[95,249] = -0.5</span>
+<span class="add">+ W5[95,249] = -2.0</span>
+<span class="del">- W5[95,265] = -0.5</span>
+<span class="add">+ W5[95,265] = -1.0</span>
+<span class="del">- W5[95,267] = -0.5</span>
+<span class="add">+ W5[95,267] = -1.0</span>
+<span class="del">- W5[96,248] = -0.5</span>
+<span class="add">+ W5[96,248] = -2.0</span>
+<span class="del">- W5[96,250] = -0.5</span>
+<span class="add">+ W5[96,250] = -2.0</span>
+<span class="del">- W5[96,266] = -0.5</span>
+<span class="add">+ W5[96,266] = -1.0</span>
+<span class="del">- W5[96,268] = -0.5</span>
+<span class="add">+ W5[96,268] = -1.0</span>
+<span class="del">- W5[97,249] = -0.5</span>
+<span class="add">+ W5[97,249] = -2.0</span>
+<span class="del">- W5[97,251] = -0.5</span>
+<span class="add">+ W5[97,251] = -2.0</span>
+<span class="del">- W5[97,267] = -0.5</span>
+<span class="add">+ W5[97,267] = -1.0</span>
+<span class="del">- W5[97,269] = -0.5</span>
+<span class="add">+ W5[97,269] = -2.0</span>
+<span class="del">- W5[98,250] = -0.5</span>
+<span class="add">+ W5[98,250] = -2.0</span>
+<span class="del">- W5[98,268] = -0.5</span>
+<span class="add">+ W5[98,268] = -1.0</span>
+<span class="del">- W5[99,253] = -0.5</span>
+<span class="add">+ W5[99,253] = -1.0</span>
+<span class="del">- W5[99,271] = -0.5</span>
+<span class="add">+ W5[99,271] = -1.0</span>
+<span class="del">- W5[100,252] = -0.5</span>
+<span class="add">+ W5[100,252] = -2.0</span>
+<span class="del">- W5[100,254] = -0.5</span>
+<span class="add">+ W5[100,254] = -1.0</span>
+<span class="del">- W5[100,270] = -0.5</span>
+<span class="add">+ W5[100,270] = -2.0</span>
+<span class="del">- W5[100,272] = -0.5</span>
+<span class="add">+ W5[100,272] = -1.0</span>
+<span class="del">- W5[101,253] = -0.5</span>
+<span class="add">+ W5[101,253] = -1.0</span>
+<span class="del">- W5[101,255] = -0.5</span>
+<span class="add">+ W5[101,255] = -1.0</span>
+<span class="del">- W5[101,271] = -0.5</span>
+<span class="add">+ W5[101,271] = -1.0</span>
+<span class="del">- W5[101,273] = -0.5</span>
+<span class="add">+ W5[101,273] = -1.0</span>
+<span class="del">- W5[102,254] = -0.5</span>
+<span class="add">+ W5[102,254] = -1.0</span>
+<span class="del">- W5[102,256] = -0.5</span>
+<span class="add">+ W5[102,256] = -1.0</span>
+<span class="del">- W5[102,272] = -0.5</span>
+<span class="add">+ W5[102,272] = -1.0</span>
+<span class="del">- W5[102,274] = -0.5</span>
+<span class="add">+ W5[102,274] = -1.0</span>
+<span class="del">- W5[103,255] = -0.5</span>
+<span class="add">+ W5[103,255] = -1.0</span>
+<span class="del">- W5[103,257] = -0.5</span>
+<span class="add">+ W5[103,257] = -1.0</span>
+<span class="del">- W5[103,273] = -0.5</span>
+<span class="add">+ W5[103,273] = -1.0</span>
+<span class="del">- W5[103,275] = -0.5</span>
+<span class="add">+ W5[103,275] = -1.0</span>
+<span class="del">- W5[104,256] = -0.5</span>
+<span class="add">+ W5[104,256] = -1.0</span>
+<span class="del">- W5[104,258] = -0.5</span>
+<span class="add">+ W5[104,258] = -1.0</span>
+<span class="del">- W5[104,274] = -0.5</span>
+<span class="add">+ W5[104,274] = -1.0</span>
+<span class="del">- W5[104,276] = -0.5</span>
+<span class="add">+ W5[104,276] = -1.0</span>
+<span class="del">- W5[105,257] = -0.5</span>
+<span class="add">+ W5[105,257] = -1.0</span>
+<span class="del">- W5[105,259] = -0.5</span>
+<span class="add">+ W5[105,259] = -1.0</span>
+<span class="del">- W5[105,275] = -0.5</span>
+<span class="add">+ W5[105,275] = -1.0</span>
+<span class="del">- W5[105,277] = -0.5</span>
+<span class="add">+ W5[105,277] = -1.0</span>
+<span class="del">- W5[106,258] = -0.5</span>
+<span class="add">+ W5[106,258] = -1.0</span>
+<span class="del">- W5[106,260] = -0.5</span>
+<span class="add">+ W5[106,260] = -2.0</span>
+<span class="del">- W5[106,276] = -0.5</span>
+<span class="add">+ W5[106,276] = -1.0</span>
+<span class="del">- W5[106,278] = -0.5</span>
+<span class="add">+ W5[106,278] = -2.0</span>
+<span class="del">- W5[107,259] = -0.5</span>
+<span class="add">+ W5[107,259] = -1.0</span>
+<span class="del">- W5[107,277] = -0.5</span>
+<span class="add">+ W5[107,277] = -1.0</span>
+</pre></details><details><summary>Submitted transaction</summary><pre>wspl 0.2;
+target base=artifact(&quot;parent&quot;,sha256=&quot;{{PARENT_SHA256}}&quot;);
+
+const B=81;
+const D=243;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  // Interior eyes tolerate one opposing diagonal, but not two.
+  for r in range(8) {
+    for c in range(8) {
+      for d in range(2) {
+        for s in range(2) {
+          W5[B+9*r+c+d+(1-s)*(10-2*d),
+             D+9*r+c+d+s*(10-2*d)]=-1;
+        }
+      }
+    }
+  }
+
+  // Top and bottom edges: one opposing diagonal defeats an eye.
+  for c in range(8) {
+    W5[B+9+c+1,D+c]=-2;
+    W5[B+9+c,D+c+1]=-2;
+
+    W5[B+63+c+1,D+72+c]=-2;
+    W5[B+63+c,D+72+c+1]=-2;
+  }
+
+  // Left and right edges, including corners.
+  for r in range(8) {
+    W5[B+9*(r+1)+1,D+9*r]=-2;
+    W5[B+9*r+1,D+9*(r+1)]=-2;
+
+    W5[B+9*(r+1)+7,D+9*r+8]=-2;
+    W5[B+9*r+7,D+9*(r+1)+8]=-2;
+  }
+}
+</pre></details><details><summary>Text diff against previous submitted transaction</summary><p class="note">These are separate patch programs. This text diff is NOT a cumulative controller diff; the stored-weight changes above show the actual state transition.</p><pre><span class="del">--- previous_submitted_transaction</span>
+<span class="add">+++ edit_6_submitted_transaction</span>
+<span class="meta">@@ -1,46 +1,37 @@</span>
+<span class=""> wspl 0.2;</span>
+<span class=""> target base=artifact(&quot;parent&quot;,sha256=&quot;{{PARENT_SHA256}}&quot;);</span>
+<span class=""> </span>
+<span class="del">-const C=162;</span>
+<span class="del">-const E=324;</span>
+<span class="del">-const F=405;</span>
+<span class="add">+const B=81;</span>
+<span class="add">+const D=243;</span>
+<span class=""> </span>
+<span class=""> edit base as candidate mode=fixed numeric=exact_to_storage {</span>
+<span class="del">-  for p in range(81) {</span>
+<span class="del">-    // Both two-liberty seeds are at most one for a group</span>
+<span class="del">-    // with only two liberties. Their weighted combination</span>
+<span class="del">-    // therefore cannot falsely certify three liberties.</span>
+<span class="del">-    //</span>
+<span class="del">-    // Existing third-liberty certificates remain positive:</span>
+<span class="del">-    // the original seed is then at least 3/2.</span>
+<span class="del">-    W3[E+p,E+p]=1/4;</span>
+<span class="del">-    b3[E+p]=-5/4;</span>
+<span class="del">-</span>
+<span class="del">-    W3[F+p,F+p]=1/4;</span>
+<span class="del">-    b3[F+p]=-5/4;</span>
+<span class="del">-</span>
+<span class="del">-    // The smallest positive certificate is now 1/4.</span>
+<span class="del">-    W5[E+p,E+p]=-4;</span>
+<span class="del">-  }</span>
+<span class="del">-</span>
+<span class="del">-  // Horizontal directed adjacency.</span>
+<span class="del">-  for r in range(9) {</span>
+<span class="add">+  // Interior eyes tolerate one opposing diagonal, but not two.</span>
+<span class="add">+  for r in range(8) {</span>
+<span class="">     for c in range(8) {</span>
+<span class="del">-      for s in range(2) {</span>
+<span class="del">-        W5[E+9*r+c+1-s,E+9*r+c+s]=-4;</span>
+<span class="del">-</span>
+<span class="del">-        // A certified neighboring friendly group retains</span>
+<span class="del">-        // at least two liberties after connection.</span>
+<span class="del">-        W5[F+9*r+c+1-s,C+9*r+c+s]=-16;</span>
+<span class="add">+      for d in range(2) {</span>
+<span class="add">+        for s in range(2) {</span>
+<span class="add">+          W5[B+9*r+c+d+(1-s)*(10-2*d),</span>
+<span class="add">+             D+9*r+c+d+s*(10-2*d)]=-1;</span>
+<span class="add">+        }</span>
+<span class="">       }</span>
+<span class="">     }</span>
+<span class="">   }</span>
+<span class=""> </span>
+<span class="del">-  // Vertical directed adjacency.</span>
+<span class="del">-  for p in range(72) {</span>
+<span class="del">-    for s in range(2) {</span>
+<span class="del">-      W5[E+p+9*(1-s),E+p+9*s]=-4;</span>
+<span class="del">-      W5[F+p+9*(1-s),C+p+9*s]=-16;</span>
+<span class="del">-    }</span>
+<span class="add">+  // Top and bottom edges: one opposing diagonal defeats an eye.</span>
+<span class="add">+  for c in range(8) {</span>
+<span class="add">+    W5[B+9+c+1,D+c]=-2;</span>
+<span class="add">+    W5[B+9+c,D+c+1]=-2;</span>
+<span class="add">+</span>
+<span class="add">+    W5[B+63+c+1,D+72+c]=-2;</span>
+<span class="add">+    W5[B+63+c,D+72+c+1]=-2;</span>
+<span class="add">+  }</span>
+<span class="add">+</span>
+<span class="add">+  // Left and right edges, including corners.</span>
+<span class="add">+  for r in range(8) {</span>
+<span class="add">+    W5[B+9*(r+1)+1,D+9*r]=-2;</span>
+<span class="add">+    W5[B+9*r+1,D+9*(r+1)]=-2;</span>
+<span class="add">+</span>
+<span class="add">+    W5[B+9*(r+1)+7,D+9*r+8]=-2;</span>
+<span class="add">+    W5[B+9*r+7,D+9*(r+1)+8]=-2;</span>
+<span class="">   }</span>
+<span class=""> }</span>
+</pre></details></article><p>Raw FINAL response and collection accounting are preserved under final_response/. Checkpoint weights and complete episode archives remain in the original local study directories. Weight comparisons use numeric FP32 inequality; signed-zero-only bit differences are not counted.</p></html>

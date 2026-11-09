@@ -1,0 +1,436 @@
+{
+  "status": "complete",
+  "completed_games": 42000,
+  "manifest_sha256": "f1cb7642eca86e84afecb552221bbc4b0f86144c51bdbda803d7a921134358fa",
+  "active_seconds": 416.76405532700005,
+  "candidate": "edit_6",
+  "opponent": 2,
+  "evaluations": {
+    "edit_0": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 945,
+          "win_rate": 0.4725,
+          "ci95_wilson": [
+            0.45069374278170404,
+            0.4944116948187647
+          ],
+          "color_wins": [
+            418,
+            527
+          ],
+          "mean_length": 110.4445
+        },
+        "1": {
+          "games": 2000,
+          "wins": 710,
+          "win_rate": 0.355,
+          "ci95_wilson": [
+            0.33432485348219587,
+            0.3762310902293674
+          ],
+          "color_wins": [
+            337,
+            373
+          ],
+          "mean_length": 108.684
+        },
+        "2": {
+          "games": 2000,
+          "wins": 971,
+          "win_rate": 0.4855,
+          "ci95_wilson": [
+            0.46364493782474786,
+            0.5074106565464084
+          ],
+          "color_wins": [
+            457,
+            514
+          ],
+          "mean_length": 111.75
+        }
+      },
+      "mean_win_rate": 0.43766666666666665
+    },
+    "edit_1": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1091,
+          "win_rate": 0.5455,
+          "ci95_wilson": [
+            0.523611383074441,
+            0.5672141656229649
+          ],
+          "color_wins": [
+            472,
+            619
+          ],
+          "mean_length": 108.282
+        },
+        "1": {
+          "games": 2000,
+          "wins": 805,
+          "win_rate": 0.4025,
+          "ci95_wilson": [
+            0.38121430570705017,
+            0.4241595185127941
+          ],
+          "color_wins": [
+            359,
+            446
+          ],
+          "mean_length": 105.7055
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1125,
+          "win_rate": 0.5625,
+          "ci95_wilson": [
+            0.5406595098290176,
+            0.5841008592608258
+          ],
+          "color_wins": [
+            497,
+            628
+          ],
+          "mean_length": 109.8545
+        }
+      },
+      "mean_win_rate": 0.5035
+    },
+    "edit_2": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1121,
+          "win_rate": 0.5605,
+          "ci95_wilson": [
+            0.5386525115661582,
+            0.5821155257128101
+          ],
+          "color_wins": [
+            487,
+            634
+          ],
+          "mean_length": 108.725
+        },
+        "1": {
+          "games": 2000,
+          "wins": 854,
+          "win_rate": 0.427,
+          "ci95_wilson": [
+            0.4054820253501738,
+            0.44879786355288903
+          ],
+          "color_wins": [
+            370,
+            484
+          ],
+          "mean_length": 106.238
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1117,
+          "win_rate": 0.5585,
+          "ci95_wilson": [
+            0.5366458707116039,
+            0.5801298347564895
+          ],
+          "color_wins": [
+            509,
+            608
+          ],
+          "mean_length": 109.176
+        }
+      },
+      "mean_win_rate": 0.5153333333333333
+    },
+    "edit_3": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1182,
+          "win_rate": 0.591,
+          "ci95_wilson": [
+            0.5692984219724071,
+            0.6123526754224047
+          ],
+          "color_wins": [
+            521,
+            661
+          ],
+          "mean_length": 109.9945
+        },
+        "1": {
+          "games": 2000,
+          "wins": 881,
+          "win_rate": 0.4405,
+          "ci95_wilson": [
+            0.4188772751220193,
+            0.46235085350444977
+          ],
+          "color_wins": [
+            376,
+            505
+          ],
+          "mean_length": 106.9085
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1185,
+          "win_rate": 0.5925,
+          "ci95_wilson": [
+            0.5708077822521831,
+            0.6138375640007852
+          ],
+          "color_wins": [
+            565,
+            620
+          ],
+          "mean_length": 110.953
+        }
+      },
+      "mean_win_rate": 0.5413333333333333
+    },
+    "edit_4": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1189,
+          "win_rate": 0.5945,
+          "ci95_wilson": [
+            0.5728205849603423,
+            0.615817093103501
+          ],
+          "color_wins": [
+            520,
+            669
+          ],
+          "mean_length": 110.035
+        },
+        "1": {
+          "games": 2000,
+          "wins": 868,
+          "win_rate": 0.434,
+          "ci95_wilson": [
+            0.4124256686636799,
+            0.4558273815774454
+          ],
+          "color_wins": [
+            374,
+            494
+          ],
+          "mean_length": 106.7775
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1185,
+          "win_rate": 0.5925,
+          "ci95_wilson": [
+            0.5708077822521831,
+            0.6138375640007852
+          ],
+          "color_wins": [
+            576,
+            609
+          ],
+          "mean_length": 111.06
+        }
+      },
+      "mean_win_rate": 0.5403333333333333
+    },
+    "edit_5": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1157,
+          "win_rate": 0.5785,
+          "ci95_wilson": [
+            0.5567284308162279,
+            0.5999705927606154
+          ],
+          "color_wins": [
+            505,
+            652
+          ],
+          "mean_length": 109.4445
+        },
+        "1": {
+          "games": 2000,
+          "wins": 858,
+          "win_rate": 0.429,
+          "ci95_wilson": [
+            0.4074654732874753,
+            0.45080674742646254
+          ],
+          "color_wins": [
+            362,
+            496
+          ],
+          "mean_length": 106.6005
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1158,
+          "win_rate": 0.579,
+          "ci95_wilson": [
+            0.5572309570907255,
+            0.6004661494388366
+          ],
+          "color_wins": [
+            530,
+            628
+          ],
+          "mean_length": 110.8495
+        }
+      },
+      "mean_win_rate": 0.5288333333333334
+    },
+    "edit_6": {
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1155,
+          "win_rate": 0.5775,
+          "ci95_wilson": [
+            0.5557234463021639,
+            0.5989794113692419
+          ],
+          "color_wins": [
+            505,
+            650
+          ],
+          "mean_length": 110.4925
+        },
+        "1": {
+          "games": 2000,
+          "wins": 834,
+          "win_rate": 0.417,
+          "ci95_wilson": [
+            0.39557021501833134,
+            0.4387480148303565
+          ],
+          "color_wins": [
+            351,
+            483
+          ],
+          "mean_length": 106.9645
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1140,
+          "win_rate": 0.57,
+          "ci95_wilson": [
+            0.5481889458364095,
+            0.591542667544215
+          ],
+          "color_wins": [
+            526,
+            614
+          ],
+          "mean_length": 111.4265
+        }
+      },
+      "mean_win_rate": 0.5215
+    }
+  },
+  "contrasts": {
+    "edit_1_minus_edit_0": {
+      "difference": 0.06583333333333333,
+      "per_opponent": [
+        0.073,
+        0.0475,
+        0.077
+      ],
+      "improved": 1471,
+      "worsened": 1076,
+      "unchanged": 3453,
+      "descriptive_normal_ci95": [
+        0.04943108979501717,
+        0.08223557687164948
+      ]
+    },
+    "edit_2_minus_edit_1": {
+      "difference": 0.011833333333333333,
+      "per_opponent": [
+        0.015,
+        0.0245,
+        -0.004
+      ],
+      "improved": 1109,
+      "worsened": 1038,
+      "unchanged": 3853,
+      "descriptive_normal_ci95": [
+        -0.0033005795312117166,
+        0.02696724619787838
+      ]
+    },
+    "edit_3_minus_edit_2": {
+      "difference": 0.026,
+      "per_opponent": [
+        0.0305,
+        0.0135,
+        0.034
+      ],
+      "improved": 666,
+      "worsened": 510,
+      "unchanged": 4824,
+      "descriptive_normal_ci95": [
+        0.01481670632955549,
+        0.03718329367044451
+      ]
+    },
+    "edit_4_minus_edit_3": {
+      "difference": -0.001,
+      "per_opponent": [
+        0.0035,
+        -0.0065,
+        0.0
+      ],
+      "improved": 222,
+      "worsened": 228,
+      "unchanged": 5550,
+      "descriptive_normal_ci95": [
+        -0.007930412648952976,
+        0.005930412648952976
+      ]
+    },
+    "edit_5_minus_edit_4": {
+      "difference": -0.0115,
+      "per_opponent": [
+        -0.016,
+        -0.005,
+        -0.0135
+      ],
+      "improved": 647,
+      "worsened": 716,
+      "unchanged": 4637,
+      "descriptive_normal_ci95": [
+        -0.02355884500685989,
+        0.0005588450068598899
+      ]
+    },
+    "edit_6_minus_edit_5": {
+      "difference": -0.007333333333333333,
+      "per_opponent": [
+        -0.001,
+        -0.012,
+        -0.009
+      ],
+      "improved": 313,
+      "worsened": 357,
+      "unchanged": 5330,
+      "descriptive_normal_ci95": [
+        -0.015787996304382837,
+        0.0011213296377161714
+      ]
+    }
+  },
+  "historical_final_batches_matched": 189,
+  "primary_descriptive_contrasts": [
+    "edit_6_minus_edit_5",
+    "edit_5_minus_edit_4"
+  ]
+}

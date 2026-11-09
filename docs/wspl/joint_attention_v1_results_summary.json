@@ -1,0 +1,258 @@
+{
+  "status": "complete",
+  "seconds": 1583.780999999959,
+  "summary": {
+    "untouched": {
+      "n": 28,
+      "correct": 17,
+      "corrected": [],
+      "broken": [],
+      "groups": {
+        "retention": {
+          "n": 12,
+          "correct": 12
+        },
+        "situation_conduction": {
+          "n": 2,
+          "correct": 1
+        },
+        "situation_convection": {
+          "n": 2,
+          "correct": 0
+        },
+        "situation_evaporation": {
+          "n": 2,
+          "correct": 1
+        },
+        "situation_radiation": {
+          "n": 2,
+          "correct": 0
+        },
+        "word_conduction": {
+          "n": 2,
+          "correct": 1
+        },
+        "word_convection": {
+          "n": 2,
+          "correct": 0
+        },
+        "word_evaporation": {
+          "n": 2,
+          "correct": 2
+        },
+        "word_radiation": {
+          "n": 2,
+          "correct": 0
+        }
+      }
+    },
+    "initial_asp": {
+      "n": 28,
+      "correct": 15,
+      "corrected": [
+        "joint_family_1_word_conduction"
+      ],
+      "broken": [
+        "Mercury_7187058",
+        "MEAP_2005_5_1",
+        "Mercury_7037415"
+      ],
+      "groups": {
+        "retention": {
+          "n": 12,
+          "correct": 9
+        },
+        "situation_conduction": {
+          "n": 2,
+          "correct": 1
+        },
+        "situation_convection": {
+          "n": 2,
+          "correct": 0
+        },
+        "situation_evaporation": {
+          "n": 2,
+          "correct": 1
+        },
+        "situation_radiation": {
+          "n": 2,
+          "correct": 0
+        },
+        "word_conduction": {
+          "n": 2,
+          "correct": 2
+        },
+        "word_convection": {
+          "n": 2,
+          "correct": 0
+        },
+        "word_evaporation": {
+          "n": 2,
+          "correct": 2
+        },
+        "word_radiation": {
+          "n": 2,
+          "correct": 0
+        }
+      }
+    },
+    "joint": {
+      "n": 28,
+      "correct": 18,
+      "corrected": [
+        "joint_family_1_word_conduction"
+      ],
+      "broken": [],
+      "groups": {
+        "retention": {
+          "n": 12,
+          "correct": 12
+        },
+        "situation_conduction": {
+          "n": 2,
+          "correct": 1
+        },
+        "situation_convection": {
+          "n": 2,
+          "correct": 0
+        },
+        "situation_evaporation": {
+          "n": 2,
+          "correct": 1
+        },
+        "situation_radiation": {
+          "n": 2,
+          "correct": 0
+        },
+        "word_conduction": {
+          "n": 2,
+          "correct": 2
+        },
+        "word_convection": {
+          "n": 2,
+          "correct": 0
+        },
+        "word_evaporation": {
+          "n": 2,
+          "correct": 2
+        },
+        "word_radiation": {
+          "n": 2,
+          "correct": 0
+        }
+      }
+    },
+    "final_wsp_only": {
+      "n": 28,
+      "correct": 20,
+      "corrected": [
+        "joint_family_1_word_convection",
+        "joint_family_2_word_convection",
+        "joint_family_2_word_radiation"
+      ],
+      "broken": [],
+      "groups": {
+        "retention": {
+          "n": 12,
+          "correct": 12
+        },
+        "situation_conduction": {
+          "n": 2,
+          "correct": 1
+        },
+        "situation_convection": {
+          "n": 2,
+          "correct": 0
+        },
+        "situation_evaporation": {
+          "n": 2,
+          "correct": 1
+        },
+        "situation_radiation": {
+          "n": 2,
+          "correct": 0
+        },
+        "word_conduction": {
+          "n": 2,
+          "correct": 1
+        },
+        "word_convection": {
+          "n": 2,
+          "correct": 2
+        },
+        "word_evaporation": {
+          "n": 2,
+          "correct": 2
+        },
+        "word_radiation": {
+          "n": 2,
+          "correct": 1
+        }
+      }
+    },
+    "final_asp_only": {
+      "n": 28,
+      "correct": 17,
+      "corrected": [
+        "joint_family_1_word_conduction"
+      ],
+      "broken": [
+        "MEAP_2005_5_1"
+      ],
+      "groups": {
+        "retention": {
+          "n": 12,
+          "correct": 11
+        },
+        "situation_conduction": {
+          "n": 2,
+          "correct": 1
+        },
+        "situation_convection": {
+          "n": 2,
+          "correct": 0
+        },
+        "situation_evaporation": {
+          "n": 2,
+          "correct": 1
+        },
+        "situation_radiation": {
+          "n": 2,
+          "correct": 0
+        },
+        "word_conduction": {
+          "n": 2,
+          "correct": 2
+        },
+        "word_convection": {
+          "n": 2,
+          "correct": 0
+        },
+        "word_evaporation": {
+          "n": 2,
+          "correct": 2
+        },
+        "word_radiation": {
+          "n": 2,
+          "correct": 0
+        }
+      }
+    }
+  },
+  "audit": {
+    "source_verified": true,
+    "final_hash_verified": true,
+    "all_saved_metrics_recomputed": true,
+    "contract_passed": true,
+    "key_unchanged": true,
+    "value_norm_ratio": 0.3800000250339508,
+    "relative_weight_change": 0.049899999970950695,
+    "usage": {
+      "input_tokens": 276713,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 22662,
+      "reasoning_output_tokens": 17850
+    }
+  }
+}

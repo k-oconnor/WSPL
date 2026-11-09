@@ -1,0 +1,6659 @@
+{
+  "status": "complete",
+  "trials": [
+    {
+      "name": "0_python",
+      "draw": 0,
+      "arm": "python",
+      "status": "frozen",
+      "turns": [
+        {
+          "step": 0,
+          "collection": {
+            "thread_id": "01a1a8c5-454c-7302-83ae-61d631b53c6d",
+            "usage": {
+              "input_tokens": 2372,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 23622,
+              "reasoning_output_tokens": 20182
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 809.4539999999106,
+            "prompt_transport": {
+              "bytes_written": 7082,
+              "sha256": "4a488c942ea20d6596b5133be79b59532b7c74deeef80e99d6e4071ec56d66bc",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.2697179780000001,
+            "stdout": "Installed explicit liberty-proof, tactical, shape, and passing circuits.\nCoefficient count: 1480274\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 9073,
+                "minimum": -2.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 67,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2298,
+                "minimum": -15.0,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 326,
+                "minimum": -18.0,
+                "maximum": 7.5
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1972,
+                "minimum": 0.0,
+                "maximum": 32.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 326,
+                "minimum": -32.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1972,
+                "minimum": -1.0,
+                "maximum": 128.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1970,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16064,
+                "minimum": -4.0,
+                "maximum": 6.5
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 483,
+                "minimum": -10.0,
+                "maximum": 34.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 492,
+                "minimum": -14.0,
+                "maximum": 1.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -32.0,
+                "maximum": -1.7000000476837158
+              }
+            }
+          }
+        },
+        {
+          "step": 1,
+          "collection": {
+            "thread_id": "01a1a8d1-ae4b-7fc3-940e-e2b381fc236d",
+            "usage": {
+              "input_tokens": 6723,
+              "cached_input_tokens": 6528,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 10834,
+              "reasoning_output_tokens": 9322
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 378.1879999998491,
+            "prompt_transport": {
+              "bytes_written": 18607,
+              "sha256": "b718852a20e71970dc7568ec11340e590ed5e2e293e9bb8af69fe71ff315c8ae",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21846580199999988,
+            "stdout": "Added 80 directional two-liberty and 80 three-liberty seed circuits.\nPreserved existing tactical, positional, and passing scoring.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 9073,
+                "minimum": -2.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 67,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2618,
+                "minimum": -15.0,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 487,
+                "minimum": -18.0,
+                "maximum": 7.5
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2339,
+                "minimum": -128.0,
+                "maximum": 128.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 244,
+                "minimum": -256.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2259,
+                "minimum": -1024.0,
+                "maximum": 1024.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -2048.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1970,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 486,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16064,
+                "minimum": -4.0,
+                "maximum": 6.5
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 483,
+                "minimum": -10.0,
+                "maximum": 34.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 492,
+                "minimum": -14.0,
+                "maximum": 1.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -32.0,
+                "maximum": -1.7000000476837158
+              }
+            }
+          }
+        },
+        {
+          "step": 2,
+          "collection": {
+            "thread_id": "01a1a8d7-8260-72b1-b27b-aa5f2ce50e5a",
+            "usage": {
+              "input_tokens": 8962,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 17343,
+              "reasoning_output_tokens": 15020
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 580.25,
+            "prompt_transport": {
+              "bytes_written": 25106,
+              "sha256": "e10e55b83f4099cb01878402958216dd91842bce328f242d0907851e61a44dc5",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.2178235449999999,
+            "stdout": "Installed both-axis two-liberty certificates at all 81 points.\nAdded 98 supplemental and 96 directional three-liberty seeds.\nAdded bounded capture-size priority and diagonal eye corrections.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 9073,
+                "minimum": -2.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 67,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2270,
+                "minimum": -15.0,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 505,
+                "minimum": -18.0,
+                "maximum": 7.5
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2761,
+                "minimum": -256.0,
+                "maximum": 256.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 341,
+                "minimum": -514.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2420,
+                "minimum": -2048.0,
+                "maximum": 2048.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -4096.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2546,
+                "minimum": -4.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 486,
+                "minimum": -1.0,
+                "maximum": 2.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16320,
+                "minimum": -4.0,
+                "maximum": 6.5
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 483,
+                "minimum": -10.0,
+                "maximum": 34.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 492,
+                "minimum": -14.0,
+                "maximum": 1.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -32.0,
+                "maximum": -1.7000000476837158
+              }
+            }
+          }
+        },
+        {
+          "step": 3,
+          "collection": {
+            "thread_id": "01a1a8e0-6b6a-73f3-be93-a47ebe8ef443",
+            "usage": {
+              "input_tokens": 12104,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 11926,
+              "reasoning_output_tokens": 11509
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 456.39100000006147,
+            "prompt_transport": {
+              "bytes_written": 34238,
+              "sha256": "d9e049c2c821fb4cfc9f16e76a169dd319574a979a915ad82a6c23cd83b6713f",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21862214700000004,
+            "stdout": "Updated connection preferences and opening spacing.\nPreserved all liberty, capture, self-atari, eye, and pass circuits.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 9073,
+                "minimum": -2.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 67,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2270,
+                "minimum": -15.0,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 505,
+                "minimum": -18.0,
+                "maximum": 7.5
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2761,
+                "minimum": -256.0,
+                "maximum": 256.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 341,
+                "minimum": -514.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2420,
+                "minimum": -2048.0,
+                "maximum": 2048.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -4096.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2546,
+                "minimum": -4.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 486,
+                "minimum": -1.0,
+                "maximum": 2.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16320,
+                "minimum": -4.0,
+                "maximum": 6.5
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 483,
+                "minimum": -10.0,
+                "maximum": 34.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 492,
+                "minimum": -14.0,
+                "maximum": 1.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -32.0,
+                "maximum": -1.7000000476837158
+              }
+            }
+          }
+        },
+        {
+          "step": 4,
+          "collection": {
+            "thread_id": "01a1a8e7-709c-7ab1-82c8-a8f03d9643c1",
+            "usage": {
+              "input_tokens": 13134,
+              "cached_input_tokens": 12928,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 13144,
+              "reasoning_output_tokens": 12136
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 449.8129999998491,
+            "prompt_transport": {
+              "bytes_written": 37234,
+              "sha256": "c4e35626a5a5d9b96b465755b1c8519b08764a7571d3c92923f137c843700332",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.2180463269999997,
+            "stdout": "Added four opposing corner L-shape liberty certificates.\nPreserved existing certificates, area estimation, and move scoring.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 9109,
+                "minimum": -2.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 71,
+                "minimum": -10.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2271,
+                "minimum": -15.0,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 505,
+                "minimum": -18.0,
+                "maximum": 7.5
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2786,
+                "minimum": -256.0,
+                "maximum": 256.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 345,
+                "minimum": -514.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2444,
+                "minimum": -2048.0,
+                "maximum": 2048.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -4096.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2546,
+                "minimum": -4.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 486,
+                "minimum": -1.0,
+                "maximum": 2.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16320,
+                "minimum": -4.0,
+                "maximum": 6.5
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 483,
+                "minimum": -10.0,
+                "maximum": 34.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 492,
+                "minimum": -14.0,
+                "maximum": 1.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -32.0,
+                "maximum": -1.7000000476837158
+              }
+            }
+          }
+        },
+        {
+          "step": 5,
+          "collection": {
+            "thread_id": "01a1a8ee-5bf4-70b3-85dd-d1ede54cb74f",
+            "usage": {
+              "input_tokens": 14817,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 6866,
+              "reasoning_output_tokens": 5834
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 218.875,
+            "prompt_transport": {
+              "bytes_written": 42092,
+              "sha256": "3c39de321fcbd69cf90c07c806345cb2b1505e9e47428bb051bf80d51c22655d",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21785104300000002,
+            "stdout": "Added four friendly corner distinct-liberty certificates.\nStrengthened corner three-liberty certificates for both colors.\nPreserved all positional, tactical-scoring, and passing weights.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 9145,
+                "minimum": -2.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 75,
+                "minimum": -10.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2283,
+                "minimum": -15.0,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 505,
+                "minimum": -18.0,
+                "maximum": 7.5
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2786,
+                "minimum": -256.0,
+                "maximum": 256.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 345,
+                "minimum": -514.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2444,
+                "minimum": -2048.0,
+                "maximum": 2048.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -4096.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2546,
+                "minimum": -4.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 486,
+                "minimum": -1.0,
+                "maximum": 2.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16320,
+                "minimum": -4.0,
+                "maximum": 6.5
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 483,
+                "minimum": -10.0,
+                "maximum": 34.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 492,
+                "minimum": -14.0,
+                "maximum": 1.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -32.0,
+                "maximum": -1.7000000476837158
+              }
+            }
+          }
+        },
+        {
+          "step": 6,
+          "collection": {
+            "thread_id": "01a1a8f1-c169-73c2-b5f7-d2771c75d3ad",
+            "usage": {
+              "input_tokens": 16537,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 11414,
+              "reasoning_output_tokens": 10869
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 399.20300000021234,
+            "prompt_transport": {
+              "bytes_written": 47108,
+              "sha256": "e5675587374a794aaf601192285550800033f6fec548a89e3426b305f8a2aed6",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21853159100000008,
+            "stdout": "Sharpened 316 directional liberty seeds using integer thresholds.\nPreserved calibrated corner circuits and all scoring coefficients.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 9145,
+                "minimum": -2.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 75,
+                "minimum": -10.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2283,
+                "minimum": -15.0,
+                "maximum": 32.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 505,
+                "minimum": -35.0,
+                "maximum": 7.5
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2786,
+                "minimum": -256.0,
+                "maximum": 256.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 345,
+                "minimum": -514.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2444,
+                "minimum": -2048.0,
+                "maximum": 2048.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -4096.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2546,
+                "minimum": -4.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 486,
+                "minimum": -1.0,
+                "maximum": 2.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16320,
+                "minimum": -4.0,
+                "maximum": 6.5
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 483,
+                "minimum": -10.0,
+                "maximum": 34.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 492,
+                "minimum": -14.0,
+                "maximum": 1.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -32.0,
+                "maximum": -1.7000000476837158
+              }
+            }
+          }
+        },
+        {
+          "step": 7,
+          "collection": {
+            "thread_id": "01a1a8f7-e739-7113-855a-8156bb382f6e",
+            "usage": {
+              "input_tokens": 17711,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 547,
+              "reasoning_output_tokens": 496
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 22.312000000150874,
+            "prompt_transport": {
+              "bytes_written": 50719,
+              "sha256": "15c210c5b761859a2da4798dec6e9c894bc5f07457304008fd90f63710299e42",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "final"
+        }
+      ],
+      "termination": "author_final",
+      "final_sha256": "1b95a981dbab4f9fe61916f215d296856ec8dac8f03eaa21c731a0fa2d5d4138"
+    },
+    {
+      "name": "0_wspl",
+      "draw": 0,
+      "arm": "wspl",
+      "status": "frozen",
+      "turns": [
+        {
+          "step": 0,
+          "collection": {
+            "thread_id": "01a1a8f8-3ef7-7222-acdd-01c29e06c8ed",
+            "usage": {
+              "input_tokens": 2375,
+              "cached_input_tokens": 2176,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 22460,
+              "reasoning_output_tokens": 18090
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 642.25,
+            "prompt_transport": {
+              "bytes_written": 7080,
+              "sha256": "9f97df8563c6958a7c5a19237493e0204864bdb8c1721efabd11ae3e38ba5cc6",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 48.125,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "b4a2895e586c3564fe6ad5e977b287819c16ea01509889ba3ad6d87e54b8911f",
+            "parent_id": "6d8757ccb99946b3f628dd804387cdf80e9626ed6bdc517db9eae4c2fd7c4883",
+            "candidate_id": "c2a8f4122206eb03c6b49941d8b55d54bcdb1d4e9c4108e045cf0827c9c3998e",
+            "resources": {
+              "loop_iterations": 4695,
+              "operations": 7570662,
+              "statements": 35204
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 11467,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 6268,
+                "minimum": -1.7000000476837158,
+                "maximum": 20.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3752,
+                "minimum": -3.0,
+                "maximum": 64.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1192,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 652,
+                "minimum": -12.0,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 571,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 651,
+                "minimum": -13.0,
+                "maximum": 21.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 229,
+                "minimum": -60.0,
+                "maximum": 0.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -20.0,
+                "maximum": 16.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 401,
+                "minimum": -72.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -21.0,
+                "maximum": -7.5
+              }
+            }
+          }
+        },
+        {
+          "step": 1,
+          "collection": {
+            "thread_id": "01a1a902-c9c6-7a72-8882-02b74bb7c1c1",
+            "usage": {
+              "input_tokens": 7821,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 16242,
+              "reasoning_output_tokens": 14130
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 578.405999999959,
+            "prompt_transport": {
+              "bytes_written": 18456,
+              "sha256": "891409ba3632f0927aedc58cd93c9d22a4b55bea4f06523589e9518b8bc6ee8b",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 25.484000000171363,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "f8b52ddc6a37279c7e8c1542f4fe268185cdc9b1ea869471035578f8d2931902",
+            "parent_id": "c2a8f4122206eb03c6b49941d8b55d54bcdb1d4e9c4108e045cf0827c9c3998e",
+            "candidate_id": "5bc39fcdc75ba0707faf8e1629b5d0c11ddf3db9283586084e0858520f7ebc75",
+            "resources": {
+              "loop_iterations": 1593,
+              "operations": 4452656,
+              "statements": 8471
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 11467,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 6268,
+                "minimum": -1.7000000476837158,
+                "maximum": 20.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2092,
+                "minimum": -0.5,
+                "maximum": 128.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1898,
+                "minimum": -3.0,
+                "maximum": 2.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1192,
+                "minimum": -1.5,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 733,
+                "minimum": -8.0,
+                "maximum": 1.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 651,
+                "minimum": -9.0,
+                "maximum": 9.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 229,
+                "minimum": -60.0,
+                "maximum": 0.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -22.0,
+                "maximum": 16.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 239,
+                "minimum": -128.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -6.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -21.0,
+                "maximum": -7.5
+              }
+            }
+          }
+        },
+        {
+          "step": 2,
+          "collection": {
+            "thread_id": "01a1a90c-0256-7ef3-9248-b8b2cb6e92d8",
+            "usage": {
+              "input_tokens": 10826,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 7887,
+              "reasoning_output_tokens": 6727
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 275.469000000041,
+            "prompt_transport": {
+              "bytes_written": 25574,
+              "sha256": "4d7d7917f3fcdb3521962bb675abdfdd5de4b97375b0e2d7f7ef686eda5523e4",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 13.015000000130385,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "3c52112bf7baebe3ec67d08996d224a789f06361cc029a439c2bc9bb7bf2c411",
+            "parent_id": "5bc39fcdc75ba0707faf8e1629b5d0c11ddf3db9283586084e0858520f7ebc75",
+            "candidate_id": "2607e82fe0f0ef9df659d209a7e0473fcca60fb87f50e149260e13a1db585f01",
+            "resources": {
+              "loop_iterations": 326,
+              "operations": 633008,
+              "statements": 2297
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 11467,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 6593,
+                "minimum": -15.0,
+                "maximum": 20.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2093,
+                "minimum": -0.5,
+                "maximum": 128.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2349,
+                "minimum": -3.0,
+                "maximum": 8.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1688,
+                "minimum": -2.5,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 734,
+                "minimum": -8.0,
+                "maximum": 1.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 652,
+                "minimum": -9.0,
+                "maximum": 9.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 229,
+                "minimum": -60.0,
+                "maximum": 0.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 325,
+                "minimum": -22.0,
+                "maximum": 16.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 239,
+                "minimum": -128.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -6.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -21.0,
+                "maximum": -7.5
+              }
+            }
+          }
+        },
+        {
+          "step": 3,
+          "collection": {
+            "thread_id": "01a1a910-6af0-7513-bb57-bf6cd6d52696",
+            "usage": {
+              "input_tokens": 12792,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 9920,
+              "reasoning_output_tokens": 7768
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 303.13999999989755,
+            "prompt_transport": {
+              "bytes_written": 30520,
+              "sha256": "a681728a8e7701eb8e50f8de2e2084bd0a11f85f2efa3e82f920f1e1c32ec987",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 22.391000000061467,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "1198a8fc59548ddc33e005db7fe6c1b5b73ab8b31aec4fcee3d63a44ca6e7001",
+            "parent_id": "2607e82fe0f0ef9df659d209a7e0473fcca60fb87f50e149260e13a1db585f01",
+            "candidate_id": "dab5203698db3186155efffa45bbbe0c0d6222d0dae0cfcd78e2d8b25dcb398f",
+            "resources": {
+              "loop_iterations": 783,
+              "operations": 3465993,
+              "statements": 7381
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 11467,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 6593,
+                "minimum": -15.0,
+                "maximum": 20.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1310,
+                "minimum": 0.0,
+                "maximum": 128.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2012,
+                "minimum": -2.0,
+                "maximum": 512.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2061,
+                "minimum": -3.0,
+                "maximum": 8.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1931,
+                "minimum": -8.0,
+                "maximum": 1.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 652,
+                "minimum": -9.0,
+                "maximum": 9.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 229,
+                "minimum": -60.0,
+                "maximum": 0.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 325,
+                "minimum": -22.0,
+                "maximum": 16.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -128.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 239,
+                "minimum": -512.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -6.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -21.0,
+                "maximum": -7.5
+              }
+            }
+          }
+        },
+        {
+          "step": 4,
+          "collection": {
+            "thread_id": "01a1a915-6452-72e0-a1f9-393dedbeaeab",
+            "usage": {
+              "input_tokens": 15832,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 9362,
+              "reasoning_output_tokens": 8462
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 299.530999999959,
+            "prompt_transport": {
+              "bytes_written": 37679,
+              "sha256": "7962d823259c23b05da145be95a68c323b977b6667bc640af4b9d928e63fa201",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 14.563000000081956,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "8ac733afb7cf474b7bcc5b3df255e9f9558edf4fbbc3903bf5222149b966992c",
+            "parent_id": "dab5203698db3186155efffa45bbbe0c0d6222d0dae0cfcd78e2d8b25dcb398f",
+            "candidate_id": "a8428e54060147f8d82938ae0afbbc60b09f0821cb54f1ad32e1dc1e8314bc1f",
+            "resources": {
+              "loop_iterations": 533,
+              "operations": 1190877,
+              "statements": 2830
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 11467,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 6593,
+                "minimum": -15.0,
+                "maximum": 20.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1886,
+                "minimum": -1.0,
+                "maximum": 128.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1517,
+                "minimum": -512.0,
+                "maximum": 512.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2061,
+                "minimum": -3.0,
+                "maximum": 8.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1931,
+                "minimum": -8.0,
+                "maximum": 1.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 652,
+                "minimum": -9.0,
+                "maximum": 9.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 229,
+                "minimum": -60.0,
+                "maximum": 0.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 325,
+                "minimum": -22.0,
+                "maximum": 16.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 405,
+                "minimum": -128.0,
+                "maximum": 1.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -1024.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -6.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -21.0,
+                "maximum": -7.5
+              }
+            }
+          }
+        },
+        {
+          "step": 5,
+          "collection": {
+            "thread_id": "01a1a91a-30fc-72f0-ab7b-ee99b07965ba",
+            "usage": {
+              "input_tokens": 17518,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 14199,
+              "reasoning_output_tokens": 13344
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 526.8280000002123,
+            "prompt_transport": {
+              "bytes_written": 41937,
+              "sha256": "3a54eba3a61fef5242df5570d41c1daec0d2fb42053bf2c3d74a685db406ff11",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 11.828000000212342,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "e52549cb4a849d50d8be85da6cfcdd391934f1543a6e1359c281ed0b43a508ac",
+            "parent_id": "a8428e54060147f8d82938ae0afbbc60b09f0821cb54f1ad32e1dc1e8314bc1f",
+            "candidate_id": "befcbf3a0e79165b6322dede42b0e023c4bd44fcf0650e807e0c811b6111bb54",
+            "resources": {
+              "loop_iterations": 2360,
+              "operations": 104454,
+              "statements": 2845
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 11791,
+                "minimum": -16.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 6881,
+                "minimum": -15.0,
+                "maximum": 20.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1887,
+                "minimum": -1.0,
+                "maximum": 128.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1518,
+                "minimum": -512.0,
+                "maximum": 512.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2062,
+                "minimum": -3.0,
+                "maximum": 8.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1932,
+                "minimum": -8.0,
+                "maximum": 1.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 653,
+                "minimum": -9.0,
+                "maximum": 9.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 229,
+                "minimum": -60.0,
+                "maximum": 0.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 325,
+                "minimum": -22.0,
+                "maximum": 16.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 406,
+                "minimum": -128.0,
+                "maximum": 1.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -1024.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -6.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -21.0,
+                "maximum": -7.5
+              }
+            }
+          }
+        },
+        {
+          "step": 6,
+          "collection": {
+            "thread_id": "01a1a922-6ab9-7e81-b371-a2d2c3133b7b",
+            "usage": {
+              "input_tokens": 19175,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 6431,
+              "reasoning_output_tokens": 6376
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 255.79699999978766,
+            "prompt_transport": {
+              "bytes_written": 45985,
+              "sha256": "f1fe1b4d9db9c8825f941fd31a54792ba9c2dc393c4fc7e79d982e7256c719fe",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "final"
+        }
+      ],
+      "termination": "author_final",
+      "final_sha256": "2001624b1880d21570ebb47a47a054ffb1fa927a8936966e9b652d0a0275f333"
+    },
+    {
+      "name": "1_wspl",
+      "draw": 1,
+      "arm": "wspl",
+      "status": "frozen",
+      "turns": [
+        {
+          "step": 0,
+          "collection": {
+            "thread_id": "01a1a926-52d0-79c2-a1f1-a6cb5ffe8ea1",
+            "usage": {
+              "input_tokens": 2375,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 18446,
+              "reasoning_output_tokens": 15018
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 599.9840000001714,
+            "prompt_transport": {
+              "bytes_written": 7080,
+              "sha256": "9f97df8563c6958a7c5a19237493e0204864bdb8c1721efabd11ae3e38ba5cc6",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 30.014999999897555,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "36f1a02d23901bd4649b6601006c7778d4511f41b22342945e7aa4f98427c43f",
+            "parent_id": "6d8757ccb99946b3f628dd804387cdf80e9626ed6bdc517db9eae4c2fd7c4883",
+            "candidate_id": "e8eb819e30962ef58d915196d85d563369e61da3f7af3c6872292b7b07aad0dc",
+            "resources": {
+              "loop_iterations": 998,
+              "operations": 8865047,
+              "statements": 3747
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3246,
+                "minimum": -15.0,
+                "maximum": 15.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1772,
+                "minimum": -1.0,
+                "maximum": 12.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 4730,
+                "minimum": -42.0,
+                "maximum": 192.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1228,
+                "minimum": 0.0,
+                "maximum": 1024.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 652,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3014,
+                "minimum": -2.0,
+                "maximum": 1.5
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 488,
+                "minimum": -10.0,
+                "maximum": 9.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 230,
+                "minimum": -10.0,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -16.0,
+                "maximum": 1.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -192.0,
+                "maximum": 40.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -1024.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 81,
+                "minimum": 0.0,
+                "maximum": 2.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 81,
+                "minimum": -1.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -65.5999984741211,
+                "maximum": -4.5
+              }
+            }
+          }
+        },
+        {
+          "step": 1,
+          "collection": {
+            "thread_id": "01a1a92f-f169-7850-a633-29c7b48f6cbd",
+            "usage": {
+              "input_tokens": 6831,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 20307,
+              "reasoning_output_tokens": 15433
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 629.6409999998286,
+            "prompt_transport": {
+              "bytes_written": 16138,
+              "sha256": "c65e31f31985b5b7a208bdb3915ac9e2e0124c1fc79f043dd4c9a599b896b5a0",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 30.093000000109896,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "cb894d1354506da8aa8a12f9b62f29194b071df9c08df57a566c665c2e6b1258",
+            "parent_id": "e8eb819e30962ef58d915196d85d563369e61da3f7af3c6872292b7b07aad0dc",
+            "candidate_id": "5d6ca37c2041c236f61878de2796964da47294c219bf02b37f4a4e957adf3f4b",
+            "resources": {
+              "loop_iterations": 998,
+              "operations": 9864471,
+              "statements": 4387
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3440,
+                "minimum": -15.0,
+                "maximum": 15.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3566,
+                "minimum": 0.0,
+                "maximum": 64.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 4574,
+                "minimum": 0.0,
+                "maximum": 1024.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 4574,
+                "minimum": 0.0,
+                "maximum": 8192.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1772,
+                "minimum": -1.0,
+                "maximum": 2.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 7231,
+                "minimum": -42.0,
+                "maximum": 6.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 488,
+                "minimum": -10.0,
+                "maximum": 9.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 230,
+                "minimum": -7.5,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -69.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -5120.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -40960.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 158,
+                "minimum": -6.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -3.0,
+                "maximum": 66.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -65.5999984741211,
+                "maximum": -4.5
+              }
+            }
+          }
+        },
+        {
+          "step": 2,
+          "collection": {
+            "thread_id": "01a1a93a-0433-7100-ae95-10b5d30d0a0a",
+            "usage": {
+              "input_tokens": 12855,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 22751,
+              "reasoning_output_tokens": 19518
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 814.780999999959,
+            "prompt_transport": {
+              "bytes_written": 27916,
+              "sha256": "1bc38c69c2ee6046b8bac554628f560dd0d8983a7ce1e4b1e847fd035b8cf8f7",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 21.094000000040978,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "82ce23138a0f27f3d40e4eb8028ac14e0ad25da46558cd94dd411070beb3d47c",
+            "parent_id": "5d6ca37c2041c236f61878de2796964da47294c219bf02b37f4a4e957adf3f4b",
+            "candidate_id": "8b95d5f0d7591e98815455da47c2064e33462ffc1d74957099eaddb6f2e4f964",
+            "resources": {
+              "loop_iterations": 157,
+              "operations": 5762728,
+              "statements": 667
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3629,
+                "minimum": -15.0,
+                "maximum": 15.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 5187,
+                "minimum": 0.0,
+                "maximum": 2048.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1987,
+                "minimum": 0.0,
+                "maximum": 4096.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1987,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1820,
+                "minimum": -8.0,
+                "maximum": 8.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 7603,
+                "minimum": -42.0,
+                "maximum": 6.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 488,
+                "minimum": -10.0,
+                "maximum": 9.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 251,
+                "minimum": -9.0,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -2061.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -4096.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 21,
+                "minimum": -1.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 179,
+                "minimum": -9.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -3.0,
+                "maximum": 66.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -59.099998474121094,
+                "maximum": -4.5
+              }
+            }
+          }
+        },
+        {
+          "step": 3,
+          "collection": {
+            "thread_id": "01a1a946-c70e-76e1-8e38-53a135a97252",
+            "usage": {
+              "input_tokens": 17083,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 12201,
+              "reasoning_output_tokens": 10358
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 407.60899999993853,
+            "prompt_transport": {
+              "bytes_written": 37372,
+              "sha256": "066ffb13921e52e4ced1180be05551a9dd82d4ae9eb703d0e9fad07328965dc9",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 20.469000000040978,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "00777328e0d72709bbe9bd51d14962fc6080ce22af1f96a0e48e2d1e318ffaa4",
+            "parent_id": "8b95d5f0d7591e98815455da47c2064e33462ffc1d74957099eaddb6f2e4f964",
+            "candidate_id": "2032cd3d1dbca875e5ffa0feb801f96e7e62a07d94fcdf9d191b85270257eed0",
+            "resources": {
+              "loop_iterations": 0,
+              "operations": 5918863,
+              "statements": 75
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3440,
+                "minimum": -15.0,
+                "maximum": 15.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 5823,
+                "minimum": -8.0,
+                "maximum": 2048.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1966,
+                "minimum": -4096.0,
+                "maximum": 4096.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1966,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 733,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 8477,
+                "minimum": -42.0,
+                "maximum": 9.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 488,
+                "minimum": -18.0,
+                "maximum": 1.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 230,
+                "minimum": -7.5,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 486,
+                "minimum": -2061.0,
+                "maximum": 1.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -8192.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 401,
+                "minimum": -6.0,
+                "maximum": 66.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -59.099998474121094,
+                "maximum": -4.5
+              }
+            }
+          }
+        },
+        {
+          "step": 4,
+          "collection": {
+            "thread_id": "01a1a94d-50e1-7310-9376-539248cf22c3",
+            "usage": {
+              "input_tokens": 19807,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 14657,
+              "reasoning_output_tokens": 13442
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 558.4220000000205,
+            "prompt_transport": {
+              "bytes_written": 43769,
+              "sha256": "c4e2178040e02b0eba8466e639b5332fd591c560e4bbd13ec36da7a8c85348cf",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 17.875,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "0a36e51833d8c996c099bb5ba80ed7fede0828ea341670fe4b6abd1d2a60d2f7",
+            "parent_id": "2032cd3d1dbca875e5ffa0feb801f96e7e62a07d94fcdf9d191b85270257eed0",
+            "candidate_id": "be42dfd0cccb491790ad76c696d684f20e404a702b99e4083dc98657d9396549",
+            "resources": {
+              "loop_iterations": 0,
+              "operations": 4014016,
+              "statements": 45
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3440,
+                "minimum": -15.0,
+                "maximum": 15.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 5166,
+                "minimum": 0.0,
+                "maximum": 2048.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1966,
+                "minimum": 0.0,
+                "maximum": 4096.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1966,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1151,
+                "minimum": -2.0,
+                "maximum": 8.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 8558,
+                "minimum": -42.0,
+                "maximum": 9.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 488,
+                "minimum": -18.0,
+                "maximum": 1.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 230,
+                "minimum": -7.5,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -2061.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -4096.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -9.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 401,
+                "minimum": -6.0,
+                "maximum": 66.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -59.099998474121094,
+                "maximum": -4.5
+              }
+            }
+          }
+        },
+        {
+          "step": 5,
+          "collection": {
+            "thread_id": "01a1a956-1dc9-7fc0-971e-c269b262a097",
+            "usage": {
+              "input_tokens": 21829,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 7902,
+              "reasoning_output_tokens": 7190
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 326.0470000000205,
+            "prompt_transport": {
+              "bytes_written": 48732,
+              "sha256": "859e14ff9c1fda3b98a1870c7063103497079b2a33125668ee756f97bd88f9e7",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 13.733999999938533,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "95529299152641aa341eee10fc87ecc35fbed1ca867ce41f9063dc871ed2f627",
+            "parent_id": "be42dfd0cccb491790ad76c696d684f20e404a702b99e4083dc98657d9396549",
+            "candidate_id": "4ab5edc7e32465f93b9c6934ef6be6bffee71a6e259a416df57c954fe6cbae1e",
+            "resources": {
+              "loop_iterations": 0,
+              "operations": 1760149,
+              "statements": 22
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3440,
+                "minimum": -15.0,
+                "maximum": 15.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 5166,
+                "minimum": 0.0,
+                "maximum": 2048.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1966,
+                "minimum": 0.0,
+                "maximum": 4096.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1966,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 4319,
+                "minimum": -8.0,
+                "maximum": 8.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 8558,
+                "minimum": -42.0,
+                "maximum": 9.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 488,
+                "minimum": -18.0,
+                "maximum": 1.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 230,
+                "minimum": -7.5,
+                "maximum": 16.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -2061.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -4096.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -9.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 401,
+                "minimum": -6.0,
+                "maximum": 66.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -59.099998474121094,
+                "maximum": -4.5
+              }
+            }
+          }
+        },
+        {
+          "step": 6,
+          "collection": {
+            "thread_id": "01a1a95b-4e80-73d3-89e6-354b95b0ffe0",
+            "usage": {
+              "input_tokens": 23295,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 11289,
+              "reasoning_output_tokens": 9678
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 445.76599999982864,
+            "prompt_transport": {
+              "bytes_written": 52271,
+              "sha256": "4194e93e46f26f29cc03117097afe3280545d0cb936f6e0384a38cbedda1c679",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 10.031999999890104,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "291a485a52d6e14e3b700ecf9d14eb822037b63b846c06a12bc2c0f9d564f78d",
+            "parent_id": "4ab5edc7e32465f93b9c6934ef6be6bffee71a6e259a416df57c954fe6cbae1e",
+            "candidate_id": "5e1fb8e6fab3f7e8a19b97b32e78a2af3b78faa0fbfbaf5a3f1ade4e696f8842",
+            "resources": {
+              "loop_iterations": 116,
+              "operations": 145133,
+              "statements": 394
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3602,
+                "minimum": -15.0,
+                "maximum": 15.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 5167,
+                "minimum": 0.0,
+                "maximum": 2048.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1967,
+                "minimum": 0.0,
+                "maximum": 4096.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1967,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 4551,
+                "minimum": -8.0,
+                "maximum": 8.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 8698,
+                "minimum": -42.0,
+                "maximum": 9.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 488,
+                "minimum": -18.0,
+                "maximum": 1.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 231,
+                "minimum": -7.5,
+                "maximum": 32.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -2061.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -4096.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 345,
+                "minimum": -9.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 401,
+                "minimum": -6.0,
+                "maximum": 66.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -59.099998474121094,
+                "maximum": -4.5
+              }
+            }
+          }
+        },
+        {
+          "step": 7,
+          "collection": {
+            "thread_id": "01a1a962-44a0-7013-b994-4b9360bc07df",
+            "usage": {
+              "input_tokens": 25756,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 4196,
+              "reasoning_output_tokens": 4142
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 175.48500000010245,
+            "prompt_transport": {
+              "bytes_written": 57614,
+              "sha256": "efba6ebb4889e43661d1593c400624852f865a5cd299fb0fdf93593a81170d1f",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "final"
+        }
+      ],
+      "termination": "author_final",
+      "final_sha256": "6bf256e3e4d26c7630fc3ec1c6783307cf33f587d0a06d250208b0e6494e0fc4"
+    },
+    {
+      "name": "1_python",
+      "draw": 1,
+      "arm": "python",
+      "status": "frozen",
+      "turns": [
+        {
+          "step": 0,
+          "collection": {
+            "thread_id": "01a1a964-f2ec-7fd0-9e69-76f369fa355a",
+            "usage": {
+              "input_tokens": 2372,
+              "cached_input_tokens": 2176,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 27281,
+              "reasoning_output_tokens": 23826
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 1121.34300000011,
+            "prompt_transport": {
+              "bytes_written": 7082,
+              "sha256": "4a488c942ea20d6596b5133be79b59532b7c74deeef80e99d6e4071ec56d66bc",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21780241400000033,
+            "stdout": "Saved explicit Go heuristic circuits; no forward passes or fitting.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 14333,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 233,
+                "minimum": -2.6500000953674316,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3177,
+                "minimum": -1.0,
+                "maximum": 5.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -8.0,
+                "maximum": 0.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 739,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1603,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2224,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2975,
+                "minimum": -1.399999976158142,
+                "maximum": 13.899999618530273
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 239,
+                "minimum": -3.0,
+                "maximum": 0.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 4496,
+                "minimum": -15.600000381469727,
+                "maximum": 3.7200000286102295
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 33,
+                "minimum": -5.340000152587891,
+                "maximum": 0.0
+              }
+            }
+          }
+        },
+        {
+          "step": 1,
+          "collection": {
+            "thread_id": "01a1a976-1e04-7c03-b182-ae7894cc2d50",
+            "usage": {
+              "input_tokens": 6760,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 10657,
+              "reasoning_output_tokens": 9136
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 472.9849999998696,
+            "prompt_transport": {
+              "bytes_written": 18234,
+              "sha256": "085fa948b79adcc20fb495edffb542470cb635c3b69260fb2b39e7dc7c6c8f18",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.217789051,
+            "stdout": "Added conservative low-liberty attacking pressure.\nPreserved enclosure functions by explicit coefficient factoring.\nNo forward passes, fitting, search, or gameplay queries.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 14333,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 233,
+                "minimum": -2.6500000953674316,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3960,
+                "minimum": -1.0,
+                "maximum": 5.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -8.0,
+                "maximum": 0.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 820,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1972,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2800,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 18393,
+                "minimum": -1.399999976158142,
+                "maximum": 9.899999618530273
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 482,
+                "minimum": -3.0,
+                "maximum": 2.2009999752044678
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 1158,
+                "minimum": -15.600000381469727,
+                "maximum": 3.7200000286102295
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -5.340000152587891,
+                "maximum": -1.9212000370025635
+              }
+            }
+          }
+        },
+        {
+          "step": 2,
+          "collection": {
+            "thread_id": "01a1a97d-641c-73e1-a023-9da89bd51607",
+            "usage": {
+              "input_tokens": 9036,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 14969,
+              "reasoning_output_tokens": 13824
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 654.9220000000205,
+            "prompt_transport": {
+              "bytes_written": 24826,
+              "sha256": "4cf2148fbb344af1cf82b18b91340e9b3a30373f3afe0b8a91fa9104b1d0e3f8",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.2177504950000002,
+            "stdout": "Strengthened explicit liberty proofs and added defensive pressure.\nNo forward passes, fitting, search, or gameplay queries.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3567,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 233,
+                "minimum": -3.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3294,
+                "minimum": -4.0,
+                "maximum": 7.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 820,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1972,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2800,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 18474,
+                "minimum": -1.399999976158142,
+                "maximum": 9.899999618530273
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 482,
+                "minimum": -3.0,
+                "maximum": 2.2009999752044678
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 1158,
+                "minimum": -15.600000381469727,
+                "maximum": 3.7200000286102295
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -5.340000152587891,
+                "maximum": -1.9212000370025635
+              }
+            }
+          }
+        },
+        {
+          "step": 3,
+          "collection": {
+            "thread_id": "01a1a987-70e2-7393-b820-725ba003da3b",
+            "usage": {
+              "input_tokens": 10887,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 8104,
+              "reasoning_output_tokens": 7447
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 350.3289999999106,
+            "prompt_transport": {
+              "bytes_written": 29968,
+              "sha256": "14eec63930573417e07a08c8f73aa716ac04e166571bfbd4e8c1e2bc782002e2",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.2180332909999998,
+            "stdout": "Added diminishing returns for repeated atari contacts.\nConstruction used coefficient edits only; no policy evaluation.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3567,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 233,
+                "minimum": -3.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3294,
+                "minimum": -4.0,
+                "maximum": 7.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 820,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1972,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2800,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 19302,
+                "minimum": -1.399999976158142,
+                "maximum": 9.899999618530273
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 482,
+                "minimum": -3.0,
+                "maximum": 2.2009999752044678
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 951,
+                "minimum": -15.600000381469727,
+                "maximum": 3.7200000286102295
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -5.340000152587891,
+                "maximum": -1.9212000370025635
+              }
+            }
+          }
+        },
+        {
+          "step": 4,
+          "collection": {
+            "thread_id": "01a1a98c-dbb4-72b2-acd2-8174396caf66",
+            "usage": {
+              "input_tokens": 12199,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 16036,
+              "reasoning_output_tokens": 15020
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 747.4680000001099,
+            "prompt_transport": {
+              "bytes_written": 33890,
+              "sha256": "e772e9d2141e3f7897f1d53edf0d05dc15d37ae2c52dd137df0889e2a3586af8",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21858746999999967,
+            "stdout": "Added 16 straight-chain liberty circuits using spare units.\nExisting scoring coefficients unchanged.\nNo forward passes, fitting, search, or gameplay queries.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3567,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 233,
+                "minimum": -3.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3454,
+                "minimum": -20.0,
+                "maximum": 7.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": 0.0,
+                "maximum": 103.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 836,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": 0.0,
+                "maximum": 2.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2404,
+                "minimum": -1.0,
+                "maximum": 10.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": -51.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3312,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 19302,
+                "minimum": -1.399999976158142,
+                "maximum": 9.899999618530273
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 482,
+                "minimum": -3.0,
+                "maximum": 2.2009999752044678
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 951,
+                "minimum": -15.600000381469727,
+                "maximum": 3.7200000286102295
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -5.340000152587891,
+                "maximum": -1.9212000370025635
+              }
+            }
+          }
+        },
+        {
+          "step": 5,
+          "collection": {
+            "thread_id": "01a1a998-5235-79f0-8ab4-cb94ad153b5b",
+            "usage": {
+              "input_tokens": 13928,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 13000,
+              "reasoning_output_tokens": 11731
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 602.2970000000205,
+            "prompt_transport": {
+              "bytes_written": 39231,
+              "sha256": "69c8d8f6ec8009d6e28ef570c8acb274724e620493f6dd936c7858cfeef2f463",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21812515799999987,
+            "stdout": "Added 16 early boundary-liberty certificates.\nAdded 16 certified friendly-support circuits.\nNo forward passes, fitting, search, or gameplay queries.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3879,
+                "minimum": -1.0,
+                "maximum": 8.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 249,
+                "minimum": -25.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3638,
+                "minimum": -20.0,
+                "maximum": 7.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": 0.0,
+                "maximum": 103.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 836,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": 0.0,
+                "maximum": 2.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2404,
+                "minimum": -1.0,
+                "maximum": 10.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": -51.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3684,
+                "minimum": -1.0,
+                "maximum": 11.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": -46.0,
+                "maximum": 0.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 19454,
+                "minimum": -2.0,
+                "maximum": 9.899999618530273
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 482,
+                "minimum": -3.0,
+                "maximum": 2.2009999752044678
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 951,
+                "minimum": -15.600000381469727,
+                "maximum": 3.7200000286102295
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -5.340000152587891,
+                "maximum": -1.9212000370025635
+              }
+            }
+          }
+        },
+        {
+          "step": 6,
+          "collection": {
+            "thread_id": "01a1a9a1-9196-71c2-ad00-ab9eccd3e2fd",
+            "usage": {
+              "input_tokens": 15945,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 13893,
+              "reasoning_output_tokens": 12418
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 608.5319999998901,
+            "prompt_transport": {
+              "bytes_written": 45341,
+              "sha256": "fcad73dec48f3f00f227fd20c651f363ec6fafbf93d192c5cd800164c5e21dc6",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21873519499999983,
+            "stdout": "Extended connected-chain liberty certificates.\nScoring weights unchanged.\nCoefficient construction only; no forward passes or evaluation.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3879,
+                "minimum": -1.0,
+                "maximum": 8.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 249,
+                "minimum": -25.0,
+                "maximum": 1.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3862,
+                "minimum": -128.0,
+                "maximum": 7.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": 0.0,
+                "maximum": 642.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 836,
+                "minimum": -1.0,
+                "maximum": 1.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": 0.0,
+                "maximum": 1.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2916,
+                "minimum": -1.0,
+                "maximum": 59.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": -286.0,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 3684,
+                "minimum": -1.0,
+                "maximum": 11.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 16,
+                "minimum": -46.0,
+                "maximum": 0.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 19454,
+                "minimum": -2.0,
+                "maximum": 9.899999618530273
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 482,
+                "minimum": -3.0,
+                "maximum": 2.2009999752044678
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 951,
+                "minimum": -15.600000381469727,
+                "maximum": 3.7200000286102295
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -5.340000152587891,
+                "maximum": -1.9212000370025635
+              }
+            }
+          }
+        },
+        {
+          "step": 7,
+          "collection": {
+            "thread_id": "01a1a9aa-e8de-7a82-a517-35b71dfe3f47",
+            "usage": {
+              "input_tokens": 18191,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1590,
+              "reasoning_output_tokens": 1533
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 80.70299999997951,
+            "prompt_transport": {
+              "bytes_written": 52608,
+              "sha256": "09bab5130167ec1c8e698721d631d8267e2a582a9ba92bcac9185c9ca076236d",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "final"
+        }
+      ],
+      "termination": "author_final",
+      "final_sha256": "bbd1efd4f1c989a5f60438b27443e69bb27147677b242519938ac62e95ff9a9d"
+    },
+    {
+      "name": "2_python",
+      "draw": 2,
+      "arm": "python",
+      "status": "frozen",
+      "turns": [
+        {
+          "step": 0,
+          "collection": {
+            "thread_id": "01a1a9d2-0378-7352-b645-97fad237b378",
+            "usage": {
+              "input_tokens": 2378,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 17984,
+              "reasoning_output_tokens": 14502
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 776.2649999998976,
+            "prompt_transport": {
+              "bytes_written": 7082,
+              "sha256": "4a488c942ea20d6596b5133be79b59532b7c74deeef80e99d6e4071ec56d66bc",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21775489500000011,
+            "stdout": "Constructed symmetric liberty, safety, shape, territory and passing circuits.\nNonzero coefficients: 42456\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3277,
+                "minimum": -1.0,
+                "maximum": 8.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 326,
+                "minimum": -7.0,
+                "maximum": 45.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1967,
+                "minimum": 0.0,
+                "maximum": 32.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -32.0,
+                "maximum": 0.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1553,
+                "minimum": -1.0,
+                "maximum": 128.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.25,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16127,
+                "minimum": -1.649999976158142,
+                "maximum": 1.649999976158142
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -2.0999999046325684,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16678,
+                "minimum": -15.0,
+                "maximum": 15.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 322,
+                "minimum": -7.5,
+                "maximum": 64.3499984741211
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 819,
+                "minimum": -3.5,
+                "maximum": 1.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 4,
+                "minimum": -12.0,
+                "maximum": 0.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 491,
+                "minimum": -5.849999904632568,
+                "maximum": 3.640000104904175
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -83.19999694824219,
+                "maximum": -1.2999999523162842
+              }
+            }
+          }
+        },
+        {
+          "step": 1,
+          "collection": {
+            "thread_id": "01a1a9dd-eaba-7ac3-99aa-365a36ed9b51",
+            "usage": {
+              "input_tokens": 6823,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 13917,
+              "reasoning_output_tokens": 13045
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 537.2189999998081,
+            "prompt_transport": {
+              "bytes_written": 19604,
+              "sha256": "79215ebe5cd3a186f76388c84dfec8f82f08578164a07196cb796e07856ca9c0",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.2181202390000001,
+            "stdout": "Updated tactical thresholds, escape-credit calibration, and passing.\nConstruction used coefficient edits only; no policy evaluations.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3277,
+                "minimum": -1.0,
+                "maximum": 8.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 326,
+                "minimum": -7.0,
+                "maximum": 45.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1967,
+                "minimum": 0.0,
+                "maximum": 32.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -32.0,
+                "maximum": 0.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1553,
+                "minimum": -1.0,
+                "maximum": 128.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.25,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16127,
+                "minimum": -1.649999976158142,
+                "maximum": 1.649999976158142
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -2.0999999046325684,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 17290,
+                "minimum": -32.0,
+                "maximum": 15.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 484,
+                "minimum": -7.5,
+                "maximum": 64.3499984741211
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 981,
+                "minimum": -3.5,
+                "maximum": 1.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 4,
+                "minimum": -12.0,
+                "maximum": 0.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 493,
+                "minimum": -5.849999904632568,
+                "maximum": 3.380000114440918
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -83.19999694824219,
+                "maximum": -2.5999999046325684
+              }
+            }
+          }
+        },
+        {
+          "step": 2,
+          "collection": {
+            "thread_id": "01a1a9e6-2bf7-70c1-8714-38375619f254",
+            "usage": {
+              "input_tokens": 8396,
+              "cached_input_tokens": 8192,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 8488,
+              "reasoning_output_tokens": 7768
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 379.8430000001099,
+            "prompt_transport": {
+              "bytes_written": 23979,
+              "sha256": "c0d5349e41b41a2d8d5bb5312e0233867a0cacdcd6953240e47546470de7c359",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.2189408049999999,
+            "stdout": "Refined attack, preventive-defense, contact, and true-eye circuits.\nNo training, search, simulations, or neural evaluations performed.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3277,
+                "minimum": -1.0,
+                "maximum": 8.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 326,
+                "minimum": -7.0,
+                "maximum": 45.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1967,
+                "minimum": 0.0,
+                "maximum": 32.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -32.0,
+                "maximum": 0.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1553,
+                "minimum": -1.0,
+                "maximum": 128.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.25,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16127,
+                "minimum": -1.649999976158142,
+                "maximum": 1.649999976158142
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -2.0999999046325684,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 17866,
+                "minimum": -32.0,
+                "maximum": 15.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 484,
+                "minimum": -7.5,
+                "maximum": 64.3499984741211
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 981,
+                "minimum": -3.5,
+                "maximum": 1.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 4,
+                "minimum": -12.0,
+                "maximum": 0.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 493,
+                "minimum": -5.849999904632568,
+                "maximum": 2.3399999141693115
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -83.19999694824219,
+                "maximum": -2.5999999046325684
+              }
+            }
+          }
+        },
+        {
+          "step": 3,
+          "collection": {
+            "thread_id": "01a1a9ec-0a70-76b3-b892-9e75efae5199",
+            "usage": {
+              "input_tokens": 9794,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 8429,
+              "reasoning_output_tokens": 7768
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 368.68699999991804,
+            "prompt_transport": {
+              "bytes_written": 28018,
+              "sha256": "9b8b70e8751f12d0271cdad1d63b9132bbc2bcaf6ac3f98f9855e2e1ccfef3bb",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21844712999999993,
+            "stdout": "Added bounded tactical relief using two freed spatial channels.\nNo training, search, simulation, or neural evaluations performed.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3277,
+                "minimum": -1.0,
+                "maximum": 8.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 326,
+                "minimum": -7.0,
+                "maximum": 45.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1967,
+                "minimum": 0.0,
+                "maximum": 32.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -32.0,
+                "maximum": 0.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1553,
+                "minimum": -1.0,
+                "maximum": 128.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.25,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16127,
+                "minimum": -1.649999976158142,
+                "maximum": 1.649999976158142
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -2.0999999046325684,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 17866,
+                "minimum": -32.0,
+                "maximum": 15.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 484,
+                "minimum": -7.5,
+                "maximum": 64.3499984741211
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1305,
+                "minimum": -4.5,
+                "maximum": 1.2000000476837158
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 247,
+                "minimum": -12.0,
+                "maximum": 64.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 493,
+                "minimum": -5.460000038146973,
+                "maximum": 2.3399999141693115
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -104.0,
+                "maximum": -2.5999999046325684
+              }
+            }
+          }
+        },
+        {
+          "step": 4,
+          "collection": {
+            "thread_id": "01a1a9f1-b8f9-76e2-9f71-e058fb88e481",
+            "usage": {
+              "input_tokens": 11105,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 8395,
+              "reasoning_output_tokens": 8081
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 389.79699999978766,
+            "prompt_transport": {
+              "bytes_written": 31688,
+              "sha256": "dc6e6b2d5861f310277636a0ca39d96620fff29aa89e5014e08a65b6b25bd653",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 0.21828253900000005,
+            "stdout": "Refined passing aggregates; placement logits unchanged.\nCoefficient construction only; no neural evaluations performed.\n",
+            "stderr": "",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 3277,
+                "minimum": -1.0,
+                "maximum": 8.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 326,
+                "minimum": -7.0,
+                "maximum": 45.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1967,
+                "minimum": 0.0,
+                "maximum": 32.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -32.0,
+                "maximum": 0.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1553,
+                "minimum": -1.0,
+                "maximum": 128.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.25,
+                "maximum": 0.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 16127,
+                "minimum": -1.649999976158142,
+                "maximum": 1.649999976158142
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -2.0999999046325684,
+                "maximum": 0.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 17866,
+                "minimum": -32.0,
+                "maximum": 15.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 484,
+                "minimum": -7.5,
+                "maximum": 64.3499984741211
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1305,
+                "minimum": -4.5,
+                "maximum": 1.2000000476837158
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 248,
+                "minimum": -12.0,
+                "maximum": 64.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 574,
+                "minimum": -5.460000038146973,
+                "maximum": 2.3399999141693115
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -104.0,
+                "maximum": -2.5999999046325684
+              }
+            }
+          }
+        },
+        {
+          "step": 5,
+          "collection": {
+            "thread_id": "01a1a9f7-ba44-73a3-9982-dd8df8e25bce",
+            "usage": {
+              "input_tokens": 12044,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 3070,
+              "reasoning_output_tokens": 3015
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 139.9220000000205,
+            "prompt_transport": {
+              "bytes_written": 34314,
+              "sha256": "5200a5d5c30895d4c459093f19b1cd59464125e97f62e989dbef964b1f1e7006",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "final"
+        }
+      ],
+      "termination": "author_final",
+      "final_sha256": "bbc94c24a689d507980b19a4b2a0914aa8b1e391bc7998f26e07ad0d409fa533"
+    },
+    {
+      "name": "2_wspl",
+      "draw": 2,
+      "arm": "wspl",
+      "status": "frozen",
+      "turns": [
+        {
+          "step": 0,
+          "collection": {
+            "thread_id": "01a1a9f9-e07c-7a20-80bd-ed5f10b3e6db",
+            "usage": {
+              "input_tokens": 2381,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 17212,
+              "reasoning_output_tokens": 13791
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 618.6720000000205,
+            "prompt_transport": {
+              "bytes_written": 7080,
+              "sha256": "9f97df8563c6958a7c5a19237493e0204864bdb8c1721efabd11ae3e38ba5cc6",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 26.530999999959022,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "962fa5b98a3b4ce04d567c720d5be39dcf834fa6ec714ff49ef241b646ef30eb",
+            "parent_id": "6d8757ccb99946b3f628dd804387cdf80e9626ed6bdc517db9eae4c2fd7c4883",
+            "candidate_id": "91847be81940fefe93224350a805ba66eb103c1dac8b5954472fb4bcdced794b",
+            "resources": {
+              "loop_iterations": 2859,
+              "operations": 6381347,
+              "statements": 17010
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 5401,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1677,
+                "minimum": -1.0,
+                "maximum": 12.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1227,
+                "minimum": 0.0,
+                "maximum": 48.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1227,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2932,
+                "minimum": -2.0,
+                "maximum": 2.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 732,
+                "minimum": -4.0,
+                "maximum": 1.0
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 568,
+                "minimum": -10.0,
+                "maximum": 8.5
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 227,
+                "minimum": -2.0,
+                "maximum": 20.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -13.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 162,
+                "minimum": -48.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 154,
+                "minimum": -2.0,
+                "maximum": 0.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 0,
+                "minimum": 0.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -20.0,
+                "maximum": -7.0
+              }
+            }
+          }
+        },
+        {
+          "step": 1,
+          "collection": {
+            "thread_id": "01a1aa03-bfb8-73c3-b0bb-5b26d078ef0f",
+            "usage": {
+              "input_tokens": 6834,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 15557,
+              "reasoning_output_tokens": 13738
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 598.9220000000205,
+            "prompt_transport": {
+              "bytes_written": 16715,
+              "sha256": "f2f0acda6f1247056c6c2779e9c3b77a1e4e8fe47b866ccbdae999d7f2d08cf3",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 18.07799999997951,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "16009edaa7ec59d72e976312447387cb1f46cdb9e4831a1fbb37516bdd691623",
+            "parent_id": "91847be81940fefe93224350a805ba66eb103c1dac8b5954472fb4bcdced794b",
+            "candidate_id": "15bff5fa5beb6a12d70849e0e4fd52cb15c4dd0a143d23ee84aca224cf02efbf",
+            "resources": {
+              "loop_iterations": 981,
+              "operations": 3186724,
+              "statements": 10138
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 5657,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1677,
+                "minimum": 0.0,
+                "maximum": 12.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1596,
+                "minimum": 0.0,
+                "maximum": 48.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1596,
+                "minimum": 0.0,
+                "maximum": 128.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2554,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2838,
+                "minimum": -1.0,
+                "maximum": 10.5
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 568,
+                "minimum": -11.0,
+                "maximum": 2.4000000953674316
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 227,
+                "minimum": -2.0,
+                "maximum": 20.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -14.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -48.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -128.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 158,
+                "minimum": -2.0,
+                "maximum": 4.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -4.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -20.0,
+                "maximum": -7.0
+              }
+            }
+          }
+        },
+        {
+          "step": 2,
+          "collection": {
+            "thread_id": "01a1aa0d-2b71-7993-93f5-07026462983e",
+            "usage": {
+              "input_tokens": 9538,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 15999,
+              "reasoning_output_tokens": 14863
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 577.0160000000615,
+            "prompt_transport": {
+              "bytes_written": 22988,
+              "sha256": "67ab5739f2e296f24ef74c2bc5d966760dca75871e69f727e0cf094ebbc1d0fe",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 16.562000000150874,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "3f3ad9c5481414aa0cb703bd6272637df226fd55f1a27e8b22ddb109866b70ed",
+            "parent_id": "15bff5fa5beb6a12d70849e0e4fd52cb15c4dd0a143d23ee84aca224cf02efbf",
+            "candidate_id": "a517f490cef6102442dbbfa8ba382e4bd406b3dae1d74c0505f95f5fec77b0b6",
+            "resources": {
+              "loop_iterations": 7539,
+              "operations": 1466466,
+              "statements": 18529
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 5657,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2989,
+                "minimum": 0.0,
+                "maximum": 12.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 5196,
+                "minimum": -0.44999998807907104,
+                "maximum": 128.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1596,
+                "minimum": 0.0,
+                "maximum": 512.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2554,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2838,
+                "minimum": -1.0,
+                "maximum": 10.5
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 568,
+                "minimum": -11.0,
+                "maximum": 2.4000000953674316
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 227,
+                "minimum": -2.0,
+                "maximum": 20.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -17.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.0,
+                "maximum": 20.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -512.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 158,
+                "minimum": -2.0,
+                "maximum": 4.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 243,
+                "minimum": -4.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -20.0,
+                "maximum": -7.0
+              }
+            }
+          }
+        },
+        {
+          "step": 3,
+          "collection": {
+            "thread_id": "01a1aa16-3bb9-7a42-93a5-60d0d4357a9e",
+            "usage": {
+              "input_tokens": 11509,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 13774,
+              "reasoning_output_tokens": 12948
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 585.2969999997877,
+            "prompt_transport": {
+              "bytes_written": 27949,
+              "sha256": "443292af51f8cb9394ed9d435315bebde572a7cc93db1e51781a9b8eff16fc65",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 14.109999999869615,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "6f5f5803977481b3134eba0a50c9ca5139f0fc2a9e0ee9b8fe51f9e2dc7b639a",
+            "parent_id": "a517f490cef6102442dbbfa8ba382e4bd406b3dae1d74c0505f95f5fec77b0b6",
+            "candidate_id": "b0cfe2bc38b31fa9093cf13e02a4e1c6dd44715653795829f9a63d61d5eedb93",
+            "resources": {
+              "loop_iterations": 7083,
+              "operations": 1021308,
+              "statements": 15536
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 5657,
+                "minimum": -1.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2989,
+                "minimum": 0.0,
+                "maximum": 12.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1965,
+                "minimum": 0.0,
+                "maximum": 128.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1965,
+                "minimum": 0.0,
+                "maximum": 512.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 6073,
+                "minimum": -8.0,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2919,
+                "minimum": -1.0,
+                "maximum": 8.100000381469727
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 568,
+                "minimum": -11.0,
+                "maximum": 11.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 227,
+                "minimum": -2.0,
+                "maximum": 20.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -17.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -512.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 239,
+                "minimum": -2.0,
+                "maximum": 20.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -10.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -20.0,
+                "maximum": -7.0
+              }
+            }
+          }
+        },
+        {
+          "step": 4,
+          "collection": {
+            "thread_id": "01a1aa1f-6319-7fe3-b514-1dde61bf16ad",
+            "usage": {
+              "input_tokens": 13138,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 5328,
+              "reasoning_output_tokens": 4537
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 218.40599999995902,
+            "prompt_transport": {
+              "bytes_written": 32170,
+              "sha256": "ff19480c4b3b1b3fc21b47383011199d34f28aa1d13153dedc7f0cf3761cde40",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 11.359999999869615,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "429906d1530979365d8295490ae79337642ffb6723e619e78349bba3025f5925",
+            "parent_id": "b0cfe2bc38b31fa9093cf13e02a4e1c6dd44715653795829f9a63d61d5eedb93",
+            "candidate_id": "51d5bf83c944e4097c71dc548c9b5ce17405fae877e6716fda96c8cbb63211d5",
+            "resources": {
+              "loop_iterations": 978,
+              "operations": 569010,
+              "statements": 2997
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 2701,
+                "minimum": -4.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2477,
+                "minimum": -1.0,
+                "maximum": 12.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1965,
+                "minimum": 0.0,
+                "maximum": 128.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1965,
+                "minimum": 0.0,
+                "maximum": 512.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 6073,
+                "minimum": -8.0,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2919,
+                "minimum": -1.0,
+                "maximum": 8.100000381469727
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 568,
+                "minimum": -11.0,
+                "maximum": 11.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 227,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -13.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -512.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 239,
+                "minimum": -2.0,
+                "maximum": 20.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -10.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -20.0,
+                "maximum": -7.0
+              }
+            }
+          }
+        },
+        {
+          "step": 5,
+          "collection": {
+            "thread_id": "01a1aa22-e623-7441-8a23-0a5d77cb5c68",
+            "usage": {
+              "input_tokens": 14719,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 5315,
+              "reasoning_output_tokens": 4922
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 213.34400000004098,
+            "prompt_transport": {
+              "bytes_written": 36238,
+              "sha256": "5274bf07c4b93254c69c9cabaf91dcb8d0d917a944366d8e1c8da658b14168d4",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 9.891000000061467,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "8edd3749d33d18fe92e0f77614bd2fcface1f58e3a5526e1eb0fae3713db11c0",
+            "parent_id": "51d5bf83c944e4097c71dc548c9b5ce17405fae877e6716fda96c8cbb63211d5",
+            "candidate_id": "6ee8ec39e77276fea74571b24250faf54c65a458a1467d8dee1ad34753b7fd15",
+            "resources": {
+              "loop_iterations": 522,
+              "operations": 24261,
+              "statements": 1137
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 2701,
+                "minimum": -4.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2477,
+                "minimum": -1.0,
+                "maximum": 12.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2127,
+                "minimum": 0.0,
+                "maximum": 128.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1965,
+                "minimum": 0.0,
+                "maximum": 512.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 6073,
+                "minimum": -16.0,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2919,
+                "minimum": -1.0,
+                "maximum": 8.100000381469727
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 568,
+                "minimum": -11.0,
+                "maximum": 11.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 227,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -13.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -512.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 239,
+                "minimum": -2.0,
+                "maximum": 20.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -10.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -20.0,
+                "maximum": -7.0
+              }
+            }
+          }
+        },
+        {
+          "step": 6,
+          "collection": {
+            "thread_id": "01a1aa26-4fa2-73d0-beea-c2df13e43503",
+            "usage": {
+              "input_tokens": 15862,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 11246,
+              "reasoning_output_tokens": 10876
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 491.655999999959,
+            "prompt_transport": {
+              "bytes_written": 39233,
+              "sha256": "e8f8afee71532bbd57180e306e4392fd98eb1d665838660fdf9f031c1216fa6b",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "accepted",
+          "feedback": {
+            "exit_code": 0,
+            "seconds": 9.780999999959022,
+            "stdout": "",
+            "stderr": "",
+            "plan_sha256": "b036d400e8b8688fa186e3fc3427fe2ba63924ead3e7f15525a9b1f72e4213cc",
+            "parent_id": "6ee8ec39e77276fea74571b24250faf54c65a458a1467d8dee1ad34753b7fd15",
+            "candidate_id": "8eb8c2c8b9fa72c4c6f1b8d2f41729b2c1634a45a128d01e64ad26548551afe0",
+            "resources": {
+              "loop_iterations": 472,
+              "operations": 16877,
+              "statements": 523
+            },
+            "placements": 0,
+            "numeric_profile": "exact_to_storage",
+            "accepted": true,
+            "weights": {
+              "W1": {
+                "shape": [
+                  243,
+                  512
+                ],
+                "nonzero": 2701,
+                "minimum": -4.0,
+                "maximum": 4.0
+              },
+              "W2": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2477,
+                "minimum": -1.0,
+                "maximum": 12.0
+              },
+              "W3": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2127,
+                "minimum": 0.0,
+                "maximum": 128.0
+              },
+              "W4": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 1965,
+                "minimum": 0.0,
+                "maximum": 512.0
+              },
+              "W5": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 6073,
+                "minimum": -16.0,
+                "maximum": 1.0
+              },
+              "W6": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "nonzero": 2919,
+                "minimum": -1.0,
+                "maximum": 8.100000381469727
+              },
+              "W7": {
+                "shape": [
+                  512,
+                  82
+                ],
+                "nonzero": 568,
+                "minimum": -11.0,
+                "maximum": 11.0
+              },
+              "b1": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 227,
+                "minimum": -2.0,
+                "maximum": 1.0
+              },
+              "b2": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -13.0,
+                "maximum": 0.0
+              },
+              "b3": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -128.0,
+                "maximum": 0.0
+              },
+              "b4": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -512.0,
+                "maximum": 0.0
+              },
+              "b5": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 239,
+                "minimum": -2.0,
+                "maximum": 20.0
+              },
+              "b6": {
+                "shape": [
+                  512
+                ],
+                "nonzero": 324,
+                "minimum": -10.0,
+                "maximum": 0.0
+              },
+              "b7": {
+                "shape": [
+                  82
+                ],
+                "nonzero": 82,
+                "minimum": -20.0,
+                "maximum": -7.0
+              }
+            }
+          }
+        },
+        {
+          "step": 7,
+          "collection": {
+            "thread_id": "01a1aa2d-f803-7781-831c-6e3dd3189bd1",
+            "usage": {
+              "input_tokens": 16979,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 5746,
+              "reasoning_output_tokens": 5696
+            },
+            "agent_messages": 1,
+            "tool_calls": 0,
+            "active_seconds": 253.25,
+            "prompt_transport": {
+              "bytes_written": 41901,
+              "sha256": "fe7dd2e71fc64ad8f8cf05cbbe4f69b3476c48642bee515281d91d2594c1260e",
+              "transport": "stdin",
+              "server_receipt_verified": false
+            }
+          },
+          "status": "final"
+        }
+      ],
+      "termination": "author_final",
+      "final_sha256": "1f9c8bebdfc1a26225dc1251da1eb0b100417425fbd490ce9a99a5d15c320e3f"
+    }
+  ],
+  "active_seconds": 6714.53199999989,
+  "manifest_sha256": "cf96be2cc6651cd382e27f77f7cfdc347b98a5a124e9e924c587e569fe3eb108",
+  "evaluating": "zero_control",
+  "evaluations": {
+    "0_python": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 948,
+          "win_rate": 0.474,
+          "ci95_wilson": [
+            0.45218735524878717,
+            0.4959123312098378
+          ],
+          "color_wins": [
+            389,
+            559
+          ],
+          "mean_length": 100.6985
+        },
+        "1": {
+          "games": 2000,
+          "wins": 689,
+          "win_rate": 0.3445,
+          "ci95_wilson": [
+            0.32398954487377196,
+            0.3656066568306976
+          ],
+          "color_wins": [
+            262,
+            427
+          ],
+          "mean_length": 97.9725
+        },
+        "2": {
+          "games": 2000,
+          "wins": 914,
+          "win_rate": 0.457,
+          "ci95_wilson": [
+            0.4352713350530484,
+            0.47889353101313925
+          ],
+          "color_wins": [
+            376,
+            538
+          ],
+          "mean_length": 102.83
+        }
+      },
+      "mean_win_rate": 0.4251666666666667,
+      "active_seconds": 60.315319152
+    },
+    "0_wspl": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 830,
+          "win_rate": 0.415,
+          "ci95_wilson": [
+            0.39358894368635533,
+            0.43673695435145754
+          ],
+          "color_wins": [
+            303,
+            527
+          ],
+          "mean_length": 102.253
+        },
+        "1": {
+          "games": 2000,
+          "wins": 639,
+          "win_rate": 0.3195,
+          "ci95_wilson": [
+            0.29942731808054834,
+            0.3402647359879839
+          ],
+          "color_wins": [
+            228,
+            411
+          ],
+          "mean_length": 100.6045
+        },
+        "2": {
+          "games": 2000,
+          "wins": 828,
+          "win_rate": 0.414,
+          "ci95_wilson": [
+            0.39259844495741614,
+            0.43573128717495924
+          ],
+          "color_wins": [
+            324,
+            504
+          ],
+          "mean_length": 103.3045
+        }
+      },
+      "mean_win_rate": 0.3828333333333333,
+      "active_seconds": 61.68787209000001
+    },
+    "1_wspl": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 715,
+          "win_rate": 0.3575,
+          "ci95_wilson": [
+            0.3367872695395422,
+            0.37875908893561483
+          ],
+          "color_wins": [
+            183,
+            532
+          ],
+          "mean_length": 101.4545
+        },
+        "1": {
+          "games": 2000,
+          "wins": 470,
+          "win_rate": 0.235,
+          "ci95_wilson": [
+            0.2169366617147952,
+            0.2540793733442688
+          ],
+          "color_wins": [
+            143,
+            327
+          ],
+          "mean_length": 97.7215
+        },
+        "2": {
+          "games": 2000,
+          "wins": 670,
+          "win_rate": 0.335,
+          "ci95_wilson": [
+            0.3146482151175497,
+            0.35598441048526375
+          ],
+          "color_wins": [
+            190,
+            480
+          ],
+          "mean_length": 101.3915
+        }
+      },
+      "mean_win_rate": 0.30916666666666665,
+      "active_seconds": 61.308838821999984
+    },
+    "1_python": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 759,
+          "win_rate": 0.3795,
+          "ci95_wilson": [
+            0.35848296481803094,
+            0.4009790435767509
+          ],
+          "color_wins": [
+            271,
+            488
+          ],
+          "mean_length": 94.1945
+        },
+        "1": {
+          "games": 2000,
+          "wins": 503,
+          "win_rate": 0.2515,
+          "ci95_wilson": [
+            0.23297357642562866,
+            0.270979196073154
+          ],
+          "color_wins": [
+            172,
+            331
+          ],
+          "mean_length": 90.2215
+        },
+        "2": {
+          "games": 2000,
+          "wins": 698,
+          "win_rate": 0.349,
+          "ci95_wilson": [
+            0.32841760262465747,
+            0.3701613456542808
+          ],
+          "color_wins": [
+            300,
+            398
+          ],
+          "mean_length": 93.9215
+        }
+      },
+      "mean_win_rate": 0.32666666666666666,
+      "active_seconds": 59.324308126999995
+    },
+    "2_python": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 512,
+          "win_rate": 0.256,
+          "ci95_wilson": [
+            0.23735369946659707,
+            0.27558181960665434
+          ],
+          "color_wins": [
+            157,
+            355
+          ],
+          "mean_length": 96.934
+        },
+        "1": {
+          "games": 2000,
+          "wins": 318,
+          "win_rate": 0.159,
+          "ci95_wilson": [
+            0.14362957550964012,
+            0.17567785073617437
+          ],
+          "color_wins": [
+            94,
+            224
+          ],
+          "mean_length": 93.5495
+        },
+        "2": {
+          "games": 2000,
+          "wins": 449,
+          "win_rate": 0.2245,
+          "ci95_wilson": [
+            0.20675148405284127,
+            0.24330480899912904
+          ],
+          "color_wins": [
+            150,
+            299
+          ],
+          "mean_length": 96.014
+        }
+      },
+      "mean_win_rate": 0.2131666666666667,
+      "active_seconds": 59.19479857900001
+    },
+    "2_wspl": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 1155,
+          "win_rate": 0.5775,
+          "ci95_wilson": [
+            0.5557234463021639,
+            0.5989794113692419
+          ],
+          "color_wins": [
+            505,
+            650
+          ],
+          "mean_length": 110.4925
+        },
+        "1": {
+          "games": 2000,
+          "wins": 834,
+          "win_rate": 0.417,
+          "ci95_wilson": [
+            0.39557021501833134,
+            0.4387480148303565
+          ],
+          "color_wins": [
+            351,
+            483
+          ],
+          "mean_length": 106.9645
+        },
+        "2": {
+          "games": 2000,
+          "wins": 1140,
+          "win_rate": 0.57,
+          "ci95_wilson": [
+            0.5481889458364095,
+            0.591542667544215
+          ],
+          "color_wins": [
+            526,
+            614
+          ],
+          "mean_length": 111.4265
+        }
+      },
+      "mean_win_rate": 0.5215,
+      "active_seconds": 59.603783604
+    },
+    "zero_control": {
+      "status": "complete",
+      "summaries": {
+        "0": {
+          "games": 2000,
+          "wins": 41,
+          "win_rate": 0.0205,
+          "ci95_wilson": [
+            0.01514715886374858,
+            0.02769128947897298
+          ],
+          "color_wins": [
+            23,
+            18
+          ],
+          "mean_length": 118.1735
+        },
+        "1": {
+          "games": 2000,
+          "wins": 28,
+          "win_rate": 0.014,
+          "ci95_wilson": [
+            0.009703783146220175,
+            0.020159586811157672
+          ],
+          "color_wins": [
+            14,
+            14
+          ],
+          "mean_length": 119.2825
+        },
+        "2": {
+          "games": 2000,
+          "wins": 28,
+          "win_rate": 0.014,
+          "ci95_wilson": [
+            0.009703783146220175,
+            0.020159586811157672
+          ],
+          "color_wins": [
+            13,
+            15
+          ],
+          "mean_length": 119.869
+        }
+      },
+      "mean_win_rate": 0.016166666666666666,
+      "active_seconds": 59.40812847900003
+    }
+  }
+}

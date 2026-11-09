@@ -1,0 +1,2 @@
+FINAL
+Retain the current analytic weights: conservative liberty certificates, capture and rescue priorities, self-atari penalties, false-eye handling, and phase-dependent opening preferences. No training, search, or policy evaluation was used.

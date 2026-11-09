@@ -1,0 +1,1247 @@
+{
+  "status": "passed",
+  "read_only": true,
+  "new_model_forwards": 0,
+  "new_author_calls": 0,
+  "source_sha256": "e76cfb7c89cc928efde23d2876ebcd014da146f48d0f1c20e8d6a78875d76412",
+  "final_sha256": "9c1d49e03fe7bf97749f526319a6060e44e0a9d977f48f783c552e9c56cc16ad",
+  "independent_weight_reconstruction_bit_identical": true,
+  "key_unchanged": true,
+  "top_singular_values": [
+    5.667130977848862,
+    1.4146667027364452,
+    6.89351335105685e-07,
+    3.9959677328281376e-07,
+    3.8586795761315863e-07,
+    3.7579817221385417e-07
+  ],
+  "top_two_energy": 0.9999999999994857,
+  "tail_frobenius": 4.195321207437845e-06,
+  "relative_weight_change": 0.049899999970950695,
+  "repair_anchors": [
+    {
+      "answerKey": "B",
+      "choices": {
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "text": [
+          "respiration",
+          "osmosis",
+          "mitosis",
+          "condensation"
+        ]
+      },
+      "group": "retention",
+      "id": "Mercury_7083388",
+      "question": "Which term best describes the movement of water through cell membranes?",
+      "source_split": "easy"
+    },
+    {
+      "answerKey": "C",
+      "choices": {
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "text": [
+          "rock cycle",
+          "water cycle",
+          "carbon cycle",
+          "nitrogen cycle"
+        ]
+      },
+      "group": "retention",
+      "id": "Mercury_7015715",
+      "question": "What cycle is most directly affected by the combustion of fossil fuels?",
+      "source_split": "easy"
+    }
+  ],
+  "relative_to_convection_logprob_shifts": {
+    "initial_asp": {
+      "order": [
+        "conduction",
+        "convection",
+        "radiation",
+        "evaporation"
+      ],
+      "mean": [
+        3.0739829540252686,
+        0.0,
+        0.28885769844055176,
+        0.35066115856170654
+      ],
+      "std": [
+        0.37341396452210107,
+        0.0,
+        0.6787392100284063,
+        0.43652854669837093
+      ],
+      "min": [
+        2.33601713180542,
+        0.0,
+        -0.7998638153076172,
+        -0.32741260528564453
+      ],
+      "max": [
+        3.6208815574645996,
+        0.0,
+        1.456252098083496,
+        1.1490650177001953
+      ]
+    },
+    "joint": {
+      "order": [
+        "conduction",
+        "convection",
+        "radiation",
+        "evaporation"
+      ],
+      "mean": [
+        0.4825449585914612,
+        0.0,
+        0.18083596229553223,
+        -0.1296796202659607
+      ],
+      "std": [
+        0.20900106705218482,
+        0.0,
+        0.17696974614294803,
+        0.11475797809996213
+      ],
+      "min": [
+        0.1864910125732422,
+        0.0,
+        -0.0876302719116211,
+        -0.3051629066467285
+      ],
+      "max": [
+        0.8333377838134766,
+        0.0,
+        0.3927440643310547,
+        0.07471132278442383
+      ]
+    },
+    "final_wsp_only": {
+      "order": [
+        "conduction",
+        "convection",
+        "radiation",
+        "evaporation"
+      ],
+      "mean": [
+        -1.1383450031280518,
+        0.0,
+        0.0442812442779541,
+        -0.41737812757492065
+      ],
+      "std": [
+        0.11410114721426391,
+        0.0,
+        0.10030633309980429,
+        0.08432005387211264
+      ],
+      "min": [
+        -1.300400733947754,
+        0.0,
+        -0.15132808685302734,
+        -0.6059808731079102
+      ],
+      "max": [
+        -0.9547882080078125,
+        0.0,
+        0.19452381134033203,
+        -0.2918210029602051
+      ]
+    },
+    "final_asp_only": {
+      "order": [
+        "conduction",
+        "convection",
+        "radiation",
+        "evaporation"
+      ],
+      "mean": [
+        1.6185511946678162,
+        0.0,
+        0.1678655743598938,
+        0.25582659244537354
+      ],
+      "std": [
+        0.15406003947733557,
+        0.0,
+        0.2270156971173666,
+        0.14549275703482503
+      ],
+      "min": [
+        1.3506927490234375,
+        0.0,
+        -0.15667152404785156,
+        0.09388494491577148
+      ],
+      "max": [
+        1.8265056610107422,
+        0.0,
+        0.5282630920410156,
+        0.4727506637573242
+      ]
+    }
+  },
+  "local_projection_change": {
+    "base": {
+      "min": 0.15297414098232825,
+      "max": 0.47089297048712525,
+      "mean": 0.307292781938182,
+      "ratios": [
+        0.33179268005456075,
+        0.3523417955318547,
+        0.36649133997853917,
+        0.34570189566380244,
+        0.3172307807143609,
+        0.2910032084171915,
+        0.3105003795131348,
+        0.3351116059834541,
+        0.15635664238128144,
+        0.1972832616807307,
+        0.2534873333000763,
+        0.3536735001930516,
+        0.3074919183975873,
+        0.15297414098232825,
+        0.27873677397504587,
+        0.27126015038021933,
+        0.4644138110652194,
+        0.3045937196698288,
+        0.47089297048712525,
+        0.24502049544052723,
+        0.34679001689190236
+      ]
+    },
+    "asp": {
+      "min": 0.1689895083480457,
+      "max": 0.4465063761861234,
+      "mean": 0.3054148598120195,
+      "ratios": [
+        0.3215291629284955,
+        0.35046885825733654,
+        0.3633188464567376,
+        0.33114975485491166,
+        0.3217836290792248,
+        0.2915458499199318,
+        0.3101126228867859,
+        0.33537757819447156,
+        0.1689895083480457,
+        0.204370487684564,
+        0.253277726929963,
+        0.3650157356388388,
+        0.30396399174483507,
+        0.1721658552889608,
+        0.2832776495692078,
+        0.28714165170276035,
+        0.4465063761861234,
+        0.3139130886289259,
+        0.4317433522640654,
+        0.2323982741627139,
+        0.3256620553255104
+      ]
+    }
+  },
+  "transitions": [
+    {
+      "id": "joint_family_1_word_conduction",
+      "question": "A chilled coin warms where it rests against a hot solid plate. Which process is described?",
+      "group": "word_conduction",
+      "variants": {
+        "untouched": {
+          "prediction": "evaporation",
+          "correct": false,
+          "gold_margin": -0.3496894836425781,
+          "scores": [
+            -10.273344039916992,
+            -10.208910942077637,
+            -16.862194061279297,
+            -9.923654556274414
+          ]
+        },
+        "initial_asp": {
+          "prediction": "conduction",
+          "correct": true,
+          "gold_margin": 2.0454483032226562,
+          "scores": [
+            -7.004053115844727,
+            -10.177257537841797,
+            -15.374288558959961,
+            -9.049501419067383
+          ]
+        },
+        "joint": {
+          "prediction": "conduction",
+          "correct": true,
+          "gold_margin": 0.2582387924194336,
+          "scores": [
+            -9.554621696472168,
+            -10.091464042663574,
+            -16.35200309753418,
+            -9.812860488891602
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "convection",
+          "correct": false,
+          "gold_margin": -1.2569332122802734,
+          "scores": [
+            -11.470298767089844,
+            -10.21336555480957,
+            -16.873577117919922,
+            -10.361604690551758
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "conduction",
+          "correct": true,
+          "gold_margin": 1.0110130310058594,
+          "scores": [
+            -8.328100204467773,
+            -10.09017276763916,
+            -16.215192794799805,
+            -9.339113235473633
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_1_situation_conduction",
+      "question": "Which situation is an example of conduction?",
+      "group": "situation_conduction",
+      "variants": {
+        "untouched": {
+          "prediction": "Warm air rises through a room while cooler air flows downward, transporting heat.",
+          "correct": false,
+          "gold_margin": -2.729987902519031,
+          "scores": [
+            -5.9281487098106975,
+            -3.1981608072916665,
+            -4.589023045131138,
+            -3.5898402077811107
+          ]
+        },
+        "initial_asp": {
+          "prediction": "Warm air rises through a room while cooler air flows downward, transporting heat.",
+          "correct": false,
+          "gold_margin": -2.667584072015224,
+          "scores": [
+            -5.875708359938401,
+            -3.208124287923177,
+            -4.560152053833008,
+            -3.5250650133405412
+          ]
+        },
+        "joint": {
+          "prediction": "Warm air rises through a room while cooler air flows downward, transporting heat.",
+          "correct": false,
+          "gold_margin": -2.7400671738844653,
+          "scores": [
+            -5.928996159480168,
+            -3.188928985595703,
+            -4.5841876438685825,
+            -3.635571071079799
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "Warm air rises through a room while cooler air flows downward, transporting heat.",
+          "correct": false,
+          "gold_margin": -2.77718271108774,
+          "scores": [
+            -5.955716646634615,
+            -3.178533935546875,
+            -4.5959979466029575,
+            -3.678832462855748
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "Warm air rises through a room while cooler air flows downward, transporting heat.",
+          "correct": false,
+          "gold_margin": -2.6946332686986683,
+          "scores": [
+            -5.905086810772236,
+            -3.2104535420735676,
+            -4.580906459263393,
+            -3.5497207641601562
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_1_word_convection",
+      "question": "Warm air rises through a room while cooler air flows downward, transporting heat. Which process is described?",
+      "group": "word_convection",
+      "variants": {
+        "untouched": {
+          "prediction": "evaporation",
+          "correct": false,
+          "gold_margin": -0.2829122543334961,
+          "scores": [
+            -6.449432373046875,
+            -6.652636528015137,
+            -10.364410400390625,
+            -6.369724273681641
+          ]
+        },
+        "initial_asp": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -2.8574647903442383,
+          "scores": [
+            -3.521186351776123,
+            -6.378651142120361,
+            -10.057170867919922,
+            -5.92533540725708
+          ]
+        },
+        "joint": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -0.4671163558959961,
+          "scores": [
+            -6.095942497253418,
+            -6.563058853149414,
+            -10.214507102966309,
+            -6.4541473388671875
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "convection",
+          "correct": true,
+          "gold_margin": 0.10074329376220703,
+          "scores": [
+            -7.694201946258545,
+            -6.702727317810059,
+            -10.412540435791016,
+            -6.803470611572266
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -1.6293678283691406,
+          "scores": [
+            -4.878164768218994,
+            -6.507532596588135,
+            -10.177314758300781,
+            -6.0998101234436035
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_1_situation_convection",
+      "question": "Which situation is an example of convection?",
+      "group": "situation_convection",
+      "variants": {
+        "untouched": {
+          "prediction": "Liquid water in a shallow tray gradually changes into vapor at its surface.",
+          "correct": false,
+          "gold_margin": -0.12610666184198305,
+          "scores": [
+            -5.932883629432092,
+            -3.4241544087727864,
+            -4.927322932652065,
+            -3.2980477469308034
+          ]
+        },
+        "initial_asp": {
+          "prediction": "Liquid water in a shallow tray gradually changes into vapor at its surface.",
+          "correct": false,
+          "gold_margin": -0.1959403991699218,
+          "scores": [
+            -5.872017493614783,
+            -3.4400619506835937,
+            -4.888660430908203,
+            -3.244121551513672
+          ]
+        },
+        "joint": {
+          "prediction": "Liquid water in a shallow tray gradually changes into vapor at its surface.",
+          "correct": false,
+          "gold_margin": -0.04899916875930099,
+          "scores": [
+            -5.925113384540264,
+            -3.4074183146158856,
+            -4.920362200055804,
+            -3.3584191458565846
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "Liquid water in a shallow tray gradually changes into vapor at its surface.",
+          "correct": false,
+          "gold_margin": -0.0029792059035531615,
+          "scores": [
+            -5.949665949894832,
+            -3.3953257242838544,
+            -4.935592106410435,
+            -3.392346518380301
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "Liquid water in a shallow tray gradually changes into vapor at its surface.",
+          "correct": false,
+          "gold_margin": -0.16986285618373298,
+          "scores": [
+            -5.907616248497596,
+            -3.4348129272460937,
+            -4.912065778459821,
+            -3.2649500710623607
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_1_word_radiation",
+      "question": "A sensor absorbs infrared energy across an empty space without touching the source. Which process is described?",
+      "group": "word_radiation",
+      "variants": {
+        "untouched": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -1.2622461318969727,
+          "scores": [
+            -8.581061363220215,
+            -11.457984924316406,
+            -9.843307495117188,
+            -9.852002143859863
+          ]
+        },
+        "initial_asp": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -5.144824028015137,
+          "scores": [
+            -4.922457695007324,
+            -10.882095336914062,
+            -10.067281723022461,
+            -8.785322189331055
+          ]
+        },
+        "joint": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -1.979682445526123,
+          "scores": [
+            -7.771353244781494,
+            -11.312816619873047,
+            -9.751035690307617,
+            -9.772802352905273
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -0.1391010284423828,
+          "scores": [
+            -9.559686660766602,
+            -11.40776252746582,
+            -9.698787689208984,
+            -10.181928634643555
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -3.0847597122192383,
+          "scores": [
+            -6.821393013000488,
+            -11.364158630371094,
+            -9.906152725219727,
+            -9.445881843566895
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_1_situation_radiation",
+      "question": "Which situation is an example of radiation?",
+      "group": "situation_radiation",
+      "variants": {
+        "untouched": {
+          "prediction": "Warm air rises through a room while cooler air flows downward, transporting heat.",
+          "correct": false,
+          "gold_margin": -1.363241431826637,
+          "scores": [
+            -6.291189927321214,
+            -3.584525553385417,
+            -4.947766985212054,
+            -3.657497133527483
+          ]
+        },
+        "initial_asp": {
+          "prediction": "Warm air rises through a room while cooler air flows downward, transporting heat.",
+          "correct": false,
+          "gold_margin": -1.3992106483096172,
+          "scores": [
+            -6.168174156775842,
+            -3.4594629923502604,
+            -4.858673640659878,
+            -3.5809326171875
+          ]
+        },
+        "joint": {
+          "prediction": "Warm air rises through a room while cooler air flows downward, transporting heat.",
+          "correct": false,
+          "gold_margin": -1.3813049679710754,
+          "scores": [
+            -6.26331798846905,
+            -3.5363553365071616,
+            -4.917660304478237,
+            -3.705143519810268
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "Warm air rises through a room while cooler air flows downward, transporting heat.",
+          "correct": false,
+          "gold_margin": -1.3874615623837423,
+          "scores": [
+            -6.315896254319411,
+            -3.5647321065266926,
+            -4.952193668910435,
+            -3.7516326904296875
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "Warm air rises through a room while cooler air flows downward, transporting heat.",
+          "correct": false,
+          "gold_margin": -1.3622330075218567,
+          "scores": [
+            -6.236226008488582,
+            -3.5494534810384115,
+            -4.911686488560268,
+            -3.6111679077148438
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_1_word_evaporation",
+      "question": "Liquid water in a shallow tray gradually changes into vapor at its surface. Which process is described?",
+      "group": "word_evaporation",
+      "variants": {
+        "untouched": {
+          "prediction": "evaporation",
+          "correct": true,
+          "gold_margin": 5.146796703338623,
+          "scores": [
+            -11.780492782592773,
+            -9.378135681152344,
+            -14.008466720581055,
+            -4.231338977813721
+          ]
+        },
+        "initial_asp": {
+          "prediction": "evaporation",
+          "correct": true,
+          "gold_margin": 3.965353488922119,
+          "scores": [
+            -8.414880752563477,
+            -9.268911361694336,
+            -13.380481719970703,
+            -4.449527263641357
+          ]
+        },
+        "joint": {
+          "prediction": "evaporation",
+          "correct": true,
+          "gold_margin": 4.925721168518066,
+          "scores": [
+            -11.314988136291504,
+            -9.505271911621094,
+            -13.790480613708496,
+            -4.579550743103027
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "evaporation",
+          "correct": true,
+          "gold_margin": 4.7157697677612305,
+          "scores": [
+            -12.879292488098145,
+            -9.462172508239746,
+            -13.944551467895508,
+            -4.746402740478516
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "evaporation",
+          "correct": true,
+          "gold_margin": 5.250574111938477,
+          "scores": [
+            -10.21069049835205,
+            -9.40732192993164,
+            -13.823654174804688,
+            -4.156747817993164
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_1_situation_evaporation",
+      "question": "Which situation is an example of evaporation?",
+      "group": "situation_evaporation",
+      "variants": {
+        "untouched": {
+          "prediction": "Liquid water in a shallow tray gradually changes into vapor at its surface.",
+          "correct": true,
+          "gold_margin": 0.4308819362095426,
+          "scores": [
+            -6.264272249661959,
+            -3.649530029296875,
+            -5.034401484898159,
+            -3.2186480930873325
+          ]
+        },
+        "initial_asp": {
+          "prediction": "Liquid water in a shallow tray gradually changes into vapor at its surface.",
+          "correct": true,
+          "gold_margin": 0.48064233689081126,
+          "scores": [
+            -6.1669452373798075,
+            -3.644603474934896,
+            -4.964058467320034,
+            -3.1639611380440846
+          ]
+        },
+        "joint": {
+          "prediction": "Liquid water in a shallow tray gradually changes into vapor at its surface.",
+          "correct": true,
+          "gold_margin": 0.4111887977236792,
+          "scores": [
+            -6.25083512526292,
+            -3.643468983968099,
+            -5.0241884504045755,
+            -3.2322801862444197
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "Liquid water in a shallow tray gradually changes into vapor at its surface.",
+          "correct": true,
+          "gold_margin": 0.3546378544398716,
+          "scores": [
+            -6.286229060246394,
+            -3.6268020629882813,
+            -5.047079903738839,
+            -3.2721642085484097
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "Liquid water in a shallow tray gradually changes into vapor at its surface.",
+          "correct": true,
+          "gold_margin": 0.4842748914446151,
+          "scores": [
+            -6.221953758826623,
+            -3.6623931884765626,
+            -5.005753108433315,
+            -3.1781182970319475
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_2_word_conduction",
+      "question": "Heat travels through a solid iron bar from its heated tip toward its cool end. Which process is described?",
+      "group": "word_conduction",
+      "variants": {
+        "untouched": {
+          "prediction": "conduction",
+          "correct": true,
+          "gold_margin": 2.719052314758301,
+          "scores": [
+            -6.069644927978516,
+            -8.788697242736816,
+            -11.30415153503418,
+            -9.410276412963867
+          ]
+        },
+        "initial_asp": {
+          "prediction": "conduction",
+          "correct": true,
+          "gold_margin": 5.055069446563721,
+          "scores": [
+            -3.1059813499450684,
+            -8.161050796508789,
+            -10.218107223510742,
+            -8.497438430786133
+          ]
+        },
+        "joint": {
+          "prediction": "conduction",
+          "correct": true,
+          "gold_margin": 2.905543327331543,
+          "scores": [
+            -5.654736518859863,
+            -8.560279846191406,
+            -10.900701522827148,
+            -9.357769966125488
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "conduction",
+          "correct": true,
+          "gold_margin": 1.5236239433288574,
+          "scores": [
+            -7.29417085647583,
+            -8.817794799804688,
+            -11.484577178955078,
+            -9.811652183532715
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "conduction",
+          "correct": true,
+          "gold_margin": 4.069745063781738,
+          "scores": [
+            -4.471493721008301,
+            -8.541238784790039,
+            -10.726326942443848,
+            -8.988482475280762
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_2_situation_conduction",
+      "question": "Which situation is an example of conduction?",
+      "group": "situation_conduction",
+      "variants": {
+        "untouched": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": true,
+          "gold_margin": 0.5687891642252603,
+          "scores": [
+            -3.427886962890625,
+            -3.9966761271158853,
+            -5.222385699932392,
+            -4.490317711463342
+          ]
+        },
+        "initial_asp": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": true,
+          "gold_margin": 0.43225463231404593,
+          "scores": [
+            -3.607644557952881,
+            -4.039899190266927,
+            -5.19319328894982,
+            -4.450379004845252
+          ]
+        },
+        "joint": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": true,
+          "gold_margin": 0.575363477071126,
+          "scores": [
+            -3.488133430480957,
+            -4.063496907552083,
+            -5.184590853177584,
+            -4.506558931790865
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": true,
+          "gold_margin": 0.6128070089552136,
+          "scores": [
+            -3.432746410369873,
+            -4.045553419325087,
+            -5.192925086388221,
+            -4.5353384751539965
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": true,
+          "gold_margin": 0.5299699306488037,
+          "scores": [
+            -3.491281747817993,
+            -4.021251678466797,
+            -5.218072744516226,
+            -4.465942969689002
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_2_word_convection",
+      "question": "Hot oil rises and cooler oil sinks in a vessel, moving thermal energy with the fluid. Which process is described?",
+      "group": "word_convection",
+      "variants": {
+        "untouched": {
+          "prediction": "evaporation",
+          "correct": false,
+          "gold_margin": -0.32532453536987305,
+          "scores": [
+            -8.921295166015625,
+            -7.526758193969727,
+            -13.2454195022583,
+            -7.2014336585998535
+          ]
+        },
+        "initial_asp": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -1.7703838348388672,
+          "scores": [
+            -5.547062397003174,
+            -7.317446231842041,
+            -12.23582649230957,
+            -6.877464771270752
+          ]
+        },
+        "joint": {
+          "prediction": "evaporation",
+          "correct": false,
+          "gold_margin": -0.02016162872314453,
+          "scores": [
+            -8.499884605407715,
+            -7.440753936767578,
+            -12.799705505371094,
+            -7.420592308044434
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "convection",
+          "correct": true,
+          "gold_margin": 0.11529350280761719,
+          "scores": [
+            -10.195876121520996,
+            -7.500938415527344,
+            -13.213397026062012,
+            -7.616231918334961
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "evaporation",
+          "correct": false,
+          "gold_margin": -0.41920948028564453,
+          "scores": [
+            -7.198708534240723,
+            -7.447301864624023,
+            -12.778371810913086,
+            -7.028092384338379
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_2_situation_convection",
+      "question": "Which situation is an example of convection?",
+      "group": "situation_convection",
+      "variants": {
+        "untouched": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -0.48918088277181004,
+          "scores": [
+            -3.491575241088867,
+            -3.9807561238606772,
+            -5.257564838115986,
+            -4.608892294076773
+          ]
+        },
+        "initial_asp": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -0.3443885909186468,
+          "scores": [
+            -3.660562038421631,
+            -4.004950629340278,
+            -5.223375173715445,
+            -4.564306992750901
+          ]
+        },
+        "joint": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -0.48824058638678647,
+          "scores": [
+            -3.563131093978882,
+            -4.051371680365668,
+            -5.233512291541467,
+            -4.62305421095628
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -0.5312011506822376,
+          "scores": [
+            -3.503270149230957,
+            -4.034471299913195,
+            -5.242774963378906,
+            -4.648536975567158
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -0.44429029358757877,
+          "scores": [
+            -3.554814100265503,
+            -3.9991043938530817,
+            -5.248803945688101,
+            -4.5841803917518025
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_2_word_radiation",
+      "question": "A spacecraft surface is warmed by electromagnetic waves arriving across a vacuum. Which process is described?",
+      "group": "word_radiation",
+      "variants": {
+        "untouched": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -0.32564544677734375,
+          "scores": [
+            -9.543444633483887,
+            -10.200424194335938,
+            -9.86909008026123,
+            -10.066271781921387
+          ]
+        },
+        "initial_asp": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -4.122150421142578,
+          "scores": [
+            -5.474417686462402,
+            -9.370441436767578,
+            -9.59656810760498,
+            -8.087224006652832
+          ]
+        },
+        "joint": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -0.7960319519042969,
+          "scores": [
+            -8.676905632019043,
+            -9.716641426086426,
+            -9.47293758392334,
+            -9.745865821838379
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "radiation",
+          "correct": true,
+          "gold_margin": 0.39890384674072266,
+          "scores": [
+            -10.634082794189453,
+            -10.065709114074707,
+            -9.666805267333984,
+            -10.537537574768066
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "conduction",
+          "correct": false,
+          "gold_margin": -2.076488971710205,
+          "scores": [
+            -7.508824825286865,
+            -9.798762321472168,
+            -9.58531379699707,
+            -9.191859245300293
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_2_situation_radiation",
+      "question": "Which situation is an example of radiation?",
+      "group": "situation_radiation",
+      "variants": {
+        "untouched": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -1.6798330453725958,
+          "scores": [
+            -3.580718994140625,
+            -4.337894015842014,
+            -5.260552039513221,
+            -4.8073566143329325
+          ]
+        },
+        "initial_asp": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -1.5092096512134257,
+          "scores": [
+            -3.667440176010132,
+            -4.2772267659505205,
+            -5.1766498272235575,
+            -4.763343811035156
+          ]
+        },
+        "joint": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -1.6005171445699835,
+          "scores": [
+            -3.635002851486206,
+            -4.367898729112413,
+            -5.23551999605619,
+            -4.83801034780649
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -1.6645349722642164,
+          "scores": [
+            -3.5994315147399902,
+            -4.380042182074653,
+            -5.263966487004207,
+            -4.865086775559646
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -1.616357583266038,
+          "scores": [
+            -3.6150712966918945,
+            -4.3241831461588545,
+            -5.2314288799579325,
+            -4.780868823711689
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_2_word_evaporation",
+      "question": "Liquid solvent on a glass slide escapes into the air as gas. Which process is described?",
+      "group": "word_evaporation",
+      "variants": {
+        "untouched": {
+          "prediction": "evaporation",
+          "correct": true,
+          "gold_margin": 4.9684600830078125,
+          "scores": [
+            -9.905625343322754,
+            -9.338854789733887,
+            -12.956801414489746,
+            -4.370394706726074
+          ]
+        },
+        "initial_asp": {
+          "prediction": "evaporation",
+          "correct": true,
+          "gold_margin": 1.9944438934326172,
+          "scores": [
+            -6.183898448944092,
+            -9.238009452819824,
+            -12.454715728759766,
+            -4.189454555511475
+          ]
+        },
+        "joint": {
+          "prediction": "evaporation",
+          "correct": true,
+          "gold_margin": 4.776604175567627,
+          "scores": [
+            -9.174711227416992,
+            -9.441278457641602,
+            -12.80494499206543,
+            -4.398107051849365
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "evaporation",
+          "correct": true,
+          "gold_margin": 4.676639080047607,
+          "scores": [
+            -11.05145263671875,
+            -9.52989387512207,
+            -12.953316688537598,
+            -4.853254795074463
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "evaporation",
+          "correct": true,
+          "gold_margin": 4.030058860778809,
+          "scores": [
+            -8.044992446899414,
+            -9.282350540161133,
+            -12.785026550292969,
+            -4.0149335861206055
+          ]
+        }
+      }
+    },
+    {
+      "id": "joint_family_2_situation_evaporation",
+      "question": "Which situation is an example of evaporation?",
+      "group": "situation_evaporation",
+      "variants": {
+        "untouched": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -0.9923144120436449,
+          "scores": [
+            -3.8188838958740234,
+            -4.498944600423177,
+            -5.2595966045673075,
+            -4.811198307917668
+          ]
+        },
+        "initial_asp": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -0.7935233849745531,
+          "scores": [
+            -3.9608817100524902,
+            -4.502996656629774,
+            -5.191316457895132,
+            -4.754405095027043
+          ]
+        },
+        "joint": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -0.8860970827249384,
+          "scores": [
+            -3.8746674060821533,
+            -4.55623541937934,
+            -5.235682560847356,
+            -4.760764488807092
+          ]
+        },
+        "final_wsp_only": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -0.9730845231276293,
+          "scores": [
+            -3.822694778442383,
+            -4.539771609836155,
+            -5.2539848914513225,
+            -4.795779301570012
+          ]
+        },
+        "final_asp_only": {
+          "prediction": "Heat travels through a solid iron bar from its heated tip toward its cool end.",
+          "correct": false,
+          "gold_margin": -0.9031277436476488,
+          "scores": [
+            -3.8705949783325195,
+            -4.5143483479817705,
+            -5.235194866473858,
+            -4.773722721980168
+          ]
+        }
+      }
+    }
+  ]
+}

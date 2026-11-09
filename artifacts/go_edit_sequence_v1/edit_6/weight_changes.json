@@ -1,0 +1,2306 @@
+[
+  {
+    "tensor": "W5",
+    "index": [
+      81,
+      253
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      82,
+      252
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      82,
+      254
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      83,
+      253
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      83,
+      255
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      84,
+      254
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      84,
+      256
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      85,
+      255
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      85,
+      257
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      86,
+      256
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      86,
+      258
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      87,
+      257
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      87,
+      259
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      88,
+      258
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      88,
+      260
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      89,
+      259
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      90,
+      244
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      90,
+      262
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      91,
+      243
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      91,
+      245
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      91,
+      261
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      91,
+      263
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      92,
+      244
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      92,
+      246
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      92,
+      262
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      92,
+      264
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      93,
+      245
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      93,
+      247
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      93,
+      263
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      93,
+      265
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      94,
+      246
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      94,
+      248
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      94,
+      264
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      94,
+      266
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      95,
+      247
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      95,
+      249
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      95,
+      265
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      95,
+      267
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      96,
+      248
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      96,
+      250
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      96,
+      266
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      96,
+      268
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      97,
+      249
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      97,
+      251
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      97,
+      267
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      97,
+      269
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      98,
+      250
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      98,
+      268
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      99,
+      253
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      99,
+      271
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      100,
+      252
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      100,
+      254
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      100,
+      270
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      100,
+      272
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      101,
+      253
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      101,
+      255
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      101,
+      271
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      101,
+      273
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      102,
+      254
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      102,
+      256
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      102,
+      272
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      102,
+      274
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      103,
+      255
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      103,
+      257
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      103,
+      273
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      103,
+      275
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      104,
+      256
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      104,
+      258
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      104,
+      274
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      104,
+      276
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      105,
+      257
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      105,
+      259
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      105,
+      275
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      105,
+      277
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      106,
+      258
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      106,
+      260
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      106,
+      276
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      106,
+      278
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      107,
+      259
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      107,
+      277
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      108,
+      262
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      108,
+      280
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      109,
+      261
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      109,
+      263
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      109,
+      279
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      109,
+      281
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      110,
+      262
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      110,
+      264
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      110,
+      280
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      110,
+      282
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      111,
+      263
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      111,
+      265
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      111,
+      281
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      111,
+      283
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      112,
+      264
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      112,
+      266
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      112,
+      282
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      112,
+      284
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      113,
+      265
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      113,
+      267
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      113,
+      283
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      113,
+      285
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      114,
+      266
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      114,
+      268
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      114,
+      284
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      114,
+      286
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      115,
+      267
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      115,
+      269
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      115,
+      285
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      115,
+      287
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      116,
+      268
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      116,
+      286
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      117,
+      271
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      117,
+      289
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      118,
+      270
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      118,
+      272
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      118,
+      288
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      118,
+      290
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      119,
+      271
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      119,
+      273
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      119,
+      289
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      119,
+      291
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      120,
+      272
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      120,
+      274
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      120,
+      290
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      120,
+      292
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      121,
+      273
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      121,
+      275
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      121,
+      291
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      121,
+      293
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      122,
+      274
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      122,
+      276
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      122,
+      292
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      122,
+      294
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      123,
+      275
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      123,
+      277
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      123,
+      293
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      123,
+      295
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      124,
+      276
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      124,
+      278
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      124,
+      294
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      124,
+      296
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      125,
+      277
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      125,
+      295
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      126,
+      280
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      126,
+      298
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      127,
+      279
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      127,
+      281
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      127,
+      297
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      127,
+      299
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      128,
+      280
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      128,
+      282
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      128,
+      298
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      128,
+      300
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      129,
+      281
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      129,
+      283
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      129,
+      299
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      129,
+      301
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      130,
+      282
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      130,
+      284
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      130,
+      300
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      130,
+      302
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      131,
+      283
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      131,
+      285
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      131,
+      301
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      131,
+      303
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      132,
+      284
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      132,
+      286
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      132,
+      302
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      132,
+      304
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      133,
+      285
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      133,
+      287
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      133,
+      303
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      133,
+      305
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      134,
+      286
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      134,
+      304
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      135,
+      289
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      135,
+      307
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      136,
+      288
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      136,
+      290
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      136,
+      306
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      136,
+      308
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      137,
+      289
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      137,
+      291
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      137,
+      307
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      137,
+      309
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      138,
+      290
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      138,
+      292
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      138,
+      308
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      138,
+      310
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      139,
+      291
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      139,
+      293
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      139,
+      309
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      139,
+      311
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      140,
+      292
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      140,
+      294
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      140,
+      310
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      140,
+      312
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      141,
+      293
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      141,
+      295
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      141,
+      311
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      141,
+      313
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      142,
+      294
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      142,
+      296
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      142,
+      312
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      142,
+      314
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      143,
+      295
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      143,
+      313
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      144,
+      298
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      144,
+      316
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      145,
+      297
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      145,
+      299
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      145,
+      315
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      145,
+      317
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      146,
+      298
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      146,
+      300
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      146,
+      316
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      146,
+      318
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      147,
+      299
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      147,
+      301
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      147,
+      317
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      147,
+      319
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      148,
+      300
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      148,
+      302
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      148,
+      318
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      148,
+      320
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      149,
+      301
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      149,
+      303
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      149,
+      319
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      149,
+      321
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      150,
+      302
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      150,
+      304
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      150,
+      320
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      150,
+      322
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      151,
+      303
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      151,
+      305
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      151,
+      321
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      151,
+      323
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      152,
+      304
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      152,
+      322
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      153,
+      307
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      154,
+      306
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      154,
+      308
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      155,
+      307
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      155,
+      309
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      156,
+      308
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      156,
+      310
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      157,
+      309
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      157,
+      311
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      158,
+      310
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      158,
+      312
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      159,
+      311
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      159,
+      313
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      160,
+      312
+    ],
+    "before": -0.5,
+    "after": -1.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      160,
+      314
+    ],
+    "before": -0.5,
+    "after": -2.0
+  },
+  {
+    "tensor": "W5",
+    "index": [
+      161,
+      313
+    ],
+    "before": -0.5,
+    "after": -1.0
+  }
+]

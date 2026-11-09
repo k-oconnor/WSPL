@@ -1,0 +1,952 @@
+{
+  "capability6": {
+    "status": "complete",
+    "manifest_sha256": "39074af2e7bf08aab2f7691654c9e9b3771c09b53bb152e84aae9337cdfa6a02",
+    "active_seconds": 55247.48499999987,
+    "results_file_sha256": "bca922552bff0b402649df366d2906f60c8d3238fb7f243bdc169ce16f765f85",
+    "summary": {
+      "foundation": {
+        "composition": {
+          "n": 256,
+          "exact": 0
+        },
+        "copy4": {
+          "n": 512,
+          "exact": 246
+        },
+        "copy6": {
+          "n": 512,
+          "exact": 389
+        },
+        "familiar": {
+          "n": 512,
+          "exact": 0
+        },
+        "larger": {
+          "n": 512,
+          "exact": 0
+        },
+        "novel": {
+          "n": 512,
+          "exact": 0
+        }
+      },
+      "gradient": {
+        "composition": {
+          "n": 256,
+          "exact": 199
+        },
+        "copy4": {
+          "n": 512,
+          "exact": 512
+        },
+        "copy6": {
+          "n": 512,
+          "exact": 495
+        },
+        "familiar": {
+          "n": 512,
+          "exact": 490
+        },
+        "larger": {
+          "n": 512,
+          "exact": 353
+        },
+        "novel": {
+          "n": 512,
+          "exact": 418
+        }
+      },
+      "native_0": {
+        "composition": {
+          "n": 256,
+          "exact": 233
+        },
+        "copy4": {
+          "n": 512,
+          "exact": 512
+        },
+        "copy6": {
+          "n": 512,
+          "exact": 509
+        },
+        "familiar": {
+          "n": 512,
+          "exact": 511
+        },
+        "larger": {
+          "n": 512,
+          "exact": 486
+        },
+        "novel": {
+          "n": 512,
+          "exact": 498
+        }
+      },
+      "wspl_0": {
+        "composition": {
+          "n": 256,
+          "exact": 236
+        },
+        "copy4": {
+          "n": 512,
+          "exact": 511
+        },
+        "copy6": {
+          "n": 512,
+          "exact": 512
+        },
+        "familiar": {
+          "n": 512,
+          "exact": 512
+        },
+        "larger": {
+          "n": 512,
+          "exact": 491
+        },
+        "novel": {
+          "n": 512,
+          "exact": 502
+        }
+      },
+      "wspl_1": {
+        "composition": {
+          "n": 256,
+          "exact": 245
+        },
+        "copy4": {
+          "n": 512,
+          "exact": 512
+        },
+        "copy6": {
+          "n": 512,
+          "exact": 512
+        },
+        "familiar": {
+          "n": 512,
+          "exact": 511
+        },
+        "larger": {
+          "n": 512,
+          "exact": 504
+        },
+        "novel": {
+          "n": 512,
+          "exact": 506
+        }
+      },
+      "native_1": {
+        "composition": {
+          "n": 256,
+          "exact": 243
+        },
+        "copy4": {
+          "n": 512,
+          "exact": 512
+        },
+        "copy6": {
+          "n": 512,
+          "exact": 512
+        },
+        "familiar": {
+          "n": 512,
+          "exact": 512
+        },
+        "larger": {
+          "n": 512,
+          "exact": 484
+        },
+        "novel": {
+          "n": 512,
+          "exact": 498
+        }
+      }
+    },
+    "decisions": {
+      "gradient": {
+        "capability_pass": false,
+        "absolute_pass": false,
+        "gain_pass": true,
+        "copy_pass": false,
+        "copy_regressions": {
+          "copy4": 0,
+          "copy6": 13
+        }
+      },
+      "native_0": {
+        "capability_pass": true,
+        "absolute_pass": true,
+        "gain_pass": true,
+        "copy_pass": true,
+        "copy_regressions": {
+          "copy4": 0,
+          "copy6": 2
+        }
+      },
+      "wspl_0": {
+        "capability_pass": true,
+        "absolute_pass": true,
+        "gain_pass": true,
+        "copy_pass": true,
+        "copy_regressions": {
+          "copy4": 1,
+          "copy6": 0
+        }
+      },
+      "wspl_1": {
+        "capability_pass": true,
+        "absolute_pass": true,
+        "gain_pass": true,
+        "copy_pass": true,
+        "copy_regressions": {
+          "copy4": 0,
+          "copy6": 0
+        }
+      },
+      "native_1": {
+        "capability_pass": true,
+        "absolute_pass": true,
+        "gain_pass": true,
+        "copy_pass": true,
+        "copy_regressions": {
+          "copy4": 0,
+          "copy6": 0
+        }
+      }
+    },
+    "frozen": {
+      "gradient": "b78a096805376df37e8526b5fed3fafc632eebd523de7d01fb6c16b1dfbbe7df",
+      "native_0": "0f06776ce61bae0ce933898a62e2b71fca35cf729b0eac9cb320aa65c6d5d9ec",
+      "wspl_0": "b97d24efcca832c99123036af06d327712584b1bea1154b82ad53694167a0c0a",
+      "wspl_1": "dc57a3aead769b801647cfb2f7ee18f3bbfc1d2bf485c435e057946ac83d04c9",
+      "native_1": "6c02b2aacd1767f221f1039d3e654e882c44a32ef7834f9061a933fee9df564c"
+    }
+  },
+  "arc": {
+    "status": "complete",
+    "manifest_sha256": "7102b6666289a7331002f58addbb4f1b1f1a02a2dd2016032a70c6fe4d6567af",
+    "active_seconds": 1067.8590000001714,
+    "results_file_sha256": "fbeceec7458833c6558f9adc4dec60110c8f95ad85d181e0eba2bab3bc8a08ed",
+    "summaries": {
+      "original": {
+        "challenge_test": {
+          "n": 1172,
+          "correct": 336,
+          "accuracy": 0.28668941979522183,
+          "raw_correct": 304,
+          "raw_accuracy": 0.2593856655290102
+        },
+        "easy_test": {
+          "n": 2376,
+          "correct": 1207,
+          "accuracy": 0.507996632996633,
+          "raw_correct": 1283,
+          "raw_accuracy": 0.539983164983165
+        }
+      },
+      "foundation": {
+        "challenge_test": {
+          "n": 1172,
+          "correct": 343,
+          "accuracy": 0.29266211604095566,
+          "raw_correct": 308,
+          "raw_accuracy": 0.2627986348122867
+        },
+        "easy_test": {
+          "n": 2376,
+          "correct": 1221,
+          "accuracy": 0.5138888888888888,
+          "raw_correct": 1294,
+          "raw_accuracy": 0.5446127946127947
+        }
+      },
+      "gradient": {
+        "challenge_test": {
+          "n": 1172,
+          "correct": 258,
+          "accuracy": 0.22013651877133106,
+          "raw_correct": 211,
+          "raw_accuracy": 0.18003412969283278
+        },
+        "easy_test": {
+          "n": 2376,
+          "correct": 687,
+          "accuracy": 0.28914141414141414,
+          "raw_correct": 697,
+          "raw_accuracy": 0.29335016835016836
+        }
+      },
+      "native_0": {
+        "challenge_test": {
+          "n": 1172,
+          "correct": 276,
+          "accuracy": 0.2354948805460751,
+          "raw_correct": 243,
+          "raw_accuracy": 0.20733788395904437
+        },
+        "easy_test": {
+          "n": 2376,
+          "correct": 970,
+          "accuracy": 0.40824915824915825,
+          "raw_correct": 1047,
+          "raw_accuracy": 0.44065656565656564
+        }
+      },
+      "native_1": {
+        "challenge_test": {
+          "n": 1172,
+          "correct": 273,
+          "accuracy": 0.23293515358361774,
+          "raw_correct": 245,
+          "raw_accuracy": 0.2090443686006826
+        },
+        "easy_test": {
+          "n": 2376,
+          "correct": 849,
+          "accuracy": 0.3573232323232323,
+          "raw_correct": 872,
+          "raw_accuracy": 0.367003367003367
+        }
+      },
+      "wspl_0": {
+        "challenge_test": {
+          "n": 1172,
+          "correct": 281,
+          "accuracy": 0.23976109215017063,
+          "raw_correct": 240,
+          "raw_accuracy": 0.20477815699658702
+        },
+        "easy_test": {
+          "n": 2376,
+          "correct": 985,
+          "accuracy": 0.4145622895622896,
+          "raw_correct": 1033,
+          "raw_accuracy": 0.43476430976430974
+        }
+      },
+      "wspl_1": {
+        "challenge_test": {
+          "n": 1172,
+          "correct": 274,
+          "accuracy": 0.23378839590443687,
+          "raw_correct": 229,
+          "raw_accuracy": 0.19539249146757678
+        },
+        "easy_test": {
+          "n": 2376,
+          "correct": 798,
+          "accuracy": 0.33585858585858586,
+          "raw_correct": 801,
+          "raw_accuracy": 0.3371212121212121
+        }
+      }
+    },
+    "comparisons": {
+      "original": {
+        "original": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 0,
+              "regressions": 0,
+              "net_correct": 0,
+              "accuracy_delta": 0.0
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 0,
+              "regressions": 0,
+              "net_correct": 0,
+              "accuracy_delta": 0.0
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 0,
+              "regressions": 0,
+              "net_correct": 0,
+              "accuracy_delta": 0.0
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 0,
+              "regressions": 0,
+              "net_correct": 0,
+              "accuracy_delta": 0.0
+            }
+          }
+        }
+      },
+      "foundation": {
+        "original": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 15,
+              "regressions": 8,
+              "net_correct": 7,
+              "accuracy_delta": 0.005972696245733789
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 13,
+              "regressions": 9,
+              "net_correct": 4,
+              "accuracy_delta": 0.0034129692832764505
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 47,
+              "regressions": 33,
+              "net_correct": 14,
+              "accuracy_delta": 0.005892255892255892
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 49,
+              "regressions": 38,
+              "net_correct": 11,
+              "accuracy_delta": 0.004629629629629629
+            }
+          }
+        },
+        "foundation": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 0,
+              "regressions": 0,
+              "net_correct": 0,
+              "accuracy_delta": 0.0
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 0,
+              "regressions": 0,
+              "net_correct": 0,
+              "accuracy_delta": 0.0
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 0,
+              "regressions": 0,
+              "net_correct": 0,
+              "accuracy_delta": 0.0
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 0,
+              "regressions": 0,
+              "net_correct": 0,
+              "accuracy_delta": 0.0
+            }
+          }
+        }
+      },
+      "gradient": {
+        "original": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 132,
+              "regressions": 210,
+              "net_correct": -78,
+              "accuracy_delta": -0.06655290102389079
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 116,
+              "regressions": 209,
+              "net_correct": -93,
+              "accuracy_delta": -0.07935153583617748
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 192,
+              "regressions": 712,
+              "net_correct": -520,
+              "accuracy_delta": -0.21885521885521886
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 193,
+              "regressions": 779,
+              "net_correct": -586,
+              "accuracy_delta": -0.24663299663299662
+            }
+          }
+        },
+        "foundation": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 131,
+              "regressions": 216,
+              "net_correct": -85,
+              "accuracy_delta": -0.07252559726962457
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 113,
+              "regressions": 210,
+              "net_correct": -97,
+              "accuracy_delta": -0.08276450511945392
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 196,
+              "regressions": 730,
+              "net_correct": -534,
+              "accuracy_delta": -0.22474747474747475
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 190,
+              "regressions": 787,
+              "net_correct": -597,
+              "accuracy_delta": -0.25126262626262624
+            }
+          }
+        }
+      },
+      "native_0": {
+        "original": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 91,
+              "regressions": 151,
+              "net_correct": -60,
+              "accuracy_delta": -0.051194539249146756
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 86,
+              "regressions": 147,
+              "net_correct": -61,
+              "accuracy_delta": -0.05204778156996587
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 188,
+              "regressions": 425,
+              "net_correct": -237,
+              "accuracy_delta": -0.09974747474747475
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 217,
+              "regressions": 453,
+              "net_correct": -236,
+              "accuracy_delta": -0.09932659932659933
+            }
+          }
+        },
+        "foundation": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 83,
+              "regressions": 150,
+              "net_correct": -67,
+              "accuracy_delta": -0.05716723549488054
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 82,
+              "regressions": 147,
+              "net_correct": -65,
+              "accuracy_delta": -0.05546075085324232
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 184,
+              "regressions": 435,
+              "net_correct": -251,
+              "accuracy_delta": -0.10563973063973064
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 212,
+              "regressions": 459,
+              "net_correct": -247,
+              "accuracy_delta": -0.10395622895622895
+            }
+          }
+        }
+      },
+      "native_1": {
+        "original": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 106,
+              "regressions": 169,
+              "net_correct": -63,
+              "accuracy_delta": -0.0537542662116041
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 102,
+              "regressions": 161,
+              "net_correct": -59,
+              "accuracy_delta": -0.050341296928327645
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 175,
+              "regressions": 533,
+              "net_correct": -358,
+              "accuracy_delta": -0.15067340067340068
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 204,
+              "regressions": 615,
+              "net_correct": -411,
+              "accuracy_delta": -0.17297979797979798
+            }
+          }
+        },
+        "foundation": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 100,
+              "regressions": 170,
+              "net_correct": -70,
+              "accuracy_delta": -0.059726962457337884
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 101,
+              "regressions": 164,
+              "net_correct": -63,
+              "accuracy_delta": -0.0537542662116041
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 186,
+              "regressions": 558,
+              "net_correct": -372,
+              "accuracy_delta": -0.15656565656565657
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 210,
+              "regressions": 632,
+              "net_correct": -422,
+              "accuracy_delta": -0.1776094276094276
+            }
+          }
+        }
+      },
+      "wspl_0": {
+        "original": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 91,
+              "regressions": 146,
+              "net_correct": -55,
+              "accuracy_delta": -0.04692832764505119
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 86,
+              "regressions": 150,
+              "net_correct": -64,
+              "accuracy_delta": -0.05460750853242321
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 202,
+              "regressions": 424,
+              "net_correct": -222,
+              "accuracy_delta": -0.09343434343434344
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 221,
+              "regressions": 471,
+              "net_correct": -250,
+              "accuracy_delta": -0.10521885521885523
+            }
+          }
+        },
+        "foundation": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 85,
+              "regressions": 147,
+              "net_correct": -62,
+              "accuracy_delta": -0.052901023890784986
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 79,
+              "regressions": 147,
+              "net_correct": -68,
+              "accuracy_delta": -0.05802047781569966
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 209,
+              "regressions": 445,
+              "net_correct": -236,
+              "accuracy_delta": -0.09932659932659933
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 221,
+              "regressions": 482,
+              "net_correct": -261,
+              "accuracy_delta": -0.10984848484848485
+            }
+          }
+        }
+      },
+      "wspl_1": {
+        "original": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 119,
+              "regressions": 181,
+              "net_correct": -62,
+              "accuracy_delta": -0.052901023890784986
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 97,
+              "regressions": 172,
+              "net_correct": -75,
+              "accuracy_delta": -0.06399317406143344
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 182,
+              "regressions": 591,
+              "net_correct": -409,
+              "accuracy_delta": -0.17213804713804715
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 193,
+              "regressions": 675,
+              "net_correct": -482,
+              "accuracy_delta": -0.20286195286195285
+            }
+          }
+        },
+        "foundation": {
+          "challenge_test": {
+            "correct": {
+              "n": 1172,
+              "corrections": 113,
+              "regressions": 182,
+              "net_correct": -69,
+              "accuracy_delta": -0.05887372013651877
+            },
+            "raw_correct": {
+              "n": 1172,
+              "corrections": 91,
+              "regressions": 170,
+              "net_correct": -79,
+              "accuracy_delta": -0.0674061433447099
+            }
+          },
+          "easy_test": {
+            "correct": {
+              "n": 2376,
+              "corrections": 183,
+              "regressions": 606,
+              "net_correct": -423,
+              "accuracy_delta": -0.17803030303030304
+            },
+            "raw_correct": {
+              "n": 2376,
+              "corrections": 191,
+              "regressions": 684,
+              "net_correct": -493,
+              "accuracy_delta": -0.2074915824915825
+            }
+          }
+        }
+      }
+    },
+    "completed_rows": 24836
+  },
+  "prose": {
+    "status": "complete",
+    "manifest_sha256": "8e9c24778751de5766ec6b847f292979123abb9f4792413a9501674912037455",
+    "active_seconds": 39.3589999997057,
+    "results_file_sha256": "fe5b1165576d5b3dbf818bdba22efedcd5fbcc97578a1b5ee2e530d43a631b69",
+    "results": {
+      "foundation": {
+        "nll": 2.8938393481075764,
+        "perplexity": 18.062524966635596,
+        "targets": 32768,
+        "completions": [
+          {
+            "prompt": "The water cycle describes how",
+            "continuation": " water moves through the Earth's atmosphere and surfaces, including the processes of evaporation, condensation, precipitation, and collection. This cycle is crucial for sustaining life on our planet, as it helps regulate the Earth's temperature, distribute heat around the globe, and produce fresh water for drinking, agriculture, and industry.<|im_end|>"
+          },
+          {
+            "prompt": "To make a cup of tea, first",
+            "continuation": " I need to gather some materials. I'll need a kettle, a pot, a tea bag, and a tea cup. I'll also need a few ingredients, such as sugar, milk, and a dash of salt.\n\nOnce I have everything ready, I'll start brewing my tea. I'll pour the"
+          },
+          {
+            "prompt": "The purpose of a public library is",
+            "continuation": " to provide access to a wide range of books, including fiction, non-fiction, and children's books, as well as a variety of educational resources, including books, magazines, and newspapers. The library also serves as a hub for community events, such as book clubs, author readings, and book clubs, and as"
+          }
+        ]
+      },
+      "wspl_0": {
+        "nll": 4.723412532359362,
+        "perplexity": 112.55168432409806,
+        "targets": 32768,
+        "completions": [
+          {
+            "prompt": "The water cycle describes how",
+            "continuation": " the water from the earth is absorbed into the atmosphere and the water from the earth is absorbed into the atmosphere and the water from the earth is absorbed into the atmosphere and the water from the earth is absorbed into the atmosphere and the water from the earth is absorbed into the atmosphere and the water from the earth is absorbed into the"
+          },
+          {
+            "prompt": "To make a cup of tea, first",
+            "continuation": ", first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first, first"
+          },
+          {
+            "prompt": "The purpose of a public library is",
+            "continuation": " to provide access to a public library, which is a public library is to provide access to a public library, which is a public library is to provide access to a public library, which is a public library is to provide access to a public library, which is a public library is to provide access to a public library,"
+          }
+        ]
+      }
+    },
+    "delta_nll": 1.8295731842517853,
+    "perplexity_ratio": 6.231226505264309
+  },
+  "integration": {
+    "status": "complete",
+    "manifest_sha256": "38a54eda403e7f519e15421dbea42dbcee7fc367a11b6a910f8be948eee7566c",
+    "active_seconds": 1921.1719999997877,
+    "results_file_sha256": "24f4082c005d817b41689e236ce5705b5627ba0fdbad0ca348cdbc5f4ffdd5bc",
+    "summaries": {
+      "foundation": {
+        "prose_nll": 2.8515619430691004,
+        "prose_targets": 32768,
+        "grids": {
+          "copy6": {
+            "n": 32,
+            "exact": 24
+          },
+          "larger": {
+            "n": 64,
+            "exact": 0
+          },
+          "novel": {
+            "n": 64,
+            "exact": 0
+          }
+        }
+      },
+      "original": {
+        "prose_nll": 4.830479700118303,
+        "prose_targets": 32768,
+        "grids": {
+          "copy6": {
+            "n": 32,
+            "exact": 32
+          },
+          "larger": {
+            "n": 64,
+            "exact": 64
+          },
+          "novel": {
+            "n": 64,
+            "exact": 62
+          }
+        }
+      },
+      "scalar": {
+        "prose_nll": 3.6188825331628323,
+        "prose_targets": 32768,
+        "grids": {
+          "copy6": {
+            "n": 32,
+            "exact": 32
+          },
+          "larger": {
+            "n": 64,
+            "exact": 60
+          },
+          "novel": {
+            "n": 64,
+            "exact": 60
+          }
+        }
+      },
+      "repair": {
+        "prose_nll": 3.5222391486167908,
+        "prose_targets": 32768,
+        "grids": {
+          "copy6": {
+            "n": 32,
+            "exact": 32
+          },
+          "larger": {
+            "n": 64,
+            "exact": 59
+          },
+          "novel": {
+            "n": 64,
+            "exact": 59
+          }
+        }
+      }
+    },
+    "decision": {
+      "prose_gap_recovered": 0.6610888940893894,
+      "movement_retained": true,
+      "copy_retained": true,
+      "integration_pass": true,
+      "beyond_scalar_control": true
+    },
+    "selected_strength": "0.75",
+    "frozen": {
+      "repair": "1948e6fe2da06abc461ed7b309fe8ec7ed84a266b912ec477dc220888276cfe5",
+      "scalar": "1609dc2248a9a52614a4c6b549cdfd22ad792f80d884ccd84231d577ddf52df3"
+    },
+    "gains": {
+      "q": 1,
+      "k": 1,
+      "v": 0.5,
+      "o": 0.625
+    },
+    "trained_parameters_unchanged": 2490840,
+    "interpretation": "Native selective scaling; no WSPL syntax used, no training, modest tradeoff versus uniform attenuation."
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "status": "complete",
+  "seconds": 166.39099999982864,
+  "summary": {
+    "copy": {
+      "unconstrained": {
+        "n": 64,
+        "exact": 0,
+        "valid_format": 0,
+        "cell_accuracy": 0.0,
+        "by_direction": {
+          "down": {
+            "n": 16,
+            "exact": 0
+          },
+          "left": {
+            "n": 16,
+            "exact": 0
+          },
+          "right": {
+            "n": 16,
+            "exact": 0
+          },
+          "up": {
+            "n": 16,
+            "exact": 0
+          }
+        }
+      },
+      "palette_only": {
+        "n": 64,
+        "exact": 48,
+        "valid_format": 64,
+        "cell_accuracy": 0.9619140625,
+        "by_direction": {
+          "down": {
+            "n": 16,
+            "exact": 5
+          },
+          "left": {
+            "n": 16,
+            "exact": 15
+          },
+          "right": {
+            "n": 16,
+            "exact": 16
+          },
+          "up": {
+            "n": 16,
+            "exact": 12
+          }
+        }
+      }
+    },
+    "movement_familiar": {
+      "unconstrained": {
+        "n": 64,
+        "exact": 0,
+        "valid_format": 0,
+        "cell_accuracy": 0.0,
+        "by_direction": {
+          "down": {
+            "n": 16,
+            "exact": 0
+          },
+          "left": {
+            "n": 16,
+            "exact": 0
+          },
+          "right": {
+            "n": 16,
+            "exact": 0
+          },
+          "up": {
+            "n": 16,
+            "exact": 0
+          }
+        }
+      },
+      "palette_only": {
+        "n": 64,
+        "exact": 2,
+        "valid_format": 64,
+        "cell_accuracy": 0.8095703125,
+        "by_direction": {
+          "down": {
+            "n": 16,
+            "exact": 0
+          },
+          "left": {
+            "n": 16,
+            "exact": 1
+          },
+          "right": {
+            "n": 16,
+            "exact": 0
+          },
+          "up": {
+            "n": 16,
+            "exact": 1
+          }
+        }
+      }
+    },
+    "movement_novel": {
+      "unconstrained": {
+        "n": 64,
+        "exact": 0,
+        "valid_format": 0,
+        "cell_accuracy": 0.0,
+        "by_direction": {
+          "down": {
+            "n": 16,
+            "exact": 0
+          },
+          "left": {
+            "n": 16,
+            "exact": 0
+          },
+          "right": {
+            "n": 16,
+            "exact": 0
+          },
+          "up": {
+            "n": 16,
+            "exact": 0
+          }
+        }
+      },
+      "palette_only": {
+        "n": 64,
+        "exact": 0,
+        "valid_format": 64,
+        "cell_accuracy": 0.740234375,
+        "by_direction": {
+          "down": {
+            "n": 16,
+            "exact": 0
+          },
+          "left": {
+            "n": 16,
+            "exact": 0
+          },
+          "right": {
+            "n": 16,
+            "exact": 0
+          },
+          "up": {
+            "n": 16,
+            "exact": 0
+          }
+        }
+      }
+    }
+  },
+  "prerequisite": {
+    "copy_gate_passed": false,
+    "threshold": "61/64 exact grids with palette-only format constraint",
+    "unconstrained_copy_passed": false,
+    "next_step": "Prepare gradient-trained ReLU adapter reachability control only if copy gate passes; otherwise resolve representation/interface first. No automatic follow-on."
+  },
+  "leading_space_first_token": {
+    "copy": 64,
+    "movement_familiar": 64,
+    "movement_novel": 64
+  },
+  "audit": "Archived source verified; all saved exact-grid scores independently recomputed; no new model forwards."
+}

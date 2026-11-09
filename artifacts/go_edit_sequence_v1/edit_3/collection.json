@@ -1,0 +1,19 @@
+{
+  "thread_id": "01a1aa16-3bb9-7a42-93a5-60d0d4357a9e",
+  "usage": {
+    "input_tokens": 11509,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 13774,
+    "reasoning_output_tokens": 12948
+  },
+  "agent_messages": 1,
+  "tool_calls": 0,
+  "active_seconds": 585.2969999997877,
+  "prompt_transport": {
+    "bytes_written": 27949,
+    "sha256": "443292af51f8cb9394ed9d435315bebde572a7cc93db1e51781a9b8eff16fc65",
+    "transport": "stdin",
+    "server_receipt_verified": false
+  }
+}

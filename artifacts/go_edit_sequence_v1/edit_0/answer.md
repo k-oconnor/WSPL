@@ -1,0 +1,323 @@
+This programs short-range group-liberty reasoning, capture and rescue priorities, self-atari and eye-filling penalties, plus opening shape preferences that fade as the board fills. All coefficients are constructed analytically, without policy evaluation.
+
+```wspl
+wspl 0.2;
+target base=artifact("parent",sha256="{{PARENT_SHA256}}");
+
+const A=0;
+const B=81;
+const C=162;
+const D=243;
+const E=324;
+const F=405;
+const G=486;
+const N=487;
+const T=488;
+
+edit base as candidate mode=fixed numeric=exact_to_storage {
+  W1[:,:]=0; b1[:]=0;
+  W2[:,:]=0; b2[:]=0;
+  W3[:,:]=0; b3[:]=0;
+  W4[:,:]=0; b4[:]=0;
+  W5[:,:]=0; b5[:]=0;
+  W6[:,:]=0; b6[:]=0;
+  W7[:,:]=0; b7[:]=0;
+
+  // Per-point channels and local producers.
+  for p in range(81) {
+    // h1: own, enemy, own direct liberties, enemy direct
+    // liberties, connection feature, shifted shape score.
+    W1[3*p,A+p]=1;
+    W1[3*p+1,B+p]=1;
+    W1[3*p,C+p]=4;
+    W1[3*p+1,D+p]=4;
+    b1[C+p]=-4;
+    b1[D+p]=-4;
+    b1[E+p]=-1;
+    b1[F+p]=20;
+
+    W1[3*p,G]=-1/40;
+    W1[3*p+1,G]=-1/40;
+    W1[3*p,N]=1;
+    W1[3*p+1,N]=1;
+
+    // h2: seed evidence of at least two group liberties.
+    W2[A+p,A+p]=1;
+    W2[B+p,B+p]=1;
+    W2[A+p,C+p]=12;
+    W2[C+p,C+p]=1;
+    b2[C+p]=-13;
+    W2[B+p,D+p]=12;
+    W2[D+p,D+p]=1;
+    b2[D+p]=-13;
+
+    // Local enemy pressure, distinct from the capture detector.
+    W2[B+p,E+p]=3;
+    W2[D+p,E+p]=-1;
+    W2[F+p,F+p]=1;
+    W2[E+p,F+p]=4/5;
+
+    // h3: propagate safety evidence through same-color stones.
+    W3[A+p,A+p]=1;
+    W3[B+p,B+p]=1;
+    W3[A+p,C+p]=48;
+    W3[C+p,C+p]=1;
+    b3[C+p]=-48;
+    W3[B+p,D+p]=48;
+    W3[D+p,D+p]=1;
+    b3[D+p]=-48;
+    W3[E+p,E+p]=1;
+    W3[F+p,F+p]=1;
+
+    // h4: binary vulnerability after another neighborhood step.
+    W4[A+p,A+p]=1;
+    W4[B+p,B+p]=1;
+    W4[A+p,C+p]=1;
+    W4[C+p,C+p]=-2;
+    W4[B+p,D+p]=1;
+    W4[D+p,D+p]=-2;
+    W4[E+p,E+p]=1;
+    W4[F+p,F+p]=1;
+
+    // h5: adjacent vulnerable stones, resulting-liberty deficit,
+    // eye penalty, pressure, and shape.
+    b5[C+p]=2;
+    b5[D+p]=2;
+    W5[F+p,F+p]=1;
+
+    // h6: rescue and attack are suppressed by liberty deficit.
+    W6[A+p,A+p]=1;
+    W6[C+p,A+p]=-4;
+    W6[B+p,B+p]=1;
+    W6[C+p,C+p]=1;
+    W6[D+p,D+p]=1;
+    W6[E+p,E+p]=1;
+    W6[B+p,E+p]=-2;
+    W6[C+p,E+p]=-4;
+    W6[F+p,F+p]=1;
+
+    W7[A+p,p]=8;
+    W7[B+p,p]=17/2;
+    W7[C+p,p]=-10;
+    W7[D+p,p]=-13/2;
+    W7[E+p,p]=12/5;
+    W7[F+p,p]=1;
+    b7[p]=-20;
+  }
+
+  // Global opening phase, occupancy, and side-to-move.
+  b1[G]=1;
+  W1[2,T]=1;
+  for j in range(486,489) {
+    W2[j,j]=1;
+    W3[j,j]=1;
+    W4[j,j]=1;
+    W5[j,j]=1;
+    W6[j,j]=1;
+  }
+  b7[81]=-7;
+  W7[N,81]=1/20;
+  W7[T,81]=7/20;
+
+  // Horizontal directed adjacency.
+  // Destination: 9*r+c+s. Source: 9*r+c+1-s.
+  for r in range(9) {
+    for c in range(8) {
+      for s in range(2) {
+        W1[3*(9*r+c+1-s),C+9*r+c+s]-=1;
+        W1[3*(9*r+c+1-s)+1,C+9*r+c+s]-=1;
+        W1[3*(9*r+c+1-s),D+9*r+c+s]-=1;
+        W1[3*(9*r+c+1-s)+1,D+9*r+c+s]-=1;
+        b1[C+9*r+c+s]+=1;
+        b1[D+9*r+c+s]+=1;
+        W1[3*(9*r+c+1-s),E+9*r+c+s]+=1;
+        W1[3*(9*r+c+1-s),F+9*r+c+s]-=9/20;
+        W1[3*(9*r+c+1-s)+1,F+9*r+c+s]-=2/5;
+
+        W2[C+9*r+c+1-s,C+9*r+c+s]+=1/2;
+        W2[D+9*r+c+1-s,D+9*r+c+s]+=1/2;
+        W2[D+9*r+c+1-s,E+9*r+c+s]-=1/2;
+
+        W3[C+9*r+c+1-s,C+9*r+c+s]+=1;
+        W3[D+9*r+c+1-s,D+9*r+c+s]+=1;
+
+        W4[C+9*r+c+1-s,C+9*r+c+s]-=2;
+        W4[D+9*r+c+1-s,D+9*r+c+s]-=2;
+
+        W5[C+9*r+c+1-s,A+9*r+c+s]+=1;
+        W5[D+9*r+c+1-s,B+9*r+c+s]+=1;
+
+        W5[A+9*r+c+1-s,C+9*r+c+s]-=1;
+        W5[B+9*r+c+1-s,C+9*r+c+s]+=1;
+        W5[C+9*r+c+1-s,C+9*r+c+s]+=2;
+        W5[D+9*r+c+1-s,C+9*r+c+s]-=1;
+        b5[C+9*r+c+s]-=1;
+
+        W5[A+9*r+c+1-s,D+9*r+c+s]+=1;
+        W5[B+9*r+c+1-s,D+9*r+c+s]-=2;
+        b5[D+9*r+c+s]-=1;
+
+        W5[E+9*r+c+1-s,E+9*r+c+s]+=1;
+      }
+    }
+  }
+
+  // Vertical directed adjacency.
+  // Destination: p+9*s. Source: p+9*(1-s).
+  for p in range(72) {
+    for s in range(2) {
+      W1[3*(p+9*(1-s)),C+p+9*s]-=1;
+      W1[3*(p+9*(1-s))+1,C+p+9*s]-=1;
+      W1[3*(p+9*(1-s)),D+p+9*s]-=1;
+      W1[3*(p+9*(1-s))+1,D+p+9*s]-=1;
+      b1[C+p+9*s]+=1;
+      b1[D+p+9*s]+=1;
+      W1[3*(p+9*(1-s)),E+p+9*s]+=1;
+      W1[3*(p+9*(1-s)),F+p+9*s]-=9/20;
+      W1[3*(p+9*(1-s))+1,F+p+9*s]-=2/5;
+
+      W2[C+p+9*(1-s),C+p+9*s]+=1/2;
+      W2[D+p+9*(1-s),D+p+9*s]+=1/2;
+      W2[D+p+9*(1-s),E+p+9*s]-=1/2;
+
+      W3[C+p+9*(1-s),C+p+9*s]+=1;
+      W3[D+p+9*(1-s),D+p+9*s]+=1;
+
+      W4[C+p+9*(1-s),C+p+9*s]-=2;
+      W4[D+p+9*(1-s),D+p+9*s]-=2;
+
+      W5[C+p+9*(1-s),A+p+9*s]+=1;
+      W5[D+p+9*(1-s),B+p+9*s]+=1;
+
+      W5[A+p+9*(1-s),C+p+9*s]-=1;
+      W5[B+p+9*(1-s),C+p+9*s]+=1;
+      W5[C+p+9*(1-s),C+p+9*s]+=2;
+      W5[D+p+9*(1-s),C+p+9*s]-=1;
+      b5[C+p+9*s]-=1;
+
+      W5[A+p+9*(1-s),D+p+9*s]+=1;
+      W5[B+p+9*(1-s),D+p+9*s]-=2;
+      b5[D+p+9*s]-=1;
+
+      W5[E+p+9*(1-s),E+p+9*s]+=1;
+    }
+  }
+
+  // Adjacent diagonals: shape and false-eye adjustment.
+  for r in range(8) {
+    for c in range(8) {
+      for d in range(2) {
+        for s in range(2) {
+          W1[3*(9*r+c+d+(1-s)*(10-2*d)),
+             F+9*r+c+d+s*(10-2*d)]+=1/10;
+          W1[3*(9*r+c+d+(1-s)*(10-2*d))+1,
+             F+9*r+c+d+s*(10-2*d)]+=9/20;
+          W5[B+9*r+c+d+(1-s)*(10-2*d),
+             D+9*r+c+d+s*(10-2*d)]-=1/2;
+        }
+      }
+    }
+  }
+
+  // Two-step horizontal extensions and approaches.
+  for r in range(9) {
+    for c in range(7) {
+      for s in range(2) {
+        W1[3*(9*r+c+2*(1-s)),F+9*r+c+2*s]+=7/20;
+        W1[3*(9*r+c+2*(1-s))+1,F+9*r+c+2*s]+=13/20;
+      }
+    }
+  }
+
+  // Two-step vertical extensions and approaches.
+  for p in range(63) {
+    for s in range(2) {
+      W1[3*(p+18*(1-s)),F+p+18*s]+=7/20;
+      W1[3*(p+18*(1-s))+1,F+p+18*s]+=13/20;
+    }
+  }
+
+  // Knight offsets (2,1), reflected and reversed.
+  for r in range(7) {
+    for c in range(8) {
+      for d in range(2) {
+        for s in range(2) {
+          W1[3*(9*r+c+d+(1-s)*(19-2*d)),
+             F+9*r+c+d+s*(19-2*d)]+=1/10;
+          W1[3*(9*r+c+d+(1-s)*(19-2*d))+1,
+             F+9*r+c+d+s*(19-2*d)]+=3/25;
+        }
+      }
+    }
+  }
+
+  // Knight offsets (1,2), reflected and reversed.
+  for r in range(8) {
+    for c in range(7) {
+      for d in range(2) {
+        for s in range(2) {
+          W1[3*(9*r+c+2*d+(1-s)*(11-4*d)),
+             F+9*r+c+2*d+s*(11-4*d)]+=1/10;
+          W1[3*(9*r+c+2*d+(1-s)*(11-4*d))+1,
+             F+9*r+c+2*d+s*(11-4*d)]+=3/25;
+        }
+      }
+    }
+  }
+
+  // Three-step horizontal development.
+  for r in range(9) {
+    for c in range(6) {
+      for s in range(2) {
+        W1[3*(9*r+c+3*(1-s)),F+9*r+c+3*s]+=3/20;
+        W1[3*(9*r+c+3*(1-s))+1,F+9*r+c+3*s]+=1/10;
+      }
+    }
+  }
+
+  // Three-step vertical development.
+  for p in range(54) {
+    for s in range(2) {
+      W1[3*(p+27*(1-s)),F+p+27*s]+=3/20;
+      W1[3*(p+27*(1-s))+1,F+p+27*s]+=1/10;
+    }
+  }
+
+  // Longer diagonal spacing.
+  for r in range(7) {
+    for c in range(7) {
+      for d in range(2) {
+        for s in range(2) {
+          W1[3*(9*r+c+2*d+(1-s)*(20-4*d)),
+             F+9*r+c+2*d+s*(20-4*d)]-=1/20;
+          W1[3*(9*r+c+2*d+(1-s)*(20-4*d))+1,
+             F+9*r+c+2*d+s*(20-4*d)]+=1/20;
+        }
+      }
+    }
+  }
+
+  // Opening geometry fades to zero at forty occupied points.
+  for k in range(9) {
+    W7[G,k]-=3;
+    W7[G,72+k]-=3;
+    W7[G,9*k]-=3;
+    W7[G,9*k+8]-=3;
+
+    W7[G,9+k]-=1;
+    W7[G,63+k]-=1;
+    W7[G,9*k+1]-=1;
+    W7[G,9*k+7]-=1;
+
+    W7[G,18+k]+=2/5;
+    W7[G,54+k]+=2/5;
+    W7[G,9*k+2]+=2/5;
+    W7[G,9*k+6]+=2/5;
+
+    W7[G,27+k]+=1/5;
+    W7[G,45+k]+=1/5;
+    W7[G,9*k+3]+=1/5;
+    W7[G,9*k+5]+=1/5;
+  }
+}
+```

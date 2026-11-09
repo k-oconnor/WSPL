@@ -1,0 +1,1024 @@
+{
+  "source_manifest": "5b6d0a7498e58d9ec5b081e36de82922c23241ac123b30df5014b19ae95860f2",
+  "sessions": [
+    {
+      "name": "0_native",
+      "arm": "native",
+      "steps": [
+        {
+          "step": 0,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 10502,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 544,
+            "reasoning_output_tokens": 485
+          },
+          "program_bytes": 132,
+          "program_sha256": "11a6990263ab88344003429fbcd78987cb441990364344ba5c043bf0cedbf1de",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.08000000042970462,
+            "W27": 0.08000000044400413,
+            "W28": 0.08000000040573854,
+            "W29": 0.08000000003551995
+          },
+          "mean_abs_answer_logprob_change": 0.12331335069346468
+        },
+        {
+          "step": 1,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 15176,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 408,
+            "reasoning_output_tokens": 349
+          },
+          "program_bytes": 132,
+          "program_sha256": "346fda5057ed13cc6e8db8023eaef2887d7cba915a8fd642ab0b51ff4a0136d6",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.08000000037124641,
+            "W27": 0.08000000049311004,
+            "W28": 0.08000000047544456,
+            "W29": 0.08000000033171313
+          },
+          "mean_abs_answer_logprob_change": 0.12999685565430916
+        },
+        {
+          "step": 2,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 19846,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2683,
+            "reasoning_output_tokens": 2500
+          },
+          "program_bytes": 593,
+          "program_sha256": "19fa73f13cba14ae0184663d99c8c7024d0fb32c6837fc1ed5ce6ebd9045f750",
+          "validation_accuracy": 0.3110367892976589,
+          "improved": 0,
+          "worsened": 4,
+          "relative_norms": {
+            "W26": 0.04868833825495196,
+            "W27": 0.034354238002119404,
+            "W28": 0.03683122731746866,
+            "W29": 0.03633166856119605
+          },
+          "mean_abs_answer_logprob_change": 0.20358673891230444
+        },
+        {
+          "step": 3,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 24656,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 860,
+            "reasoning_output_tokens": 816
+          },
+          "program_bytes": 93,
+          "program_sha256": "c27840095319ab6ec5aa9045d299350eca234c1ebfb67f07af10ab9e7bba706f",
+          "validation_accuracy": 0.32441471571906355,
+          "improved": 0,
+          "worsened": 0,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.0,
+            "W29": 0.0
+          },
+          "mean_abs_answer_logprob_change": 0.0
+        }
+      ],
+      "final_changed_coefficients": 0,
+      "tests": {
+        "challenge_test": {
+          "correct": 336,
+          "improved": 0,
+          "worsened": 0
+        },
+        "easy_test": {
+          "correct": 1207,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "name": "0_wspl",
+      "arm": "wspl",
+      "steps": [
+        {
+          "step": 0,
+          "status": "rejected",
+          "usage": {
+            "input_tokens": 10505,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 672,
+            "reasoning_output_tokens": 568
+          },
+          "program_bytes": 268,
+          "program_sha256": "cca859967eb4ccb774e6cdc4b32d1e418ed49510918c84f2e264ef46637706f7"
+        },
+        {
+          "step": 1,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 10676,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 567,
+            "reasoning_output_tokens": 391
+          },
+          "program_bytes": 372,
+          "program_sha256": "8c140d727ba3581d7aa262d61515070291ce18532697912c3cda691db872b5ce",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.0625,
+            "W27": 0.0625,
+            "W28": 0.0625,
+            "W29": 0.0625
+          },
+          "mean_abs_answer_logprob_change": 0.09688016717358051
+        },
+        {
+          "step": 2,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 15770,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 475,
+            "reasoning_output_tokens": 299
+          },
+          "program_bytes": 372,
+          "program_sha256": "830491820bb066088de2bc1f7084230fb55d7cedeedec0de1fa2c710ae2c7a54",
+          "validation_accuracy": 0.31438127090301005,
+          "improved": 0,
+          "worsened": 3,
+          "relative_norms": {
+            "W26": 0.09375,
+            "W27": 0.09374999999999999,
+            "W28": 0.09375,
+            "W29": 0.09375
+          },
+          "mean_abs_answer_logprob_change": 0.15305529287712058
+        },
+        {
+          "step": 3,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 20877,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 424,
+            "reasoning_output_tokens": 276
+          },
+          "program_bytes": 324,
+          "program_sha256": "cd436c24c1d5330199f63dfd9e4767a361556bb9c082ffbdcbfd98bcd4c681d1",
+          "validation_accuracy": 0.32441471571906355,
+          "improved": 0,
+          "worsened": 0,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.0,
+            "W29": 0.0
+          },
+          "mean_abs_answer_logprob_change": 0.0
+        }
+      ],
+      "final_changed_coefficients": 0,
+      "tests": {
+        "challenge_test": {
+          "correct": 336,
+          "improved": 0,
+          "worsened": 0
+        },
+        "easy_test": {
+          "correct": 1207,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "name": "0_lora",
+      "arm": "lora",
+      "steps": [
+        {
+          "step": 0,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 10655,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3329,
+            "reasoning_output_tokens": 3032
+          },
+          "program_bytes": 694,
+          "program_sha256": "ac9a09f0d1c0732bd8271c4951a18fd75a05a3ebb73205637ffcf2c0ff50bf5c",
+          "validation_accuracy": 0.31438127090301005,
+          "improved": 0,
+          "worsened": 3,
+          "relative_norms": {
+            "W26": 0.05875548442814837,
+            "W27": 0.07462206712119268,
+            "W28": 0.05364945766281101,
+            "W29": 0.04480199855051237
+          },
+          "mean_abs_answer_logprob_change": 0.14757644491179706
+        },
+        {
+          "step": 1,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 15929,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 434,
+            "reasoning_output_tokens": 326
+          },
+          "program_bytes": 296,
+          "program_sha256": "c8ab1bb1be85dc8ffffdc4a356b107457372170ebe0e401555c691315bdca833",
+          "validation_accuracy": 0.3076923076923077,
+          "improved": 0,
+          "worsened": 5,
+          "relative_norms": {
+            "W26": 0.058755484392027275,
+            "W27": 0.07462206710461951,
+            "W28": 0.053649457720550506,
+            "W29": 0.0448019985530564
+          },
+          "mean_abs_answer_logprob_change": 0.14767291378136257
+        },
+        {
+          "step": 2,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 20991,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1918,
+            "reasoning_output_tokens": 1802
+          },
+          "program_bytes": 304,
+          "program_sha256": "cc770467321f2b77426ee7e5c1274556c0d99e6ac673d6ecd528c5c50a6fe343",
+          "validation_accuracy": 0.3210702341137124,
+          "improved": 0,
+          "worsened": 1,
+          "relative_norms": {
+            "W26": 0.014688871130145923,
+            "W27": 0.018655516532272366,
+            "W28": 0.013412364571719865,
+            "W29": 0.01120049965360382
+          },
+          "mean_abs_answer_logprob_change": 0.03691748258855874
+        },
+        {
+          "step": 3,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 26056,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 504,
+            "reasoning_output_tokens": 336
+          },
+          "program_bytes": 432,
+          "program_sha256": "1b1568cd5f841bf9d2eaed2004d0dcb213370defe1c18b057c51f8401ef9c9f8",
+          "validation_accuracy": 0.32441471571906355,
+          "improved": 0,
+          "worsened": 0,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.0,
+            "W29": 0.0
+          },
+          "mean_abs_answer_logprob_change": 0.0
+        }
+      ],
+      "final_changed_coefficients": 0,
+      "tests": {
+        "challenge_test": {
+          "correct": 336,
+          "improved": 0,
+          "worsened": 0
+        },
+        "easy_test": {
+          "correct": 1207,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "name": "1_wspl",
+      "arm": "wspl",
+      "steps": [
+        {
+          "step": 0,
+          "status": "rejected",
+          "usage": {
+            "input_tokens": 10505,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 688,
+            "reasoning_output_tokens": 584
+          },
+          "program_bytes": 268,
+          "program_sha256": "f682fbbdb5a10d87e6081950bd89f0aa8ac5ea97657961f27f9cbe6b629ab957"
+        },
+        {
+          "step": 1,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 10676,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 422,
+            "reasoning_output_tokens": 282
+          },
+          "program_bytes": 320,
+          "program_sha256": "2175cd12597694c862fb454f3ea18cf3e2ff484e41ad2d4e3877b25e4bf9c4b1",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.08000000042970462,
+            "W27": 0.08000000044400413,
+            "W28": 0.08000000040573854,
+            "W29": 0.08000000003551995
+          },
+          "mean_abs_answer_logprob_change": 0.12331335069346468
+        },
+        {
+          "step": 2,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 15775,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 424,
+            "reasoning_output_tokens": 284
+          },
+          "program_bytes": 320,
+          "program_sha256": "a2c5d78e9cea8f5a18b39dd3e55d7300b7a4c85947a4aa76c94763b8942258e4",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.08000000037124641,
+            "W27": 0.08000000049311004,
+            "W28": 0.08000000047544456,
+            "W29": 0.08000000033171313
+          },
+          "mean_abs_answer_logprob_change": 0.12999685565430916
+        },
+        {
+          "step": 3,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 20864,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 731,
+            "reasoning_output_tokens": 615
+          },
+          "program_bytes": 272,
+          "program_sha256": "371b14fbe3e4456f1a8f792584b712c55f71b9e59a89bc2b1b384650d63ce83f",
+          "validation_accuracy": 0.32441471571906355,
+          "improved": 0,
+          "worsened": 0,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.0,
+            "W29": 0.0
+          },
+          "mean_abs_answer_logprob_change": 0.0
+        }
+      ],
+      "final_changed_coefficients": 0,
+      "tests": {
+        "challenge_test": {
+          "correct": 336,
+          "improved": 0,
+          "worsened": 0
+        },
+        "easy_test": {
+          "correct": 1207,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "name": "1_lora",
+      "arm": "lora",
+      "steps": [
+        {
+          "step": 0,
+          "status": "rejected",
+          "usage": {
+            "input_tokens": 10655,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 5188,
+            "reasoning_output_tokens": 4544
+          },
+          "program_bytes": 1491,
+          "program_sha256": "74d37e855d7182066044ef6c6f5bd33af0b7ba8ccc6e9c1448be11d05145a2e8"
+        },
+        {
+          "step": 1,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 11427,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3103,
+            "reasoning_output_tokens": 2148
+          },
+          "program_bytes": 2076,
+          "program_sha256": "3f98b182d90f37dae7d6b7234b7a7faf191a08297247c93c0c593ca3bf1d5654",
+          "validation_accuracy": 0.32441471571906355,
+          "improved": 0,
+          "worsened": 0,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.033760897947541536,
+            "W29": 0.03492678809392629
+          },
+          "mean_abs_answer_logprob_change": 0.02538470826556335
+        },
+        {
+          "step": 2,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 17375,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 510,
+            "reasoning_output_tokens": 428
+          },
+          "program_bytes": 206,
+          "program_sha256": "31dc1f45ad384c7742d8ec39ed8750f885acdb94de6260c27f0448daf83e2a28",
+          "validation_accuracy": 0.3210702341137124,
+          "improved": 0,
+          "worsened": 1,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.0945305145649129,
+            "W29": 0.09779500596147207
+          },
+          "mean_abs_answer_logprob_change": 0.07076847133924015
+        },
+        {
+          "step": 3,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 22371,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 909,
+            "reasoning_output_tokens": 833
+          },
+          "program_bytes": 198,
+          "program_sha256": "eab6dd7921718906fb68bd6078ae733c3278636b0ca0c641f8e776156174f01d",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.09453051446334887,
+            "W29": 0.09779500608481265
+          },
+          "mean_abs_answer_logprob_change": 0.07173076346891011
+        }
+      ],
+      "final_changed_coefficients": 663552,
+      "tests": {
+        "challenge_test": {
+          "correct": 334,
+          "improved": 1,
+          "worsened": 3
+        },
+        "easy_test": {
+          "correct": 1205,
+          "improved": 7,
+          "worsened": 9
+        }
+      }
+    },
+    {
+      "name": "1_native",
+      "arm": "native",
+      "steps": [
+        {
+          "step": 0,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 10502,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 847,
+            "reasoning_output_tokens": 771
+          },
+          "program_bytes": 228,
+          "program_sha256": "0af402c091334d5f3639be7c5dda7b0326c4d09fbd993410fd5afcce12239b6e",
+          "validation_accuracy": 0.31438127090301005,
+          "improved": 0,
+          "worsened": 3,
+          "relative_norms": {
+            "W26": 0.09990000119469905,
+            "W27": 0.09990000110357043,
+            "W28": 0.0999000012125517,
+            "W29": 0.09990000115420056
+          },
+          "mean_abs_answer_logprob_change": 0.1634393413262551
+        },
+        {
+          "step": 1,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 15187,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 434,
+            "reasoning_output_tokens": 360
+          },
+          "program_bytes": 214,
+          "program_sha256": "8b3371566ea9110a699410320be8677e6201190523c815e40391810e28cd3cb9",
+          "validation_accuracy": 0.31438127090301005,
+          "improved": 0,
+          "worsened": 3,
+          "relative_norms": {
+            "W26": 0.0998999983661452,
+            "W27": 0.09989999848040937,
+            "W28": 0.0998999984709026,
+            "W29": 0.09989999832680029
+          },
+          "mean_abs_answer_logprob_change": 0.1530466017810943
+        },
+        {
+          "step": 2,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 19873,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2042,
+            "reasoning_output_tokens": 1884
+          },
+          "program_bytes": 503,
+          "program_sha256": "8864a684c03af138d102e6b752f57a47d64f255066dc40e57aae994f965116a9",
+          "validation_accuracy": 0.31438127090301005,
+          "improved": 0,
+          "worsened": 3,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.07499999998902195,
+            "W29": 0.07499999998388117
+          },
+          "mean_abs_answer_logprob_change": 0.09711768139946202
+        },
+        {
+          "step": 3,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 24630,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 253,
+            "reasoning_output_tokens": 198
+          },
+          "program_bytes": 150,
+          "program_sha256": "8178d57ad0cd1e96efc622966ff7765ff2f42b89d22da957adc5d21125c8eea3",
+          "validation_accuracy": 0.32441471571906355,
+          "improved": 0,
+          "worsened": 0,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.0,
+            "W29": 0.0
+          },
+          "mean_abs_answer_logprob_change": 0.0
+        }
+      ],
+      "final_changed_coefficients": 0,
+      "tests": {
+        "challenge_test": {
+          "correct": 336,
+          "improved": 0,
+          "worsened": 0
+        },
+        "easy_test": {
+          "correct": 1207,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "name": "2_lora",
+      "arm": "lora",
+      "steps": [
+        {
+          "step": 0,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 10655,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 4718,
+            "reasoning_output_tokens": 4520
+          },
+          "program_bytes": 485,
+          "program_sha256": "210afa9159ca1893340dc446f5a7db3b97e69c5d37e3ec4c5ce931a5fa218044",
+          "validation_accuracy": 0.3210702341137124,
+          "improved": 0,
+          "worsened": 1,
+          "relative_norms": {
+            "W26": 0.05959582770454555,
+            "W27": 0.062314183632204014,
+            "W28": 0.059745315962698824,
+            "W29": 0.057889821045124704
+          },
+          "mean_abs_answer_logprob_change": 0.07299073637031031
+        },
+        {
+          "step": 1,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 15811,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 839,
+            "reasoning_output_tokens": 715
+          },
+          "program_bytes": 296,
+          "program_sha256": "9351aeed47280035c38788d95f64d5d262ba34508ae96ae15a23bc0901323ef5",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.08939374140121085,
+            "W27": 0.09347127436410635,
+            "W28": 0.08961797425512168,
+            "W29": 0.08683473182983398
+          },
+          "mean_abs_answer_logprob_change": 0.10960536386499453
+        },
+        {
+          "step": 2,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 20889,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3653,
+            "reasoning_output_tokens": 3558
+          },
+          "program_bytes": 225,
+          "program_sha256": "c1b4d7f1273ffa3538f10aafe509b26bfb8a688eb86021d9bdb42e7d347841b1",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.0,
+            "W29": 0.08683473182481914
+          },
+          "mean_abs_answer_logprob_change": 0.04698079175485838
+        },
+        {
+          "step": 3,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 25874,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1288,
+            "reasoning_output_tokens": 1127
+          },
+          "program_bytes": 394,
+          "program_sha256": "022af7c40ebff102579ff4a9a483110d716f5d1f35a2ba56fabaf3162466cac7",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.05959582770454555,
+            "W27": 0.062314183632204014,
+            "W28": 0.059745315962698824,
+            "W29": 0.0
+          },
+          "mean_abs_answer_logprob_change": 0.06440911880090608
+        }
+      ],
+      "final_changed_coefficients": 995328,
+      "tests": {
+        "challenge_test": {
+          "correct": 334,
+          "improved": 1,
+          "worsened": 3
+        },
+        "easy_test": {
+          "correct": 1209,
+          "improved": 9,
+          "worsened": 7
+        }
+      }
+    },
+    {
+      "name": "2_native",
+      "arm": "native",
+      "steps": [
+        {
+          "step": 0,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 10502,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 901,
+            "reasoning_output_tokens": 795
+          },
+          "program_bytes": 324,
+          "program_sha256": "88fa4a2cf53ff807ac3b5e2657cacd3be7417cf4098af00987f2776357395356",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.08000000042970462,
+            "W27": 0.08000000044400413,
+            "W28": 0.08000000040573854,
+            "W29": 0.08000000003551995
+          },
+          "mean_abs_answer_logprob_change": 0.12331335069346468
+        },
+        {
+          "step": 1,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 15224,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 480,
+            "reasoning_output_tokens": 369
+          },
+          "program_bytes": 331,
+          "program_sha256": "8a01096b5a18730a442166e3b2f1976479432fee9712693226cf9d6e3b41df63",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.08000000037124641,
+            "W27": 0.08000000049311004,
+            "W28": 0.08000000047544456,
+            "W29": 0.08000000033171313
+          },
+          "mean_abs_answer_logprob_change": 0.12999685565430916
+        },
+        {
+          "step": 2,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 19949,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1346,
+            "reasoning_output_tokens": 1166
+          },
+          "program_bytes": 556,
+          "program_sha256": "dbaaadd79ac401068c8602fcf3d858c4c66b9e2b6c925d29fd4a115bf699fd3b",
+          "validation_accuracy": 0.3210702341137124,
+          "improved": 1,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.05587739800777628,
+            "W27": 0.062050687134699446,
+            "W28": 0.0659008346140487,
+            "W29": 0.0621816354303521
+          },
+          "mean_abs_answer_logprob_change": 0.22270096766090072
+        },
+        {
+          "step": 3,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 24754,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 380,
+            "reasoning_output_tokens": 327
+          },
+          "program_bytes": 148,
+          "program_sha256": "dcd664f9b515f3593545f03e78762b4f4eb8044f835fa536c6c4baa2a22fdbd1",
+          "validation_accuracy": 0.32441471571906355,
+          "improved": 0,
+          "worsened": 0,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.0,
+            "W29": 0.0
+          },
+          "mean_abs_answer_logprob_change": 0.0
+        }
+      ],
+      "final_changed_coefficients": 0,
+      "tests": {
+        "challenge_test": {
+          "correct": 336,
+          "improved": 0,
+          "worsened": 0
+        },
+        "easy_test": {
+          "correct": 1207,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "name": "2_wspl",
+      "arm": "wspl",
+      "steps": [
+        {
+          "step": 0,
+          "status": "rejected",
+          "usage": {
+            "input_tokens": 10505,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 651,
+            "reasoning_output_tokens": 551
+          },
+          "program_bytes": 240,
+          "program_sha256": "5b3782cda8b251263705bb9fc19d35143635d9465d0197671acbdc848afcb0f0"
+        },
+        {
+          "step": 1,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 10668,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 569,
+            "reasoning_output_tokens": 385
+          },
+          "program_bytes": 380,
+          "program_sha256": "e500745afc8e064632d8b1819b351b396b7fee248448ab9464e13bec5cb95d8e",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.08000000042970462,
+            "W27": 0.08000000044400413,
+            "W28": 0.08000000040573854,
+            "W29": 0.08000000003551995
+          },
+          "mean_abs_answer_logprob_change": 0.12331335069346468
+        },
+        {
+          "step": 2,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 15806,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 599,
+            "reasoning_output_tokens": 415
+          },
+          "program_bytes": 380,
+          "program_sha256": "52001a1e7a72c93bc018b06b747c412c3232b77b721d2654ba0ff5cab5f9c9b5",
+          "validation_accuracy": 0.3177257525083612,
+          "improved": 0,
+          "worsened": 2,
+          "relative_norms": {
+            "W26": 0.08000000037124641,
+            "W27": 0.08000000049311004,
+            "W28": 0.08000000047544456,
+            "W29": 0.08000000033171313
+          },
+          "mean_abs_answer_logprob_change": 0.12999685565430916
+        },
+        {
+          "step": 3,
+          "status": "accepted",
+          "usage": {
+            "input_tokens": 20943,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 590,
+            "reasoning_output_tokens": 434
+          },
+          "program_bytes": 332,
+          "program_sha256": "c968ae3f3ccc08671da90dd0848ccdf74afd705efb1dcfb43c26a6fe2ae24581",
+          "validation_accuracy": 0.32441471571906355,
+          "improved": 0,
+          "worsened": 0,
+          "relative_norms": {
+            "W26": 0.0,
+            "W27": 0.0,
+            "W28": 0.0,
+            "W29": 0.0
+          },
+          "mean_abs_answer_logprob_change": 0.0
+        }
+      ],
+      "final_changed_coefficients": 0,
+      "tests": {
+        "challenge_test": {
+          "correct": 336,
+          "improved": 0,
+          "worsened": 0
+        },
+        "easy_test": {
+          "correct": 1207,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    }
+  ],
+  "arms": {
+    "native": {
+      "accepted": 12,
+      "rejected": 0,
+      "usage": {
+        "input_tokens": 210801,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 11178,
+        "reasoning_output_tokens": 10020
+      }
+    },
+    "wspl": {
+      "accepted": 9,
+      "rejected": 3,
+      "usage": {
+        "input_tokens": 173570,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6812,
+        "reasoning_output_tokens": 5084
+      }
+    },
+    "lora": {
+      "accepted": 11,
+      "rejected": 1,
+      "usage": {
+        "input_tokens": 208688,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 26393,
+        "reasoning_output_tokens": 23369
+      }
+    }
+  },
+  "inspection_calls": 0,
+  "rejections": [
+    {
+      "session": "0_wspl",
+      "step": 0,
+      "reason": "EditError: {'line': 4, 'column': 3}: assignment needs a declared tensor slice"
+    },
+    {
+      "session": "1_wspl",
+      "step": 0,
+      "reason": "EditError: {'line': 4, 'column': 3}: assignment needs a declared tensor slice"
+    },
+    {
+      "session": "1_lora",
+      "step": 0,
+      "reason": "EditError: {'line': 5, 'column': 3}: assignment needs a declared tensor slice"
+    },
+    {
+      "session": "2_wspl",
+      "step": 0,
+      "reason": "EditError: {'line': 4, 'column': 3}: assignment needs a declared tensor slice"
+    }
+  ],
+  "new_model_calls": 0,
+  "new_predictions": 0
+}

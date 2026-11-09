@@ -56,4 +56,10 @@ Exit evidence: repair has a measured acquisition-cost/retention benefit under st
 
 ## M5: research synthesis
 
+Research idea: [WSPL-LoRA](wspl/WSPL_LORA_IDEA.md), LLM-authored WSPL edits
+to adapters for specific skills. The [completed SmolLM experiments](wspl/SMOLLM_EXPERIMENTS_2026-11-09.md)
+show spatial learning through gradient training, substantial language interference,
+and partial repair through ordinary adapter scaling. These are archived experiments,
+not a demonstrated WSPL advantage or an adopted integration mechanism.
+
 Assess whether generated executable knowledge is retained, transferred and revised. Connect mechanism models to TNST/temporal causal work only when identification assumptions and actual intervention predictions are tested. Scope novelty against LTLf synthesis, language-conditioned skill planning, code policies, weight generation and interpretable control. Publication positioning follows evidence; the full causal neuro-symbolic world-model ambition remains broader.

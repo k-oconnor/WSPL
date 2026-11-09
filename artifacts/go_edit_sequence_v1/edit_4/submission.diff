@@ -1,0 +1,141 @@
+--- previous_submitted_transaction
++++ edit_4_submitted_transaction
+@@ -4,71 +4,55 @@
+ const A=0;
+ const B=81;
+ const C=162;
++const D=243;
+ const E=324;
+ const F=405;
+ const G=486;
+ 
+ edit base as candidate mode=fixed numeric=exact_to_storage {
+-  // Move the positional kernel to h5, freeing h3/h4 F
+-  // for friendly three-liberty certificates.
+-  W3[:,F:G]=0;
+-  b3[F:G]=0;
+-  W4[:,F:G]=0;
+-  b4[F:G]=0;
+-  W5[:,F:G]=0;
+-  b5[F:G]=0;
++  // The positional kernel now lives in W5. Reuse its old
++  // h1 channels for color-specific liberty-overlap bounds.
++  W1[:,E:G]=0;
++  b1[E:G]=0;
+ 
+-  // Enemy pressure is nonnegative before its existing ReLU.
+-  // Fold it into the shifted score, freeing h6 E.
+-  W6[:,E:F]=0;
+-  b6[E:F]=0;
++  // Replace only the complementary certificates.
++  // Preserve the independent half-weighted certificates.
++  W2[:,E:G]=0;
++  b2[E:G]=0;
+ 
+   for p in range(81) {
+-    // The original friendly seed is relu(liberty_bound-1).
+-    // Thresholding it again certifies at least three liberties.
+-    W3[C+p,F+p]=1;
+-    b3[F+p]=-1;
++    // At an empty point:
++    // E = relu(number of adjacent friendly stones - 1).
++    // F = relu(number of adjacent opposing stones - 1).
++    // Both vanish at occupied points.
++    W1[3*p,E+p]=-4;
++    W1[3*p+1,E+p]=-4;
++    W1[3*p,F+p]=-4;
++    W1[3*p+1,F+p]=-4;
++    b1[E+p]=-1;
++    b1[F+p]=-1;
+ 
+-    // Propagate this certificate through friendly stones.
+-    W4[A+p,F+p]=128;
+-    W4[F+p,F+p]=1;
+-    b4[F+p]=-128;
++    // Complementary two-liberty certificates:
++    // direct liberties + neighboring same-color direct liberties
++    // minus a conservative bound on duplicate liberties.
++    W2[B+p,E+p]=12;
++    W2[D+p,E+p]=1;
++    b2[E+p]=-13;
+ 
+-    // Reconstruct the unchanged positional kernel from the
+-    // exact stone indicators retained through h4.
+-    b5[F+p]=parent.b3[F+p];
+-    for q in range(81) {
+-      W5[A+q,F+p]=parent.W3[A+q,F+p];
+-      W5[B+q,F+p]=parent.W3[B+q,F+p];
+-    }
+-
+-    // h5 C is at most six, reaching six only when every
+-    // orthogonal neighbor is opposing.
+-    //
+-    // relu(2*h5C - 10 - capture_contacts) is zero elsewhere.
+-    // At a surrounded legal move, it equals the existing
+-    // liberty deficit: legality guarantees an actual capture.
+-    W6[C+p,E+p]=2;
+-    b6[E+p]=-10;
+-    W7[E+p,p]=11;
++    W2[A+p,F+p]=12;
++    W2[C+p,F+p]=1;
++    b2[F+p]=-13;
+   }
+ 
+   // Horizontal directed adjacency.
+   for r in range(9) {
+     for c in range(8) {
+       for s in range(2) {
+-        W4[F+9*r+c+1-s,F+9*r+c+s]+=1;
++        W1[3*(9*r+c+1-s),E+9*r+c+s]+=1;
++        W1[3*(9*r+c+1-s)+1,F+9*r+c+s]+=1;
+ 
+-        // A neighboring three-liberty group guarantees at
+-        // least two liberties remain after connecting to it.
+-        W5[F+9*r+c+1-s,C+9*r+c+s]-=8;
+-
+-        // Preserve the former pressure contribution exactly
+-        // as an affine contribution to the shifted score.
+-        W6[E+9*r+c+1-s,F+9*r+c+s]+=12/5;
+-        W6[B+9*r+c+1-s,F+9*r+c+s]-=12/5;
+-
+-        W6[B+9*r+c+1-s,E+9*r+c+s]-=1;
++        W2[D+9*r+c+1-s,E+9*r+c+s]+=1;
++        W2[C+9*r+c+1-s,F+9*r+c+s]+=1;
+       }
+     }
+   }
+@@ -76,14 +60,29 @@
+   // Vertical directed adjacency.
+   for p in range(72) {
+     for s in range(2) {
+-      W4[F+p+9*(1-s),F+p+9*s]+=1;
++      W1[3*(p+9*(1-s)),E+p+9*s]+=1;
++      W1[3*(p+9*(1-s))+1,F+p+9*s]+=1;
+ 
+-      W5[F+p+9*(1-s),C+p+9*s]-=8;
++      W2[D+p+9*(1-s),E+p+9*s]+=1;
++      W2[C+p+9*(1-s),F+p+9*s]+=1;
++    }
++  }
+ 
+-      W6[E+p+9*(1-s),F+p+9*s]+=12/5;
+-      W6[B+p+9*(1-s),F+p+9*s]-=12/5;
++  // Neighboring group members can share liberties at diagonals.
++  // Subtract contact redundancy rather than every empty diagonal:
++  // an empty point touching only one same-color stone contributes
++  // no duplicate-liberty correction.
++  for r in range(8) {
++    for c in range(8) {
++      for d in range(2) {
++        for s in range(2) {
++          W2[F+9*r+c+d+(1-s)*(10-2*d),
++             E+9*r+c+d+s*(10-2*d)]-=1;
+ 
+-      W6[B+p+9*(1-s),E+p+9*s]-=1;
++          W2[E+9*r+c+d+(1-s)*(10-2*d),
++             F+9*r+c+d+s*(10-2*d)]-=1;
++        }
++      }
+     }
+   }
+ }

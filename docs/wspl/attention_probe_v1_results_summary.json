@@ -1,0 +1,134 @@
+{
+  "status": "complete",
+  "read_only_audit": true,
+  "source_pin": "ac22e34e7076dcabdb4c40cde592b877cc7e585e3146e16133a5a1f228efa154",
+  "completed_calls": 9,
+  "interrupted_calls": 1,
+  "interrupted_usage": "unknown",
+  "usage_completed": {
+    "input_tokens": 47245,
+    "cached_input_tokens": 2432,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 11818,
+    "reasoning_output_tokens": 9289
+  },
+  "recovery_seconds": 485.70300000021234,
+  "diagnostics": {
+    "untouched": {
+      "choice_order_max_error": 0.0,
+      "corrected": [],
+      "broken": [],
+      "categories": {
+        "different_mechanism": {
+          "correct": 2,
+          "n": 6
+        },
+        "lexical_control": {
+          "correct": 1,
+          "n": 2
+        },
+        "paraphrase": {
+          "correct": 1,
+          "n": 4
+        },
+        "target": {
+          "correct": 0,
+          "n": 1
+        }
+      }
+    },
+    "forced": {
+      "choice_order_max_error": 0.0,
+      "corrected": [
+        "Mercury_SC_408700",
+        "attention_panel_01",
+        "attention_panel_02",
+        "attention_panel_03"
+      ],
+      "broken": [],
+      "categories": {
+        "different_mechanism": {
+          "correct": 2,
+          "n": 6
+        },
+        "lexical_control": {
+          "correct": 1,
+          "n": 2
+        },
+        "paraphrase": {
+          "correct": 4,
+          "n": 4
+        },
+        "target": {
+          "correct": 1,
+          "n": 1
+        }
+      }
+    },
+    "retrieval": {
+      "choice_order_max_error": 0.0,
+      "corrected": [
+        "Mercury_SC_408700",
+        "attention_panel_01",
+        "attention_panel_02",
+        "attention_panel_03"
+      ],
+      "broken": [],
+      "categories": {
+        "different_mechanism": {
+          "correct": 2,
+          "n": 6
+        },
+        "lexical_control": {
+          "correct": 1,
+          "n": 2
+        },
+        "paraphrase": {
+          "correct": 4,
+          "n": 4
+        },
+        "target": {
+          "correct": 1,
+          "n": 1
+        }
+      }
+    },
+    "zero_key": {
+      "choice_order_max_error": 0.0,
+      "corrected": [],
+      "broken": [],
+      "categories": {
+        "different_mechanism": {
+          "correct": 2,
+          "n": 6
+        },
+        "lexical_control": {
+          "correct": 1,
+          "n": 2
+        },
+        "paraphrase": {
+          "correct": 1,
+          "n": 4
+        },
+        "target": {
+          "correct": 0,
+          "n": 1
+        }
+      }
+    }
+  },
+  "conduction_logprob_increase_range": [
+    2.5204973220825195,
+    5.022001266479492
+  ],
+  "layer": 26,
+  "kv_group": 0,
+  "key_norm": 10.426403045654297,
+  "value_norm": 49.75498962402344,
+  "key_mass_by_category": {
+    "different_mechanism": 0.6837197989225388,
+    "lexical_control": 0.8682314058144888,
+    "paraphrase": 0.6112388968467712,
+    "target": 0.7500001390775045
+  }
+}

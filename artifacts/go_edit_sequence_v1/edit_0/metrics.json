@@ -1,0 +1,105 @@
+{
+  "session": "2_wspl",
+  "arm": "wspl",
+  "step": 0,
+  "status": "accepted",
+  "usage": {
+    "input_tokens": 2381,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 17212,
+    "reasoning_output_tokens": 13791
+  },
+  "collection_seconds": 618.6720000000205,
+  "program": {
+    "bytes": 7692,
+    "characters": 7692,
+    "lines": 319,
+    "nonblank_lines": 279,
+    "sha256": "40c83cd318ae1391a0e8297026f02352bbac2f705b14be5f9d6840b05a5aa551"
+  },
+  "construction": {
+    "exit_code": 0,
+    "seconds": 26.530999999959022,
+    "stdout": "",
+    "stderr": "",
+    "plan_sha256": "962fa5b98a3b4ce04d567c720d5be39dcf834fa6ec714ff49ef241b646ef30eb",
+    "parent_id": "6d8757ccb99946b3f628dd804387cdf80e9626ed6bdc517db9eae4c2fd7c4883",
+    "candidate_id": "91847be81940fefe93224350a805ba66eb103c1dac8b5954472fb4bcdced794b",
+    "resources": {
+      "loop_iterations": 2859,
+      "operations": 6381347,
+      "statements": 17010
+    },
+    "placements": 0,
+    "numeric_profile": "exact_to_storage"
+  },
+  "edit": 0,
+  "checkpoint_sha256": "4ca189a52e3bf7831eec110a4b8db45aebe9e1117b7d7c1bb7ef9f9c1bf8d2a3",
+  "evaluation": {
+    "summaries": {
+      "0": {
+        "games": 2000,
+        "wins": 945,
+        "win_rate": 0.4725,
+        "ci95_wilson": [
+          0.45069374278170404,
+          0.4944116948187647
+        ],
+        "color_wins": [
+          418,
+          527
+        ],
+        "mean_length": 110.4445
+      },
+      "1": {
+        "games": 2000,
+        "wins": 710,
+        "win_rate": 0.355,
+        "ci95_wilson": [
+          0.33432485348219587,
+          0.3762310902293674
+        ],
+        "color_wins": [
+          337,
+          373
+        ],
+        "mean_length": 108.684
+      },
+      "2": {
+        "games": 2000,
+        "wins": 971,
+        "win_rate": 0.4855,
+        "ci95_wilson": [
+          0.46364493782474786,
+          0.5074106565464084
+        ],
+        "color_wins": [
+          457,
+          514
+        ],
+        "mean_length": 111.75
+      }
+    },
+    "mean_win_rate": 0.43766666666666665
+  },
+  "changed_coefficients": 14551,
+  "changed_by_tensor": {
+    "W1": 5401,
+    "W2": 1677,
+    "W3": 1227,
+    "W4": 1227,
+    "W5": 2932,
+    "W6": 732,
+    "W7": 568,
+    "b1": 227,
+    "b2": 162,
+    "b3": 162,
+    "b4": 0,
+    "b5": 154,
+    "b6": 0,
+    "b7": 82
+  },
+  "nonzero_coefficients": 14551,
+  "contrast": null
+}

@@ -260,6 +260,12 @@ class Builder:
             target, op = node.target, {ast.Add:'+=', ast.Sub:'-=', ast.Mult:'*='}[type(node.op)]
         else:
             raise ValueError('only tensor assignment and +=/-=/*= supported')
+        # Whole-tensor assignment is full-slice sugar, not variable rebinding.
+        # Preserve the historical literal-only native compatibility profile.
+        if profile == 'exact_to_storage' and isinstance(target, ast.Name) and target.id in self.arrays:
+            target = ast.Subscript(value=target, slice=ast.Tuple(
+                elts=[ast.Slice(lower=None, upper=None, step=None) for _ in self.arrays[target.id].shape],
+                ctx=ast.Load()), ctx=ast.Store())
         if not isinstance(target, ast.Subscript) or not isinstance(target.value, ast.Name) or target.value.id not in self.arrays:
             raise ValueError('assignment needs a declared tensor slice')
         name = target.value.id

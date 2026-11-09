@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-09",
+  "upstream_commit": "ec5ab41",
+  "merged_prs": [
+    11,
+    12,
+    13
+  ],
+  "tests": {
+    "discovered": 568,
+    "passed_initial": 555,
+    "initial_cli_environment_failures": 4,
+    "cli_retests_passed": 4,
+    "unique_passed": 559,
+    "environment_skips": 9,
+    "full_archived_program_oracle_cases": 73
+  },
+  "notes": [
+    "Initial mixed-runtime subprocesses lacked Z3; four failures passed in venv-sim.",
+    "Nine skips require isolated MinAtar, PGX Go and Kinetix runtimes.",
+    "Historical isolated study sources and runtime identities were not changed.",
+    "No experimental model/repair promoted into supported design."
+  ],
+  "archived_go_file_hashes_verified_in_git_index": 56,
+  "new_source_all_staged": true
+}

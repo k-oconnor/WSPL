@@ -1,0 +1,466 @@
+{
+  "status": "complete",
+  "read_only_audit": true,
+  "source_sha256": "e9acc2e19756d42da234f431846f08a314ede5bba3f262763e6bb68685612f67",
+  "active_seconds": 228.75,
+  "calls": 3,
+  "usage": {
+    "input_tokens": 29183,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 4204,
+    "reasoning_output_tokens": 3177
+  },
+  "closed_form_ridge_replay_bit_identical": true,
+  "changed_key_coefficients": 64,
+  "key_norm": 33.71784591674805,
+  "criteria": {
+    "retention_assessable": true,
+    "selective": false,
+    "useful": true,
+    "retains_initially_correct_negatives": false,
+    "note": "Descriptive exploratory criteria, not statistical significance or proof of a concept."
+  },
+  "comparisons": {
+    "untouched": {
+      "correct": 12,
+      "metrics": {
+        "categories": {
+          "conduction": {
+            "n": 8,
+            "correct": 2
+          },
+          "convection": {
+            "n": 8,
+            "correct": 2
+          },
+          "evaporation": {
+            "n": 8,
+            "correct": 8
+          },
+          "radiation": {
+            "n": 8,
+            "correct": 0
+          }
+        },
+        "settings": {
+          "engine": {
+            "n": 4,
+            "correct": 1
+          },
+          "greenhouse": {
+            "n": 4,
+            "correct": 2
+          },
+          "ironing": {
+            "n": 4,
+            "correct": 2
+          },
+          "oven": {
+            "n": 4,
+            "correct": 2
+          },
+          "pool": {
+            "n": 4,
+            "correct": 1
+          },
+          "roof": {
+            "n": 4,
+            "correct": 1
+          },
+          "spacesuit": {
+            "n": 4,
+            "correct": 2
+          },
+          "tent": {
+            "n": 4,
+            "correct": 1
+          }
+        },
+        "initially_correct_negative_coverage": {
+          "conduction": 0,
+          "convection": 2,
+          "evaporation": 8,
+          "radiation": 0
+        },
+        "corrected": [],
+        "broken": [],
+        "positive_correct": 2,
+        "positive_mean_mass": 0.0,
+        "negative_mean_mass": 0.0,
+        "mass_gap": 0.0,
+        "routing_auc": 0.5,
+        "positive_mass_at_least_half": 0,
+        "positive_n": 8,
+        "negative_mass_at_most_tenth": 24,
+        "negative_n": 24,
+        "initially_correct_negative_n": 10,
+        "initially_correct_negative_retained": 10
+      },
+      "mass_by_mechanism": {
+        "radiation": 0.0,
+        "convection": 0.0,
+        "evaporation": 0.0,
+        "conduction": 0.0
+      }
+    },
+    "forced": {
+      "correct": 16,
+      "metrics": {
+        "categories": {
+          "conduction": {
+            "n": 8,
+            "correct": 8
+          },
+          "convection": {
+            "n": 8,
+            "correct": 0
+          },
+          "evaporation": {
+            "n": 8,
+            "correct": 8
+          },
+          "radiation": {
+            "n": 8,
+            "correct": 0
+          }
+        },
+        "settings": {
+          "engine": {
+            "n": 4,
+            "correct": 2
+          },
+          "greenhouse": {
+            "n": 4,
+            "correct": 2
+          },
+          "ironing": {
+            "n": 4,
+            "correct": 2
+          },
+          "oven": {
+            "n": 4,
+            "correct": 2
+          },
+          "pool": {
+            "n": 4,
+            "correct": 2
+          },
+          "roof": {
+            "n": 4,
+            "correct": 2
+          },
+          "spacesuit": {
+            "n": 4,
+            "correct": 2
+          },
+          "tent": {
+            "n": 4,
+            "correct": 2
+          }
+        },
+        "initially_correct_negative_coverage": {
+          "conduction": 0,
+          "convection": 2,
+          "evaporation": 8,
+          "radiation": 0
+        },
+        "corrected": [
+          "selective_pool_conduction",
+          "selective_ironing_conduction",
+          "selective_engine_conduction",
+          "selective_roof_conduction",
+          "selective_oven_conduction",
+          "selective_tent_conduction"
+        ],
+        "broken": [
+          "selective_ironing_convection",
+          "selective_oven_convection"
+        ],
+        "positive_correct": 8,
+        "positive_mean_mass": 0.75,
+        "negative_mean_mass": 0.75,
+        "mass_gap": 0.0,
+        "routing_auc": 0.5,
+        "positive_mass_at_least_half": 8,
+        "positive_n": 8,
+        "negative_mass_at_most_tenth": 0,
+        "negative_n": 24,
+        "initially_correct_negative_n": 10,
+        "initially_correct_negative_retained": 8
+      },
+      "mass_by_mechanism": {
+        "radiation": 0.75,
+        "convection": 0.75,
+        "evaporation": 0.75,
+        "conduction": 0.75
+      }
+    },
+    "old_key": {
+      "correct": 16,
+      "metrics": {
+        "categories": {
+          "conduction": {
+            "n": 8,
+            "correct": 8
+          },
+          "convection": {
+            "n": 8,
+            "correct": 0
+          },
+          "evaporation": {
+            "n": 8,
+            "correct": 8
+          },
+          "radiation": {
+            "n": 8,
+            "correct": 0
+          }
+        },
+        "settings": {
+          "engine": {
+            "n": 4,
+            "correct": 2
+          },
+          "greenhouse": {
+            "n": 4,
+            "correct": 2
+          },
+          "ironing": {
+            "n": 4,
+            "correct": 2
+          },
+          "oven": {
+            "n": 4,
+            "correct": 2
+          },
+          "pool": {
+            "n": 4,
+            "correct": 2
+          },
+          "roof": {
+            "n": 4,
+            "correct": 2
+          },
+          "spacesuit": {
+            "n": 4,
+            "correct": 2
+          },
+          "tent": {
+            "n": 4,
+            "correct": 2
+          }
+        },
+        "initially_correct_negative_coverage": {
+          "conduction": 0,
+          "convection": 2,
+          "evaporation": 8,
+          "radiation": 0
+        },
+        "corrected": [
+          "selective_pool_conduction",
+          "selective_ironing_conduction",
+          "selective_engine_conduction",
+          "selective_roof_conduction",
+          "selective_oven_conduction",
+          "selective_tent_conduction"
+        ],
+        "broken": [
+          "selective_ironing_convection",
+          "selective_oven_convection"
+        ],
+        "positive_correct": 8,
+        "positive_mean_mass": 0.48758922827740514,
+        "negative_mean_mass": 0.6610551273657216,
+        "mass_gap": -0.17346589908831644,
+        "routing_auc": 0.0625,
+        "positive_mass_at_least_half": 4,
+        "positive_n": 8,
+        "negative_mass_at_most_tenth": 0,
+        "negative_n": 24,
+        "initially_correct_negative_n": 10,
+        "initially_correct_negative_retained": 8
+      },
+      "mass_by_mechanism": {
+        "radiation": 0.6851111315190792,
+        "convection": 0.6167617253959179,
+        "evaporation": 0.6812925251821677,
+        "conduction": 0.48758922827740514
+      }
+    },
+    "new_key": {
+      "correct": 16,
+      "metrics": {
+        "categories": {
+          "conduction": {
+            "n": 8,
+            "correct": 8
+          },
+          "convection": {
+            "n": 8,
+            "correct": 0
+          },
+          "evaporation": {
+            "n": 8,
+            "correct": 8
+          },
+          "radiation": {
+            "n": 8,
+            "correct": 0
+          }
+        },
+        "settings": {
+          "engine": {
+            "n": 4,
+            "correct": 2
+          },
+          "greenhouse": {
+            "n": 4,
+            "correct": 2
+          },
+          "ironing": {
+            "n": 4,
+            "correct": 2
+          },
+          "oven": {
+            "n": 4,
+            "correct": 2
+          },
+          "pool": {
+            "n": 4,
+            "correct": 2
+          },
+          "roof": {
+            "n": 4,
+            "correct": 2
+          },
+          "spacesuit": {
+            "n": 4,
+            "correct": 2
+          },
+          "tent": {
+            "n": 4,
+            "correct": 2
+          }
+        },
+        "initially_correct_negative_coverage": {
+          "conduction": 0,
+          "convection": 2,
+          "evaporation": 8,
+          "radiation": 0
+        },
+        "corrected": [
+          "selective_pool_conduction",
+          "selective_ironing_conduction",
+          "selective_engine_conduction",
+          "selective_roof_conduction",
+          "selective_oven_conduction",
+          "selective_tent_conduction"
+        ],
+        "broken": [
+          "selective_ironing_convection",
+          "selective_oven_convection"
+        ],
+        "positive_correct": 8,
+        "positive_mean_mass": 0.7693734156588714,
+        "negative_mean_mass": 0.2677829024226715,
+        "mass_gap": 0.5015905132362,
+        "routing_auc": 0.9791666666666666,
+        "positive_mass_at_least_half": 7,
+        "positive_n": 8,
+        "negative_mass_at_most_tenth": 4,
+        "negative_n": 24,
+        "initially_correct_negative_n": 10,
+        "initially_correct_negative_retained": 8
+      },
+      "mass_by_mechanism": {
+        "radiation": 0.23186894552782178,
+        "convection": 0.32524187195425236,
+        "evaporation": 0.24623788978594044,
+        "conduction": 0.7693734156588714
+      }
+    },
+    "zero_key": {
+      "correct": 12,
+      "metrics": {
+        "categories": {
+          "conduction": {
+            "n": 8,
+            "correct": 2
+          },
+          "convection": {
+            "n": 8,
+            "correct": 2
+          },
+          "evaporation": {
+            "n": 8,
+            "correct": 8
+          },
+          "radiation": {
+            "n": 8,
+            "correct": 0
+          }
+        },
+        "settings": {
+          "engine": {
+            "n": 4,
+            "correct": 1
+          },
+          "greenhouse": {
+            "n": 4,
+            "correct": 2
+          },
+          "ironing": {
+            "n": 4,
+            "correct": 2
+          },
+          "oven": {
+            "n": 4,
+            "correct": 2
+          },
+          "pool": {
+            "n": 4,
+            "correct": 1
+          },
+          "roof": {
+            "n": 4,
+            "correct": 1
+          },
+          "spacesuit": {
+            "n": 4,
+            "correct": 2
+          },
+          "tent": {
+            "n": 4,
+            "correct": 1
+          }
+        },
+        "initially_correct_negative_coverage": {
+          "conduction": 0,
+          "convection": 2,
+          "evaporation": 8,
+          "radiation": 0
+        },
+        "corrected": [],
+        "broken": [],
+        "positive_correct": 2,
+        "positive_mean_mass": 0.01985208769716943,
+        "negative_mean_mass": 0.022621420414199945,
+        "mass_gap": -0.002769332717030514,
+        "routing_auc": 0.13020833333333334,
+        "positive_mass_at_least_half": 0,
+        "positive_n": 8,
+        "negative_mass_at_most_tenth": 24,
+        "negative_n": 24,
+        "initially_correct_negative_n": 10,
+        "initially_correct_negative_retained": 10
+      },
+      "mass_by_mechanism": {
+        "radiation": 0.022183256553641208,
+        "convection": 0.021678385897151507,
+        "evaporation": 0.02400261879180713,
+        "conduction": 0.01985208769716943
+      }
+    }
+  }
+}

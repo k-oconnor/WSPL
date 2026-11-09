@@ -1,0 +1,119 @@
+{
+  "session": "2_wspl",
+  "arm": "wspl",
+  "step": 5,
+  "status": "accepted",
+  "usage": {
+    "input_tokens": 14719,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 5315,
+    "reasoning_output_tokens": 4922
+  },
+  "collection_seconds": 213.34400000004098,
+  "program": {
+    "bytes": 1163,
+    "characters": 1163,
+    "lines": 46,
+    "nonblank_lines": 39,
+    "sha256": "59646984cfc69ddea6a5e967fe3b649ef0d3863ea1a62d8a4c5bc0c0b66cbabd"
+  },
+  "construction": {
+    "exit_code": 0,
+    "seconds": 9.891000000061467,
+    "stdout": "",
+    "stderr": "",
+    "plan_sha256": "8edd3749d33d18fe92e0f77614bd2fcface1f58e3a5526e1eb0fae3713db11c0",
+    "parent_id": "51d5bf83c944e4097c71dc548c9b5ce17405fae877e6716fda96c8cbb63211d5",
+    "candidate_id": "6ee8ec39e77276fea74571b24250faf54c65a458a1467d8dee1ad34753b7fd15",
+    "resources": {
+      "loop_iterations": 522,
+      "operations": 24261,
+      "statements": 1137
+    },
+    "placements": 0,
+    "numeric_profile": "exact_to_storage"
+  },
+  "edit": 5,
+  "checkpoint_sha256": "3109cc161cff5ec026d5a73f4333f090885bd0125f3a500770e2621f8fad8fa4",
+  "evaluation": {
+    "summaries": {
+      "0": {
+        "games": 2000,
+        "wins": 1157,
+        "win_rate": 0.5785,
+        "ci95_wilson": [
+          0.5567284308162279,
+          0.5999705927606154
+        ],
+        "color_wins": [
+          505,
+          652
+        ],
+        "mean_length": 109.4445
+      },
+      "1": {
+        "games": 2000,
+        "wins": 858,
+        "win_rate": 0.429,
+        "ci95_wilson": [
+          0.4074654732874753,
+          0.45080674742646254
+        ],
+        "color_wins": [
+          362,
+          496
+        ],
+        "mean_length": 106.6005
+      },
+      "2": {
+        "games": 2000,
+        "wins": 1158,
+        "win_rate": 0.579,
+        "ci95_wilson": [
+          0.5572309570907255,
+          0.6004661494388366
+        ],
+        "color_wins": [
+          530,
+          628
+        ],
+        "mean_length": 110.8495
+      }
+    },
+    "mean_win_rate": 0.5288333333333334
+  },
+  "changed_coefficients": 981,
+  "changed_by_tensor": {
+    "W1": 0,
+    "W2": 0,
+    "W3": 162,
+    "W4": 0,
+    "W5": 657,
+    "W6": 0,
+    "W7": 0,
+    "b1": 0,
+    "b2": 0,
+    "b3": 162,
+    "b4": 0,
+    "b5": 0,
+    "b6": 0,
+    "b7": 0
+  },
+  "nonzero_coefficients": 20674,
+  "contrast": {
+    "difference": -0.0115,
+    "per_opponent": [
+      -0.016,
+      -0.005,
+      -0.0135
+    ],
+    "improved": 647,
+    "worsened": 716,
+    "unchanged": 4637,
+    "descriptive_normal_ci95": [
+      -0.02355884500685989,
+      0.0005588450068598899
+    ]
+  }
+}

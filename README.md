@@ -11,14 +11,17 @@ This is an early research prototype led by Kevin O'Connor. We distinguish a
 program matching its weights, a controller satisfying an input-output contract,
 and a robot satisfying a trajectory property. Each needs its own evidence.
 
-## Current capability-engineering experiment
+## Current research status
 
-**November 6, 2026:** all five 6x6 spatial-capability training/authoring arms are
-frozen; final held-out evaluation is in progress. We are testing whether LLM-led
-neural engineering adds a reusable capability, and whether native tools plus
-WSPL improve on native tools alone. See the [current research handoff](CURRENT_RESEARCH.md)
-for the design, development-only scores, local run locations and remaining audit.
-No final capability or WSPL-superiority claim is established yet.
+**November 9, 2026:** the SmolLM capability and retention experiments are complete
+and archived. Gradient-trained spatial adapters learned the bounded grid task,
+but substantially degraded prose and ARC science performance when enabled.
+Astra partially reduced that interference by scaling adapter outputs; it did not
+rewrite the learned computation or use WSPL syntax in that repair. These studies
+do not establish a WSPL advantage or general language-model capability programming.
+No experimental adapter or repair is promoted into the supported design.
+See the [current research handoff](CURRENT_RESEARCH.md) and
+[completed results](docs/wspl/SMOLLM_EXPERIMENTS_2026-11-09.md).
 
 ## Current status
 
@@ -332,6 +335,12 @@ smaller construction-budget screen than the original CSAIL experiment, not a
 strict reproduction. See the [results and accounting](docs/wspl/GO_AUTHORING_V1_RESULTS.md),
 [protocol](docs/wspl/GO_AUTHORING_V1.md), and
 [recovery protocol](docs/wspl/GO_AUTHORING_RESUME_V1.md).
+
+The [seven-edit review](artifacts/go_edit_sequence_v1/index.html) preserves exact
+patches, source diffs, changed-weight lists and per-call usage/length metrics.
+Paired evaluation peaked at edit 3 (54.13%) before declining to the final 52.15%;
+all 189 final-checkpoint batches reproduced the earlier evaluation exactly.
+This is post-hoc analysis on the original seeds, not held-out checkpoint selection.
 
 ### Diffusion: controlled coordinate editing
 

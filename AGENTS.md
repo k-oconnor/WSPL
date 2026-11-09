@@ -1,3 +1,581 @@
+November9 research decision: user regards simpler-network WSP results as useful,
+but transformer/SmolLM experiments do not warrant integration into the main design.
+Archive all experimental source/findings without promoting a new capability.
+GitHub sync brings in already-merged performance PRs11/12/13 (origin ec5ab41).
+No new scientific run is authorized by repository sync. Historical isolated
+source identities remain unchanged; current main is not those historical pins.
+
+Integration repair COMPLETE, receipt/results verified,1921.172seconds.
+Reserved NLL: foundation2.85156,original4.83048,scalar.75 3.61888,repair3.52224.
+Novel/larger/copy: original62/64,64/64,32/32; scalar60,60,32; repair59,59,32.
+Repair closes66.1%NLLgap and passes declared tolerance, but loses one success
+per movement panel versus scalar. Native Python only, no WSPL operations:
+all2490840trained parameters unchanged;120output scale nodes added with gains
+q=k=1,v=.5,o=.625. This is selective attenuation, not algorithm reconstruction,
+new learning, interference-free integration, or evidence of WSPL superiority.
+See docs/wspl/SMOLLM_EXPERIMENTS_2026-11-09.md and CURRENT_RESEARCH.md.
+
+Learned spatial integration repair APPROVED/LAUNCHED Nov9 2026 13:52 PST,
+hidden launcher PID42604, isolated Skillforge-integration-repair-v1 output
+results/integration_repair_v1. Exact digest below approved by user through
+call_ff082a46ea544229a2139ebb7d6aa67c. All231sources/10309resources reverified;
+registered integration-repair-v1 in main/isolated. Launch logs/PID alongside
+output; main docs/wspl/integration_repair_v1_launch.json records launch.
+Inspect current receipt/status before claiming author calls or completion.
+Preserve isolated source/bound resources during execution. No follow-on.
+This launch supersedes the historical unapproved preparation entry below.
+
+Learned spatial integration repair PREPARED Nov9, unapproved/not launched.
+One Astra/xhigh session,max4responses,no host training; edit existing WSPL0
+adapter via shared native/WSPL sandbox. Always enabled, frozen base. Acquisition
+32move/16copy6/32prose; select scalar strength from1/.75/.5/.25 on acquisition.
+Freeze last accepted repair before reserved64novel/64larger/32copy6/64new prose.
+Compare foundation/original/scalar/repair; recover>=50% prose NLL gap with>=90%
+original movement successes per panel and<=1copy loss. Separate scalar comparison.
+Grid panels previously evaluated, so exploratory; no fresh generalization claim.
+Full zero-strength parity, sandbox WSPL, data disjointness, offline prompt pass;
+18focused/sourcegate tests. Isolated Skillforge-integration-repair-v1.
+Manifest integration_repair_v1 SHA256
+38a54eda403e7f519e15421dbea42dbcee7fc367a11b6a910f8be948eee7566c.
+231sources/10309resources verified. Protocol docs/wspl/INTEGRATION_REPAIR_V1.md.
+No author calls or scored predictions; registry unchanged. Four-hour guard,
+20min/call; existing Codex usage, no hard dollar/token cap. No automatic follow-on.
+
+Simple prose degradation COMPLETE, result/receipt verified: 39.359 seconds,
+64 documents,32768 prediction targets per condition. Foundation NLL2.89383935,
+PPL18.0625; WSPL0 NLL4.72341253,PPL112.5517 (6.2312x). All three fixed greedy
+adapter completions loop/repeat. Base/adapter weights unchanged; this is
+interference from enabling a specialized adapter, not permanent base loss.
+Full records: Skillforge-prose-degradation-v1/results/prose_degradation_v1/results.json.
+No follow-on launched.
+
+Simple prose degradation check approved/launched Nov9 2026 13:38 PST,
+hidden launcher PID42000, isolated Skillforge-prose-degradation-v1,
+results/prose_degradation_v1. Exact approved SHA256
+8e9c24778751de5766ec6b847f292979123abb9f4792413a9501674912037455,
+approval call_0ba0f7e11ebd4715b791301a2d1d604f. 227 sources/10285 resources
+reverified; registered prose-degradation-v1 in both registries. Compare frozen
+copy foundation versus WSPL0 on 64 FineWeb-Edu validation documents, at most
+512 targets/document, plus three fixed 64-token greedy completions. No training
+or author calls; 20-minute guard. Inspect receipt/results for current status.
+
+ARC before/after completed: all 24836 rows verified, 1067.859 seconds.
+Challenge/Easy accuracy percent: original28.67/50.80; foundation29.27/51.39;
+gradient22.01/28.91; native0 23.55/40.82; native1 23.29/35.73;
+WSPL0 23.98/41.46; WSPL1 23.38/33.59. All active movement adapters interfere
+with ARC performance; frozen foundation remains recoverable by disabling them.
+User explicitly requested a simple degradation check, not retention training.
+
+ARC science before/after APPROVED and LAUNCHED Nov9 2026 11:52 PST.
+User approved exact digest below through call_0892d820c7774908a316e1a5f19619e9.
+Reverified 224 sources/10288 resources; registered capability-arc-v1 in main
+and isolated registries. Hidden launcher PID39280; output isolated
+results/capability_arc_v1, launch logs/PID alongside, launch record in main
+docs/wspl/capability_arc_v1_launch.json. Inspect live receipt/status before
+claiming scoring or completion. Preserve isolated inventoried source/resources.
+The preparation entry below is historical; launch authorization supersedes it.
+
+ARC science before/after PREPARED Nov9 2026, not approved or launched.
+Protocol docs/wspl/CAPABILITY_ARC_V1.md; isolated Skillforge-capability-arc-v1.
+Candidate capability_arc_v1 manifest SHA256
+7102b6666289a7331002f58addbb4f1b1f1a02a2dd2016032a70c6fe4d6567af.
+Original HF SmolLM, copy foundation, all five frozen capability6 adapters;
+1172 Challenge +2376 Easy test rows each, 24836 evaluations. Reused test sets,
+descriptive transfer/retention, not ARC-AGI or fresh confirmation. Existing
+answer-likelihood scoring unchanged; paired corrections/regressions against
+both original and copy foundation. No training/author calls/checkpoint copies.
+224 sources/10288 resources verified; synthetic checks restore every final
+adapter exactly against its checkpoint, verify scoring and hook removal.
+Four-hour guard, per-row status, no automatic follow-on. Registry unchanged.
+
+6x6 capability screen completion verified Nov9: result and receipt complete,
+55247.485 seconds. All five final artifacts preserved with copy foundation.
+All four author arms passed its descriptive capability criteria; gradient
+control did not. Prior launch/progress entries below are historical.
+
+6x6capability screen LAUNCHED Nov5 2026 19:34PST,hiddenPID2816. Userapproved
+39074af2e7bf08aab2f7691654c9e9b3771c09b53bb152e84aae9337cdfa6a02 via
+call_0f95ae5911db44b497b8f825c893d21a.220sources/10296resources verifiedboth,
+registered IDcapability6-v1,manifestcapability6_v2. IsolatedSkillforge-capability6-v2/
+results/capability6_v1. Startupverified gradientarm75updates,finitecopywarmup
+loss.01651,constructor1,noerrors. Authorarmsfollowautomaticallyunderapproved
+protocol,max16calls. Preserveisolatedsource/boundresourceswhileactive.
+18hguard;inspectstatus/resultsbeforecompletionclaims. Launch/startuprecords
+in docs/wspl/capability6_v1_{launch,startup}.json. Noautomaticfollow-on.
+6x6 capability-engineering screen PREPARED,notapproved/notlaunched. Useraccepted
+6x6 andrequestedkickoff. Samecopyfoundation+fresh120attention branches(rank16,
+1891200params) default;native/WSPL sharedDAG/Torchhost<=2.5Mparams. Gradientcontrol
+plus2native+2nativeWSPLAstraauthors,4responses each(max16calls).8192updates/3600
+trainingseconds perarm,first512copyonly;4chunks,optimizerreset eachchunk allarms.
+Train16384/dev1024;finalsixpanels2816rows percondition,allarmsfreeze first.
+Newcanonicalshapefamilies,largerobjects,4/6copy andtwo-callcompositions;strict
+exact/retention/pairedgaincriteria. No runtimesolver. Instructiononly,noCoT.
+122checks coveredmain/isolated;fullsynthetic120branchupdate,zeroparity,cached
+inference,checkpointrestore,nativeWSPLsandboxequivalence pass,peak1.54GiB.
+Finalmanifest39074af2e7bf08aab2f7691654c9e9b3771c09b53bb152e84aae9337cdfa6a02
+at experiments/source_pins/capability6_v2.manifest.json. IDcapability6-v1,
+isolatedSkillforge-capability6-v2,220sources/10296resources/4398Linuxruntime.
+Earlierunapprovedcandidate8e506...superseded bytokenizationefficiency fix and
+refreshedsyntheticpreflight;noexperimentran. Bothpromptpreflightspass.
+Expected5-10h,18hguard,20mincallguard,5traininghourcap. ExistingCodexusage,
+noharddollar/tokenlimit. One rollingtrainingcheckpoint/arm plusfinaldeployment
+andarchivedauthorconstructionartifacts. Registryunchanged,exactapprovalpending.
+Protocol docs/wspl/CAPABILITY6_V1.md;interfaceCAPABILITY6_INTERFACE_V1.md.
+Astra capability-design review COMPLETE (conceptual/read-only,notexperiment).
+See docs/wspl/CAPABILITY_ENGINEERING_DESIGN_REVIEW_V1.md. Recommends fresh
+attention-wide rank16LoRA acquisition,notrepairinglateblock; same-native-tools
+vsnative+WSPL author groups andordinarygradientcontrol. Proposed6x6domain,
+freshcanonicalshape splits,strongexact/retention/compositioncriteria. Budgets
+andthresholdsPROVISIONAL,notpinned/approved. CurrentWSPL describesstaticbranches,
+needssharedhostattachment/trainingbridge;notfullattentionsemantics. Coordination
+flags6x6copyingunestablished,requirescommonI/Oaccounting,pairedgain overbaseline,
+explicitcapacity/inference budgets andnonsolving compositionserialization.
+No newtraining,benchmarkorauthorcollectorrun launched. Userquestion remains
+capability acquisition andWSPL'scontribution,notmereweightediting.
+User-confirmed research reframing November5,2026: scientific question is now
+what an LLM must do to add a reusable capability to another model, and whether
+WSPL improves that process. Weight edits are a mechanism, not sufficient outcome.
+Do not call small corrected-example counts general capability. User authorized
+Astra-led design review, allowing reconsideration of representation, architecture,
+placement, training and reasoning allowance. Keep independent transfer/retention
+criteria and matched prompt/inference controls; disclose external solvers and
+training. Do not equate WSPL module proofs with semantic capability proofs.
+Conceptual read-only Astra review in progress; no new experiment launch authorized
+by this reframing. Exact source gate still applies to concrete scientific runs.
+Grid repair COMPLETE,1573.969s. Fresh exact unchanged/gradient/Astra:
+L3/5/4of128,larger3/4/4of64,copy63/64/64of64. Predeclaredrepair signalFALSE.
+Astraacquisitionmovement28->34/64,copy32/32preserved. Sixresponses,fiveaccepted
+programs butonlytwo changedweights;FINAL. Supervised NumPy surrogateoptimization,
+notgradient-free invention. Usage660937input,24852output(incl16037reasoning),0cached.
+Source/768outputs/pairedscores/frozenhashes/editusageauditpassed. Modestrepair,
+no robustdomaintransfer;nogradient-control advantage. No follow-on launched.
+Results docs/wspl/GRID_REPAIR_V1_RESULTS.md and grid_repair_v1_results_summary.json.
+Native grid repair LAUNCHED Nov5 2026 17:33PST,hidden PID34012. User approved
+024e9c7ad54d54303555363fbddfbd02015b61f0e970279ef770e9431ad48799 via
+call_546681ae2ef94f18bf7ff82260a74454.211sources/10292resources verifiedboth,
+registeredmain/isolated,source-gated launch. Startupgradient_control37/1024,
+finiteNLL.10875,constructor1,noerrors. Output isolatedSkillforge-grid-repair-v1/
+results/grid_repair_v1. Astra max6responses follows control automatically under
+sameapprovedrun; reserved scoringafterbothfreeze. Preserve isolatedsource and
+boundresources whileactive. Launch/startup docs/wspl/grid_repair_v1_*.json.
+Check currentstatus/results; launchdoesnotmeancompletion. Noautomaticfollow-on.
+Native grid adapter repair PREPARED, unapproved/unlaunched. Three arms from
+saved movementadapter:unchanged,1024AdamWcontinuation updates withrestoredmoments,
+andAstra/xhigh max6responses. Same64movementtraining+32copy acquisitionlabels;
+Astra getsacquisition H/digitlogits/headrows/errors,nogradients/fullbaseweights.
+Only4adaptertensorsdeploy,basefrozen. NumPyfittingallowed,notzero-shot claim.
+Bothrepairsfreeze before768reservedgenerations:128freshL,64largerbar/square,
+64newcopy,allunrestricted. Pairedcorrections/regressions;notcompute-matched.
+25focused/sourcechecks passmain/isolated;fullsyntheticdiagnostic/sandboxrestore/
+baseidentitypass. Offlineprompt/runtimepreflightpass.211sources/10292resources,
+4398Linuxresources verified. NoAstra calls,newpredictions ortraining runs.
+Manifest024e9c7ad54d54303555363fbddfbd02015b61f0e970279ef770e9431ad48799.
+IsolatedSkillforge-grid-repair-v1;protocol docs/wspl/GRID_REPAIR_V1.md.
+30-90min estimate,4hguard,20mincallguard,noautomaticretry/follow-on.
+ExistingCodexusage,noharddollar/tokenlimit. Registryunchanged,approvalpending.
+Movement adapter COMPLETE,reachability NO-GO.1024updates,573.14s total,
+85.797s finaltraining. Foundation->adapter exact:train0/32->11/32,familiar
+0/64->8/64,novelL0/64->3/64,domaincopy64->60,randomcopy64->63.
+Palette/unrestrictedoutputsidentical. Movement andretentiongatesfail. Partial
+learning,notdomaincapability;trainingcasesalso poorlyfit. Source/1152savedoutput/
+checkpointauditpassed;noextra inference. NoAstra orfollow-on launched. Report
+GRID_MOVEMENT_V1_RESULTS.md,summaryJSON. Preserve frozenfoundation andadapter.
+Movement adapter LAUNCHED Nov5 2026 12:58PST, hidden PID54056. User approved
+ e85e4734b6f03605ef961605c1d487e3edb06ed43580f4d19468c0bd6940b326 via
+call_ac9a0f604aec439ab768ec159d1963b4.206sources/10282resources verifiedmain/isolated,
+registeredboth,source-gated launch. Constructor1,training31/1024 at14.015s,
+1984targets,finiteNLL/gradients,no startup errors. Output isolated
+Skillforge-grid-movement-v1/results/grid_movement_v1. Preserve isolatedsource
+and boundresources whileactive. Check status/results beforecompletion claims.
+Noautomaticfollow-on. Launch/startup records docs/wspl/grid_movement_v1_*.json.
+Movement adapter reachability PREPARED, unapproved/unlaunched. Frozen copy
+foundation b8cf2a97...; layer27 ReLU adapter37472params only,1024updates batch4
+(3movement+1copy),AdamW.001/warmup32/zero decay.168simple-shape training grids,
+noLtraining; familiar64/novelL64,copydomain64/copyrandom64 andtrain32diagnostic.
+Both foundation/adapter andpalette/unrestricted,1152generations aftertraining.
+Gate>=48/64 and>=16gain each movementpanel;>=61/64copyeach and<=3countloss.
+Panels previouslyevaluated,notuntouchedconfirmation. NoAstra/automaticfollow-on.
+22focused/sourcechecks passbothcheckouts;fullsynthetic adapterupdate/frozenbase/
+zero-parity/restoration pass,peak1479572480bytes.206sources/10282resourcesverify.
+Manifest e85e4734b6f03605ef961605c1d487e3edb06ed43580f4d19468c0bd6940b326.
+IsolatedSkillforge-grid-movement-v1. Protocol docs/wspl/GRID_MOVEMENT_V1.md.
+Exactsourceapproval required; registryunchanged. No domain predictions or training.
+Copy-only foundation COMPLETE:512updates,2048distinct examples,32768answer
+ targets;366.875s total,final training update97.125s. Fresh copy256/256 and
+historical64/64 exact in BOTH palette and unrestricted modes;both gates pass.
+No movement training/evaluation or author calls. Read-only source/640generation/
+checkpoint/disjointness auditpassed. Final model b8cf2a97f33aca737f43c3e439c1caac79f23bf793b0e9bd6ac8eb8dec776f38.
+Checkpoint633fb81d3bd911a525903bf0bcaa5dfaaffc3ea621f6cb0318a1f58b1eae27db,
+isolated results/grid_copy_v1/last.pt,1.61GB incloptimizer. Freeze foundation for
+future adapter arms; no language-retention claim. Next separately prepare movement
+reachability with unchanged-foundation and copy-retention controls. Nothing
+follow-on launched. Report docs/wspl/GRID_COPY_V1_RESULTS.md and summaryJSON.
+Copy-only foundation LAUNCHED Nov5 2026 at12:39PST, hidden PID53152.
+User approved8f1fe472be15b3cdb347ecbfc0f5efcb7060a3ad0857ce35512eac2349f41468
+via call_4522bc5ea4e1467eb114840eac3917f9. Main/isolated201sources and10281
+resources verified; registered both, source-gated launch. Startup training verified
+step22/512,1408answer targets at12.625s; no startup errors. Output isolated
+Skillforge-grid-copy-v1/results/grid_copy_v1. No automatic follow-on. Preserve
+isolated source and bound resources while active. Check status/results for completion.
+Launch/startup evidence docs/wspl/grid_copy_v1_{launch,startup}.json.
+Copy-only foundation PREPARED, not approved or launched. User agreed to repair
+copying before movement-adapter reachability. Full SmolLM2 FP32 fine-tune,
+512 updates x batch4, 32768 answer targets, AdamW2e-5/32-step warmup/zero decay.
+4096 random copy grids excluding all560 movement inputs; first2048 shuffled
+without replacement train. Final frozen checkpoint evaluated on256 fresh random
+copies and64 previously observed copies, palette/unconstrained. Gates244/256
+and61/64 palette exact. No movement examples/labels train, no movement scoring,
+Astra calls or automatic follow-on. One rolling half-hour/final checkpoint.
+19 focused/source tests pass in main and isolated. Full-size synthetic update
+and exact base restoration pass, peak4334879744 bytes. Protocol GRID_COPY_V1.md.
+Manifest8f1fe472be15b3cdb347ecbfc0f5efcb7060a3ad0857ce35512eac2349f41468,
+201 sources/10281 resources. Isolated Skillforge-grid-copy-v1. Registry untouched.
+Grid I/O gate COMPLETE,166.391s,384generations,no training/authorcalls.
+Copy palette48/64 (96.19%cells) fails61/64gate. Movement familiar2/64,novelL0/64.
+Unconstrained0/64each:leading-space formatting consumes oneof16tokens;not proof
+of zero grid ability. Paletteconstraint resolvesformatbutcopy stillfails.
+Source/exactgridscore auditpassed. Adapternottrained/deployed,so this is base/
+interface limitation,notadapterfailure. No automaticfollow-on. Results
+GRID_IO_V1_RESULTS.md and grid_io_v1_results_summary.json.
+
+Grid I/O gate LAUNCHED November5,2026 12:26 PST,hidden PID32308.
+User approved bc1e7e6e202f03c1b86ff71b3f67d18381ddebd2ac6138902d11315bce8403ba
+via call_64964a312dc04947b8581a37f067dfe9. Registeredmain/isolated after
+196source/10281resourcechecks. OutputSkillforge-grid-io-v1/results/grid_io_v1.
+Startupverified,oneconstructor,baseidentitypass; unconstrainedcopy generation
+active (30/64 at16.6s),nostartuperrors.384generations,noauthorcalls/training.
+2hguard,noautomaticfollow-on. Preserve isolatedsource/boundmainresources;
+inspectstatus beforecompletion claims. Launch/startup JSON in docs/wspl.
+
+Grid domain adapter direction PREPARED stage0,notapproved/notlaunched. User
+wants one domain-level ReLU adapter,not per-puzzle edits. Rule:4x4grid,translate
+connected1/2object onecell toward fixed3marker. Generator560uniqueinputs;
+8demonstrations,64copy(32simple/32L),64familiar movement,64novelL movement,
+wholeinputsdisjoint and direction/colorbalanced. FrozenSmolLM2 initialgate:
+unconstrained and palette-only16digitgeneration,384grids total;syntax-only
+constraint hasno objectdetection/movementlogic. Copygate61/64exactpalette.
+Ifpasses,preparegradientpositivecontrol;otherwisefixinterface/model. Noautomatic
+training/Astra. Candidate ReLU residualadapter h+BReLU(Ah+a)+b atlayer27,
+rank32/37472parameters,zeroB/bias initialization;syntheticexactbaseparity,
+gradientsreachadapter,baseunchanged. Nolearnabilityorformalcertificateclaim.
+16unit/sourcechecks main/isolated pass. Fullmodelsyntheticpreflightpass.
+Candidate bc1e7e6e202f03c1b86ff71b3f67d18381ddebd2ac6138902d11315bce8403ba;manifestgrid_io_v1.manifest.json,
+IDgrid-io-v1,isolatedSkillforge-grid-io-v1.196sources/10281resources.
+ProtocolGRID_DOMAIN_ADAPTER_V1.md. Expected5-20min,GPUFP32,noauthorcalls/
+training/downloads,2hguard. Exactsourceapprovalneeded. No domainpredictionsyet.
+
+Relational program COMPLETE; predeclared NO-GO,1008.64s. Sixresponses:
+inspection,4changedproposals,FINAL. Reserved relation48:base12,joint17,WSP12,
+ASP18,bias21; allretention12/12. Pairs24:base4,joint5,WSP4,ASP2,bias5.
+Onlyretentioncriterionpassed,nojointunique corrections. Base/WSPalwaysboth;
+joint43both+5neither,neverleft/right. Alljointgainsblocked-contact no-change
+cases. ASP42right+6neither. No reliable relational reasoning. Kchanged,Vsame,
+W27delta4.95%. Source/artifact/metrics/pairs/decision/biasauditpassed.
+Usage336044input,20764output(incl14390reasoning),0cached. Report
+RELATIONAL_PROGRAM_V1_RESULTS.md. Park conceptualASP underthisinterface per
+agreedcriterion; no automaticfollow-on or harness expansion.
+
+Relational program test LAUNCHED November5,2026 11:43 PST,hidden PID52284.
+User approved e75679f9783e1e107ad411b39bb24cf760775210c19220203f9c6f0e12fef74b
+via call_92f7751ed3f145e990d7ea6dec4739bd. Registered main/isolated after
+189source/10292resourcechecks. Isolated Skillforge-relational-program-v2/results/
+relational_program_v1. Startupverified,oneconstructor,32baseline/32initialASP
+records saved,answerbias frozen; firstAstra call active,no startup errors.
+Max6responses,4hguard. Preserve isolatedsource/boundmainresources. No automatic
+follow-on. Readcurrentstatus beforecompletion claims; launch/startup JSON in docs/wspl.
+
+Relational neural program PREPARED, unapproved/unregistered/unlaunched.
+User agreed one bounded conceptual ASP test integral to weight edits or explicit
+hierarchy. One fixed NeuralProgram binds layer26/group0 ASP and layer27 W27;
+compact program.npz contains K,V,alpha,W27, program.json declares attachment order.
+No external solver/task router/gold labels in forward. Existing fixed hook runtime,
+not a native architecture rewrite or new ASP language. Six Astra/xhigh responses,
+no candidate gradient training; analytic supervised construction allowed.
+32 acquisition:24 heat-relation cases+8 reused ARC retention;60 reserved:48relation
+cases+12 other retention. Tasks warms/cools/changes; paired temperatures/contact.
+Acquisition query/logZ+residual diagnostics and decoded token strings. Final
+combined/WSPonly/ASPonly/base plus 625-candidate constant answer-bias control
+fitted on acquisition scores only. Freeze both before reserved access. Fixed
+descriptive go criteria require >=6gain overbase/bias,>=2task gains,>=3pair gains,
+retention,combinedbeatscomponents,>=2jointunique corrections. Unmet =>recommend
+parking conceptualASP under this interface; no automatic retries/follow-on.
+36checks main/isolated pass; synthetic compact parity,gold independence,querymass,
+restoration,sandbox and offlineprompt pass. 189sources/10292resources/4398Linux.
+Candidate e75679f9783e1e107ad411b39bb24cf760775210c19220203f9c6f0e12fef74b.
+Manifest relational_program_v2.manifest.json,IDrelational-program-v1,isolated
+Skillforge-relational-program-v2. Earlier unapproved67ea2f2b857046d5c4d998cdb582c2d5885562acdd69d203ccd44ee96a989d7d
+superseded before scoring/calls to include query diagnostics. Protocol
+RELATIONAL_PROGRAM_V1.md. Expected30-90min,20min/call,4hguard,existingusage
+without hard dollar/outputcap. Exact source approval remains required.
+
+Read-only joint pilot investigation completed. Independent reconstruction of
+final W27 from turn04/05 analytic equations is bit-identical. Delta is generated
+by two outer products; first2 singularvalues5.66713/1.41467 account for >99.9999999999%
+energy. No factorized deployment tested. On8reservedwordquestions WSP changes
+conduction-vs-convection logodds mean-1.138(SD.114), evaporation-vs-convection
+-.417(SD.084): broad answer calibration is plausible. Three corrected goldmargins
+were initially-.283,-.325,-.326; WSPonly+.101,+.115,+.399. ASP opposes these gains.
+Joint repairs water-vapor retention error but with small+.032margin. Situation
+accuracy unchanged; no demonstrated concept installation. No new forwards/calls.
+Report JOINT_ATTENTION_V1_INVESTIGATION.md; reproducible audit and JSON saved.
+
+Joint WSP+ASP COMPLETE,1583.781s,sixacceptedresponses(2inspections,4changed).
+Reserved28:base17,initialASP15,joint18,WSPonly20,ASPonly17. Retention12:
+base12,initial9,joint12,WSPonly12,ASPonly11. Allsituationanswers unchanged2/8.
+Joint corrects1conductionwordanswer,alsofixedASPonly;no joint-uniquecorrection.
+WSPonlyfixes2convection+1radiationwordanswers,no losses;ASP suppressesthosegains.
+FinalK unchanged,V=.38original,W27delta4.99%. Analyticouterproduct/least-squares
+construction,no gradients. Source/finalhash/contracts/savedmetrics audited.
+Usage276713input,22662output(incl17850reasoning),0cached. Report
+JOINT_ATTENTION_V1_RESULTS.md;summaryJSONalongside. No follow-on launched.
+
+Joint WSP+ASP pilot LAUNCHED November5,2026 08:28 PST,hidden PID48824.
+User approved e76cfb7c89cc928efde23d2876ebcd014da146f48d0f1c20e8d6a78875d76412
+via call_9ddc0e17d5a641a3808c532e89b63a7b. Registered main/isolated after
+183source/10293resourcechecks. Isolated Skillforge-joint-attention-v1/results/
+joint_attention_v1. Startupverified,oneconstructor,21baseline/21initialASP
+records saved; firstauthorcall active, no startup errors. Max6responses,4hguard.
+Preserve isolatedsource/boundmainresources. No automaticfollow-on. Readcurrent
+status beforecompletion claims. Launch/startup docs/wspl/joint_attention_v1_*.json.
+
+Joint native WSP+ASP pilot PREPARED, not approved/registered/launched.
+User requested narrow combined feasibility before a full matched experiment.
+One Astra/xhigh session,max6responses inclinspections/rejections/FINAL. Native
+Python constructs K/V layer26/group0 and W27 attentionoutput576x576,5%normbound.
+No gradients/optimizer training; analyticlinearalgebra allowed. Lastaccepted frozen.
+21acquisition(8designer+knownspoontarget+12knowncorrectARCretention),28reserved
+(16designer+12otherretention). Situationstemsrepeat,answercontextsnew. ReusedARC
+validationnotsealedbenchmark. Acquisition-only activationdiagnostics+scores.
+Evaluate unchanged,initialASP,joint,finalWSPonly,finalASPonly afterfreeze.
+32checks pass main/isolated,fullmodelsyntheticrestore,sandbox,offlineprompt pass.
+183sources/10293resources/4398Linuxfiles verified. Candidate e76cfb7c89cc928efde23d2876ebcd014da146f48d0f1c20e8d6a78875d76412.
+Manifest joint_attention_v1.manifest.json,IDjoint-attention-v1,isolated
+Skillforge-joint-attention-v1. Protocol JOINT_ATTENTION_V1.md. Expected30-90min,
+20min/call,4hguard,existingCodexusage/noharddollar-outputcap. No calls/scoring.
+
+ARC attention transfer COMPLETE,563.25s,5214row-condition evaluations.
+BaselineChallenge97/299,Easy285/570,total382/869. Astra95+286=381,
+grid93+288=381,original93+276=369,ridge93+282=375,forced91+268=359.
+Astra20corrected/21broken;grid7corrected/8broken. OnlyChallengeheat-slice
+correction is known spoon target; Astra noEasyheat-slice changes. No overall
+ARC gain or new conduction concept transfer established. Source and saved
+rowcounts/accuracytotals checked. Report ARC_ATTENTION_TRANSFER_V1_RESULTS.md.
+No follow-on authorized/launched.
+
+ARC attention transfer LAUNCHED November5,2026 07:26 PST, hidden PID19532.
+User approved 3c6e9d2b76b4a4874d4d00594f39b0569829dac908f1b059679a8803c16268c4
+via call_3679563468344a4d8d3ec150caaf0268; conduction-transfer scope confirmed.
+Registered main/isolated after177source/10284resourcechecks. Output
+Skillforge-arc-attention-transfer-v2/results/arc_attention_transfer_v1.
+Startup receiptverified,oneconstructor,baseidentity passed; untouchedChallenge
+scoring active (41/299 at20.5s). No startup errors. No authorcalls/training.
+Two-hourguard,no automaticfollow-on. Preserve isolatedsource/boundresources.
+Inspect currentstatus beforecompletion claims; launch/startup records in docs/wspl.
+
+ARC attention transfer PREPARED, unapproved and unlaunched. User requests ARC correction.
+Default proposed scope is frozen conduction transfer (optional scope question pending).
+Six conditions: untouched, forced, original key, 13-example ridge key, full-data
+grid and Astra keys. All299Challenge+570Easy validation rows,5214row-condition
+evaluations; no new author calls, fitting or test-split access. Previously used
+validation is diagnostic, not fresh confirmation. Full-answer likelihood scorer
+injects only at question boundary; causal mask prevents candidate-dependent routing.
+27 focused checks pass in final isolated checkout; synthetic full-model parity
+errors below7e-6, exact restoration, artifact contracts verified. Ridge archive
+contains extra training diagnostics, explicitly excluded from inference bank.
+Candidate 3c6e9d2b76b4a4874d4d00594f39b0569829dac908f1b059679a8803c16268c4,
+manifest arc_attention_transfer_v2.manifest.json, model-id arc-attention-transfer-v1,
+isolated Skillforge-arc-attention-transfer-v2. Earlier unapproved candidate
+b3b66e4d5e11288a80d1e9868eebe0fbfd7c84bd2939fbc32e44a4715c9fd283 superseded
+before launch.177sources/10284resources. Protocol ARC_ATTENTION_TRANSFER_V1.md.
+Expected10-30min GPU inference,2hguard,no automatic follow-on.
+
+Key-learning run COMPLETE,440.313s,all20frozenkeys/sourcehashverified.
+Full-data Astra key conduction59/64 vs grid44/64 andbase19/64; retained64/64
+correctnegativeanswers,all evaporation. No convection/radiation correct atbase.
+Moredata no clear monotonicgain; Astra full-key positive mass.190 vsnegative.370,
+AUROC.164. Intervention benefit transfers totemplates; applicability ranking fails.
+
+Key learning study LAUNCHED November 5, 2026 03:53 PST, PID 52296.
+Exact user-approved pin: 3bceb136aa57aa9859b2379b16e69601dbf77e709930aa3b742b7dfdac3f7b8c.
+Approval call_4842c3a9acd841edaa9680b36c660c42; heat-transfer scope confirmed.
+171 sources and 10,292 resources verified; registry updated main and isolated.
+Startup verified, one constructor, model identity passed, feature caching active.
+Output: Skillforge-key-learning-v1/results/key_learning_v1. Max four Astra calls,
+28 fits, four-hour guard. Preserve isolated source and bound resources.
+Inspect status before claiming completion. Launch/startup: docs/wspl/key_learning_v1_{launch,startup}.json.
+
+Key learning-curve study PREPARED, not approved/registered/launched.
+User requested design/run of data-scaling and Astra-guided regularization. Optional
+scope clarification was asked; proceeding with stated heat-transfer assumption,
+not fullARC. Designer factorial1024train/128development/256final;split-disjoint
+settings/templateIDs,not independent naturalARCexamples. Same fixedvalue/base.
+Only64keycoefficients trained:1000CPUFP64Adam steps perfit,LR.03,normprojection.
+Four-grid recipes versus4Astra JSON recipes with development reward;fixed learner,
+Astra weights unchanged. Freeze winners then n16/64/256,3nestedsubsetseeds each,
+n1024onefit each:20curvefits,28fitmax. Finalpanelunseenuntilallkeysfreeze.
+Exact candidate3bceb136aa57aa9859b2379b16e69601dbf77e709930aa3b742b7dfdac3f7b8c.
+Isolated Skillforge-key-learning-v1,171sources/10292resources.28tests pass main
+andisolated incl end-to-end fake-run freeze boundary/rejection/accounting. Full
+synthetic1024example1000step fit1.063s,base restoredexact,no benchmarkpredictions.
+Protocol KEY_LEARNING_V1.md,interface KEY_LEARNING_INTERFACE_V1.md. Expected30-60min,
+4hguard,20min/call,4Astra callsmax,existingusage/nohardoutput-dollarcap. No new
+scientificfits or authorcalls. Exact source approval remains required.
+
+Selective key COMPLETE:run/receipt complete,228.75s,3Astraresponses.
+Astra wrote closed-form supervised ridge calibration using13labeled query cases;
+independent replay matches key bit-for-bit. New32casepanel:conduction2->8/8,
+convection2->0/8,radiation0/8,evaporation8/8. Total12->16/32, same predictions
+as oldkey/forced. RoutingAUROC.97917 vsold.0625;positive mass.7694,negative.2678.
+Strong contextual ranking, insufficient suppression;selectivity/retention gates
+fail,8/10correctnegativesretained. No newskill/no-learning claim. Reports
+SELECTIVE_KEY_V1_RESULTS.md and selective_key_v1_results_summary.json. No next run.
+
+Selective key test LAUNCHED November5,2026 03:21 PST, hidden PID592.
+User approved e9acc2e19756d42da234f431846f08a314ede5bba3f262763e6bb68685612f67
+via call_a9f854469a964fb3a6ea65af5d06018d: Approve this manifest and launch the
+selectivity test. Registered main/isolated after165sources/10292resource checks.
+Isolated Skillforge-selective-key-v1/results/selective_key_v1. Receipt verified,
+one constructor;13parent score/mass records reproduced exactly; disabled parity
+and model identity pass. First Astra thread/turn active, no startup errors.
+Max6calls,4hguard; no automatic retry/follow-on. Preserve isolatedsource/bound
+main docs/data/runtimes. Inspect status before completion claims.
+Launch/startup records docs/wspl/selective_key_v1_{launch,startup}.json.
+
+Selective key follow-up PREPARED, not approved/registered/launched.
+User accepted key-only context-selectivity test. Freeze prior layer26/group0 value
+and all base weights; native Astra may change only64keycoefficients. Six responses,
+closed-form supervised linear algebra allowed, no gradient/iterative optimizer.
+All13former pilot cases are now disclosed acquisition examples with measured
+queries/logpartitions; NEW32case matched-mechanism panel only scored afterfreeze.
+Five comparisons:untouched,forced,oldkey,newkey,zerokey. Selectivity, accuracy,
+retention separate; retention unassessable if<4initiallycorrectnegativecases.
+Protocol SELECTIVE_KEY_V1.md, interface SELECTIVE_KEY_INTERFACE_V1.md.
+Candidate e9acc2e19756d42da234f431846f08a314ede5bba3f262763e6bb68685612f67.
+Isolated Skillforge-selective-key-v1;165sources/10292resources,4398Linuxverified.
+23checks pass main/isolated; fullmodel synthetic mass error1.53e-7, exactrestore,
+augmented-bank sandbox passes. No new benchmark predictions or Astra calls.
+Expected15-45min,20min/call,4hguard,existingusage,noharddollar/outputtoken cap.
+Exact source approval remains required; no fitted-key follow-on automatically.
+
+Attention pilot COMPLETE: recovery result/source receipt complete,485.703s.
+Native forced/key interventions correct disclosed target and4/4paraphrases versus
+base0/1 and1/4. Other mechanisms2/6 andlexical1/2 unchanged; no correct-to-wrong
+flips, but base already failed allradiation/convection. Key attends broadly;
+conduction logprob increases onall13questions. No semantic selectivity established.
+Layer26/group0:4xnative value position10,alpha.75;key SVD/least-squares target
+calibration.9completedcalls plus1interruptedunknownusage. Read-only audit passes.
+Report docs/wspl/ATTENTION_PROBE_V1_RESULTS.md and JSONsummary. No follow-on run.
+
+Attention recovery LAUNCHED November5,2026 02:39 PST, PID43084.
+User approved ac22e34e7076dcabdb4c40cde592b877cc7e585e3146e16133a5a1f228efa154
+via call_3f711462770f4d19b2f46c1483870eef: Approve this manifest and launch the
+recovery. Main/isolated registry updated after160sources/10348resource checks.
+Isolated Skillforge-attention-probe-resume-v1/results/attention_probe_resume_v1.
+Receipt verified/one constructor. Original failure and disabled-injection checks
+passed, two completed turn archives and current bank byte-identical to parent.
+Fresh Astra thread/turn started at forced response3 (zero-based step2); live
+status authoring, no startup errors. Max10new calls,4hguard. Preserve original
+archive and active isolated source/bound resources; no automatic retry/follow-on.
+Startup evidence docs/wspl/attention_probe_resume_v1_startup.json and output.
+
+Attention pilot stopped on status-write PermissionError after two saved proposals.
+Original source receipt failed, no live launcher/author process. Original archive
+Skillforge-attention-probe-v1 preserved. First proposal inspection; second value
+replacement improves target margin from-2.4835 to-2.24377, still incorrect.
+Third invocation interrupted at thread.started; usage unknown. No panel evaluated.
+Recovery prepared, NOT approved/registered/launched. New JSON writer retries
+transient sharing/access errors; status writes nonfatal, essential artifacts
+fail-closed. Resume identical two-turn transcript and bank at response3/6,
+max10new calls plus prior2completed/1interrupted. Same experiment and4h guard.
+Exact candidate ac22e34e7076dcabdb4c40cde592b877cc7e585e3146e16133a5a1f228efa154.
+Isolated Skillforge-attention-probe-resume-v1;160sources/10348resources,54parent
+files hash-bound.20focused/gate checks pass main and isolated; offline resume
+prompt passes. No recovery calls/predictions. Protocol ATTENTION_PROBE_RESUME_V1.md.
+Do not transfer old approval; new exact pin approval remains required.
+
+Native attention probe LAUNCHED November 5, 2026 02:20 PST.
+User approved bd1ed8f854222d6f4950aa5df1f1cd914b9c8890985a651f2b9c513b01c43480
+via call_8404748df7b049c8aeabf78a9b36aa43: Approve this manifest and launch the
+native attention pilot. Registered main/isolated after source/resource checks.
+Hidden source-gate launcher PID29144, isolated Skillforge-attention-probe-v1,
+results/attention_probe_v1. Receipt verified, one constructor; model hash and
+original wrong answer reproduced within2e-5; exact disabled injection parity.
+First forced-stage Astra thread/turn started, no startup errors. Status initially
+says loading during first call; call path/elapsed heartbeat records active work.
+Max12 calls,4h guard; no automatic retry/follow-on. Preserve isolated sources,
+bound main docs/data and runtimes during execution. Inspect current logs/status
+before completion claims. Startup audit in output and docs/wspl.
+
+Native attention probe PREPARED November 5, 2026; not approved or launched.
+User requested testing Astra native KV/attention authoring on one failed ARC case.
+Target Mercury_SC_408700 (tea warms spoon; conduction), selected from saved
+validation failures. Six forced-value then six frozen-value key-authoring responses,
+max12 Astra/xhigh calls. No WSPL, training, or base-weight edits. Single virtual
+KV slot in one of18 late-layer groups; final-prefix-only inference, no answer
+text supplied. Final26-row panel (13 questions plus order reversals), four variants.
+Protocol docs/wspl/ATTENTION_PROBE_V1.md; interface ATTENTION_PROBE_INTERFACE_V1.md.
+Exact candidate bd1ed8f854222d6f4950aa5df1f1cd914b9c8890985a651f2b9c513b01c43480.
+Isolated Skillforge-attention-probe-v1,157sources/10292Windows/4398Linuxresources.
+80 relevant/broader checks passed across appropriate runtimes (one missing
+jsonschema and three Z3 skips in SmolLM runtime covered in venv-sim).16focused/gate
+checks pass isolated. Full-size synthetic no-op/restoration and sandbox pass.
+No new benchmark predictions or author calls; source approval remains required.
+This is runtime attention controllability/integration, not capability acquisition.
+Historical ARC authoring is now COMPLETE (prior launch notes superseded): nine
+sessions/36proposals,32accepted; seven final banks restore base, two LoRA finals
+show no convincing gain. See ARC_AUTHORING_V1_INVESTIGATION.md. Archives unchanged.
+
+ARC authoring screen LAUNCHED November5,2026 00:16 PST.
+User approved5b6d0a7498e58d9ec5b081e36de82922c23241ac123b30df5014b19ae95860f2
+with "Approve this manifest and launch the ARC editing screen". Registered
+main/isolated after150source verification. Isolated Skillforge-arc-authoring-v1,
+output results/arc_authoring_v1; hidden launcherPID50592. Windows/Linux resource
+checks passed, baseline fullmodel hash and all299prediction records reproduced
+exactly. First native draw started fresh Astra thread; no startup errors.
+Nine sessions native/WSPL/LoRA, max36calls,12hguard, final35480testexamples only
+afterallninefreeze. No training. Source receipt verified/oneconstructor atstart;
+inspect currentstatus before claimingcompletion. Preserve isolatedsource and
+allboundruntime/model/data/protocols while active. Startup record
+ docs/wspl/arc_authoring_v1_launch.json. No automatic retry or follow-on study.
+ARC baseline COMPLETE: result and source receipt complete;299Challenge and570Easy
+validation examples,31.578active seconds. Primary normalized accuracy97/299
+(32.44%) and285/570(50%); raw79/299 and319/570. Chance25.067/24.997%.
+Model hash unchanged518dba727454feb825f560b7706d33a424f54aff9c65d2783faa543279e2a3cf,
+peakGPU863259136bytes. Suitability rule passed; no test predictions or training.
+
+ARC native/WSPL/LoRA authoring prepared, not registered or launched.
+Candidate5b6d0a7498e58d9ec5b081e36de82922c23241ac123b30df5014b19ae95860f2.
+Protocol docs/wspl/ARC_AUTHORING_V1.md, interface ARC_AUTHORING_INTERFACE_V1.md.
+Nine sessions, four responses each (max36Astra/xhigh calls), same32train examples,
+299validation feedback,512scalar inspection budget perresponse. Same lastfour
+attention output matrices, native/directWSPL versus rank8LoRA,10%effective-norm
+bound. Allnine frozen before scoring1172Challenge+2376Easy test each plusuntouched
+(35480examples). CPUconstruction, localFP32GPUinference, no gradients.12hguard.
+150sources/10296Windowsresources/4398Linuxresources bound; three offlineprompt
+preflights pass; no authorcalls/testpredictions. Fullsize engineering fixture
+produced identical effectiveweights/logits acrossallthree interfaces and exact
+base restoration. Isolated Skillforge-arc-authoring-v1. Exact approval required.
+Do not treat preparation as launch authorization. Preserve historical archives.
+ARC baseline LAUNCHED November 4, 2026 23:47 PST.
+User approved ac191cb02d23a0916be9730e6eb0dfdd2d01d02e0c2b549cc1e0a4ba1a4bfa4c
+with "Approve this manifest and launch the ARC baseline". Main/isolated registry
+updated after143source checks. Isolated Skillforge-arc-baseline-v1, output
+results/arc_baseline_v1; hidden launcherPID16996. Resource verification passed,
+receipt verified and one constructor, model loading succeeded at startup.
+299Challenge+570Easy validation examples, FP32 CUDA, fixed answer-likelihood
+scoring. No authoring/training/test evaluation. Two-hour guard, no automatic
+editing run. Preserve isolated sources and bound model/runtime/data/protocol.
+Inspect live status/receipt for outcome. Launch record docs/wspl/arc_baseline_v1_launch.json.
+Go edit-sequence evaluation LAUNCHED November 4, 2026 22:06 PST.
+User approved f1cb7642eca86e84afecb552221bbc4b0f86144c51bdbda803d7a921134358fa
+with "Approve this manifest and launch the checkpoint evaluation". Registered
+main/isolated, verified136sources/3669resources. Isolated checkout
+Skillforge-go-edit-sequence-v1, output results/go_edit_sequence_v1, WSL host
+PID33536. Source-gated CPU run, seven stored WSPL2 edits,42000games, same
+previously seen seeds; post-hoc localization, not held-out validation. No calls,
+training or GPU. Exact final replay parity required against189stored batches.
+Two-hour guard; inspect live receipt/status before claiming completion. Preserve
+isolated source/resources while active. Launch record docs/wspl/go_edit_sequence_v1_launch.json.
 Go authoring recovery COMPLETE, November 4, 2026 21:39 PST.
 Original run timed out at first call of Python draw2; four frozen candidates
 preserved byte-for-byte in Skillforge-go-authoring-resume-v1. Recovery source pin
