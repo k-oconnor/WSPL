@@ -1,0 +1,167 @@
+{
+  "status": "read_only_audit",
+  "sources": 299,
+  "artifacts_verified": 96,
+  "completed_threads": 144,
+  "preserved_parent_candidates": 13,
+  "summary": {
+    "forecasting": {
+      "tasks": 14,
+      "best_factual_rmse": {
+        "wspl": 7,
+        "native": 6,
+        "guided": 1
+      },
+      "pairwise_lower_rmse": {
+        "native": {
+          "fixed": 12,
+          "guided": 10,
+          "wspl": 6
+        },
+        "wspl": {
+          "fixed": 14,
+          "guided": 13,
+          "native": 8
+        }
+      }
+    },
+    "regression": {
+      "tasks": 8,
+      "best_factual_rmse": {
+        "native": 6,
+        "wspl": 2
+      },
+      "pairwise_lower_rmse": {
+        "native": {
+          "fixed": 8,
+          "guided": 8,
+          "wspl": 6
+        },
+        "wspl": {
+          "fixed": 8,
+          "guided": 8,
+          "native": 2
+        }
+      }
+    },
+    "causal": {
+      "tasks": 2,
+      "best_factual_rmse": {
+        "native": 2
+      },
+      "pairwise_lower_rmse": {
+        "native": {
+          "fixed": 2,
+          "guided": 2,
+          "wspl": 2
+        },
+        "wspl": {
+          "fixed": 2,
+          "guided": 2,
+          "native": 0
+        }
+      }
+    },
+    "all": {
+      "tasks": 24,
+      "best_factual_rmse": {
+        "wspl": 9,
+        "native": 14,
+        "guided": 1
+      },
+      "pairwise_lower_rmse": {
+        "native": {
+          "fixed": 22,
+          "guided": 20,
+          "wspl": 14
+        },
+        "wspl": {
+          "fixed": 24,
+          "guided": 23,
+          "native": 10
+        }
+      }
+    }
+  },
+  "persistence_comparison": {
+    "fixed": {
+      "better": 4,
+      "near_tie": 0
+    },
+    "guided": {
+      "better": 8,
+      "near_tie": 0
+    },
+    "native": {
+      "better": 11,
+      "near_tie": 0
+    },
+    "wspl": {
+      "better": 12,
+      "near_tie": 1
+    }
+  },
+  "better_than_training_mean": {
+    "fixed": 16,
+    "guided": 18,
+    "native": 21,
+    "wspl": 21
+  },
+  "usage": {
+    "fixed": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "cached_input_tokens": 0,
+      "author_seconds": 0,
+      "fit_seconds": 85.0609999999906
+    },
+    "native": {
+      "calls": 48,
+      "input_tokens": 1396928,
+      "output_tokens": 622124,
+      "reasoning_output_tokens": 568109,
+      "cached_input_tokens": 214528,
+      "author_seconds": 18056.408000000007,
+      "fit_seconds": 0
+    },
+    "wspl": {
+      "calls": 48,
+      "input_tokens": 1438774,
+      "output_tokens": 342036,
+      "reasoning_output_tokens": 301494,
+      "cached_input_tokens": 35072,
+      "author_seconds": 10276.894000000002,
+      "fit_seconds": 0
+    },
+    "guided": {
+      "calls": 48,
+      "input_tokens": 1369794,
+      "output_tokens": 27695,
+      "reasoning_output_tokens": 26466,
+      "cached_input_tokens": 0,
+      "author_seconds": 1287.4220000000123,
+      "fit_seconds": 85.03699999999117
+    }
+  },
+  "round_errors": [
+    {
+      "id": "monash_pedestrian_counts_native_0",
+      "error": "ValueError: only literal float32/float64 dtype keyword allowed"
+    },
+    {
+      "id": "monash_saugeenday_native_0",
+      "error": "ValueError: only literal float32/float64 dtype keyword allowed"
+    },
+    {
+      "id": "abalone_native_0",
+      "error": "ValueError: only literal float32/float64 dtype keyword allowed"
+    },
+    {
+      "id": "acic2018_120391690394493cb9c81799e3389ce9_native_0",
+      "error": "ValueError: only literal float32/float64 dtype keyword allowed"
+    }
+  ],
+  "interrupted_usage_unknown": true
+}

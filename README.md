@@ -299,6 +299,36 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 
 ## Experiments
 
+### Small-data prediction panel: forecasting, regression and causal outcomes
+
+The completed stage-one panel contains 24 problems (14 forecast series, eight
+regressions and two causal instances), with one draw each of native WSP, WSPL,
+Astra-guided AdamW and fixed AdamW. All 96 final candidates were valid. Methods
+shared at most 128 acquisition examples and the same small ReLU architecture;
+direct authors constructed weights without executable fitting. All candidates
+were frozen before test scoring.
+
+| Direct author | Lower factual RMSE than fixed AdamW | Lower factual RMSE than guided AdamW | Best of four |
+| --- | ---: | ---: | ---: |
+| Native WSP | 22/24 | 20/24 | 14/24 |
+| WSPL | 24/24 | 23/24 | 9/24 |
+
+WSPL used 342,036 output tokens versus native's 622,124 (including reasoning),
+approximately 45% fewer, and approximately 43% less authoring time. Native won
+14 of their 24 head-to-head accuracy comparisons. These are descriptive results,
+not evidence of WSPL accuracy superiority or a compute-matched comparison.
+
+Causal effects require separate evaluation: native's ACIC effect RMSE was
+0.01368 versus WSPL's 0.12219, and WSPL estimated the wrong ATE sign despite
+better factual prediction than either gradient arm. All neural methods also
+lost to a training-mean predictor on three problems. One draw, small samples,
+limited AdamW baselines and possible public-data pretraining exposure constrain
+the interpretation.
+
+See the [results and limitations](docs/wspl/PANEL_STAGE1_RESULTS.md) and
+[compact audit](docs/wspl/PANEL_STAGE1_RESULTS_AUDIT.json). Full local evidence
+is preserved; no automatic expansion follows this panel.
+
 ### Go: constructing neural policies without gameplay feedback
 
 Six Astra/xhigh sessions programmed a fixed 1.48M-parameter ReLU policy from
