@@ -1,3 +1,10 @@
+November 12, 2026: example-driven Python addition complete. Six valid predictors;
+Python beats saved native WSP and WSPL factual RMSE on 5/6 tasks and both AdamW
+baselines on 6/6. Native wins ERCOT and ACIC effect estimation; Python wins IHDP
+effect RMSE. One draw, reused partitions, unequal expressivity and public-data
+familiarity limit claims. Ordinary code is now a required prediction baseline;
+no new experiment is authorized. See docs/wspl/PYTHON_ADDITION_RESULTS.md.
+
 # Current research handoff - November 9, 2026
 
 All SmolLM capability, ARC retention, prose degradation and integration-repair

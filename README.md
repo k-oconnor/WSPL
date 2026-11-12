@@ -299,6 +299,30 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 
 ## Experiments
 
+### Ordinary Python versus neural prediction programs
+
+A follow-up added six ordinary Python predictors to the completed small-data
+panel, reusing the existing native WSP, WSPL and AdamW results. All six were valid.
+With the same 128 acquisition examples and two-response validation budget,
+**Python achieved lower prediction RMSE than both neural authoring interfaces on
+five of six tasks**, and beat both AdamW baselines on all six. ERCOT favored the
+neural predictors; Dominick still favored a simple training-mean predictor.
+
+Causal effects diverged from factual accuracy: IHDP effect RMSE favored Python
+(0.375 versus native 1.654 and WSPL 2.945), while ACIC strongly favored native WSP
+(0.0137 versus Python 0.0826 and WSPL 0.1222). Python used explicit nonlinear
+formulas and example-based prediction, without an executable optimizer.
+
+This exploratory, one-draw comparison weakens the case for neural deployment as
+the default for standalone prediction. Python had greater expressivity; public
+dataset familiarity, reused partitions and limited gradient baselines also limit
+interpretation. WSPL's integration, composition and verification benefits need
+separate evidence. No neural reruns were needed.
+
+See the [full results](docs/wspl/PYTHON_ADDITION_RESULTS.md),
+[audit](docs/wspl/PYTHON_ADDITION_RESULTS_AUDIT.json), and
+[final programs](artifacts/python_addition_v1/).
+
 ### Small-data prediction panel: forecasting, regression and causal outcomes
 
 The completed stage-one panel contains 24 problems (14 forecast series, eight
