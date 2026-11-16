@@ -13,6 +13,14 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 
 ## Current research status
 
+**November 16, 2026 — neural control DSL prototype:** typed `move_to`, `grasp`,
+`release` and reusable `transfer` programs now execute through frozen neural motor
+and predicate blocks in a multi-object kinematic workcell. Explicit skill lifetimes,
+independent completion checks and per-tick traces make composition inspectable.
+64 engineering checks pass; supplied success and jammed-grasp fixtures are included.
+No learned executive or physical-robot result is claimed. See
+[design, limitations and reproduction](docs/wspl/NEURAL_CONTROL_DSL_V1.md).
+
 **November 9, 2026:** the SmolLM capability and retention experiments are complete
 and archived. Gradient-trained spatial adapters learned the bounded grid task,
 but substantially degraded prose and ARC science performance when enabled.
