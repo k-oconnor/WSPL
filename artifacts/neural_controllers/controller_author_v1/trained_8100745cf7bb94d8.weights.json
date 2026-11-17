@@ -1,0 +1,118 @@
+{
+  "format": "wspl.relu_mlp.v0",
+  "semantics": "rational_real_graph",
+  "compiler": "wspl.scalar_to_relu.v0",
+  "source_sha256": "7992b6bab4614b49261b0e28c32b8eca64cfccc9fea45b56df6d66dd0ff2075a",
+  "inputs": [
+    {
+      "name": "x",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-2",
+        "upper": "2"
+      }
+    },
+    {
+      "name": "y",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-2",
+        "upper": "2"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "vx",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-8",
+        "upper": "8"
+      }
+    },
+    {
+      "name": "vy",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-8",
+        "upper": "8"
+      }
+    },
+    {
+      "name": "grip",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-8",
+        "upper": "8"
+      }
+    }
+  ],
+  "layers": [
+    {
+      "activation": "linear",
+      "weights": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "bias": [
+        "0",
+        "0",
+        "131/250"
+      ]
+    }
+  ],
+  "allocation": {
+    "mode": "fresh_mlp",
+    "widths": [
+      2,
+      3
+    ],
+    "parameters": 9
+  },
+  "source_map": {
+    "expressions": [
+      {
+        "path": "/outputs/0/value",
+        "operator": "const",
+        "linear": {
+          "terms": {},
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/1/value",
+        "operator": "const",
+        "linear": {
+          "terms": {},
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/2/value",
+        "operator": "const",
+        "linear": {
+          "terms": {},
+          "bias": "131/250"
+        }
+      }
+    ],
+    "relu_units": {},
+    "allocation": [],
+    "eliminated_relu_units": []
+  }
+}

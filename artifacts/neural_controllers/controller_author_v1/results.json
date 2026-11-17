@@ -1,0 +1,46 @@
+{
+  "status": "complete",
+  "base_hash": "540b6c0285e9d26362156163cef352c1a27657dc7b0372d0c36404a6c5baddc1",
+  "manifest_sha256": "5de7ada4ce5d2c3c41614896e568cca4b91bc63991f5f4ce997a7e9404d1f3ae",
+  "trainable_parameters": 18464768,
+  "validation": [
+    {
+      "step": 0,
+      "nll": 0.7197285020473214,
+      "targets": 9004
+    },
+    {
+      "step": 192,
+      "nll": 2.1700187666823253e-05,
+      "targets": 9004
+    },
+    {
+      "step": 384,
+      "nll": 1.6082111879865055e-05,
+      "targets": 9004
+    }
+  ],
+  "peak_allocated_bytes": 3688400384,
+  "arms": {
+    "base": {
+      "blocks": 96,
+      "generation_seconds": 2734.5500000000175,
+      "generated_tokens": 44425,
+      "source_bytes": 141925,
+      "constructed": 0,
+      "behavior_correct": 0,
+      "missions": 32,
+      "successful_missions": 0
+    },
+    "trained": {
+      "blocks": 96,
+      "generation_seconds": 660.6180000001332,
+      "generated_tokens": 8905,
+      "source_bytes": 22919,
+      "constructed": 96,
+      "behavior_correct": 96,
+      "missions": 32,
+      "successful_missions": 32
+    }
+  }
+}

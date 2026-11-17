@@ -13,6 +13,17 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 
 ## Current research status
 
+**November 17, 2026 — neural controller authoring and composition:** a fine-tuned
+Qwen2.5-Coder-1.5B author generated 96/96 behavior-correct WSPL neural blocks and
+supported 32/32 composed workcell missions. A separately trained executive writes
+programs using a frozen six-block library from that author. Its expanded curriculum
+raised mission success from 124/224 to **210/224 (93.8%)** against the previous
+executive on identical new scenes, with 86 improvements and zero regressions.
+Training covered 2–5 objects; unseen 6–8-object missions scored **88/96 (91.7%)**.
+These are supervised synthetic tasks in a planar kinematic workcell with supplied
+planner labels and independent physical-state scoring. See the
+[results and limitations](docs/wspl/NEURAL_CONTROLLERS_RESULTS.md).
+
 **November 16, 2026 — neural control DSL prototype:** typed `move_to`, `grasp`,
 `release` and reusable `transfer` programs now execute through frozen neural motor
 and predicate blocks in a multi-object kinematic workcell. Explicit skill lifetimes,
@@ -306,6 +317,46 @@ internal. Astra, target capacity and evaluation budgets stay matched across arms
 - [Related work](docs/RELATED_WORK.md); compilation and neural repair have substantial precedents
 
 ## Experiments
+
+### Neural operators and learned task composition
+
+Two small-model training stages connect WSPL neural operators to executable robot
+task programs. The author learns to produce typed ReLU blocks from functional
+specifications. The executive learns to bind and order actions using frozen blocks
+for movement, proximity, holding, opening, closing and workspace boundaries.
+
+```text
+transfer object_a to tray
+transfer object_b to buffer
+move_to home
+```
+
+The executor expands each transfer into approach, grasp, transport and release,
+reusing the same neural weights. It logs neural inputs/outputs and observations,
+checks completion, and enforces finite skill lifetimes. Independent scoring checks
+all final placements, delivery order and preservation of completed work.
+
+| Expanded-curriculum evaluation | Previous executive | New executive |
+|---|---:|---:|
+| Three objects | 32/32 | 32/32 |
+| Four objects | 19/32 | 32/32 |
+| Five objects | 18/32 | 32/32 |
+| Six objects | 14/32 | 32/32 |
+| Seven objects | 13/32 | 28/32 |
+| Eight objects | 10/32 | 28/32 |
+| Eight objects, new identifier format | 18/32 | 26/32 |
+| Jammed final grasp, safe failure with progress preserved | 13/32 | 28/32 |
+
+The deterministic reference satisfies every panel. All 256 new executive programs
+compile. The 14 ordinary failures omit deliveries, with five also violating order.
+The jammed panel measures bounded failure handling provided by the interpreter
+together with the generated program. The study uses one training seed and changes
+data volume, task length, names and dependency coverage together. Physical contact,
+perception and obstacle avoidance remain outside the implemented workcell.
+
+[Detailed results and protocols](docs/wspl/NEURAL_CONTROLLERS_RESULTS.md) ·
+[Programs, scores and representative traces](artifacts/neural_controllers) ·
+[Executable DSL](src/skillforge/control_dsl.py)
 
 ### Ordinary Python versus neural prediction programs
 

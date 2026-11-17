@@ -1,0 +1,76 @@
+{
+  "format": "wspl.relu_mlp.v0",
+  "semantics": "rational_real_graph",
+  "compiler": "wspl.scalar_to_relu.v0",
+  "source_sha256": "14cd7235443f4a8bfd1adda925dcadf821df13aa0f6508ef46be34d07cd4932b",
+  "inputs": [
+    {
+      "name": "h",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "0",
+        "upper": "1"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "score",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-8",
+        "upper": "8"
+      }
+    }
+  ],
+  "layers": [
+    {
+      "activation": "linear",
+      "weights": [
+        [
+          "1"
+        ]
+      ],
+      "bias": [
+        "-413/1000"
+      ]
+    }
+  ],
+  "allocation": {
+    "mode": "fresh_mlp",
+    "widths": [
+      1,
+      1
+    ],
+    "parameters": 2
+  },
+  "source_map": {
+    "expressions": [
+      {
+        "path": "/outputs/0/value/terms/0/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i0": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "i0": "1"
+          },
+          "bias": "-413/1000"
+        }
+      }
+    ],
+    "relu_units": {},
+    "allocation": [],
+    "eliminated_relu_units": []
+  }
+}

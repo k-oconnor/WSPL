@@ -1,0 +1,2274 @@
+[
+  {
+    "arm": "trained",
+    "id": "7f5d01d9c965e1c67da0efc80e765a811f59191a463c914caab5b896c0b841b3",
+    "spec": {
+      "kind": "move",
+      "gain": 0.73,
+      "speed": 0.07
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "b4b511a4efadaca0e9270e8ac5b6726613895521c0dc7f742ddcf941cc379135",
+    "spec": {
+      "kind": "move",
+      "gain": 0.49,
+      "speed": 0.05
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 6.938893903907228e-18,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "06d09b63a3252c1ef7ef0e5b9d63fa0c8370c8d91f54f99d8abb8a8d4f59c9dc",
+    "spec": {
+      "kind": "move",
+      "gain": 0.31,
+      "speed": 0.04
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 6.938893903907228e-18,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "6b8f101f43247536f56a99b1201fb0b67f06dcfb3e6f1466149c28867d43958a",
+    "spec": {
+      "kind": "move",
+      "gain": 0.59,
+      "speed": 0.06
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 6.938893903907228e-18,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "a4daaf93cc25acf81b3f5ffb3de46ae28828184c263bba0f4b63fb15150bcfc9",
+    "spec": {
+      "kind": "move",
+      "gain": 0.22,
+      "speed": 0.06
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 6.938893903907228e-18,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "0eb7e3e42962a15fcca705fd7447977d86fea5338146afed5264af8b8b79fce5",
+    "spec": {
+      "kind": "move",
+      "gain": 0.71,
+      "speed": 0.06
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "0ac7094cb8bead8cc0e97245015f4eb3aaf768498661679acc3b4814e4a73910",
+    "spec": {
+      "kind": "move",
+      "gain": 0.58,
+      "speed": 0.06
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 6.938893903907228e-18,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "21fbe0c9ff5882cac3b445b6a8a973bd1276563b92314699d1167abaded62034",
+    "spec": {
+      "kind": "move",
+      "gain": 0.6,
+      "speed": 0.06
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "56eef755386f3efcb9262363b3ef2c59e876cc8203cfa184cd05bf09904b7121",
+    "spec": {
+      "kind": "move",
+      "gain": 0.62,
+      "speed": 0.07
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 1.3877787807814457e-17,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "6589f5c36b04c9f57ab7dac741ac8369a5252bf361093ea3a88832db620cb3e5",
+    "spec": {
+      "kind": "move",
+      "gain": 0.3,
+      "speed": 0.04
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "bac80da72822d24e13e78f0bcdae1663cd53b255ffaf800267b3caa89317b9f6",
+    "spec": {
+      "kind": "move",
+      "gain": 0.2,
+      "speed": 0.09
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 6.938893903907228e-18,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "2709225eab4ceb6ee363956ba12cdf946eb014ca49562e1217a178baa0e02397",
+    "spec": {
+      "kind": "move",
+      "gain": 0.32,
+      "speed": 0.07
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 6.938893903907228e-18,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "13197fed770e2b66d3d0b42de42ae90ebfee3165e952b48beb254c96043f0e36",
+    "spec": {
+      "kind": "move",
+      "gain": 0.77,
+      "speed": 0.04
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "f5deb09761dadd9e0a565685e24eb4695c63a3c7c202d96885d0e85f595923eb",
+    "spec": {
+      "kind": "move",
+      "gain": 0.34,
+      "speed": 0.04
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 3.469446951953614e-18,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "0e9bc310304660f51de2b2fa62d2dc1c3e1205e132530414212751034927e39a",
+    "spec": {
+      "kind": "move",
+      "gain": 0.8,
+      "speed": 0.05
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "e7a40f7ea2983f2f891df476914f716a4c3b97c60c3cfdc62ba1858dd20825b0",
+    "spec": {
+      "kind": "move",
+      "gain": 0.59,
+      "speed": 0.04
+    },
+    "constructed": true,
+    "parameters": 27,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "48aab489f21256cc972e7d0741092577d0de21e63665d7155d0bfa4ed3503cd2",
+    "spec": {
+      "kind": "near",
+      "radius": 0.037,
+      "metric": "l1"
+    },
+    "constructed": true,
+    "parameters": 25,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "f3ba65fb7dc6b9e8ebd41fc19d25ad97e0ac947ddc42d4d986a09a3a7df19a30",
+    "spec": {
+      "kind": "near",
+      "radius": 0.102,
+      "metric": "linf"
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "f3d1242919ba8867bf505c6807fe5345db91aac59806cbe3cd2a322dca67bba4",
+    "spec": {
+      "kind": "near",
+      "radius": 0.071,
+      "metric": "l1"
+    },
+    "constructed": true,
+    "parameters": 25,
+    "max_error": 4.440892098500626e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "a4bd705769a9035724852a8d6c7aee10181017268d5b599b61082b3886e75a2f",
+    "spec": {
+      "kind": "near",
+      "radius": 0.148,
+      "metric": "linf"
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "a0ff5bd44aa89231ea07e0e15f41002dc5b068b979dfc8640df9813810ac168c",
+    "spec": {
+      "kind": "near",
+      "radius": 0.109,
+      "metric": "linf"
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "e518b3aa3a1687852abc307a1b37180fd0bc9870d9b028cb2bd6f29d8c8b49e7",
+    "spec": {
+      "kind": "near",
+      "radius": 0.029,
+      "metric": "linf"
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "0f77e3bf2fb765e2336cbba414889e2a4bd2f5354d5a9934b1f777c6695c949b",
+    "spec": {
+      "kind": "near",
+      "radius": 0.063,
+      "metric": "linf"
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "b7b28f43a9cc7cccb85603b6b546a6605623fb55a5e47b840462b6776fb6d352",
+    "spec": {
+      "kind": "near",
+      "radius": 0.148,
+      "metric": "l1"
+    },
+    "constructed": true,
+    "parameters": 25,
+    "max_error": 4.440892098500626e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "3e3e39c0b7596d70f82c1bc638f618132f0f9666d0366241a931b24733b42f73",
+    "spec": {
+      "kind": "near",
+      "radius": 0.111,
+      "metric": "l1"
+    },
+    "constructed": true,
+    "parameters": 25,
+    "max_error": 4.440892098500626e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "9ef525afa19029f95faf92422fbb4a10382e854f6f775d0b59210a5dfe4d9cea",
+    "spec": {
+      "kind": "near",
+      "radius": 0.124,
+      "metric": "linf"
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "2eef698305b21de1dbbbbca2b5210f907123a61259cdd53fe3882c0edb673139",
+    "spec": {
+      "kind": "near",
+      "radius": 0.179,
+      "metric": "linf"
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "3400d489ac2cd617b20d6b884205751e5f4cae858b7e06437fa727f3c9429801",
+    "spec": {
+      "kind": "near",
+      "radius": 0.146,
+      "metric": "linf"
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "23cbb2dafc09d960e71a87ad36fe4df67dc5ed646654e190a747d0d339ab9682",
+    "spec": {
+      "kind": "near",
+      "radius": 0.116,
+      "metric": "linf"
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "69f0b8cadfd59922c5101e92237a0508024c1b0ea4a4ca6dbf2b1ee313677a17",
+    "spec": {
+      "kind": "near",
+      "radius": 0.035,
+      "metric": "linf"
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "6d87b7c57737c6c61d8e57b6163b28472d4491a61d485eaf26975a8ce70ef9bc",
+    "spec": {
+      "kind": "near",
+      "radius": 0.08,
+      "metric": "l1"
+    },
+    "constructed": true,
+    "parameters": 25,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "e46b6f0b1628d010090ccd20a4e43f811d9f89e658e6ccd28d9568e9b40e4168",
+    "spec": {
+      "kind": "near",
+      "radius": 0.1,
+      "metric": "l1"
+    },
+    "constructed": true,
+    "parameters": 25,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "18494ff15ccfe007a205b95cf0ac2e2224b715e438a489c8f2df458f4fd77105",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.413
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "b172fbbf201ba9f8f0846e282965e064759b3eb77ac786b1a41a0d4a971b71e1",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.318
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "6c6c8b45d42351409f5e3d32761e0ac68fcf3c705d4bf50e63a33d968b90d97b",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.309
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "3d4c73b2af38b282f77374dbb8591b082a05cf739367f46396c28481882a4118",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.514
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "3049d38731c0a403097e7f0884d3b80945fb0e351cf9ee8a9c73291cea44897e",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.409
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "8d941495631feffdf7feb9df2a3832014c015e44daba35a6ec1b13742c2a30dc",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.471
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "767c32ddc9d906ad52ad3e155246128ca343dd0a43c0e2d7c7bbca02f6289a67",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.384
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "625395a707ae0575eced9b95d0f58e3b92a8977592e104015ecce34927337b60",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.333
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "67b22d53577c3c0f46f03b6b05581ec952f0c841bbf0e4d1d67bbd3a2a6e2cc0",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.493
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "42ac84610a32aae8c94133a063e843e25dfbee9dd491867db0e8ba038f975128",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.46
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "d9bae27797bf825ab930057532b44934ff1e6193a93d456a22b801a35a65fefd",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.343
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 2.905661822261152e-17,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "4681743ba22bd9ffce9dd7294626b78f05bbd131a59e7b2e1596ebf024cb9b70",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.553
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 5.551115123125783e-17,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "bd00ce210b5ee9d1b908b7ff53f2d9202e25ec7e74b90f0c87166c4aee28cde6",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.251
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "738f0a4297e41e9dc602076c590fcdb31bfc6f804f214aa10f3056c3e48f5e81",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.352
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "548ba39ac6ff605c0b6d248d78a73e6a7005fa568eb812055b5b49ba2b6e1ba6",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.259
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "eedd4520b1738865e2604723e39e324bdad75462fbb6090d52e4ad8ebabffde4",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.466
+    },
+    "constructed": true,
+    "parameters": 2,
+    "max_error": 8.673617379884035e-19,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "8100745cf7bb94d84f0fb3d07702c676b56980f9b666d54ccf5d15b1701978e7",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.524
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "65cfcb29962549ed3b7610439c501ee33c705646a45474d8be97263c3c4f4253",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.693
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "b7d387623b3a98bfd0b0b4ef516d74ce05c69cc4e5ddf3b1a2f979ea1b52e085",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.506
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "5a6ffd60a45f31bb0742faf7b8d71c3fcc7c558934fcf3880535985b5e049df7",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.519
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "ca50ceb0b9733d0c6b4333abfb153a98ea302cb0ee6b6eb0b82af028881aa74d",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.62
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "8bcbb5f179ade54242e4fd2f934dfcbb496c6620604eee8eb00b8356af29a89e",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.543
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "a462d7eee4e199bcbc33e6a36c366f68924a180e030f7bd4f0b7ba4d0840c7fc",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.771
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "89f513d63829b82690ee96a926717c8fadf05f25db51aac8dd7242a9c358aee9",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.734
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "74062d10480ba07e8a93e32e0603ccd9a361a459bada1a38dd8a0f7a15ede49c",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.681
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "fe70efddf026a573d8c0d9f4567456bbb7e15bca4f575bf8d6a48a7dd22024b8",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.719
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "cff41c697536be09958aed47d3b4fea9e18189305d01c186750cb804ef2100f5",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.589
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "7f2237ef83604519bdd914b0dca95633cb3fdc35b6ced853cc33de59fc851808",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.583
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "86fc61c9be53201d2cc3b80029fb9a7681bff1e97a812a1e31a566517f2795e7",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.796
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "de56ca23d9ca7392560d7111841ebf63e308429274430ad5b8b3c72e9283704b",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.628
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "aa694de3c2770252d673ae594fcbe6e931c26a8e1f4c60a11ab617f91b9edc36",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.658
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "863db3f08dfc8dc236bfb39bbce7f30e96aa6a56613575aa47925615840ad0ef",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.668
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "d9ffe657e3247cc9cade2d5c14b222fed8f77342a589cc5ee24658627ffed8e7",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.751
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "8c83abfebfa64ec3e2be316ebe997eedd355e95a19b8c7be4ccdb825eecef1cf",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.635
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "1e1d781088ffaa0f485ff495c31bf916567c02da80823665e9d58de7c4d16f10",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.592
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "358e00b6efd69e46bd4595f841245487a49792c3ad31483a978e139b45bc1f5e",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.528
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "e71c93f4d10aefbf5899c7e2262ced97e0731454f60a1025af6654a076fed425",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.772
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "35d7f8ae5248b53c6854c94549b182cd7b4980b22c89190badca0675e487351b",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.579
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "ea370a1f7ef30d52a32a5949c37b044a6c5b3cd75aed0bd558bf58e70aa60e13",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.765
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "e4a46588b46e5ca307b95482ae4bdb2d12d924893aead9d9c746b5fdd8f8e700",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.657
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "ae48ec7be65dcca5801770250327e1d6cfa41c56f7ec9bf56e7a305b1dfbbeaf",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.747
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "5267798bf1e55775885f1d19bfc064d9e248f87a4293c615cf3854b2efe51363",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.627
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "5d4beac1906444d5f8144ac109f0bb9d21dab72d12da18cdc98e19b98441c678",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.731
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "adf8859757482725d17c7d86f16d4912cd8f735fcd9e6d4570b9bb4c7d342489",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.523
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "22b40e51e3fb0e310c9f86a521dbe8b3f491b37a6afc3f491af211f55b51a994",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.695
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "620d19a8d15f32a9f3d147da6afbaadccf3566f7703b174f5185dc121d1a14e3",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.676
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "984c20248a20a26a3ee11cd49f2cc6679a2e189ecb36468e181bd52b3ea30f3b",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.63
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "022d1bd1a5858d891f2f5821dc1afc0dc727cfb9cd87e6e19efa08cc3f40e0b8",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.554
+    },
+    "constructed": true,
+    "parameters": 9,
+    "max_error": 0.0,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "daf73dc0ba59b644a762b265268a39e8b0a7e86eda4024ec28cacde31141a959",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.024
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "7b3e9c4f03fabf89e25e61c152a18f2bbd4cb845791716f8e5a14db6af2890f6",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.034
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "e424bcfeb83e8a3210c34359e6346486abd6fb5f662ba9087e3421496016eee7",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.896
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "810d2619c0c8b753dd04c68a460ff23b1f2300d194f01d28a15892a2b3354a60",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.933
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "14af319fb682b9c7ce47219b83c9cad108fb41cae8c4850a0d8967a674a3106a",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.108
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.3877787807814457e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "4cf43ec52f3a838bedb7fe71a8e33e073edfce931ed1cc216e7bca64f404987e",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.05
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "9ee32162a2d27f9a32a3f50a7ea3efa54e4e333ce126bb13b1110dbb3a975d45",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.84
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "115d9c36cdd0c5bb2dab4b8f1339272ca6e4a42a9ba53788684562948d46ff3b",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.011
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "71aa15fe409ee12689b5fdbbea439466874db59a1a5b00b83dd11ad03ff3d8be",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.058
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "cd73bea0c0f42f311b076ca17bb57ad5a133fad62c48dc2b3e7a0107f44bf047",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.052
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "743e5d66618bef8a313a3b669c64013818ed57261234702f8a05e4fc2d6344b6",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.961
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 2.220446049250313e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "7f484a44286556d577b3de96eee6619c7a13840eb2f85b8bc823c3a402100061",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.837
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "96dce8a7582ed6fe37c926113673f2933c41296f6f7c513431882ad9cd3c41ec",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.821
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "59128ec3f50e15abfb39cd5d766d5111963fc27bcab7d37a5edf7006fbd71d22",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.99
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "282a80d77f120345448ad6c464a16f55d63bcc07fccafa47d9c13ef603e2ccf7",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.831
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "trained",
+    "id": "394b65c6bcca6c3d3bcf5141c961b6594b4cbaf349b20cdf7ab39ae22edbd522",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.923
+    },
+    "constructed": true,
+    "parameters": 51,
+    "max_error": 1.1102230246251565e-16,
+    "passes": true
+  },
+  {
+    "arm": "base",
+    "id": "7f5d01d9c965e1c67da0efc80e765a811f59191a463c914caab5b896c0b841b3",
+    "spec": {
+      "kind": "move",
+      "gain": 0.73,
+      "speed": 0.07
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "b4b511a4efadaca0e9270e8ac5b6726613895521c0dc7f742ddcf941cc379135",
+    "spec": {
+      "kind": "move",
+      "gain": 0.49,
+      "speed": 0.05
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "19:21: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "06d09b63a3252c1ef7ef0e5b9d63fa0c8370c8d91f54f99d8abb8a8d4f59c9dc",
+    "spec": {
+      "kind": "move",
+      "gain": 0.31,
+      "speed": 0.04
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "38:27: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "6b8f101f43247536f56a99b1201fb0b67f06dcfb3e6f1466149c28867d43958a",
+    "spec": {
+      "kind": "move",
+      "gain": 0.59,
+      "speed": 0.06
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "a4daaf93cc25acf81b3f5ffb3de46ae28828184c263bba0f4b63fb15150bcfc9",
+    "spec": {
+      "kind": "move",
+      "gain": 0.22,
+      "speed": 0.06
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "1:1: unexpected character '`'"
+  },
+  {
+    "arm": "base",
+    "id": "0eb7e3e42962a15fcca705fd7447977d86fea5338146afed5264af8b8b79fce5",
+    "spec": {
+      "kind": "move",
+      "gain": 0.71,
+      "speed": 0.06
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "0ac7094cb8bead8cc0e97245015f4eb3aaf768498661679acc3b4814e4a73910",
+    "spec": {
+      "kind": "move",
+      "gain": 0.58,
+      "speed": 0.06
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "1:1: unexpected character '`'"
+  },
+  {
+    "arm": "base",
+    "id": "21fbe0c9ff5882cac3b445b6a8a973bd1276563b92314699d1167abaded62034",
+    "spec": {
+      "kind": "move",
+      "gain": 0.6,
+      "speed": 0.06
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "56eef755386f3efcb9262363b3ef2c59e876cc8203cfa184cd05bf09904b7121",
+    "spec": {
+      "kind": "move",
+      "gain": 0.62,
+      "speed": 0.07
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "6589f5c36b04c9f57ab7dac741ac8369a5252bf361093ea3a88832db620cb3e5",
+    "spec": {
+      "kind": "move",
+      "gain": 0.3,
+      "speed": 0.04
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "19:21: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "bac80da72822d24e13e78f0bcdae1663cd53b255ffaf800267b3caa89317b9f6",
+    "spec": {
+      "kind": "move",
+      "gain": 0.2,
+      "speed": 0.09
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "19:21: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "2709225eab4ceb6ee363956ba12cdf946eb014ca49562e1217a178baa0e02397",
+    "spec": {
+      "kind": "move",
+      "gain": 0.32,
+      "speed": 0.07
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "13197fed770e2b66d3d0b42de42ae90ebfee3165e952b48beb254c96043f0e36",
+    "spec": {
+      "kind": "move",
+      "gain": 0.77,
+      "speed": 0.04
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "1:1: unexpected character '`'"
+  },
+  {
+    "arm": "base",
+    "id": "f5deb09761dadd9e0a565685e24eb4695c63a3c7c202d96885d0e85f595923eb",
+    "spec": {
+      "kind": "move",
+      "gain": 0.34,
+      "speed": 0.04
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "0e9bc310304660f51de2b2fa62d2dc1c3e1205e132530414212751034927e39a",
+    "spec": {
+      "kind": "move",
+      "gain": 0.8,
+      "speed": 0.05
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "19:21: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "e7a40f7ea2983f2f891df476914f716a4c3b97c60c3cfdc62ba1858dd20825b0",
+    "spec": {
+      "kind": "move",
+      "gain": 0.59,
+      "speed": 0.04
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "48aab489f21256cc972e7d0741092577d0de21e63665d7155d0bfa4ed3503cd2",
+    "spec": {
+      "kind": "near",
+      "radius": 0.037,
+      "metric": "l1"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "25:18: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "f3ba65fb7dc6b9e8ebd41fc19d25ad97e0ac947ddc42d4d986a09a3a7df19a30",
+    "spec": {
+      "kind": "near",
+      "radius": 0.102,
+      "metric": "linf"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "34:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "f3d1242919ba8867bf505c6807fe5345db91aac59806cbe3cd2a322dca67bba4",
+    "spec": {
+      "kind": "near",
+      "radius": 0.071,
+      "metric": "l1"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "34:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "a4bd705769a9035724852a8d6c7aee10181017268d5b599b61082b3886e75a2f",
+    "spec": {
+      "kind": "near",
+      "radius": 0.148,
+      "metric": "linf"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "34:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "a0ff5bd44aa89231ea07e0e15f41002dc5b068b979dfc8640df9813810ac168c",
+    "spec": {
+      "kind": "near",
+      "radius": 0.109,
+      "metric": "linf"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "34:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "e518b3aa3a1687852abc307a1b37180fd0bc9870d9b028cb2bd6f29d8c8b49e7",
+    "spec": {
+      "kind": "near",
+      "radius": 0.029,
+      "metric": "linf"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "34:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "0f77e3bf2fb765e2336cbba414889e2a4bd2f5354d5a9934b1f777c6695c949b",
+    "spec": {
+      "kind": "near",
+      "radius": 0.063,
+      "metric": "linf"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "34:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "b7b28f43a9cc7cccb85603b6b546a6605623fb55a5e47b840462b6776fb6d352",
+    "spec": {
+      "kind": "near",
+      "radius": 0.148,
+      "metric": "l1"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "34:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "3e3e39c0b7596d70f82c1bc638f618132f0f9666d0366241a931b24733b42f73",
+    "spec": {
+      "kind": "near",
+      "radius": 0.111,
+      "metric": "l1"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "1:1: unexpected character '`'"
+  },
+  {
+    "arm": "base",
+    "id": "9ef525afa19029f95faf92422fbb4a10382e854f6f775d0b59210a5dfe4d9cea",
+    "spec": {
+      "kind": "near",
+      "radius": 0.124,
+      "metric": "linf"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "1:1: unexpected character '`'"
+  },
+  {
+    "arm": "base",
+    "id": "2eef698305b21de1dbbbbca2b5210f907123a61259cdd53fe3882c0edb673139",
+    "spec": {
+      "kind": "near",
+      "radius": 0.179,
+      "metric": "linf"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "1:1: unexpected character '`'"
+  },
+  {
+    "arm": "base",
+    "id": "3400d489ac2cd617b20d6b884205751e5f4cae858b7e06437fa727f3c9429801",
+    "spec": {
+      "kind": "near",
+      "radius": 0.146,
+      "metric": "linf"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "34:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "23cbb2dafc09d960e71a87ad36fe4df67dc5ed646654e190a747d0d339ab9682",
+    "spec": {
+      "kind": "near",
+      "radius": 0.116,
+      "metric": "linf"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "34:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "69f0b8cadfd59922c5101e92237a0508024c1b0ea4a4ca6dbf2b1ee313677a17",
+    "spec": {
+      "kind": "near",
+      "radius": 0.035,
+      "metric": "linf"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "34:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "6d87b7c57737c6c61d8e57b6163b28472d4491a61d485eaf26975a8ce70ef9bc",
+    "spec": {
+      "kind": "near",
+      "radius": 0.08,
+      "metric": "l1"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "1:1: unexpected character '`'"
+  },
+  {
+    "arm": "base",
+    "id": "e46b6f0b1628d010090ccd20a4e43f811d9f89e658e6ccd28d9568e9b40e4168",
+    "spec": {
+      "kind": "near",
+      "radius": 0.1,
+      "metric": "l1"
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "39:30: unexpected character '\"'"
+  },
+  {
+    "arm": "base",
+    "id": "18494ff15ccfe007a205b95cf0ac2e2224b715e438a489c8f2df458f4fd77105",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.413
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "59:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "b172fbbf201ba9f8f0846e282965e064759b3eb77ac786b1a41a0d4a971b71e1",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.318
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "44:20: unexpected character '&'"
+  },
+  {
+    "arm": "base",
+    "id": "6c6c8b45d42351409f5e3d32761e0ac68fcf3c705d4bf50e63a33d968b90d97b",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.309
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "59:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "3d4c73b2af38b282f77374dbb8591b082a05cf739367f46396c28481882a4118",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.514
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "59:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "3049d38731c0a403097e7f0884d3b80945fb0e351cf9ee8a9c73291cea44897e",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.409
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "44:20: unexpected character '&'"
+  },
+  {
+    "arm": "base",
+    "id": "8d941495631feffdf7feb9df2a3832014c015e44daba35a6ec1b13742c2a30dc",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.471
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "59:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "767c32ddc9d906ad52ad3e155246128ca343dd0a43c0e2d7c7bbca02f6289a67",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.384
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "59:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "625395a707ae0575eced9b95d0f58e3b92a8977592e104015ecce34927337b60",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.333
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "58:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "67b22d53577c3c0f46f03b6b05581ec952f0c841bbf0e4d1d67bbd3a2a6e2cc0",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.493
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "59:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "42ac84610a32aae8c94133a063e843e25dfbee9dd491867db0e8ba038f975128",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.46
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "50:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "d9bae27797bf825ab930057532b44934ff1e6193a93d456a22b801a35a65fefd",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.343
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "59:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "4681743ba22bd9ffce9dd7294626b78f05bbd131a59e7b2e1596ebf024cb9b70",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.553
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "44:20: unexpected character '&'"
+  },
+  {
+    "arm": "base",
+    "id": "bd00ce210b5ee9d1b908b7ff53f2d9202e25ec7e74b90f0c87166c4aee28cde6",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.251
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:21: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "738f0a4297e41e9dc602076c590fcdb31bfc6f804f214aa10f3056c3e48f5e81",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.352
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "44:20: unexpected character '&'"
+  },
+  {
+    "arm": "base",
+    "id": "548ba39ac6ff605c0b6d248d78a73e6a7005fa568eb812055b5b49ba2b6e1ba6",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.259
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:21: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "eedd4520b1738865e2604723e39e324bdad75462fbb6090d52e4ad8ebabffde4",
+    "spec": {
+      "kind": "holding",
+      "threshold": 0.466
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "44:20: unexpected character '&'"
+  },
+  {
+    "arm": "base",
+    "id": "8100745cf7bb94d84f0fb3d07702c676b56980f9b666d54ccf5d15b1701978e7",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.524
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "65cfcb29962549ed3b7610439c501ee33c705646a45474d8be97263c3c4f4253",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.693
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "30:24: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "b7d387623b3a98bfd0b0b4ef516d74ce05c69cc4e5ddf3b1a2f979ea1b52e085",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.506
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "5a6ffd60a45f31bb0742faf7b8d71c3fcc7c558934fcf3880535985b5e049df7",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.519
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "25:23: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "ca50ceb0b9733d0c6b4333abfb153a98ea302cb0ee6b6eb0b82af028881aa74d",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.62
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "1:1: unexpected character '`'"
+  },
+  {
+    "arm": "base",
+    "id": "8bcbb5f179ade54242e4fd2f934dfcbb496c6620604eee8eb00b8356af29a89e",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.543
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "a462d7eee4e199bcbc33e6a36c366f68924a180e030f7bd4f0b7ba4d0840c7fc",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.771
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "24:28: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "89f513d63829b82690ee96a926717c8fadf05f25db51aac8dd7242a9c358aee9",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.734
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "30:24: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "74062d10480ba07e8a93e32e0603ccd9a361a459bada1a38dd8a0f7a15ede49c",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.681
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "30:24: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "fe70efddf026a573d8c0d9f4567456bbb7e15bca4f575bf8d6a48a7dd22024b8",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.719
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "24:23: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "cff41c697536be09958aed47d3b4fea9e18189305d01c186750cb804ef2100f5",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.589
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "7f2237ef83604519bdd914b0dca95633cb3fdc35b6ced853cc33de59fc851808",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.583
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "86fc61c9be53201d2cc3b80029fb9a7681bff1e97a812a1e31a566517f2795e7",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.796
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "30:24: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "de56ca23d9ca7392560d7111841ebf63e308429274430ad5b8b3c72e9283704b",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.628
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "30:24: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "aa694de3c2770252d673ae594fcbe6e931c26a8e1f4c60a11ab617f91b9edc36",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.658
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "863db3f08dfc8dc236bfb39bbce7f30e96aa6a56613575aa47925615840ad0ef",
+    "spec": {
+      "kind": "close",
+      "amplitude": 0.668
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "30:24: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "d9ffe657e3247cc9cade2d5c14b222fed8f77342a589cc5ee24658627ffed8e7",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.751
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "38:24: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "8c83abfebfa64ec3e2be316ebe997eedd355e95a19b8c7be4ccdb825eecef1cf",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.635
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "1e1d781088ffaa0f485ff495c31bf916567c02da80823665e9d58de7c4d16f10",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.592
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "358e00b6efd69e46bd4595f841245487a49792c3ad31483a978e139b45bc1f5e",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.528
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "e71c93f4d10aefbf5899c7e2262ced97e0731454f60a1025af6654a076fed425",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.772
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "25:29: unexpected character '?'"
+  },
+  {
+    "arm": "base",
+    "id": "35d7f8ae5248b53c6854c94549b182cd7b4980b22c89190badca0675e487351b",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.579
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "39:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "ea370a1f7ef30d52a32a5949c37b044a6c5b3cd75aed0bd558bf58e70aa60e13",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.765
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "e4a46588b46e5ca307b95482ae4bdb2d12d924893aead9d9c746b5fdd8f8e700",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.657
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "ae48ec7be65dcca5801770250327e1d6cfa41c56f7ec9bf56e7a305b1dfbbeaf",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.747
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "5267798bf1e55775885f1d19bfc064d9e248f87a4293c615cf3854b2efe51363",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.627
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "25:29: unexpected character '?'"
+  },
+  {
+    "arm": "base",
+    "id": "5d4beac1906444d5f8144ac109f0bb9d21dab72d12da18cdc98e19b98441c678",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.731
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "25:29: unexpected character '?'"
+  },
+  {
+    "arm": "base",
+    "id": "adf8859757482725d17c7d86f16d4912cd8f735fcd9e6d4570b9bb4c7d342489",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.523
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "16:37: unexpected character '?'"
+  },
+  {
+    "arm": "base",
+    "id": "22b40e51e3fb0e310c9f86a521dbe8b3f491b37a6afc3f491af211f55b51a994",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.695
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "620d19a8d15f32a9f3d147da6afbaadccf3566f7703b174f5185dc121d1a14e3",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.676
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "25:29: unexpected character '?'"
+  },
+  {
+    "arm": "base",
+    "id": "984c20248a20a26a3ee11cd49f2cc6679a2e189ecb36468e181bd52b3ea30f3b",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.63
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "24:28: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "022d1bd1a5858d891f2f5821dc1afc0dc727cfb9cd87e6e19efa08cc3f40e0b8",
+    "spec": {
+      "kind": "open",
+      "amplitude": 0.554
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "39:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "daf73dc0ba59b644a762b265268a39e8b0a7e86eda4024ec28cacde31141a959",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.024
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "32:22: unexpected character '&'"
+  },
+  {
+    "arm": "base",
+    "id": "7b3e9c4f03fabf89e25e61c152a18f2bbd4cb845791716f8e5a14db6af2890f6",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.034
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "24:25: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "e424bcfeb83e8a3210c34359e6346486abd6fb5f662ba9087e3421496016eee7",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.896
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "810d2619c0c8b753dd04c68a460ff23b1f2300d194f01d28a15892a2b3354a60",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.933
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "27:35: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "14af319fb682b9c7ce47219b83c9cad108fb41cae8c4850a0d8967a674a3106a",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.108
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "4cf43ec52f3a838bedb7fe71a8e33e073edfce931ed1cc216e7bca64f404987e",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.05
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "24:25: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "9ee32162a2d27f9a32a3f50a7ea3efa54e4e333ce126bb13b1110dbb3a975d45",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.84
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "1:1: unexpected character '`'"
+  },
+  {
+    "arm": "base",
+    "id": "115d9c36cdd0c5bb2dab4b8f1339272ca6e4a42a9ba53788684562948d46ff3b",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.011
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "24:25: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "71aa15fe409ee12689b5fdbbea439466874db59a1a5b00b83dd11ad03ff3d8be",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.058
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "1:1: unexpected character '`'"
+  },
+  {
+    "arm": "base",
+    "id": "cd73bea0c0f42f311b076ca17bb57ad5a133fad62c48dc2b3e7a0107f44bf047",
+    "spec": {
+      "kind": "safe",
+      "bound": 1.052
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "743e5d66618bef8a313a3b669c64013818ed57261234702f8a05e4fc2d6344b6",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.961
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "41:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "7f484a44286556d577b3de96eee6619c7a13840eb2f85b8bc823c3a402100061",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.837
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "25:29: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "96dce8a7582ed6fe37c926113673f2933c41296f6f7c513431882ad9cd3c41ec",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.821
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "3:22: expected '=', found ';'"
+  },
+  {
+    "arm": "base",
+    "id": "59128ec3f50e15abfb39cd5d766d5111963fc27bcab7d37a5edf7006fbd71d22",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.99
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "41:21: unexpected character '|'"
+  },
+  {
+    "arm": "base",
+    "id": "282a80d77f120345448ad6c464a16f55d63bcc07fccafa47d9c13ef603e2ccf7",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.831
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "25:29: unexpected character '^'"
+  },
+  {
+    "arm": "base",
+    "id": "394b65c6bcca6c3d3bcf5141c961b6594b4cbaf349b20cdf7ab39ae22edbd522",
+    "spec": {
+      "kind": "safe",
+      "bound": 0.923
+    },
+    "constructed": false,
+    "passes": false,
+    "error": "25:29: unexpected character '^'"
+  }
+]

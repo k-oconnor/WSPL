@@ -1,0 +1,238 @@
+{
+  "format": "wspl.relu_mlp.v0",
+  "semantics": "rational_real_graph",
+  "compiler": "wspl.scalar_to_relu.v0",
+  "source_sha256": "a8808d39e845c4a3b4229c6b85f27cc9fb0eb9c96b5f47a4b065eb1f4d1bc17a",
+  "inputs": [
+    {
+      "name": "x",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-2",
+        "upper": "2"
+      }
+    },
+    {
+      "name": "y",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-2",
+        "upper": "2"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "vx",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-8",
+        "upper": "8"
+      }
+    },
+    {
+      "name": "vy",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-8",
+        "upper": "8"
+      }
+    },
+    {
+      "name": "grip",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-8",
+        "upper": "8"
+      }
+    }
+  ],
+  "layers": [
+    {
+      "activation": "relu",
+      "weights": [
+        [
+          "73/100",
+          "0"
+        ],
+        [
+          "73/100",
+          "0"
+        ],
+        [
+          "0",
+          "73/100"
+        ],
+        [
+          "0",
+          "73/100"
+        ]
+      ],
+      "bias": [
+        "7/100",
+        "-7/100",
+        "7/100",
+        "-7/100"
+      ]
+    },
+    {
+      "activation": "linear",
+      "weights": [
+        [
+          "1",
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "bias": [
+        "-7/100",
+        "-7/100",
+        "0"
+      ]
+    }
+  ],
+  "allocation": {
+    "mode": "fresh_mlp",
+    "widths": [
+      2,
+      4,
+      3
+    ],
+    "parameters": 27
+  },
+  "source_map": {
+    "expressions": [
+      {
+        "path": "/outputs/0/value/value/terms/0/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i0": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value/value",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "i0": "73/100"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value",
+        "operator": "clip",
+        "linear": {
+          "terms": {
+            "u0": "1",
+            "u1": "-1"
+          },
+          "bias": "-7/100"
+        }
+      },
+      {
+        "path": "/outputs/1/value/value/terms/0/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i1": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/1/value/value",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "i1": "73/100"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/1/value",
+        "operator": "clip",
+        "linear": {
+          "terms": {
+            "u2": "1",
+            "u3": "-1"
+          },
+          "bias": "-7/100"
+        }
+      },
+      {
+        "path": "/outputs/2/value",
+        "operator": "const",
+        "linear": {
+          "terms": {},
+          "bias": "0"
+        }
+      }
+    ],
+    "relu_units": {
+      "u0": {
+        "layer": 1,
+        "index": 0
+      },
+      "u1": {
+        "layer": 1,
+        "index": 1
+      },
+      "u2": {
+        "layer": 1,
+        "index": 2
+      },
+      "u3": {
+        "layer": 1,
+        "index": 3
+      }
+    },
+    "allocation": [
+      [
+        {
+          "index": 0,
+          "kind": "source_relu",
+          "source": "u0"
+        },
+        {
+          "index": 1,
+          "kind": "source_relu",
+          "source": "u1"
+        },
+        {
+          "index": 2,
+          "kind": "source_relu",
+          "source": "u2"
+        },
+        {
+          "index": 3,
+          "kind": "source_relu",
+          "source": "u3"
+        }
+      ]
+    ],
+    "eliminated_relu_units": []
+  }
+}

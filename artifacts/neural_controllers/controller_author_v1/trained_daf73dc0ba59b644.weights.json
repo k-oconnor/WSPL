@@ -1,0 +1,346 @@
+{
+  "format": "wspl.relu_mlp.v0",
+  "semantics": "rational_real_graph",
+  "compiler": "wspl.scalar_to_relu.v0",
+  "source_sha256": "b41b68e412424c81e3eebf139420a7a57c7747a2ec8e58d8ffd0c71c753841bb",
+  "inputs": [
+    {
+      "name": "x",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-2",
+        "upper": "2"
+      }
+    },
+    {
+      "name": "y",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-2",
+        "upper": "2"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "score",
+      "type": {
+        "kind": "Real",
+        "unit": "1",
+        "lower": "-8",
+        "upper": "8"
+      }
+    }
+  ],
+  "layers": [
+    {
+      "activation": "relu",
+      "weights": [
+        [
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "2"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "bias": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "activation": "relu",
+      "weights": [
+        [
+          "1",
+          "-1",
+          "-1",
+          "1",
+          "1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "bias": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "activation": "linear",
+      "weights": [
+        [
+          "-1",
+          "1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "bias": [
+        "128/125"
+      ]
+    }
+  ],
+  "allocation": {
+    "mode": "fresh_mlp",
+    "widths": [
+      2,
+      6,
+      4,
+      1
+    ],
+    "parameters": 51
+  },
+  "source_map": {
+    "expressions": [
+      {
+        "path": "/lets/0/value/left",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i0": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/0/value/right/terms/0/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i0": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/0/value/right",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "i0": "-1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/0/value",
+        "operator": "max",
+        "linear": {
+          "terms": {
+            "i0": "-1",
+            "u0": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/1/value/left",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i1": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/1/value/right/terms/0/value",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i1": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/1/value/right",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "i1": "-1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/lets/1/value",
+        "operator": "max",
+        "linear": {
+          "terms": {
+            "i1": "-1",
+            "u1": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value/terms/0/value/left",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i0": "-1",
+            "u0": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value/terms/0/value/right",
+        "operator": "ref",
+        "linear": {
+          "terms": {
+            "i1": "-1",
+            "u1": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value/terms/0/value",
+        "operator": "max",
+        "linear": {
+          "terms": {
+            "i1": "-1",
+            "u1": "1",
+            "u2": "1"
+          },
+          "bias": "0"
+        }
+      },
+      {
+        "path": "/outputs/0/value",
+        "operator": "affine",
+        "linear": {
+          "terms": {
+            "i1": "1",
+            "u1": "-1",
+            "u2": "-1"
+          },
+          "bias": "128/125"
+        }
+      }
+    ],
+    "relu_units": {
+      "u0": {
+        "layer": 1,
+        "index": 0
+      },
+      "u1": {
+        "layer": 1,
+        "index": 1
+      },
+      "u2": {
+        "layer": 2,
+        "index": 0
+      }
+    },
+    "allocation": [
+      [
+        {
+          "index": 0,
+          "kind": "source_relu",
+          "source": "u0"
+        },
+        {
+          "index": 1,
+          "kind": "source_relu",
+          "source": "u1"
+        },
+        {
+          "index": 2,
+          "kind": "input_positive",
+          "source": "i0"
+        },
+        {
+          "index": 3,
+          "kind": "input_negative",
+          "source": "i0"
+        },
+        {
+          "index": 4,
+          "kind": "input_positive",
+          "source": "i1"
+        },
+        {
+          "index": 5,
+          "kind": "input_negative",
+          "source": "i1"
+        }
+      ],
+      [
+        {
+          "index": 0,
+          "kind": "source_relu",
+          "source": "u2"
+        },
+        {
+          "index": 1,
+          "kind": "input_positive",
+          "source": "i1"
+        },
+        {
+          "index": 2,
+          "kind": "input_negative",
+          "source": "i1"
+        },
+        {
+          "index": 3,
+          "kind": "nonnegative_relay",
+          "source": "u1"
+        }
+      ]
+    ],
+    "eliminated_relu_units": []
+  }
+}

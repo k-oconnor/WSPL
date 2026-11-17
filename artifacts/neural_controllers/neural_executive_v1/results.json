@@ -1,0 +1,129 @@
+{
+  "status": "complete",
+  "manifest_sha256": "9bde732531c5d8a939c87c7b224fefd52c9d4ee81ea4dcfba39adef08c4a09ef",
+  "base_hash": "540b6c0285e9d26362156163cef352c1a27657dc7b0372d0c36404a6c5baddc1",
+  "validation": [
+    {
+      "step": 0,
+      "nll": 0.7299334036485452
+    },
+    {
+      "step": 512,
+      "nll": 2.0918490952608535e-05
+    },
+    {
+      "step": 1024,
+      "nll": 1.3049925406656344e-05
+    }
+  ],
+  "summary": {
+    "base": {
+      "familiar3": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "jammed4": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "long4": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "long5": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "renamed5": {
+        "total": 32,
+        "constructed": 2,
+        "task_success": 0,
+        "safe_failure": 0
+      }
+    },
+    "trained": {
+      "familiar3": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "jammed4": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 0,
+        "safe_failure": 21
+      },
+      "long4": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 25,
+        "safe_failure": 0
+      },
+      "long5": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 19,
+        "safe_failure": 0
+      },
+      "renamed5": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 9,
+        "safe_failure": 0
+      }
+    },
+    "reference": {
+      "familiar3": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "jammed4": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 0,
+        "safe_failure": 32
+      },
+      "long4": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "long5": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "renamed5": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      }
+    }
+  },
+  "reference_gate_passed": true,
+  "peak_allocated_bytes": 3546243072,
+  "usage": {
+    "base": {
+      "tokens": 14733,
+      "seconds": 718.204000000027
+    },
+    "trained": {
+      "tokens": 6306,
+      "seconds": 311.71699999982957
+    }
+  }
+}

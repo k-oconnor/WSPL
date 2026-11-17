@@ -1,0 +1,287 @@
+{
+  "status": "complete",
+  "manifest_sha256": "43dabbb5b31820586f368de2037e2673767c71eafa89c55833d2d1fa6b60f5fc",
+  "base_hash": "540b6c0285e9d26362156163cef352c1a27657dc7b0372d0c36404a6c5baddc1",
+  "validation": [
+    {
+      "step": 0,
+      "nll": 0.3907577677214714
+    },
+    {
+      "step": 2048,
+      "nll": 0.0010476989151204925
+    },
+    {
+      "step": 4096,
+      "nll": 0.00044924170569419185
+    }
+  ],
+  "paired_vs_previous": {
+    "familiar3": {
+      "metric": "task_success",
+      "improvements": 0,
+      "regressions": 0,
+      "unchanged": 32
+    },
+    "familiar4": {
+      "metric": "task_success",
+      "improvements": 13,
+      "regressions": 0,
+      "unchanged": 19
+    },
+    "familiar5": {
+      "metric": "task_success",
+      "improvements": 14,
+      "regressions": 0,
+      "unchanged": 18
+    },
+    "jammed8": {
+      "metric": "safe_failure",
+      "improvements": 15,
+      "regressions": 0,
+      "unchanged": 17
+    },
+    "long6": {
+      "metric": "task_success",
+      "improvements": 18,
+      "regressions": 0,
+      "unchanged": 14
+    },
+    "long7": {
+      "metric": "task_success",
+      "improvements": 15,
+      "regressions": 0,
+      "unchanged": 17
+    },
+    "long8": {
+      "metric": "task_success",
+      "improvements": 18,
+      "regressions": 0,
+      "unchanged": 14
+    },
+    "renamed8": {
+      "metric": "task_success",
+      "improvements": 8,
+      "regressions": 0,
+      "unchanged": 24
+    }
+  },
+  "summary": {
+    "base": {
+      "familiar3": {
+        "total": 32,
+        "constructed": 1,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "familiar4": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "familiar5": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "jammed8": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "long6": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "long7": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "long8": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      },
+      "renamed8": {
+        "total": 32,
+        "constructed": 0,
+        "task_success": 0,
+        "safe_failure": 0
+      }
+    },
+    "previous": {
+      "familiar3": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "familiar4": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 19,
+        "safe_failure": 0
+      },
+      "familiar5": {
+        "total": 32,
+        "constructed": 31,
+        "task_success": 18,
+        "safe_failure": 0
+      },
+      "jammed8": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 0,
+        "safe_failure": 13
+      },
+      "long6": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 14,
+        "safe_failure": 0
+      },
+      "long7": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 13,
+        "safe_failure": 0
+      },
+      "long8": {
+        "total": 32,
+        "constructed": 31,
+        "task_success": 10,
+        "safe_failure": 0
+      },
+      "renamed8": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 18,
+        "safe_failure": 0
+      }
+    },
+    "trained": {
+      "familiar3": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "familiar4": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "familiar5": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "jammed8": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 0,
+        "safe_failure": 28
+      },
+      "long6": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "long7": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 28,
+        "safe_failure": 0
+      },
+      "long8": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 28,
+        "safe_failure": 0
+      },
+      "renamed8": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 26,
+        "safe_failure": 0
+      }
+    },
+    "reference": {
+      "familiar3": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "familiar4": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "familiar5": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "jammed8": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 0,
+        "safe_failure": 32
+      },
+      "long6": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "long7": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "long8": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      },
+      "renamed8": {
+        "total": 32,
+        "constructed": 32,
+        "task_success": 32,
+        "safe_failure": 0
+      }
+    }
+  },
+  "reference_gate_passed": true,
+  "peak_allocated_bytes": 3635187712,
+  "usage": {
+    "base": {
+      "tokens": 65759,
+      "seconds": 3788.036000000022
+    },
+    "previous": {
+      "tokens": 23430,
+      "seconds": 1097.605999999505
+    },
+    "trained": {
+      "tokens": 24756,
+      "seconds": 1118.5009999996983
+    }
+  }
+}

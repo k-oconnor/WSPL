@@ -1,0 +1,8246 @@
+[
+  {
+    "arm": "base",
+    "index": 0,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "7f5d01d9c965e1c67da0efc80e765a811f59191a463c914caab5b896c0b841b3",
+      "near": "48aab489f21256cc972e7d0741092577d0de21e63665d7155d0bfa4ed3503cd2",
+      "holding": "18494ff15ccfe007a205b95cf0ac2e2224b715e438a489c8f2df458f4fd77105",
+      "close": "8100745cf7bb94d84f0fb3d07702c676b56980f9b666d54ccf5d15b1701978e7",
+      "open": "d9ffe657e3247cc9cade2d5c14b222fed8f77342a589cc5ee24658627ffed8e7",
+      "safe": "daf73dc0ba59b644a762b265268a39e8b0a7e86eda4024ec28cacde31141a959"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '7f5d01d9c965e1c67da0efc80e765a811f59191a463c914caab5b896c0b841b3')"
+  },
+  {
+    "arm": "base",
+    "index": 0,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "7f5d01d9c965e1c67da0efc80e765a811f59191a463c914caab5b896c0b841b3",
+      "near": "48aab489f21256cc972e7d0741092577d0de21e63665d7155d0bfa4ed3503cd2",
+      "holding": "18494ff15ccfe007a205b95cf0ac2e2224b715e438a489c8f2df458f4fd77105",
+      "close": "8100745cf7bb94d84f0fb3d07702c676b56980f9b666d54ccf5d15b1701978e7",
+      "open": "d9ffe657e3247cc9cade2d5c14b222fed8f77342a589cc5ee24658627ffed8e7",
+      "safe": "daf73dc0ba59b644a762b265268a39e8b0a7e86eda4024ec28cacde31141a959"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '7f5d01d9c965e1c67da0efc80e765a811f59191a463c914caab5b896c0b841b3')"
+  },
+  {
+    "arm": "base",
+    "index": 1,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "b4b511a4efadaca0e9270e8ac5b6726613895521c0dc7f742ddcf941cc379135",
+      "near": "f3ba65fb7dc6b9e8ebd41fc19d25ad97e0ac947ddc42d4d986a09a3a7df19a30",
+      "holding": "b172fbbf201ba9f8f0846e282965e064759b3eb77ac786b1a41a0d4a971b71e1",
+      "close": "65cfcb29962549ed3b7610439c501ee33c705646a45474d8be97263c3c4f4253",
+      "open": "8c83abfebfa64ec3e2be316ebe997eedd355e95a19b8c7be4ccdb825eecef1cf",
+      "safe": "7b3e9c4f03fabf89e25e61c152a18f2bbd4cb845791716f8e5a14db6af2890f6"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', 'b4b511a4efadaca0e9270e8ac5b6726613895521c0dc7f742ddcf941cc379135')"
+  },
+  {
+    "arm": "base",
+    "index": 1,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "b4b511a4efadaca0e9270e8ac5b6726613895521c0dc7f742ddcf941cc379135",
+      "near": "f3ba65fb7dc6b9e8ebd41fc19d25ad97e0ac947ddc42d4d986a09a3a7df19a30",
+      "holding": "b172fbbf201ba9f8f0846e282965e064759b3eb77ac786b1a41a0d4a971b71e1",
+      "close": "65cfcb29962549ed3b7610439c501ee33c705646a45474d8be97263c3c4f4253",
+      "open": "8c83abfebfa64ec3e2be316ebe997eedd355e95a19b8c7be4ccdb825eecef1cf",
+      "safe": "7b3e9c4f03fabf89e25e61c152a18f2bbd4cb845791716f8e5a14db6af2890f6"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', 'b4b511a4efadaca0e9270e8ac5b6726613895521c0dc7f742ddcf941cc379135')"
+  },
+  {
+    "arm": "base",
+    "index": 2,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "06d09b63a3252c1ef7ef0e5b9d63fa0c8370c8d91f54f99d8abb8a8d4f59c9dc",
+      "near": "f3d1242919ba8867bf505c6807fe5345db91aac59806cbe3cd2a322dca67bba4",
+      "holding": "6c6c8b45d42351409f5e3d32761e0ac68fcf3c705d4bf50e63a33d968b90d97b",
+      "close": "b7d387623b3a98bfd0b0b4ef516d74ce05c69cc4e5ddf3b1a2f979ea1b52e085",
+      "open": "1e1d781088ffaa0f485ff495c31bf916567c02da80823665e9d58de7c4d16f10",
+      "safe": "e424bcfeb83e8a3210c34359e6346486abd6fb5f662ba9087e3421496016eee7"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '06d09b63a3252c1ef7ef0e5b9d63fa0c8370c8d91f54f99d8abb8a8d4f59c9dc')"
+  },
+  {
+    "arm": "base",
+    "index": 2,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "06d09b63a3252c1ef7ef0e5b9d63fa0c8370c8d91f54f99d8abb8a8d4f59c9dc",
+      "near": "f3d1242919ba8867bf505c6807fe5345db91aac59806cbe3cd2a322dca67bba4",
+      "holding": "6c6c8b45d42351409f5e3d32761e0ac68fcf3c705d4bf50e63a33d968b90d97b",
+      "close": "b7d387623b3a98bfd0b0b4ef516d74ce05c69cc4e5ddf3b1a2f979ea1b52e085",
+      "open": "1e1d781088ffaa0f485ff495c31bf916567c02da80823665e9d58de7c4d16f10",
+      "safe": "e424bcfeb83e8a3210c34359e6346486abd6fb5f662ba9087e3421496016eee7"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '06d09b63a3252c1ef7ef0e5b9d63fa0c8370c8d91f54f99d8abb8a8d4f59c9dc')"
+  },
+  {
+    "arm": "base",
+    "index": 3,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "6b8f101f43247536f56a99b1201fb0b67f06dcfb3e6f1466149c28867d43958a",
+      "near": "a4bd705769a9035724852a8d6c7aee10181017268d5b599b61082b3886e75a2f",
+      "holding": "3d4c73b2af38b282f77374dbb8591b082a05cf739367f46396c28481882a4118",
+      "close": "5a6ffd60a45f31bb0742faf7b8d71c3fcc7c558934fcf3880535985b5e049df7",
+      "open": "358e00b6efd69e46bd4595f841245487a49792c3ad31483a978e139b45bc1f5e",
+      "safe": "810d2619c0c8b753dd04c68a460ff23b1f2300d194f01d28a15892a2b3354a60"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '6b8f101f43247536f56a99b1201fb0b67f06dcfb3e6f1466149c28867d43958a')"
+  },
+  {
+    "arm": "base",
+    "index": 3,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "6b8f101f43247536f56a99b1201fb0b67f06dcfb3e6f1466149c28867d43958a",
+      "near": "a4bd705769a9035724852a8d6c7aee10181017268d5b599b61082b3886e75a2f",
+      "holding": "3d4c73b2af38b282f77374dbb8591b082a05cf739367f46396c28481882a4118",
+      "close": "5a6ffd60a45f31bb0742faf7b8d71c3fcc7c558934fcf3880535985b5e049df7",
+      "open": "358e00b6efd69e46bd4595f841245487a49792c3ad31483a978e139b45bc1f5e",
+      "safe": "810d2619c0c8b753dd04c68a460ff23b1f2300d194f01d28a15892a2b3354a60"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '6b8f101f43247536f56a99b1201fb0b67f06dcfb3e6f1466149c28867d43958a')"
+  },
+  {
+    "arm": "base",
+    "index": 4,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "a4daaf93cc25acf81b3f5ffb3de46ae28828184c263bba0f4b63fb15150bcfc9",
+      "near": "a0ff5bd44aa89231ea07e0e15f41002dc5b068b979dfc8640df9813810ac168c",
+      "holding": "3049d38731c0a403097e7f0884d3b80945fb0e351cf9ee8a9c73291cea44897e",
+      "close": "ca50ceb0b9733d0c6b4333abfb153a98ea302cb0ee6b6eb0b82af028881aa74d",
+      "open": "e71c93f4d10aefbf5899c7e2262ced97e0731454f60a1025af6654a076fed425",
+      "safe": "14af319fb682b9c7ce47219b83c9cad108fb41cae8c4850a0d8967a674a3106a"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', 'a4daaf93cc25acf81b3f5ffb3de46ae28828184c263bba0f4b63fb15150bcfc9')"
+  },
+  {
+    "arm": "base",
+    "index": 4,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "a4daaf93cc25acf81b3f5ffb3de46ae28828184c263bba0f4b63fb15150bcfc9",
+      "near": "a0ff5bd44aa89231ea07e0e15f41002dc5b068b979dfc8640df9813810ac168c",
+      "holding": "3049d38731c0a403097e7f0884d3b80945fb0e351cf9ee8a9c73291cea44897e",
+      "close": "ca50ceb0b9733d0c6b4333abfb153a98ea302cb0ee6b6eb0b82af028881aa74d",
+      "open": "e71c93f4d10aefbf5899c7e2262ced97e0731454f60a1025af6654a076fed425",
+      "safe": "14af319fb682b9c7ce47219b83c9cad108fb41cae8c4850a0d8967a674a3106a"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', 'a4daaf93cc25acf81b3f5ffb3de46ae28828184c263bba0f4b63fb15150bcfc9')"
+  },
+  {
+    "arm": "base",
+    "index": 5,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "0eb7e3e42962a15fcca705fd7447977d86fea5338146afed5264af8b8b79fce5",
+      "near": "e518b3aa3a1687852abc307a1b37180fd0bc9870d9b028cb2bd6f29d8c8b49e7",
+      "holding": "8d941495631feffdf7feb9df2a3832014c015e44daba35a6ec1b13742c2a30dc",
+      "close": "8bcbb5f179ade54242e4fd2f934dfcbb496c6620604eee8eb00b8356af29a89e",
+      "open": "35d7f8ae5248b53c6854c94549b182cd7b4980b22c89190badca0675e487351b",
+      "safe": "4cf43ec52f3a838bedb7fe71a8e33e073edfce931ed1cc216e7bca64f404987e"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '0eb7e3e42962a15fcca705fd7447977d86fea5338146afed5264af8b8b79fce5')"
+  },
+  {
+    "arm": "base",
+    "index": 5,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "0eb7e3e42962a15fcca705fd7447977d86fea5338146afed5264af8b8b79fce5",
+      "near": "e518b3aa3a1687852abc307a1b37180fd0bc9870d9b028cb2bd6f29d8c8b49e7",
+      "holding": "8d941495631feffdf7feb9df2a3832014c015e44daba35a6ec1b13742c2a30dc",
+      "close": "8bcbb5f179ade54242e4fd2f934dfcbb496c6620604eee8eb00b8356af29a89e",
+      "open": "35d7f8ae5248b53c6854c94549b182cd7b4980b22c89190badca0675e487351b",
+      "safe": "4cf43ec52f3a838bedb7fe71a8e33e073edfce931ed1cc216e7bca64f404987e"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '0eb7e3e42962a15fcca705fd7447977d86fea5338146afed5264af8b8b79fce5')"
+  },
+  {
+    "arm": "base",
+    "index": 6,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "0ac7094cb8bead8cc0e97245015f4eb3aaf768498661679acc3b4814e4a73910",
+      "near": "0f77e3bf2fb765e2336cbba414889e2a4bd2f5354d5a9934b1f777c6695c949b",
+      "holding": "767c32ddc9d906ad52ad3e155246128ca343dd0a43c0e2d7c7bbca02f6289a67",
+      "close": "a462d7eee4e199bcbc33e6a36c366f68924a180e030f7bd4f0b7ba4d0840c7fc",
+      "open": "ea370a1f7ef30d52a32a5949c37b044a6c5b3cd75aed0bd558bf58e70aa60e13",
+      "safe": "9ee32162a2d27f9a32a3f50a7ea3efa54e4e333ce126bb13b1110dbb3a975d45"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '0ac7094cb8bead8cc0e97245015f4eb3aaf768498661679acc3b4814e4a73910')"
+  },
+  {
+    "arm": "base",
+    "index": 6,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "0ac7094cb8bead8cc0e97245015f4eb3aaf768498661679acc3b4814e4a73910",
+      "near": "0f77e3bf2fb765e2336cbba414889e2a4bd2f5354d5a9934b1f777c6695c949b",
+      "holding": "767c32ddc9d906ad52ad3e155246128ca343dd0a43c0e2d7c7bbca02f6289a67",
+      "close": "a462d7eee4e199bcbc33e6a36c366f68924a180e030f7bd4f0b7ba4d0840c7fc",
+      "open": "ea370a1f7ef30d52a32a5949c37b044a6c5b3cd75aed0bd558bf58e70aa60e13",
+      "safe": "9ee32162a2d27f9a32a3f50a7ea3efa54e4e333ce126bb13b1110dbb3a975d45"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '0ac7094cb8bead8cc0e97245015f4eb3aaf768498661679acc3b4814e4a73910')"
+  },
+  {
+    "arm": "base",
+    "index": 7,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "21fbe0c9ff5882cac3b445b6a8a973bd1276563b92314699d1167abaded62034",
+      "near": "b7b28f43a9cc7cccb85603b6b546a6605623fb55a5e47b840462b6776fb6d352",
+      "holding": "625395a707ae0575eced9b95d0f58e3b92a8977592e104015ecce34927337b60",
+      "close": "89f513d63829b82690ee96a926717c8fadf05f25db51aac8dd7242a9c358aee9",
+      "open": "e4a46588b46e5ca307b95482ae4bdb2d12d924893aead9d9c746b5fdd8f8e700",
+      "safe": "115d9c36cdd0c5bb2dab4b8f1339272ca6e4a42a9ba53788684562948d46ff3b"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '21fbe0c9ff5882cac3b445b6a8a973bd1276563b92314699d1167abaded62034')"
+  },
+  {
+    "arm": "base",
+    "index": 7,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "21fbe0c9ff5882cac3b445b6a8a973bd1276563b92314699d1167abaded62034",
+      "near": "b7b28f43a9cc7cccb85603b6b546a6605623fb55a5e47b840462b6776fb6d352",
+      "holding": "625395a707ae0575eced9b95d0f58e3b92a8977592e104015ecce34927337b60",
+      "close": "89f513d63829b82690ee96a926717c8fadf05f25db51aac8dd7242a9c358aee9",
+      "open": "e4a46588b46e5ca307b95482ae4bdb2d12d924893aead9d9c746b5fdd8f8e700",
+      "safe": "115d9c36cdd0c5bb2dab4b8f1339272ca6e4a42a9ba53788684562948d46ff3b"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '21fbe0c9ff5882cac3b445b6a8a973bd1276563b92314699d1167abaded62034')"
+  },
+  {
+    "arm": "base",
+    "index": 8,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "56eef755386f3efcb9262363b3ef2c59e876cc8203cfa184cd05bf09904b7121",
+      "near": "3e3e39c0b7596d70f82c1bc638f618132f0f9666d0366241a931b24733b42f73",
+      "holding": "67b22d53577c3c0f46f03b6b05581ec952f0c841bbf0e4d1d67bbd3a2a6e2cc0",
+      "close": "74062d10480ba07e8a93e32e0603ccd9a361a459bada1a38dd8a0f7a15ede49c",
+      "open": "ae48ec7be65dcca5801770250327e1d6cfa41c56f7ec9bf56e7a305b1dfbbeaf",
+      "safe": "71aa15fe409ee12689b5fdbbea439466874db59a1a5b00b83dd11ad03ff3d8be"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '56eef755386f3efcb9262363b3ef2c59e876cc8203cfa184cd05bf09904b7121')"
+  },
+  {
+    "arm": "base",
+    "index": 8,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "56eef755386f3efcb9262363b3ef2c59e876cc8203cfa184cd05bf09904b7121",
+      "near": "3e3e39c0b7596d70f82c1bc638f618132f0f9666d0366241a931b24733b42f73",
+      "holding": "67b22d53577c3c0f46f03b6b05581ec952f0c841bbf0e4d1d67bbd3a2a6e2cc0",
+      "close": "74062d10480ba07e8a93e32e0603ccd9a361a459bada1a38dd8a0f7a15ede49c",
+      "open": "ae48ec7be65dcca5801770250327e1d6cfa41c56f7ec9bf56e7a305b1dfbbeaf",
+      "safe": "71aa15fe409ee12689b5fdbbea439466874db59a1a5b00b83dd11ad03ff3d8be"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '56eef755386f3efcb9262363b3ef2c59e876cc8203cfa184cd05bf09904b7121')"
+  },
+  {
+    "arm": "base",
+    "index": 9,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "6589f5c36b04c9f57ab7dac741ac8369a5252bf361093ea3a88832db620cb3e5",
+      "near": "9ef525afa19029f95faf92422fbb4a10382e854f6f775d0b59210a5dfe4d9cea",
+      "holding": "42ac84610a32aae8c94133a063e843e25dfbee9dd491867db0e8ba038f975128",
+      "close": "fe70efddf026a573d8c0d9f4567456bbb7e15bca4f575bf8d6a48a7dd22024b8",
+      "open": "5267798bf1e55775885f1d19bfc064d9e248f87a4293c615cf3854b2efe51363",
+      "safe": "cd73bea0c0f42f311b076ca17bb57ad5a133fad62c48dc2b3e7a0107f44bf047"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '6589f5c36b04c9f57ab7dac741ac8369a5252bf361093ea3a88832db620cb3e5')"
+  },
+  {
+    "arm": "base",
+    "index": 9,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "6589f5c36b04c9f57ab7dac741ac8369a5252bf361093ea3a88832db620cb3e5",
+      "near": "9ef525afa19029f95faf92422fbb4a10382e854f6f775d0b59210a5dfe4d9cea",
+      "holding": "42ac84610a32aae8c94133a063e843e25dfbee9dd491867db0e8ba038f975128",
+      "close": "fe70efddf026a573d8c0d9f4567456bbb7e15bca4f575bf8d6a48a7dd22024b8",
+      "open": "5267798bf1e55775885f1d19bfc064d9e248f87a4293c615cf3854b2efe51363",
+      "safe": "cd73bea0c0f42f311b076ca17bb57ad5a133fad62c48dc2b3e7a0107f44bf047"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '6589f5c36b04c9f57ab7dac741ac8369a5252bf361093ea3a88832db620cb3e5')"
+  },
+  {
+    "arm": "base",
+    "index": 10,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "bac80da72822d24e13e78f0bcdae1663cd53b255ffaf800267b3caa89317b9f6",
+      "near": "2eef698305b21de1dbbbbca2b5210f907123a61259cdd53fe3882c0edb673139",
+      "holding": "d9bae27797bf825ab930057532b44934ff1e6193a93d456a22b801a35a65fefd",
+      "close": "cff41c697536be09958aed47d3b4fea9e18189305d01c186750cb804ef2100f5",
+      "open": "5d4beac1906444d5f8144ac109f0bb9d21dab72d12da18cdc98e19b98441c678",
+      "safe": "743e5d66618bef8a313a3b669c64013818ed57261234702f8a05e4fc2d6344b6"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', 'bac80da72822d24e13e78f0bcdae1663cd53b255ffaf800267b3caa89317b9f6')"
+  },
+  {
+    "arm": "base",
+    "index": 10,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "bac80da72822d24e13e78f0bcdae1663cd53b255ffaf800267b3caa89317b9f6",
+      "near": "2eef698305b21de1dbbbbca2b5210f907123a61259cdd53fe3882c0edb673139",
+      "holding": "d9bae27797bf825ab930057532b44934ff1e6193a93d456a22b801a35a65fefd",
+      "close": "cff41c697536be09958aed47d3b4fea9e18189305d01c186750cb804ef2100f5",
+      "open": "5d4beac1906444d5f8144ac109f0bb9d21dab72d12da18cdc98e19b98441c678",
+      "safe": "743e5d66618bef8a313a3b669c64013818ed57261234702f8a05e4fc2d6344b6"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', 'bac80da72822d24e13e78f0bcdae1663cd53b255ffaf800267b3caa89317b9f6')"
+  },
+  {
+    "arm": "base",
+    "index": 11,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "2709225eab4ceb6ee363956ba12cdf946eb014ca49562e1217a178baa0e02397",
+      "near": "3400d489ac2cd617b20d6b884205751e5f4cae858b7e06437fa727f3c9429801",
+      "holding": "4681743ba22bd9ffce9dd7294626b78f05bbd131a59e7b2e1596ebf024cb9b70",
+      "close": "7f2237ef83604519bdd914b0dca95633cb3fdc35b6ced853cc33de59fc851808",
+      "open": "adf8859757482725d17c7d86f16d4912cd8f735fcd9e6d4570b9bb4c7d342489",
+      "safe": "7f484a44286556d577b3de96eee6619c7a13840eb2f85b8bc823c3a402100061"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '2709225eab4ceb6ee363956ba12cdf946eb014ca49562e1217a178baa0e02397')"
+  },
+  {
+    "arm": "base",
+    "index": 11,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "2709225eab4ceb6ee363956ba12cdf946eb014ca49562e1217a178baa0e02397",
+      "near": "3400d489ac2cd617b20d6b884205751e5f4cae858b7e06437fa727f3c9429801",
+      "holding": "4681743ba22bd9ffce9dd7294626b78f05bbd131a59e7b2e1596ebf024cb9b70",
+      "close": "7f2237ef83604519bdd914b0dca95633cb3fdc35b6ced853cc33de59fc851808",
+      "open": "adf8859757482725d17c7d86f16d4912cd8f735fcd9e6d4570b9bb4c7d342489",
+      "safe": "7f484a44286556d577b3de96eee6619c7a13840eb2f85b8bc823c3a402100061"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '2709225eab4ceb6ee363956ba12cdf946eb014ca49562e1217a178baa0e02397')"
+  },
+  {
+    "arm": "base",
+    "index": 12,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "13197fed770e2b66d3d0b42de42ae90ebfee3165e952b48beb254c96043f0e36",
+      "near": "23cbb2dafc09d960e71a87ad36fe4df67dc5ed646654e190a747d0d339ab9682",
+      "holding": "bd00ce210b5ee9d1b908b7ff53f2d9202e25ec7e74b90f0c87166c4aee28cde6",
+      "close": "86fc61c9be53201d2cc3b80029fb9a7681bff1e97a812a1e31a566517f2795e7",
+      "open": "22b40e51e3fb0e310c9f86a521dbe8b3f491b37a6afc3f491af211f55b51a994",
+      "safe": "96dce8a7582ed6fe37c926113673f2933c41296f6f7c513431882ad9cd3c41ec"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '13197fed770e2b66d3d0b42de42ae90ebfee3165e952b48beb254c96043f0e36')"
+  },
+  {
+    "arm": "base",
+    "index": 12,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "13197fed770e2b66d3d0b42de42ae90ebfee3165e952b48beb254c96043f0e36",
+      "near": "23cbb2dafc09d960e71a87ad36fe4df67dc5ed646654e190a747d0d339ab9682",
+      "holding": "bd00ce210b5ee9d1b908b7ff53f2d9202e25ec7e74b90f0c87166c4aee28cde6",
+      "close": "86fc61c9be53201d2cc3b80029fb9a7681bff1e97a812a1e31a566517f2795e7",
+      "open": "22b40e51e3fb0e310c9f86a521dbe8b3f491b37a6afc3f491af211f55b51a994",
+      "safe": "96dce8a7582ed6fe37c926113673f2933c41296f6f7c513431882ad9cd3c41ec"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '13197fed770e2b66d3d0b42de42ae90ebfee3165e952b48beb254c96043f0e36')"
+  },
+  {
+    "arm": "base",
+    "index": 13,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "f5deb09761dadd9e0a565685e24eb4695c63a3c7c202d96885d0e85f595923eb",
+      "near": "69f0b8cadfd59922c5101e92237a0508024c1b0ea4a4ca6dbf2b1ee313677a17",
+      "holding": "738f0a4297e41e9dc602076c590fcdb31bfc6f804f214aa10f3056c3e48f5e81",
+      "close": "de56ca23d9ca7392560d7111841ebf63e308429274430ad5b8b3c72e9283704b",
+      "open": "620d19a8d15f32a9f3d147da6afbaadccf3566f7703b174f5185dc121d1a14e3",
+      "safe": "59128ec3f50e15abfb39cd5d766d5111963fc27bcab7d37a5edf7006fbd71d22"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', 'f5deb09761dadd9e0a565685e24eb4695c63a3c7c202d96885d0e85f595923eb')"
+  },
+  {
+    "arm": "base",
+    "index": 13,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "f5deb09761dadd9e0a565685e24eb4695c63a3c7c202d96885d0e85f595923eb",
+      "near": "69f0b8cadfd59922c5101e92237a0508024c1b0ea4a4ca6dbf2b1ee313677a17",
+      "holding": "738f0a4297e41e9dc602076c590fcdb31bfc6f804f214aa10f3056c3e48f5e81",
+      "close": "de56ca23d9ca7392560d7111841ebf63e308429274430ad5b8b3c72e9283704b",
+      "open": "620d19a8d15f32a9f3d147da6afbaadccf3566f7703b174f5185dc121d1a14e3",
+      "safe": "59128ec3f50e15abfb39cd5d766d5111963fc27bcab7d37a5edf7006fbd71d22"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', 'f5deb09761dadd9e0a565685e24eb4695c63a3c7c202d96885d0e85f595923eb')"
+  },
+  {
+    "arm": "base",
+    "index": 14,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "0e9bc310304660f51de2b2fa62d2dc1c3e1205e132530414212751034927e39a",
+      "near": "6d87b7c57737c6c61d8e57b6163b28472d4491a61d485eaf26975a8ce70ef9bc",
+      "holding": "548ba39ac6ff605c0b6d248d78a73e6a7005fa568eb812055b5b49ba2b6e1ba6",
+      "close": "aa694de3c2770252d673ae594fcbe6e931c26a8e1f4c60a11ab617f91b9edc36",
+      "open": "984c20248a20a26a3ee11cd49f2cc6679a2e189ecb36468e181bd52b3ea30f3b",
+      "safe": "282a80d77f120345448ad6c464a16f55d63bcc07fccafa47d9c13ef603e2ccf7"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '0e9bc310304660f51de2b2fa62d2dc1c3e1205e132530414212751034927e39a')"
+  },
+  {
+    "arm": "base",
+    "index": 14,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "0e9bc310304660f51de2b2fa62d2dc1c3e1205e132530414212751034927e39a",
+      "near": "6d87b7c57737c6c61d8e57b6163b28472d4491a61d485eaf26975a8ce70ef9bc",
+      "holding": "548ba39ac6ff605c0b6d248d78a73e6a7005fa568eb812055b5b49ba2b6e1ba6",
+      "close": "aa694de3c2770252d673ae594fcbe6e931c26a8e1f4c60a11ab617f91b9edc36",
+      "open": "984c20248a20a26a3ee11cd49f2cc6679a2e189ecb36468e181bd52b3ea30f3b",
+      "safe": "282a80d77f120345448ad6c464a16f55d63bcc07fccafa47d9c13ef603e2ccf7"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', '0e9bc310304660f51de2b2fa62d2dc1c3e1205e132530414212751034927e39a')"
+  },
+  {
+    "arm": "base",
+    "index": 15,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "e7a40f7ea2983f2f891df476914f716a4c3b97c60c3cfdc62ba1858dd20825b0",
+      "near": "e46b6f0b1628d010090ccd20a4e43f811d9f89e658e6ccd28d9568e9b40e4168",
+      "holding": "eedd4520b1738865e2604723e39e324bdad75462fbb6090d52e4ad8ebabffde4",
+      "close": "863db3f08dfc8dc236bfb39bbce7f30e96aa6a56613575aa47925615840ad0ef",
+      "open": "022d1bd1a5858d891f2f5821dc1afc0dc727cfb9cd87e6e19efa08cc3f40e0b8",
+      "safe": "394b65c6bcca6c3d3bcf5141c961b6594b4cbaf349b20cdf7ab39ae22edbd522"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', 'e7a40f7ea2983f2f891df476914f716a4c3b97c60c3cfdc62ba1858dd20825b0')"
+  },
+  {
+    "arm": "base",
+    "index": 15,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "e7a40f7ea2983f2f891df476914f716a4c3b97c60c3cfdc62ba1858dd20825b0",
+      "near": "e46b6f0b1628d010090ccd20a4e43f811d9f89e658e6ccd28d9568e9b40e4168",
+      "holding": "eedd4520b1738865e2604723e39e324bdad75462fbb6090d52e4ad8ebabffde4",
+      "close": "863db3f08dfc8dc236bfb39bbce7f30e96aa6a56613575aa47925615840ad0ef",
+      "open": "022d1bd1a5858d891f2f5821dc1afc0dc727cfb9cd87e6e19efa08cc3f40e0b8",
+      "safe": "394b65c6bcca6c3d3bcf5141c961b6594b4cbaf349b20cdf7ab39ae22edbd522"
+    },
+    "success": false,
+    "status": "invalid_program",
+    "error": "('base', 'e7a40f7ea2983f2f891df476914f716a4c3b97c60c3cfdc62ba1858dd20825b0')"
+  },
+  {
+    "arm": "trained",
+    "index": 0,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "7f5d01d9c965e1c67da0efc80e765a811f59191a463c914caab5b896c0b841b3",
+      "near": "48aab489f21256cc972e7d0741092577d0de21e63665d7155d0bfa4ed3503cd2",
+      "holding": "18494ff15ccfe007a205b95cf0ac2e2224b715e438a489c8f2df458f4fd77105",
+      "close": "8100745cf7bb94d84f0fb3d07702c676b56980f9b666d54ccf5d15b1701978e7",
+      "open": "d9ffe657e3247cc9cade2d5c14b222fed8f77342a589cc5ee24658627ffed8e7",
+      "safe": "daf73dc0ba59b644a762b265268a39e8b0a7e86eda4024ec28cacde31141a959"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.578356953279,
+      0.5499810551380879
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 0,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "7f5d01d9c965e1c67da0efc80e765a811f59191a463c914caab5b896c0b841b3",
+      "near": "48aab489f21256cc972e7d0741092577d0de21e63665d7155d0bfa4ed3503cd2",
+      "holding": "18494ff15ccfe007a205b95cf0ac2e2224b715e438a489c8f2df458f4fd77105",
+      "close": "8100745cf7bb94d84f0fb3d07702c676b56980f9b666d54ccf5d15b1701978e7",
+      "open": "d9ffe657e3247cc9cade2d5c14b222fed8f77342a589cc5ee24658627ffed8e7",
+      "safe": "daf73dc0ba59b644a762b265268a39e8b0a7e86eda4024ec28cacde31141a959"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5891844414131003,
+      0.5500006001116453
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 1,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "b4b511a4efadaca0e9270e8ac5b6726613895521c0dc7f742ddcf941cc379135",
+      "near": "f3ba65fb7dc6b9e8ebd41fc19d25ad97e0ac947ddc42d4d986a09a3a7df19a30",
+      "holding": "b172fbbf201ba9f8f0846e282965e064759b3eb77ac786b1a41a0d4a971b71e1",
+      "close": "65cfcb29962549ed3b7610439c501ee33c705646a45474d8be97263c3c4f4253",
+      "open": "8c83abfebfa64ec3e2be316ebe997eedd355e95a19b8c7be4ccdb825eecef1cf",
+      "safe": "7b3e9c4f03fabf89e25e61c152a18f2bbd4cb845791716f8e5a14db6af2890f6"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.499,
+      -0.5367349
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 1,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "b4b511a4efadaca0e9270e8ac5b6726613895521c0dc7f742ddcf941cc379135",
+      "near": "f3ba65fb7dc6b9e8ebd41fc19d25ad97e0ac947ddc42d4d986a09a3a7df19a30",
+      "holding": "b172fbbf201ba9f8f0846e282965e064759b3eb77ac786b1a41a0d4a971b71e1",
+      "close": "65cfcb29962549ed3b7610439c501ee33c705646a45474d8be97263c3c4f4253",
+      "open": "8c83abfebfa64ec3e2be316ebe997eedd355e95a19b8c7be4ccdb825eecef1cf",
+      "safe": "7b3e9c4f03fabf89e25e61c152a18f2bbd4cb845791716f8e5a14db6af2890f6"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5998520191775635,
+      -0.44999999999999996
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 2,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "06d09b63a3252c1ef7ef0e5b9d63fa0c8370c8d91f54f99d8abb8a8d4f59c9dc",
+      "near": "f3d1242919ba8867bf505c6807fe5345db91aac59806cbe3cd2a322dca67bba4",
+      "holding": "6c6c8b45d42351409f5e3d32761e0ac68fcf3c705d4bf50e63a33d968b90d97b",
+      "close": "b7d387623b3a98bfd0b0b4ef516d74ce05c69cc4e5ddf3b1a2f979ea1b52e085",
+      "open": "1e1d781088ffaa0f485ff495c31bf916567c02da80823665e9d58de7c4d16f10",
+      "safe": "e424bcfeb83e8a3210c34359e6346486abd6fb5f662ba9087e3421496016eee7"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5347093120947981,
+      0.5476122699773949
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 2,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "06d09b63a3252c1ef7ef0e5b9d63fa0c8370c8d91f54f99d8abb8a8d4f59c9dc",
+      "near": "f3d1242919ba8867bf505c6807fe5345db91aac59806cbe3cd2a322dca67bba4",
+      "holding": "6c6c8b45d42351409f5e3d32761e0ac68fcf3c705d4bf50e63a33d968b90d97b",
+      "close": "b7d387623b3a98bfd0b0b4ef516d74ce05c69cc4e5ddf3b1a2f979ea1b52e085",
+      "open": "1e1d781088ffaa0f485ff495c31bf916567c02da80823665e9d58de7c4d16f10",
+      "safe": "e424bcfeb83e8a3210c34359e6346486abd6fb5f662ba9087e3421496016eee7"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5417659755185086,
+      0.5502440045757374
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 3,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "6b8f101f43247536f56a99b1201fb0b67f06dcfb3e6f1466149c28867d43958a",
+      "near": "a4bd705769a9035724852a8d6c7aee10181017268d5b599b61082b3886e75a2f",
+      "holding": "3d4c73b2af38b282f77374dbb8591b082a05cf739367f46396c28481882a4118",
+      "close": "5a6ffd60a45f31bb0742faf7b8d71c3fcc7c558934fcf3880535985b5e049df7",
+      "open": "358e00b6efd69e46bd4595f841245487a49792c3ad31483a978e139b45bc1f5e",
+      "safe": "810d2619c0c8b753dd04c68a460ff23b1f2300d194f01d28a15892a2b3354a60"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5000000000000002,
+      -0.5382330000000001
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 3,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "6b8f101f43247536f56a99b1201fb0b67f06dcfb3e6f1466149c28867d43958a",
+      "near": "a4bd705769a9035724852a8d6c7aee10181017268d5b599b61082b3886e75a2f",
+      "holding": "3d4c73b2af38b282f77374dbb8591b082a05cf739367f46396c28481882a4118",
+      "close": "5a6ffd60a45f31bb0742faf7b8d71c3fcc7c558934fcf3880535985b5e049df7",
+      "open": "358e00b6efd69e46bd4595f841245487a49792c3ad31483a978e139b45bc1f5e",
+      "safe": "810d2619c0c8b753dd04c68a460ff23b1f2300d194f01d28a15892a2b3354a60"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5998032981833802,
+      -0.41999999999999993
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 4,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "a4daaf93cc25acf81b3f5ffb3de46ae28828184c263bba0f4b63fb15150bcfc9",
+      "near": "a0ff5bd44aa89231ea07e0e15f41002dc5b068b979dfc8640df9813810ac168c",
+      "holding": "3049d38731c0a403097e7f0884d3b80945fb0e351cf9ee8a9c73291cea44897e",
+      "close": "ca50ceb0b9733d0c6b4333abfb153a98ea302cb0ee6b6eb0b82af028881aa74d",
+      "open": "e71c93f4d10aefbf5899c7e2262ced97e0731454f60a1025af6654a076fed425",
+      "safe": "14af319fb682b9c7ce47219b83c9cad108fb41cae8c4850a0d8967a674a3106a"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.49227997609941654,
+      0.5228123926284144
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 4,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "a4daaf93cc25acf81b3f5ffb3de46ae28828184c263bba0f4b63fb15150bcfc9",
+      "near": "a0ff5bd44aa89231ea07e0e15f41002dc5b068b979dfc8640df9813810ac168c",
+      "holding": "3049d38731c0a403097e7f0884d3b80945fb0e351cf9ee8a9c73291cea44897e",
+      "close": "ca50ceb0b9733d0c6b4333abfb153a98ea302cb0ee6b6eb0b82af028881aa74d",
+      "open": "e71c93f4d10aefbf5899c7e2262ced97e0731454f60a1025af6654a076fed425",
+      "safe": "14af319fb682b9c7ce47219b83c9cad108fb41cae8c4850a0d8967a674a3106a"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5041600118201888,
+      0.5511033379365806
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 5,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "0eb7e3e42962a15fcca705fd7447977d86fea5338146afed5264af8b8b79fce5",
+      "near": "e518b3aa3a1687852abc307a1b37180fd0bc9870d9b028cb2bd6f29d8c8b49e7",
+      "holding": "8d941495631feffdf7feb9df2a3832014c015e44daba35a6ec1b13742c2a30dc",
+      "close": "8bcbb5f179ade54242e4fd2f934dfcbb496c6620604eee8eb00b8356af29a89e",
+      "open": "35d7f8ae5248b53c6854c94549b182cd7b4980b22c89190badca0675e487351b",
+      "safe": "4cf43ec52f3a838bedb7fe71a8e33e073edfce931ed1cc216e7bca64f404987e"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.577177,
+      -0.549482270308
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 5,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "0eb7e3e42962a15fcca705fd7447977d86fea5338146afed5264af8b8b79fce5",
+      "near": "e518b3aa3a1687852abc307a1b37180fd0bc9870d9b028cb2bd6f29d8c8b49e7",
+      "holding": "8d941495631feffdf7feb9df2a3832014c015e44daba35a6ec1b13742c2a30dc",
+      "close": "8bcbb5f179ade54242e4fd2f934dfcbb496c6620604eee8eb00b8356af29a89e",
+      "open": "35d7f8ae5248b53c6854c94549b182cd7b4980b22c89190badca0675e487351b",
+      "safe": "4cf43ec52f3a838bedb7fe71a8e33e073edfce931ed1cc216e7bca64f404987e"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5999999267398276,
+      -0.5365358800000001
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 6,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "0ac7094cb8bead8cc0e97245015f4eb3aaf768498661679acc3b4814e4a73910",
+      "near": "0f77e3bf2fb765e2336cbba414889e2a4bd2f5354d5a9934b1f777c6695c949b",
+      "holding": "767c32ddc9d906ad52ad3e155246128ca343dd0a43c0e2d7c7bbca02f6289a67",
+      "close": "a462d7eee4e199bcbc33e6a36c366f68924a180e030f7bd4f0b7ba4d0840c7fc",
+      "open": "ea370a1f7ef30d52a32a5949c37b044a6c5b3cd75aed0bd558bf58e70aa60e13",
+      "safe": "9ee32162a2d27f9a32a3f50a7ea3efa54e4e333ce126bb13b1110dbb3a975d45"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5701059871430401,
+      0.5498340116800615
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 6,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "0ac7094cb8bead8cc0e97245015f4eb3aaf768498661679acc3b4814e4a73910",
+      "near": "0f77e3bf2fb765e2336cbba414889e2a4bd2f5354d5a9934b1f777c6695c949b",
+      "holding": "767c32ddc9d906ad52ad3e155246128ca343dd0a43c0e2d7c7bbca02f6289a67",
+      "close": "a462d7eee4e199bcbc33e6a36c366f68924a180e030f7bd4f0b7ba4d0840c7fc",
+      "open": "ea370a1f7ef30d52a32a5949c37b044a6c5b3cd75aed0bd558bf58e70aa60e13",
+      "safe": "9ee32162a2d27f9a32a3f50a7ea3efa54e4e333ce126bb13b1110dbb3a975d45"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.53960931146303,
+      0.5500195202264249
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 7,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "21fbe0c9ff5882cac3b445b6a8a973bd1276563b92314699d1167abaded62034",
+      "near": "b7b28f43a9cc7cccb85603b6b546a6605623fb55a5e47b840462b6776fb6d352",
+      "holding": "625395a707ae0575eced9b95d0f58e3b92a8977592e104015ecce34927337b60",
+      "close": "89f513d63829b82690ee96a926717c8fadf05f25db51aac8dd7242a9c358aee9",
+      "open": "e4a46588b46e5ca307b95482ae4bdb2d12d924893aead9d9c746b5fdd8f8e700",
+      "safe": "115d9c36cdd0c5bb2dab4b8f1339272ca6e4a42a9ba53788684562948d46ff3b"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.49400000000000005,
+      -0.5388000000000001
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 7,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "21fbe0c9ff5882cac3b445b6a8a973bd1276563b92314699d1167abaded62034",
+      "near": "b7b28f43a9cc7cccb85603b6b546a6605623fb55a5e47b840462b6776fb6d352",
+      "holding": "625395a707ae0575eced9b95d0f58e3b92a8977592e104015ecce34927337b60",
+      "close": "89f513d63829b82690ee96a926717c8fadf05f25db51aac8dd7242a9c358aee9",
+      "open": "e4a46588b46e5ca307b95482ae4bdb2d12d924893aead9d9c746b5fdd8f8e700",
+      "safe": "115d9c36cdd0c5bb2dab4b8f1339272ca6e4a42a9ba53788684562948d46ff3b"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.599889637376,
+      -0.41999999999999993
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 8,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "56eef755386f3efcb9262363b3ef2c59e876cc8203cfa184cd05bf09904b7121",
+      "near": "3e3e39c0b7596d70f82c1bc638f618132f0f9666d0366241a931b24733b42f73",
+      "holding": "67b22d53577c3c0f46f03b6b05581ec952f0c841bbf0e4d1d67bbd3a2a6e2cc0",
+      "close": "74062d10480ba07e8a93e32e0603ccd9a361a459bada1a38dd8a0f7a15ede49c",
+      "open": "ae48ec7be65dcca5801770250327e1d6cfa41c56f7ec9bf56e7a305b1dfbbeaf",
+      "safe": "71aa15fe409ee12689b5fdbbea439466874db59a1a5b00b83dd11ad03ff3d8be"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5179148640000001,
+      0.54920764832
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 8,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "56eef755386f3efcb9262363b3ef2c59e876cc8203cfa184cd05bf09904b7121",
+      "near": "3e3e39c0b7596d70f82c1bc638f618132f0f9666d0366241a931b24733b42f73",
+      "holding": "67b22d53577c3c0f46f03b6b05581ec952f0c841bbf0e4d1d67bbd3a2a6e2cc0",
+      "close": "74062d10480ba07e8a93e32e0603ccd9a361a459bada1a38dd8a0f7a15ede49c",
+      "open": "ae48ec7be65dcca5801770250327e1d6cfa41c56f7ec9bf56e7a305b1dfbbeaf",
+      "safe": "71aa15fe409ee12689b5fdbbea439466874db59a1a5b00b83dd11ad03ff3d8be"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.48966251878591205,
+      0.5500457662330368
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 9,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "6589f5c36b04c9f57ab7dac741ac8369a5252bf361093ea3a88832db620cb3e5",
+      "near": "9ef525afa19029f95faf92422fbb4a10382e854f6f775d0b59210a5dfe4d9cea",
+      "holding": "42ac84610a32aae8c94133a063e843e25dfbee9dd491867db0e8ba038f975128",
+      "close": "fe70efddf026a573d8c0d9f4567456bbb7e15bca4f575bf8d6a48a7dd22024b8",
+      "open": "5267798bf1e55775885f1d19bfc064d9e248f87a4293c615cf3854b2efe51363",
+      "safe": "cd73bea0c0f42f311b076ca17bb57ad5a133fad62c48dc2b3e7a0107f44bf047"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.4863,
+      -0.523589
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 9,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "6589f5c36b04c9f57ab7dac741ac8369a5252bf361093ea3a88832db620cb3e5",
+      "near": "9ef525afa19029f95faf92422fbb4a10382e854f6f775d0b59210a5dfe4d9cea",
+      "holding": "42ac84610a32aae8c94133a063e843e25dfbee9dd491867db0e8ba038f975128",
+      "close": "fe70efddf026a573d8c0d9f4567456bbb7e15bca4f575bf8d6a48a7dd22024b8",
+      "open": "5267798bf1e55775885f1d19bfc064d9e248f87a4293c615cf3854b2efe51363",
+      "safe": "cd73bea0c0f42f311b076ca17bb57ad5a133fad62c48dc2b3e7a0107f44bf047"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5985148386033436,
+      -0.44099999999999995
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 10,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "bac80da72822d24e13e78f0bcdae1663cd53b255ffaf800267b3caa89317b9f6",
+      "near": "2eef698305b21de1dbbbbca2b5210f907123a61259cdd53fe3882c0edb673139",
+      "holding": "d9bae27797bf825ab930057532b44934ff1e6193a93d456a22b801a35a65fefd",
+      "close": "cff41c697536be09958aed47d3b4fea9e18189305d01c186750cb804ef2100f5",
+      "open": "5d4beac1906444d5f8144ac109f0bb9d21dab72d12da18cdc98e19b98441c678",
+      "safe": "743e5d66618bef8a313a3b669c64013818ed57261234702f8a05e4fc2d6344b6"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.43436929433599997,
+      0.47515214180352006
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 10,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "bac80da72822d24e13e78f0bcdae1663cd53b255ffaf800267b3caa89317b9f6",
+      "near": "2eef698305b21de1dbbbbca2b5210f907123a61259cdd53fe3882c0edb673139",
+      "holding": "d9bae27797bf825ab930057532b44934ff1e6193a93d456a22b801a35a65fefd",
+      "close": "cff41c697536be09958aed47d3b4fea9e18189305d01c186750cb804ef2100f5",
+      "open": "5d4beac1906444d5f8144ac109f0bb9d21dab72d12da18cdc98e19b98441c678",
+      "safe": "743e5d66618bef8a313a3b669c64013818ed57261234702f8a05e4fc2d6344b6"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.4411669473525865,
+      0.5395213642770023
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 11,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "2709225eab4ceb6ee363956ba12cdf946eb014ca49562e1217a178baa0e02397",
+      "near": "3400d489ac2cd617b20d6b884205751e5f4cae858b7e06437fa727f3c9429801",
+      "holding": "4681743ba22bd9ffce9dd7294626b78f05bbd131a59e7b2e1596ebf024cb9b70",
+      "close": "7f2237ef83604519bdd914b0dca95633cb3fdc35b6ced853cc33de59fc851808",
+      "open": "adf8859757482725d17c7d86f16d4912cd8f735fcd9e6d4570b9bb4c7d342489",
+      "safe": "7f484a44286556d577b3de96eee6619c7a13840eb2f85b8bc823c3a402100061"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.4921465600000001,
+      -0.50894775808
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 11,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "2709225eab4ceb6ee363956ba12cdf946eb014ca49562e1217a178baa0e02397",
+      "near": "3400d489ac2cd617b20d6b884205751e5f4cae858b7e06437fa727f3c9429801",
+      "holding": "4681743ba22bd9ffce9dd7294626b78f05bbd131a59e7b2e1596ebf024cb9b70",
+      "close": "7f2237ef83604519bdd914b0dca95633cb3fdc35b6ced853cc33de59fc851808",
+      "open": "adf8859757482725d17c7d86f16d4912cd8f735fcd9e6d4570b9bb4c7d342489",
+      "safe": "7f484a44286556d577b3de96eee6619c7a13840eb2f85b8bc823c3a402100061"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5886176847470826,
+      -0.43048320000000007
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 12,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "13197fed770e2b66d3d0b42de42ae90ebfee3165e952b48beb254c96043f0e36",
+      "near": "23cbb2dafc09d960e71a87ad36fe4df67dc5ed646654e190a747d0d339ab9682",
+      "holding": "bd00ce210b5ee9d1b908b7ff53f2d9202e25ec7e74b90f0c87166c4aee28cde6",
+      "close": "86fc61c9be53201d2cc3b80029fb9a7681bff1e97a812a1e31a566517f2795e7",
+      "open": "22b40e51e3fb0e310c9f86a521dbe8b3f491b37a6afc3f491af211f55b51a994",
+      "safe": "96dce8a7582ed6fe37c926113673f2933c41296f6f7c513431882ad9cd3c41ec"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5099678182849999,
+      0.5499955589233301
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 12,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "13197fed770e2b66d3d0b42de42ae90ebfee3165e952b48beb254c96043f0e36",
+      "near": "23cbb2dafc09d960e71a87ad36fe4df67dc5ed646654e190a747d0d339ab9682",
+      "holding": "bd00ce210b5ee9d1b908b7ff53f2d9202e25ec7e74b90f0c87166c4aee28cde6",
+      "close": "86fc61c9be53201d2cc3b80029fb9a7681bff1e97a812a1e31a566517f2795e7",
+      "open": "22b40e51e3fb0e310c9f86a521dbe8b3f491b37a6afc3f491af211f55b51a994",
+      "safe": "96dce8a7582ed6fe37c926113673f2933c41296f6f7c513431882ad9cd3c41ec"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5199999098844027,
+      0.5500000000504037
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 13,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "f5deb09761dadd9e0a565685e24eb4695c63a3c7c202d96885d0e85f595923eb",
+      "near": "69f0b8cadfd59922c5101e92237a0508024c1b0ea4a4ca6dbf2b1ee313677a17",
+      "holding": "738f0a4297e41e9dc602076c590fcdb31bfc6f804f214aa10f3056c3e48f5e81",
+      "close": "de56ca23d9ca7392560d7111841ebf63e308429274430ad5b8b3c72e9283704b",
+      "open": "620d19a8d15f32a9f3d147da6afbaadccf3566f7703b174f5185dc121d1a14e3",
+      "safe": "59128ec3f50e15abfb39cd5d766d5111963fc27bcab7d37a5edf7006fbd71d22"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5692157153690496,
+      -0.5457040827685612
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 13,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "f5deb09761dadd9e0a565685e24eb4695c63a3c7c202d96885d0e85f595923eb",
+      "near": "69f0b8cadfd59922c5101e92237a0508024c1b0ea4a4ca6dbf2b1ee313677a17",
+      "holding": "738f0a4297e41e9dc602076c590fcdb31bfc6f804f214aa10f3056c3e48f5e81",
+      "close": "de56ca23d9ca7392560d7111841ebf63e308429274430ad5b8b3c72e9283704b",
+      "open": "620d19a8d15f32a9f3d147da6afbaadccf3566f7703b174f5185dc121d1a14e3",
+      "safe": "59128ec3f50e15abfb39cd5d766d5111963fc27bcab7d37a5edf7006fbd71d22"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5999301190045977,
+      -0.5222161465003801
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 14,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "0e9bc310304660f51de2b2fa62d2dc1c3e1205e132530414212751034927e39a",
+      "near": "6d87b7c57737c6c61d8e57b6163b28472d4491a61d485eaf26975a8ce70ef9bc",
+      "holding": "548ba39ac6ff605c0b6d248d78a73e6a7005fa568eb812055b5b49ba2b6e1ba6",
+      "close": "aa694de3c2770252d673ae594fcbe6e931c26a8e1f4c60a11ab617f91b9edc36",
+      "open": "984c20248a20a26a3ee11cd49f2cc6679a2e189ecb36468e181bd52b3ea30f3b",
+      "safe": "282a80d77f120345448ad6c464a16f55d63bcc07fccafa47d9c13ef603e2ccf7"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5499839999999999,
+      0.54999936
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 14,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "0e9bc310304660f51de2b2fa62d2dc1c3e1205e132530414212751034927e39a",
+      "near": "6d87b7c57737c6c61d8e57b6163b28472d4491a61d485eaf26975a8ce70ef9bc",
+      "holding": "548ba39ac6ff605c0b6d248d78a73e6a7005fa568eb812055b5b49ba2b6e1ba6",
+      "close": "aa694de3c2770252d673ae594fcbe6e931c26a8e1f4c60a11ab617f91b9edc36",
+      "open": "984c20248a20a26a3ee11cd49f2cc6679a2e189ecb36468e181bd52b3ea30f3b",
+      "safe": "282a80d77f120345448ad6c464a16f55d63bcc07fccafa47d9c13ef603e2ccf7"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5499993597952,
+      0.550000001024
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 15,
+    "checkpoint": false,
+    "block_ids": {
+      "move": "e7a40f7ea2983f2f891df476914f716a4c3b97c60c3cfdc62ba1858dd20825b0",
+      "near": "e46b6f0b1628d010090ccd20a4e43f811d9f89e658e6ccd28d9568e9b40e4168",
+      "holding": "eedd4520b1738865e2604723e39e324bdad75462fbb6090d52e4ad8ebabffde4",
+      "close": "863db3f08dfc8dc236bfb39bbce7f30e96aa6a56613575aa47925615840ad0ef",
+      "open": "022d1bd1a5858d891f2f5821dc1afc0dc727cfb9cd87e6e19efa08cc3f40e0b8",
+      "safe": "394b65c6bcca6c3d3bcf5141c961b6594b4cbaf349b20cdf7ab39ae22edbd522"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5295,
+      -0.5479323700000001
+    ],
+    "status": "stopped"
+  },
+  {
+    "arm": "trained",
+    "index": 15,
+    "checkpoint": true,
+    "block_ids": {
+      "move": "e7a40f7ea2983f2f891df476914f716a4c3b97c60c3cfdc62ba1858dd20825b0",
+      "near": "e46b6f0b1628d010090ccd20a4e43f811d9f89e658e6ccd28d9568e9b40e4168",
+      "holding": "eedd4520b1738865e2604723e39e324bdad75462fbb6090d52e4ad8ebabffde4",
+      "close": "863db3f08dfc8dc236bfb39bbce7f30e96aa6a56613575aa47925615840ad0ef",
+      "open": "022d1bd1a5858d891f2f5821dc1afc0dc727cfb9cd87e6e19efa08cc3f40e0b8",
+      "safe": "394b65c6bcca6c3d3bcf5141c961b6594b4cbaf349b20cdf7ab39ae22edbd522"
+    },
+    "success": true,
+    "trace": [
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": false,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": true,
+        "visited": true,
+        "delivered": false,
+        "safe": true
+      },
+      {
+        "holding": false,
+        "visited": true,
+        "delivered": true,
+        "safe": true
+      }
+    ],
+    "actions": [
+      "approach",
+      "grasp",
+      "waypoint",
+      "transport",
+      "release"
+    ],
+    "terminal": [
+      0.5999990780138835,
+      -0.4799999999999999
+    ],
+    "status": "stopped"
+  }
+]

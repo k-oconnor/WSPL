@@ -1,4 +1,5 @@
 * text=auto eol=lf
+artifacts/neural_controllers/** -text -whitespace
 *.png binary
 *.pdf binary
 artifacts/astra_breakout_native_v2/*.answer.md -text
