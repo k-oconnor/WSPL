@@ -1,5 +1,11 @@
 # Implemented WSPL syntax
 
+The new [WSPL 0.3 unified frontend](UNIFICATION_V1.md) composes the definition and
+editor stages below and introduces identity-bound typed task calls. This page
+retains the exact legacy forms used by the archived studies; their parsers remain
+available. New unified source starts with `wspl 0.3;` and follows that document's
+top-level ordering rules.
+
 This reference describes the parsers and interpreters shipped with this repository.
 It separates syntactic acceptance from semantic validation and verification.
 An accepted source file can still fail shape, type, placement, resource-budget or

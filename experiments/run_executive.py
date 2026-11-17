@@ -11,6 +11,8 @@ import torch
 from skillforge.authoring_sft import adapter_state, restore_adapter, frozen_hash, encode, loss_sum, checkpoint
 from skillforge.executive_study import dataset, load_library, score
 from skillforge.reliable_json import save, status
+from skillforge import unified_executive
+from skillforge.wspl_language import library_document
 
 
 def digest(path):
@@ -51,7 +53,11 @@ def run(constructor, output_dir, config):
             if digest(path)!=h:
                 raise ValueError('Resource changed: '+path)
         blocks,specs=load_library(config['library'])
-        data=dataset()
+        unified=config.get('language')=='wspl0.3'
+        library=library_document(blocks,specs)
+        data=unified_executive.dataset(library) if unified else dataset()
+        reused=unified_executive.reused_replies(config,data['test']) if unified else []
+        save(out/'linked_library.json',library)
         for split,rows in data.items():
             with (out/(split+'.jsonl')).open('x',encoding='utf8') as f:
                 for row in rows:
@@ -112,12 +118,20 @@ def run(constructor, output_dir, config):
         torch.save(dict(adapter=final,manifest_sha256=manifest,base_hash=base_hash,step=step),out/'adapter_final.pt')
         finished_training=True
         model.gradient_checkpointing_disable();model.eval()
-        prior=torch.load(config['prior_adapter'],map_location='cpu',weights_only=False)
-        if prior['base_hash']!=base_hash:raise ValueError('Previous executive base identity differs')
-        if prior['manifest_sha256']!=config['prior_manifest_sha256']:raise ValueError('Previous executive source identity differs')
         replies=[]
+        if unified:
+            # Same task identities and frozen old outputs; no redundant model generation.
+            replies=reused
+            with (out/'replies.jsonl').open('x',encoding='utf8') as f:
+                for r in replies:f.write(json.dumps(r)+'\n')
+            arms=[('trained',final),('base',initial)]
+        else:
+            prior=torch.load(config['prior_adapter'],map_location='cpu',weights_only=False)
+            if prior['base_hash']!=base_hash:raise ValueError('Previous executive base identity differs')
+            if prior['manifest_sha256']!=config['prior_manifest_sha256']:raise ValueError('Previous executive source identity differs')
+            arms=[('trained',final),('previous',prior['adapter']),('base',initial)]
         with torch.inference_mode():
-            for arm,weights in [('trained',final),('previous',prior['adapter']),('base',initial)]:
+            for arm,weights in arms:
                 restore_adapter(model,weights)
                 for i,row in enumerate(data['test']):
                     guard();report(status='generation',arm=arm,completed=i,total=len(data['test']))
@@ -125,10 +139,10 @@ def run(constructor, output_dir, config):
                     ids=tokenizer(text,add_special_tokens=False,return_tensors='pt').input_ids.to('cuda')
                     begin=time.monotonic()
                     output=model.generate(ids,attention_mask=torch.ones_like(ids),do_sample=False,use_cache=True,
-                        max_new_tokens=512,pad_token_id=tokenizer.eos_token_id)
+                        max_new_tokens=config.get('generation_tokens',512),pad_token_id=tokenizer.eos_token_id)
                     tokens=output[0,ids.shape[1]:].tolist()
                     reply=dict(arm=arm,id=row['id'],source=tokenizer.decode(tokens,skip_special_tokens=True),
-                               tokens=tokens,seconds=time.monotonic()-begin,hit_cap=len(tokens)==512)
+                               tokens=tokens,seconds=time.monotonic()-begin,hit_cap=len(tokens)==config.get('generation_tokens',512))
                     replies.append(reply)
                     with (out/'replies.jsonl').open('a',encoding='utf8') as f:f.write(json.dumps(reply)+'\n')
         # Freeze all learned-model replies before any execution feedback.
@@ -137,11 +151,20 @@ def run(constructor, output_dir, config):
         scores=[]
         for i,candidate in enumerate(candidates):
             guard();report(status='execution',completed=i,total=len(candidates))
-            result=score(candidate['source'],tasks[candidate['id']]['task'],blocks,specs)
+            scorer=unified_executive.score if unified and candidate['arm']!='previous' else score
+            result=scorer(candidate['source'],tasks[candidate['id']]['task'],blocks,specs)
             trace=result.pop('trace',[])
             save(out/(candidate['arm']+'_'+candidate['id']+'.trace.json'),trace)
             result.update(arm=candidate['arm'],id=candidate['id']);scores.append(result)
         save(out/'scores.json',scores)
+        if unified:
+            historical_scores=json.loads(Path(config['previous_scores']).read_text())
+            expected={r['id']:r for r in historical_scores if r['arm']=='trained'}
+            for row in scores:
+                if row['arm']=='previous':
+                    old=expected[row['id']]
+                    if {k:v for k,v in row.items() if k!='arm'}!={k:v for k,v in old.items() if k!='arm'}:
+                        raise ValueError('Historical execution replay differs')
         if frozen_hash(model)!=base_hash:raise ValueError('Frozen base changed at evaluation')
         summary={}
         for arm in ['base','previous','trained','reference']:
@@ -161,7 +184,8 @@ def run(constructor, output_dir, config):
         result=dict(status='complete',manifest_sha256=manifest,base_hash=base_hash,validation=validation,paired_vs_previous=paired,
             summary=summary,reference_gate_passed=all(r['safe_failure'] if r['panel'].startswith('jammed') else r['task_success'] for r in scores if r['arm']=='reference'),
             peak_allocated_bytes=torch.cuda.max_memory_allocated(),
-            usage={a:dict(tokens=sum(len(r['tokens']) for r in replies if r['arm']==a),seconds=sum(r['seconds'] for r in replies if r['arm']==a)) for a in ['base','previous','trained']})
+            language=config.get('language','legacy'),historical_replay_exact=unified,
+            usage={a:dict(tokens=sum(len(r['tokens']) for r in replies if r['arm']==a),seconds=sum(r['seconds'] for r in replies if r['arm']==a),reused=unified and a=='previous') for a in ['base','previous','trained']})
         save(out/'results.json',result);report(status='complete',results=result)
     except BaseException as error:
         if model is not None and optimizer is not None and not updating and not finished_training:

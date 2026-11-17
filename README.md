@@ -295,9 +295,34 @@ change. [Results, comparisons and archived evidence](docs/wspl/NEURAL_CONTROLLER
 
 ### What the implementation actually accepts
 
-WSPL currently has **two source frontends**. Choose one per source file; their
-syntax and expression rules are different. The robot executive uses a third,
-separate action language.
+The experimental **WSPL 0.3 unified frontend** now connects typed module
+definitions, compiled-weight edits and typed task composition through
+`skillforge.wspl_language.compile_source`. See the
+[unification specification](docs/wspl/UNIFICATION_V1.md) and the
+[prepared executive repeat](docs/wspl/UNIFIED_EXECUTIVE_V1.md). The repeat is not
+yet launched; the controller results above used the earlier interfaces.
+
+```text
+wspl 0.3;
+use robot = library("planar", sha256="ACTUAL_LIBRARY_SHA256");
+task Mission {
+  robot.transfer(parcel, tray);
+  robot.move_to(home);
+}
+```
+
+The actual digest binds the six typed neural artifacts and the skill ABI. Calls
+compile directly to the existing interpreter's typed instruction IR. In the same
+language, `module` defines a scalar function and `target base = compiled(Module);`
+makes its compiled weights available to the editor. Rational-to-FP32 rounding is
+recorded; edited weights do not inherit the original module's contracts. Runtime
+library admission is explicit, so an edit cannot silently replace a deployed
+controller. The current task skill set remains the planar workcell profile.
+
+The following **legacy frontends remain supported** and explain the syntax used
+in completed experiments. Their expression rules are stage-specific; 0.3 reuses
+the typed module compiler and low-level editor rather than rewriting their
+historical semantics.
 
 | Source form | Purpose | Implementation |
 |---|---|---|

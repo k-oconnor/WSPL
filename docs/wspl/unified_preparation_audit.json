@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "module_identity_preserved": {
+    "close": "11233bcbc9a4566dc1cf28ca41fee314754a31dfbee055ca353608f0a24f8d19",
+    "holding": "ffadea91c3d658602a81cdacf921adeb1e50649478e9f6c64a2e9ac475e1b66c",
+    "move": "27630bad60ddc64b17ff9dc97080e9aaf33bbb0158e21f354aae712f2834edde",
+    "near": "c9e1975254cbd28acd92a343f6ea2ab165dec6cf83cc9b64d0213c056600d115",
+    "open": "706e32a19ba4458e989b055a8e63e4a1515b3d7d8c98a78695a37fb76bc5e25a",
+    "safe": "0511281fccc9694b1ffb2dde867df16a3f6105d0aac8f02093bbfd66f2900b64"
+  },
+  "library_sha256": "ba6f1e6f08a94b9066e0e4dc556f827c8229e71ea34b6d7fa5f7f9adeb382e33",
+  "token_audit": {
+    "train": {
+      "rows": 16384,
+      "max_tokens": 909,
+      "max_completion_tokens": 177,
+      "completion_tokens": 2443897
+    },
+    "development": {
+      "rows": 256,
+      "max_tokens": 855,
+      "max_completion_tokens": 176,
+      "completion_tokens": 38171
+    },
+    "test": {
+      "rows": 256,
+      "max_tokens": 1384,
+      "max_completion_tokens": 252,
+      "completion_tokens": 50191
+    }
+  },
+  "resources": 10283,
+  "new_model_predictions": 0,
+  "training_launched": false
+}

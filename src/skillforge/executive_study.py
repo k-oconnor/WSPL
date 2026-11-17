@@ -136,7 +136,7 @@ def load_library(config):
     return blocks, specs
 
 
-def score(source, task, blocks, specs, keep_trace=True):
+def score(source, task, blocks, specs, keep_trace=True, *, compiled_program=None):
     """Judge final geometry AND delivery order, not just interpreter success."""
     text = source.strip()
     fence = re.fullmatch(r'```(?:text)?\s*\n([\s\S]*?)\n```',text)
@@ -144,7 +144,8 @@ def score(source, task, blocks, specs, keep_trace=True):
         text = fence.group(1)
     result = dict(constructed=False, task_success=False, safe_failure=False, panel=task['panel'])
     try:
-        program = compile_program(text, task['objects'], task['points'], limit=64)
+        program = (compile_program(text, task['objects'], task['points'], limit=64)
+                   if compiled_program is None else compiled_program)
     except ValueError as error:
         return dict(result, error=str(error))
     world = Workcell(task['initial'], task['objects'], radius=specs['near']['radius'],
