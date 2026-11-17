@@ -293,6 +293,94 @@ change. [Results, comparisons and archived evidence](docs/wspl/NEURAL_CONTROLLER
 
 ## WSPL syntax: programs that construct weights
 
+### What the implementation actually accepts
+
+WSPL currently has **two source frontends**. Choose one per source file; their
+syntax and expression rules are different. The robot executive uses a third,
+separate action language.
+
+| Source form | Purpose | Implementation |
+|---|---|---|
+| `module Name { ... }` | Define a typed scalar function and compile it into a ReLU network; used by the controller-block author | [Core PWA parser](src/skillforge/wspl_parse.py) |
+| `wspl 0.2; target ...` | Construct/edit tensors, place circuits, and perform bounded graph surgery | [Editor parser](src/skillforge/wsp_syntax.py), [execution rules](src/skillforge/wsp_editor.py) |
+| `transfer object to point` | Sequence calls to already constructed neural operators | [Action interpreter](src/skillforge/control_dsl.py) |
+
+The [implemented syntax reference](docs/wspl/IMPLEMENTED_SYNTAX.md) specifies
+statement forms, expression whitelists, names, comments, numerical profiles and
+semantic restrictions. It describes shipped code. The older
+[0.2 design document](docs/wspl/WSP_SYNTAX_0_2.md) also contains proposals.
+
+**Core PWA module grammar.** In these grammar sketches, quoted text is literal,
+`|` means an alternative, and `{ ... }` means repetition. Metavariables such as
+`expr` are constrained by the rules below; they do not permit arbitrary code.
+
+```ebnf
+module     = "module" name "{" { statement } "}" ;
+statement  = "input" port ":" port_type ";"
+           | "output" port ":" port_type ";"
+           | "let" port ":" let_type "=" expr ";"
+           | port "=" expr ";"
+           | ("ensures" | "preserves") name ":" "forall" "inputs" ":" formula ";" ;
+port_type  = "Real" "[" constant "," constant "]" unit
+           | "Truth" [ "[" constant "," constant "]" ] ;
+let_type   = "Real" "[" constant "," constant "]" [ unit ]
+           | "Truth" [ "[" constant "," constant "]" ] ;
+```
+
+Executable `expr` allows numeric constants, earlier input/let references,
+parentheses, unary `+`/`-`, addition, subtraction, multiplication by a constant,
+and division by a nonzero constant. Its complete function whitelist is:
+
+| Function | Allowed arguments |
+|---|---|
+| `relu(x)` | One scalar |
+| `clip(x, lo, hi)` | Scalar and constant bounds, `lo <= hi` |
+| `margin(x, lo, hi)` | Scalar and constant bounds, `lo < hi`; produces graded truth |
+| `min(a, b)`, `max(a, b)` | Two compatible scalar values |
+| `not(p)` | One `Truth` value |
+| `and(p, q)`, `or(p, q)`, `implies(p, q)` | Two `Truth` values; graded Lukasiewicz logic |
+
+Ports/lets use lowercase names matching `[a-z][a-z0-9_]*`. Real input/output
+ports require bounds and a unit label; `normalized_*` labels mean dimensionless
+values. `Truth` is dimensionless and bounded within `[0,1]`. Only declared outputs
+can be assigned, once each. Expressions cannot read outputs or forward references.
+Units and conservative interval bounds are checked. There are no runtime loops,
+imports, state declarations or products of two varying inputs in this frontend.
+
+Contract `formula` permits affine comparisons (`<`, `<=`, `>`, `>=`, `==`),
+`true`/`false`, parentheses and infix `and`, `or`, `implies`, with prefix `not`.
+Contracts reference input/output ports; they do not call executable functions.
+Parsing a contract does not prove it. Here `preserves` is an I/O contract keyword,
+not an automatic comparison against an earlier network.
+
+**Editor statement grammar.** A file starts with `wspl 0.2;`, declares exactly
+one `target`, optionally declares constants/circuits/regions, then has at most
+one `edit` block followed by optional `describe` blocks. Inside `edit`:
+
+```ebnf
+statement = tensor_selection ("=" | "+=" | "-=" | "*=") construction_expr ";"
+          | "for" name "in" "range" "(" arguments ")" "{" { statement } "}"
+          | "place" name "(" bindings ")" "at" "{" placements "}"
+            "writes" "=" "replace_producers" ";"
+          | "replace" name "with" artifact_expr "as" name "{" graph_fields "}" [ ";" ]
+          | "transplant" artifact_expr "as" name "{" graph_fields "}" [ ";" ]
+          | "add_residual" artifact_expr "as" name "{" graph_fields "}" [ ";" ]
+          | "redirect" edge_expr "=" signal_expr ";"
+          | "untie" parameter_expr "as" name ";" ;
+```
+
+The default `exact_to_storage` profile permits construction arithmetic
+`+ - * / @`, numeric arrays, indexing/slicing, constants, current tensors and
+`parent.W1`-style immutable reads. The complete construction function whitelist is
+`copy`, `transpose`, `reshape`, `zeros`, `full`, `eye`, `f32bits` and `tensor`.
+Construction arithmetic produces weights; it is separate from the circuit's
+inference computation. Circuit placement currently accepts affine assignments
+and an outer `relu(...)`, with every producer explicitly mapped to a compatible
+neuron. Graph surgery requires `mode=graph`, a named host budget and explicit
+boundary mappings. The reference gives the full declaration and evidence forms.
+
+### Examples and execution model
+
 WSPL 0.2 declares a target network and an explicit edit transaction. The following
 runnable construction illustration adapts coordinate-weight assignments from an
 [actual Breakout proposal](artifacts/wsp_breakout_v1/draw_1_wspl.source.wspl).
