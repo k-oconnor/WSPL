@@ -120,6 +120,177 @@ also completed: all three native and three WSPL repairs succeeded in 1,024/1,024
 episodes each, versus 0/1,024 for the parent. This is a success ceiling, not a
 comparative performance advantage; all WSPL proposals used literal edits.
 
+## Two learned adapters, from neural operators to action programs
+
+The controller experiments connect **two separately trained LoRA adapters on
+Qwen2.5-Coder-1.5B-Instruct**. The **block author** generates WSPL programs that
+compile into small neural controllers. The **executive** generates task programs
+that call those controllers. A compiler constructs the neural weights, and a
+stateful interpreter executes the action sequence against observations from the
+workcell.
+
+Both adapters generate text. Their outputs have different roles and execution
+paths. The block library is built first and reused across executive missions.
+
+```mermaid
+flowchart TD
+    Spec[Functional specification and typed ports] --> Author[Qwen base + block author LoRA]
+    Author --> WSPL[WSPL source program]
+    WSPL --> Compiler[WSPL compiler]
+    Compiler --> Blocks[Frozen neural operator library]
+    Task[Scene, placement goals and ordering constraints] --> Executive[Qwen base + executive LoRA]
+    Executive --> Program[Control DSL action program]
+    Program --> Runtime[Stateful interpreter]
+    Blocks --> Runtime
+    Observation[Current workcell observations] --> Runtime
+    Runtime --> Action[Movement and gripper commands]
+    Action --> World[Kinematic workcell]
+    World --> Observation
+    World --> Scorer[Independent task and trace scoring]
+```
+
+### The block author learns to construct neural computation
+
+The author receives a functional specification, named input/output ports and
+numerical parameters. For a movement block, the specification asks for proportional
+motion toward a target with a fixed command limit. A generated WSPL module contains
+the computation below, together with its typed port declarations.
+
+```text
+vx = clip(0.73 * x, -0.07, 0.07);
+vy = clip(0.73 * y, -0.07, 0.07);
+grip = 0;
+```
+
+Here `x` and `y` are target-minus-position errors. The WSPL compiler constructs
+ReLU weights implementing this function. The resulting network can be evaluated
+repeatedly as the robot moves. The generated source, compiled weights and numerical
+behavior checks are retained together.
+
+The library contains six operator types. Every object and mission reuses the
+selected operators with different inputs.
+
+| Neural operator | Input | Output and purpose |
+|---|---|---|
+| `move` | Target error in two coordinates | Bounded movement commands |
+| `near` | Target error | A proximity margin used to propose arrival |
+| `holding` | Binary holding observation | A margin indicating grasp state |
+| `close` | Declared planar inputs | Zero movement and a close-gripper command |
+| `open` | Declared planar inputs | Zero movement and an open-gripper command |
+| `safe` | Current position | A margin relative to the workspace boundary |
+
+The executive experiments use the first saved six-block set from the trained
+author's reserved outputs. Those compiled weights stay frozen throughout executive
+training and evaluation. The original author pilot produced 96/96 numerically
+correct blocks and supported 32/32 composed missions. Its train and evaluation
+splits share the six functional families and use distinct full parameter
+specifications. [Author protocol](docs/wspl/CONTROLLER_AUTHOR_V1.md)
+
+### The executive learns to bind and order actions
+
+The executive receives a structured scene with object positions, named destinations,
+placement goals and constraints such as “deliver A before B.” It generates a
+complete control DSL program one token at a time, attending to the task description
+and its own generated prefix.
+
+```text
+transfer object_a to tray
+transfer object_c to shelf
+transfer object_b to buffer
+move_to home
+```
+
+The model chooses the object bindings, destination bindings and instruction order.
+The complete program is frozen before execution. During the current experiments,
+the interpreter advances through that program using live state observations.
+Executive replanning after an execution failure is future work.
+
+`transfer object_a to tray` expands into four primitive calls.
+
+```text
+move_to object_a
+grasp object_a
+move_to tray
+release object_a
+```
+
+Each primitive has a lifetime and a `running`, `success` or `failure` status.
+`move_to` repeatedly calls the movement block, checks the proximity block and
+monitors the safety predicate. `grasp` calls the close block and checks holding.
+`release` calls the open block and checks that the hand is empty. The interpreter
+checks neural completion proposals against observed geometry and holding state.
+Finite budgets stop a stalled skill, and traces record block inputs, outputs,
+commands and observations at each tick.
+
+### How the two LoRA adapters were trained
+
+Both adapters use supervised fine-tuning with teacher forcing. Each example
+contains a user specification and a correct assistant program. The model predicts
+each program token given the specification and the correct preceding tokens.
+Cross-entropy is computed over the assistant program tokens, including its chat
+termination. Backpropagation updates the LoRA matrices.
+
+| Training choice | Block author | Latest executive |
+|---|---|---|
+| Input | Functional contract, ports and parameters | Scene, goals and ordering constraints |
+| Target program | WSPL neural-block source | Control DSL action sequence |
+| Label generator | Deterministic compiler-based generator | Deterministic topological-sort planner |
+| Training examples | 1,536 | 16,384 |
+| Training coverage | Six parameterized operator families | Missions containing 2–5 objects |
+| Epochs | 2 | 2 |
+| Optimizer updates | 384 | 4,096 |
+| Warmup updates | 20 | 160 |
+
+Each adapter has **18,464,768 trainable parameters**, rank 16 and alpha 32. LoRA
+wraps the attention query, key, value and output projections, plus the MLP gate,
+up and down projections. Both start with fresh adapter initialization over the
+same frozen Qwen base. They are trained independently, and the executive uses its
+own adapter weights.
+
+The shared optimizer settings are AdamW with peak learning rate 0.0002, weight
+decay 0.01, gradient-norm clipping at 1 and cosine decay to 10% of peak after
+warmup. Microbatch size is one with eight-way gradient accumulation. The base
+computes in BF16, with FP32 LoRA parameters and optimizer state. Examples must fit
+the 2,048-token context without truncation.
+
+The source of supervision is explicit. Compiler-generated examples teach the
+author how to express the supplied functions in WSPL. Planner-generated examples
+teach the executive how to satisfy a supplied ordering procedure, including an
+alphabetical tie-break among currently available goals. Robot execution occurs
+after training and supplies evaluation outcomes. The current training loss has
+no gradient path through the compiler, neural controller library or simulator.
+
+The code and exact training settings are documented in the
+[author training primitives](src/skillforge/authoring_sft.py),
+[author protocol](docs/wspl/CONTROLLER_AUTHOR_V1.md) and
+[expanded executive protocol](docs/wspl/EXECUTIVE_CURRICULUM_V2.md).
+
+### Decision-making and evidence
+
+| Component | Responsibility |
+|---|---|
+| Learned block author | Writes the function that a neural block will implement |
+| Deterministic compiler | Constructs weights from the WSPL program |
+| Learned executive | Chooses and orders task actions and their arguments |
+| Stateful interpreter | Calls the appropriate blocks, advances skills and handles failure |
+| Neural operators | Calculate movement, gripper commands and predicate margins |
+| Independent scorer | Checks final placement, delivery order and preservation of completed work |
+
+The latest executive completes **210/224 ordinary missions**, compared with
+124/224 for the previous executive on identical new scenes. Training covers
+2–5 objects; evaluation on 6–8 objects yields **88/96 successes**. All 256 generated
+programs compile. The same six neural blocks support every mission length.
+The remaining ordinary failures omit deliveries, with some also violating order.
+
+These experiments use a planar kinematic workcell, supplied state observations,
+one held object and geometric grasp contact. The reference planner succeeds on
+every evaluation panel. The experiments establish supervised construction and
+composition within this setting. Contact physics, perception, obstacle avoidance,
+learned recovery and generalization to new operator families need further study.
+The expanded curriculum changes data volume, names, mission lengths, dependency
+coverage and training budget together, so its measured gain applies to that combined
+change. [Results, comparisons and archived evidence](docs/wspl/NEURAL_CONTROLLERS_RESULTS.md)
+
 ## WSPL syntax: programs that construct weights
 
 WSPL 0.2 declares a target network and an explicit edit transaction. The following
