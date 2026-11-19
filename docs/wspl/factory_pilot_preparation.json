@@ -1,0 +1,36 @@
+{
+  "status": "prepared",
+  "approved": false,
+  "resources": 26695,
+  "offline_image_bytes_verified": true,
+  "physics_preflight": {
+    "status": "passed",
+    "fk_max_error_m": 1.0786510573623787e-14,
+    "frames": 10,
+    "physics_steps": 2,
+    "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-factory-v1\\data\\factory_preflight\\synthetic_px1sbcl9",
+    "scientific_scoring": false,
+    "model_calls": 0,
+    "synthetic_controller_fixtures": [
+      {
+        "name": "original",
+        "success": true,
+        "steps": 25,
+        "error": 0.0033185484674450286
+      },
+      {
+        "name": "changed",
+        "success": true,
+        "steps": 28,
+        "error": 0.002784301925080315
+      },
+      {
+        "name": "reference",
+        "success": true,
+        "steps": 28,
+        "error": 0.002962262883800154
+      }
+    ]
+  },
+  "author_calls": 0
+}

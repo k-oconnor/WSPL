@@ -79,7 +79,7 @@ def audit_events(events, answer):
     return dict(thread_id=threads[0],usage=usage,agent_messages=len(messages),tool_calls=0)
 
 
-def preflight(cli,catalog,instructions,folder,prompt):
+def preflight(cli,catalog,instructions,folder,prompt,images=()):
     """Offline rendering only, with an empty auth/config home; no model call."""
     offline=folder/'offline-home';offline.mkdir()
     args=[str(cli),'--no-daemon','debug','prompt-input']
@@ -90,18 +90,41 @@ def preflight(cli,catalog,instructions,folder,prompt):
     digest=hashlib.sha256(prompt.encode('utf-8')).hexdigest()
     preview_prompt=('Full prompt supplied through exec stdin; SHA-256 '+digest) if large else prompt
     if large:args+=['-c','model_context_window=872000','-c','model_auto_compact_token_limit=800000']
-    args+=[preview_prompt]
+    for path in images:args+=['--image',str(Path(path).resolve())]
+    args+=['--',preview_prompt] if images else [preview_prompt]
     env=environment();env['CODEX_HOME']=str(offline.resolve())
     result=subprocess.run(args,cwd=folder/'empty',env=env,capture_output=True,encoding='utf-8',timeout=30)
     (folder/'prompt_preview.json').write_text(result.stdout,encoding='utf-8')
     (folder/'preflight.stderr').write_text(result.stderr,encoding='utf-8')
     if result.returncode or result.stderr.strip():raise ValueError('offline config preflight failed or warned')
-    audit_preview(json.loads(result.stdout),preview_prompt)
+    preview=json.loads(result.stdout)
+    if images:
+        audit_image_preview(preview,images)
+    audit_preview(preview,preview_prompt)
     (folder/'preflight_binding.json').write_text(json.dumps(dict(
         mode='context_only_digest_sentinel' if large else 'full_prompt',
         prompt_sha256=digest,prompt_utf8_bytes=len(prompt.encode('utf-8')),
         collection_transport='full UTF-8 stdin via codex exec -',
         limitation='Large-prompt preflight verifies configuration/context, not server-side prompt receipt.' if large else None),indent=2)+'\n',encoding='utf-8')
+
+
+def audit_image_preview(preview,images):
+    """Verify actual offline image bytes then normalize for the existing text audit."""
+    import base64
+    users=[m for m in preview if m.get('role')=='user']
+    if len(users)!=2:raise ValueError('Unexpected image prompt roles')
+    parts=users[-1]['content']
+    if len(parts)!=3*len(images)+1:raise ValueError('Unexpected image framing')
+    for i,path in enumerate(images):
+        opening,image,closing=parts[i*3:i*3+3]
+        if opening.get('type')!='input_text' or not opening.get('text','').startswith('<image name='):
+            raise ValueError('Missing image opening')
+        if closing!={'type':'input_text','text':'</image>'}:raise ValueError('Image closing')
+        if image.get('type')!='input_image' or not image.get('image_url','').startswith('data:image/png;base64,'):
+            raise ValueError('PNG image expected')
+        if base64.b64decode(image['image_url'].split(',',1)[1],validate=True)!=Path(path).read_bytes():
+            raise ValueError('Image bytes changed in prompt')
+    users[-1]['content']=[parts[-1]]
 
 
 def audit_preview(messages,prompt):
@@ -126,12 +149,26 @@ def audit_preview(messages,prompt):
         raise ValueError('unexpected user context')
 
 
-def collect(cli, catalog, instructions, folder, prompt, seconds, should_stop):
+def collect(cli, catalog, instructions, folder, prompt, seconds, should_stop, images=()):
     folder=Path(folder);folder.mkdir(exist_ok=False)
     workspace=folder/'empty';workspace.mkdir()
-    preflight(cli,catalog,instructions,folder,prompt)
+    archived=[]
+    if len(images)>12:raise ValueError('At most 12 attached frames per response')
+    for i,path in enumerate(images):
+        from PIL import Image
+        data=Path(path).read_bytes()
+        if len(data)>4*1024*1024:raise ValueError('Image too large')
+        with Image.open(path) as im:
+            if im.format!='PNG' or im.size!=(256,256):raise ValueError('Expected 256x256 PNG frame')
+            im.verify()
+        copy=folder/f'input_{i:02d}.png';copy.write_bytes(data);archived.append(copy.resolve())
+    preflight(cli,catalog,instructions,folder,prompt,archived)
     answer=folder/'answer.md'
     args=command(cli,catalog,instructions,workspace.resolve(),answer.resolve(),large_prompt=len(prompt.encode('utf-16-le'))>16000)
+    if archived:
+        args=args[:-1]
+        for path in archived:args+=['--image',str(path)]
+        args+=['--','-']
     (folder/'command.json').write_text(json.dumps(args,indent=2)+'\n',encoding='utf-8')
     (folder/'prompt.txt').write_text(prompt,encoding='utf-8')
     started=time.monotonic();reason=None
@@ -172,5 +209,6 @@ def collect(cli, catalog, instructions, folder, prompt, seconds, should_stop):
     audit=audit_events(events,text)
     audit['active_seconds']=time.monotonic()-started
     audit['prompt_transport']=dict(bytes_written=delivery['bytes_written'],sha256=hashlib.sha256(payload).hexdigest(),transport='stdin',server_receipt_verified=False)
+    audit['images']=[dict(path=p.name,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in archived]
     (folder/'collection.json').write_text(json.dumps(audit,indent=2)+'\n',encoding='utf-8')
     return text,audit

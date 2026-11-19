@@ -1183,6 +1183,24 @@ ignored `artifacts/local_paths.json` for machine bindings.
 
 ## Project record
 
+### Prepared factory-interface pilot
+
+The [active observation and controller-authoring pilot](docs/wspl/FACTORY_PILOT_V1.md)
+replaces perfect planar-state access with Panda/MuJoCo dynamics, noisy encoder
+telemetry, nominal forward kinematics, and investigator-requested camera frames.
+Astra can capture the front or wrist view now, at command transitions, or as a
+short sequence during an action. Actual PNG bytes and timestamped sensor histories
+are archived with each invocation. No hidden object coordinates or fault labels
+are supplied to the deployed circuits.
+
+Astra starts with the original movement controller and must write a repair plus
+selector for a hidden command-frame/gain miscalibration. A bounded physical probe
+selects the controller at deployment; Astra and camera interpretation are absent
+then. The frozen test has 96 reaching episodes across original/changed/returned
+calibration, with no-probe, probe-cost and oracle controls. This is not grasping,
+payload adaptation, or transfer of the planar Qwen executive. Source approval is
+pending; engineering checks are not experimental results.
+
 - [Working context](docs/CONTEXT.md)
 - [Evidence and limitations](docs/EVIDENCE.md)
 - [Research roadmap](docs/ROADMAP.md)
