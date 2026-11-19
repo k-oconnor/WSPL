@@ -1,0 +1,69 @@
+{
+  "status": "prepared",
+  "resources": 10374,
+  "engineering_scenes": [
+    {
+      "objects": 3,
+      "selected": "original",
+      "ticks": 136
+    },
+    {
+      "objects": 3,
+      "selected": "repaired",
+      "ticks": 161
+    },
+    {
+      "objects": 3,
+      "selected": "original",
+      "ticks": 136
+    },
+    {
+      "objects": 5,
+      "selected": "original",
+      "ticks": 169
+    },
+    {
+      "objects": 5,
+      "selected": "repaired",
+      "ticks": 195
+    },
+    {
+      "objects": 5,
+      "selected": "original",
+      "ticks": 169
+    },
+    {
+      "objects": 8,
+      "selected": "original",
+      "ticks": 290
+    },
+    {
+      "objects": 8,
+      "selected": "repaired",
+      "ticks": 339
+    },
+    {
+      "objects": 8,
+      "selected": "original",
+      "ticks": 290
+    },
+    {
+      "objects": 12,
+      "selected": "original",
+      "ticks": 400
+    },
+    {
+      "objects": 12,
+      "selected": "repaired",
+      "ticks": 467
+    },
+    {
+      "objects": 12,
+      "selected": "original",
+      "ticks": 400
+    }
+  ],
+  "offline_prompt_passed": true,
+  "model_calls": 0,
+  "approved": false
+}

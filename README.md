@@ -139,6 +139,13 @@ require subsequent studies. The next proposed direction is documented below.
 
 ### Retention requirement for the next pilot
 
+The [prepared retention pilot](docs/wspl/ASTRA_RETENTION_V1.md) now implements a
+bounded version of this requirement: Astra writes a neural selector over one
+physical diagnostic probe, with both controllers and all executive weights frozen.
+It evaluates original, changed and returned-original dynamics on fresh scenes.
+No regime labels reach the selector. Exact source approval is pending; no new run
+has launched. This is episode-boundary selection, not mid-mission fault detection.
+
 Kevin explicitly requested that Astra retain performance on old tasks as well
 as solve the new ones. This is an acceptance requirement for the next experiment,
 not merely a metric to report. The completed actuator pilot only required a
