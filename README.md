@@ -137,10 +137,14 @@ require subsequent studies. The next proposed direction is documented below.
 
 ## Proposed experiment: agent-led capability engineering
 
-**Recorded November 19, 2026. Design proposal only: no new agent calls, training
-or evaluation are authorized or launched by this section.**
+**Updated November 19, 2026. Astra replaces Opus at Kevin's request.** The
+[bounded first pilot](docs/wspl/ASTRA_ADAPTATION_V1.md) is being prepared: unknown
+actuator response, twelve Astra responses maximum, neural movement replacement,
+optional bounded fitting, and frozen deployment across all three saved executives.
+Exact source approval is required before launch. The broader proposal below
+includes future executive/harness editing that this first pilot does not expose.
 
-Give Opus the working framework, pretrained models, controller artifacts and
+Give Astra the working framework, pretrained models, controller artifacts and
 diagnostic tools, and test whether it can build a reusable capability that the
 starting system lacks. Allow it to investigate failures, edit neural blocks,
 construct training examples and invoke bounded gradient training. Directly
@@ -149,8 +153,8 @@ guessing weights is one available method, not the imposed scientific objective.
 The first proposed task is an **unknown change to actuator dynamics**. Provide
 calibration scenes and observable action outcomes, withhold the mechanism and
 the repair, and reserve new layouts for final evaluation. Freeze the resulting
-system before evaluation and run it without Opus. A successful artifact must
-generalize beyond the calibration episodes; Opus solving each test episode
+system before evaluation and run it without Astra. A successful artifact must
+generalize beyond the calibration episodes; Astra solving each test episode
 interactively would answer a different question.
 
 ### Starting assets and training provenance
@@ -208,7 +212,7 @@ is inherently better than code.
 - Keep the evaluator, success definitions, reserved scenes and interaction
   accounting outside the editable workspace. Hide mechanism implementation and
   future-event information; expose only the declared calibration interface.
-- Begin with feasibility. If it works, compare Opus with ordinary Python
+- Begin with feasibility. If it works, compare Astra with ordinary Python
   controller tools against the same tools plus WSPL and the pretrained authors.
   Use common observations and budgets. This measures the added toolkit; isolating
   WSPL syntax from the pretrained authors would require another ablation.
@@ -220,7 +224,7 @@ is inherently better than code.
   time, model tokens, environment interactions, gradient updates and inference
   cost separately.
 
-Before implementation and launch, specify the exact Opus version/provider,
+Before implementation and launch, specify the exact Astra version/provider,
 mechanism family, data splits, number of independent attempts, editable surfaces,
 model-call and training budgets, stopping rules, deployment format and success
 criteria. A fixed interaction/compute allowance is intended; numerical limits
@@ -246,7 +250,7 @@ Adopt a small structured experiment memory as infrastructure, without adding a
 separate memory-effectiveness study yet. Each entry records: problem hypothesis;
 artifact/version; proposed modification and rationale; predicted outcome recorded
 before evaluation; actual result and regressions; data/budget context; and links
-to evidence. Preserve unsuccessful attempts as well as successes. Opus receives
+to evidence. Preserve unsuccessful attempts as well as successes. Astra receives
 the acquisition history, not reserved evaluation answers. Prior results can inform
 design, but fresh confirmation scenes must remain outside its feedback loop.
 

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "synthetic_only": true,
+  "all_four_adapters_exact": true,
+  "round_trip_logits_exact": true,
+  "base_unchanged": true,
+  "long_prefill_tokens": 7600,
+  "peak_allocated_bytes": 12935358976
+}

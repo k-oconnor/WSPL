@@ -1,0 +1,26 @@
+{
+  "status": "prepared",
+  "resources": 10368,
+  "engineering_scenes": [
+    {
+      "objects": 3,
+      "ticks": 151
+    },
+    {
+      "objects": 5,
+      "ticks": 186
+    },
+    {
+      "objects": 8,
+      "ticks": 301
+    },
+    {
+      "objects": 12,
+      "ticks": 462
+    }
+  ],
+  "offline_prompt_passed": true,
+  "scientific_runs": 0,
+  "model_calls": 0,
+  "approved": false
+}
