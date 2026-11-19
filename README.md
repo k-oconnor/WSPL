@@ -137,6 +137,48 @@ require subsequent studies. The next proposed direction is documented below.
 
 ## Proposed experiment: agent-led capability engineering
 
+### Retention requirement for the next pilot
+
+Kevin explicitly requested that Astra retain performance on old tasks as well
+as solve the new ones. This is an acceptance requirement for the next experiment,
+not merely a metric to report. The completed actuator pilot only required a
+changed-dynamics gain: it achieved76/96new-dynamics missions while original-
+dynamics performance fell from45/48to0/48. Astra predicted that interference.
+The executive weights were unchanged; the replacement motor block was specific
+to the new actuator mapping. Preserve that run and its original protocol intact.
+
+The next author packet must state:
+
+> Improve performance under the changed dynamics while preserving the starting
+> system's performance under the original dynamics. A repair that solves the new
+> regime by breaking the old one is not an acceptable final adaptation. You will
+> receive calibration feedback from both regimes. Produce one deployable system
+> that handles both without frontier-model intervention, evaluator-provided
+> regime labels, or an external operator choosing the controller. Retain the
+> original artifact and explain how the system decides when an adaptation applies.
+
+The interface must make this requirement achievable. A stateless movement block
+receiving only geometric errors cannot generally distinguish two actuator
+mappings that require different commands for identical inputs. The next design
+should therefore permit a bounded observation history or diagnostic interaction
+and a persistent selector/controller state. Any selector must be part of Astra's
+submitted artifact; the host must not silently infer the regime or choose the
+correct block. Keeping both files on disk alone does not demonstrate retention.
+
+Provide development/calibration scenes from both regimes, then freeze the entire
+adaptation before paired evaluation on fresh scenes. Report new-task improvement,
+old-task corrections/regressions, selection errors and diagnostic interaction
+cost separately for each executive seed. Test returning to the old regime after
+using the new one with the same installed system. Define state-reset and regime-
+switch boundaries explicitly. Use the original system as the old-task reference;
+do not require perfection where that executive already fails. Before launch,
+predeclare numerical retention and improvement thresholds; the intended retention
+target is no loss of baseline-successful old missions on the reserved panel.
+This is a finite-panel requirement, not a universal behavioral guarantee.
+
+This amendment records the next pilot's requirement. It does not change the
+completed experiment, implement a selector, or authorize another scientific run.
+
 **Updated November 19, 2026. Astra replaces Opus at Kevin's request.** The
 [bounded first pilot](docs/wspl/ASTRA_ADAPTATION_V1.md) is being prepared: unknown
 actuator response, twelve Astra responses maximum, neural movement replacement,
