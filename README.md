@@ -1185,14 +1185,18 @@ ignored `artifacts/local_paths.json` for machine bindings.
 
 ### Current focus: teach the weaker executive
 
-The [executive teaching design](docs/wspl/EXECUTIVE_TEACHING_DESIGN_V1.md) makes
+The [executive teaching pilot](docs/wspl/EXECUTIVE_TEACHING_V1.md) makes
 the small LLM choose probes, controller selection, retries, goals and stopping.
 The host will no longer run the factory pilot's automatic diagnostic selector.
 The main comparison holds the motor library fixed and compares Astra-taught
 continuation with both the unchanged executive and a matched interface/rehearsal
 continuation. This separates learning to use acquired skills from simply adding
-tools or training a new command syntax. Interpreter groundwork is tested; teacher
-collection, continuation training and deployment evaluation are not launched.
+tools or training a new command syntax. Preparation includes eight bounded Astra
+demonstration missions, matched128-update LoRA continuations, and96 frozen student
+deployment episodes. Teacher actions are labeled only from successful physical
+missions; missing condition coverage stops the pipeline before fitting. Physics,
+isolated worker and full-size restoration checks pass. Nothing has launched; exact
+source approval is pending. The earlier design remains archived separately.
 
 ### Prepared factory-interface pilot
 

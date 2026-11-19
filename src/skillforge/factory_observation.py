@@ -7,7 +7,6 @@ import hashlib
 import math
 from pathlib import Path
 import numpy as np
-from PIL import Image
 
 
 CAMERAS = ('frontview', 'robot0_eye_in_hand')
@@ -63,6 +62,7 @@ class ObservationSession:
         return dict(result)
 
     def capture(self, camera, event='requested_now'):
+        from PIL import Image
         if camera not in CAMERAS:
             raise ValueError('Unknown camera')
         if len(self.frames) >= self.max_frames:

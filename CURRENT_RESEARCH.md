@@ -1,3 +1,14 @@
+November 19, 2026 preparation: the full executive-teaching pipeline now exists.
+Protocol docs/wspl/EXECUTIVE_TEACHING_V1.md supersedes the design's proposed
+budgets. Eight two-goal Astra demonstrations (max128calls), successful-condition
+coverage gate, two128-update warm-start LoRA continuations, and96 frozen deployment
+episodes. All arms share the same original/repaired motor bank; no automatic
+diagnostic selector is deployed. Astra and text-only Qwen receive the same telemetry
+interface. Synthetic checks verify all four physical conditions, isolated worker,
+exact parent/next-update restoration, unchanged base, and4096-token backward at
+~6.61GiB peak. No new teacher calls, training or reserved student predictions.
+Exact source approval pending; do not launch from the design alone.
+
 November 19, 2026: Kevin redirected the next study toward teaching the weaker LLM
 executive. The factory pilot's successful controller repair is not evidence of
 student learning: a host-owned probe/selector/waypoint loop made its decisions.

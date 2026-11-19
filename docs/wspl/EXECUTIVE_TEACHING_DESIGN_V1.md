@@ -1,5 +1,8 @@
 # Teach the small executive, not a host-written selector
 
+The implemented preparation is now specified in EXECUTIVE_TEACHING_V1.md.
+This document preserves the earlier design; its remaining-work list is historical.
+
 Research direction confirmed November 19, 2026. Design and interpreter groundwork;
 NOT a launch-ready protocol or an approved scientific run. No new Astra calls,
 student predictions, training or scored simulator missions have occurred.

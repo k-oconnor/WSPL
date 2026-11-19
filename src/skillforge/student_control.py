@@ -62,6 +62,7 @@ class StudentExecutiveEpisode:
                 if self.selected is None:raise ValueError('Select a controller explicitly first')
                 if a['goal'] not in self.goals:raise ValueError('Unknown goal')
                 goal=np.asarray(self.goals[a['goal']],dtype=float);stable=0;used=0
+                initial_error=float(np.linalg.norm(goal-np.asarray(before['telemetry']['nominal_tool_position_m'])))
                 for _ in range(self.reach_ticks):
                     if self.session.steps>=self.session.max_steps:break
                     error=goal-np.asarray(self.session.observe()['nominal_tool_position_m'])
@@ -74,7 +75,7 @@ class StudentExecutiveEpisode:
                 reached=stable>=3
                 if reached:self.observed_visits.append(a['goal'])
                 result=dict(status='observed_reached' if reached else 'chunk_ended',goal=a['goal'],
-                            module=self.selected,ticks=used,measured_error_m=measured)
+                            module=self.selected,ticks=used,initial_measured_error_m=initial_error,measured_error_m=measured)
             else:
                 self.finished=True;result=dict(status='stopped')
             self.last=result
@@ -91,6 +92,8 @@ def prompt(observation,module_documentation):
             '{"op":"probe","command":[x,y,z],"ticks":N}, '
             '{"op":"select","module":"ID"}, {"op":"reach","goal":"ID"}, or {"op":"stop"}. '
             'Probe issues physical motion; it does not select a controller. Select changes no weights. '
+            'Probe components must lie in [-0.2,0.2], ticks must be an integer1..20. '
+            'Control runs at20Hz; a translation input of1 nominally requests a0.05m target increment, not guaranteed displacement. '
             'Reach attempts only the requested waypoint for a bounded chunk; it does not retry or advance goals. '
             'Status observed_reached is a sensor-based observation, not a perfect physical certificate. '
             'Calibration may differ or change; do not assume an error means a particular fault. '

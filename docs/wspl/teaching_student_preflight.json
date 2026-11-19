@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "synthetic_only": true,
+  "parent_adapter_sha256": "6f1e52d326fc6795658d6d24f8fc475cf9896aede293bd0774829b6c5450b58a",
+  "base_hash": "540b6c0285e9d26362156163cef352c1a27657dc7b0372d0c36404a6c5baddc1",
+  "warm_start_exact": true,
+  "next_update_exact": true,
+  "parent_restored": true,
+  "base_unchanged": true,
+  "maximum_context_backward": 4096,
+  "peak_allocated_bytes": 7094400512
+}

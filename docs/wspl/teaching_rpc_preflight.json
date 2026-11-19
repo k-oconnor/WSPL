@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "engineering_only": true,
+  "source_checked_child": true,
+  "private_fields_absent": true,
+  "no_startup_action": true,
+  "explicit_probe_ticks": 2
+}

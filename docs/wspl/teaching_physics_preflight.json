@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "engineering_only": true,
+  "conditions": [
+    {
+      "condition": "ordinary",
+      "success": true,
+      "decisions": 9,
+      "ticks": 66
+    },
+    {
+      "condition": "changed",
+      "success": true,
+      "decisions": 10,
+      "ticks": 68
+    },
+    {
+      "condition": "switch",
+      "success": true,
+      "decisions": 11,
+      "ticks": 78
+    },
+    {
+      "condition": "return",
+      "success": true,
+      "decisions": 10,
+      "ticks": 68
+    }
+  ],
+  "model_calls": 0
+}
