@@ -2,7 +2,9 @@
 
 Encodes the scalar IR directly from its documented semantics, independently of
 the compiler, and compares it with the stored artifact weights over the declared
-input box. Trusted solver/encoders, not a proof-carrying certificate, IEEE
+input box. Explicit independent-specification mode keeps artifact provenance
+separate from the compared function; default source binding remains strict.
+Trusted solver/encoders, not a proof-carrying certificate, IEEE
 execution proof or physical guarantee. Differences are replayed through both
 exact rational interpreters.
 """
@@ -77,7 +79,7 @@ def _encode_artifact(z3,artifact_document,inputs,constraints):
     return previous
 
 
-def check_equivalence(source,artifact,*,timeout_ms=5000,max_parameters=10000,max_source_nodes=1024):
+def check_equivalence(source,artifact,*,timeout_ms=5000,max_parameters=10000,max_source_nodes=1024,require_source_binding=True):
     started=time.monotonic();here=Path(__file__)
     result=dict(status='INVALID',scope='source_ir_vs_stored_weight_rational_real_graph',
                 quantifier='forall inputs in declared domain: every source output equals the artifact output',
@@ -97,7 +99,13 @@ def check_equivalence(source,artifact,*,timeout_ms=5000,max_parameters=10000,max
         if not isinstance(artifact,ReLUArtifact):artifact=ReLUArtifact(artifact)
         d=artifact.to_dict()
         result['source_sha256']=hashlib.sha256(canonical_bytes(source)).hexdigest();result['artifact_sha256']=artifact.sha256
-        if d['source_sha256']!=result['source_sha256']:raise ValueError('artifact is not bound to this source document')
+        if type(require_source_binding) is not bool:raise ValueError('Boolean binding policy required')
+        result['source_binding_required']=require_source_binding
+        result['artifact_source_sha256']=d['source_sha256']
+        result['bound_to_source']=d['source_sha256']==result['source_sha256']
+        if not require_source_binding:
+            result['scope']='specification_ir_vs_independent_artifact_rational_real_graph'
+        if require_source_binding and not result['bound_to_source']:raise ValueError('artifact is not bound to this source document')
         _check_interface(source,d)
         if type(timeout_ms) is not int or timeout_ms<0 or type(max_parameters) is not int or max_parameters<1:raise ValueError('invalid verification budget')
         if timeout_ms==0:return finish('UNKNOWN',reason='budget_exhausted_before_query')
@@ -140,9 +148,11 @@ def check_equivalence(source,artifact,*,timeout_ms=5000,max_parameters=10000,max
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('source',type=Path);p.add_argument('artifact',type=Path)
     p.add_argument('--output',type=Path,required=True);p.add_argument('--timeout-ms',type=int,default=5000)
+    p.add_argument('--specification',action='store_true',help='Compare an independent specification without claiming compiler/source provenance')
     args=p.parse_args()
     try:
-        result=check_equivalence(json.loads(args.source.read_text(encoding='utf-8')),ReLUArtifact.load(args.artifact),timeout_ms=args.timeout_ms)
+        result=check_equivalence(json.loads(args.source.read_text(encoding='utf-8')),ReLUArtifact.load(args.artifact),timeout_ms=args.timeout_ms,
+                                 require_source_binding=not args.specification)
         with args.output.open('x',encoding='utf-8',newline='\n') as f:json.dump(result,f,indent=2,allow_nan=False);f.write('\n')
         print(json.dumps(dict(status=result['status'],output=str(args.output))))
         raise SystemExit(STATUS_EXIT[result['status']])

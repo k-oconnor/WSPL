@@ -1,0 +1,151 @@
+{
+  "status": "passed",
+  "engineering_scenes": [
+    {
+      "objects": 2,
+      "disturbance": "none",
+      "ticks": 84,
+      "decisions": 4
+    },
+    {
+      "objects": 2,
+      "disturbance": "slip",
+      "ticks": 246,
+      "decisions": 5
+    },
+    {
+      "objects": 2,
+      "disturbance": "moved",
+      "ticks": 88,
+      "decisions": 5
+    },
+    {
+      "objects": 2,
+      "disturbance": "blocked",
+      "ticks": 87,
+      "decisions": 4
+    },
+    {
+      "objects": 2,
+      "disturbance": "combined",
+      "ticks": 253,
+      "decisions": 6
+    },
+    {
+      "objects": 5,
+      "disturbance": "none",
+      "ticks": 189,
+      "decisions": 7
+    },
+    {
+      "objects": 5,
+      "disturbance": "slip",
+      "ticks": 351,
+      "decisions": 8
+    },
+    {
+      "objects": 5,
+      "disturbance": "moved",
+      "ticks": 193,
+      "decisions": 8
+    },
+    {
+      "objects": 5,
+      "disturbance": "blocked",
+      "ticks": 178,
+      "decisions": 7
+    },
+    {
+      "objects": 5,
+      "disturbance": "combined",
+      "ticks": 344,
+      "decisions": 9
+    },
+    {
+      "objects": 8,
+      "disturbance": "none",
+      "ticks": 270,
+      "decisions": 10
+    },
+    {
+      "objects": 8,
+      "disturbance": "slip",
+      "ticks": 432,
+      "decisions": 11
+    },
+    {
+      "objects": 8,
+      "disturbance": "moved",
+      "ticks": 273,
+      "decisions": 11
+    },
+    {
+      "objects": 8,
+      "disturbance": "blocked",
+      "ticks": 268,
+      "decisions": 10
+    },
+    {
+      "objects": 8,
+      "disturbance": "combined",
+      "ticks": 434,
+      "decisions": 12
+    },
+    {
+      "objects": 12,
+      "disturbance": "none",
+      "ticks": 416,
+      "decisions": 14
+    },
+    {
+      "objects": 12,
+      "disturbance": "slip",
+      "ticks": 578,
+      "decisions": 15
+    },
+    {
+      "objects": 12,
+      "disturbance": "moved",
+      "ticks": 420,
+      "decisions": 15
+    },
+    {
+      "objects": 12,
+      "disturbance": "blocked",
+      "ticks": 410,
+      "decisions": 14
+    },
+    {
+      "objects": 12,
+      "disturbance": "combined",
+      "ticks": 574,
+      "decisions": 16
+    }
+  ],
+  "max_engineering_record_tokens": 635,
+  "author_prompt_tokens": 4891,
+  "author_token_cap": 512,
+  "resources": 10315,
+  "checkpoint_identities": {
+    "author": {
+      "source": "5de7ada4ce5d2c3c41614896e568cca4b91bc63991f5f4ce997a7e9404d1f3ae",
+      "base_hash": "540b6c0285e9d26362156163cef352c1a27657dc7b0372d0c36404a6c5baddc1",
+      "sha256": "26c81ca28f53668f5916249b28949590496c4453d923c1c9168538ff17aa2319"
+    },
+    "previous": {
+      "source": "43dabbb5b31820586f368de2037e2673767c71eafa89c55833d2d1fa6b60f5fc",
+      "base_hash": "540b6c0285e9d26362156163cef352c1a27657dc7b0372d0c36404a6c5baddc1",
+      "sha256": "a53fdb71d9aa3d0ac347a1dde2e16a47ace564c943ac864a4ed2fc6c2ad7031b"
+    }
+  },
+  "library": {
+    "move": "27630bad60ddc64b17ff9dc97080e9aaf33bbb0158e21f354aae712f2834edde",
+    "near": "c9e1975254cbd28acd92a343f6ea2ab165dec6cf83cc9b64d0213c056600d115",
+    "holding": "ffadea91c3d658602a81cdacf921adeb1e50649478e9f6c64a2e9ac475e1b66c",
+    "close": "11233bcbc9a4566dc1cf28ca41fee314754a31dfbee055ca353608f0a24f8d19",
+    "open": "706e32a19ba4458e989b055a8e63e4a1515b3d7d8c98a78695a37fb76bc5e25a",
+    "safe": "0511281fccc9694b1ffb2dde867df16a3f6105d0aac8f02093bbfd66f2900b64"
+  },
+  "learned_predictions": 0,
+  "training_launched": false
+}

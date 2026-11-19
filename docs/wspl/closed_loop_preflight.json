@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "synthetic_only": true,
+  "zero_adapter_logits_bit_identical": true,
+  "frozen_base_unchanged": true,
+  "next_update_exact_restoration": true,
+  "trainable_parameters": 18464768,
+  "base_parameters": 1543714304,
+  "projections": 196,
+  "synthetic_tokens": 2048,
+  "synthetic_completion_tokens": 1536,
+  "update_seconds": [
+    1.0515294000069844,
+    0.9321091000019806,
+    0.9536564000009093
+  ],
+  "peak_allocated_bytes": 13093939712,
+  "first": [
+    0.0001830088731367141,
+    0.005789808463305235
+  ],
+  "second": [
+    9.242606211046223e-06,
+    0.00028836046112701297
+  ],
+  "previous_adapter_exact_restoration": true,
+  "full_size_seed_reset_exact": true,
+  "synthetic_long_prefill_tokens": 7600
+}

@@ -122,6 +122,143 @@ comparative performance advantage; all WSPL proposals used literal edits.
 
 ## Two learned adapters, from neural operators to action programs
 
+**Current direction:** retain the compact executive syntax. The unified-language
+repeat compiled256/256programs but scored191/224ordinary missions versus210/224for
+the previous compact model; see the [completed comparison](docs/wspl/UNIFIED_EXECUTIVE_V1_RESULTS.md).
+The [closed-loop study](docs/wspl/CLOSED_LOOP_V1.md) completed on November 18.
+Across three seeds, feedback-driven execution scored151/192disturbed missions
+versus48/192for frozen nominal plans:103paired improvements and zero regressions.
+Reversing the actuators reduced long8 success from37/48to0/48; replacing only the
+movement block restored exactly the same37successful missions. Authored, AdamW
+and analytic replacements all achieved that recovery. The reversal rule was
+supplied, not discovered. Long-horizon reliability remained weak and the full
+progression criteria failed. This is a kinematic result; physics and hardware
+require subsequent studies. The next proposed direction is documented below.
+
+## Proposed experiment: agent-led capability engineering
+
+**Recorded November 19, 2026. Design proposal only: no new agent calls, training
+or evaluation are authorized or launched by this section.**
+
+Give Opus the working framework, pretrained models, controller artifacts and
+diagnostic tools, and test whether it can build a reusable capability that the
+starting system lacks. Allow it to investigate failures, edit neural blocks,
+construct training examples and invoke bounded gradient training. Directly
+guessing weights is one available method, not the imposed scientific objective.
+
+The first proposed task is an **unknown change to actuator dynamics**. Provide
+calibration scenes and observable action outcomes, withhold the mechanism and
+the repair, and reserve new layouts for final evaluation. Freeze the resulting
+system before evaluation and run it without Opus. A successful artifact must
+generalize beyond the calibration episodes; Opus solving each test episode
+interactively would answer a different question.
+
+### Starting assets and training provenance
+
+The starting assets are two independently trained adapters over frozen
+Qwen2.5-Coder-1.5B-Instruct, plus the compiled six-block library. The author
+generates WSPL source; compilation produces neural weights. The executive
+selects compact actions using observed state. Neither is a learned simulator.
+
+| Asset | Existing training recipe | Role in the proposed experiment |
+|---|---|---|
+| Neural-block author | 1,536 compiler-generated specifications across six operator families; two epochs,384updates,20warmup updates | Generate or revise controller programs from functional specifications |
+| Closed-loop executive | Three fresh seeds113/227/341;16,384decision snapshots and256development snapshots; two epochs,4,096updates per seed,160warmup updates | Execute actions using observed outcomes; preserve all seeds in reporting rather than silently selecting the best |
+| Six compiled neural blocks | Saved outputs of the trained author; frozen during executive training | Movement, proximity, holding, gripping and safety primitives; replace locally when needed |
+
+Both author and executive use rank16/alpha32 LoRA with18,464,768trainable
+parameters over attention Q/K/V/O and MLP gate/up/down projections. The base is
+frozen. Training uses completion-only cross-entropy, microbatch1 with accumulation8,
+AdamW peak LR0.0002, decay0.01, gradient clipping1, warmup followed by cosine decay
+to10%, BF16 base computation and FP32 adapter/optimizer state. Context is2,048tokens
+without truncation. These are the **existing asset recipes**, not a decided recipe
+for future agent-directed training.
+
+Executive supervision comes from reference trajectories on2–5object missions:
+40%clean and20%each slipped grasp, moved object and blocked destination before
+snapshot sampling. Whole missions belong to one split. The target is one action:
+`transfer OBJECT to POINT`, `move_to OBJECT_OR_POINT`, `grasp OBJECT`,
+`release OBJECT`, or `stop`. There is no gradient through the simulator and no
+reward-based executive training in these starting assets. See the
+[author protocol](docs/wspl/CONTROLLER_AUTHOR_V1.md) and
+[closed-loop recipe](docs/wspl/CLOSED_LOOP_V1.md).
+
+### Evidence motivating the next step
+
+The completed closed-loop study achieved96/96familiar3–5object missions,
+37/48long8,25/48long12 and28/48renamed12. Combined-disturbance success varied
+substantially by seed:16/16,10/16and5/16. Ordering errors, omissions and revisiting
+delivered objects remain executive limitations. All three replacement methods
+restored the original per-task success pattern after the supplied actuator
+reversal, without executive retraining. This supports local replaceability, not
+autonomous mechanism discovery or superiority over gradients. The authored
+movement block passed rational-real specification equivalence; that does not
+prove floating-point execution or physical trajectory safety.
+
+The new experiment asks the agent to bridge the missing step: determine what
+changed from evidence and produce a durable repair. It should also expose whether
+our tools help a capable engineer, rather than assuming the neural representation
+is inherently better than code.
+
+### Agent workspace, comparisons and evaluation
+
+- Supply model loading, compact execution, WSPL compilation, weight inspection,
+  trace diagnostics and bounded training tools. Log all tool calls, changes,
+  data generation and training configurations.
+- Keep the evaluator, success definitions, reserved scenes and interaction
+  accounting outside the editable workspace. Hide mechanism implementation and
+  future-event information; expose only the declared calibration interface.
+- Begin with feasibility. If it works, compare Opus with ordinary Python
+  controller tools against the same tools plus WSPL and the pretrained authors.
+  Use common observations and budgets. This measures the added toolkit; isolating
+  WSPL syntax from the pretrained authors would require another ablation.
+- Include the untouched system, report calibration and reserved-task performance,
+  and measure retention on unchanged dynamics. Record failures and regressions,
+  not just the selected successful artifact.
+- Attribute every improvement to its deployment location: harness code,
+  executive weights, controller weights, or a combination. Report construction
+  time, model tokens, environment interactions, gradient updates and inference
+  cost separately.
+
+Before implementation and launch, specify the exact Opus version/provider,
+mechanism family, data splits, number of independent attempts, editable surfaces,
+model-call and training budgets, stopping rules, deployment format and success
+criteria. A fixed interaction/compute allowance is intended; numerical limits
+have not yet been chosen. Any scientific run requires its own approved source
+manifest. No full robotics or continual self-improvement claim follows from a
+single successful repair.
+
+### Related work and improvement memory
+
+[EMPIRIC](https://arxiv.org/html/2609.35047v1) learns executable residual dynamics
+on top of a physics engine, infers parameters and hidden state, and uses experiments
+and simulation for planning. Our current blocks implement control rather than
+predictive world models. Its experiment-driven identification loop motivates
+withholding the changed mechanism in this proposal; our existing known-reversal
+result does not establish that ability.
+
+[Self-Improvement Memory Enables Continual Recursive Self-Improvement](https://arxiv.org/html/2611.18856v1), submitted November13, motivates retaining
+the engineering history alongside executable artifacts. SIM conditions the
+harness optimizer, while task-model weights remain frozen. It is evidence about
+continued harness optimization, not demonstrated durable neural capability edits.
+
+Adopt a small structured experiment memory as infrastructure, without adding a
+separate memory-effectiveness study yet. Each entry records: problem hypothesis;
+artifact/version; proposed modification and rationale; predicted outcome recorded
+before evaluation; actual result and regressions; data/budget context; and links
+to evidence. Preserve unsuccessful attempts as well as successes. Opus receives
+the acquisition history, not reserved evaluation answers. Prior results can inform
+design, but fresh confirmation scenes must remain outside its feedback loop.
+
+For example: known actuator reversal; movement-only replacement; predicted
+recovery without executive changes; observed restoration of the same37/48missions;
+scope limited to supplied dynamics in a kinematic environment. The unresolved
+question is whether an agent can infer an unknown change and achieve comparable
+recovery. Extending memory-backed optimization to controller or executive weights
+is our proposed experiment, not a result established by SIM.
+
+## Architecture of the existing controller system
+
 The controller experiments connect **two separately trained LoRA adapters on
 Qwen2.5-Coder-1.5B-Instruct**. The **block author** generates WSPL programs that
 compile into small neural controllers. The **executive** generates task programs
@@ -230,7 +367,7 @@ each program token given the specification and the correct preceding tokens.
 Cross-entropy is computed over the assistant program tokens, including its chat
 termination. Backpropagation updates the LoRA matrices.
 
-| Training choice | Block author | Latest executive |
+| Training choice | Block author | Expanded whole-plan executive (v2) |
 |---|---|---|
 | Input | Functional contract, ports and parameters | Scene, goals and ordering constraints |
 | Target program | WSPL neural-block source | Control DSL action sequence |
@@ -299,8 +436,9 @@ The experimental **WSPL 0.3 unified frontend** now connects typed module
 definitions, compiled-weight edits and typed task composition through
 `skillforge.wspl_language.compile_source`. See the
 [unification specification](docs/wspl/UNIFICATION_V1.md) and the
-[prepared executive repeat](docs/wspl/UNIFIED_EXECUTIVE_V1.md). The repeat is not
-yet launched; the controller results above used the earlier interfaces.
+[executive repeat protocol](docs/wspl/UNIFIED_EXECUTIVE_V1.md). The
+[completed repeat](docs/wspl/UNIFIED_EXECUTIVE_V1_RESULTS.md) did not preserve
+long-mission performance; compact task syntax remains the preferred interface.
 
 ```text
 wspl 0.3;
