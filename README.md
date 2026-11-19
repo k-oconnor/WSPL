@@ -1183,6 +1183,17 @@ ignored `artifacts/local_paths.json` for machine bindings.
 
 ## Project record
 
+### Current focus: teach the weaker executive
+
+The [executive teaching design](docs/wspl/EXECUTIVE_TEACHING_DESIGN_V1.md) makes
+the small LLM choose probes, controller selection, retries, goals and stopping.
+The host will no longer run the factory pilot's automatic diagnostic selector.
+The main comparison holds the motor library fixed and compares Astra-taught
+continuation with both the unchanged executive and a matched interface/rehearsal
+continuation. This separates learning to use acquired skills from simply adding
+tools or training a new command syntax. Interpreter groundwork is tested; teacher
+collection, continuation training and deployment evaluation are not launched.
+
 ### Prepared factory-interface pilot
 
 The [active observation and controller-authoring pilot](docs/wspl/FACTORY_PILOT_V1.md)

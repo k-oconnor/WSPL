@@ -1,3 +1,14 @@
+November 19, 2026: Kevin redirected the next study toward teaching the weaker LLM
+executive. The factory pilot's successful controller repair is not evidence of
+student learning: a host-owned probe/selector/waypoint loop made its decisions.
+Primary planned comparison: unchanged executive, interface/rehearsal continuation,
+and Astra-taught continuation, all with the SAME frozen motor library/documentation.
+The student must choose probes, modules, retries, goals and stopping. New teaching
+traces are required; the eight factory authoring replies are not a deployment
+demonstration corpus. See docs/wspl/EXECUTIVE_TEACHING_DESIGN_V1.md. First interpreter
+pass and eight ownership tests exist; no calls, training, student evaluation or
+new source-pin approval. Full runner/preflight remains to be prepared.
+
 November 12, 2026: example-driven Python addition complete. Six valid predictors;
 Python beats saved native WSP and WSPL factual RMSE on 5/6 tasks and both AdamW
 baselines on 6/6. Native wins ERCOT and ACIC effect estimation; Python wins IHDP
