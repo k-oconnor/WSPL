@@ -1,6 +1,20 @@
 # Astra-led student capability engineering
 
-Status: design and implementation plan; not launch-ready or scientifically approved.
+Status: implemented pilot undergoing final preparation; not scientifically approved.
+
+Implementation: supervisor_session.py, supervisor_transport.py, supervisor_workspace.py,
+supervisor_workbench.py and supervisor_evaluation.py; source-gated runner
+experiments/run_astra_supervisor.py. The implemented tool transport uses a persistent
+filesystem and complete visible transcript across fresh Astra requests. A general
+Python-program tool executes arbitrary research code in a separate Linux sandbox;
+it is not native CLI shell access or a claim of resumed hidden reasoning. Requested
+camera frames are archived and attached to the next author request. This replaces
+the former fixed action/fit recipe with general coding authority.
+
+The concrete envelope allocates 20 hours to development and a separate four-hour
+final evaluator guard, with eight cumulative GPU job-hours during development and
+64 author responses. No automatic retry after interruption. GPU and robot runtime
+is an isolated Linux environment; the previous Windows environments are unchanged.
 
 ## Question and motivation
 
@@ -90,6 +104,14 @@ Report non-equivalence honestly if an ablation cannot execute. Hashing a model
 does not establish that its decisions are causally used: trace actual Qwen calls,
 action derivation and added policies. Do not call a hardcoded controller student
 learning merely because it resides inside a module named adapter.
+
+The initial implementation records Qwen forward-call counts in deployment RPC
+traces and archives the complete submitted source. These counts are diagnostic,
+not causal evidence, and are not tamper-proof against deliberately evasive code.
+The automatic gate reports SYSTEM performance only. Component attribution and
+applicable ablations remain a required audit before claiming student learning;
+they are not silently inferred from a successful system score. No automatic
+post-test editing or additional scored ablation is included in this launch.
 
 ## Sealed evaluation and stopping
 

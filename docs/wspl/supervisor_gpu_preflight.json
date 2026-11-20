@@ -1,0 +1,9 @@
+{
+  "cameras": 2,
+  "cuda_synthetic_update": true,
+  "engineering_only": true,
+  "model_calls": 0,
+  "physics_tick": true,
+  "scientific_episodes": 0,
+  "status": "passed"
+}

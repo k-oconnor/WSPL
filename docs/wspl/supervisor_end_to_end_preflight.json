@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "scripted_supervisor": true,
+  "python_job": true,
+  "frozen_submission": true,
+  "offline_policy": true,
+  "paired_physics_starts": true,
+  "deliberate_failure_scored_correctly": true,
+  "model_calls": 0,
+  "scientific_episodes": 0
+}

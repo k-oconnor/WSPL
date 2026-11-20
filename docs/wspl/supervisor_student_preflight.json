@@ -1,0 +1,9 @@
+{
+  "base_unchanged": true,
+  "engineering_only": true,
+  "exact_logits_restored": true,
+  "parent_restored": true,
+  "peak_allocated_bytes": 3476517888,
+  "status": "passed",
+  "synthetic_update": true
+}

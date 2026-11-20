@@ -1,0 +1,12 @@
+{
+  "bundle_verified": true,
+  "cpu_job_gpu_hidden": true,
+  "descendant_timeout_passed": true,
+  "engineering_only": true,
+  "episode_state_reset": true,
+  "host_files_hidden": true,
+  "model_calls": 0,
+  "network_disabled": true,
+  "scientific_episodes": 0,
+  "status": "passed"
+}
