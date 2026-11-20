@@ -1,0 +1,14 @@
+{
+  "parent": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-astra-supervisor-v3\\results\\astra_supervisor_v3",
+  "completed_research_responses": 2,
+  "calls_already_used": 5,
+  "maximum_additional_calls": 59,
+  "previous_elapsed_seconds": 579.1061127185822,
+  "workspace_files": 8,
+  "prompt_identical": true,
+  "persistence_reused": true,
+  "parent_files": 137,
+  "resources": 28416,
+  "model_calls": 0,
+  "offline_prompt": "passed"
+}
