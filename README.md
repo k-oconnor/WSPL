@@ -13,6 +13,16 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 
 ## Current research status
 
+**Astra-led student adaptation — next experiment, design only:** the prior
+fixed-recipe teaching pilot produced successful Astra demonstrations but did not
+reliably transfer adaptation to Qwen. The proposed replacement gives Astra a
+tool-enabled engineering workspace, full development-simulator access, and
+control over weights, LoRA, gradients and attention/KV interventions. Final
+deployment removes Astra and uses a separately sealed evaluator. Improvements
+to Qwen's decisions are distinguished from added external controllers. See the
+[supervisor protocol and implementation checklist](docs/wspl/ASTRA_SUPERVISOR_V1.md).
+No supervisor run has launched.
+
 **November 17, 2026 — neural controller authoring and composition:** a fine-tuned
 Qwen2.5-Coder-1.5B author generated 96/96 behavior-correct WSPL neural blocks and
 supported 32/32 composed workcell missions. A separately trained executive writes
