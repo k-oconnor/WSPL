@@ -20,6 +20,15 @@ def run(constructor,output_dir,config):
         for index,(path,h) in enumerate(config['resources'].items()):
             if digest(path)!=h:raise ValueError('Bound resource changed: '+path)
             if index%250==0:report('verifying',checked=index+1,total=len(config['resources']))
+        if 'linux_runtime_manifest' in config:
+            report('verifying_linux_runtime')
+            checked=subprocess.run(['wsl.exe','-d','Ubuntu','--',config['runtime']+'/bin/python',
+                linux_path(config['runtime_verifier']),linux_path(config['linux_runtime_manifest']),
+                config['linux_runtime_sha256']],capture_output=True,text=True,encoding='utf8',timeout=900)
+            (out/'linux_verification.stdout.log').write_text(checked.stdout,encoding='utf8')
+            (out/'linux_verification.stderr.log').write_text(checked.stderr,encoding='utf8')
+            if checked.returncode:raise ValueError('Native Linux runtime verification failed; no model calls')
+            save(out/'linux_runtime_receipt.json',json.loads(checked.stdout))
         study=constructor();assert study.kind=='astra_supervisor_v1'
         work=out/'development';work.mkdir()
         baseline=out/'baseline_candidate';baseline.mkdir()
