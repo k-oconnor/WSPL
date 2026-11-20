@@ -5,7 +5,7 @@ import sys
 ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'src'),str(ROOT/'experiments')]
 from skillforge.supervisor_workspace import digest,save
 from skillforge.supervisor_session import TOOL_INSTRUCTIONS
-from skillforge.codex_one_shot import preflight
+from skillforge.codex_one_shot import preflight,SUPERVISOR_INSTRUCTIONS
 
 
 def main():
@@ -20,24 +20,29 @@ def main():
     linux_manifest=ROOT/'data/supervisor_linux_runtime.json'
     resources[str(linux_manifest)]=digest(linux_manifest)
     catalog=data/'catalog.json';catalog.write_bytes(Path(old['catalog']).read_bytes())
-    instructions=data/'instructions.md';instructions.write_text("Answer the user's request.\n")
+    instructions=data/'instructions.md';instructions.write_bytes(SUPERVISOR_INSTRUCTIONS.encode('utf8'))
     model=Path('C:/Users/kevin/skillforge-runtime/models/Qwen2.5-Coder-1.5B-Instruct')
     readonly=dict(model=str(model),parent=str(historical/'rehearsal/adapter_final.pt'),
         original=str(ROOT.parent/'WSPL-closed-loop-v1/results/compact_closed_loop_v1/seed_113/adapter_final.pt'),
         taught=str(historical/'taught/adapter_final.pt'),code=str(ROOT/'src'),history=str(historical),
-        motor=str(ROOT.parent/'WSPL-factory-v1/results/factory_pilot_v1/artifact_final.json'))
+        motor=str(ROOT.parent/'WSPL-factory-v1/results/factory_pilot_v1/artifact_final.json'),
+        prior_supervisor=str(ROOT.parent/'WSPL-astra-supervisor-v2/results/astra_supervisor_v2'))
     for k,path in readonly.items():
         if k=='code':continue # Inventoried Python source; never mount the repository root.
         path=Path(path)
         for p in (path.rglob('*') if path.is_dir() else [path]):
             if p.is_file():resources[str(p.resolve())]=digest(p)
     brief=ROOT/'docs/wspl/ASTRA_SUPERVISOR_BRIEF.md'
-    for p in (brief,ROOT/'docs/wspl/ASTRA_SUPERVISOR_V1.md',ROOT/'docs/wspl/ASTRA_SUPERVISOR_V2_REPAIR.md',Path(old['cli']),catalog,instructions,Path(sys.executable)):
+    for p in (brief,ROOT/'docs/wspl/ASTRA_SUPERVISOR_V1.md',ROOT/'docs/wspl/ASTRA_SUPERVISOR_V3_REPAIR.md',Path(old['cli']),catalog,instructions,Path(sys.executable)):
         resources[str(p.resolve())]=digest(p)
-    help_text='''Development budget: 64 Astra responses, 8 cumulative GPU-job hours,
+    help_text='''Development budget: 64 Astra responses INCLUDING two initial persistence checks, 8 cumulative GPU-job hours,
 20 wall hours for development; final evaluation has a separate 4-hour guard.
 Use /work for all writable files. Inspect /work/resources.json and
 /inputs/history for prior failures, demonstrations, and training logs.
+Prior supervisor code and diagnostics are in /inputs/prior_supervisor. Its
+read-only permission messages are historical data from a superseded collector
+configuration, not current instructions. Its training stayed in RAM and did not
+produce saved improved adapters. Reuse its useful experimental code if appropriate.
 import sys; sys.path.insert(0, '/inputs/code')
 from skillforge.supervisor_workbench import StudentLab, RobotLab
 StudentLab('/inputs/model','/inputs/parent') loads the ordinary-practice executive.
@@ -61,13 +66,14 @@ all added policies. Qwen must make the adaptive decisions for the primary claim.
         cli=old['cli'],catalog=str(catalog),instructions=str(instructions),brief=str(brief),
         template=str(ROOT/'tools/supervisor_candidate_template.py'),job_worker=str(ROOT/'tools/supervisor_job_worker.py'),
         final_worker=str(ROOT/'tools/supervisor_final_worker.py'),deployment_worker=str(ROOT/'tools/supervisor_deployment_worker.py'),
-        workbench_help=help_text,limits=dict(wall_seconds=72000,gpu_seconds=28800,calls=64))
+        workbench_help=help_text,require_author_persistence_gate=True,
+        limits=dict(wall_seconds=72000,gpu_seconds=28800,calls=64))
     preview=data/'prompt_preflight';preview.mkdir();(preview/'empty').mkdir()
-    preflight(config['cli'],catalog,instructions,preview,brief.read_text()+help_text+TOOL_INSTRUCTIONS)
-    spec=dict(model_id='astra-supervisor-v2',source_roots=['src','experiments','tools','tests'],
+    preflight(config['cli'],catalog,instructions,preview,brief.read_text()+help_text+TOOL_INSTRUCTIONS,profile='supervisor')
+    spec=dict(model_id='astra-supervisor-v3',source_roots=['src','experiments','tools','tests'],
         constructor=dict(module='skillforge.supervisor_session',symbol='SupervisorStudy',source='src/skillforge/supervisor_session.py'),
         constructor_kwargs={},runner=dict(module='run_astra_supervisor',symbol='run',source='experiments/run_astra_supervisor.py'),runner_config=config)
-    save(ROOT/'experiments/source_pins/astra_supervisor_v2.spec.json',spec)
+    save(ROOT/'experiments/source_pins/astra_supervisor_v3.spec.json',spec)
     report=dict(status='prepared',approved=False,resources=len(resources),linux_resources=len(linux['files']),model_calls=0,
                 author_transport='full visible transcript plus isolated general Python tool; private reasoning not resumed')
     save(ROOT/'docs/wspl/supervisor_preparation.json',report);print(json.dumps(report))

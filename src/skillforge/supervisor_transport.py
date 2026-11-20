@@ -30,7 +30,7 @@ class ToolBridge:
         if transcript and transcript[-1]['role']=='tool':
             frames=[Path(p) for p in transcript[-1]['content'].get('archived_images',[])]
         text,audit=collect(self.config['cli'],self.config['catalog'],self.config['instructions'],
-            folder/'collection',prompt,1200,self.expired,images=frames)
+            folder/'collection',prompt,1200,self.expired,images=frames,profile='supervisor')
         save(folder/'author_usage.json',audit)
         return text
     def expired(self):

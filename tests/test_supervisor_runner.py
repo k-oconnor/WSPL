@@ -9,6 +9,20 @@ from skillforge.supervisor_workspace import freeze
 
 
 class RunnerTests(unittest.TestCase):
+    def test_failed_persistence_prevents_research_and_evaluation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);out=root/'out';out.mkdir()
+            template=root/'policy.py';template.write_text('class Policy: pass')
+            brief=root/'brief';brief.write_text('synthetic')
+            config=dict(resources={},template=str(template),brief=str(brief),workbench_help='synthetic',
+                limits=dict(wall_seconds=60,gpu_seconds=30,calls=2),readonly={},
+                require_author_persistence_gate=True)
+            with patch.object(runner,'ToolBridge'),patch.object(runner,'run_gate',side_effect=ValueError('save failed')),patch.object(runner,'SupervisorSession') as session,patch.object(runner.subprocess,'Popen') as process:
+                with self.assertRaisesRegex(ValueError,'save failed'):
+                    runner.run(lambda:SimpleNamespace(kind='astra_supervisor_v1'),out,config)
+                session.assert_not_called();process.assert_not_called()
+            self.assertEqual(json.loads((out/'status.json').read_text())['status'],'failed')
+
     def test_seal_only_after_submission_and_no_teacher_at_eval(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);out=root/'out';out.mkdir()

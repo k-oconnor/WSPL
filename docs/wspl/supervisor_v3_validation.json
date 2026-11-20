@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "focused_tests": 48,
+  "model_calls": 0,
+  "scientific_training_runs": 0,
+  "permission_preview_sha256": "5a92ccf944ee5af1ec379749ba84e1bfec4eb0b04ed092b3311881a44ca05bc0",
+  "actual_cli_permissions": "danger-full-access; native execution tools disabled",
+  "persistence": {
+    "status": "passed",
+    "author_calls": 2,
+    "weights_sha256": "54633420dbcd026ab6814a9b23fa72f5b7a1f5cb88176faaab4dddf1c9a6b1f1",
+    "independent_export_verified": true,
+    "separate_process_reload_verified": true,
+    "model_calls": 0,
+    "scripted_requests": 2
+  },
+  "end_to_end": {
+    "status": "passed",
+    "scripted_supervisor": true,
+    "python_job": true,
+    "frozen_submission": true,
+    "offline_policy": true,
+    "paired_physics_starts": true,
+    "deliberate_failure_scored_correctly": true,
+    "model_calls": 0,
+    "scientific_episodes": 0
+  },
+  "native_linux_verification": {
+    "files": 35406,
+    "inventory_sha256": "485340d07e0e40a47cf69bdf553145bbaefc974e9d8aa3ee7feb762656cf44c0"
+  },
+  "limitation": "Scripted persistence test only. Actual two-response Astra gate requires approved launch."
+}

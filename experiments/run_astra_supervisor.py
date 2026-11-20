@@ -10,6 +10,7 @@ from skillforge.supervisor_workspace import Budget,freeze,save,digest
 from skillforge.supervisor_session import SupervisorSession
 from skillforge.supervisor_transport import ToolBridge,linux_path
 from skillforge.reliable_json import status
+from skillforge.supervisor_persistence import run_gate
 
 
 def run(constructor,output_dir,config):
@@ -44,7 +45,14 @@ def run(constructor,output_dir,config):
         budget=Budget(out/'budget.json',**config['limits'])
         bridge=ToolBridge(config,work,out/'budget.json',config['limits'])
         brief=Path(config['brief']).read_text(encoding='utf8')+'\n'+config['workbench_help']
+        gate_history=[]
+        if config.get('require_author_persistence_gate'):
+            report('author_persistence_gate')
+            gate_history=run_gate(out/'persistence_check',work,budget,bridge)
         session=SupervisorSession(out/'supervisor',work,budget,brief,bridge.execute,bridge.collect)
+        if gate_history:
+            session.state['transcript']=gate_history
+            session._save()
         while session.state['phase']=='ready':
             report('supervising',turn=session.state['turn'],calls_used=budget.state['calls_used'])
             session.step()
@@ -57,7 +65,9 @@ def run(constructor,output_dir,config):
                   for i,c in enumerate([c for c in ('ordinary','changed','switch','return') for _ in range(8)])]
         save(sealed/'missions.json',missions)
         save(out/'frozen.json',dict(submission=submission.name,baseline=baseline_bundle.name,
-            sealed_sha256=digest(sealed/'missions.json'),supervisor_responses=session.state['turn']))
+            sealed_sha256=digest(sealed/'missions.json'),supervisor_responses=session.state['turn'],
+            persistence_responses=2 if gate_history else 0,
+            total_author_calls=json.loads((out/'budget.json').read_text())['calls_used']))
         evaluation=dict(runtime=config['runtime'],python_home=config['python_home'],
             deployment_inputs={k:linux_path(config['readonly'][k]) for k in ('model','parent','code')},
             deployment_worker=linux_path(config['deployment_worker']),motor_artifact=linux_path(config['readonly']['motor']),

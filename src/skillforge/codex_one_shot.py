@@ -16,9 +16,22 @@ DISABLED = ('code_mode code_mode_host shell_tool unified_exec unified_exec_tty '
     'fast_mode ultrafast_mode memories request_permissions_tool send_message_to_user_async').split()
 
 
-def settings(catalog, instructions):
+SUPERVISOR_INSTRUCTIONS = """Answer the user's request.
+You are authorized to create, modify, save and reload files through the delegated
+Python tool in its persistent Linux /work workspace, including trained weights,
+LoRA adapters, datasets, programs and deployment artifacts. /inputs mounts are
+read-only. The Python worker has no network and cannot access the host filesystem.
+The collector's native shell tools are disabled; its permission display does not
+restrict the separately delegated /work tool. Never infer a read-only /work policy
+from historical logs: those are evidence from a superseded misconfigured run.
+"""
+
+
+def settings(catalog, instructions, profile='readonly'):
+    if profile not in ('readonly','supervisor'):raise ValueError('Unknown collector profile')
+    sandbox='danger-full-access' if profile=='supervisor' else 'read-only'
     return ['model="gpt-6-astra"', 'model_reasoning_effort="xhigh"',
-        'approval_policy="never"', 'sandbox_mode="read-only"', 'web_search="disabled"',
+        'approval_policy="never"', 'sandbox_mode='+json.dumps(sandbox), 'web_search="disabled"',
         'forced_login_method="chatgpt"', 'model_provider="openai"',
         'project_doc_max_bytes=0', 'skills.include_instructions=false',
         'suppress_unstable_features_warning=true',
@@ -37,12 +50,12 @@ def environment():
     return env
 
 
-def command(cli, catalog, instructions, workspace, answer, large_prompt=False):
+def command(cli, catalog, instructions, workspace, answer, large_prompt=False,profile='readonly'):
     args=[str(cli),'--no-daemon','exec','--strict-config','--ignore-user-config',
           '--ignore-rules','--ephemeral','--skip-git-repo-check','--json','--color','never',
           '--model','gpt-6-astra',
           '-C',str(workspace),'--output-last-message',str(answer)]
-    for setting in settings(catalog,instructions):args+=['-c',setting]
+    for setting in settings(catalog,instructions,profile):args+=['-c',setting]
     if large_prompt:args+=['-c','model_context_window=872000','-c','model_auto_compact_token_limit=800000']
     return args+['-']
 
@@ -79,11 +92,11 @@ def audit_events(events, answer):
     return dict(thread_id=threads[0],usage=usage,agent_messages=len(messages),tool_calls=0)
 
 
-def preflight(cli,catalog,instructions,folder,prompt,images=()):
+def preflight(cli,catalog,instructions,folder,prompt,images=(),profile='readonly'):
     """Offline rendering only, with an empty auth/config home; no model call."""
     offline=folder/'offline-home';offline.mkdir()
     args=[str(cli),'--no-daemon','debug','prompt-input']
-    for setting in settings(catalog,instructions):args+=['-c',setting]
+    for setting in settings(catalog,instructions,profile):args+=['-c',setting]
     # debug prompt-input has no file/stdin option. Large prompts use a digest
     # sentinel to audit context; actual collection still sends the full stdin.
     large=len(prompt.encode('utf-16-le'))>16000
@@ -100,7 +113,7 @@ def preflight(cli,catalog,instructions,folder,prompt,images=()):
     preview=json.loads(result.stdout)
     if images:
         audit_image_preview(preview,images)
-    audit_preview(preview,preview_prompt)
+    audit_preview(preview,preview_prompt,profile)
     (folder/'preflight_binding.json').write_text(json.dumps(dict(
         mode='context_only_digest_sentinel' if large else 'full_prompt',
         prompt_sha256=digest,prompt_utf8_bytes=len(prompt.encode('utf-8')),
@@ -127,7 +140,7 @@ def audit_image_preview(preview,images):
     users[-1]['content']=[parts[-1]]
 
 
-def audit_preview(messages,prompt):
+def audit_preview(messages,prompt,profile='readonly'):
     tools=[];developers=[];users=[]
     for m in messages:
         if m.get('type')=='additional_tools':
@@ -141,15 +154,22 @@ def audit_preview(messages,prompt):
             else:raise ValueError('unexpected prompt role')
         else:raise ValueError('unexpected prompt item')
     if tools!=['request_user_input']:raise ValueError('unexpected tool exposure')
-    if (len(developers)!=3 or developers[0].strip()!="Answer the user's request."
+    expected=SUPERVISOR_INSTRUCTIONS.strip() if profile=='supervisor' else "Answer the user's request."
+    if (len(developers)!=3 or developers[0].replace('\r\n','\n').strip()!=expected
         or not developers[1].startswith('<permissions instructions>')
         or not developers[2].startswith('<collaboration_mode># Collaboration Mode: Default')):
         raise ValueError('unexpected developer context')
+    if profile=='supervisor':
+        permissions=developers[1]
+        if ('`sandbox_mode` is `danger-full-access`' not in permissions
+            or 'The sandbox only permits reading files' in permissions
+            or '`sandbox_mode` is `read-only`' in permissions):
+            raise ValueError('Supervisor permission contract is not writable')
     if len(users)!=2 or not users[0].startswith('<environment_context>') or users[1]!=prompt:
         raise ValueError('unexpected user context')
 
 
-def collect(cli, catalog, instructions, folder, prompt, seconds, should_stop, images=()):
+def collect(cli, catalog, instructions, folder, prompt, seconds, should_stop, images=(),profile='readonly'):
     folder=Path(folder);folder.mkdir(exist_ok=False)
     workspace=folder/'empty';workspace.mkdir()
     archived=[]
@@ -162,9 +182,9 @@ def collect(cli, catalog, instructions, folder, prompt, seconds, should_stop, im
             if im.format!='PNG' or im.size!=(256,256):raise ValueError('Expected 256x256 PNG frame')
             im.verify()
         copy=folder/f'input_{i:02d}.png';copy.write_bytes(data);archived.append(copy.resolve())
-    preflight(cli,catalog,instructions,folder,prompt,archived)
+    preflight(cli,catalog,instructions,folder,prompt,archived,profile=profile)
     answer=folder/'answer.md'
-    args=command(cli,catalog,instructions,workspace.resolve(),answer.resolve(),large_prompt=len(prompt.encode('utf-16-le'))>16000)
+    args=command(cli,catalog,instructions,workspace.resolve(),answer.resolve(),large_prompt=len(prompt.encode('utf-16-le'))>16000,profile=profile)
     if archived:
         args=args[:-1]
         for path in archived:args+=['--image',str(path)]
