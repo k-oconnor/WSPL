@@ -5,26 +5,26 @@
     {
       "condition": "ordinary",
       "success": true,
-      "decisions": 9,
-      "ticks": 66
+      "decisions": 11,
+      "ticks": 75
     },
     {
       "condition": "changed",
       "success": true,
-      "decisions": 10,
-      "ticks": 68
+      "decisions": 11,
+      "ticks": 74
     },
     {
       "condition": "switch",
       "success": true,
-      "decisions": 11,
-      "ticks": 78
+      "decisions": 13,
+      "ticks": 86
     },
     {
       "condition": "return",
       "success": true,
-      "decisions": 10,
-      "ticks": 68
+      "decisions": 12,
+      "ticks": 75
     }
   ],
   "model_calls": 0

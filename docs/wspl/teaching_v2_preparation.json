@@ -1,0 +1,8 @@
+{
+  "status": "prepared",
+  "approved": false,
+  "resources": 36040,
+  "historical_files": 513,
+  "prompt_tokens": 1192,
+  "new_model_calls": 0
+}

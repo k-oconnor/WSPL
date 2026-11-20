@@ -69,7 +69,10 @@ class StudentExecutiveEpisode:
                     command=np.clip(values(self.modules[self.selected],error),-.2,.2)
                     self.session.act([*command,-1.],1);used+=1
                     error=goal-np.asarray(self.session.observe()['nominal_tool_position_m'])
-                    stable=stable+1 if float(np.linalg.norm(error))<=.005 else 0
+                    # Leave a 1 mm margin against the independent 5 mm physical
+                    # criterion. This is sensor-based completion, not a certificate:
+                    # encoder noise is not deterministically bounded.
+                    stable=stable+1 if float(np.linalg.norm(error))<=.004 else 0
                     if stable>=3:break
                 measured=float(np.linalg.norm(goal-np.asarray(self.session.observe()['nominal_tool_position_m'])))
                 reached=stable>=3
@@ -95,7 +98,8 @@ def prompt(observation,module_documentation):
             'Probe components must lie in [-0.2,0.2], ticks must be an integer1..20. '
             'Control runs at20Hz; a translation input of1 nominally requests a0.05m target increment, not guaranteed displacement. '
             'Reach attempts only the requested waypoint for a bounded chunk; it does not retry or advance goals. '
-            'Status observed_reached is a sensor-based observation, not a perfect physical certificate. '
+            'Status observed_reached requires three consecutive measured samples within 4 mm; '
+            'it is a sensor-based observation, not a perfect physical certificate. '
             'Calibration may differ or change; do not assume an error means a particular fault. '
             'Preserve correct behavior on ordinary missions.\nModule documentation:\n'+
             json.dumps(module_documentation)+'\nObservation:\n'+json.dumps(observation))
