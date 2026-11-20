@@ -11,6 +11,7 @@ from skillforge.supervisor_session import SupervisorSession
 from skillforge.supervisor_transport import ToolBridge,linux_path
 from skillforge.reliable_json import status
 from skillforge.supervisor_persistence import run_gate
+from skillforge.supervisor_recovery import restore
 
 
 def run(constructor,output_dir,config):
@@ -31,22 +32,26 @@ def run(constructor,output_dir,config):
             if checked.returncode:raise ValueError('Native Linux runtime verification failed; no model calls')
             save(out/'linux_runtime_receipt.json',json.loads(checked.stdout))
         study=constructor();assert study.kind=='astra_supervisor_v1'
-        work=out/'development';work.mkdir()
+        brief=Path(config['brief']).read_text(encoding='utf8')+'\n'+config['workbench_help']
+        recovering=bool(config.get('recovery_parent'))
+        work=out/'development'
+        if recovering:restore(config['recovery_parent'],out,brief,config['limits'])
+        else:work.mkdir()
         baseline=out/'baseline_candidate';baseline.mkdir()
         shutil.copyfile(config['template'],baseline/'policy.py')
         save(baseline/'submission.json',dict(entrypoint='policy.py',description='Saved ordinary-practice Qwen executive'))
         baseline_bundle=freeze(baseline,out/'baseline_store',dict(kind='ordinary_practice'))
-        shutil.copytree(baseline,work/'candidate')
+        if not recovering:shutil.copytree(baseline,work/'candidate')
         # Plain files tell Astra where explicitly mounted dependencies are located.
-        save(work/'resources.json',dict(mounts=list(config['readonly']),model='/inputs/model',
+        if not recovering:save(work/'resources.json',dict(mounts=list(config['readonly']),model='/inputs/model',
             starting_adapter='/inputs/parent',motor_artifact='/inputs/motor',source='/inputs/code',
             original_adapter='/inputs/original',taught_adapter='/inputs/taught'))
-        (work/'START_HERE.md').write_text(config['workbench_help'],encoding='utf8')
+        if not recovering:(work/'START_HERE.md').write_text(config['workbench_help'],encoding='utf8')
         budget=Budget(out/'budget.json',**config['limits'])
         bridge=ToolBridge(config,work,out/'budget.json',config['limits'])
         brief=Path(config['brief']).read_text(encoding='utf8')+'\n'+config['workbench_help']
         gate_history=[]
-        if config.get('require_author_persistence_gate'):
+        if config.get('require_author_persistence_gate') and not recovering:
             report('author_persistence_gate')
             gate_history=run_gate(out/'persistence_check',work,budget,bridge)
         session=SupervisorSession(out/'supervisor',work,budget,brief,bridge.execute,bridge.collect)
@@ -66,7 +71,7 @@ def run(constructor,output_dir,config):
         save(sealed/'missions.json',missions)
         save(out/'frozen.json',dict(submission=submission.name,baseline=baseline_bundle.name,
             sealed_sha256=digest(sealed/'missions.json'),supervisor_responses=session.state['turn'],
-            persistence_responses=2 if gate_history else 0,
+            persistence_responses=2 if gate_history or recovering else 0,
             total_author_calls=json.loads((out/'budget.json').read_text())['calls_used']))
         evaluation=dict(runtime=config['runtime'],python_home=config['python_home'],
             deployment_inputs={k:linux_path(config['readonly'][k]) for k in ('model','parent','code')},
