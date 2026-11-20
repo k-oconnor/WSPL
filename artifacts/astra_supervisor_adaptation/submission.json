@@ -1,0 +1,4 @@
+{
+  "entrypoint": "policy.py",
+  "description": "Persisted Qwen LoRA executive v2: learned feedback-sensitive decisions, unchanged common motors, disclosed action-token codec and fixed bounded probe. Includes provenance, negative results and portable ablations."
+}

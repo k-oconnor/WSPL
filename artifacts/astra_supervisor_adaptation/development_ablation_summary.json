@@ -1,0 +1,287 @@
+[
+  {
+    "arm": "v2_raw",
+    "group_columns": [
+      "n",
+      "correct",
+      "valid_code"
+    ],
+    "groups": {
+      "binding": [
+        256,
+        256,
+        256
+      ],
+      "progress": [
+        64,
+        64,
+        64
+      ],
+      "stall": [
+        64,
+        64,
+        64
+      ]
+    },
+    "pair_columns": [
+      "n",
+      "both_correct",
+      "action_changed"
+    ],
+    "pairs": {
+      "progress/stall": [
+        64,
+        64,
+        64
+      ],
+      "binding_0_0/binding_1_0": [
+        64,
+        64,
+        64
+      ],
+      "binding_0_1/binding_1_1": [
+        64,
+        64,
+        64
+      ],
+      "binding_0_0/binding_0_1": [
+        64,
+        64,
+        64
+      ],
+      "binding_1_0/binding_1_1": [
+        64,
+        64,
+        64
+      ]
+    }
+  },
+  {
+    "arm": "v2_without_feedback",
+    "group_columns": [
+      "n",
+      "correct",
+      "valid_code"
+    ],
+    "groups": {
+      "binding": [
+        256,
+        127,
+        256
+      ],
+      "progress": [
+        64,
+        0,
+        64
+      ],
+      "stall": [
+        64,
+        64,
+        64
+      ]
+    },
+    "pair_columns": [
+      "n",
+      "both_correct",
+      "action_changed"
+    ],
+    "pairs": {
+      "progress/stall": [
+        64,
+        0,
+        0
+      ],
+      "binding_0_0/binding_1_0": [
+        64,
+        0,
+        0
+      ],
+      "binding_0_1/binding_1_1": [
+        64,
+        0,
+        1
+      ],
+      "binding_0_0/binding_0_1": [
+        64,
+        63,
+        64
+      ],
+      "binding_1_0/binding_1_1": [
+        64,
+        0,
+        64
+      ]
+    }
+  },
+  {
+    "arm": "v2_without_documentation",
+    "group_columns": [
+      "n",
+      "correct",
+      "valid_code"
+    ],
+    "groups": {
+      "binding": [
+        256,
+        128,
+        256
+      ],
+      "progress": [
+        64,
+        64,
+        64
+      ],
+      "stall": [
+        64,
+        64,
+        64
+      ]
+    },
+    "pair_columns": [
+      "n",
+      "both_correct",
+      "action_changed"
+    ],
+    "pairs": {
+      "progress/stall": [
+        64,
+        64,
+        64
+      ],
+      "binding_0_0/binding_1_0": [
+        64,
+        30,
+        64
+      ],
+      "binding_0_1/binding_1_1": [
+        64,
+        34,
+        64
+      ],
+      "binding_0_0/binding_0_1": [
+        64,
+        0,
+        0
+      ],
+      "binding_1_0/binding_1_1": [
+        64,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "arm": "parent_same_codec",
+    "group_columns": [
+      "n",
+      "correct",
+      "valid_code"
+    ],
+    "groups": {
+      "binding": [
+        256,
+        127,
+        256
+      ],
+      "progress": [
+        64,
+        1,
+        45
+      ],
+      "stall": [
+        64,
+        0,
+        49
+      ]
+    },
+    "pair_columns": [
+      "n",
+      "both_correct",
+      "action_changed"
+    ],
+    "pairs": {
+      "progress/stall": [
+        64,
+        0,
+        19
+      ],
+      "binding_0_0/binding_1_0": [
+        64,
+        0,
+        1
+      ],
+      "binding_0_1/binding_1_1": [
+        64,
+        0,
+        0
+      ],
+      "binding_0_0/binding_0_1": [
+        64,
+        0,
+        2
+      ],
+      "binding_1_0/binding_1_1": [
+        64,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "arm": "v1_same_codec",
+    "group_columns": [
+      "n",
+      "correct",
+      "valid_code"
+    ],
+    "groups": {
+      "binding": [
+        256,
+        256,
+        256
+      ],
+      "progress": [
+        64,
+        48,
+        64
+      ],
+      "stall": [
+        64,
+        47,
+        64
+      ]
+    },
+    "pair_columns": [
+      "n",
+      "both_correct",
+      "action_changed"
+    ],
+    "pairs": {
+      "progress/stall": [
+        64,
+        31,
+        31
+      ],
+      "binding_0_0/binding_1_0": [
+        64,
+        64,
+        64
+      ],
+      "binding_0_1/binding_1_1": [
+        64,
+        64,
+        64
+      ],
+      "binding_0_0/binding_0_1": [
+        64,
+        64,
+        64
+      ],
+      "binding_1_0/binding_1_1": [
+        64,
+        64,
+        64
+      ]
+    }
+  }
+]

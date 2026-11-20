@@ -1,0 +1,67 @@
+{
+  "selected_revision": "v2_raw_best_step300",
+  "primary_claim": "Persisted Qwen LoRA makes probe/reach/select/stop decisions from public feedback and documentation through a fixed action codec. No surrounding adaptive solver is deployed.",
+  "starting_adapter": "/inputs/parent: ordinary-practice executive",
+  "training_lineage": [
+    "v1: 600 updates, batch4, next-action full-vocabulary token CE, lr1e-4",
+    "v2 raw: new AdamW, same v1 weights, batch4, cosine lr4e-5 to5e-6 over600 updates; checkpoint at update300 selected by development macro accuracy"
+  ],
+  "external_components": [
+    "Inventory-order module aliases A/B and requested-order goal aliases0..4; reversible ID codec.",
+    "Public-state selection and meter-to-millimeter formatting with rounding; primary uses no computed error ratios or categorical diagnosis.",
+    "P expands to a fixed public raw probe command [+0.12,0,0] for6 ticks. Qwen chooses whether and when to issue it; probe parameters are engineered, not learned.",
+    "A/B and waypoint codes expand to standard select/reach actions. No diagnosis, action override, retry, goal advancement or controller selection occurs outside Qwen."
+  ],
+  "inference": "Unconstrained full-vocabulary argmax of one Qwen output token. No logit mask, KV prefix, attention hook, teacher or test-time weight update.",
+  "motors": "Common frozen library unchanged. tests/frozen_motor.json is an exact copy for optional development replay; Policy does not load it.",
+  "primary_runtime_dependencies": [
+    "/inputs/code",
+    "/inputs/model",
+    "candidate/adapter.pt",
+    "candidate/policy.py",
+    "candidate/representation.py"
+  ],
+  "partitions": {
+    "historical_training": "ordinary missions0..23",
+    "physical_training": "31000..31003 and35000..35023, all four standard conditions",
+    "synthetic_training": "62000..62119 plus42000..42399 numeric and51000..51399 drift augmentations",
+    "checkpoint_selection": "physical31004..31005; synthetic92000..92023,52000..52099 numeric and61000..61099 drift augmentations",
+    "closed_loop_development": "34000..34007 v1;38000..38011 v2 paired comparison;48000..48007 stress;58000..58005 limits",
+    "final_evaluator": "Unavailable and never accessed"
+  },
+  "results": {
+    "standard_v2_raw": "48/48, twelve seeds per condition; ordinary12/12 with zero probes and exactly parent ordinary ticks/decisions",
+    "stress_v2_raw": "96/96 across twelve generated conditions, including standard conditions, gain shifts, late/multiple switches, transient freeze and reversed inventory",
+    "extra_robustness": "6/6 each on paraphrased docs, renamed inventory and added0.6mm executive-feedback noise",
+    "matched_decisions": "384/384; all64/64 pairs correctly respond to progress/stall, probe motion and documentation swaps",
+    "limits": "0/6 each at0.35 nominal gain,0.35 rotated gain and unsupported reverseXY. Oracle correct-motor reaches also0/6 under original budgets at0.35 gains,6/6 with enlarged budgets. Unnecessary student probes remain a limitation.",
+    "ablation": "Erasing feedback or docs destroys corresponding paired sensitivity. Parent with same codec does not reproduce learned decisions. Raw and arithmetic variants both48/48 standard missions; raw selected for simplicity."
+  },
+  "limitations": [
+    "Two documented motor regimes and two-to-five waypoint missions; no universal system-identification claim.",
+    "Single fixed +x probe cannot identify arbitrary three-dimensional actuator faults.",
+    "Unsupported free output tokens raise an error; none occurred in primary reported physical tests.",
+    "Development cases are not a final-evaluator success estimate; checkpoint selection used development labels.",
+    "The v1 intervention bundles representation, single-token loss and counterfactual data; their individual causal contributions are not isolated.",
+    "Weight learning is established with the deployed codec, not with the old raw JSON prompt interface."
+  ],
+  "adapter_sha256": "d3a67a7d84c53d0041d8f6886709acac59723ca31b4c7bd784bd88962bc6c50c",
+  "parent_sha256": "84f2148dd14d46eb50abe60832cad9881fa645f9586b9f9e39d1061f7d40af59",
+  "motor_sha256": "0b98ed9c1f0296d2a9b15ad832ded7da7e758a686dd8a0343b386507032591e5",
+  "persistence_gate": {
+    "nonce": "2420f0e230e14ecb6d6e54c1c6f9be28",
+    "output": [
+      8.0,
+      21.0
+    ],
+    "weights_sha256": "54633420dbcd026ab6814a9b23fa72f5b7a1f5cb88176faaab4dddf1c9a6b1f1"
+  },
+  "resource_accounting_note": "Recorded GPU-job elapsed times total approximately2312.24 seconds (0.643 hours), including packaged validation; this is not total development wall time.",
+  "packaged_validation": {
+    "fresh_process_panel": "384/384 primary decisions; parent-codec ablation reproduced",
+    "fresh_process_physical": "16/16 additional standard missions on seeds68000..68003",
+    "protocol": "Construction, reset, act and close emitted no stdout in the recorded check",
+    "selected_adapter_unchanged": true,
+    "final_evaluation": "Not accessed or run"
+  }
+}

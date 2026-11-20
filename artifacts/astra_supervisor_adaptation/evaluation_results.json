@@ -1,0 +1,1687 @@
+{
+  "status": "complete",
+  "summary": {
+    "ordinary_practice/ordinary": {
+      "n": 8,
+      "success": 8,
+      "probes": 0
+    },
+    "ordinary_practice/changed": {
+      "n": 8,
+      "success": 0,
+      "probes": 0
+    },
+    "ordinary_practice/switch": {
+      "n": 8,
+      "success": 0,
+      "probes": 0
+    },
+    "ordinary_practice/return": {
+      "n": 8,
+      "success": 0,
+      "probes": 0
+    },
+    "submission/ordinary": {
+      "n": 8,
+      "success": 8,
+      "probes": 0
+    },
+    "submission/changed": {
+      "n": 8,
+      "success": 8,
+      "probes": 8
+    },
+    "submission/switch": {
+      "n": 8,
+      "success": 8,
+      "probes": 9
+    },
+    "submission/return": {
+      "n": 8,
+      "success": 8,
+      "probes": 16
+    }
+  },
+  "paired": {
+    "ordinary": {
+      "improvements": 0,
+      "regressions": 0
+    },
+    "changed": {
+      "improvements": 8,
+      "regressions": 0
+    },
+    "switch": {
+      "improvements": 8,
+      "regressions": 0
+    },
+    "return": {
+      "improvements": 8,
+      "regressions": 0
+    }
+  },
+  "exploratory_gate": true,
+  "rows": [
+    {
+      "arm": "ordinary_practice",
+      "mission": 0,
+      "condition": "ordinary",
+      "start_hash": "854fd5337b537d66f8fe95b686658157f542205c9bbace76f3de32652d7999cb",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_7057",
+        "goal_4797",
+        "goal_6226"
+      ],
+      "requested_order": [
+        "goal_7057",
+        "goal_4797",
+        "goal_6226"
+      ],
+      "order_violations": [],
+      "physical_ticks": 89,
+      "decisions": 13,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 186
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 1,
+      "condition": "ordinary",
+      "start_hash": "4db955aadb832319f31113002c41656241d5dbef81cccb06cb4b9b9b68509732",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_8606",
+        "goal_3727",
+        "goal_7249",
+        "goal_7433"
+      ],
+      "requested_order": [
+        "goal_8606",
+        "goal_3727",
+        "goal_7249",
+        "goal_7433"
+      ],
+      "order_violations": [],
+      "physical_ticks": 101,
+      "decisions": 14,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 201
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 2,
+      "condition": "ordinary",
+      "start_hash": "8d2e9ba03e5af416861612724703a89877150a4097acefab9cdbae041d067584",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_9224",
+        "goal_5148",
+        "goal_2907",
+        "goal_3849",
+        "goal_3090"
+      ],
+      "requested_order": [
+        "goal_9224",
+        "goal_5148",
+        "goal_2907",
+        "goal_3849",
+        "goal_3090"
+      ],
+      "order_violations": [],
+      "physical_ticks": 135,
+      "decisions": 18,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 261
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 3,
+      "condition": "ordinary",
+      "start_hash": "9cf2983f2bd9c73c70dc642e8f82668ec226c67cf2c62831891d2d82639f34d7",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_5087",
+        "goal_2275",
+        "goal_2883"
+      ],
+      "requested_order": [
+        "goal_5087",
+        "goal_2275",
+        "goal_2883"
+      ],
+      "order_violations": [],
+      "physical_ticks": 81,
+      "decisions": 12,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 171
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 4,
+      "condition": "ordinary",
+      "start_hash": "8e9f52f2043d67e8e0fca9728bbd5575b4f082bdaa51cbcaa17b521297748e33",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_5662",
+        "goal_4591",
+        "goal_7333",
+        "goal_4057"
+      ],
+      "requested_order": [
+        "goal_5662",
+        "goal_4591",
+        "goal_7333",
+        "goal_4057"
+      ],
+      "order_violations": [],
+      "physical_ticks": 100,
+      "decisions": 14,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 201
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 5,
+      "condition": "ordinary",
+      "start_hash": "4313faf88955a1a8edb5a90d288ae94e99b9ae29ae0301d208a387a3ee6b6bf7",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_7387",
+        "goal_5891",
+        "goal_1172",
+        "goal_5634",
+        "goal_7761"
+      ],
+      "requested_order": [
+        "goal_7387",
+        "goal_5891",
+        "goal_1172",
+        "goal_5634",
+        "goal_7761"
+      ],
+      "order_violations": [],
+      "physical_ticks": 136,
+      "decisions": 18,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 261
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 6,
+      "condition": "ordinary",
+      "start_hash": "2ce569eff5995a0cd921e7575fdbf696da8efa2295dc857d48bf4352351ba0fd",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_7311",
+        "goal_4388",
+        "goal_4342"
+      ],
+      "requested_order": [
+        "goal_7311",
+        "goal_4388",
+        "goal_4342"
+      ],
+      "order_violations": [],
+      "physical_ticks": 74,
+      "decisions": 11,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 156
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 7,
+      "condition": "ordinary",
+      "start_hash": "ee0a93660ddfc723c142ed37a28ac85492da6997f009863266e0af61d4eafd3d",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_2703",
+        "goal_2721",
+        "goal_8547",
+        "goal_8595"
+      ],
+      "requested_order": [
+        "goal_2703",
+        "goal_2721",
+        "goal_8547",
+        "goal_8595"
+      ],
+      "order_violations": [],
+      "physical_ticks": 112,
+      "decisions": 15,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 216
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 8,
+      "condition": "changed",
+      "start_hash": "33880d84024e554e05e5621d0e3324d06b21aca1c714235db2363e7601662b1f",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_8063",
+        "goal_3972",
+        "goal_5022",
+        "goal_8652",
+        "goal_1191"
+      ],
+      "order_violations": [],
+      "physical_ticks": 310,
+      "decisions": 32,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 480
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 9,
+      "condition": "changed",
+      "start_hash": "5353acf6fa55227621599a85178fed8a8290c6e60b117af9869ef8162f8938b3",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_4514",
+        "goal_7532",
+        "goal_2875"
+      ],
+      "order_violations": [],
+      "physical_ticks": 230,
+      "decisions": 24,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 360
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 10,
+      "condition": "changed",
+      "start_hash": "b71c8c8a72cc8269a3c10f68ac9c2931f7b7d100da1533355a181103a1f21b86",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_5545",
+        "goal_9862",
+        "goal_7194",
+        "goal_1967"
+      ],
+      "order_violations": [],
+      "physical_ticks": 270,
+      "decisions": 28,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 420
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 11,
+      "condition": "changed",
+      "start_hash": "cc0767a1ac91f93e93794f6621ecfe45337e7d352ff3f695ab02c926c9294141",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_8496",
+        "goal_8009",
+        "goal_1983",
+        "goal_5098",
+        "goal_5793"
+      ],
+      "order_violations": [],
+      "physical_ticks": 310,
+      "decisions": 32,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 480
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 12,
+      "condition": "changed",
+      "start_hash": "18322bb75ca56a9debf3ae5eaff0991c61308db686ad83f56a2d8ba2a4079490",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_9062",
+        "goal_8253",
+        "goal_4846"
+      ],
+      "order_violations": [],
+      "physical_ticks": 230,
+      "decisions": 24,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 360
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 13,
+      "condition": "changed",
+      "start_hash": "1a15cc7c2d6e88c126198783d640de958d74be73bf0cba82341f81f46ff49a92",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_2300",
+        "goal_7526",
+        "goal_9571",
+        "goal_6575"
+      ],
+      "order_violations": [],
+      "physical_ticks": 270,
+      "decisions": 28,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 420
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 14,
+      "condition": "changed",
+      "start_hash": "d9eaf6ff38cf3b7388e943dc79a81a010c086185156c4156912616092b29f196",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_3014",
+        "goal_7129",
+        "goal_8220",
+        "goal_7099",
+        "goal_6073"
+      ],
+      "order_violations": [],
+      "physical_ticks": 310,
+      "decisions": 32,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 480
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 15,
+      "condition": "changed",
+      "start_hash": "a2a24dd57e69a4f2caec26c8ad72192fb73611abef0fe78fa23a304c5974c286",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_2105",
+        "goal_1540",
+        "goal_8621"
+      ],
+      "order_violations": [],
+      "physical_ticks": 230,
+      "decisions": 24,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 360
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 16,
+      "condition": "switch",
+      "start_hash": "5a4f3abf50a4856f8b81431b9ada6589e5f18b96242ecabed0ee18e9515fa8eb",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [
+        "goal_7610"
+      ],
+      "requested_order": [
+        "goal_7610",
+        "goal_2208",
+        "goal_6274",
+        "goal_2583"
+      ],
+      "order_violations": [],
+      "physical_ticks": 263,
+      "decisions": 28,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 420
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 17,
+      "condition": "switch",
+      "start_hash": "e4625a14f97df611f0cfab9bdb55a644f951b3a18414f7b52ba149745dcfab13",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [
+        "goal_9813"
+      ],
+      "requested_order": [
+        "goal_9813",
+        "goal_5126",
+        "goal_7509",
+        "goal_9042",
+        "goal_5254"
+      ],
+      "order_violations": [],
+      "physical_ticks": 303,
+      "decisions": 32,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 480
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 18,
+      "condition": "switch",
+      "start_hash": "948bde61d45a52fe3e991d6af5bea2634e321d7927b3f6aedd3737578991066c",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [
+        "goal_9411"
+      ],
+      "requested_order": [
+        "goal_9411",
+        "goal_3079",
+        "goal_1360"
+      ],
+      "order_violations": [],
+      "physical_ticks": 223,
+      "decisions": 24,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 360
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 19,
+      "condition": "switch",
+      "start_hash": "6e2ec1e20b259fe40440663b9a7acf5d25a3191d7d20fac5e844081c193ab770",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [
+        "goal_3378"
+      ],
+      "requested_order": [
+        "goal_3378",
+        "goal_6059",
+        "goal_8201",
+        "goal_8667"
+      ],
+      "order_violations": [],
+      "physical_ticks": 263,
+      "decisions": 28,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 420
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 20,
+      "condition": "switch",
+      "start_hash": "343bff534b2e94373dc1d1a29a33e45818335e696b0c9789b4f9d24f1e54ad94",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [
+        "goal_4208"
+      ],
+      "requested_order": [
+        "goal_4208",
+        "goal_3105",
+        "goal_6046",
+        "goal_1475",
+        "goal_8099"
+      ],
+      "order_violations": [],
+      "physical_ticks": 303,
+      "decisions": 32,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 480
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 21,
+      "condition": "switch",
+      "start_hash": "95a7c8ac29fa867c14f3608d3a07d099dbd13fc129574f196c203b5037778b57",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [
+        "goal_3897"
+      ],
+      "requested_order": [
+        "goal_3897",
+        "goal_8799",
+        "goal_9944"
+      ],
+      "order_violations": [],
+      "physical_ticks": 223,
+      "decisions": 24,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 360
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 22,
+      "condition": "switch",
+      "start_hash": "a232847712a79074033975b1b26f42d34ca70ebc085f31db2013f56845509bd5",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [
+        "goal_2412"
+      ],
+      "requested_order": [
+        "goal_2412",
+        "goal_8030",
+        "goal_4130",
+        "goal_9857"
+      ],
+      "order_violations": [],
+      "physical_ticks": 263,
+      "decisions": 28,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 420
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 23,
+      "condition": "switch",
+      "start_hash": "4b1955f21ba2c990a6e617948b2190e733080146ebd397c9de1d8db27d7e2b77",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [
+        "goal_1097"
+      ],
+      "requested_order": [
+        "goal_1097",
+        "goal_8767",
+        "goal_4818",
+        "goal_2125",
+        "goal_2205"
+      ],
+      "order_violations": [],
+      "physical_ticks": 303,
+      "decisions": 32,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 480
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 24,
+      "condition": "return",
+      "start_hash": "1531fad7d50d73b3517a71c7fe70324f7b4f7142be9eb1ca8d185f41fe8e31b4",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_4354",
+        "goal_6169",
+        "goal_3777"
+      ],
+      "order_violations": [],
+      "physical_ticks": 230,
+      "decisions": 24,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 360
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 25,
+      "condition": "return",
+      "start_hash": "d7ae57b6736a1f574bcad4bddc9bf1903f03fae1e260e42fd7754470679a063e",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_4938",
+        "goal_4429",
+        "goal_3409",
+        "goal_8278"
+      ],
+      "order_violations": [],
+      "physical_ticks": 270,
+      "decisions": 28,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 420
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 26,
+      "condition": "return",
+      "start_hash": "b88da8c24e082fb367c376c7731e2ac61d7c6ad73c3f04b0a713794bde0108a0",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_8061",
+        "goal_6730",
+        "goal_4249",
+        "goal_4157",
+        "goal_8881"
+      ],
+      "order_violations": [],
+      "physical_ticks": 310,
+      "decisions": 32,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 480
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 27,
+      "condition": "return",
+      "start_hash": "fd804760a0971c22bf87c0f0bca6f8a9920e13cbcb8cdf932645f918ad6913dd",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_5437",
+        "goal_5105",
+        "goal_9162"
+      ],
+      "order_violations": [],
+      "physical_ticks": 230,
+      "decisions": 24,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 360
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 28,
+      "condition": "return",
+      "start_hash": "419701638236663750a2188c4c374c83156ed14a4992697d9a4b04f305ed6795",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_6852",
+        "goal_9853",
+        "goal_6185",
+        "goal_2039"
+      ],
+      "order_violations": [],
+      "physical_ticks": 270,
+      "decisions": 28,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 420
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 29,
+      "condition": "return",
+      "start_hash": "7863c306c803b049c5ed6f0c2020a3c64e1d4670033d0732a9f61dbec4dd7e09",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_9030",
+        "goal_7022",
+        "goal_2367",
+        "goal_5046",
+        "goal_4649"
+      ],
+      "order_violations": [],
+      "physical_ticks": 310,
+      "decisions": 32,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 480
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 30,
+      "condition": "return",
+      "start_hash": "6e978d5ebdcb55d5147f6f4c68545aff0a0dcb0ee8ef28f6593aaf32e1a18336",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_8497",
+        "goal_2482",
+        "goal_9218"
+      ],
+      "order_violations": [],
+      "physical_ticks": 230,
+      "decisions": 24,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 360
+    },
+    {
+      "arm": "ordinary_practice",
+      "mission": 31,
+      "condition": "return",
+      "start_hash": "febabf4cb282e35f81b019a9e98b4ae7669c6784e66ba60cf22ce6337500f5e8",
+      "success": false,
+      "stopped": false,
+      "physical_visits": [],
+      "requested_order": [
+        "goal_4691",
+        "goal_3909",
+        "goal_7326",
+        "goal_2190"
+      ],
+      "order_violations": [],
+      "physical_ticks": 270,
+      "decisions": 28,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 420
+    },
+    {
+      "arm": "submission",
+      "mission": 0,
+      "condition": "ordinary",
+      "start_hash": "854fd5337b537d66f8fe95b686658157f542205c9bbace76f3de32652d7999cb",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_7057",
+        "goal_4797",
+        "goal_6226"
+      ],
+      "requested_order": [
+        "goal_7057",
+        "goal_4797",
+        "goal_6226"
+      ],
+      "order_violations": [],
+      "physical_ticks": 89,
+      "decisions": 13,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 13
+    },
+    {
+      "arm": "submission",
+      "mission": 1,
+      "condition": "ordinary",
+      "start_hash": "4db955aadb832319f31113002c41656241d5dbef81cccb06cb4b9b9b68509732",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_8606",
+        "goal_3727",
+        "goal_7249",
+        "goal_7433"
+      ],
+      "requested_order": [
+        "goal_8606",
+        "goal_3727",
+        "goal_7249",
+        "goal_7433"
+      ],
+      "order_violations": [],
+      "physical_ticks": 101,
+      "decisions": 14,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 14
+    },
+    {
+      "arm": "submission",
+      "mission": 2,
+      "condition": "ordinary",
+      "start_hash": "8d2e9ba03e5af416861612724703a89877150a4097acefab9cdbae041d067584",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_9224",
+        "goal_5148",
+        "goal_2907",
+        "goal_3849",
+        "goal_3090"
+      ],
+      "requested_order": [
+        "goal_9224",
+        "goal_5148",
+        "goal_2907",
+        "goal_3849",
+        "goal_3090"
+      ],
+      "order_violations": [],
+      "physical_ticks": 135,
+      "decisions": 18,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 18
+    },
+    {
+      "arm": "submission",
+      "mission": 3,
+      "condition": "ordinary",
+      "start_hash": "9cf2983f2bd9c73c70dc642e8f82668ec226c67cf2c62831891d2d82639f34d7",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_5087",
+        "goal_2275",
+        "goal_2883"
+      ],
+      "requested_order": [
+        "goal_5087",
+        "goal_2275",
+        "goal_2883"
+      ],
+      "order_violations": [],
+      "physical_ticks": 81,
+      "decisions": 12,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 12
+    },
+    {
+      "arm": "submission",
+      "mission": 4,
+      "condition": "ordinary",
+      "start_hash": "8e9f52f2043d67e8e0fca9728bbd5575b4f082bdaa51cbcaa17b521297748e33",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_5662",
+        "goal_4591",
+        "goal_7333",
+        "goal_4057"
+      ],
+      "requested_order": [
+        "goal_5662",
+        "goal_4591",
+        "goal_7333",
+        "goal_4057"
+      ],
+      "order_violations": [],
+      "physical_ticks": 100,
+      "decisions": 14,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 14
+    },
+    {
+      "arm": "submission",
+      "mission": 5,
+      "condition": "ordinary",
+      "start_hash": "4313faf88955a1a8edb5a90d288ae94e99b9ae29ae0301d208a387a3ee6b6bf7",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_7387",
+        "goal_5891",
+        "goal_1172",
+        "goal_5634",
+        "goal_7761"
+      ],
+      "requested_order": [
+        "goal_7387",
+        "goal_5891",
+        "goal_1172",
+        "goal_5634",
+        "goal_7761"
+      ],
+      "order_violations": [],
+      "physical_ticks": 136,
+      "decisions": 18,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 18
+    },
+    {
+      "arm": "submission",
+      "mission": 6,
+      "condition": "ordinary",
+      "start_hash": "2ce569eff5995a0cd921e7575fdbf696da8efa2295dc857d48bf4352351ba0fd",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_7311",
+        "goal_4388",
+        "goal_4342"
+      ],
+      "requested_order": [
+        "goal_7311",
+        "goal_4388",
+        "goal_4342"
+      ],
+      "order_violations": [],
+      "physical_ticks": 74,
+      "decisions": 11,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 11
+    },
+    {
+      "arm": "submission",
+      "mission": 7,
+      "condition": "ordinary",
+      "start_hash": "ee0a93660ddfc723c142ed37a28ac85492da6997f009863266e0af61d4eafd3d",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_2703",
+        "goal_2721",
+        "goal_8547",
+        "goal_8595"
+      ],
+      "requested_order": [
+        "goal_2703",
+        "goal_2721",
+        "goal_8547",
+        "goal_8595"
+      ],
+      "order_violations": [],
+      "physical_ticks": 112,
+      "decisions": 15,
+      "switches": 1,
+      "probes": 0,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 15
+    },
+    {
+      "arm": "submission",
+      "mission": 8,
+      "condition": "changed",
+      "start_hash": "33880d84024e554e05e5621d0e3324d06b21aca1c714235db2363e7601662b1f",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_8063",
+        "goal_3972",
+        "goal_5022",
+        "goal_8652",
+        "goal_1191"
+      ],
+      "requested_order": [
+        "goal_8063",
+        "goal_3972",
+        "goal_5022",
+        "goal_8652",
+        "goal_1191"
+      ],
+      "order_violations": [],
+      "physical_ticks": 180,
+      "decisions": 23,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 23
+    },
+    {
+      "arm": "submission",
+      "mission": 9,
+      "condition": "changed",
+      "start_hash": "5353acf6fa55227621599a85178fed8a8290c6e60b117af9869ef8162f8938b3",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_4514",
+        "goal_7532",
+        "goal_2875"
+      ],
+      "requested_order": [
+        "goal_4514",
+        "goal_7532",
+        "goal_2875"
+      ],
+      "order_violations": [],
+      "physical_ticks": 87,
+      "decisions": 14,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 14
+    },
+    {
+      "arm": "submission",
+      "mission": 10,
+      "condition": "changed",
+      "start_hash": "b71c8c8a72cc8269a3c10f68ac9c2931f7b7d100da1533355a181103a1f21b86",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_5545",
+        "goal_9862",
+        "goal_7194",
+        "goal_1967"
+      ],
+      "requested_order": [
+        "goal_5545",
+        "goal_9862",
+        "goal_7194",
+        "goal_1967"
+      ],
+      "order_violations": [],
+      "physical_ticks": 114,
+      "decisions": 17,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 17
+    },
+    {
+      "arm": "submission",
+      "mission": 11,
+      "condition": "changed",
+      "start_hash": "cc0767a1ac91f93e93794f6621ecfe45337e7d352ff3f695ab02c926c9294141",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_8496",
+        "goal_8009",
+        "goal_1983",
+        "goal_5098",
+        "goal_5793"
+      ],
+      "requested_order": [
+        "goal_8496",
+        "goal_8009",
+        "goal_1983",
+        "goal_5098",
+        "goal_5793"
+      ],
+      "order_violations": [],
+      "physical_ticks": 152,
+      "decisions": 20,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 20
+    },
+    {
+      "arm": "submission",
+      "mission": 12,
+      "condition": "changed",
+      "start_hash": "18322bb75ca56a9debf3ae5eaff0991c61308db686ad83f56a2d8ba2a4079490",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_9062",
+        "goal_8253",
+        "goal_4846"
+      ],
+      "requested_order": [
+        "goal_9062",
+        "goal_8253",
+        "goal_4846"
+      ],
+      "order_violations": [],
+      "physical_ticks": 100,
+      "decisions": 14,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 14
+    },
+    {
+      "arm": "submission",
+      "mission": 13,
+      "condition": "changed",
+      "start_hash": "1a15cc7c2d6e88c126198783d640de958d74be73bf0cba82341f81f46ff49a92",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_2300",
+        "goal_7526",
+        "goal_9571",
+        "goal_6575"
+      ],
+      "requested_order": [
+        "goal_2300",
+        "goal_7526",
+        "goal_9571",
+        "goal_6575"
+      ],
+      "order_violations": [],
+      "physical_ticks": 143,
+      "decisions": 20,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 20
+    },
+    {
+      "arm": "submission",
+      "mission": 14,
+      "condition": "changed",
+      "start_hash": "d9eaf6ff38cf3b7388e943dc79a81a010c086185156c4156912616092b29f196",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_3014",
+        "goal_7129",
+        "goal_8220",
+        "goal_7099",
+        "goal_6073"
+      ],
+      "requested_order": [
+        "goal_3014",
+        "goal_7129",
+        "goal_8220",
+        "goal_7099",
+        "goal_6073"
+      ],
+      "order_violations": [],
+      "physical_ticks": 172,
+      "decisions": 22,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 22
+    },
+    {
+      "arm": "submission",
+      "mission": 15,
+      "condition": "changed",
+      "start_hash": "a2a24dd57e69a4f2caec26c8ad72192fb73611abef0fe78fa23a304c5974c286",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_2105",
+        "goal_1540",
+        "goal_8621"
+      ],
+      "requested_order": [
+        "goal_2105",
+        "goal_1540",
+        "goal_8621"
+      ],
+      "order_violations": [],
+      "physical_ticks": 81,
+      "decisions": 13,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 13
+    },
+    {
+      "arm": "submission",
+      "mission": 16,
+      "condition": "switch",
+      "start_hash": "5a4f3abf50a4856f8b81431b9ada6589e5f18b96242ecabed0ee18e9515fa8eb",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_7610",
+        "goal_2208",
+        "goal_6274",
+        "goal_2583"
+      ],
+      "requested_order": [
+        "goal_7610",
+        "goal_2208",
+        "goal_6274",
+        "goal_2583"
+      ],
+      "order_violations": [],
+      "physical_ticks": 121,
+      "decisions": 18,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 18
+    },
+    {
+      "arm": "submission",
+      "mission": 17,
+      "condition": "switch",
+      "start_hash": "e4625a14f97df611f0cfab9bdb55a644f951b3a18414f7b52ba149745dcfab13",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_9813",
+        "goal_5126",
+        "goal_7509",
+        "goal_9042",
+        "goal_5254"
+      ],
+      "requested_order": [
+        "goal_9813",
+        "goal_5126",
+        "goal_7509",
+        "goal_9042",
+        "goal_5254"
+      ],
+      "order_violations": [],
+      "physical_ticks": 154,
+      "decisions": 21,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 21
+    },
+    {
+      "arm": "submission",
+      "mission": 18,
+      "condition": "switch",
+      "start_hash": "948bde61d45a52fe3e991d6af5bea2634e321d7927b3f6aedd3737578991066c",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_9411",
+        "goal_3079",
+        "goal_1360"
+      ],
+      "requested_order": [
+        "goal_9411",
+        "goal_3079",
+        "goal_1360"
+      ],
+      "order_violations": [],
+      "physical_ticks": 76,
+      "decisions": 12,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 12
+    },
+    {
+      "arm": "submission",
+      "mission": 19,
+      "condition": "switch",
+      "start_hash": "6e2ec1e20b259fe40440663b9a7acf5d25a3191d7d20fac5e844081c193ab770",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_3378",
+        "goal_6059",
+        "goal_8201",
+        "goal_8667"
+      ],
+      "requested_order": [
+        "goal_3378",
+        "goal_6059",
+        "goal_8201",
+        "goal_8667"
+      ],
+      "order_violations": [],
+      "physical_ticks": 165,
+      "decisions": 22,
+      "switches": 2,
+      "probes": 2,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 22
+    },
+    {
+      "arm": "submission",
+      "mission": 20,
+      "condition": "switch",
+      "start_hash": "343bff534b2e94373dc1d1a29a33e45818335e696b0c9789b4f9d24f1e54ad94",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_4208",
+        "goal_3105",
+        "goal_6046",
+        "goal_1475",
+        "goal_8099"
+      ],
+      "requested_order": [
+        "goal_4208",
+        "goal_3105",
+        "goal_6046",
+        "goal_1475",
+        "goal_8099"
+      ],
+      "order_violations": [],
+      "physical_ticks": 167,
+      "decisions": 22,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 22
+    },
+    {
+      "arm": "submission",
+      "mission": 21,
+      "condition": "switch",
+      "start_hash": "95a7c8ac29fa867c14f3608d3a07d099dbd13fc129574f196c203b5037778b57",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_3897",
+        "goal_8799",
+        "goal_9944"
+      ],
+      "requested_order": [
+        "goal_3897",
+        "goal_8799",
+        "goal_9944"
+      ],
+      "order_violations": [],
+      "physical_ticks": 91,
+      "decisions": 14,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 14
+    },
+    {
+      "arm": "submission",
+      "mission": 22,
+      "condition": "switch",
+      "start_hash": "a232847712a79074033975b1b26f42d34ca70ebc085f31db2013f56845509bd5",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_2412",
+        "goal_8030",
+        "goal_4130",
+        "goal_9857"
+      ],
+      "requested_order": [
+        "goal_2412",
+        "goal_8030",
+        "goal_4130",
+        "goal_9857"
+      ],
+      "order_violations": [],
+      "physical_ticks": 135,
+      "decisions": 19,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 19
+    },
+    {
+      "arm": "submission",
+      "mission": 23,
+      "condition": "switch",
+      "start_hash": "4b1955f21ba2c990a6e617948b2190e733080146ebd397c9de1d8db27d7e2b77",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_1097",
+        "goal_8767",
+        "goal_4818",
+        "goal_2125",
+        "goal_2205"
+      ],
+      "requested_order": [
+        "goal_1097",
+        "goal_8767",
+        "goal_4818",
+        "goal_2125",
+        "goal_2205"
+      ],
+      "order_violations": [],
+      "physical_ticks": 136,
+      "decisions": 19,
+      "switches": 2,
+      "probes": 1,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 19
+    },
+    {
+      "arm": "submission",
+      "mission": 24,
+      "condition": "return",
+      "start_hash": "1531fad7d50d73b3517a71c7fe70324f7b4f7142be9eb1ca8d185f41fe8e31b4",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_4354",
+        "goal_6169",
+        "goal_3777"
+      ],
+      "requested_order": [
+        "goal_4354",
+        "goal_6169",
+        "goal_3777"
+      ],
+      "order_violations": [],
+      "physical_ticks": 104,
+      "decisions": 16,
+      "switches": 3,
+      "probes": 2,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 16
+    },
+    {
+      "arm": "submission",
+      "mission": 25,
+      "condition": "return",
+      "start_hash": "d7ae57b6736a1f574bcad4bddc9bf1903f03fae1e260e42fd7754470679a063e",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_4938",
+        "goal_4429",
+        "goal_3409",
+        "goal_8278"
+      ],
+      "requested_order": [
+        "goal_4938",
+        "goal_4429",
+        "goal_3409",
+        "goal_8278"
+      ],
+      "order_violations": [],
+      "physical_ticks": 137,
+      "decisions": 20,
+      "switches": 3,
+      "probes": 2,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 20
+    },
+    {
+      "arm": "submission",
+      "mission": 26,
+      "condition": "return",
+      "start_hash": "b88da8c24e082fb367c376c7731e2ac61d7c6ad73c3f04b0a713794bde0108a0",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_8061",
+        "goal_6730",
+        "goal_4249",
+        "goal_4157",
+        "goal_8881"
+      ],
+      "requested_order": [
+        "goal_8061",
+        "goal_6730",
+        "goal_4249",
+        "goal_4157",
+        "goal_8881"
+      ],
+      "order_violations": [],
+      "physical_ticks": 172,
+      "decisions": 24,
+      "switches": 3,
+      "probes": 2,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 24
+    },
+    {
+      "arm": "submission",
+      "mission": 27,
+      "condition": "return",
+      "start_hash": "fd804760a0971c22bf87c0f0bca6f8a9920e13cbcb8cdf932645f918ad6913dd",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_5437",
+        "goal_5105",
+        "goal_9162"
+      ],
+      "requested_order": [
+        "goal_5437",
+        "goal_5105",
+        "goal_9162"
+      ],
+      "order_violations": [],
+      "physical_ticks": 109,
+      "decisions": 17,
+      "switches": 3,
+      "probes": 2,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 17
+    },
+    {
+      "arm": "submission",
+      "mission": 28,
+      "condition": "return",
+      "start_hash": "419701638236663750a2188c4c374c83156ed14a4992697d9a4b04f305ed6795",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_6852",
+        "goal_9853",
+        "goal_6185",
+        "goal_2039"
+      ],
+      "requested_order": [
+        "goal_6852",
+        "goal_9853",
+        "goal_6185",
+        "goal_2039"
+      ],
+      "order_violations": [],
+      "physical_ticks": 141,
+      "decisions": 20,
+      "switches": 3,
+      "probes": 2,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 20
+    },
+    {
+      "arm": "submission",
+      "mission": 29,
+      "condition": "return",
+      "start_hash": "7863c306c803b049c5ed6f0c2020a3c64e1d4670033d0732a9f61dbec4dd7e09",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_9030",
+        "goal_7022",
+        "goal_2367",
+        "goal_5046",
+        "goal_4649"
+      ],
+      "requested_order": [
+        "goal_9030",
+        "goal_7022",
+        "goal_2367",
+        "goal_5046",
+        "goal_4649"
+      ],
+      "order_violations": [],
+      "physical_ticks": 159,
+      "decisions": 22,
+      "switches": 3,
+      "probes": 2,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 22
+    },
+    {
+      "arm": "submission",
+      "mission": 30,
+      "condition": "return",
+      "start_hash": "6e978d5ebdcb55d5147f6f4c68545aff0a0dcb0ee8ef28f6593aaf32e1a18336",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_8497",
+        "goal_2482",
+        "goal_9218"
+      ],
+      "requested_order": [
+        "goal_8497",
+        "goal_2482",
+        "goal_9218"
+      ],
+      "order_violations": [],
+      "physical_ticks": 107,
+      "decisions": 16,
+      "switches": 3,
+      "probes": 2,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 16
+    },
+    {
+      "arm": "submission",
+      "mission": 31,
+      "condition": "return",
+      "start_hash": "febabf4cb282e35f81b019a9e98b4ae7669c6784e66ba60cf22ce6337500f5e8",
+      "success": true,
+      "stopped": true,
+      "physical_visits": [
+        "goal_4691",
+        "goal_3909",
+        "goal_7326",
+        "goal_2190"
+      ],
+      "requested_order": [
+        "goal_4691",
+        "goal_3909",
+        "goal_7326",
+        "goal_2190"
+      ],
+      "order_violations": [],
+      "physical_ticks": 155,
+      "decisions": 22,
+      "switches": 3,
+      "probes": 2,
+      "setup_settling_ticks": 20,
+      "observed_qwen_forward_calls": 22
+    }
+  ],
+  "claim": "System performance; student attribution requires component audit/ablations."
+}

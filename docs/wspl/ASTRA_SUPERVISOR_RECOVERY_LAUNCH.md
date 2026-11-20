@@ -1,5 +1,16 @@
 # Recovery prepared; not launched
 
+## Approved launch update — November 20, 2026
+
+User explicitly approved the exact digest below and selected “Approve this
+manifest and launch the recovery.” Registered approval, reverified 326 sources,
+and launched hidden at 01:00 PST / 09:00 UTC, launcher PID 85240. Output is
+`results/astra_supervisor_resume_v1`, with adjacent persistent launch logs/PID.
+The source gate passed; bound-resource verification is underway before recovery
+or new author calls. This supersedes the preparation status below, not evidence
+of completed restoration or research. Inspect live status and recovery receipt;
+do not duplicate or retry automatically.
+
 Manifest SHA-256: `49836cec374b8b73e933ce045dd7a95206043840ac67bff8d5c6ab81c24706fc`.
 Model ID: `astra-supervisor-resume-v1`.
 Output after approval: `results/astra_supervisor_resume_v1`.

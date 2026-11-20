@@ -13,18 +13,21 @@ and a robot satisfying a trajectory property. Each needs its own evidence.
 
 ## Current research status
 
-**Astra-led student adaptation — implemented, awaiting launch approval:** the prior
-fixed-recipe teaching pilot produced successful Astra demonstrations but did not
-reliably transfer adaptation to Qwen. The proposed replacement gives Astra a
-tool-enabled engineering workspace, full development-simulator access, and
-control over weights, LoRA, gradients and attention/KV interventions. Final
-deployment removes Astra and uses a separately sealed evaluator. Improvements
-to Qwen's decisions are distinguished from added external controllers. See the
-[supervisor protocol and implementation checklist](docs/wspl/ASTRA_SUPERVISOR_V1.md).
-The Python workbench, isolated CPU/GPU jobs, persistent visible transcript,
-camera delivery, submission freezing and paired offline evaluator are implemented.
-Synthetic boundary, GPU/robot, full-size student restoration and end-to-end checks
-pass. No supervisor run has launched.
+**November 20, 2026 ? Astra-supervised Qwen adaptation:** a frozen Qwen LoRA
+executive completed **32/32** independently evaluated reaching missions, versus
+**8/32** for the saved ordinary-practice executive: 24 corrections, zero
+regressions. Ordinary, changed-calibration, mid-mission-switch and return-to-original
+panels each scored 8/8. Astra was absent during deployment.
+
+Astra generated data, trained the adapter and simplified the observation/action
+interface. Qwen chooses probes, motor selection, waypoint reaches and stopping;
+the inspected wrapper translates action tokens without making adaptive decisions.
+The shared motor controllers stay frozen. Archived development ablations support
+a learned adapter contribution, but are not independent final-set ablations.
+This is bounded simulator evidence for supervisor-directed gradient adaptation,
+not direct weight authoring, general robotics competence or WSPL superiority.
+See the [results, recipe and limitations](docs/wspl/ASTRA_SUPERVISOR_RECOVERY_RESULTS.md)
+and [compact deployment evidence](artifacts/astra_supervisor_adaptation/README.md).
 
 **November 17, 2026 — neural controller authoring and composition:** a fine-tuned
 Qwen2.5-Coder-1.5B author generated 96/96 behavior-correct WSPL neural blocks and

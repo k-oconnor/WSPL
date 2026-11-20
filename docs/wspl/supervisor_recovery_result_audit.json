@@ -1,0 +1,78 @@
+{
+  "source_verified": 326,
+  "bundle_verified": true,
+  "paired_start_hashes": 32,
+  "completed_calls": 28,
+  "attempted_calls": 29,
+  "unknown_usage_calls": 1,
+  "known_usage": {
+    "input_tokens": 1112864,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 40118,
+    "reasoning_output_tokens": 15907
+  },
+  "gpu_job_seconds": 2341.8794391155243,
+  "summary": {
+    "ordinary_practice/ordinary": {
+      "n": 8,
+      "success": 8,
+      "probes": 0
+    },
+    "ordinary_practice/changed": {
+      "n": 8,
+      "success": 0,
+      "probes": 0
+    },
+    "ordinary_practice/switch": {
+      "n": 8,
+      "success": 0,
+      "probes": 0
+    },
+    "ordinary_practice/return": {
+      "n": 8,
+      "success": 0,
+      "probes": 0
+    },
+    "submission/ordinary": {
+      "n": 8,
+      "success": 8,
+      "probes": 0
+    },
+    "submission/changed": {
+      "n": 8,
+      "success": 8,
+      "probes": 8
+    },
+    "submission/switch": {
+      "n": 8,
+      "success": 8,
+      "probes": 9
+    },
+    "submission/return": {
+      "n": 8,
+      "success": 8,
+      "probes": 16
+    }
+  },
+  "paired": {
+    "ordinary": {
+      "improvements": 0,
+      "regressions": 0
+    },
+    "changed": {
+      "improvements": 8,
+      "regressions": 0
+    },
+    "switch": {
+      "improvements": 8,
+      "regressions": 0
+    },
+    "return": {
+      "improvements": 8,
+      "regressions": 0
+    }
+  },
+  "adapter_sha256": "d3a67a7d84c53d0041d8f6886709acac59723ca31b4c7bd784bd88962bc6c50c",
+  "audit_scope": "Read-only source, artifact, scoring-row and deployment-code inspection. No fresh inference or ablation reruns."
+}
