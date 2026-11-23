@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "engineering_only": true,
+  "model_calls": 0,
+  "updates": 0,
+  "privileged_fixture_selector": true,
+  "conditions": [
+    {
+      "condition": "ordinary",
+      "success": true,
+      "ticks": 75,
+      "decisions": 11
+    },
+    {
+      "condition": "changed",
+      "success": true,
+      "ticks": 74,
+      "decisions": 11
+    },
+    {
+      "condition": "switch",
+      "success": true,
+      "ticks": 86,
+      "decisions": 13
+    },
+    {
+      "condition": "return",
+      "success": true,
+      "ticks": 75,
+      "decisions": 12
+    }
+  ],
+  "folder": "C:\\Users\\kevin\\AppData\\Local\\Temp\\wspl-fresh-physics-mzrz9a3q"
+}

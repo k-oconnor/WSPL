@@ -1,0 +1,11 @@
+{
+  "approval_registry_changed": false,
+  "child_exited": true,
+  "engineering_only": true,
+  "model_calls": 0,
+  "paired_initial_state_equal": true,
+  "simulated_probe_ticks": 6,
+  "source_gate_verified_in_worker": true,
+  "status": "passed",
+  "updates": 0
+}

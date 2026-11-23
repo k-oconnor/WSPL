@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "engineering_only": true,
+  "model_revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+  "projections": 196,
+  "adapter_elements": 18464768,
+  "factor_id": "2ef04d3209a316223230d41022906250266d83ab1543edb4ab0d40e47bc5cf4e",
+  "base_hash": "540b6c0285e9d26362156163cef352c1a27657dc7b0372d0c36404a6c5baddc1",
+  "synthetic_backward": true,
+  "exact_restoration": true,
+  "frozen_base": true,
+  "task_predictions": 0,
+  "optimizer_updates": 0,
+  "synthetic_context_tokens": 2048,
+  "peak_cuda_bytes": 4258763776,
+  "elapsed_seconds": 51.82592829997884
+}
