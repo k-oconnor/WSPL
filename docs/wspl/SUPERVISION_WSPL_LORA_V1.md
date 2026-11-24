@@ -1,5 +1,9 @@
 # Supervision with WSPL-authored LoRA factors
 
+November 24 update: the concrete runner, controls, budgets and source-approval
+protocol are now in [ROBOT_AUTHORING_V1.md](ROBOT_AUTHORING_V1.md). That document
+supersedes the proposed details below. No scientific authoring run has launched.
+
 Status: author-study preparation in progress, November 23, 2026. The separately
 approved fresh ordinary-parent v2 is complete: 16/16 readiness successes versus
 0/16 before training. See CURRENT_RESEARCH.md and its completion audit. No Astra

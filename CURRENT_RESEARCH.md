@@ -1,3 +1,18 @@
+November 24, 2026: matched robot LoRA authoring PREPARED, unapproved/unlaunched.
+Three native Python and three Python+WSPL Astra/xhigh sessions, same ordinary
+parent, acquisition data, diagnostics and16responses/4evaluation attempts each.
+Native runtime physically omits WSPL; cross-runtime/package denial verified.
+Unchanged parent plus384-update gradient control; all eight outcomes freeze
+before64final missions each (maximum512). 52focused tests and full-size synthetic
+reconstruction/forward/backward/checkpoint/hook checks pass; real AppContainer
+tool-chain fixtures pass with zero author calls/task predictions. Source369files,
+75,969resources all verified. Candidate robot_authoring_v1 SHA256
+b5f628915f5ea93b34decb7e225592366cb01f0ad3605146b82db472b92fa410.
+Isolated WSPL-robot-authoring-v1; protocol docs/wspl/ROBOT_AUTHORING_V1.md.
+Maximum96responses,20min/call;24hdevelopment+6hfinal guards,8h measured execution
+budget checked between operations. Existing Codex usage/no hard dollar-token cap.
+Exact manifest approval pending; registry unchanged; no automatic follow-on.
+
 November 23, 2026: full isolated Python author environment ENGINEERING READY.
 Kevin selected full Python over bounded tools; unlaunched bounded drafts archived.
 Dedicated Windows AppContainer runtime with Python3.13.13/NumPy2.4.4/Torch2.12.1

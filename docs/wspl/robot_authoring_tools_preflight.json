@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v1\\data\\robot_authoring_v1\\tool_fixture__nyshzr4",
+  "author_calls": 0,
+  "canned_responses": 6,
+  "task_predictions": 0,
+  "real_appcontainer": true,
+  "real_source_checked_validation": true,
+  "reserved_canary_denied": true,
+  "other_author_denied": true,
+  "native_wspl_factor_parity": true,
+  "native_wspl_package_denied": true,
+  "both_runtime_cuda_backward": true,
+  "wspl_package_available_to_wspl": true,
+  "candidates": {
+    "native": {
+      "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v1\\data\\robot_authoring_v1\\tool_fixture__nyshzr4\\native\\turn_01\\submission\\candidate.npz",
+      "adapter_id": "6fd90e69c6d8847a4d7bfea4ab09cdf7f8c2bed772f515a91b329e530016d239"
+    },
+    "wspl": {
+      "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v1\\data\\robot_authoring_v1\\tool_fixture__nyshzr4\\wspl\\turn_01\\submission\\candidate.npz",
+      "adapter_id": "6fd90e69c6d8847a4d7bfea4ab09cdf7f8c2bed772f515a91b329e530016d239"
+    }
+  },
+  "seconds": 49.94490029994631
+}

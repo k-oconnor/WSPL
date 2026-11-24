@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "task_predictions": 0,
+  "author_calls": 0,
+  "synthetic_optimizer_updates": 1,
+  "parent_file_sha256": "2cd5bd6662db5bdb39e6d341250abfca083672e2b9794c939abc145b49470276",
+  "parent_factor_sha256": "431806f5f4fc6788969a0f954d8fe594caa7b8597b3b293c2d23f57e61459c75",
+  "base_hash": "540b6c0285e9d26362156163cef352c1a27657dc7b0372d0c36404a6c5baddc1",
+  "adapter_id": "b0cc03c540b27a2c0cb87ded2e41841e58a7eb95e9fc5159906dd440615f5560",
+  "elements": 18464768,
+  "projections": 196,
+  "native_wspl_factor_parity": true,
+  "synthetic_forward_bitwise_parity": true,
+  "original_restoration": true,
+  "finite_full_adapter_gradients": true,
+  "optimizer_checkpoint_reload": true,
+  "frozen_base": true,
+  "acquisition_diagnostic_hooks_synthetic": true,
+  "diagnostic_shapes": {
+    "X": [
+      2,
+      8960
+    ],
+    "R": [
+      2,
+      1536
+    ],
+    "L": [
+      2,
+      9
+    ],
+    "Y": [
+      2,
+      9
+    ],
+    "W": [
+      9,
+      1536
+    ],
+    "N": [
+      1536
+    ]
+  },
+  "peak_cuda_bytes": 3474707456,
+  "seconds": 17.289449300034903,
+  "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v1\\data\\robot_authoring_v1\\full_size_fixture_lh7j4ipn"
+}

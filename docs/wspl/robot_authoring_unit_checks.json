@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "tests": 52,
+  "failures": 0,
+  "errors": 0,
+  "modules": [
+    "test_robot_authoring",
+    "test_wspl_lora",
+    "test_author_python_workspace",
+    "test_source_consistency",
+    "test_fresh_robot",
+    "test_fresh_robot_v2"
+  ]
+}
