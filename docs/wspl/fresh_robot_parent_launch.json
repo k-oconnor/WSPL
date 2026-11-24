@@ -1,0 +1,13 @@
+{
+  "output": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-supervision-wspl-lora-v1\\results\\fresh_robot_parent_v1",
+  "watchdog_pid": 23428,
+  "manifest_sha256": "a6e5bfa2b42d0e9fa1b2aca423f2bb398383ba3e7ea8b90e93d33c5aa65dc757",
+  "launched_utc": "2026-11-24T03:06:59.0362799Z",
+  "approval": "User replied Run it after the exact manifest approval request.",
+  "scope": "Fresh ordinary parent only; 64 teacher missions, 384 updates, 16 paired evaluation missions; zero Astra calls; no automatic follow-on.",
+  "isolated_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-supervision-wspl-lora-v1",
+  "source_files_verified": 341,
+  "resources_verified": 31747,
+  "status": "launched; inspect live receipt/status for current progress",
+  "watchdog_hours": 8
+}

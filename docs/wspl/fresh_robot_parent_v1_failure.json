@@ -1,0 +1,18 @@
+{
+  "status": "failed_before_training",
+  "manifest_sha256": "a6e5bfa2b42d0e9fa1b2aca423f2bb398383ba3e7ea8b90e93d33c5aa65dc757",
+  "elapsed_seconds": 25.21467279997887,
+  "teacher_missions_completed": 11,
+  "teacher_successes": 11,
+  "failed_mission_index": 11,
+  "optimizer_updates": 0,
+  "trained_checkpoints": 0,
+  "qwen_task_predictions": 0,
+  "reserved_evaluations": 0,
+  "author_calls": 0,
+  "error": "RuntimeError: ValueError(\"Error: resource not found via provider or OS filesystem: 'C:\\\\Users\\\\kevin\\\\wspl-runtime-v1\\\\sim\\\\lib\\\\site-packages\\\\robosuite\\\\models\\\\assets\\\\robots\\\\panda\\\\obj_meshes/link0_vis/link0_vis_9.obj'\")",
+  "failed_mesh_exists_and_matches_manifest": true,
+  "worker_exit_code": 1,
+  "follow_on_launched": false,
+  "upstream_issue": "https://github.com/google-deepmind/mujoco/issues/1685"
+}

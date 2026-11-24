@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "manifest_sha256": "3ecff9baac23eab515a586d3bb629f9123bc97f08d243dcaf75c27021c10716e",
+  "sources_verified": 346,
+  "resources_verified": 31746,
+  "updates": 384,
+  "training_targets": 3072,
+  "training_rows": 867,
+  "teacher_missions": 64,
+  "paired_evaluation_missions": 16,
+  "successes": {
+    "base": 0,
+    "ordinary": 16
+  },
+  "corrections": 16,
+  "regressions": 0,
+  "readiness_passed": true,
+  "trajectories_verified": 96,
+  "physical_ticks_recomputed": 8008,
+  "decisions_verified": 1599,
+  "saved_predictions_verified": 732,
+  "adapter_elements": 18464768,
+  "adapter_file_sha256": "2cd5bd6662db5bdb39e6d341250abfca083672e2b9794c939abc145b49470276",
+  "factor_sha256": "431806f5f4fc6788969a0f954d8fe594caa7b8597b3b293c2d23f57e61459c75",
+  "elapsed_seconds": 1022.8012894999702,
+  "audit_model_forwards": 0,
+  "audit_simulator_calls": 0,
+  "audit_training_updates": 0,
+  "scope": "Ordinary-task gradient-trained prerequisite; no adaptation/WSPL authorship result",
+  "follow_on_launched": false,
+  "audit_script": "tools/audit_fresh_robot_parent_v2.py",
+  "audit_script_sha256": "a6e3a20f3770629f0baf79757f3b31de32857b888f48dafa405171a1c379ef34"
+}

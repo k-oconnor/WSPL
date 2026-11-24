@@ -1,3 +1,64 @@
+November 23, 2026: fresh robot parent v2 COMPLETE; read-only completion audit passed.
+384 LoRA updates, 3,072 supervised targets from 867 rows/64 successful ordinary
+teacher missions. Fresh paired readiness: base0/16, trained16/16, 16 corrections,
+zero regressions. Threshold14/16 passed. Elapsed1022.801seconds (~17minutes).
+All96trajectories/8,008physicalticks/732modeldecisions,346sources/31,746resources,
+checkpoint/factor identity and paired starts verified; worker exited0. No audit
+forwards or simulator calls. This is an ordinary-task gradient-trained parent,
+not adaptation or WSPL-authored LoRA evidence. No follow-on launched.
+Frozen adapter: WSPL-fresh-robot-parent-v2/results/fresh_robot_parent_v2/adapter_final.pt
+SHA2562cd5bd6662db5bdb39e6d341250abfca083672e2b9794c939abc145b49470276.
+Audit: docs/wspl/fresh_robot_parent_v2_completion_audit.json; replay auditor
+tools/audit_fresh_robot_parent_v2.py is in main, outside the frozen source inventory.
+Prior v1 failure and all pinned sources/resources remain unchanged.
+
+November 23, 2026 v2 startup VERIFIED: 64/64 ordinary teacher missions passed;
+training started with finite loss/gradients, one checked model constructor.
+384 updates total followed by frozen paired readiness evaluation. This is
+startup evidence, not a completed training/evaluation result. Live status:
+WSPL-fresh-robot-parent-v2/results/fresh_robot_parent_v2/status.json.
+Receipt: docs/wspl/fresh_robot_parent_v2_startup.json.
+
+November 23, 2026: repaired fresh robot parent v2 APPROVED/LAUNCHED.
+User replied "Go ahead" for exact manifest
+3ecff9baac23eab515a586d3bb629f9123bc97f08d243dcaf75c27021c10716e.
+346 sources/31,746 resources reverified. Isolated WSPL-fresh-robot-parent-v2,
+results/fresh_robot_parent_v2; hidden watchdog PID30776, worker PID37048.
+Source gate passed, one model constructor, teacher collection active. One fresh
+physics worker per mission. Preserve inventoried source/resources while active.
+64 teacher missions, 384 updates, 16 paired readiness missions, eight-hour guard,
+no Astra calls or automatic follow-on. V1 failure remains archived. Inspect live
+receipt/status before claiming completion. Launch record:
+docs/wspl/fresh_robot_parent_v2_launch.json.
+
+November 23, 2026: lifecycle repair v2 PREPARED, unapproved/unlaunched.
+Separate WSPL-fresh-robot-parent-v2 checkout preserves failed v1. One simulator
+worker per mission avoids accumulating the known MuJoCo repeated-load file leak;
+physics/model/training settings unchanged. Sixteen repeated worker fixtures and
+21 focused/source checks passed. Candidate manifest
+3ecff9baac23eab515a586d3bb629f9123bc97f08d243dcaf75c27021c10716e,
+346 sources/31,746 resources verified. Exact new approval pending; no retry.
+Protocol: WSPL-fresh-robot-parent-v2/docs/wspl/FRESH_ROBOT_PARENT_V2.md.
+
+November 23, 2026 update: fresh local parent v1 stopped before training after
+11 successful teacher missions, on twelfth scene construction. MuJoCo reported
+a missing mesh that exists and matches its bound hash; known repeated-load
+file-handle leak is the leading diagnosis (MuJoCo issue1685). Zero optimizer
+updates, checkpoints, Qwen task predictions or reserved evaluations. Worker
+exited1, no process active, no retry launched. Preserve v1 source/runtime/output.
+See docs/wspl/fresh_robot_parent_v1_failure.json.
+
+November 23, 2026: fresh local robot-parent prerequisite approved/launched.
+Exact manifest a6e5bfa2b42d0e9fa1b2aca423f2bb398383ba3e7ea8b90e93d33c5aa65dc757;
+user replied "Run it". Isolated WSPL-supervision-wspl-lora-v1, output
+results/fresh_robot_parent_v1; hidden watchdog PID23428, checked worker PID35988.
+341 sources and 31,747 resources reverified. Fresh Qwen ordinary parent only:
+64 teacher missions, 384 updates, 16 paired base/trained readiness missions,
+eight-hour guard. No Astra calls or automatic follow-on. New analytic motor
+fixtures are supplied infrastructure, not recovered historical learned weights.
+Preserve isolated inventoried source/resources. Inspect live receipt and status
+before claiming training or completion. Launch record: docs/wspl/fresh_robot_parent_launch.json.
+
 November 12, 2026: example-driven Python addition complete. Six valid predictors;
 Python beats saved native WSP and WSPL factual RMSE on 5/6 tasks and both AdamW
 baselines on 6/6. Native wins ERCOT and ACIC effect estimation; Python wins IHDP

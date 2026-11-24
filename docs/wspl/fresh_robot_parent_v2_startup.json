@@ -1,0 +1,27 @@
+{
+  "completion_claim": false,
+  "constructor_calls": 1,
+  "last_training_row": {
+    "grad_norm": 9.47081470489502,
+    "lr": 3.998360465025649e-05,
+    "nll": 2.357072778046131,
+    "step": 21,
+    "targets": 168
+  },
+  "live_status": {
+    "elapsed_seconds": 256.8477329000016,
+    "grad_norm": 9.47081470489502,
+    "lr": 3.998360465025649e-05,
+    "mission": 63,
+    "nll": 2.357072778046131,
+    "status": "training",
+    "step": 21,
+    "targets": 168,
+    "total": 384
+  },
+  "manifest_sha256": "3ecff9baac23eab515a586d3bb629f9123bc97f08d243dcaf75c27021c10716e",
+  "status": "training_startup_verified",
+  "teacher_missions_completed": 64,
+  "teacher_successes": 64,
+  "training_updates_observed": 21
+}
