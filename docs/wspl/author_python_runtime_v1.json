@@ -1,0 +1,17 @@
+{
+  "status": "engineering_ready",
+  "scientific_run_launched": false,
+  "runtime": "C:\\Users\\kevin\\wspl-author-python-v1\\runtime",
+  "manifest": "C:\\Users\\kevin\\wspl-author-python-v1\\environment_manifest.json",
+  "manifest_sha256": "40edaf0b63eab1881648b5ca4d4ddc077ddb4c48c2e6ace0167091368681e84b",
+  "files": 22111,
+  "bytes": 4451375973,
+  "independent_copies": true,
+  "isolation": "Windows AppContainer, no network capabilities, distinct author profiles",
+  "shared_kernel_and_gpu": true,
+  "in_container_assertions_passed": 21,
+  "bridge_unit_checks_passed": 15,
+  "output_collection_unit_checks_passed": 3,
+  "wrapper_checks_passed": 3,
+  "bounded_prototype": "archived; never launched"
+}

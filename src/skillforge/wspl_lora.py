@@ -128,11 +128,11 @@ def _finish(original, candidate, edits, arm, limits):
 
 
 def construct_wspl(parent, programs, *, expected_parent_id,
-                   adapter_limits=AdapterLimits(), editor_limits=Limits()):
+                   adapter_limits=AdapterLimits(), editor_limits=Limits(), bindings=None):
     """Atomically replay one program per selected pair against the same parent.
 
-    Bindings and imported modules are intentionally absent. Only the archived
-    parent factors, literals and bounded construction arithmetic are available.
+    Optional construction-only bindings are identity-pinned by the editor and
+    embedded in replayable plans. Imported modules remain unavailable.
     All proposals stage locally; a failure returns no candidate and changes no
     input state. No selected pair can see another pair's candidate edits.
     """
@@ -149,7 +149,7 @@ def construct_wspl(parent, programs, *, expected_parent_id,
                 or tree['circuits'] or tree['regions'] or tree['descriptions']):
             raise ValueError('Fixed exact-to-storage tensor construction required')
         pair = _pair(original, projection, adapter_limits)
-        staged = plan(source, parent=pair, limits=editor_limits)
+        staged = plan(source, parent=pair, limits=editor_limits, bindings=bindings)
         result = apply(staged, parent=pair, expected_parent_id=pair.sha256)
         detail = staged.to_dict()
         if result.graph != pair.graph:

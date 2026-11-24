@@ -45,6 +45,20 @@ class BridgeTests(unittest.TestCase):
         self.assertEqual(identity(result),before);self.assertEqual(receipt['changed_elements'],0)
         self.assertTrue(np.signbit(result[self.p+'.lora_B'][0,0]))
 
+    def test_construction_binding_is_hash_pinned_and_replays_exact_bits(self):
+        from skillforge.wsp_artifact import Bits, digest
+        from skillforge.wsp_values import pack
+        values=np.array([[.25,-0.0],[1.,-.5],[0.,2.],[3.,4.]],dtype=np.float32)
+        binding=np.array([Bits(int(v)) for v in values.view(np.uint32).flat],dtype=object).reshape(values.shape)
+        declaration=f'const C=tensor("C",sha256="{digest(pack(binding))}");\n'
+        source=self.program('B[:,:]=C;').replace('edit adapter',declaration+'edit adapter',1)
+        candidate,_=construct_wspl(self.parent,{self.p:source},expected_parent_id=self.id,bindings={'C':binding})
+        np.testing.assert_array_equal(candidate[self.p+'.lora_B'].view(np.uint32),values.view(np.uint32))
+        tampered=binding.copy();tampered[0,0]=Bits(0)
+        with self.assertRaises(ValueError):
+            construct_wspl(self.parent,{self.p:source},expected_parent_id=self.id,bindings={'C':tampered})
+        self.assertEqual(identity(self.parent),self.id)
+
     def test_stale_adapter_rejected_before_edits(self):
         self.parent[self.p+'.lora_A'][0,0]=9
         with self.assertRaisesRegex(ValueError,'Stale'):

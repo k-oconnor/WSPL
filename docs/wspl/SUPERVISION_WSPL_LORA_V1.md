@@ -1,11 +1,14 @@
 # Supervision with WSPL-authored LoRA factors
 
-Status: preparation in progress, November 23, 2026. No scientific run, author
-request, trained-model evaluation, source registration, or launch has occurred.
-The original machine and checkpoints are unavailable. Kevin explicitly requested
-a fresh local rebuild. The prerequisite is specified in FRESH_ROBOT_PARENT_V1.md;
-no artifact transfer is required. This author-study protocol remains a proposed
-design, not a ready-to-approve manifest.
+Status: author-study preparation in progress, November 23, 2026. The separately
+approved fresh ordinary-parent v2 is complete: 16/16 readiness successes versus
+0/16 before training. See CURRENT_RESEARCH.md and its completion audit. No Astra
+author request, adaptation study, author-study registration or launch has occurred.
+The original machine and checkpoints are unavailable; the parent was rebuilt
+locally. This author-study protocol remains a proposed design, not a ready-to-
+approve manifest. Kevin selected full isolated Python rather than bounded tools.
+The Windows AppContainer runtime and engineering checks are complete; see
+AUTHOR_PYTHON_ENVIRONMENT_V1.md. The unlaunched bounded prototype is archived.
 
 ## Question
 
@@ -77,7 +80,10 @@ retry until it succeeds.
 `skillforge.wspl_lora` treats each projection's A/B pair as an opaque FP32 tensor
 bank. The whole adapter hash binds the pair identities, shapes and exact bits.
 The source target pins the pair; construction uses fixed `exact_to_storage`
-semantics, bounded arithmetic and loops. There are no external tensor bindings.
+semantics, bounded arithmetic and loops. Optional construction-only tensor
+bindings must be pinned by exact content hashes and archived for independent
+replay. They do not become inference-time inputs. Report whether WSPL actually
+constructs the edit or only serializes coefficients computed in Python.
 Source, parent/candidate hashes, changed elements and construction counters are
 archived. Imported plans replay through the existing editor.
 
@@ -95,10 +101,16 @@ differences, and verify that the final deployed adapter matches its source.
 
 Use the previous bounded reaching domain and four conditions: ordinary,
 changed calibration from the start, mid-mission switch, and return to original.
-Expose the development simulator and diagnostics only in the isolated author
-sandbox. Keep the independent final evaluator and other sessions inaccessible.
-The original Linux/bubblewrap isolation must be preserved or an equivalent
-boundary tested; the current Windows host has no WSL installation.
+Keep the independent final evaluator and other sessions inaccessible. Each author
+receives a distinct Windows AppContainer profile, full Python/NumPy/PyTorch,
+read-only supplied inputs and a writable persistent workspace. Author programs
+cannot modify the runtime or access the repository/private host data. Network
+capabilities are absent. Child processes inherit isolation, and a Windows job
+object terminates the whole process tree on timeout. Files persist between calls;
+Python globals do not. The same runtime is available to both author arms.
+The development simulator/evaluation tool still needs integration behind this
+boundary; passing environment tests is not evidence that the scientific runner
+has enforced all data separation or budget rules.
 
 Proposed final panel: 64 new missions, 16 per condition, three to five ordered
 waypoints. Generate them in the sealed evaluator only after **all** six candidates
@@ -150,9 +162,9 @@ restoration. No real Qwen forward or task prediction was generated.
 
 Still required before a launch approval can be requested:
 
-- Complete the separately pinned fresh ordinary-parent prerequisite and freeze
-  its artifact if ready; specify a fresh adaptation control. The native Windows
-  simulator is operational, but author isolation is still required.
+- Specify a fresh adaptation control using the completed frozen ordinary-parent
+  v2. Both the native Windows simulator and full-Python author isolation are
+  operational; their matched scientific tool integration remains to be completed.
 - Complete the fixed-policy deployment loader, per-arm author tool/runner and
   final multi-arm evaluator integration; the previous broad supervisor runner
   cannot be reused unchanged for this narrower deployment contract.

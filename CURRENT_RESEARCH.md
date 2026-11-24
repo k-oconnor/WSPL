@@ -1,3 +1,18 @@
+November 23, 2026: full isolated Python author environment ENGINEERING READY.
+Kevin selected full Python over bounded tools; unlaunched bounded drafts archived.
+Dedicated Windows AppContainer runtime with Python3.13.13/NumPy2.4.4/Torch2.12.1
++cu126/Transformers5.14.1 and WSPL bridge. CUDA/backward/checkpoint persistence,
+native/WSPL synthetic parity, host/other-author file denial, read-only inputs,
+network checks, inherited child restrictions and process-tree cleanup pass.
+21 in-container assertions plus host/persistence/cleanup controls; 18 focused
+unit checks and three wrapper checks pass. Runtime22,111files/4,451,375,973bytes;
+manifest40edaf0b63eab1881648b5ca4d4ddc077ddb4c48c2e6ace0167091368681e84b.
+See docs/wspl/AUTHOR_PYTHON_ENVIRONMENT_V1.md and JSON receipts. Source is isolated
+in WSPL-robot-authoring-v1, branch research/robot-authoring-v1. No new Astra calls,
+scientific training or Qwen task predictions. Full study/tool/evaluator integration
+and exact scientific source approval remain outstanding. This is environment
+engineering, not missing Section4 evidence or a promoted WSPL capability.
+
 November 23, 2026: fresh robot parent v2 COMPLETE; read-only completion audit passed.
 384 LoRA updates, 3,072 supervised targets from 867 rows/64 successful ordinary
 teacher missions. Fresh paired readiness: base0/16, trained16/16, 16 corrections,

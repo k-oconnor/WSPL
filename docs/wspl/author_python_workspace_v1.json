@@ -1,0 +1,9 @@
+{
+  "root": "C:\\Users\\kevin\\wspl-author-python-v1\\session-check-257d27e30e",
+  "checks": {
+    "first": true,
+    "second": true,
+    "error": true
+  },
+  "passed": true
+}
