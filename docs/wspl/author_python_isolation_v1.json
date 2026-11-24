@@ -1,0 +1,105 @@
+{
+  "profile": "WSPL.AuthorPython.Check.2dad3294ac",
+  "first": {
+    "exit_code": 0,
+    "timed_out": false,
+    "pid": 38984,
+    "seconds": 7.952706600015517,
+    "profile": "WSPL.AuthorPython.Check.2dad3294ac",
+    "sid": "S-1-15-2-2153902564-4151559590-100847940-3905889720-2866963476-1941807382-94080746",
+    "lpac": false,
+    "network_capabilities": [],
+    "inherited_handles": false,
+    "active_processes_at_return": 0
+  },
+  "root": "C:\\Users\\kevin\\wspl-author-python-v1\\isolation-2dad3294ac",
+  "loopback_host_positive_control": true,
+  "loopback_no_sandbox_connection": true,
+  "checks": {
+    "checks": {
+      "appcontainer_token": true,
+      "environment_scrubbed": true,
+      "workspace_write": true,
+      "input_read": true,
+      "input_write_denied": true,
+      "runtime_write_denied": true,
+      "host_canary_read_denied": true,
+      "repository_canary_read_denied": true,
+      "other_author_read_denied": true,
+      "host_write_denied": true,
+      "loopback_unreachable": true,
+      "external_network_denied": true,
+      "child_inherits_isolation": true,
+      "job_breakaway_denied": true,
+      "numpy_io": true,
+      "native_wspl_bitwise_parity": true,
+      "construction_preserves_parent": true,
+      "transformers_import": true,
+      "cuda_available": true,
+      "cuda_backward": true,
+      "checkpoint_write": true
+    },
+    "detail": {
+      "input_write_denied": "[Errno 13] Permission denied: 'C:\\\\Users\\\\kevin\\\\wspl-author-python-v1\\\\isolation-2dad3294ac\\\\inputs\\\\input.txt'",
+      "runtime_write_denied": "[Errno 13] Permission denied: 'C:\\\\Users\\\\kevin\\\\wspl-author-python-v1\\\\runtime\\\\tamper.txt'",
+      "host_canary_read_denied": "[Errno 13] Permission denied: 'C:\\\\Users\\\\kevin\\\\wspl-author-python-v1\\\\isolation-2dad3294ac\\\\private\\\\canary.txt'",
+      "repository_canary_read_denied": "[Errno 13] Permission denied: 'C:\\\\Users\\\\kevin\\\\OneDrive\\\\Desktop\\\\WSPL-robot-authoring-v1\\\\data\\\\robot_authoring_v1\\\\host-canary-2dad3294ac.txt'",
+      "other_author_read_denied": "[Errno 13] Permission denied: 'C:\\\\Users\\\\kevin\\\\wspl-author-python-v1\\\\isolation-2dad3294ac\\\\other-author\\\\canary.txt'",
+      "host_write_denied": "[Errno 13] Permission denied: 'C:\\\\Users\\\\kevin\\\\wspl-author-python-v1\\\\isolation-2dad3294ac\\\\private\\\\canary.txt'",
+      "loopback_unreachable": "TimeoutError('timed out')",
+      "external_network_denied": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions",
+      "job_breakaway_denied": "[WinError 5] Access is denied"
+    },
+    "versions": {
+      "python": "3.13.13 (tags/v3.13.13:01104ce, Apr  7 2026, 19:25:48) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "2.4.4",
+      "torch": "2.12.1+cu126",
+      "transformers": "5.14.1"
+    },
+    "passed": true
+  },
+  "second": {
+    "exit_code": 0,
+    "timed_out": false,
+    "pid": 36260,
+    "seconds": 3.3550387999857776,
+    "profile": "WSPL.AuthorPython.Check.2dad3294ac",
+    "sid": "S-1-15-2-2153902564-4151559590-100847940-3905889720-2866963476-1941807382-94080746",
+    "lpac": false,
+    "network_capabilities": [],
+    "inherited_handles": false,
+    "active_processes_at_return": 0
+  },
+  "persistence": {
+    "persistent_workspace": true,
+    "checkpoint_reload": true
+  },
+  "timeout": {
+    "exit_code": 124,
+    "timed_out": true,
+    "pid": 33920,
+    "seconds": 3.0161640999722295,
+    "profile": "WSPL.AuthorPython.Check.2dad3294ac",
+    "sid": "S-1-15-2-2153902564-4151559590-100847940-3905889720-2866963476-1941807382-94080746",
+    "lpac": false,
+    "network_capabilities": [],
+    "inherited_handles": false,
+    "active_processes_at_return": 0
+  },
+  "timeout_killed_descendant": true,
+  "ordinary_exit": {
+    "exit_code": 0,
+    "timed_out": false,
+    "pid": 35448,
+    "seconds": 0.13419920002343133,
+    "profile": "WSPL.AuthorPython.Check.2dad3294ac",
+    "sid": "S-1-15-2-2153902564-4151559590-100847940-3905889720-2866963476-1941807382-94080746",
+    "lpac": false,
+    "network_capabilities": [],
+    "inherited_handles": false,
+    "active_processes_at_return": 0
+  },
+  "ordinary_exit_killed_descendant": true,
+  "host_inputs_unchanged": true,
+  "passed": true
+}
