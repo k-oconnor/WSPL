@@ -1,0 +1,12 @@
+{
+  "approval": "User replied 'Lets go' on November 24, 2026 to the exact v2 manifest approval request: reuse saved acquisition and 384 control updates, at most 96 fresh author requests, same final evaluation and guards, no automatic retry or follow-on.",
+  "approved_by": "user",
+  "launched": false,
+  "manifest": "experiments/source_pins/robot_authoring_v2.manifest.json",
+  "registered_utc": "2026-11-24T16:30:06.963468+00:00",
+  "resources": 76222,
+  "sha256": "6640c6968490e742abbc619f3619207d9047d1171cd0f3328207e93fa68354bb",
+  "source_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2",
+  "sources": 377,
+  "status": "approved_registered_reverified"
+}

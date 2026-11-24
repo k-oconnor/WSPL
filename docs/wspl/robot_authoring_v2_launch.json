@@ -1,0 +1,9 @@
+{
+    "status":  "launcher_started",
+    "launcher_pid":  27344,
+    "manifest_sha256":  "6640c6968490e742abbc619f3619207d9047d1171cd0f3328207e93fa68354bb",
+    "source_checkout":  "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2",
+    "output":  "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2",
+    "started_utc":  "2026-11-24T16:30:15.9128003Z",
+    "automatic_follow_on":  false
+}

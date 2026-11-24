@@ -1,3 +1,17 @@
+November 24, 2026: repaired matched robot authoring APPROVED/LAUNCHED 10:30 Central.
+User replied "Lets go" to exact continuation manifest
+6640c6968490e742abbc619f3619207d9047d1171cd0f3328207e93fa68354bb.
+377 sources/76,222 resources reverified; approval registered main and isolated.
+Isolated WSPL-robot-authoring-v2; launcher27344, worker40484; source receipt
+verified and constructor1. Saved255 acquisition decisions/16 development missions/
+384 gradient updates reused, no new control training. First native Astra response
+completed and delegated sandbox Python inspection exited0; prior host failure passed.
+Six authors, max96 fresh requests, same final evaluation; no automatic retry/follow-on.
+Study active, not complete; inspect current status/results before claiming outcomes.
+Preserve isolated inventoried source and bound resources. Approval/launch/startup
+records docs/wspl/robot_authoring_v2_{approval,launch,startup}.json.
+Earlier v2 preparation and v1 launch entries below are historical.
+
 November 24, 2026: v1 FAILED at first author call; v2 continuation PREPARED.
 Collector disabled Code Mode host required by Astra; offline prompt rendering
 missed the runtime requirement. Original run stopped718.0317seconds, exit1.

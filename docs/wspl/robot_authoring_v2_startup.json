@@ -1,0 +1,51 @@
+{
+  "observed_utc": "2026-11-24T16:31:38.692904+00:00",
+  "manifest_sha256": "6640c6968490e742abbc619f3619207d9047d1171cd0f3328207e93fa68354bb",
+  "source_status": "verified",
+  "constructor_calls": 1,
+  "worker_pid": 40484,
+  "status": {
+    "status": "author_call",
+    "elapsed_seconds": 76.14565640001092,
+    "development_compute_seconds": 694.888873799995,
+    "author_arm": "native",
+    "author_turn": 3
+  },
+  "reused_prefix": {
+    "prior_root": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v1\\results\\robot_authoring_v1",
+    "prior_manifest_sha256": "b5f628915f5ea93b34decb7e225592366cb01f0ad3605146b82db472b92fa410",
+    "gradient": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v1\\results\\robot_authoring_v1\\gradient\\candidate.npz",
+    "gradient_adapter_id": "b8b49c387ed14e60808cdda0760ca5cc69bda9f27a275a04d75a67c2e288e451",
+    "acquisition_decisions": 255,
+    "development_missions": 16,
+    "new_training_updates": 0,
+    "prior_author_invocations": 1,
+    "prior_completed_author_responses": 0,
+    "prior_author_usage": "unknown"
+  },
+  "first_author_response_completed": true,
+  "first_author_usage": {
+    "thread_id": "01a20e65-392b-7753-ac58-66e6e5b29fb4",
+    "usage": {
+      "input_tokens": 8857,
+      "cached_input_tokens": 6656,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 471,
+      "reasoning_output_tokens": 140
+    },
+    "agent_messages": 1,
+    "tool_calls": 0,
+    "active_seconds": 18.27346610004315,
+    "prompt_transport": {
+      "bytes_written": 5296,
+      "sha256": "8c942674b590d3ddab3ddf627e30184b66d271477b4bb18651177dbdbafbb530",
+      "transport": "stdin",
+      "server_receipt_verified": false
+    },
+    "images": []
+  },
+  "first_python_exit_code": 0,
+  "first_python_timed_out": false,
+  "results_complete": false,
+  "note": "Startup verification only; experiment remains active."
+}
