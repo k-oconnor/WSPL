@@ -1,0 +1,21 @@
+{
+  "observed_utc": "2026-11-24T15:35:30.987349+00:00",
+  "manifest_sha256": "b5f628915f5ea93b34decb7e225592366cb01f0ad3605146b82db472b92fa410",
+  "source_status": "verified",
+  "constructor_calls": 1,
+  "worker_pid": 23532,
+  "status": {
+    "status": "collecting_acquisition",
+    "elapsed_seconds": 56.657071199966595,
+    "development_compute_seconds": 0.0,
+    "mission": 15,
+    "condition": "return",
+    "missions": 16,
+    "diagnostic_row": 43,
+    "diagnostic_rows": 255
+  },
+  "completed_teacher_missions": 16,
+  "teacher_successes": 16,
+  "results_complete": false,
+  "note": "Startup snapshot only, not a final result"
+}

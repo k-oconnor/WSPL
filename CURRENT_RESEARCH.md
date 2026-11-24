@@ -1,3 +1,16 @@
+November 24, 2026: matched robot authoring APPROVED and LAUNCHED at09:34Central.
+User replied approved to exact manifest
+b5f628915f5ea93b34decb7e225592366cb01f0ad3605146b82db472b92fa410.
+369sources/75,969resources reverified; registered main and isolated archive.
+Hidden launcher PID41400, worker23532; isolated WSPL-robot-authoring-v1/results/
+robot_authoring_v1. Source receipt verified, constructor1; acquisition started
+without startup errors. Gradient control and six author sessions follow under
+this same approved protocol (max96responses). 24hdevelopment+6hfinal guards,
+no automatic retry/follow-on. Preserve isolated inventoried source and resources.
+Read live status/results before claiming author calls or completion. Main launch,
+approval and startup records are in docs/wspl/robot_authoring_v1_*.json.
+The preparation entry below is historical and superseded by this approval.
+
 November 24, 2026: matched robot LoRA authoring PREPARED, unapproved/unlaunched.
 Three native Python and three Python+WSPL Astra/xhigh sessions, same ordinary
 parent, acquisition data, diagnostics and16responses/4evaluation attempts each.

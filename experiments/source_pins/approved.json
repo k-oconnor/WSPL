@@ -81,6 +81,13 @@
       "registered_utc": "2026-11-04T15:23:09.008589+00:00",
       "sha256": "ef3ca419ffae13e156be92a3eb2d220762c035cc2eb00839e4d8c3c8d0b0046a"
     },
+    "robot-authoring-v1": {
+      "approval": "User replied 'approved' on November 24, 2026 to this exact manifest and launch request: three native and three WSPL Astra authors, at most96responses,384gradient updates,up to512final missions,24hdevelopment/6hfinal guards,existing Codex usage without hard dollar/token cap; no automatic retry or follow-on.",
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/robot_authoring_v1.manifest.json",
+      "sha256": "b5f628915f5ea93b34decb7e225592366cb01f0ad3605146b82db472b92fa410",
+      "source_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v1"
+    },
     "wsp-breakout-v1": {
       "approval": "User explicitly selected Approve this manifest and launch the reworked Breakout comparison on 2026-11-04; six fresh Astra/xhigh one-shot proposals, native/WSPL, three each, original fixed tanh network, 1000 paired episodes per valid proposal, artifact retention and stated usage/time limits.",
       "approval_question_item_id": "call_29d904c693c949fab85cfcbbeace151d",
