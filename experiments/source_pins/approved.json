@@ -60,6 +60,12 @@
       "manifest": "experiments/source_pins/fresh_robot_parent_v1.manifest.json",
       "sha256": "a6e5bfa2b42d0e9fa1b2aca423f2bb398383ba3e7ea8b90e93d33c5aa65dc757"
     },
+    "fresh-robot-parent-v2": {
+      "approval": "User replied Go ahead to the exact repaired-manifest approval request on 2026-11-23; one simulator worker per mission, same 64 teaching missions, 384 updates, 16 paired evaluation missions, eight-hour guard, zero Astra calls, no automatic follow-on.",
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/fresh_robot_parent_v2.manifest.json",
+      "sha256": "3ecff9baac23eab515a586d3bb629f9123bc97f08d243dcaf75c27021c10716e"
+    },
     "go-authoring-resume-v1": {
       "approval": "Approve this manifest and launch the Go recovery",
       "approval_question_item_id": "call_fbd1b185e6c847b1bd291acd7761948a",

@@ -1,0 +1,13 @@
+{
+  "output": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-fresh-robot-parent-v2\\results\\fresh_robot_parent_v2",
+  "watchdog_pid": 30776,
+  "manifest_sha256": "3ecff9baac23eab515a586d3bb629f9123bc97f08d243dcaf75c27021c10716e",
+  "launched_utc": "2026-11-24T03:58:12.5701708Z",
+  "worker_pid": 37048,
+  "approval": "User replied Go ahead after exact replacement digest request.",
+  "status": "launched; inspect live receipt/status for progress",
+  "source_files_verified": 346,
+  "resources_verified": 31746,
+  "watchdog_hours": 8,
+  "scope": "One simulator process per mission. Same 64 teacher missions, 384 updates, 16 paired evaluation missions; zero Astra calls; no automatic follow-on."
+}
