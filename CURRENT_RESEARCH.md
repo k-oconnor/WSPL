@@ -1,3 +1,17 @@
+November 23, 2026: fresh robot parent v2 COMPLETE; read-only completion audit passed.
+384 LoRA updates, 3,072 supervised targets from 867 rows/64 successful ordinary
+teacher missions. Fresh paired readiness: base0/16, trained16/16, 16 corrections,
+zero regressions. Threshold14/16 passed. Elapsed1022.801seconds (~17minutes).
+All96trajectories/8,008physicalticks/732modeldecisions,346sources/31,746resources,
+checkpoint/factor identity and paired starts verified; worker exited0. No audit
+forwards or simulator calls. This is an ordinary-task gradient-trained parent,
+not adaptation or WSPL-authored LoRA evidence. No follow-on launched.
+Frozen adapter: WSPL-fresh-robot-parent-v2/results/fresh_robot_parent_v2/adapter_final.pt
+SHA2562cd5bd6662db5bdb39e6d341250abfca083672e2b9794c939abc145b49470276.
+Audit: docs/wspl/fresh_robot_parent_v2_completion_audit.json; replay auditor
+tools/audit_fresh_robot_parent_v2.py is in main, outside the frozen source inventory.
+Prior v1 failure and all pinned sources/resources remain unchanged.
+
 November 19, 2026 preparation: the full executive-teaching pipeline now exists.
 Protocol docs/wspl/EXECUTIVE_TEACHING_V1.md supersedes the design's proposed
 budgets. Eight two-goal Astra demonstrations (max128calls), successful-condition
