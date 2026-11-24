@@ -1,0 +1,33 @@
+{
+  "observed_utc": "2026-11-24T22:09:32.113436+00:00",
+  "manifest_sha256": "fddea45cf93addfd070f01877b1eb8f096df2bfcf18fc5597a331298f7332d71",
+  "source_status": "verified",
+  "constructor_calls": 1,
+  "worker_pid": 8824,
+  "status": {
+    "status": "author_call",
+    "elapsed_seconds": 90.01922139996896,
+    "development_compute_seconds": 16.979740600043442,
+    "author_arm": "native",
+    "author_turn": 5
+  },
+  "completed_author_responses": 4,
+  "first_inspection": {
+    "status": "inspected",
+    "path": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-access-v1\\results\\robot_authoring_access_v1\\native0\\sandbox\\inputs\\query_01",
+    "examples": 255,
+    "mean_target_nll": 3.029866424261355,
+    "action_correct": 207,
+    "projections": {
+      "p0": "model.layers.27.mlp.down_proj",
+      "p1": "model.layers.26.mlp.down_proj",
+      "p2": "model.layers.27.self_attn.o_proj",
+      "p3": "model.layers.25.mlp.down_proj"
+    },
+    "inspection_attempts": 1
+  },
+  "first_inspection_seconds": 14.673364099988248,
+  "first_inspection_adapter_id": "b0cc03c540b27a2c0cb87ded2e41841e58a7eb95e9fc5159906dd440615f5560",
+  "results_complete": false,
+  "note": "Startup only. No scientific completion or capability claim."
+}

@@ -81,6 +81,14 @@
       "registered_utc": "2026-11-04T15:23:09.008589+00:00",
       "sha256": "ef3ca419ffae13e156be92a3eb2d220762c035cc2eb00839e4d8c3c8d0b0046a"
     },
+    "robot-authoring-access-v1": {
+      "approval": "User replied Let's kick it off on November 24, 2026 to the exact broader-access manifest approval request: six fresh Astra authors,24responses/8inspection attempts/4development evaluations each,max144hosted requests and512fresh final missions,existing data/control reused,24hdevelopment/6hfinal guards,existing Codex usage without hard dollar/token cap,no automatic retry/follow-on.",
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/robot_authoring_access_v2.manifest.json",
+      "registered_utc": "2026-11-24T22:07:04.517179+00:00",
+      "sha256": "fddea45cf93addfd070f01877b1eb8f096df2bfcf18fc5597a331298f7332d71",
+      "source_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-access-v1"
+    },
     "robot-authoring-v1": {
       "approval": "User replied 'approved' on November 24, 2026 to this exact manifest and launch request: three native and three WSPL Astra authors, at most96responses,384gradient updates,up to512final missions,24hdevelopment/6hfinal guards,existing Codex usage without hard dollar/token cap; no automatic retry or follow-on.",
       "approved_by": "user",

@@ -1,3 +1,16 @@
+November24,2026: broader-access robot authoring APPROVED/LAUNCHED 16:07 Central.
+User said "Let's kick it off" to exact digest
+fddea45cf93addfd070f01877b1eb8f096df2bfcf18fc5597a331298f7332d71.
+385sources/76,229resources reverified; registered main and isolated. Isolated
+WSPL-robot-authoring-access-v1; hidden launcher2056, worker8824. Source receipt
+verified,constructor1,first Astra Python call successful and first real acquisition
+inspection completed. Six fresh sessions now active; max144responses/48queries,
+512fresh final missions. No new training; saved data/control reused. Preserve
+inventoried source and bound resources. No automatic retry/follow-on. Inspect
+current status/results before claiming completion. Launch/startup/approval records
+in docs/wspl/robot_access_v1_{approval,launch,startup}.json. Earlier preparation
+entries below are historical.
+
 November24,2026: broader-access robot authoring PREPARED, not approved/launched.
 385sources/76,229resources verified; candidate fddea45cf93addfd070f01877b1eb8f096df2bfcf18fc5597a331298f7332d71.
 Isolated WSPL-robot-authoring-access-v1. Both interfaces may inspect any of196
