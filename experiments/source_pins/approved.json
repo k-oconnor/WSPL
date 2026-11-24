@@ -54,6 +54,12 @@
       "manifest": "experiments/source_pins/diffusion_replay_v1.manifest.json",
       "sha256": "6c2420f54ce0d8bdff4640eb50271b8c3b7f646c23bdbc1fdb57ef9fd972b401"
     },
+    "fresh-robot-parent-v1": {
+      "approval": "User replied Run it on 2026-11-23 to the exact manifest approval request; fresh ordinary parent only: 64 teacher missions, 384 updates, 16 paired evaluation missions, eight-hour guard, zero Astra calls, no automatic follow-on.",
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/fresh_robot_parent_v1.manifest.json",
+      "sha256": "a6e5bfa2b42d0e9fa1b2aca423f2bb398383ba3e7ea8b90e93d33c5aa65dc757"
+    },
     "go-authoring-resume-v1": {
       "approval": "Approve this manifest and launch the Go recovery",
       "approval_question_item_id": "call_fbd1b185e6c847b1bd291acd7761948a",
