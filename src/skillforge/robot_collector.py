@@ -8,7 +8,7 @@ import time
 import threading
 
 
-DISABLED = ('code_mode code_mode_host shell_tool unified_exec unified_exec_tty '
+DISABLED = ('code_mode shell_tool unified_exec unified_exec_tty '
     'shell_snapshot view_image image_generation multi_agent multi_agent_v2 apps plugins '
     'remote_plugin browser_use browser_use_external browser_use_full_cdp_access '
     'in_app_browser computer_use skill_search skill_mcp_dependency_install sleep_tool '
@@ -38,6 +38,8 @@ def settings(catalog, instructions, profile='readonly'):
         'suppress_unstable_features_warning=true',
         'skills.bundled.enabled=false', 'mcp_servers={}', 'agents.enabled=false',
         'features.skip_host_skill_discovery=true',
+        # Code-mode-only models require host startup even with zero exposed tools.
+        'features.code_mode_host=true',
         'features.unbounded_connection_retries=false',
         'model_catalog_json='+json.dumps(Path(catalog).resolve().as_posix()),
         'model_instructions_file='+json.dumps(Path(instructions).resolve().as_posix())
@@ -63,6 +65,8 @@ def command(cli, catalog, instructions, workspace, answer, large_prompt=False,pr
 
 def check_event(e):
     kind=e.get('type')
+    if kind=='item.completed' and e.get('item',{}).get('type')=='error':
+        raise ValueError('Codex runtime error: '+str(e['item'].get('message','unspecified error')))
     if kind in ('thread.started','turn.started','turn.completed'):return
     if kind in ('item.started','item.updated','item.completed') and e.get('item',{}).get('type') in ('reasoning','agent_message'):return
     raise ValueError('tool, error or unknown event: '+str(kind)+'/'+str(e.get('item',{}).get('type')))

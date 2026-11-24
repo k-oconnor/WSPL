@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "purpose": "generic collector transport healthcheck",
+  "scientific_author_requests": 0,
+  "research_data_supplied": false,
+  "task_predictions": 0,
+  "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\data\\robot_authoring_v1\\transport_health_jarx61_n\\collection",
+  "answer": "WSPL_TRANSPORT_OK",
+  "receipt": {
+    "thread_id": "01a20e47-31bd-7800-b68b-44c31251e6b5",
+    "usage": {
+      "input_tokens": 3132,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 9,
+      "reasoning_output_tokens": 0
+    },
+    "agent_messages": 1,
+    "tool_calls": 0,
+    "active_seconds": 5.029936000006273,
+    "prompt_transport": {
+      "bytes_written": 60,
+      "sha256": "aa4db04ab7a4123f8606c75e739761bfe99ccd88037cd55f36b71a275a1aa9a4",
+      "transport": "stdin",
+      "server_receipt_verified": false
+    },
+    "images": []
+  }
+}

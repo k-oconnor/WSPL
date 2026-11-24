@@ -4,7 +4,7 @@
   "arms": {
     "native": {
       "status": "passed",
-      "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v1\\data\\robot_authoring_v1\\full_python_prompt_tt_h_w44",
+      "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\data\\robot_authoring_v1\\full_python_prompt_7s3zi77d",
       "binding": {
         "mode": "full_prompt",
         "prompt_sha256": "dcf740423c81029f6758e9f6517e3dcf9dbe6b69602035697a0e3533eef267d7",
@@ -15,7 +15,7 @@
     },
     "wspl": {
       "status": "passed",
-      "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v1\\data\\robot_authoring_v1\\full_python_prompt_lt3uou72",
+      "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\data\\robot_authoring_v1\\full_python_prompt_29jjwh5a",
       "binding": {
         "mode": "full_prompt",
         "prompt_sha256": "4436dd2e1c0ec828b887e7bab9224e9c4fdceffc6482df276ce879adbbf3bc48",

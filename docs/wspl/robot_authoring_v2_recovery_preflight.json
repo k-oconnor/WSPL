@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\data\\robot_authoring_v1\\recovery_fixture_iaxfin_d",
+  "acquisition_decisions": 255,
+  "development_missions": 16,
+  "gradient_file_sha256": "8193f2a9f29636e62525fa49f21131eaa17071fdd3d5c5c7d18c1682e6c20ba5",
+  "parent_adapter_id": "b0cc03c540b27a2c0cb87ded2e41841e58a7eb95e9fc5159906dd440615f5560",
+  "model_constructors": 0,
+  "new_training_updates": 0,
+  "new_predictions": 0,
+  "author_calls": 0
+}
