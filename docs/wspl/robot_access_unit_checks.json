@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "tests": 73,
+  "failures": 0,
+  "errors": 0,
+  "author_calls": 0,
+  "scientific_predictions": 0,
+  "modules": [
+    "test_robot_access",
+    "test_robot_access_runner",
+    "test_robot_authoring",
+    "test_robot_authoring_v2",
+    "test_robot_tasks",
+    "test_wspl_lora",
+    "test_source_consistency",
+    "test_fresh_robot",
+    "test_fresh_robot_v2"
+  ]
+}

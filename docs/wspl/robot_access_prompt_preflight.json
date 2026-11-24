@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "author_calls": 0,
+  "arms": {
+    "native": {
+      "mode": "context_only_digest_sentinel",
+      "prompt_sha256": "03844b2fe825546ee2725a2463744ab38d93e9c87517264a657d747f06ac7f21",
+      "prompt_utf8_bytes": 13321,
+      "collection_transport": "full UTF-8 stdin via codex exec -",
+      "limitation": "Large-prompt preflight verifies configuration/context, not server-side prompt receipt."
+    },
+    "wspl": {
+      "mode": "context_only_digest_sentinel",
+      "prompt_sha256": "68f585b8aa4386ef53f0db75727c0c9ff5ea28435c1ac66d75d2229f3fe8f9ac",
+      "prompt_utf8_bytes": 14305,
+      "collection_transport": "full UTF-8 stdin via codex exec -",
+      "limitation": "Large-prompt preflight verifies configuration/context, not server-side prompt receipt."
+    }
+  }
+}

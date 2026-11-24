@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "author_calls": 0,
+  "scientific_predictions": 0,
+  "synthetic_rows": 2,
+  "synthetic_forward_queries": 3,
+  "full_sequence_early_and_middle_layer": true,
+  "base_weights_readable": true,
+  "multi_pair_native_wspl_equal": true,
+  "native_wspl_diagnostics_bitwise_equal": true,
+  "candidate_affects_full_model_nll": true,
+  "exact_parent_restoration": true,
+  "frozen_base": true,
+  "hooks_removed": true,
+  "real_sandbox_readonly_inputs": true,
+  "query_seconds": [
+    0.7432548000360839,
+    0.22148760000709444,
+    0.22023540001828223
+  ],
+  "peak_cuda_bytes": 3226385408,
+  "seconds": 22.752869500021916,
+  "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-access-v1\\data\\robot_authoring_access_v1\\synthetic_l20xd760"
+}
