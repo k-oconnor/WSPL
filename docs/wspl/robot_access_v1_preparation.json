@@ -1,0 +1,16 @@
+{
+  "author_calls_max": 144,
+  "final_missions_max": 512,
+  "final_seed": 73600000,
+  "inspection_attempts_max": 48,
+  "launched": false,
+  "manifest": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-access-v1\\experiments\\source_pins\\robot_authoring_access_v2.manifest.json",
+  "new_control_updates": 0,
+  "registered": false,
+  "resources": 76229,
+  "reused_control_updates": 384,
+  "sha256": "fddea45cf93addfd070f01877b1eb8f096df2bfcf18fc5597a331298f7332d71",
+  "source_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-access-v1",
+  "sources": 385,
+  "status": "prepared_unapproved"
+}

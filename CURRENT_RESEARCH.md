@@ -1,3 +1,19 @@
+November24,2026: broader-access robot authoring PREPARED, not approved/launched.
+385sources/76,229resources verified; candidate fddea45cf93addfd070f01877b1eb8f096df2bfcf18fc5597a331298f7332d71.
+Isolated WSPL-robot-authoring-access-v1. Both interfaces may inspect any of196
+projections, request selected frozen matrices and full-sequence activations,
+and replay candidate edits through full model on acquisition data only.
+Removed default final-layer feature pack/example. Six fresh Astra/xhigh authors,
+24responses/8inspection attempts/4development attempts each; max144author calls,
+48queries,512fresh final missions (seed73600000). Reuse255acquisition decisions,
+16parent development missions and384-update control; no new training/collection.
+73focused checks pass; full-size synthetic two-site native/WSPL parity, exact
+restoration, frozen base, hook cleanup and real sandbox readonly inputs passed.
+Actual offline prompts pass; zero hosted author calls/scientific predictions.
+24hdevelopment/8hnew execution/6hfinal guards, existing usage no hard dollar/token
+cap; no automatic retries/follow-on. Protocol ROBOT_AUTHORING_ACCESS_V1.md.
+Exact source approval/registration still required. Earlier records historical.
+
 November 24, 2026: matched robot authoring COMPLETE; saved-artifact analysis verified.
 V2 completed9839.529seconds,93responses,512final missions; receipt complete, exit0.
 Final ordinary/adaptation: parent16/0,gradient16/33;native0 8/16,native1 11/9,
