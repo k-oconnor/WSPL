@@ -10,7 +10,7 @@ from skillforge.fresh_robot import sha
 
 
 def main():
-    target=ROOT/'experiments/source_pins/robot_authoring_access_v1.manifest.json'
+    target=ROOT/'experiments/source_pins/robot_authoring_access_v2.manifest.json'
     if target.exists():raise ValueError('Preserve existing candidate identity')
     oldroot=ROOT.parent/'WSPL-robot-authoring-v2'
     prior_manifest=oldroot/'experiments/source_pins/robot_authoring_v2.manifest.json'

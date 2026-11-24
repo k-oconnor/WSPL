@@ -89,4 +89,3 @@ def model():
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('part',choices=['prompt','model']);args=p.parse_args()
     {'prompt':prompts,'model':model}[args.part]()
-

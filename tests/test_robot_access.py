@@ -72,7 +72,7 @@ class AccessTests(unittest.TestCase):
         self.assertTrue(all(torch.equal(initial[k],v) for k,v in adapter_state(self.model).items()))
         self.assertTrue(all(not m._forward_hooks and not m._forward_pre_hooks for m in self.model.modules()))
     def test_rejects_outside_data_and_unknown_interfaces(self):
-        for bad in (request(rows=[-1]),request(rows=[2]),request(rows=[0,0]),request(rows=[True]),request(projections=['private']),request(prompt='secret'),request(weights=1),request(tokens='future'),request(candidate={})): 
+        for bad in (request(rows=[-1]),request(rows=[2]),request(rows=[0,0]),request(rows=[True]),request(projections=['private']),request(prompt='secret'),request(weights=1),request(tokens='future'),request(candidate={})):
             with self.subTest(bad=bad),self.assertRaises(ValueError):validate_request(bad,2,self.names)
     def test_capacity_guard_before_forward(self):
         self.model.fail=True

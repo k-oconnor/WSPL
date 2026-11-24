@@ -1,5 +1,5 @@
 November24,2026: broader-access robot authoring PREPARED, not approved/launched.
-385sources/76,229resources verified; candidate a345f7fa836b4cdeff4accfec821d40c43c5d48cbd63f583f7616296fb3ac341.
+385sources/76,229resources verified; candidate fddea45cf93addfd070f01877b1eb8f096df2bfcf18fc5597a331298f7332d71.
 Isolated WSPL-robot-authoring-access-v1. Both interfaces may inspect any of196
 projections, request selected frozen matrices and full-sequence activations,
 and replay candidate edits through full model on acquisition data only.
