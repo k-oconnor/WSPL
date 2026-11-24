@@ -1,0 +1,17 @@
+{
+  "development_wall_seconds": 85681,
+  "fresh_author_invocations_max": 96,
+  "launched": false,
+  "manifest": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\experiments\\source_pins\\robot_authoring_v2.manifest.json",
+  "new_control_updates": 0,
+  "prior_compute_seconds": 693.1130339000374,
+  "prior_failed_author_invocations": 1,
+  "registered": false,
+  "resources": 76222,
+  "reused_control_updates": 384,
+  "sha256": "6640c6968490e742abbc619f3619207d9047d1171cd0f3328207e93fa68354bb",
+  "source_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2",
+  "sources": 377,
+  "status": "prepared_unapproved",
+  "transport_healthchecks": 1
+}

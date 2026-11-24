@@ -1,3 +1,21 @@
+November 24, 2026: v1 FAILED at first author call; v2 continuation PREPARED.
+Collector disabled Code Mode host required by Astra; offline prompt rendering
+missed the runtime requirement. Original run stopped718.0317seconds, exit1.
+16/16teacher missions/255decisions,16parent-development missions and384gradient
+updates/3072targets completed and audited. Gradient final matches rolling exactly.
+One attempted author CLI invocation,zero completed replies,unknown backend usage;
+no final evaluations. Original369sources/75,969resources and198outputs preserved.
+Repair enables existing Code Mode host while retaining zero exposed tools; one
+generic live healthcheck passed (3132input/9output tokens),no research data.
+55focused checks pass. Continuation reuses all completed prefix artifacts with
+zero new control training/collection/diagnostics. Prior693.113compute seconds count
+toward8h budget; remaining development85681seconds,final6h. Up to96fresh author
+invocations,additional to the aborted v1 attempt; no automatic retry/follow-on.
+Candidate6640c6968490e742abbc619f3619207d9047d1171cd0f3328207e93fa68354bb;
+377sources/76,222resources verified. Isolated WSPL-robot-authoring-v2; protocol
+docs/wspl/ROBOT_AUTHORING_V2.md. Not approved/registered/launched; exact approval
+pending. See failure audit, recovery inventory and transport-healthcheck receipts.
+
 November 24, 2026: matched robot authoring APPROVED and LAUNCHED at09:34Central.
 User replied approved to exact manifest
 b5f628915f5ea93b34decb7e225592366cb01f0ad3605146b82db472b92fa410.
