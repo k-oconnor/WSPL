@@ -1,0 +1,40 @@
+{
+  "change": "One simulator process per mission; unchanged physics/model/training protocol",
+  "manifest": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-fresh-robot-parent-v2\\experiments\\source_pins\\fresh_robot_parent_v2.manifest.json",
+  "prior_manifest_sha256": "a6e5bfa2b42d0e9fa1b2aca423f2bb398383ba3e7ea8b90e93d33c5aa65dc757",
+  "registry_changed": false,
+  "repeated_worker_preflight": {
+    "clean_child_exit": true,
+    "engineering_only": true,
+    "identical_initial_observations": true,
+    "model_calls": 0,
+    "optimizer_updates": 0,
+    "source_gate_verified": true,
+    "status": "passed",
+    "task_policy_scores": 0,
+    "worker_pids": [
+      4228,
+      37660,
+      38036,
+      30912,
+      28596,
+      32436,
+      38332,
+      39924,
+      34824,
+      37840,
+      28952,
+      36192,
+      13360,
+      41064,
+      20608,
+      13672
+    ],
+    "workers": 16
+  },
+  "replacement_launched": false,
+  "resources": 31746,
+  "sha256": "3ecff9baac23eab515a586d3bb629f9123bc97f08d243dcaf75c27021c10716e",
+  "sources": 346,
+  "status": "prepared_unapproved"
+}

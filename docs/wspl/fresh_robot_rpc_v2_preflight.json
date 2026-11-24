@@ -1,0 +1,29 @@
+{
+  "clean_child_exit": true,
+  "engineering_only": true,
+  "identical_initial_observations": true,
+  "model_calls": 0,
+  "optimizer_updates": 0,
+  "source_gate_verified": true,
+  "status": "passed",
+  "task_policy_scores": 0,
+  "worker_pids": [
+    4228,
+    37660,
+    38036,
+    30912,
+    28596,
+    32436,
+    38332,
+    39924,
+    34824,
+    37840,
+    28952,
+    36192,
+    13360,
+    41064,
+    20608,
+    13672
+  ],
+  "workers": 16
+}
