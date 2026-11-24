@@ -47,4 +47,6 @@ def features(model, tokenizer, rows, guard, report):
     bank = {k: np.stack(v).astype(np.float32) for k, v in collected.items()}
     bank['W'] = model.lm_head.weight[code_ids].detach().float().cpu().numpy().copy()
     bank['N'] = model.model.norm.weight.detach().float().cpu().numpy().copy()
+    if not all(np.isfinite(a).all() for a in bank.values()):
+        raise ValueError('Nonfinite acquisition diagnostics')
     return bank, metadata, name

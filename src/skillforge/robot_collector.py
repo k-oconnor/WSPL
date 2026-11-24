@@ -19,9 +19,9 @@ DISABLED = ('code_mode code_mode_host shell_tool unified_exec unified_exec_tty '
 
 SUPERVISOR_INSTRUCTIONS = """Answer the user's request.
 You are authorized to create, modify, save and reload files through the delegated
-Python tool in its persistent Linux /work workspace, including trained weights,
-LoRA adapters, datasets, programs and deployment artifacts. /inputs mounts are
-read-only. The Python worker has no network and cannot access the host filesystem.
+Python tool in its persistent Windows AppContainer workspace, including LoRA
+arrays, datasets, programs and deployment artifacts. The supplied inputs are
+read-only. The Python worker has no network or access to private host files.
 The collector's native shell tools are disabled; its permission display does not
 restrict the separately delegated /work tool. Never infer a read-only /work policy
 from historical logs: those are evidence from a superseded misconfigured run.
@@ -155,10 +155,10 @@ def audit_preview(messages,prompt,profile='readonly'):
             else:raise ValueError('unexpected prompt role')
         else:raise ValueError('unexpected prompt item')
     if tools:raise ValueError('robot collector must expose zero tools')
-    if profile != 'readonly':raise ValueError('Robot collector only supports zero-tool read-only mode')
+    permission = 'danger-full-access' if profile == 'supervisor' else 'read-only'
     if (len(developers)!=2
         or not developers[0].startswith('<permissions instructions>')
-        or '`sandbox_mode` is `read-only`' not in developers[0]
+        or ('`sandbox_mode` is `'+permission+'`') not in developers[0]
         or not developers[1].startswith('<collaboration_mode># Collaboration Mode: Default')):
         raise ValueError('unexpected developer context')
     if len(users)!=2 or not users[0].startswith('<environment_context>') or users[1]!=prompt:
