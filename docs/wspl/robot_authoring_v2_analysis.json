@@ -1,0 +1,1058 @@
+{
+  "manifest_sha256": "6640c6968490e742abbc619f3619207d9047d1171cd0f3328207e93fa68354bb",
+  "source_files_verified": 377,
+  "scope": "Saved episode/decision records, frozen arrays and final WSPL binding audit; no new model forwards. Complete semantic audit of every author script is not claimed.",
+  "elapsed_seconds": 9839.529090599972,
+  "arms": {
+    "parent": {
+      "counts": {
+        "ordinary": 16,
+        "changed": 0,
+        "switch": 0,
+        "return": 0
+      },
+      "ordinary": 16,
+      "adaptation": 0,
+      "total": 16,
+      "gate": false,
+      "changed_tensors": [],
+      "changed_parameters": 0,
+      "invalid_tokens": 0,
+      "vs_gradient": {
+        "author_only": 0,
+        "gradient_only": 33
+      }
+    },
+    "gradient": {
+      "counts": {
+        "ordinary": 16,
+        "changed": 9,
+        "switch": 16,
+        "return": 8
+      },
+      "ordinary": 16,
+      "adaptation": 33,
+      "total": 49,
+      "gate": true,
+      "changed_tensors": [
+        "model.layers.0.self_attn.q_proj.lora_A",
+        "model.layers.0.self_attn.q_proj.lora_B",
+        "model.layers.0.self_attn.k_proj.lora_A",
+        "model.layers.0.self_attn.k_proj.lora_B",
+        "model.layers.0.self_attn.v_proj.lora_A",
+        "model.layers.0.self_attn.v_proj.lora_B",
+        "model.layers.0.self_attn.o_proj.lora_A",
+        "model.layers.0.self_attn.o_proj.lora_B",
+        "model.layers.0.mlp.gate_proj.lora_A",
+        "model.layers.0.mlp.gate_proj.lora_B",
+        "model.layers.0.mlp.up_proj.lora_A",
+        "model.layers.0.mlp.up_proj.lora_B",
+        "model.layers.0.mlp.down_proj.lora_A",
+        "model.layers.0.mlp.down_proj.lora_B",
+        "model.layers.1.self_attn.q_proj.lora_A",
+        "model.layers.1.self_attn.q_proj.lora_B",
+        "model.layers.1.self_attn.k_proj.lora_A",
+        "model.layers.1.self_attn.k_proj.lora_B",
+        "model.layers.1.self_attn.v_proj.lora_A",
+        "model.layers.1.self_attn.v_proj.lora_B",
+        "model.layers.1.self_attn.o_proj.lora_A",
+        "model.layers.1.self_attn.o_proj.lora_B",
+        "model.layers.1.mlp.gate_proj.lora_A",
+        "model.layers.1.mlp.gate_proj.lora_B",
+        "model.layers.1.mlp.up_proj.lora_A",
+        "model.layers.1.mlp.up_proj.lora_B",
+        "model.layers.1.mlp.down_proj.lora_A",
+        "model.layers.1.mlp.down_proj.lora_B",
+        "model.layers.2.self_attn.q_proj.lora_A",
+        "model.layers.2.self_attn.q_proj.lora_B",
+        "model.layers.2.self_attn.k_proj.lora_A",
+        "model.layers.2.self_attn.k_proj.lora_B",
+        "model.layers.2.self_attn.v_proj.lora_A",
+        "model.layers.2.self_attn.v_proj.lora_B",
+        "model.layers.2.self_attn.o_proj.lora_A",
+        "model.layers.2.self_attn.o_proj.lora_B",
+        "model.layers.2.mlp.gate_proj.lora_A",
+        "model.layers.2.mlp.gate_proj.lora_B",
+        "model.layers.2.mlp.up_proj.lora_A",
+        "model.layers.2.mlp.up_proj.lora_B",
+        "model.layers.2.mlp.down_proj.lora_A",
+        "model.layers.2.mlp.down_proj.lora_B",
+        "model.layers.3.self_attn.q_proj.lora_A",
+        "model.layers.3.self_attn.q_proj.lora_B",
+        "model.layers.3.self_attn.k_proj.lora_A",
+        "model.layers.3.self_attn.k_proj.lora_B",
+        "model.layers.3.self_attn.v_proj.lora_A",
+        "model.layers.3.self_attn.v_proj.lora_B",
+        "model.layers.3.self_attn.o_proj.lora_A",
+        "model.layers.3.self_attn.o_proj.lora_B",
+        "model.layers.3.mlp.gate_proj.lora_A",
+        "model.layers.3.mlp.gate_proj.lora_B",
+        "model.layers.3.mlp.up_proj.lora_A",
+        "model.layers.3.mlp.up_proj.lora_B",
+        "model.layers.3.mlp.down_proj.lora_A",
+        "model.layers.3.mlp.down_proj.lora_B",
+        "model.layers.4.self_attn.q_proj.lora_A",
+        "model.layers.4.self_attn.q_proj.lora_B",
+        "model.layers.4.self_attn.k_proj.lora_A",
+        "model.layers.4.self_attn.k_proj.lora_B",
+        "model.layers.4.self_attn.v_proj.lora_A",
+        "model.layers.4.self_attn.v_proj.lora_B",
+        "model.layers.4.self_attn.o_proj.lora_A",
+        "model.layers.4.self_attn.o_proj.lora_B",
+        "model.layers.4.mlp.gate_proj.lora_A",
+        "model.layers.4.mlp.gate_proj.lora_B",
+        "model.layers.4.mlp.up_proj.lora_A",
+        "model.layers.4.mlp.up_proj.lora_B",
+        "model.layers.4.mlp.down_proj.lora_A",
+        "model.layers.4.mlp.down_proj.lora_B",
+        "model.layers.5.self_attn.q_proj.lora_A",
+        "model.layers.5.self_attn.q_proj.lora_B",
+        "model.layers.5.self_attn.k_proj.lora_A",
+        "model.layers.5.self_attn.k_proj.lora_B",
+        "model.layers.5.self_attn.v_proj.lora_A",
+        "model.layers.5.self_attn.v_proj.lora_B",
+        "model.layers.5.self_attn.o_proj.lora_A",
+        "model.layers.5.self_attn.o_proj.lora_B",
+        "model.layers.5.mlp.gate_proj.lora_A",
+        "model.layers.5.mlp.gate_proj.lora_B",
+        "model.layers.5.mlp.up_proj.lora_A",
+        "model.layers.5.mlp.up_proj.lora_B",
+        "model.layers.5.mlp.down_proj.lora_A",
+        "model.layers.5.mlp.down_proj.lora_B",
+        "model.layers.6.self_attn.q_proj.lora_A",
+        "model.layers.6.self_attn.q_proj.lora_B",
+        "model.layers.6.self_attn.k_proj.lora_A",
+        "model.layers.6.self_attn.k_proj.lora_B",
+        "model.layers.6.self_attn.v_proj.lora_A",
+        "model.layers.6.self_attn.v_proj.lora_B",
+        "model.layers.6.self_attn.o_proj.lora_A",
+        "model.layers.6.self_attn.o_proj.lora_B",
+        "model.layers.6.mlp.gate_proj.lora_A",
+        "model.layers.6.mlp.gate_proj.lora_B",
+        "model.layers.6.mlp.up_proj.lora_A",
+        "model.layers.6.mlp.up_proj.lora_B",
+        "model.layers.6.mlp.down_proj.lora_A",
+        "model.layers.6.mlp.down_proj.lora_B",
+        "model.layers.7.self_attn.q_proj.lora_A",
+        "model.layers.7.self_attn.q_proj.lora_B",
+        "model.layers.7.self_attn.k_proj.lora_A",
+        "model.layers.7.self_attn.k_proj.lora_B",
+        "model.layers.7.self_attn.v_proj.lora_A",
+        "model.layers.7.self_attn.v_proj.lora_B",
+        "model.layers.7.self_attn.o_proj.lora_A",
+        "model.layers.7.self_attn.o_proj.lora_B",
+        "model.layers.7.mlp.gate_proj.lora_A",
+        "model.layers.7.mlp.gate_proj.lora_B",
+        "model.layers.7.mlp.up_proj.lora_A",
+        "model.layers.7.mlp.up_proj.lora_B",
+        "model.layers.7.mlp.down_proj.lora_A",
+        "model.layers.7.mlp.down_proj.lora_B",
+        "model.layers.8.self_attn.q_proj.lora_A",
+        "model.layers.8.self_attn.q_proj.lora_B",
+        "model.layers.8.self_attn.k_proj.lora_A",
+        "model.layers.8.self_attn.k_proj.lora_B",
+        "model.layers.8.self_attn.v_proj.lora_A",
+        "model.layers.8.self_attn.v_proj.lora_B",
+        "model.layers.8.self_attn.o_proj.lora_A",
+        "model.layers.8.self_attn.o_proj.lora_B",
+        "model.layers.8.mlp.gate_proj.lora_A",
+        "model.layers.8.mlp.gate_proj.lora_B",
+        "model.layers.8.mlp.up_proj.lora_A",
+        "model.layers.8.mlp.up_proj.lora_B",
+        "model.layers.8.mlp.down_proj.lora_A",
+        "model.layers.8.mlp.down_proj.lora_B",
+        "model.layers.9.self_attn.q_proj.lora_A",
+        "model.layers.9.self_attn.q_proj.lora_B",
+        "model.layers.9.self_attn.k_proj.lora_A",
+        "model.layers.9.self_attn.k_proj.lora_B",
+        "model.layers.9.self_attn.v_proj.lora_A",
+        "model.layers.9.self_attn.v_proj.lora_B",
+        "model.layers.9.self_attn.o_proj.lora_A",
+        "model.layers.9.self_attn.o_proj.lora_B",
+        "model.layers.9.mlp.gate_proj.lora_A",
+        "model.layers.9.mlp.gate_proj.lora_B",
+        "model.layers.9.mlp.up_proj.lora_A",
+        "model.layers.9.mlp.up_proj.lora_B",
+        "model.layers.9.mlp.down_proj.lora_A",
+        "model.layers.9.mlp.down_proj.lora_B",
+        "model.layers.10.self_attn.q_proj.lora_A",
+        "model.layers.10.self_attn.q_proj.lora_B",
+        "model.layers.10.self_attn.k_proj.lora_A",
+        "model.layers.10.self_attn.k_proj.lora_B",
+        "model.layers.10.self_attn.v_proj.lora_A",
+        "model.layers.10.self_attn.v_proj.lora_B",
+        "model.layers.10.self_attn.o_proj.lora_A",
+        "model.layers.10.self_attn.o_proj.lora_B",
+        "model.layers.10.mlp.gate_proj.lora_A",
+        "model.layers.10.mlp.gate_proj.lora_B",
+        "model.layers.10.mlp.up_proj.lora_A",
+        "model.layers.10.mlp.up_proj.lora_B",
+        "model.layers.10.mlp.down_proj.lora_A",
+        "model.layers.10.mlp.down_proj.lora_B",
+        "model.layers.11.self_attn.q_proj.lora_A",
+        "model.layers.11.self_attn.q_proj.lora_B",
+        "model.layers.11.self_attn.k_proj.lora_A",
+        "model.layers.11.self_attn.k_proj.lora_B",
+        "model.layers.11.self_attn.v_proj.lora_A",
+        "model.layers.11.self_attn.v_proj.lora_B",
+        "model.layers.11.self_attn.o_proj.lora_A",
+        "model.layers.11.self_attn.o_proj.lora_B",
+        "model.layers.11.mlp.gate_proj.lora_A",
+        "model.layers.11.mlp.gate_proj.lora_B",
+        "model.layers.11.mlp.up_proj.lora_A",
+        "model.layers.11.mlp.up_proj.lora_B",
+        "model.layers.11.mlp.down_proj.lora_A",
+        "model.layers.11.mlp.down_proj.lora_B",
+        "model.layers.12.self_attn.q_proj.lora_A",
+        "model.layers.12.self_attn.q_proj.lora_B",
+        "model.layers.12.self_attn.k_proj.lora_A",
+        "model.layers.12.self_attn.k_proj.lora_B",
+        "model.layers.12.self_attn.v_proj.lora_A",
+        "model.layers.12.self_attn.v_proj.lora_B",
+        "model.layers.12.self_attn.o_proj.lora_A",
+        "model.layers.12.self_attn.o_proj.lora_B",
+        "model.layers.12.mlp.gate_proj.lora_A",
+        "model.layers.12.mlp.gate_proj.lora_B",
+        "model.layers.12.mlp.up_proj.lora_A",
+        "model.layers.12.mlp.up_proj.lora_B",
+        "model.layers.12.mlp.down_proj.lora_A",
+        "model.layers.12.mlp.down_proj.lora_B",
+        "model.layers.13.self_attn.q_proj.lora_A",
+        "model.layers.13.self_attn.q_proj.lora_B",
+        "model.layers.13.self_attn.k_proj.lora_A",
+        "model.layers.13.self_attn.k_proj.lora_B",
+        "model.layers.13.self_attn.v_proj.lora_A",
+        "model.layers.13.self_attn.v_proj.lora_B",
+        "model.layers.13.self_attn.o_proj.lora_A",
+        "model.layers.13.self_attn.o_proj.lora_B",
+        "model.layers.13.mlp.gate_proj.lora_A",
+        "model.layers.13.mlp.gate_proj.lora_B",
+        "model.layers.13.mlp.up_proj.lora_A",
+        "model.layers.13.mlp.up_proj.lora_B",
+        "model.layers.13.mlp.down_proj.lora_A",
+        "model.layers.13.mlp.down_proj.lora_B",
+        "model.layers.14.self_attn.q_proj.lora_A",
+        "model.layers.14.self_attn.q_proj.lora_B",
+        "model.layers.14.self_attn.k_proj.lora_A",
+        "model.layers.14.self_attn.k_proj.lora_B",
+        "model.layers.14.self_attn.v_proj.lora_A",
+        "model.layers.14.self_attn.v_proj.lora_B",
+        "model.layers.14.self_attn.o_proj.lora_A",
+        "model.layers.14.self_attn.o_proj.lora_B",
+        "model.layers.14.mlp.gate_proj.lora_A",
+        "model.layers.14.mlp.gate_proj.lora_B",
+        "model.layers.14.mlp.up_proj.lora_A",
+        "model.layers.14.mlp.up_proj.lora_B",
+        "model.layers.14.mlp.down_proj.lora_A",
+        "model.layers.14.mlp.down_proj.lora_B",
+        "model.layers.15.self_attn.q_proj.lora_A",
+        "model.layers.15.self_attn.q_proj.lora_B",
+        "model.layers.15.self_attn.k_proj.lora_A",
+        "model.layers.15.self_attn.k_proj.lora_B",
+        "model.layers.15.self_attn.v_proj.lora_A",
+        "model.layers.15.self_attn.v_proj.lora_B",
+        "model.layers.15.self_attn.o_proj.lora_A",
+        "model.layers.15.self_attn.o_proj.lora_B",
+        "model.layers.15.mlp.gate_proj.lora_A",
+        "model.layers.15.mlp.gate_proj.lora_B",
+        "model.layers.15.mlp.up_proj.lora_A",
+        "model.layers.15.mlp.up_proj.lora_B",
+        "model.layers.15.mlp.down_proj.lora_A",
+        "model.layers.15.mlp.down_proj.lora_B",
+        "model.layers.16.self_attn.q_proj.lora_A",
+        "model.layers.16.self_attn.q_proj.lora_B",
+        "model.layers.16.self_attn.k_proj.lora_A",
+        "model.layers.16.self_attn.k_proj.lora_B",
+        "model.layers.16.self_attn.v_proj.lora_A",
+        "model.layers.16.self_attn.v_proj.lora_B",
+        "model.layers.16.self_attn.o_proj.lora_A",
+        "model.layers.16.self_attn.o_proj.lora_B",
+        "model.layers.16.mlp.gate_proj.lora_A",
+        "model.layers.16.mlp.gate_proj.lora_B",
+        "model.layers.16.mlp.up_proj.lora_A",
+        "model.layers.16.mlp.up_proj.lora_B",
+        "model.layers.16.mlp.down_proj.lora_A",
+        "model.layers.16.mlp.down_proj.lora_B",
+        "model.layers.17.self_attn.q_proj.lora_A",
+        "model.layers.17.self_attn.q_proj.lora_B",
+        "model.layers.17.self_attn.k_proj.lora_A",
+        "model.layers.17.self_attn.k_proj.lora_B",
+        "model.layers.17.self_attn.v_proj.lora_A",
+        "model.layers.17.self_attn.v_proj.lora_B",
+        "model.layers.17.self_attn.o_proj.lora_A",
+        "model.layers.17.self_attn.o_proj.lora_B",
+        "model.layers.17.mlp.gate_proj.lora_A",
+        "model.layers.17.mlp.gate_proj.lora_B",
+        "model.layers.17.mlp.up_proj.lora_A",
+        "model.layers.17.mlp.up_proj.lora_B",
+        "model.layers.17.mlp.down_proj.lora_A",
+        "model.layers.17.mlp.down_proj.lora_B",
+        "model.layers.18.self_attn.q_proj.lora_A",
+        "model.layers.18.self_attn.q_proj.lora_B",
+        "model.layers.18.self_attn.k_proj.lora_A",
+        "model.layers.18.self_attn.k_proj.lora_B",
+        "model.layers.18.self_attn.v_proj.lora_A",
+        "model.layers.18.self_attn.v_proj.lora_B",
+        "model.layers.18.self_attn.o_proj.lora_A",
+        "model.layers.18.self_attn.o_proj.lora_B",
+        "model.layers.18.mlp.gate_proj.lora_A",
+        "model.layers.18.mlp.gate_proj.lora_B",
+        "model.layers.18.mlp.up_proj.lora_A",
+        "model.layers.18.mlp.up_proj.lora_B",
+        "model.layers.18.mlp.down_proj.lora_A",
+        "model.layers.18.mlp.down_proj.lora_B",
+        "model.layers.19.self_attn.q_proj.lora_A",
+        "model.layers.19.self_attn.q_proj.lora_B",
+        "model.layers.19.self_attn.k_proj.lora_A",
+        "model.layers.19.self_attn.k_proj.lora_B",
+        "model.layers.19.self_attn.v_proj.lora_A",
+        "model.layers.19.self_attn.v_proj.lora_B",
+        "model.layers.19.self_attn.o_proj.lora_A",
+        "model.layers.19.self_attn.o_proj.lora_B",
+        "model.layers.19.mlp.gate_proj.lora_A",
+        "model.layers.19.mlp.gate_proj.lora_B",
+        "model.layers.19.mlp.up_proj.lora_A",
+        "model.layers.19.mlp.up_proj.lora_B",
+        "model.layers.19.mlp.down_proj.lora_A",
+        "model.layers.19.mlp.down_proj.lora_B",
+        "model.layers.20.self_attn.q_proj.lora_A",
+        "model.layers.20.self_attn.q_proj.lora_B",
+        "model.layers.20.self_attn.k_proj.lora_A",
+        "model.layers.20.self_attn.k_proj.lora_B",
+        "model.layers.20.self_attn.v_proj.lora_A",
+        "model.layers.20.self_attn.v_proj.lora_B",
+        "model.layers.20.self_attn.o_proj.lora_A",
+        "model.layers.20.self_attn.o_proj.lora_B",
+        "model.layers.20.mlp.gate_proj.lora_A",
+        "model.layers.20.mlp.gate_proj.lora_B",
+        "model.layers.20.mlp.up_proj.lora_A",
+        "model.layers.20.mlp.up_proj.lora_B",
+        "model.layers.20.mlp.down_proj.lora_A",
+        "model.layers.20.mlp.down_proj.lora_B",
+        "model.layers.21.self_attn.q_proj.lora_A",
+        "model.layers.21.self_attn.q_proj.lora_B",
+        "model.layers.21.self_attn.k_proj.lora_A",
+        "model.layers.21.self_attn.k_proj.lora_B",
+        "model.layers.21.self_attn.v_proj.lora_A",
+        "model.layers.21.self_attn.v_proj.lora_B",
+        "model.layers.21.self_attn.o_proj.lora_A",
+        "model.layers.21.self_attn.o_proj.lora_B",
+        "model.layers.21.mlp.gate_proj.lora_A",
+        "model.layers.21.mlp.gate_proj.lora_B",
+        "model.layers.21.mlp.up_proj.lora_A",
+        "model.layers.21.mlp.up_proj.lora_B",
+        "model.layers.21.mlp.down_proj.lora_A",
+        "model.layers.21.mlp.down_proj.lora_B",
+        "model.layers.22.self_attn.q_proj.lora_A",
+        "model.layers.22.self_attn.q_proj.lora_B",
+        "model.layers.22.self_attn.k_proj.lora_A",
+        "model.layers.22.self_attn.k_proj.lora_B",
+        "model.layers.22.self_attn.v_proj.lora_A",
+        "model.layers.22.self_attn.v_proj.lora_B",
+        "model.layers.22.self_attn.o_proj.lora_A",
+        "model.layers.22.self_attn.o_proj.lora_B",
+        "model.layers.22.mlp.gate_proj.lora_A",
+        "model.layers.22.mlp.gate_proj.lora_B",
+        "model.layers.22.mlp.up_proj.lora_A",
+        "model.layers.22.mlp.up_proj.lora_B",
+        "model.layers.22.mlp.down_proj.lora_A",
+        "model.layers.22.mlp.down_proj.lora_B",
+        "model.layers.23.self_attn.q_proj.lora_A",
+        "model.layers.23.self_attn.q_proj.lora_B",
+        "model.layers.23.self_attn.k_proj.lora_A",
+        "model.layers.23.self_attn.k_proj.lora_B",
+        "model.layers.23.self_attn.v_proj.lora_A",
+        "model.layers.23.self_attn.v_proj.lora_B",
+        "model.layers.23.self_attn.o_proj.lora_A",
+        "model.layers.23.self_attn.o_proj.lora_B",
+        "model.layers.23.mlp.gate_proj.lora_A",
+        "model.layers.23.mlp.gate_proj.lora_B",
+        "model.layers.23.mlp.up_proj.lora_A",
+        "model.layers.23.mlp.up_proj.lora_B",
+        "model.layers.23.mlp.down_proj.lora_A",
+        "model.layers.23.mlp.down_proj.lora_B",
+        "model.layers.24.self_attn.q_proj.lora_A",
+        "model.layers.24.self_attn.q_proj.lora_B",
+        "model.layers.24.self_attn.k_proj.lora_A",
+        "model.layers.24.self_attn.k_proj.lora_B",
+        "model.layers.24.self_attn.v_proj.lora_A",
+        "model.layers.24.self_attn.v_proj.lora_B",
+        "model.layers.24.self_attn.o_proj.lora_A",
+        "model.layers.24.self_attn.o_proj.lora_B",
+        "model.layers.24.mlp.gate_proj.lora_A",
+        "model.layers.24.mlp.gate_proj.lora_B",
+        "model.layers.24.mlp.up_proj.lora_A",
+        "model.layers.24.mlp.up_proj.lora_B",
+        "model.layers.24.mlp.down_proj.lora_A",
+        "model.layers.24.mlp.down_proj.lora_B",
+        "model.layers.25.self_attn.q_proj.lora_A",
+        "model.layers.25.self_attn.q_proj.lora_B",
+        "model.layers.25.self_attn.k_proj.lora_A",
+        "model.layers.25.self_attn.k_proj.lora_B",
+        "model.layers.25.self_attn.v_proj.lora_A",
+        "model.layers.25.self_attn.v_proj.lora_B",
+        "model.layers.25.self_attn.o_proj.lora_A",
+        "model.layers.25.self_attn.o_proj.lora_B",
+        "model.layers.25.mlp.gate_proj.lora_A",
+        "model.layers.25.mlp.gate_proj.lora_B",
+        "model.layers.25.mlp.up_proj.lora_A",
+        "model.layers.25.mlp.up_proj.lora_B",
+        "model.layers.25.mlp.down_proj.lora_A",
+        "model.layers.25.mlp.down_proj.lora_B",
+        "model.layers.26.self_attn.q_proj.lora_A",
+        "model.layers.26.self_attn.q_proj.lora_B",
+        "model.layers.26.self_attn.k_proj.lora_A",
+        "model.layers.26.self_attn.k_proj.lora_B",
+        "model.layers.26.self_attn.v_proj.lora_A",
+        "model.layers.26.self_attn.v_proj.lora_B",
+        "model.layers.26.self_attn.o_proj.lora_A",
+        "model.layers.26.self_attn.o_proj.lora_B",
+        "model.layers.26.mlp.gate_proj.lora_A",
+        "model.layers.26.mlp.gate_proj.lora_B",
+        "model.layers.26.mlp.up_proj.lora_A",
+        "model.layers.26.mlp.up_proj.lora_B",
+        "model.layers.26.mlp.down_proj.lora_A",
+        "model.layers.26.mlp.down_proj.lora_B",
+        "model.layers.27.self_attn.q_proj.lora_A",
+        "model.layers.27.self_attn.q_proj.lora_B",
+        "model.layers.27.self_attn.k_proj.lora_A",
+        "model.layers.27.self_attn.k_proj.lora_B",
+        "model.layers.27.self_attn.v_proj.lora_A",
+        "model.layers.27.self_attn.v_proj.lora_B",
+        "model.layers.27.self_attn.o_proj.lora_A",
+        "model.layers.27.self_attn.o_proj.lora_B",
+        "model.layers.27.mlp.gate_proj.lora_A",
+        "model.layers.27.mlp.gate_proj.lora_B",
+        "model.layers.27.mlp.up_proj.lora_A",
+        "model.layers.27.mlp.up_proj.lora_B",
+        "model.layers.27.mlp.down_proj.lora_A",
+        "model.layers.27.mlp.down_proj.lora_B"
+      ],
+      "changed_parameters": 18464768,
+      "invalid_tokens": 0,
+      "vs_gradient": {
+        "author_only": 0,
+        "gradient_only": 0
+      }
+    },
+    "native0": {
+      "counts": {
+        "ordinary": 8,
+        "changed": 7,
+        "switch": 6,
+        "return": 3
+      },
+      "ordinary": 8,
+      "adaptation": 16,
+      "total": 24,
+      "gate": false,
+      "changed_tensors": [
+        "model.layers.27.mlp.down_proj.lora_A",
+        "model.layers.27.mlp.down_proj.lora_B"
+      ],
+      "changed_parameters": 167936,
+      "invalid_tokens": 0,
+      "vs_gradient": {
+        "author_only": 1,
+        "gradient_only": 26
+      },
+      "development": {
+        "ordinary": 3,
+        "changed": 1,
+        "switch": 2,
+        "return": 1
+      },
+      "calls": 16,
+      "tokens": {
+        "input_tokens": 1082706,
+        "cached_input_tokens": 18816,
+        "output_tokens": 30416,
+        "reasoning_output_tokens": 16920
+      },
+      "author_seconds": 966.0233528999961,
+      "python_seconds": 10.317120900086593,
+      "python_errors": 0,
+      "evaluation_attempts": 4,
+      "python_sources": [
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\001.py",
+          "sha256": "82efe03747b519466b077c34ef49b5a5f37a4ee4386348a47ffa22a8c775b14f"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\002.py",
+          "sha256": "709634a2dd76f0857bdaef81ee0a4665e50ca0f573029318361a5d49fd7dbf4b"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\003.py",
+          "sha256": "19f171d7b97f3710b10f79a3d21ac26db13e30ea6c854042b9b4c6d4521005a8"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\004.py",
+          "sha256": "aeb46620500396661511f305746d19038a56ac3938afeecb6f65c62dfebaa9a4"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\005.py",
+          "sha256": "d1e09fce2f79e9a68d9be41e3e826b5f8c6779363d806f277064b8fdd0596d37"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\006.py",
+          "sha256": "ea40b26071d40df730f7ac6418e6d61d608fabded680ac10571dceb5b4ed36c8"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\007.py",
+          "sha256": "5070a551aa23f772bf08a7343a821700ba4011b3795523d9c462d0efc2921a06"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\008.py",
+          "sha256": "7818cdceff720b7560e2dd1033076102a65ac445f6b223a26234bdd568f29d6c"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\009.py",
+          "sha256": "779b22be8998e901d0eaf69519464f2d9d45472aadd8d78127fe55ffa521db17"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\010.py",
+          "sha256": "99275caf955cbc85fc023dcbf0c7ec5e25efed40b40c32bf3cb4cd008ebcbcca"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native0\\sandbox\\requests\\011.py",
+          "sha256": "a0e2177377503cae16f1b1c6a6ac3a8e34846676de5461b72323c906294bde02"
+        }
+      ],
+      "syntax_errors": [],
+      "method_call_screen": [
+        "np.linalg.eigh",
+        "np.linalg.eigvalsh",
+        "np.linalg.norm",
+        "np.linalg.norm(2 * X @ A.T @ B.T, axis=1).max",
+        "np.linalg.norm(2 * X @ A.T @ B.T, axis=1).min",
+        "np.linalg.norm(np.linalg.solve(C @ C.T, C), axis=1).tolist",
+        "np.linalg.qr",
+        "np.linalg.solve",
+        "np.linalg.svd"
+      ]
+    },
+    "wspl0": {
+      "counts": {
+        "ordinary": 12,
+        "changed": 6,
+        "switch": 0,
+        "return": 0
+      },
+      "ordinary": 12,
+      "adaptation": 6,
+      "total": 18,
+      "gate": false,
+      "changed_tensors": [
+        "model.layers.27.mlp.down_proj.lora_A",
+        "model.layers.27.mlp.down_proj.lora_B"
+      ],
+      "changed_parameters": 167936,
+      "invalid_tokens": 0,
+      "vs_gradient": {
+        "author_only": 2,
+        "gradient_only": 33
+      },
+      "development": {
+        "ordinary": 4,
+        "changed": 2,
+        "switch": 0,
+        "return": 0
+      },
+      "calls": 15,
+      "tokens": {
+        "input_tokens": 917994,
+        "cached_input_tokens": 21888,
+        "output_tokens": 24153,
+        "reasoning_output_tokens": 13127
+      },
+      "author_seconds": 806.3773686000495,
+      "python_seconds": 5.203197099908721,
+      "python_errors": 3,
+      "evaluation_attempts": 3,
+      "python_sources": [
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\001.py",
+          "sha256": "4ad507fed0c0eb26322c73a0601a3ee37afaaa9c3970997298644af3c7b058be"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\002.py",
+          "sha256": "75989790cafb44abd008481c528915c1cdd48cdae444551735d0b78f8f34a41d"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\003.py",
+          "sha256": "bfb3ba8e09cc3d199d7bebccd7a5df0e571e24b14bab8604e932b85298b8be03"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\004.py",
+          "sha256": "4c408d02abdced7eed597f4f55a5a5249c08d71655b6c5b66dcc7b5ef7fab0c2"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\005.py",
+          "sha256": "bdea7053e1d4b01394a76720d1335c913231f3814fdff9f6aefa7e0457f9ad62"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\006.py",
+          "sha256": "9e60ac1b48c60bef7a488566f9b8ed0b330d7b0c6e909cde98b246c8f853ea5e"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\007.py",
+          "sha256": "9ada91440ca34133d9b48de4cb5f8ba2f2f306d3289d4c85525bc1260b56b9fa"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\008.py",
+          "sha256": "c891b30e5f4d70ae8d2159d0898a025481f5d72225ae73ab93896ce83a402869"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\009.py",
+          "sha256": "fe8f10f144f2e433b3d269cc69d7b7727e897a8082df623627117d7272fc330c"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\010.py",
+          "sha256": "40808b66b786e29915536d04e8cdca9c2399579177ab8bc74fa66ce760dab58c"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl0\\sandbox\\requests\\011.py",
+          "sha256": "3d358d531baabb87b981b87b44d1ded303f080586db93f45f7cedf005728f440"
+        }
+      ],
+      "syntax_errors": [],
+      "method_call_screen": [
+        "exec",
+        "np.linalg.eigh",
+        "np.linalg.inv",
+        "np.linalg.norm",
+        "np.linalg.qr",
+        "np.linalg.solve",
+        "np.linalg.svd"
+      ],
+      "wspl_programs": {
+        "model.layers.27.mlp.down_proj": "A[:,:]=NewA; B[:,:]=NewB;"
+      },
+      "wspl_classification": "Whole-matrix assignment of supplied Python-fitted bindings; exact final binding equality verified."
+    },
+    "wspl1": {
+      "counts": {
+        "ordinary": 16,
+        "changed": 2,
+        "switch": 8,
+        "return": 1
+      },
+      "ordinary": 16,
+      "adaptation": 11,
+      "total": 27,
+      "gate": true,
+      "changed_tensors": [
+        "model.layers.27.mlp.down_proj.lora_A",
+        "model.layers.27.mlp.down_proj.lora_B"
+      ],
+      "changed_parameters": 167936,
+      "invalid_tokens": 0,
+      "vs_gradient": {
+        "author_only": 0,
+        "gradient_only": 22
+      },
+      "development": {
+        "ordinary": 4,
+        "changed": 0,
+        "switch": 3,
+        "return": 1
+      },
+      "calls": 15,
+      "tokens": {
+        "input_tokens": 884223,
+        "cached_input_tokens": 33664,
+        "output_tokens": 31111,
+        "reasoning_output_tokens": 18342
+      },
+      "author_seconds": 1003.0712343999185,
+      "python_seconds": 61.27800690004369,
+      "python_errors": 1,
+      "evaluation_attempts": 3,
+      "python_sources": [
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\001.py",
+          "sha256": "54364910320efea9bcd4f059a3d369018503cf89becbcde86b41b0b6a6f07b46"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\002.py",
+          "sha256": "985bcb3876c55b69b7d51dfa45f9a792a0808b1694f60d0f102a399d4665fd70"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\003.py",
+          "sha256": "2edcc474e81cfe01c27af8fc72789a356d4620665b210b2659e0e88c276fc12e"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\004.py",
+          "sha256": "1e4a0438a8c9b2a91eb091b2da3be578a4fb7635443a884ef00fcffc60860397"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\005.py",
+          "sha256": "3f0ba267da28cb24eeb171c4224952c95d01d48674982ac117f2cf09e4c191f4"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\006.py",
+          "sha256": "c4875504788da0ef7581a5ecd963c969f345b401ebf7d0e125a99da658baaad0"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\007.py",
+          "sha256": "e34b0bd5f2803d8d2f1e3fd6a03703bd791b61953db8cfc99c7e0cf12b64cf29"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\008.py",
+          "sha256": "586baf3c822c91c031bf6cafb736e2e40d1b80fd579fd7a5d9d2d329c60ead8d"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\009.py",
+          "sha256": "4dadfd8cdcba0136b771b02ce3847eab08ddfd3df6c83aad1714a0fac4f8ebba"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\010.py",
+          "sha256": "c8a809fa527d7ff2660ba900e9afbb779a57af0e5ca9a6c9d9935982659878de"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl1\\sandbox\\requests\\011.py",
+          "sha256": "3df5aeeb14a14e20603440f6ecb188693bf41b0c55410bfda745438bd2d23c6b"
+        }
+      ],
+      "syntax_errors": [],
+      "method_call_screen": [
+        "np.linalg.eigh",
+        "np.linalg.inv",
+        "np.linalg.lstsq",
+        "np.linalg.norm",
+        "np.linalg.qr",
+        "np.linalg.solve",
+        "np.linalg.svd"
+      ],
+      "wspl_programs": {
+        "model.layers.27.mlp.down_proj": "A[:,:]=RepairA; B[:,:]=RepairB;"
+      },
+      "wspl_classification": "Whole-matrix assignment of supplied Python-fitted bindings; exact final binding equality verified."
+    },
+    "native1": {
+      "counts": {
+        "ordinary": 11,
+        "changed": 7,
+        "switch": 1,
+        "return": 1
+      },
+      "ordinary": 11,
+      "adaptation": 9,
+      "total": 20,
+      "gate": false,
+      "changed_tensors": [
+        "model.layers.27.mlp.down_proj.lora_A",
+        "model.layers.27.mlp.down_proj.lora_B"
+      ],
+      "changed_parameters": 167936,
+      "invalid_tokens": 0,
+      "vs_gradient": {
+        "author_only": 4,
+        "gradient_only": 33
+      },
+      "development": {
+        "ordinary": 3,
+        "changed": 2,
+        "switch": 1,
+        "return": 0
+      },
+      "calls": 16,
+      "tokens": {
+        "input_tokens": 962327,
+        "cached_input_tokens": 29184,
+        "output_tokens": 32196,
+        "reasoning_output_tokens": 19388
+      },
+      "author_seconds": 1052.7966674001655,
+      "python_seconds": 37.89836160000414,
+      "python_errors": 1,
+      "evaluation_attempts": 4,
+      "python_sources": [
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\001.py",
+          "sha256": "9749a18038533ee629b05f99bb53f174c2e3da477acd994933db512727322cdd"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\002.py",
+          "sha256": "83e183e726581320507d62dc4d4461f8873db5c5bc651cbfd161e028e282f763"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\003.py",
+          "sha256": "87023a720157c6572f95f52ef40012246a7b10a3a8c04d8af1c474cef70f5e64"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\004.py",
+          "sha256": "efb9d05b3bf24addedb30e810ea5a05b3201882c579e81cdadd99e120b7f1992"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\005.py",
+          "sha256": "30a23687822e468e28e1e9228e2fb110b3d91f8b982b0be4170809cdc6189dcc"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\006.py",
+          "sha256": "ec8e315e63ffc223246f4ab6c821b5524b0ba32ad9dc11256df19bb3f6880c5c"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\007.py",
+          "sha256": "8d31a7c59cb580c46af3fe0fc3ac60b758f94b509082d732296272128d347c80"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\008.py",
+          "sha256": "82e63f52d10d2a3e88f41661ce3afd09122f5b024644eb7f3a0449a33c525910"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\009.py",
+          "sha256": "94664edd3ff79e5de2f67672fae28bfdc311e131dc08978e16971d7b8f08350f"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\010.py",
+          "sha256": "488d7fa9d9ca2e6b0c17830d38326e018d1a3015437efe5477a63d0875c5ab56"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native1\\sandbox\\requests\\011.py",
+          "sha256": "bfc135aacc5b0ef5e70f9c4f1f16b063e1e8049c02b673129e7aa88d704b1c63"
+        }
+      ],
+      "syntax_errors": [
+        "004.py"
+      ],
+      "method_call_screen": [
+        "exec",
+        "np.linalg.eigh",
+        "np.linalg.eigvalsh",
+        "np.linalg.inv",
+        "np.linalg.norm",
+        "np.linalg.pinv",
+        "np.linalg.qr",
+        "np.linalg.solve",
+        "np.linalg.svd"
+      ]
+    },
+    "native2": {
+      "counts": {
+        "ordinary": 9,
+        "changed": 10,
+        "switch": 10,
+        "return": 8
+      },
+      "ordinary": 9,
+      "adaptation": 28,
+      "total": 37,
+      "gate": false,
+      "changed_tensors": [
+        "model.layers.27.mlp.down_proj.lora_A",
+        "model.layers.27.mlp.down_proj.lora_B"
+      ],
+      "changed_parameters": 167936,
+      "invalid_tokens": 0,
+      "vs_gradient": {
+        "author_only": 5,
+        "gradient_only": 17
+      },
+      "development": {
+        "ordinary": 3,
+        "changed": 2,
+        "switch": 2,
+        "return": 1
+      },
+      "calls": 16,
+      "tokens": {
+        "input_tokens": 1165101,
+        "cached_input_tokens": 35840,
+        "output_tokens": 29857,
+        "reasoning_output_tokens": 15423
+      },
+      "author_seconds": 918.2465418000938,
+      "python_seconds": 50.800050299905706,
+      "python_errors": 0,
+      "evaluation_attempts": 4,
+      "python_sources": [
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\001.py",
+          "sha256": "e6bd4172d766a32cff5d74ceda8b377babf98f5d220bbeda9dd2c444698d7bdc"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\002.py",
+          "sha256": "7e4ba17ba9c02c0671c1bfe8d37f80b8314ed89f41a3b6e5c9c90527732c289b"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\003.py",
+          "sha256": "ade4b838b9b142456351aa75ee2a5b3ed58d538a092a6c45da882d6092413b36"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\004.py",
+          "sha256": "4a4cfef50b36f466bfe5056bddd5bac11b40b375a0122a0611371a07b0e67516"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\005.py",
+          "sha256": "09671a3cb8ea65609c1fc74c38f618a7af2b54aebd13f9315d439c5e450b5cb0"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\006.py",
+          "sha256": "98b9ae4c39ac3d00a79e32d98d0c88888072bee8294feddee5df1553649aebad"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\007.py",
+          "sha256": "ffd458ba68c7d4a42fd4dfe14c857a59b338a476fd9dc4a72e921953beed993a"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\008.py",
+          "sha256": "5a057b8f40356c5a72a50ff0a043fdacf4138725b0badd8efb3ee72ac4d8229e"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\009.py",
+          "sha256": "3c107757a480414bf6445c0a434883af0864258e36e9f7b786343aafdda87e61"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\010.py",
+          "sha256": "5fbb2edcbe380f281d1bfb6b1595f9c480300da8c2f3b6373fd5ee7b311175fa"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\native2\\sandbox\\requests\\011.py",
+          "sha256": "b8656f8bb8bf6911b95e159da6321079961e777b92fc42bf9ceb6e1534fe46cc"
+        }
+      ],
+      "syntax_errors": [],
+      "method_call_screen": [
+        "np.linalg.eigh",
+        "np.linalg.eigvalsh",
+        "np.linalg.inv",
+        "np.linalg.norm",
+        "np.linalg.qr",
+        "np.linalg.solve",
+        "np.linalg.svd",
+        "np.quantile(np.linalg.eigvalsh(X @ X.T), [0, 0.1, 0.5, 0.9, 1]).tolist"
+      ]
+    },
+    "wspl2": {
+      "counts": {
+        "ordinary": 9,
+        "changed": 8,
+        "switch": 12,
+        "return": 5
+      },
+      "ordinary": 9,
+      "adaptation": 25,
+      "total": 34,
+      "gate": false,
+      "changed_tensors": [
+        "model.layers.27.mlp.down_proj.lora_A",
+        "model.layers.27.mlp.down_proj.lora_B"
+      ],
+      "changed_parameters": 167936,
+      "invalid_tokens": 0,
+      "vs_gradient": {
+        "author_only": 3,
+        "gradient_only": 18
+      },
+      "development": {
+        "ordinary": 3,
+        "changed": 2,
+        "switch": 3,
+        "return": 1
+      },
+      "calls": 15,
+      "tokens": {
+        "input_tokens": 1048772,
+        "cached_input_tokens": 26752,
+        "output_tokens": 31132,
+        "reasoning_output_tokens": 17851
+      },
+      "author_seconds": 965.3156411002856,
+      "python_seconds": 8.535668500117026,
+      "python_errors": 0,
+      "evaluation_attempts": 3,
+      "python_sources": [
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\001.py",
+          "sha256": "5bc13264a8638676af51ae6a57b42df51b3053fbdd1db15c53e0779e5a71262f"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\002.py",
+          "sha256": "f16df266701db6eff9c676651ffb2f6949c8da3343084c1818dcc34cafbd7d74"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\003.py",
+          "sha256": "ee5f0f09506d45693a6a67b0417fb1d8ea629f69d2e1287843217ae6e0f80b11"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\004.py",
+          "sha256": "4341667b33f971c2bfdb068a6297cc2d293353ce3113ba5a3bbc8af7ea71e986"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\005.py",
+          "sha256": "4fffd5521ea4fffd00cdcf0b3b8c069d0b734d75128c55791b5b836a3895be31"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\006.py",
+          "sha256": "ca8fbc807e5191f4b38f4288d453003a45c83cb85b3881af23abd17feea1dbc4"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\007.py",
+          "sha256": "32d1244b8075ff34c05a33dc91f6d14442d83b42ee15a5db69bcf2dd50e723a8"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\008.py",
+          "sha256": "235d460bf0059a2f075a60a8ec5f586193f5ce5a05afb58b4ea07a6a2a8540b6"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\009.py",
+          "sha256": "d3360acb3f8498d5456de4c9a5fd3ade80e1603ebd8ce0c47ff2247fa8095e12"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\010.py",
+          "sha256": "2054db5a6c029130cec8c04df0d4692571201b01618ff973a30fc075343c72d9"
+        },
+        {
+          "file": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-v2\\results\\robot_authoring_v2\\wspl2\\sandbox\\requests\\011.py",
+          "sha256": "af7760e054830856fe8c751ec2f0f120b3b9f99f28f2fa0da158ae1f5d079264"
+        }
+      ],
+      "syntax_errors": [],
+      "method_call_screen": [
+        "np.linalg.eigh",
+        "np.linalg.inv",
+        "np.linalg.norm",
+        "np.linalg.solve",
+        "np.linalg.svd"
+      ],
+      "wspl_programs": {
+        "model.layers.27.mlp.down_proj": "A[:,:]=RepairA; B[:,:]=RepairB;"
+      },
+      "wspl_classification": "Whole-matrix assignment of supplied Python-fitted bindings; exact final binding equality verified."
+    }
+  },
+  "groups": {
+    "native": {
+      "ordinary": 9.333333333333334,
+      "adaptation": 17.666666666666668,
+      "total": 27.0,
+      "author_seconds": 979.0221873667518,
+      "python_seconds": 33.00517759999881,
+      "calls": 16.0
+    },
+    "wspl": {
+      "ordinary": 12.333333333333334,
+      "adaptation": 14.0,
+      "total": 26.333333333333332,
+      "author_seconds": 924.9214147000845,
+      "python_seconds": 25.005624166689813,
+      "calls": 15.0
+    }
+  },
+  "gate_passes": {
+    "native": 0,
+    "wspl": 1
+  },
+  "author_adaptation_union": 34,
+  "author_adaptation_unique_vs_gradient": [
+    16,
+    24,
+    27,
+    30,
+    49,
+    50,
+    53
+  ]
+}

@@ -1,3 +1,17 @@
+November 24, 2026: matched robot authoring COMPLETE; saved-artifact analysis verified.
+V2 completed9839.529seconds,93responses,512final missions; receipt complete, exit0.
+Final ordinary/adaptation: parent16/0,gradient16/33;native0 8/16,native1 11/9,
+native2 9/28;WSPL0 12/6,WSPL1 16/11,WSPL2 9/25. Combined criterion native0/3,
+WSPL1/3; only WSPL1 preserves all ordinary missions among authors. Mean total
+native27/64 versus WSPL26.33/64: no established interface superiority.
+All authors change only final down_proj pair167936coefficients; gradient all196pairs.
+All three WSPL bodies assign complete Python-fitted bindings, verified bit-identical.
+This establishes reconstruction/deployment, not WSPL synthesis or efficiency gain.
+377source files/eight frozen artifacts/512paired records and decision counts verified.
+Targeted construction review complete; full semantic program audit still pending.
+No new inference/training/author calls/follow-on. Report ROBOT_AUTHORING_V2_RESULTS.md,
+analysis JSON and reproducible tools/analyze_robot_authoring_v2.py. Earlier entries historical.
+
 November 24, 2026: repaired matched robot authoring APPROVED/LAUNCHED 10:30 Central.
 User replied "Lets go" to exact continuation manifest
 6640c6968490e742abbc619f3619207d9047d1171cd0f3328207e93fa68354bb.
