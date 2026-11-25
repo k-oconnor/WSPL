@@ -1,0 +1,54 @@
+{
+  "observed_utc": "2026-11-25T00:28:14.140861+00:00",
+  "manifest_sha256": "f9beb0084f5d96aff5b67095265d5f6e98f7b3f595c67ec3102cd38dbd2e6363",
+  "source_status": "verified",
+  "constructor_calls": 1,
+  "worker_pid": 35368,
+  "status": {
+    "status": "author_call",
+    "elapsed_seconds": 70.30898879998131,
+    "development_compute_seconds": 1422.5155537999817,
+    "author_arm": "native",
+    "author_turn": 23,
+    "mission": 7,
+    "condition": "changed",
+    "missions": 16
+  },
+  "first_resumed_response": 23,
+  "first_resumed_usage": {
+    "thread_id": "01a21019-beb2-7fa0-b7a3-cb3e435cfe87",
+    "usage": {
+      "input_tokens": 105988,
+      "cached_input_tokens": 2432,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 183,
+      "reasoning_output_tokens": 166
+    },
+    "agent_messages": 1,
+    "tool_calls": 0,
+    "active_seconds": 8.646636400022544,
+    "prompt_transport": {
+      "bytes_written": 264720,
+      "sha256": "da5e70555b3a9cbb379da8b502272228d91fd0385fd98bb6971498a03988e119",
+      "transport": "stdin",
+      "server_receipt_verified": false
+    },
+    "images": []
+  },
+  "recovery": {
+    "author_folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-access-v1\\results\\robot_authoring_access_v1\\native1",
+    "consumed_responses": 22,
+    "prior_status": {
+      "turns": 21,
+      "proposal_attempts": 2,
+      "inspection_attempts": 5,
+      "candidate": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-access-v1\\results\\robot_authoring_access_v1\\native1\\turn_18\\submission\\candidate.npz"
+    },
+    "notice": "Resuming this SAME author after a usage-limit interruption. 21 responses completed; the next request failed before an answer and consumed response slot22. Only 2 responses remain. Prior queries/evaluations remain charged. Your complete work and input files have been copied into this new sandbox. Use the current working directory for writes and relative submission paths. Prior absolute input/work paths remain read-only for compatibility. No other author results or final data are provided."
+  },
+  "viewer_url": "http://127.0.0.1:57203",
+  "viewer_finished_authors": 3,
+  "viewer_completed_responses": 93,
+  "results_complete": false,
+  "note": "Startup verification; final outcomes pending."
+}

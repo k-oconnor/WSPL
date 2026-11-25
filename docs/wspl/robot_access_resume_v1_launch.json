@@ -1,0 +1,9 @@
+{
+    "status":  "launcher_started",
+    "launcher_pid":  21228,
+    "manifest_sha256":  "f9beb0084f5d96aff5b67095265d5f6e98f7b3f595c67ec3102cd38dbd2e6363",
+    "source_checkout":  "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-access-resume-v1",
+    "output":  "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-access-resume-v1\\results\\robot_access_resume_v1",
+    "started_utc":  "2026-11-25T00:27:00.2939296Z",
+    "automatic_follow_on":  false
+}

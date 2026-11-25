@@ -1,0 +1,12 @@
+{
+  "approval": "User replied Approved to the exact recovery manifest request. Preserve three completed authors, resume native1 with two responses after counting the failed request, then native2/wspl2; at most50new requests,19queries,10development attempts,512reserved missions; prior time/counters preserved,existing usage with no hard dollar/token cap,no automatic retry/follow-on.",
+  "approved_by": "user",
+  "launched": false,
+  "manifest": "experiments/source_pins/robot_access_resume_v1.manifest.json",
+  "registered_utc": "2026-11-25T00:26:36.513854+00:00",
+  "resources": 79352,
+  "sha256": "f9beb0084f5d96aff5b67095265d5f6e98f7b3f595c67ec3102cd38dbd2e6363",
+  "source_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-access-resume-v1",
+  "sources": 394,
+  "status": "approved_registered_reverified"
+}

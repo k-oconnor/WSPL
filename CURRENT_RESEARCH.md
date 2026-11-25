@@ -1,3 +1,15 @@
+November24,2026: usage-limit recovery APPROVED/LAUNCHED 18:27 Central.
+User approved exact f9beb0084f5d96aff5b67095265d5f6e98f7b3f595c67ec3102cd38dbd2e6363.
+394sources/79,352resources reverified; registered main/isolated. Source checkout
+WSPL-robot-access-resume-v1; launcher21228,worker35368. Receipt verified,
+constructor1; native1 response23 completed successfully after user reset.
+Three completed authors preserved; history/files restored, failed request charged.
+At most50fresh requests; same remaining quotas/final panel. No follow-on/retry.
+Viewer http://127.0.0.1:57203 reconnected, PID6644, historical counts included.
+Preserve isolated inventoried source/bound resources while active; inspect current
+status/results before completion claims. Approval/launch/startup records under
+robot_access_resume_v1 in docs/wspl. Earlier preparation/failure entries historical.
+
 November24,2026: broader-access run hit usage limit; bounded recovery PREPARED.
 Original source receipt/status failed, exit1 at4618.980855seconds; no final data
 opened. Three authors frozen(native0/wspl0/wspl1); native1 has21completed replies,
