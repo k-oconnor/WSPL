@@ -93,6 +93,14 @@
       "registered_utc": "2026-11-04T15:23:09.008589+00:00",
       "sha256": "ef3ca419ffae13e156be92a3eb2d220762c035cc2eb00839e4d8c3c8d0b0046a"
     },
+    "robot-access-resume-v1": {
+      "approval": "User replied Approved to the exact recovery manifest request. Preserve three completed authors, resume native1 with two responses after counting the failed request, then native2/wspl2; at most50new requests,19queries,10development attempts,512reserved missions; prior time/counters preserved,existing usage with no hard dollar/token cap,no automatic retry/follow-on.",
+      "approved_by": "user",
+      "manifest": "experiments/source_pins/robot_access_resume_v1.manifest.json",
+      "registered_utc": "2026-11-25T00:26:36.513854+00:00",
+      "sha256": "f9beb0084f5d96aff5b67095265d5f6e98f7b3f595c67ec3102cd38dbd2e6363",
+      "source_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-access-resume-v1"
+    },
     "robot-authoring-access-v1": {
       "approval": "User replied Let's kick it off on November 24, 2026 to the exact broader-access manifest approval request: six fresh Astra authors,24responses/8inspection attempts/4development evaluations each,max144hosted requests and512fresh final missions,existing data/control reused,24hdevelopment/6hfinal guards,existing Codex usage without hard dollar/token cap,no automatic retry/follow-on.",
       "approved_by": "user",
