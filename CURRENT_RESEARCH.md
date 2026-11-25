@@ -1,3 +1,13 @@
+November24,2026: broader-access recovery COMPLETE at19:36Central; exit0/receipt complete.
+All512final rows, paired mission identities/counts and8frozen file hashes verified.
+Ordinary/adaptation: parent16/0,gradient16/37; native0 13/21,native1 16/44,
+native2 16/36; WSPL0 16/27,WSPL1 16/35,WSPL2 16/37. Combined criterion native2/3,
+WSPL3/3. Strongest native60/64; strongestWSPL53/64,gradient53/64.141completed
+responses plus1usage-limit failure(unknown usage);49new responses after recovery.
+Method/source-construction audit still pending; no superiority/efficiency claim.
+No follow-on. Completion snapshot docs/wspl/robot_access_resume_v1_completion.json.
+Earlier active/launch entries below are historical.
+
 November24,2026: usage-limit recovery APPROVED/LAUNCHED 18:27 Central.
 User approved exact f9beb0084f5d96aff5b67095265d5f6e98f7b3f595c67ec3102cd38dbd2e6363.
 394sources/79,352resources reverified; registered main/isolated. Source checkout

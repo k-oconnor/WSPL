@@ -1,0 +1,92 @@
+{
+  "observed_utc": "2026-11-25T02:24:19.197416+00:00",
+  "status": "complete",
+  "manifest_sha256": "f9beb0084f5d96aff5b67095265d5f6e98f7b3f595c67ec3102cd38dbd2e6363",
+  "finished_utc": "2026-11-25T01:36:31.008224+00:00",
+  "final_missions": 512,
+  "frozen_file_hashes_verified": 8,
+  "paired_totals_verified": true,
+  "method_audit": "pending",
+  "totals": {
+    "parent": {
+      "total": 16,
+      "conditions": {
+        "ordinary": 16,
+        "changed": 0,
+        "switch": 0,
+        "return": 0
+      }
+    },
+    "gradient": {
+      "total": 53,
+      "conditions": {
+        "ordinary": 16,
+        "changed": 9,
+        "switch": 16,
+        "return": 12
+      }
+    },
+    "native0": {
+      "total": 34,
+      "conditions": {
+        "ordinary": 13,
+        "changed": 9,
+        "switch": 8,
+        "return": 4
+      }
+    },
+    "wspl0": {
+      "total": 43,
+      "conditions": {
+        "ordinary": 16,
+        "changed": 10,
+        "switch": 9,
+        "return": 8
+      }
+    },
+    "wspl1": {
+      "total": 51,
+      "conditions": {
+        "ordinary": 16,
+        "changed": 11,
+        "switch": 13,
+        "return": 11
+      }
+    },
+    "native1": {
+      "total": 60,
+      "conditions": {
+        "ordinary": 16,
+        "changed": 15,
+        "switch": 15,
+        "return": 14
+      }
+    },
+    "native2": {
+      "total": 52,
+      "conditions": {
+        "ordinary": 16,
+        "changed": 11,
+        "switch": 14,
+        "return": 11
+      }
+    },
+    "wspl2": {
+      "total": 53,
+      "conditions": {
+        "ordinary": 16,
+        "changed": 13,
+        "switch": 14,
+        "return": 10
+      }
+    }
+  },
+  "gate_passes": {
+    "native": 2,
+    "wspl": 3
+  },
+  "completed_responses": 141,
+  "failed_invocations": 1,
+  "failed_usage": "unknown",
+  "follow_on_launched": false
+}
