@@ -1,0 +1,20 @@
+{
+  "status": "verified",
+  "prior_candidate": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-authoring-access-v1\\results\\robot_authoring_access_v1\\native1\\sandbox\\work\\candidate5.npz",
+  "final_candidate": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-access-resume-v1\\results\\robot_access_resume_v1\\native1\\turn_22\\submission\\candidate.npz",
+  "prior_archive_sha256": "4cbdfbc3f17e38a60f003d5b29a8a78cfdd0fe24653e619c84bedadda1ed3976",
+  "reconstructed_archive_sha256": "f7ec353a7d93229fceaff03f3920a949b13ed3cebd35b8706329486bed9d6444",
+  "staged_submission_file_identical": true,
+  "arrays": 392,
+  "coefficients": 18464768,
+  "all_factors_bit_identical": true,
+  "visible_history_prefix_identical": true,
+  "prior_history_entries": 42,
+  "resumed_tools": [
+    "evaluate",
+    "finish"
+  ],
+  "new_construction_calls": 0,
+  "interpretation": "The numerical repair predates the restart. The resumed session evaluated and froze it; uninterrupted subsequent choices remain unknown.",
+  "scope": "Saved files and visible transcripts only; no inference, fitting or author calls."
+}
