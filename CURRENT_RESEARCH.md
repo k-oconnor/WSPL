@@ -1,3 +1,22 @@
+November24,2026: broader-access run hit usage limit; bounded recovery PREPARED.
+Original source receipt/status failed, exit1 at4618.980855seconds; no final data
+opened. Three authors frozen(native0/wspl0/wspl1); native1 has21completed replies,
+5queries/2evaluations and saved work/candidate. Failed request22 has no answer,
+usage unknown.92completed responses total;3116output files/candidate identities
+audited. User reported reset and requested continuation; no recovery launched.
+New isolated WSPL-robot-access-resume-v1,394sources/79,352resources verified.
+Candidate f9beb0084f5d96aff5b67095265d5f6e98f7b3f595c67ec3102cd38dbd2e6363.
+Three finished authors retained; native1 resumes copied history/files with2calls
+remaining (failed request counts). Native2/wspl2 remain24calls each: max50new
+requests,19queries,10development attempts. Same reserved73600000/max512final.
+Prior1421.4899035execution seconds retained;81781sdevelopment wall+6hfinal guard.
+79focused checks pass; real-file copy/actual offline prompt and real sandbox
+old-path-readonly/new-work-writable fixtures pass; no scientific calls/forwards.
+Protocol ROBOT_ACCESS_RESUME_V1.md. Exact new digest approval pending; registry
+unchanged. No automatic retries/follow-on. Original sources/results preserved.
+Viewer recovery aggregation prepared; switch existing URL only upon launch.
+Earlier launch/preparation entries below are historical.
+
 November24,2026: broader-access robot authoring PREPARED, not approved/launched.
 385sources/76,229resources verified; candidate fddea45cf93addfd070f01877b1eb8f096df2bfcf18fc5597a331298f7332d71.
 Isolated WSPL-robot-authoring-access-v1. Both interfaces may inspect any of196

@@ -1,0 +1,21 @@
+{
+  "completed_authors_reused": 3,
+  "development_wall_seconds": 81781,
+  "final_missions_max": 512,
+  "fresh_author_invocations_max": 50,
+  "fresh_development_attempts_max": 10,
+  "fresh_inspection_attempts_max": 19,
+  "interrupted_author_remaining_responses": 2,
+  "launched": false,
+  "manifest": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-access-resume-v1\\experiments\\source_pins\\robot_access_resume_v1.manifest.json",
+  "prior_completed_responses": 92,
+  "prior_compute_seconds": 1421.4899034999544,
+  "prior_failed_invocations": 1,
+  "prior_failed_usage": "unknown",
+  "registered": false,
+  "resources": 79352,
+  "sha256": "f9beb0084f5d96aff5b67095265d5f6e98f7b3f595c67ec3102cd38dbd2e6363",
+  "source_checkout": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-access-resume-v1",
+  "sources": 394,
+  "status": "prepared_unapproved"
+}

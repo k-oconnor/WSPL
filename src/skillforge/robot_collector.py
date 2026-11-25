@@ -65,6 +65,8 @@ def command(cli, catalog, instructions, workspace, answer, large_prompt=False,pr
 
 def check_event(e):
     kind=e.get('type')
+    if kind=='error':
+        raise ValueError('Codex runtime error: '+str(e.get('message','unspecified error')))
     if kind=='item.completed' and e.get('item',{}).get('type')=='error':
         raise ValueError('Codex runtime error: '+str(e['item'].get('message','unspecified error')))
     if kind in ('thread.started','turn.started','turn.completed'):return
