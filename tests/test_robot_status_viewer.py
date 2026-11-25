@@ -51,6 +51,18 @@ class ViewerTests(unittest.TestCase):
             self.save(r/'status.json',dict(status='final_evaluation',final_arm='gradient',author_arm='wspl'))
             self.save(r/'final_gradient/episodes.json',[dict(success=True,condition='ordinary')])
             s=viewer.snapshot(r);self.assertEqual(s['current'],'gradient');self.assertEqual(s['final_done'],1)
+    def test_recovery_combines_history_without_counting_failed_reply(self):
+        with tempfile.TemporaryDirectory() as folder,patch.object(viewer,'process_alive',return_value=True):
+            base=Path(folder);old=base/'old';r=base/'new';old.mkdir();r.mkdir()
+            self.save(old/'native0/frozen.json',dict(status='frozen'))
+            self.save(old/'native0/turn_00/usage.json',dict(usage={'input_tokens':4}))
+            self.save(old/'native1/turn_00/usage.json',dict(usage={'input_tokens':5}))
+            (old/'native1/turn_01').mkdir()
+            self.save(r/'native1/turn_02/usage.json',dict(usage={'input_tokens':6}))
+            self.save(r/'recovery_context.json',dict(prior_output=str(old),completed_authors=['native0'],resume_author='native1',prior_elapsed_seconds=10,failed_invocations=1))
+            s=viewer.snapshot(r)
+            self.assertEqual(s['finished_authors'],1);self.assertEqual(s['responses'],3)
+            self.assertEqual(s['tokens']['input_tokens'],15);self.assertEqual(s['failed_author_requests'],1)
 
 
 if __name__=='__main__':unittest.main()

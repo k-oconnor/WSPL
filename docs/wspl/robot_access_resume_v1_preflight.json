@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "author_calls": 0,
+  "scientific_predictions": 0,
+  "actual_history_entries": 42,
+  "consumed_responses": 22,
+  "remaining_responses": 2,
+  "actual_files_copied_verified": true,
+  "actual_offline_prompt": true,
+  "old_absolute_paths_readonly": true,
+  "new_workspace_writable": true,
+  "prior_queries": 5,
+  "prior_evaluations": 2,
+  "folder": "C:\\Users\\kevin\\OneDrive\\Desktop\\WSPL-robot-access-resume-v1\\data\\robot_access_resume_v1\\recovery_3xcya4yp"
+}

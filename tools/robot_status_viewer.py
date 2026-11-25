@@ -62,10 +62,16 @@ def snapshot(root,reader=None):
     elif alive is False:state='Stopped'
     else:state='Running' if launch else 'Starting'
     elapsed=max(0,(exit_record.get('finished_unix',now) if exit_record else now)-launch.get('started_unix',now))
+    recovery=read(root/'recovery_context.json',{})
+    prior=Path(recovery['prior_output']) if recovery.get('prior_output') else None
     authors=[];activity=[];tokens={k:0 for k in ('input_tokens','cached_input_tokens','output_tokens','reasoning_output_tokens')}
     for name in ORDER:
-        folder=root/name;frozen=read(folder/'frozen.json');local=read(folder/'status.json',{})
-        turns=sorted(folder.glob('turn_*')) if folder.exists() else []
+        folder=root/name
+        historical=prior/name if prior and (name in recovery.get('completed_authors',[]) or name==recovery.get('resume_author')) else None
+        folders=([historical] if historical and historical.exists() else [])+([folder] if folder.exists() else [])
+        frozen=read(folder/'frozen.json',read(historical/'frozen.json') if historical else None)
+        local=read(folder/'status.json',read(historical/'status.json',{}) if historical else {})
+        turns=sorted([p for f in folders for p in f.glob('turn_*')],key=lambda p:p.name)
         completed=0;queries=[];evaluations=0;last_dev=None;last_event=None;python_errors=0
         for turn in turns:
             usage=read(turn/'usage.json')
@@ -89,7 +95,7 @@ def snapshot(root,reader=None):
             if episodes is not None:
                 last_dev=dict(done=len(episodes),successes=sum(bool(x.get('success')) for x in episodes),
                     counts={c:sum(bool(x.get('success')) for x in episodes if x.get('condition')==c) for c in CONDITIONS})
-        for p in folder.glob('sandbox/receipts/*.json'):
+        for p in (p for f in folders for p in f.glob('sandbox/receipts/*.json')):
             py=read(p,{})
             if py.get('exit_code',0)!=0 or py.get('timed_out'):python_errors+=1
         if turns:
@@ -104,7 +110,7 @@ def snapshot(root,reader=None):
                             event=json.loads(line);last_event=event.get('type');break
                         except ValueError:continue
                 except OSError:pass
-        author_state=(frozen or {}).get('status') or ('active' if folder.exists() else 'queued')
+        author_state=(frozen or {}).get('status') or ('active' if folders else 'queued')
         authors.append(dict(name=name,state=author_state,completed=completed,started=len(turns),
             inspection_attempts=local.get('inspection_attempts',len(queries)),inspections=len(queries),
             evaluations=local.get('proposal_attempts',evaluations),latest_inspection=queries[-1] if queries else None,
@@ -129,7 +135,7 @@ def snapshot(root,reader=None):
     error=status.get('error') or receipt.get('error')
     stamp=(root/'status.json').stat().st_mtime if (root/'status.json').exists() else now
     return dict(state=state,phase=phase,current=current,pid=launch.get('pid'),process_alive=alive,
-        elapsed_seconds=elapsed,compute_seconds=status.get('development_compute_seconds',0),
+        elapsed_seconds=elapsed+recovery.get('prior_elapsed_seconds',0),recovery=bool(recovery),failed_author_requests=recovery.get('failed_invocations',0),compute_seconds=status.get('development_compute_seconds',0),
         observed_utc=datetime.now(timezone.utc).isoformat(),status_age_seconds=max(0,now-stamp),
         manifest=receipt.get('manifest_sha256',launch.get('manifest_sha256')),
         authors=authors,finished_authors=sum(a['state'] in ('frozen','authoring_failed') for a in authors),
